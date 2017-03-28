@@ -1,0 +1,84 @@
+<!--
+  Generated template for the CoughMeds page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Compare
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue shadowBottom">
+    <p>Cough Medications</p>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="ui-page-theme-a">
+	<p>&nbsp;</p> 
+	<div id="all_questions_div">
+	  <div id="compare_cough_mobile_1">
+	    <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue centerText"> 
+	        <span></span><br>
+	        Answer a few questions to compare OTC <span class="bluefont">cough medications</span> more efficiently. 
+	      </div>
+	      <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	      </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <div class="blueBorderAll">
+	      <p>This will assume you are comparing cough medications to see which would work best for you.</p>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	      <button data-inline="true" class="compare_cough_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	    </p>
+	    <p>&nbsp;</p>
+	  </div>
+	  <div id="compare_cough_mobile_2_n" class="displayNone">
+	    <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue"> 
+	        <span>Are you experiencing a <span class="purplefont">dry</span> <span class="purplefont">cough?</span></span><br>
+	      </div>
+	      <div align="right"><img src="{{AbsoluteURL}}/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	      </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <div class="orangeBorderAll">
+	      <p>That is, you are not <span style="color:#4B0082;">coughing</span> &nbsp;up stuff?</p>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	      <button data-inline="true" class="compare_cough_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+	      <button data-inline="true" class="compare_cough_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+	    </p>
+	    <p>&nbsp;</p>
+	  </div>
+	</div>
+	<div class="feedbackAlert mbsc-comp" style="display: none;" id="mobiscroll1488898693889">
+	  <div class="alertWidth">
+	    <div class="maxwidth300">
+	      <div class="ovalBorderRightBlue" align="center">
+	        <span>Help improve this comparison of OTC cough medications.</span><br>
+	      </div>
+	      <div align="right"><img src="{{AbsoluteURL}}/admin/compare/pharm-lindsey.svg" alt="Pharmacist" width="80"></div>
+	    </div>
+	    <div class="clearboth"></div>
+	    <hr class="hrblue">
+	    <p align="center"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
+	    <hr class="hrblue">
+	  </div>
+	</div>
+</ion-content>

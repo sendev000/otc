@@ -1,0 +1,72 @@
+$toolbar-background-color: #03a9f4;
+
+page-nearest {
+	font-size: 16px;
+	background-image: url(../assets/img/dosing/blue-balls.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 620px;
+
+	.toolbar-background-md{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.item-md.item-block .item-inner{
+		border-bottom: 0px none;
+	}
+	ion-slide h2{
+		font-weight: bold;
+		font-size: 16px;
+	}
+	ion-slides{
+		height: 220px;
+	}
+	.toolbar-title-md{
+		font-size: 1em;
+	}
+	.slide-zoom {
+	    height: 100%;
+	}
+	.swiper-slide{
+		height: 200px !important;
+	}
+	.slide-image {
+	    max-height: 50%;
+	    max-width: 60%;
+	    margin: 18px 0;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+	.fontBold{
+		font-weight: bold;
+	}
+	.ui-title{
+		font-weight: bold;
+	}
+	h3{
+		font-size: 1.8em;
+		font-weight: bold;
+	}
+	.boxSpinnerRed {
+	    background-color: #E91E63;
+	    opacity: 0.75;
+	    width: 10px;
+	    height: 10px;
+	    position: absolute;
+	    right: 5%;
+	    top: 0%;
+	    /* margin: -5px auto 0 auto; */
+	    border-radius: 0px;
+	    border: 10px solid #E91E63;
+	    box-shadow: 10px 0px #FF9100, 10px 0px #FF9100;
+	    -webkit-animation: shadowSpinRed 1s ease-in-out infinite;
+	    animation: shadowSpinRed 1s ease-in-out infinite;
+	}
+}
+#ion-diagnostics-toast{
+	background: transparent;
+}

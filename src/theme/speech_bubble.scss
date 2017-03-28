@@ -1,0 +1,2237 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------============-Blue=======================--------------------------*/
+/*.bubbleLeftBlue 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #81D4FA solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+.bubbleLeftBlue:after 
+{
+content: "";
+position: absolute;
+top: 12px;
+left: -30px;
+border-style: solid;
+border-width: 8px 30px 8px 0;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleLeftBlue:before 
+{
+content: "";
+position: absolute;
+top: 10px;
+left: -35px;
+border-style: solid;
+border-width: 10px 32px 10px 0;
+border-color: transparent #81D4FA;
+display: block;
+width: 0;
+z-index: 0;
+}*/
+
+
+.bubbleRightBlue 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #81D4FA solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+.bubbleRightBlue:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightBlue:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #81D4FA;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+/*
+.bubbleTopRightBlue 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #81D4FA solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+
+.bubbleTopRightBlue:after 
+{
+content: "";
+position: absolute;
+top: -20px;
+right: 20px;
+border-style: solid;
+border-width: 0 8px 20px;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleTopRightBlue:before 
+{
+content: "";
+position: absolute;
+top: -25px;
+right: 18px;
+border-style: solid;
+border-width: 0 10px 22px;
+border-color: #81D4FA transparent;
+display: block;
+width: 0;
+z-index: 0;
+}
+*/
+
+.ovalRightBlue {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #81D4FA; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightBlue:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #81D4FA;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Blueuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightBlue:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #81D4FA;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Blueuce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalBorderRightBlue {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #81D4FA; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	max-width:400px;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightBlue:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#81D4FA;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightBlue:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#81D4FA;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightBlue > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#81D4FA;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightBlue > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+/*----------==============-BlueExtended======================----------------*/
+
+.ovalBorderRightBlueExtended {
+	position: relative;
+	padding: 45px 35px;
+	margin: 1em auto 60px;
+	border: 2px solid #81D4FA;
+	text-align: center;
+	color: #333;
+	background: #fff; 
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius: 240px 140px;
+	-webkit-border-top-right-radius: 240px 140px;
+	-webkit-border-bottom-right-radius: 240px 140px;
+	-webkit-border-bottom-left-radius: 240px 140px;
+	-moz-border-radius: 240px / 140px;
+	border-radius: 240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+}
+
+/* creates larger curve */
+.ovalBorderRightBlueExtended:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:60%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#81D4FA;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightBlueExtended:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:60%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#81D4FA;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightBlueExtended > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#81D4FA;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightBlueExtended > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:61%; 
+	width:30px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+
+.ovalBorderBlue {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #81D4FA; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates larger curve */
+.ovalBorderBlue:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-35px; 
+	right:42%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 4px 3px 0;
+	border-color:#81D4FA;
+	margin-right:-3px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-right-radius:80px 50px;
+	-moz-border-radius-bottomright:80px 50px;
+	border-bottom-right-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderBlue:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-35px; 
+	right:42%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 3px 3px 0;
+	border-color:#81D4FA;
+	margin-right:27px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-right-radius:40px 50px; 
+	-moz-border-radius-bottomright:40px 50px; 
+	border-bottom-right-radius:40px 50px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderBlue > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:42%; 
+	width:5px; 
+	height:5px;
+	margin-right:45px;
+	background:#81D4FA;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderBlue > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:42%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+
+/*--------===================-Green-========================------------*/
+
+.bubbleRightGreen 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #A5D6A7 solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+.bubbleRightGreen:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightGreen:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #A5D6A7;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+.ovalRightGreen {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #A5D6A7; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightGreen:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #A5D6A7;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Greenuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightGreen:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #A5D6A7;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Greenuce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalLeftGreen {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #A5D6A7; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalLeftGreen:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	right:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #A5D6A7;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Greenuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalLeftGreen:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	right:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #A5D6A7;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Greenuce the damage in FF3.0 */
+    display:block; 
+}
+
+
+.ovalBorderRightGreen {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #A5D6A7; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightGreen:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#A5D6A7;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightGreen:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#A5D6A7;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightGreen > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#A5D6A7;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightGreen > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+/*-------------===================--Orange-=======================---------*/
+
+.ovalRightOrange {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #FFB74D; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightOrange:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #FFB74D;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Orangeuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightOrange:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #FFB74D;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Orangeuce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalLeftOrange {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #FFB74D; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalLeftOrange:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	right:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #FFB74D;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Orangeuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalLeftOrange:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	right:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #FFB74D;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Reduce the damage in FF3.0 */
+    display:block; 
+}
+
+.bubbleRightOrange 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #FFB74D solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+text-align:center;
+}
+
+.bubbleRightOrange:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightOrange:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #FFB74D;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+
+.ovalBorderRightOrange {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #FFB74D; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightOrange:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#FFB74D;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightOrange:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#FFB74D;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightOrange > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#FFB74D;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightOrange > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+
+/*-------====================Purple=============================----------*/
+
+
+.bubbleRightPurple 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #C9ABFF solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+
+}
+
+.bubbleRightPurple:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width: 8px 0 8px 21px;
+border-color: transparent #FFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightPurple:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #C9ABFF;
+display: block;
+width: 0;
+z-index: 0;
+
+}
+
+
+.ovalBorderRightPurple {
+	position: relative;
+	padding: 45px 35px;
+	margin: 1em auto 60px;
+	border: 2px solid #C9ABFF;
+	text-align: center;
+	color: #333;
+	background: #fff; 
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius: 240px 140px;
+	-webkit-border-top-right-radius: 240px 140px;
+	-webkit-border-bottom-right-radius: 240px 140px;
+	-webkit-border-bottom-left-radius: 240px 140px;
+	-moz-border-radius: 240px / 140px;
+	border-radius: 240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+}
+
+/* creates larger curve */
+.ovalBorderRightPurple:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#C9ABFF;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightPurple:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#C9ABFF;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightPurple > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#C9ABFF;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightPurple > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:30px; 
+	height:15px; 
+	background:#fff;
+}
+
+/*--------==============-PurpleExtended======================----------------*/
+
+.ovalBorderRightPurpleExtended {
+	position: relative;
+	padding: 45px 35px;
+	margin: 1em auto 60px;
+	border: 2px solid #C9ABFF;
+	text-align: center;
+	color: #333;
+	background: #fff; 
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius: 240px 140px;
+	-webkit-border-top-right-radius: 240px 140px;
+	-webkit-border-bottom-right-radius: 240px 140px;
+	-webkit-border-bottom-left-radius: 240px 140px;
+	-moz-border-radius: 240px / 140px;
+	border-radius: 240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+}
+
+/* creates larger curve */
+.ovalBorderRightPurpleExtended:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:60%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#C9ABFF;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightPurpleExtended:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:60%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#C9ABFF;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightPurpleExtended > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#C9ABFF;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightPurpleExtended > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:61%; 
+	width:30px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+
+/*-----------==============-Purple_blue======================------------*/
+
+
+.ovalBorderRightPurple_blue {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #9999ff; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightPurple_blue:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#9999ff;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightPurple_blue:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#9999ff;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightPurple_blue > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#9999ff;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightPurple_blue > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+
+
+/*----------=======Purple_red=======-------------------------*/
+.ovalRightPurple_red {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #F48FB1; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightPurple_red:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #F48FB1;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Purple_reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightPurple_red:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #F48FB1;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Purple_reduce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalLeftPurple_red {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #F48FB1; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalLeftPurple_red:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	right:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #F48FB1;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Purple_reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalLeftPurple_red:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	right:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #F48FB1;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Reduce the damage in FF3.0 */
+    display:block; 
+}
+
+
+.ovalBorderRightPurple_red {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #F48FB1; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightPurple_red:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#F48FB1;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightPurple_red:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#F48FB1;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightPurple_red > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#F48FB1;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightPurple_red > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+.bubbleRightPurple_red 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #F48FB1 solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+
+}
+
+
+
+.bubbleRightPurple_red:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width: 8px 0 8px 21px;
+border-color: transparent #FFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightPurple_red:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #F48FB1;
+display: block;
+width: 0;
+z-index: 0;
+
+}
+
+
+
+
+
+
+/*---------==================-Red-=========================-----------*/
+
+
+.bubbleRightRed 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #F77973 solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+.bubbleRightRed:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightRed:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #F77973;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+
+.ovalRightRed {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #c81e2b; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightRed:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #c81e2b;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightRed:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #c81e2b;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalLeftRed {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #c81e2b; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalLeftRed:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	right:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #c81e2b;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalLeftRed:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	right:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #c81e2b;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalBorderRightRed {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #F77973; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightRed:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#F77973;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightRed:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#F77973;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightRed > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#F77973;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightRed > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+/*-------=====================Yellow-======================----------------*/
+
+
+.bubbleRightYellow 
+{
+position: relative;
+padding: 10px;
+background: #FFFFFF;
+border: #FFD900 solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+}
+
+.bubbleRightYellow:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightYellow:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #FFD900;
+display: block;
+width: 0;
+z-index: 0;
+}
+
+.ovalRightYellow {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #FFD900; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalRightYellow:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	left:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #FFD900;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Yellowuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalRightYellow:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	left:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #FFD900;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Yellowuce the damage in FF3.0 */
+    display:block; 
+}
+
+.ovalLeftYellow {
+	position:relative; 
+	padding:50px 20px;
+	margin:1em auto 80px;
+	border:5px solid #FFD900; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+}
+
+/* creates the larger circle */
+.ovalLeftYellow:before {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-25px; 
+	right:100px; 
+	width:25px; 
+	height:25px;
+	border:5px solid #FFD900;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+    /* Yellowuce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates the smaller circle */
+.ovalLeftYellow:after {
+	content:""; 
+	position:absolute; 
+	z-index:10; 
+	bottom:-50px; 
+	right:120px; 
+	width:10px; 
+	height:10px; 
+	border: 2px solid #FFD900;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+    /* Yellowuce the damage in FF3.0 */
+    display:block; 
+}
+
+
+.ovalBorderRightYellow {
+	position:relative; 
+	padding:45px 35px;
+	margin:1em auto 60px;
+	border: 2px solid #FFD900; 
+	text-align:center;
+	color:#333; 
+	background:#fff;
+	/* css3 */
+	/*
+	NOTES:
+	-webkit-border-radius:240px 140px; // produces oval in safari 4 and chrome 4
+	-webkit-border-radius:240px / 140px; // produces oval in chrome 4 (again!) but not supported in safari 4
+	Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+	*/
+	-webkit-border-top-left-radius:240px 140px;
+	-webkit-border-top-right-radius:240px 140px;
+	-webkit-border-bottom-right-radius:240px 140px;
+	-webkit-border-bottom-left-radius:240px 140px;
+	-moz-border-radius:240px / 140px;
+	border-radius:240px / 140px;
+	-webkit-box-shadow: 5px 5px 5px  #ddd;
+	-moz-box-shadow: 5px 5px 5px  #ddd;
+	box-shadow: 5px 5px 5px  #ddd;
+	
+}
+
+/* creates larger curve */
+.ovalBorderRightYellow:before {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:50px; 
+	height:30px;
+	border-style:solid;
+	border-width:0 0 2px 3px;
+	border-color:#FFD900;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:80px 50px;
+	-moz-border-radius-bottom-left:80px 50px;
+	border-bottom-left-radius:80px 50px;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates smaller curve */
+.ovalBorderRightYellow:after {
+	content:""; 
+	position:absolute; 
+	z-index:2; 
+	bottom:-33px; 
+	right:41%; 
+	width:20px; 
+	height:31px; 
+	border-style:solid;
+	border-width:0 0 2px 2px;
+	border-color:#FFD900;
+	margin-right:-20px;
+	background:transparent;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 70px; 
+	-moz-border-radius-bottom-left:40px 70px; 
+	border-bottom-left-radius:40px 70px; 
+    /* reduce the damage in FF3.0 */
+    display:block; 
+}
+
+/* creates a small circle to produce a rounded point where the two curves meet 
+.ovalBorderRightYellow > :first-child:before {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-35px; 
+	right:40%; 
+	width:5px; 
+	height:5px;
+	margin-right:-20px;
+	background:#FFD900;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+*/
+/* creates a white rectangle to cover part of the oval border*/
+.ovalBorderRightYellow > :first-child:after {
+	content:""; 
+	position:absolute; 
+	z-index:1; 
+	bottom:-10px; 
+	right:41%; 
+	width:28px; 
+	height:15px; 
+	background:#fff;
+}
+
+.bubbleRightPurpleOpacity 
+{
+position: relative;
+padding: 10px;
+background-color: rgba(255,255,255,0.1);
+border: #C9ABFF solid 2px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+text-align:center;
+
+}
+
+
+
+.bubbleRightPurpleOpacity:after 
+{
+content: "";
+position: absolute;
+top: 13px;
+right: -21px;
+border-style: solid;
+border-width:8px 0 8px 21px;
+border-color: transparent;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubbleRightPurpleOpacity:before 
+{
+content: "";
+position: absolute;
+top: 12px;
+right: -24px;
+border-style: solid;
+border-width: 9px 0 9px 22px;
+border-color: transparent #C9ABFF;
+display: block;
+width: 0;
+z-index: 0;
+
+}

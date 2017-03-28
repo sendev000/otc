@@ -1,0 +1,122 @@
+<!--
+  Generated template for the ColdsoreMeds page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+
+ <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Compare
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue shadowBottom">
+    <p>Coldsore medicines</p>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="ui-page-theme-a">
+	<p>&nbsp;</p>
+	<div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
+	  <a class="btn-floating btn-large light-blue ui-link">
+	  <i class="large material-icons">arrow_upward</i>
+	  </a>
+	</div>
+	<div class="maxwidth450 paddingSides">
+	  <div class="ovalBorderRightBlue">
+	    <span>Use the table below to compare <span class="bluefont">cold sore</span> medications.</span><br>
+	  </div>
+	  <div align="right"><img src="assets/img/pharm/female/pharm-becky.svg" width="100" alt="Pharmacist"> 
+	  </div>
+	</div>
+	<div class="clearboth divider1"></div>
+	<p class="blueBorderAll grayfontSmall centerText"><span class="greenfont">Show</span> and <span class="bluefont">hide</span> column with the <span class="redfont">"sort"</span> button. <br>For best results in a mobile device, check (√) <span class="redfontItalic">one column</span> at a time due to limited screen size.</p>
+	<div class="clearboth divider1"></div>
+	<br>
+	<div class="centerText">
+	  <a href="#comment_compare_mobile" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkBlue ui-link"></a>
+	  <a href="#filtercoldsore_medTable-pop" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkBlue ui-link" aria-haspopup="true" aria-owns="filtercoldsore_medTable-pop" aria-expanded="false"></a>
+	</div>
+	<br>
+	<hr class="hrblue"> 
+	<div style="display: none;" id="filtercoldsore_medTable-pop-placeholder">
+	</div>
+	<div style="display: none;" id="coldsore_meds_table-popup-placeholder">
+	</div>
+	<a href="#coldsore_meds_table-popup" class="ui-table-columntoggle-btn ui-btn ui-btn-b ui-corner-all ui-shadow ui-mini" data-rel="popup">Sort</a>
+	<table data-role="table" id="coldsore_meds_table" data-filter="true" data-input="#filtercoldsore_medTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="b" data-column-btn-text="Sort" data-column-popup-theme="a">
+	  <thead>
+	    <tr class="ui-bar-b">
+	      <th data-colstart="1"></th>
+	      <th data-priority="1" data-colstart="2" class="ui-table-priority-1">
+	        <div class="centerText">Description</div>
+	      </th>
+	      <th data-priority="2" data-colstart="3" class="ui-table-priority-2">
+	        <div class="centerText">Active Ingredient</div>
+	      </th>
+	      <th data-priority="3" data-colstart="4" class="ui-table-priority-3">
+	        <div class="centerText">Healing Duration</div>
+	      </th>
+	      <th data-priority="4" data-colstart="5" class="ui-table-priority-4">
+	        <div class="centerText">Pros</div>
+	      </th>
+	      <th data-priority="5" data-colstart="6" class="ui-table-priority-5">
+	        <div class="centerText">Cons</div>
+	      </th>
+	      <th data-priority="5" data-colstart="7" class="ui-table-priority-5">
+	        <div class="centerText">FYI</div>
+	      </th>
+	      <th data-priority="5" data-colstart="8" class="ui-table-priority-5">
+	        <div class="centerText">User Votes</div>
+	      </th>
+	      <th data-priority="5" data-colstart="9" class="ui-table-priority-5">
+	        <div class="centerText">Avg. Cost</div>
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th style="font-size:14px">
+	        <p><strong><span style="color:#006699;">Abreva®</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	        <p><img alt="" src="{{AbsoluteURL}}/admin/images/articles/html_editor_uploads/abreva.png" style="width: 59px; height: 22px;"></p>
+	      </th>
+	      <td style="font-size:14px" class="ui-table-priority-1">
+	        <p>--- FDA approved to shorten healing time.</p>
+	        <p>--- May reduce the duration of the pain, burning, itching or tingling of a cold sore.</p>
+	      </td>
+	      <td style="font-size:12px" class="ui-table-priority-2">
+	        <p><span style="font-size:12px;"><strong>Docosanol 10%</strong></span></p>
+	      </td>
+	      <td class="ui-table-priority-3">
+	        <p>--- Can heal a cold sore in about 3 days compared to 5 to 10 days without.</p>
+	        <p style="font-size: 13px; line-height: 20.7999992370605px;">--- For best results, use when you feel a cold sore coming on.</p>
+	        <p style="font-size: 13px; line-height: 20.7999992370605px;">--- As soon as you apply it, it penetrates into the skin, then starts protecting healthy cells by blocking the virus from spreading to them.</p>
+	      </td>
+	      <td class="ui-table-priority-4">
+	        <p>--- Can shorten healing time by a day or two.</p>
+	        <p>--- Will reduce the pain, burning and stinging if started early at the first sign of a cold sore.</p>
+	      </td>
+	      <td class="ui-table-priority-5">
+	        <p>--- Most common barrier to use is cost. Manuf. will rather spend millions in advertising rather than&nbsp;reduce the cost and let the product sell itself.</p>
+	      </td>
+	      <td class="ui-table-priority-5">
+	        <p>---- Be aware of store brands with the same packaging and look-alike. They do not contain the same thing. This is annoying. We&nbsp;don't know why abreva is not doing something about this.</p>
+	      </td>
+	      <td class="ui-table-priority-5">
+	        <div class="grayfont">
+	          Did this medication help you? <br><br><br>
+	        </div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+</ion-content>

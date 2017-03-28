@@ -1,0 +1,42 @@
+$toolbar-background-color: #03a9f4;
+
+page-self-care {
+	font-size: 16px;
+	background-image: url('../assets/img/illustration/male-model.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    height: 555px;
+	h1{
+		text-transform: capitalize;
+		font-size: 2.4em;
+	    line-height: 1.8;
+	    margin-bottom: 50px;
+	    margin-top: 30px;
+	    text-align: center;
+	    font-weight: 700;
+	}
+	.toolbar-title-md{
+		font-size: 16px;
+	}
+	.toolbar-background {
+	  background: $toolbar-background-color;
+	}
+	.toolbar-background-md{
+		background: $toolbar-background-color;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.divider1 {
+	    background-image: url(../assets/img/backgrounds/dividers/div1.png);
+	    background-repeat: repeat-x;
+	    height: 9px;
+	    background-position: left top;
+	    margin-top: 5px;
+	    margin-bottom: 5px;
+	}
+}

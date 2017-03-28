@@ -1,0 +1,60 @@
+<!--
+  Generated template for the Nearest page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Nearest Healthcare
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p>Nearest Healthcare</p>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="ui-page-theme-a">
+	<div class="opacity8">
+	  <div class="maxwidth450">
+	    <p>&nbsp;</p>
+	    <div class="ovalBorderRightBlue centerText"> 
+	      <span class="bluefontLarge">Hi,</span><br>
+	      What type of healthcare facility would you like to find? 
+	    </div>
+	    <div align="right">
+	      <img src="assets/img/pharm/male/pharm-john-port.svg" width="100">
+	    </div>
+	  </div>
+	  <div class="clearboth divider1"></div>
+	  <br>
+	</div>
+	<p>&nbsp;</p>
+	<div class="swiper-container swiper-container-horizontal swiper-container-free-mode swiper-container-android">
+		<ion-slides pager>
+	    <ion-slide *ngFor="let slide of slides" slider-width="0.5" (click)="transit(slide)">
+	      <img [src]="slide.image" alt="slide.alt" class="slide-image" height="60"/>
+	      <h2 class="slide-title">
+	        <span class="grayfontSmall" [innerHTML]="slide.gray_title"></span>
+	        <span class="{{slide.other_title_class}}" [innerHTML]="slide.other_title"></span>
+	      </h2>
+	    </ion-slide>
+	  </ion-slides>
+	</div>
+	<br>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</ion-content>

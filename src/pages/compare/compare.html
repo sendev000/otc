@@ -1,0 +1,244 @@
+<!--
+  Generated template for the Compare page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+	<ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title hide">
+      	Compare over-the-counter OTC medicines side-by-side using a comparison table. | Self-care OTC
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth bgCyan">
+  	<p class="boxSpinnerCyan"></p>
+    <p class="robotoLight">Compare</p>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="ui-page-theme-n">
+	<div class="opacity1">
+		<div class="opacity5">
+			<p>&nbsp;</p>
+		  
+			<div class="maxwidth450 paddingSides">
+				<div class="ovalBorderRightBlue">
+					<span>Choose a category of over the counter medications to <span class="redfont">compare</span> from the options below?</span><br>
+				</div>
+				<div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100"  />
+				</div>
+			</div><br>
+			<div class="clearboth"></div>
+			<hr class="hrblue">
+		</div>
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('1')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-allergy-lady.svg" height="80" alt="Find self-care over-the -counter help" />
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="greenfont roboto">Allergy Relief</span><br />
+		        	<span class="grayfontSmallSmall">Compare Allegra, Claritin, Zyrtec and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('2')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-cold-lady.svg" alt="compare cold and flu relief medications" height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="bluefont roboto">Adult Cold/Flu</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Nyquil, Tylenol cold, Sudafed and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('3')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-flu-child.svg" alt="Compare dimetapp, Triaminic, Pediacare and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="purple_redfont roboto">Child Cold/Flu</span><br />
+		        	<span class="grayfontSmallSmall">Compare Dimetapp, Triaminic and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('4')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-cough-child.svg" alt="Compare Mucinex, Delsym, Robitussin and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="orangefont roboto">Cough Relief</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Mucinex, Robitussin and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('5')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-coldsore-lady.svg" alt="Compare Abreva, Orajel, Herpecin L and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="bluefont roboto">Cold Sore</span><br />
+		        	<span class="grayfontSmallSmall">Compare Abreva, Orajel<br>Herpecin L and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('6')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-energy-man.svg" alt="Compare Redbull, Monster, AMP and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="redfont roboto">Energy Drinks</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Redbull, Monster<br>AMP and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('7')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-eyedrops-woman.svg" alt="Compare visine, zaditor, Systane and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="bluefont roboto">Eye Drops</span><br />
+		        	<span class="grayfontSmallSmall">Compare visine, zaditor<br>Systane and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('8')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-feet.svg" alt="Compare Lotrimin, Lamisil, Tinactin and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="purple_redfont roboto">Anti-fungals</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Lotrimin, Lamisil<br>Tinactin and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('9')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-heartburn-man.svg" alt="Compare Prilosec, Nexium, Pepcid AC and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="cyanfont roboto">Heartburn Relief</span> <br />
+		        	<span class="grayfontSmallSmall">Compare Prilosec, Nexium<br>Pepcid AC and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('10')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-constipation.svg" alt="Compare Ducolax, Miralax, Senna and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="greenfont roboto">Constipation Relief</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Ducolax, Miralax<br>Senna and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('11')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-bodyache-man.svg" alt="Compare Motrin, Tylenol, IcyHot and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="redfont roboto">Pain Relievers</span> <br />
+		        	<span class="grayfontSmallSmall">Compare Motrin, Tylenol<br>IcyHot and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('12')">
+	          <div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-probiotics.svg" alt="Compare Culturelle, Align, Florastor and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="orangefont roboto">Probiotic Aids</span> <br/>
+		        	<span class="grayfontSmallSmall">Compare Culturelle, Align<br>Florastor and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+
+		<ion-grid class="interface-items">
+	    <ion-row>
+	      <ion-col width-50>
+	        <ion-item class="centerText page-theme-childs" (click)="goTo('13')">
+	        	<div class="loaderBlue">
+		          <img src="assets/img/interface/icons/icon-sleeping-woman.svg" alt="Compare Melatonin, Unisom, Tylenol PM and others." height="100">
+		        </div>
+		        <br />
+		        <div>
+		        	<span class="purplefont roboto">Sleep Aids</span> <br />
+		        	<span class="grayfontSmallSmall">Compare Melatonin, Unisom<br>Tylenol PM and others.</span>
+		       	</div>
+	        </ion-item>
+	      </ion-col>
+	    </ion-row>
+		</ion-grid>
+		<hr class="hrblue">
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div>
+</ion-content>

@@ -1,0 +1,93 @@
+<ion-header class="ui-header">
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+    		<img src="assets/img/interface/logos/logo-scotc-face.svg" height="50" alt="">
+    		<span>Self-Care OTC</span>
+    	</h1>
+   	</ion-title>
+  </ion-navbar>
+  <ion-navbar>
+  	<ion-title>
+  		<p class="ui-content centerText robotoLight">Your Health, Your Care, Yourself</p>
+  	</ion-title>
+  </ion-navbar>
+</ion-header>
+	
+<ion-content padding class="ui-page-theme-b">
+  <ion-grid class="interface-items">
+    <ion-row>
+      <ion-col width-50>
+        <ion-item class="centerText" (click)="goTo('self_care')">
+          <img src="assets/img/interface/icons/faces-logo.svg" height="80" alt="Find self-care over-the -counter help" />
+          <figcaption>
+            Find Self-Care<br/>
+            <span class="bluefont">Over-The-Counter</span><br/>
+            Recommendation
+          </figcaption>
+        </ion-item>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item class="centerText" (click)="goTo('compare')">
+          <img src="assets/img/interface/icons/compare-icon.svg" height="80" alt="Compare OTC products" />
+          <figcaption>
+            Compare<br/>
+            <span class="bluefont">Over-The-Counter</span><br/>
+            Products
+          </figcaption>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr class="hrblue">
+
+  <ion-grid class="interface-items">
+    <ion-row>
+      <ion-col width-50>
+        <ion-item class="centerText" (click)="goTo('children')">
+          <img src="assets/img/interface/icons/dosing-icons.svg" height="80" alt="OTC child medication dosing" />
+          <figcaption>
+            Get Children's <br/>
+            <span class="redfont">Over The Counter</span><br/>
+            Medicine dosing
+          </figcaption>
+        </ion-item>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item class="centerText" (click)="goTo('drug')">
+          <img src="assets/img/interface/icons/coupon-scissors.svg" height="80" alt="Drug manufacturer coupons" />
+          <figcaption>
+            Drug Manufacturer<br />
+            <span class="bluefont">Savings Cards</span><br />
+            And Programs
+          </figcaption>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr class="hrblue">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides" slider-width="0.5" (click)="transit(slide)">
+      <img [src]="slide.image" alt="slide.alt" class="slide-image" height="60"/>
+      <h2 class="slide-title">
+        <span class="grayfontSmall" [innerHTML]="slide.gray_title"></span>
+        <span class="{{slide.other_title_class}}" [innerHTML]="slide.other_title"></span>
+      </h2>
+    </ion-slide>
+  </ion-slides>
+  <hr class="hrblue">
+  <ion-grid class="interface-items">
+    <ion-row>
+      <ion-col width-50>
+        <ion-item class="centerText" (click)="goTo('about')">
+          <img src="assets/img/interface/icons/information-icon.svg" height="80" alt="About this app." />
+          <figcaption>
+            About This <br/>
+            <span class="orangefont">Application</span>
+          </figcaption>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

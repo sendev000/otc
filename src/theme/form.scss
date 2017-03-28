@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* CSS Document */
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+.ui-mobile label, div.ui-controlgroup-label {
+	width:auto;
+	margin:auto;
+	position: relative;
+}
+	
+input[type='text'] {
+	/* You can set width to whatever you like */
+    width: 280px;
+	font-size: 20px;
+	color:#666;
+	padding: 2px 8px 6px 8px;
+	position: relative;
+	display: block;
+	text-transform:capitalize;
+	outline: none;
+	background:none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom:2px solid #03A9F4;
+	/*background: bottom left linear-gradient(#03A9F4, #03A9F4) no-repeat, bottom center linear-gradient(#03A9F4, #03A9F4) repeat-x, bottom right linear-gradient(#03A9F4, #03A9F4) no-repeat;
+	background-size: 2px 6px, 2px 2px, 2px 6px;*/
+}
+	
+input[type='email'], input[type='password'] {
+	/* You can set width to whatever you like */
+    width: 280px;
+	font-size: 20px;
+	color:#666;
+	padding: 2px 8px 6px 8px;
+	position: relative;
+	display: block;
+	outline: none;
+	background:none;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom:2px solid #03A9F4;
+	/*background: bottom left linear-gradient(#03A9F4, #03A9F4) no-repeat, bottom center linear-gradient(#03A9F4, #03A9F4) repeat-x, bottom right linear-gradient(#03A9F4, #03A9F4) no-repeat;
+	background-size: 2px 6px, 2px 2px, 2px 6px;*/
+}
+
+input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus {
+	border-bottom:2px solid #FF9100;	
+	/*background: bottom left linear-gradient(#FF9100, #FF9100) no-repeat, bottom center linear-gradient(#FF9100, #FF9100) repeat-x, bottom right linear-gradient(#FF9100, #FF9100) no-repeat;
+	background-size: 2px 6px, 2px 2px, 2px 6px;	*/
+}	
+
+.textArea{
+	border-top: none;
+	border-right: none;
+	border-bottom:2px solid #03A9F4;
+	border-left:2px solid #03A9F4;
+	width: 280px;
+	height: 100px;
+	padding: 8px;
+	background:none;
+}
+	
+.textArea:focus{
+	border-top: none;
+	border-right: none;
+	border-bottom:2px solid #FF9100;
+	border-left:2px solid #FF9100;
+	width: 280px;
+	height: 100px;
+	padding: 2px 8px 6px 8px;
+	background:none;
+	outline: none;
+}	
+.textAreaTitle{
+	border-top: none;
+	border-right: none;
+	border-bottom:2px solid #03A9F4;
+	border-left:2px solid #03A9F4;
+	width: 280px;
+	height: 50px;
+	padding: 8px;
+	background:none;
+}
+	
+.textAreaTitle:focus{
+	border-top: none;
+	border-right: none;
+	border-bottom:2px solid #FF9100;
+	border-left:2px solid #FF9100;
+	width: 280px;
+	height: 50px;
+	padding: 2px 8px 6px 8px;
+	background:none;
+	outline: none;
+}
+
+
+.ui-body-a,
+.ui-page-theme-a .ui-body-inherit,
+html body .ui-group-theme-a .ui-body-inherit,
+html .ui-panel-page-container-a {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+	
+/* First breakpoint at 640px (iPad)*/
+
+/* Inherits mobile styles, but floats containers to make columns */
+@media all and (min-width: 40em){
+	/*.main { float: left; width:60%; }
+	.sidebar { float: left; width:40%; }*/
+	
+input[type='text'], input[type='email'], input[type='password'] {
+    width: 480px;
+}
+
+.textArea {
+	width: 480px;
+	height: 200px;
+}
+	
+.textArea:focus {
+	width: 480px;
+	height: 200px;
+}	
+.textAreaTitle {
+	width: 480px;
+	height: 150px;
+}
+	
+.textAreaTitle:focus {
+	width: 480px;
+	height: 100px;
+}
+
+
+}
+
+/* Second breakpoint at 1024px (Desk LapTop)*/
+/* Adjusts column proportions, tweaks base H1 */
+@media all and (min-width: 64em){
+	/*.main { width:70%; }
+	.sidebar { width:30%; }*/
+
+	/* You can also tweak any other styles in a breakpoint */
+
+
+
+}

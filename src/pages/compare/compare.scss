@@ -1,0 +1,58 @@
+$toolbar-background-color: #00BCD4;
+$blue-text-color: #0093fc;
+$red-text-color: #F00;
+
+page-compare {
+	font-size: 16px;
+	h1{
+		text-transform: capitalize;
+		font-size: 2.4em;
+	    line-height: 1.8;
+	    margin-bottom: 50px;
+	    margin-top: 30px;
+	    text-align: center;
+	    font-weight: 700;
+	}
+	.boxSpinnerCyan{
+		top: 20%;
+	}
+	.toolbar-title-md{
+		font-size: 16px;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+	.toolbar-background {
+	  background: $toolbar-background-color;
+	}
+	.toolbar-background-md{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.item-md.item-block .item-inner{
+		border-bottom: 0px none;
+	}
+	ion-slide h2{
+		font-weight: bold;
+		font-size: 16px;
+	}
+	ion-slides{
+		height: 220px;
+	}
+	.slide-zoom {
+	    height: 100%;
+	}
+	.swiper-slide{
+		height: 200px !important;
+	}
+	.slide-image {
+	    max-height: 50%;
+	    max-width: 60%;
+	    margin: 18px 0;
+	}
+	.page-theme-childs{
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,157 @@
+<!--
+  Generated template for the ColdMedsChild page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title hide">
+      	Compare
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan shadowBottom">
+    <p>Children's Cold</p>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<p>&nbsp;</p>
+	<div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
+	  <a class="btn-floating btn-large cyan ui-link">
+	  <i class="large material-icons">arrow_upward</i>
+	  </a>
+	</div>
+	<div class="maxwidth450 paddingSides">
+	  <div class="ovalBorderRightBlue">
+	    <span>Compare <span class="redfont">Children's</span> <span class="bluefont">Cold</span> medications using the table below.</span><br>
+	  </div>
+	  <div align="right"><img src="assets/img/pharm/female/pharm-amanda-cyan.svg" width="100" alt="Pharmacist"> 
+	  </div>
+	</div>
+	<div class="clearboth divider1"></div>
+	<p class="grayfontSmall blueBorderAll centerText"><span class="greenfont">Show</span> and <span class="redfont">hide</span> columns with the <span class="bluefont">"Sort"</span>  button. <br>For best results in a mobile device,  <span class="redfont">check (√) one column</span> at a time due to limited screen size.</p>
+	<div class="clearboth divider1"></div>
+	<br>
+	<div class="centerText">
+	  <a href="#comment_compare_mobile" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkCyan ui-link"></a>
+	  <a href="#filterchild_cold_medsTable-pop" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkCyan ui-link" aria-haspopup="true" aria-owns="filterchild_cold_medsTable-pop" aria-expanded="false"></a>
+	</div>
+	<br>
+	<hr class="hrblue">
+	<br>
+	<div style="display: none;" id="filterchild_cold_medsTable-pop-placeholder">
+	</div>
+	<div style="display: none;" id="child_cold_meds_table-popup-placeholder">
+	</div>
+	<a href="#child_cold_meds_table-popup" class="ui-table-columntoggle-btn ui-btn ui-btn-n ui-corner-all ui-shadow ui-mini" data-rel="popup">Sort</a>
+	<table data-role="table" id="child_cold_meds_table" data-filter="true" data-input="#filterchild_cold_medsTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="n" data-column-btn-text="Sort" data-column-popup-theme="n centerText">
+	  <thead>
+	    <tr class="ui-bar-n">
+	      <th data-colstart="1"></th>
+	      <th data-priority="1" data-colstart="2" class="ui-table-priority-1">
+	        <div class="centerText">Ingredients</div>
+	      </th>
+	      <th data-priority="2" data-colstart="3" class="ui-table-priority-2">
+	        <div class="centerText">Description</div>
+	      </th>
+	      <th data-priority="2" data-colstart="4" class="ui-table-priority-2">
+	        <div class="centerText">Onset</div>
+	      </th>
+	      <th data-priority="3" data-colstart="5" class="ui-table-priority-3">
+	        <div class="centerText">Duration</div>
+	      </th>
+	      <th data-priority="4" data-colstart="6" class="ui-table-priority-4">
+	        <div class="centerText">Pros</div>
+	      </th>
+	      <th data-priority="5" data-colstart="7" class="ui-table-priority-5">
+	        <div class="centerText">Cons</div>
+	      </th>
+	      <th data-priority="5" data-colstart="8" class="ui-table-priority-5">
+	        <div class="centerText">FYI</div>
+	      </th>
+	      <th data-priority="5" data-colstart="9" class="ui-table-priority-5">
+	        <div class="centerText">User Votes</div>
+	      </th>
+	      <th data-priority="5" data-colstart="10" class="ui-table-priority-5">
+	        <div class="centerText">Avg. Cost</div>
+	      </th>
+	      <th data-priority="5" data-colstart="11" class="ui-table-priority-5">
+	        <div class="centerText">Brand Names</div>
+	      </th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th style="font-size:14px">
+	        <p><span style="color:#4B0082;">Dimetapp</span></p>
+	      </th>
+	      <td style="font-size:12px" class="ui-table-priority-1">
+	        <p><span style="color:#800080;">Cold &amp; Cough:</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	          <span style="font-size:12px;">Brompheniramine .... 2 mg<br>
+	          Dextromethorphan .... 10 mg<br>
+	          Phenylephrine ........... 5 mg<br>
+	          in each 10 ml liquid</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </p>
+	        <p><span style="color:#4B0082;">Cold &amp; Allergy:</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	          <span style="font-size:12px;">Brompheniramine .... 2 mg<br>
+	          Phenylephrine &nbsp;........ 10 mg<br>
+	          in each 10 ml liquid.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </p>
+	        <p><span style="color:#006699;">Multi-Symptom Cold &amp; Flu:</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	          <span style="font-size:12px;">Acetaminophen .... 320 mg<br>
+	          Diphenhydramine HCL .. 12.5 mg<br>
+	          Phenylephrine ....... 5 mg<br>
+	          in each 10&nbsp;ml liquid.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </p>
+	        <p><span style="color:#cc3333;">Long Lasting Cough Plus Cold:</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	          <span style="font-size:12px;">Chlorpheniramine maleate ... 2 mg<br>
+	          Dextromethorphan HBr ........ 15 mg<br>
+	          in 10 ml liquid.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </p>
+	        <p><span style="font-size:12px;"><span style="color:#6633cc;">Nighttime Cold &amp; Congestion:</span></span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	          <span style="font-size:12px;">Diphenhydramine .... 12.5 mg<br>
+	          Phenylephrine ......... 5 mg<br>
+	          in each 10 ml liquid</span>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </p>
+	        <p><br>
+	          &nbsp;
+	        </p>
+	      </td>
+	      <td style="font-size:14px" class="ui-table-priority-2">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-2">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-3">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-4">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-5">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-5">
+	        - - - -             
+	      </td>
+	      <td class="ui-table-priority-5">
+	        <div class="grayfont">
+	          Did this medication help your child? <br><br><br>
+	        </div>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+</ion-content>

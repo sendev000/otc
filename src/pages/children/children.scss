@@ -1,0 +1,30 @@
+$toolbar-background-color: #E91E63;
+page-children {
+	font-size: 16px;
+	background-image: url(../assets/img/dosing/pink-balls.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    min-height: 699px;
+	display: block;
+    overflow: visible;
+    overflow-x: hidden;
+
+	.toolbar-background-md, .toolbar-background, .toolbar-background-ios{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.divider1 {
+	    background-image: url(../assets/img/backgrounds/dividers/div1.png);
+	    background-repeat: repeat-x;
+	    height: 9px;
+	    background-position: left top;
+	    margin-top: 5px;
+	    margin-bottom: 5px;
+	}
+	.boxSpinnerRed{
+		top: 20%;
+	}
+}

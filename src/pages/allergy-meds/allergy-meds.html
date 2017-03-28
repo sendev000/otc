@@ -17,145 +17,144 @@
       </button>
     </ion-buttons>
 	</ion-navbar>
-  <ion-navbar class="fullWidth robotoLight bgLightGreen z-depth-1">
-    <p>Allergy medications</p>
-  </ion-navbar>
 </ion-header>
 
-
-<ion-content>
-	<p>&nbsp;</p>
-  <div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
-    <a class="btn-floating btn-large light-green ui-link">
-    <i class="large material-icons">arrow_upward</i>
-    </a>
-  </div>
-  <div class="maxwidth450 paddingSides">
-    <div class="ovalBorderRightGreen">
-      <span>Compare <span class="greenfont">allergy</span> medications using the table below.</span><br>
+<ion-content class="ui-page-theme-h" has-subheader="true">
+  <ion-header class="ui-header">
+    <ion-navbar class="fullWidth robotoLight bgLightGreen z-depth-1">
+      <p>Allergy medications</p>
+    </ion-navbar>
+  </ion-header>
+  <div class="fullWidth" #mainBody>
+  	<p>&nbsp;</p>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
+      <a class="btn-floating btn-large light-green ui-link">
+      <i class="large material-icons">arrow_upward</i>
+      </a>
     </div>
-    <div align="right">
-      <img src="assets/img/pharm/female/pharm-alicia-green.svg" width="100" alt="Pharmacist"> 
-    </div>
-  </div>
-  <div class="clearboth divider1"></div>
-  <p class="grayfontSmall greenBorderAll centerText nextDiv"><span class="greenfont">Show</span> and <span class="redfont">hide</span> columns with the <span class="bluefont">"Sort"</span>  button. <br>For best results in a mobile device,  <span class="redfont">check (√) one column</span> at a time.</p>
-  <div class="clearboth divider1"></div>
-  <br>
-  <p>&nbsp;</p>
-  <div class="feedbackCompare" style="display: none;">
-    <div class="alertWidth">
-      <div class="maxwidth250">
-        <div class="ovalBorderRightGreen centerText">
-          <span>Help improve this comparison of OTC allergy medications.</span><br>
-        </div>
-        <div align="right"><img src="assets/img/pharm/female/pharm-alicia-green.svg" alt="Pharmacist Alicia" width="80"></div>
+    <div class="maxwidth450 paddingSides">
+      <div class="ovalBorderRightGreen">
+        <span>Compare <span class="greenfont">allergy</span> medications using the table below.</span><br>
       </div>
-      <div class="clearboth"></div>
-      <hr class="hrgreen">
-      <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
-      <hr class="hrgreen">
+      <div align="right">
+        <img src="assets/img/pharm/female/pharm-alicia-green.svg" width="100" alt="Pharmacist"> 
+      </div>
+    </div>
+    <div class="clearboth divider1"></div>
+    <p class="grayfontSmall greenBorderAll centerText nextDiv"><span class="greenfont">Show</span> and <span class="redfont">hide</span> columns with the <span class="bluefont">"Sort"</span>  button. <br>For best results in a mobile device,  <span class="redfont">check (√) one column</span> at a time.</p>
+    <div class="clearboth divider1"></div>
+    <br>
+    <p>&nbsp;</p>
+    <div class="feedbackCompare" style="display: none;">
+      <div class="alertWidth">
+        <div class="maxwidth250">
+          <div class="ovalBorderRightGreen centerText">
+            <span>Help improve this comparison of OTC allergy medications.</span><br>
+          </div>
+          <div align="right"><img src="assets/img/pharm/female/pharm-alicia-green.svg" alt="Pharmacist Alicia" width="80"></div>
+        </div>
+        <div class="clearboth"></div>
+        <hr class="hrgreen">
+        <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
+        <hr class="hrgreen">
+      </div>
+    </div>
+    <div class="centerText">
+      <a href="#" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkGreen ui-link" (click)="showCommentCompare()"></a>
+      <a href="#" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkGreen ui-link" aria-haspopup="true" aria-owns="filterallergy_medsTable-pop" aria-expanded="false" (click)="toggleSearchDlg(true)"></a>
+    </div>
+    <br>
+    <hr class="hrgreen">
+    <br>
+    <div style="display: none;" id="filterallergy_medsTable-pop-placeholder">
+    </div>
+    <div class="marginR30">
+      <div style="display: none;" id="allergy_meds_table-popup-placeholder">
+      </div>
+      <a href="#" class="ui-table-columntoggle-btn ui-btn ui-btn-g ui-corner-all ui-shadow ui-mini" data-rel="popup" (click)="toggleSortDlg(true)">Sort</a>
+      <table data-role="table" id="allergy_meds_table" data-filter="true" data-input="#filterallergy_medsTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="g" data-column-btn-text="Sort" data-column-popup-theme="g">
+        <thead>
+          <tr class="ui-bar-h">
+            <th data-colstart="1"></th>
+
+            <th data-priority="1" data-colstart="2" class="ui-table-priority-2" [ngClass]="{'ui-table-cell-visible': ShowTabs[0]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[0]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="3" class="ui-table-priority-2" [ngClass]="{'ui-table-cell-visible': ShowTabs[1]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[1]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="4" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[2]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[2]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="5" class="ui-table-priority-4" [ngClass]="{'ui-table-cell-visible': ShowTabs[3]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[3]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="6" class="ui-table-priority-5" [ngClass]="{'ui-table-cell-visible': ShowTabs[4]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[4]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="7" class="ui-table-priority-5" [ngClass]="{'ui-table-cell-visible': ShowTabs[5]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[5]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="8" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[6]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[6]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="9" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[7]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[7]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="10" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[8]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[8]['title']}}</div>
+            </th>
+            <th data-priority="1" data-colstart="11" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[9]['ui-checkbox-on']}">
+              <div class="centerText">{{ShowTabs[9]['title']}}</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eachData of TableData">
+            <th style="font-size:14px"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['drug_name'])"></div></th>
+            <td style="font-size:14px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[0]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['description'])"></div></td>
+            <td style="font-size:12px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[1]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['ingredients'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[2]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['onset'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[3]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['duration'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[4]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['pros'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[5]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['cons'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[6]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['comments'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[7]['ui-checkbox-off']}">
+              <div class="grayfont">
+                Did this medication help you? <br><br><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['user_vote'])"></div>
+                What about you?                       
+              </div>
+            </td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[8]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['cost'])"></div></td>
+            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[9]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['brand_names'])"></div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="centerText">
-    <a href="#" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkGreen ui-link" (click)="showCommentCompare()"></a>
-    <a href="" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkGreen ui-link" aria-haspopup="true" aria-owns="filterallergy_medsTable-pop" aria-expanded="false"></a>
-  </div>
-  <br>
-  <hr class="hrgreen">
-  <br>
-  <div style="display: none;" id="filterallergy_medsTable-pop-placeholder">
-  </div>
-  <div class="marginR30">
-    <div style="display: none;" id="allergy_meds_table-popup-placeholder">
+  <div class="ui-popup-screen ui-overlay-b in" id="filterallergy_medsTable-pop-screen" *ngIf="SearchDlg.show" (click)="toggleSearchDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+  <div class="ui-popup-container pop in ui-popup-active" id="filterallergy_medsTable-pop-popup" *ngIf="SearchDlg.show" [ngStyle]="{'max-width': SearchDlg.maxWidth+'px','top': SearchDlg.top+'px', 'left': SearchDlg.left+'px'}">
+    <div data-role="popup" id="filterallergy_medsTable-pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+      <a href="#" data-rel="back" data-role="button" data-icon="check" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-check ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleSearchDlg(false)">Close</a>
+      <form>
+        <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+          <input id="filterallergy_medsTable-input" type="text" data-type="search" name="search" data-clear-btn="false" placeholder="Find Allergy Medication" [(ngModel)]="searchText">
+          <a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" title="Clear text" *ngIf="searchText.length>0" (click)="clearSearch()">Clear text</a>
+        </div>
+      </form>
     </div>
-    <a href="" class="ui-table-columntoggle-btn ui-btn ui-btn-g ui-corner-all ui-shadow ui-mini" data-rel="popup">Sort</a>
-    <table data-role="table" id="allergy_meds_table" data-filter="true" data-input="#filterallergy_medsTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="g" data-column-btn-text="Sort" data-column-popup-theme="g">
-      <thead>
-        <tr class="ui-bar-h">
-          <th data-colstart="1"></th>
-          <th data-priority="1" data-colstart="2" class="ui-table-priority-1">
-            <div class="centerText">Description</div>
-          </th>
-          <th data-priority="2" data-colstart="3" class="ui-table-priority-2">
-            <div class="centerText">How supplied</div>
-          </th>
-          <th data-priority="3" data-colstart="4" class="ui-table-priority-3">
-            <div class="centerText">Onset</div>
-          </th>
-          <th data-priority="4" data-colstart="5" class="ui-table-priority-4">
-            <div class="centerText">Duration</div>
-          </th>
-          <th data-priority="5" data-colstart="6" class="ui-table-priority-5">
-            <div class="centerText">Pros</div>
-          </th>
-          <th data-priority="5" data-colstart="7" class="ui-table-priority-5">
-            <div class="centerText">Cons</div>
-          </th>
-          <th data-priority="6" data-colstart="8" class="ui-table-priority-6">
-            <div class="centerText">FYI</div>
-          </th>
-          <th data-priority="6" data-colstart="9" class="ui-table-priority-6">
-            <div class="centerText">User Votes</div>
-          </th>
-          <th data-priority="6" data-colstart="10" class="ui-table-priority-6">
-            <div class="centerText">Avg. Cost</div>
-          </th>
-          <th data-priority="6" data-colstart="11" class="ui-table-priority-6">
-            <div class="centerText">Brand Names</div>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th style="font-size:14px">
-            <p><span style="color:#ff0066;">Diphenhydramine</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p><img alt="" src="{{AbsoluteURL}}/admin/images/articles/html_editor_uploads/diphenhydramine.jpg" style="width: 40px; height: 42px;"></p>
-          </th>
-          <td style="font-size:14px" class="ui-table-priority-1">
-            <p><span style="font-size:14px;"><span style="color:#FF0000;"><span style="font-size:12px;">1.</span></span> R</span><span style="font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19.68000030517578px;"><span style="font-size:14px;">elieves red, irritated, itchy, watery eyes; sneezing; and runny nose caused by hay fever, allergies, or the common cold.&nbsp;<br>
-              <span style="color:#FF0000;"><span style="font-size:12px;">2.</span></span>&nbsp;Relieves cough caused by minor throat or airway irritation.<br>
-              <span style="color:#FF0000;"><span style="font-size:12px;">3.</span></span> Prevent and treat motion sickness.<br>
-              <span style="color:#FF0000;"><span style="font-size:12px;">4.</span></span>&nbsp;&nbsp;Insomnia.&nbsp;<span style="font-size:12px;">(difficulty falling asleep or staying asleep).</span><br>
-              <span style="color:#FF0000;"><span style="font-size:12px;">5.</span></span> Treatment of hives or allergic reactions.</span></span>
-            </p>
-          </td>
-          <td style="font-size:12px" class="ui-table-priority-2">
-            <p><span style="color:#EE82EE;"><span style="font-size:12px;">1.&nbsp;</span></span><span style="color: rgb(65, 65, 65); font-family: Tahoma; font-size: 11px; line-height: 17px;"><span style="font-size:14px;">Diphenhydramine HCl 25 mg / tablet</span></span><br>
-              <span style="color:#800080;"><span style="font-family: Tahoma; font-size: 11px; line-height: 17px;"><span style="font-size:14px;"><span style="font-size:12px;">2.</span></span></span></span><span style="color: rgb(65, 65, 65); font-family: Tahoma; font-size: 11px; line-height: 17px;"><span style="font-size:14px;">&nbsp;Diphenhydramine HCl 12.5 mg / 5ml liquid</span></span>
-            </p>
-          </td>
-          <td class="ui-table-priority-3">
-            <p>1 hour</p>
-          </td>
-          <td class="ui-table-priority-4">
-            <p>6 to 8 hours</p>
-          </td>
-          <td class="ui-table-priority-5">
-            <p><span style="font-size:14px;"><span style="font-size:12px;"><span style="color:#FF0000;">1.</span></span>&nbsp;Also good for cough and cold symptoms compared to the second generation antihistamines<br>
-              <span style="font-size:12px;"><span style="color:#4B0082;">2.</span></span> Nightime cough and runny nose.<br>
-              <span style="color:#FF0000;"><span style="font-size:12px;">3. </span></span>M<span style="color: rgb(37, 37, 37); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 21px;">ore potent in treatment of allergies than second generation antihistamines.</span><span style="color:#FF0000;"><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 21px;"><span style="font-size:12px;"> </span></span></span><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 21px;"><span style="font-size:12px;">(<span style="color:#FF0000;">Advantage </span>in fast reversal of allergic reactions due to histamine release).</span></span></span>
-            </p>
-          </td>
-          <td class="ui-table-priority-5">
-            <p><span style="font-size:14px;"><span style="font-size:12px;"><span style="color:#EE82EE;">1.</span></span> Drowsiness<br>
-              <span style="font-size:12px;"><span style="color:#FF0000;">2.</span></span> Dry mouth and throat.<br>
-              <span style="font-size:12px;"><span style="color:#800080;">3.</span></span> Increased heart rate.<br>
-              <span style="font-size:12px;"><span style="color:#008000;">4.</span></span> Slow reaction time. (Even if you are not drowsy, reaction time will &nbsp;be slower than usual).<br>
-              <span style="font-size:12px;"><span style="color:#4B0082;">5.</span></span> Excitability in children.<br>
-              <span style="font-size:12px;"><span style="color:#FF0000;">6.</span></span> Not for children less than 6 years old.</span>
-            </p>
-          </td>
-          <td class="ui-table-priority-6">
-            <p><span style="font-size:12px;"><span style="color:#FF0000;">1.</span></span> After drowsiness effect wears off, reaction time may still be slower than normal. Note this while driving the next morning after using it for sleep or other things.</p>
-          </td>
-          <td class="ui-table-priority-6">
-            <div class="grayfont">
-              Did this medication help you? <br><br><br>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  </div>
+  <div class="ui-popup-screen ui-overlay-inherit" id="allergy_meds_table-popup-screen" *ngIf="SortDlg.show" (click)="toggleSortDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+  <div class="ui-popup-container ui-popup-active" id="allergy_meds_table-popup-popup" *ngIf="SortDlg.show" [ngStyle]="{'max-width': SortDlg.maxWidth+'px','top': SortDlg.top+'px', 'left': SortDlg.left+'px'}">
+    <div class="ui-table-columntoggle-popup ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="allergy_meds_table-popup">
+      <fieldset class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+        <div class="ui-controlgroup-controls ">
+          <div class="ui-checkbox" *ngFor="let tabs of ShowTabs" (click)="toggleSort(tabs)">
+            <label class="ui-btn ui-corner-all ui-btn-g ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': tabs['ui-checkbox-on'], 'ui-checkbox-off': tabs['ui-checkbox-off']}">{{tabs.title}}</label>
+            <input type="checkbox" checked="">
+          </div>
+        </div>
+      </fieldset>
+    </div>
   </div>
 </ion-content>

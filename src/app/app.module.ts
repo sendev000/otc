@@ -19,7 +19,7 @@ import { ChildrenClinicPage } from '../pages/children-clinic/children-clinic';
 import { DentalCarePage } from '../pages/dental-care/dental-care';
 import { PharmacyCarePage } from '../pages/pharmacy-care/pharmacy-care';
 
-
+import { TableSearchPipe } from '../pages/providers/table-sort-pipe.ts';
 import { AllergyMedsPage } from '../pages/allergy-meds/allergy-meds';
 import { ColdMedsPage } from '../pages/cold-meds/cold-meds';
 import { ColdMedsChildPage } from '../pages/cold-meds-child/cold-meds-child';

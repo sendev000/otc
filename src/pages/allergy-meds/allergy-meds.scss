@@ -2,12 +2,18 @@ $toolbar-background-color: #8BC34A;
 
 page-allergy-meds {
 	font-size: 16px;
-	color: rgba(0,0,0,0.87);
-	line-height: 1.4em;
-	background-color: #FFF;
-
-	.toolbar-background-md{
+	.toolbar-background, .toolbar-background-md, .toolbar-background-ios{
 		background: $toolbar-background-color;
+		border: 0px none !important;
+	}
+	ion-navbar{
+		height: 55px !important;
+	}
+	fieldset.ui-controlgroup{
+		border: 0px none !important;
+	}
+	.ui-input-search input{
+		padding-left: 1.75em !important;
 	}
 	.bar-button-md{
 		padding: 0px;
@@ -19,7 +25,6 @@ page-allergy-meds {
 		font-weight: bold;
 		font-size: 16px;
 	}
-
 	ion-slides{
 		height: 220px;
 	}

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController, NavParams, MenuController, Content, Platform } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Http } from '@angular/http';
@@ -74,7 +74,11 @@ export class AllergyMedsPage {
   ];
   MyContent = {
     width: 0,
-    height: 0
+    height: 0,
+    screenWidth: 0,
+    screenHeight: 0,
+    scrollPos: 0,
+    isArrowShow: false
   }
   SearchDlg = {
     show: false,
@@ -96,12 +100,11 @@ export class AllergyMedsPage {
   AbsoluteURL: string;
   RestApiURL: string;
   TableData: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, public http: Http, private sanitizer: DomSanitizer, public platform: Platform) {
+  TableTempData: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, 
+    public http: Http, private sanitizer: DomSanitizer, public platform: Platform) {
     this.menu = menu;
-    this.AbsoluteURL = GlobalVars.getAbsoluteURL();
-    this.RestApiURL = GlobalVars.getApiURL() + "page=allergy_meds";
-    this.searchText = "";
-    this.TableData = [];
+    this.initData();
   }
   showCommentCompare () {
     this.navCtrl.push(CommentComparePage);
@@ -121,10 +124,10 @@ export class AllergyMedsPage {
       if (this.elementView.nativeElement.offsetWidth > 500)
         this.SearchDlg.width = 400;
       else
-        this.SearchDlg.width = this.elementView.nativeElement.offsetWidth * 0.8;
-      this.SearchDlg.maxWidth = this.elementView.nativeElement.offsetWidth * 0.8;
-      this.SearchDlg.left = (this.platform.width() - this.SearchDlg.width) / 2;
-      this.SearchDlg.top = (this.platform.height() - this.SearchDlg.height) / 2 + scrollPos;
+        this.SearchDlg.width = this.MyContent.width * 0.8;
+      this.SearchDlg.maxWidth = this.MyContent.width * 0.8;
+      this.SearchDlg.left = (this.MyContent.screenWidth - this.SearchDlg.width) / 2;
+      this.SearchDlg.top = (this.MyContent.screenHeight - this.SearchDlg.height) / 2 + scrollPos;
     }
     this.SearchDlg.show = b;
   }
@@ -137,9 +140,9 @@ export class AllergyMedsPage {
         this.MyContent.height = this.elementView.nativeElement.offsetHeight + 56;
         this.MyContent.width = this.elementView.nativeElement.offsetWidth;
       }
-      this.SortDlg.maxWidth = this.elementView.nativeElement.offsetWidth * 0.8;
-      this.SortDlg.left = this.platform.width() - this.SortDlg.width - 20;
-      this.SortDlg.top = (this.platform.height()- this.SortDlg.height) / 2 + scrollPos;
+      this.SortDlg.maxWidth = this.MyContent.width * 0.8;
+      this.SortDlg.left = this.MyContent.screenWidth - this.SortDlg.width - 20;
+      this.SortDlg.top = (this.MyContent.screenHeight - this.SortDlg.height) / 2 + scrollPos;
     }
     this.SortDlg.show = b;
   }
@@ -149,20 +152,69 @@ export class AllergyMedsPage {
   }
   clearSearch() {
     this.searchText = "";
+    this.TableTempData = this.TableData;
+  }
+  filterItems(searchbar) {
+    var q = this.searchText;
+    this.TableTempData = this.TableData;
+    if (q.length == 0) {
+      return;
+    }
+    this.TableTempData = this.TableTempData.filter((v) => {
+      var found = false;
+      Object.keys(v).forEach(function(key) {
+        if (v[key].toLowerCase().indexOf(q.toLowerCase()) > -1)
+        {
+          found = true; return false;
+        }
+      });
+      return found;
+    })
+  }
+  initData() {
+    this.AbsoluteURL = GlobalVars.getAbsoluteURL();
+    this.RestApiURL = GlobalVars.getApiURL() + "page=allergy_meds";
+    this.searchText = "";
+    this.TableData = [];
+    this.TableTempData = [];
+    this.MyContent.screenWidth = this.platform.width();
+    this.MyContent.screenHeight = this.platform.height();
+    this.MyContent.scrollPos = 0;
+    this.MyContent.isArrowShow = false;
   }
   loadData() {
     //this.RestApiURL
     this.http.get(this.RestApiURL).map(res => res.json())
       .subscribe(data => {
-        this.TableData = data;
+        this.TableTempData = this.TableData = data;
       }),
       err => {
         console.log("Oops!");
       }
   }
+  gotoTop(scrollDuration) {
+    this.content.scrollToTop(scrollDuration);
+  }
+  getScrollPosition(event) {
+    var arrow = document.getElementById('arrow_upward');
+    this.MyContent.scrollPos = event.scrollTop;
+    if (this.MyContent.scrollPos >= this.MyContent.screenHeight){
+      this.MyContent.isArrowShow = true;
+      arrow.style.display = 'block';
+    }
+    else{
+      this.MyContent.isArrowShow = false;
+      arrow.style.display = 'none';
+    }
+  }
+  ngAfterViewInit() {
+    this.content.enableScrollListener();
+    this.content.ionScroll.subscribe((event) => {
+      this.getScrollPosition(event);
+    });
+  }
   ionViewDidLoad() {
     this.loadData();
   }
-
 }
 

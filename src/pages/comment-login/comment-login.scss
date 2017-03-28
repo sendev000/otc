@@ -2,13 +2,13 @@ $toolbar-background-color: #03a9f4;
 
 page-comment-login {
 	font-size: 16px;
-	background-image: url(../assets/img/dosing/blue-balls.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
-    height: 620px;
-
-	.toolbar-background-md{
+    .ui-content{
+    	background-image: url(../assets/img/dosing/blue-balls.jpg);
+	    background-repeat: no-repeat;
+	    background-position: bottom;
+	    background-attachment: fixed;
+    }
+	.toolbar-background-md, .toolbar-background, .toolbar-background-ios{
 		background: $toolbar-background-color;
 	}
 	.bar-button-md{

@@ -4,8 +4,8 @@ page-comment-compare {
 	font-size: 16px;
 	background-color: #FFF;
 
-	.toolbar-background-md{
-		background: $toolbar-background-color;
+	.toolbar-background, .toolbar-background-md, .toolbar-background-ios {
+	  background: $toolbar-background-color;
 	}
 	.bar-button-md{
 		padding: 0px;
@@ -40,7 +40,7 @@ page-comment-compare {
 	}
 	.mini-navbar{
 		min-height: 26px;
-	    height: 26px;
+	    height: 36px;
 	    padding: 12px 4px 0px;
 	}
 	.ui-header .ui-title{

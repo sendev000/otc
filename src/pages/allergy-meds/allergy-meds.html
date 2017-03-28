@@ -27,8 +27,8 @@
   </ion-header>
   <div class="fullWidth" #mainBody>
   	<p>&nbsp;</p>
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
-      <a class="btn-floating btn-large light-green ui-link">
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;" id="arrow_upward">
+      <a class="btn-floating btn-large light-green ui-link" href="#" (click)="gotoTop(1000)">
       <i class="large material-icons">arrow_upward</i>
       </a>
     </div>
@@ -110,7 +110,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let eachData of TableData">
+          <tr *ngFor="let eachData of TableTempData">
             <th style="font-size:14px"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['drug_name'])"></div></th>
             <td style="font-size:14px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[0]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['description'])"></div></td>
             <td style="font-size:12px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[1]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['ingredients'])"></div></td>
@@ -131,14 +131,15 @@
         </tbody>
       </table>
     </div>
+    <p>&nbsp;</p>
   </div>
   <div class="ui-popup-screen ui-overlay-b in" id="filterallergy_medsTable-pop-screen" *ngIf="SearchDlg.show" (click)="toggleSearchDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
-  <div class="ui-popup-container pop in ui-popup-active" id="filterallergy_medsTable-pop-popup" *ngIf="SearchDlg.show" [ngStyle]="{'max-width': SearchDlg.maxWidth+'px','top': SearchDlg.top+'px', 'left': SearchDlg.left+'px'}">
+  <div class="ui-popup-container pop in ui-popup-active" id="filterallergy_medsTable-pop-popup" *ngIf="SearchDlg.show" [ngStyle]="{'max-width': SearchDlg.maxWidth+'px','top': SearchDlg.top+'px', 'left': SearchDlg.left+'px', 'width': SearchDlg.width+'px'}">
     <div data-role="popup" id="filterallergy_medsTable-pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
       <a href="#" data-rel="back" data-role="button" data-icon="check" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-check ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleSearchDlg(false)">Close</a>
       <form>
         <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
-          <input id="filterallergy_medsTable-input" type="text" data-type="search" name="search" data-clear-btn="false" placeholder="Find Allergy Medication" [(ngModel)]="searchText">
+          <input id="filterallergy_medsTable-input" type="text" data-type="search" name="search" data-clear-btn="false" placeholder="Find Allergy Medication" [(ngModel)]="searchText" (input)="filterItems($event)" />
           <a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" title="Clear text" *ngIf="searchText.length>0" (click)="clearSearch()">Clear text</a>
         </div>
       </form>

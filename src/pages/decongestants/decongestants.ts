@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the AllergyMeds page.
+  Generated class for the Decongestants page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -14,10 +14,11 @@ import { GlobalVars } from '../providers/globalvars';
 import { CommentComparePage } from '../comment-compare/comment-compare';
 
 @Component({
-  selector: 'page-allergy-meds',
-  templateUrl: 'allergy-meds.html'
+  selector: 'page-decongestants',
+  templateUrl: 'decongestants.html'
 })
-export class AllergyMedsPage {
+export class DecongestantsPage {
+
   @ViewChild('mainBody') elementView: ElementRef;
   @ViewChild(Content) content: Content;
   ShowTabs = [
@@ -173,7 +174,7 @@ export class AllergyMedsPage {
   }
   initData() {
     this.AbsoluteURL = GlobalVars.getAbsoluteURL();
-    this.RestApiURL = GlobalVars.getApiURL() + "page=allergy_meds";
+    this.RestApiURL = GlobalVars.getApiURL() + "page=decongestants";
     this.searchText = "";
     this.TableData = [];
     this.TableTempData = [];
@@ -218,5 +219,5 @@ export class AllergyMedsPage {
     var arrow = document.getElementById('arrow_upward');
     arrow.style.display = 'none';
   }
-}
 
+}

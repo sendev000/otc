@@ -19,7 +19,6 @@ import { ChildrenClinicPage } from '../pages/children-clinic/children-clinic';
 import { DentalCarePage } from '../pages/dental-care/dental-care';
 import { PharmacyCarePage } from '../pages/pharmacy-care/pharmacy-care';
 
-import { TableSearchPipe } from '../pages/providers/table-sort-pipe.ts';
 import { AllergyMedsPage } from '../pages/allergy-meds/allergy-meds';
 import { ColdMedsPage } from '../pages/cold-meds/cold-meds';
 import { ColdMedsChildPage } from '../pages/cold-meds-child/cold-meds-child';
@@ -41,6 +40,10 @@ import { NearestPage } from '../pages/nearest/nearest';
 
 import { CommentComparePage } from '../pages/comment-compare/comment-compare';
 import { CommentLoginPage } from '../pages/comment-login/comment-login';
+
+import { DecongestantsPage } from '../pages/decongestants/decongestants';
+import { MultisymptomsPage } from '../pages/multisymptoms/multisymptoms';
+import { ImmuneboostersPage } from '../pages/immuneboosters/immuneboosters';
 
 @NgModule({
   declarations: [
@@ -79,7 +82,11 @@ import { CommentLoginPage } from '../pages/comment-login/comment-login';
     NearestPage,
 
     CommentComparePage,
-    CommentLoginPage
+    CommentLoginPage,
+
+    DecongestantsPage,
+    MultisymptomsPage,
+    ImmuneboostersPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -121,7 +128,11 @@ import { CommentLoginPage } from '../pages/comment-login/comment-login';
     NearestPage,
 
     CommentComparePage,
-    CommentLoginPage
+    CommentLoginPage,
+
+    DecongestantsPage,
+    MultisymptomsPage,
+    ImmuneboostersPage
   ],
   providers: [
     StatusBar,

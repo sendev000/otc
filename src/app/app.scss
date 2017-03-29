@@ -15,6 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+.ui-header.header::after,
+.ui-header.header-md::after,
+.ui-header.header-ios::after{
+	height: 0px;
+}
 .ui-title{
 	color: #FFF !important;
 	width: 100% !important;
@@ -38,6 +43,7 @@ ion-header{
 .item-md.item-block .item-inner, 
 .item-ios.item-block .item-inner{
 	border-bottom: 0px none;
+	text-align: center;
 }
 .interface-items .row {
 	margin: 0;

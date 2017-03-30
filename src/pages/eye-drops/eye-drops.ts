@@ -8,6 +8,9 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { DryEyeDropsPage } from '../dry-eye-drops/dry-eye-drops';
+import { RedEyeDropsPage } from '../red-eye-drops/red-eye-drops';
+import { ItchyEyeDropsPage } from '../itchy-eye-drops/itchy-eye-drops';
 
 @Component({
   selector: 'page-eye-drops',
@@ -15,6 +18,11 @@ import { GlobalVars } from '../providers/globalvars';
 })
 export class EyeDropsPage {
 	AbsoluteURL: string;
+  pages = [
+    DryEyeDropsPage,
+    RedEyeDropsPage,
+    ItchyEyeDropsPage
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
@@ -22,7 +30,9 @@ export class EyeDropsPage {
   showMenu() {
   	this.menu.open();
   }
-
+  showPage(id: number) {
+    this.navCtrl.push(this.pages[id]);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EyeDropsPage');

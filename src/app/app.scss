@@ -48,6 +48,12 @@ ion-header{
 .interface-items .row {
 	margin: 0;
 }
+.ui-popup-container.ui-popup-active{
+	background: #FFF;
+}
+.comment_why_div ul li{
+	list-style-type: inherit;
+}
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

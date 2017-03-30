@@ -15,16 +15,21 @@ import { CommentLoginPage } from '../comment-login/comment-login';
   templateUrl: 'comment-compare.html'
 })
 export class CommentComparePage {
-	AbsoluteURL: string;
+	reasonShown: boolean;
+  AbsoluteURL: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
-  	this.menu = menu;
-  	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
+    this.menu = menu;
+    this.AbsoluteURL = GlobalVars.getAbsoluteURL();
+    this.reasonShown = false;
   }
   showMenu() {
-  	this.menu.open();
+    this.menu.open();
   }
   showComment() {
-  	this.navCtrl.push(CommentLoginPage);
+    this.navCtrl.push(CommentLoginPage);
+  }
+  toggleReason() {
+      this.reasonShown = !this.reasonShown;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommentComparePage');

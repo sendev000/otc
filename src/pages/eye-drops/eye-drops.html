@@ -24,7 +24,7 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ui-page-theme-a">
 	<p>&nbsp;</p>
 	<div class="maxwidth450 paddingSides">
 	  <div class="ovalBorderRightBlue">
@@ -37,9 +37,9 @@
 	<br>
 	<p>&nbsp;</p>
 	<div align="center"> 
-	  <a href="#dry_eye_drops" class="linkBlueBorder ui-link" data-inline="true">Dry</a>
-	  <a href="#red_eye_drops" class="linkRedBorder ui-link" data-inline="true">Red</a>
-	  <a href="#itchy_eye_drops" class="linkGreenBorder ui-link" data-inline="true">Itchy</a>
+	  <a href="#" class="linkBlueBorder ui-link" data-inline="true" (click)="showPage(0)">Dry</a>
+	  <a href="#" class="linkRedBorder ui-link" data-inline="true" (click)="showPage(1)">Red</a>
+	  <a href="#" class="linkGreenBorder ui-link" data-inline="true" (click)="showPage(2)">Itchy</a>
 	</div>
 	<div class="feedbackAlert mbsc-comp" style="display: none;" id="mobiscroll1488911225326">
 	  <div class="alertWidth">

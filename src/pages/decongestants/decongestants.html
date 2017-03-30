@@ -27,7 +27,7 @@
   </ion-header>
 	<div class="fullWidth" role="main" #mainBody>
 	    <p>&nbsp;</p>
-	    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;" id="arrow_upward">
+	    <div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;" id="arrow_upward">
 	        <a class="btn-floating btn-large pink ui-link" href="#" (click)="gotoTop(1000)">
 	        <i class="large material-icons">arrow_upward</i>
 	        </a>
@@ -70,10 +70,10 @@
 	        <thead>
 	            <tr class="ui-bar-i">
 	            	<th data-colstart="1"></th>
-		            <th data-priority="1" data-colstart="2" class="ui-table-priority-2" [ngClass]="{'ui-table-cell-visible': ShowTabs[0]['ui-checkbox-on']}">
+		            <th data-priority="1" data-colstart="2" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[0]['ui-checkbox-on']}">
 		              <div class="centerText">{{ShowTabs[0]['title']}}</div>
 		            </th>
-		            <th data-priority="1" data-colstart="3" class="ui-table-priority-2" [ngClass]="{'ui-table-cell-visible': ShowTabs[1]['ui-checkbox-on']}">
+		            <th data-priority="1" data-colstart="3" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[1]['ui-checkbox-on']}">
 		              <div class="centerText">{{ShowTabs[1]['title']}}</div>
 		            </th>
 		            <th data-priority="1" data-colstart="4" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[2]['ui-checkbox-on']}">
@@ -105,8 +105,8 @@
 	        <tbody>
 	            <tr *ngFor="let eachData of TableTempData">
 		            <th style="font-size:14px"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['drug_name'])"></div></th>
-		            <td style="font-size:14px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[0]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['description'])"></div></td>
-		            <td style="font-size:12px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[1]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['ingredients'])"></div></td>
+		            <td style="font-size:14px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[0]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['ingredients'])"></div></td>
+		            <td style="font-size:12px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[1]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['description'])"></div></td>
 		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[2]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['onset'])"></div></td>
 		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[3]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['duration'])"></div></td>
 		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[4]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['pros'])"></div></td>
@@ -145,7 +145,7 @@
 	  <fieldset class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
 	    <div class="ui-controlgroup-controls ">
 	      <div class="ui-checkbox" *ngFor="let tabs of ShowTabs" (click)="toggleSort(tabs)">
-	        <label class="ui-btn ui-corner-all ui-btn-g ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': tabs['ui-checkbox-on'], 'ui-checkbox-off': tabs['ui-checkbox-off']}">{{tabs.title}}</label>
+	        <label class="ui-btn ui-corner-all ui-btn-i ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': tabs['ui-checkbox-on'], 'ui-checkbox-off': tabs['ui-checkbox-off']}">{{tabs.title}}</label>
 	        <input type="checkbox" checked="">
 	      </div>
 	    </div>

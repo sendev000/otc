@@ -8,6 +8,10 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { AntacidsPage } from '../antacids/antacids';
+import { AcidReducersPage } from '../acid-reducers/acid-reducers';
+import { HeartburnGroupPage } from '../heartburn-group/heartburn-group';
+
 
 @Component({
   selector: 'page-heartburn-meds',
@@ -15,6 +19,11 @@ import { GlobalVars } from '../providers/globalvars';
 })
 export class HeartburnMedsPage {
 	AbsoluteURL: string;
+  pages = [
+    AntacidsPage,
+    AcidReducersPage,
+    HeartburnGroupPage
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
@@ -22,7 +31,9 @@ export class HeartburnMedsPage {
   showMenu() {
   	this.menu.open();
   }
-
+  showPage(id: number) {
+    this.navCtrl.push(this.pages[id]);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HeartburnMedsPage');
   }

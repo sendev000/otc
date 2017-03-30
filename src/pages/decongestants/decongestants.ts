@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
-import { CommentComparePage } from '../comment-compare/comment-compare';
+import { CommentCompareBluePage } from '../comment-compare-blue/comment-compare-blue';
 
 @Component({
   selector: 'page-decongestants',
@@ -23,12 +23,12 @@ export class DecongestantsPage {
   @ViewChild(Content) content: Content;
   ShowTabs = [
     {
-      title: "Description",
+      title: "Ingredients",
       "ui-checkbox-on": true,
       "ui-checkbox-off": false
     },
     {
-      title: "How supplied",
+      title: "Uses",
       "ui-checkbox-on": true,
       "ui-checkbox-off": false
     },
@@ -108,7 +108,7 @@ export class DecongestantsPage {
     this.initData();
   }
   showCommentCompare () {
-    this.navCtrl.push(CommentComparePage);
+    this.navCtrl.push(CommentCompareBluePage);
   }
   showMenu() {
     this.menu.open();
@@ -171,7 +171,7 @@ export class DecongestantsPage {
       });
       return found;
     })
-  }
+  }er
   initData() {
     this.AbsoluteURL = GlobalVars.getAbsoluteURL();
     this.RestApiURL = GlobalVars.getApiURL() + "page=decongestants";
@@ -183,7 +183,7 @@ export class DecongestantsPage {
     this.MyContent.scrollPos = 0;
     this.MyContent.isArrowShow = false;
   }
-  loadData() {
+  loadData() {0
     //this.RestApiURL
     this.http.get(this.RestApiURL).map(res => res.json())
       .subscribe(data => {
@@ -216,8 +216,6 @@ export class DecongestantsPage {
   }
   ionViewDidLoad() {
     this.loadData();
-    var arrow = document.getElementById('arrow_upward');
-    arrow.style.display = 'none';
   }
 
 }

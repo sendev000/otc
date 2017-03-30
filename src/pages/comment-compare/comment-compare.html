@@ -37,9 +37,9 @@
 	<br>
 	<p class="centerText"> 
 	  <a class="linkGreenBorder robotoLightSmall ui-link" href="#" (click)="showComment()">Leave a comment</a> 
-	  <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#">Why?</a> 
+	  <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleReason()">Why?</a> 
 	</p>
-	<div class="comment_why_div displayNone">
+	<div class="comment_why_div" *ngIf="reasonShown">
 	  <br>
 	  <ul>
 	    <li>Let others know which of the medications worked for you.</li>

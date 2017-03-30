@@ -39,11 +39,25 @@ import { DosingPage } from '../pages/dosing/dosing';
 import { NearestPage } from '../pages/nearest/nearest';
 
 import { CommentComparePage } from '../pages/comment-compare/comment-compare';
+import { CommentCompareBluePage } from '../pages/comment-compare-blue/comment-compare-blue';
+import { CommentCompareCyanPage } from '../pages/comment-compare-cyan/comment-compare-cyan';
+import { CommentCompareOrangePage } from '../pages/comment-compare-orange/comment-compare-orange';
+import { CommentCompareGreenPage } from '../pages/comment-compare-green/comment-compare-green';
 import { CommentLoginPage } from '../pages/comment-login/comment-login';
 
 import { DecongestantsPage } from '../pages/decongestants/decongestants';
 import { MultisymptomsPage } from '../pages/multisymptoms/multisymptoms';
 import { ImmuneboostersPage } from '../pages/immuneboosters/immuneboosters';
+
+import { RedEyeDropsPage } from '../pages/red-eye-drops/red-eye-drops';
+import { DryEyeDropsPage } from '../pages/dry-eye-drops/dry-eye-drops';
+import { ItchyEyeDropsPage } from '../pages/itchy-eye-drops/itchy-eye-drops';
+import { AntacidsPage } from '../pages/antacids/antacids';
+import { AcidReducersPage } from '../pages/acid-reducers/acid-reducers';
+import { HeartburnGroupPage } from '../pages/heartburn-group/heartburn-group';
+import { PainPillsPage } from '../pages/pain-pills/pain-pills';
+import { PainCreamsPage } from '../pages/pain-creams/pain-creams';
+import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
 
 @NgModule({
   declarations: [
@@ -82,11 +96,25 @@ import { ImmuneboostersPage } from '../pages/immuneboosters/immuneboosters';
     NearestPage,
 
     CommentComparePage,
+    CommentCompareBluePage,
+    CommentCompareCyanPage,
+    CommentCompareOrangePage,
+    CommentCompareGreenPage,
     CommentLoginPage,
 
     DecongestantsPage,
     MultisymptomsPage,
-    ImmuneboostersPage
+    ImmuneboostersPage,
+
+    RedEyeDropsPage,
+    DryEyeDropsPage,
+    ItchyEyeDropsPage,
+    AntacidsPage,
+    AcidReducersPage,
+    HeartburnGroupPage,
+    PainPillsPage,
+    PainCreamsPage,
+    PainPatchesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -128,11 +156,25 @@ import { ImmuneboostersPage } from '../pages/immuneboosters/immuneboosters';
     NearestPage,
 
     CommentComparePage,
+    CommentCompareBluePage,
+    CommentCompareCyanPage,
+    CommentCompareOrangePage,
+    CommentCompareGreenPage,
     CommentLoginPage,
 
     DecongestantsPage,
     MultisymptomsPage,
-    ImmuneboostersPage
+    ImmuneboostersPage,
+
+    RedEyeDropsPage,
+    DryEyeDropsPage,
+    ItchyEyeDropsPage,
+    AntacidsPage,
+    AcidReducersPage,
+    HeartburnGroupPage,
+    PainPillsPage,
+    PainCreamsPage,
+    PainPatchesPage
   ],
   providers: [
     StatusBar,

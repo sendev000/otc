@@ -1,18 +1,82 @@
-<!--
-  Generated template for the Sudafed page.
+<!--    
+  Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>sudafed</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p>Sudafed</p>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding class="ui-page-theme-i">
+	<div class="ui-content transparentButton">
+	    <div class="opacity8">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red">
+	                <span>Which formulation of <span class="redfont">sudafed</span> do you want a dose for?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p>&nbsp;</p>
+	        <!-- --------------End Border right person------------------- -->
+	    </div>
+	    <div class="opacity1" style="padding:0 15px;">
+	        <br>
+	        <ul data-role="listview" class="ui-nodisc-icon ui-listview" data-corners="false">
+	            <li class="ui-first-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+	                    <h3 class="purple_redfont">Sudafed <span class="orangefontSmall">(pseudoephedrine)</span> Liquid</h3>
+	                    <p class="grayfontSmallSmall">Pseudoephedrine 15 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/sudafed/sudafed-syrup.png" height="60" alt="sudafed pseudoephedrine"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+	                    <h3 class="orangefont">Sudafed PE <span class="redfontSmall">(Phenylephrine)</span> Liquid</h3>
+	                    <p class="grayfontSmallSmall">Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/sudafed/sudafed-pe.png" height="60" alt="sudafed PE"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(2)">
+	                    <h3 class="purplefont">Sudafed Cold and Cough</h3>
+	                    <p class="grayfontSmallSmall">Dextromethorphan 5 mg <br>Phenylephrine 5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/sudafed/sudafed-cold-cough.png" height="60" alt="sudafed cold and cough"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li class="ui-last-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(3)">
+	                    <h3 class="redfont">Sudafed Tablets</h3>
+	                    <p class="grayfontSmallSmall">Pseudoephedrine 30 mg / tablet</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/sudafed/sudafed-tabs.png" height="40" alt="sudafed 30 mg tablets"></p>
+	                </a>
+	            </li>
+	            <hr>
+	        </ul>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>
+

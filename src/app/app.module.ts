@@ -119,6 +119,36 @@ import { MaaloxChildrenMobilePage } from '../pages/maalox-children-mobile/maalox
 import { MaaloxJuniorMobilePage } from '../pages/maalox-junior-mobile/maalox-junior-mobile';
 import { MaaloxRegularMobilePage } from '../pages/maalox-regular-mobile/maalox-regular-mobile';
 
+import { SudafedPseudoMobilePage } from '../pages/sudafed-pseudo-mobile/sudafed-pseudo-mobile';
+import { SudafedPeMobilePage } from '../pages/sudafed-pe-mobile/sudafed-pe-mobile';
+import { SudafedColdCoughMobilePage } from '../pages/sudafed-cold-cough-mobile/sudafed-cold-cough-mobile';
+import { SudafedPseudotabMobilePage } from '../pages/sudafed-pseudotab-mobile/sudafed-pseudotab-mobile';
+
+import { PediacareMultiSymptomColdMobilePage } from '../pages/pediacare-multi-symptom-cold-mobile/pediacare-multi-symptom-cold-mobile';
+import { PediacareCoughRunnynoseMobilePage } from '../pages/pediacare-cough-runnynose-mobile/pediacare-cough-runnynose-mobile';
+import { PediacareCoughCongestionMobilePage } from '../pages/pediacare-cough-congestion-mobile/pediacare-cough-congestion-mobile';
+import { PediacareDaytimeMsColdMobilePage } from '../pages/pediacare-daytime-ms-cold-mobile/pediacare-daytime-ms-cold-mobile';
+import { PediacareFluMobilePage } from '../pages/pediacare-flu-mobile/pediacare-flu-mobile';
+import { PediacareNightimeMsColdMobilePage } from '../pages/pediacare-nightime-ms-cold-mobile/pediacare-nightime-ms-cold-mobile';
+import { PediacareCoughSorethroatMobilePage } from '../pages/pediacare-cough-sorethroat-mobile/pediacare-cough-sorethroat-mobile';
+
+import { DimetappColdCoughMobilePage } from '../pages/dimetapp-cold-cough-mobile/dimetapp-cold-cough-mobile';
+import { DimetappColdAllergyMobilePage } from '../pages/dimetapp-cold-allergy-mobile/dimetapp-cold-allergy-mobile';
+import { DimetappColdFluMobilePage } from '../pages/dimetapp-cold-flu-mobile/dimetapp-cold-flu-mobile';
+import { DimetappColdCoughlaMobilePage } from '../pages/dimetapp-cold-coughla-mobile/dimetapp-cold-coughla-mobile';
+import { DimetappColdCongestionMobilePage } from '../pages/dimetapp-cold-congestion-mobile/dimetapp-cold-congestion-mobile';
+
+import { TriaminicMultiSymptomFeverColdMobilePage } from '../pages/triaminic-multi-symptom-fever-cold-mobile/triaminic-multi-symptom-fever-cold-mobile';
+import { TriaminicCoughCongestionMobilePage } from '../pages/triaminic-cough-congestion-mobile/triaminic-cough-congestion-mobile';
+import { TriaminicCoughSorethroatMobilePage } from '../pages/triaminic-cough-sorethroat-mobile/triaminic-cough-sorethroat-mobile';
+import { TriaminicDaytimeColdCoughMobilePage } from '../pages/triaminic-daytime-cold-cough-mobile/triaminic-daytime-cold-cough-mobile';
+import { TriaminicNighttimeColdCoughMobilePage } from '../pages/triaminic-nighttime-cold-cough-mobile/triaminic-nighttime-cold-cough-mobile';
+
+import { MucinexMsColdFeverMobilePage } from '../pages/mucinex-ms-cold-fever-mobile/mucinex-ms-cold-fever-mobile';
+import { MucinexMsColdMobilePage } from '../pages/mucinex-ms-cold-mobile/mucinex-ms-cold-mobile';
+import { MucinexColdCoughSorethroatMobilePage } from '../pages/mucinex-cold-cough-sorethroat-mobile/mucinex-cold-cough-sorethroat-mobile';
+import { MucinexNighttimeMsColdMobilePage } from '../pages/mucinex-nighttime-ms-cold-mobile/mucinex-nighttime-ms-cold-mobile';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -230,11 +260,41 @@ import { MaaloxRegularMobilePage } from '../pages/maalox-regular-mobile/maalox-r
     FexofenadineChewableMobilePage,               // 1
 
     TumsKidsMobilePage,                 // 0
-      TumsRegularMobilePage,            // 1
+    TumsRegularMobilePage,            // 1
 
     MaaloxChildrenMobilePage,               // 0
-      MaaloxJuniorMobilePage,                   // 1
-      MaaloxRegularMobilePage,                  // 2
+    MaaloxJuniorMobilePage,                   // 1
+    MaaloxRegularMobilePage,                  // 2
+
+    SudafedPseudoMobilePage,                  // 0
+    SudafedPeMobilePage,                      // 1
+    SudafedColdCoughMobilePage,               // 2
+    SudafedPseudotabMobilePage,               // 3
+
+    PediacareMultiSymptomColdMobilePage,                  // 0
+    PediacareCoughRunnynoseMobilePage,                    // 1
+    PediacareCoughCongestionMobilePage,                   // 2
+    PediacareDaytimeMsColdMobilePage,                     // 3
+    PediacareFluMobilePage,                               // 4
+    PediacareNightimeMsColdMobilePage,                    // 5
+    PediacareCoughSorethroatMobilePage,                   // 6
+
+    DimetappColdCoughMobilePage,                  // 0
+    DimetappColdAllergyMobilePage,                // 1
+    DimetappColdFluMobilePage,                    // 2
+    DimetappColdCoughlaMobilePage,                // 3
+    DimetappColdCongestionMobilePage,             // 4
+
+    TriaminicMultiSymptomFeverColdMobilePage,               // 0
+    TriaminicCoughCongestionMobilePage,                       // 1
+    TriaminicCoughSorethroatMobilePage,                       // 2
+    TriaminicDaytimeColdCoughMobilePage,                      // 3
+    TriaminicNighttimeColdCoughMobilePage,                    // 4
+
+    MucinexMsColdFeverMobilePage,                 // 0
+    MucinexMsColdMobilePage,                      // 1
+    MucinexColdCoughSorethroatMobilePage,         // 2
+    MucinexNighttimeMsColdMobilePage,             // 3
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -350,11 +410,41 @@ import { MaaloxRegularMobilePage } from '../pages/maalox-regular-mobile/maalox-r
     FexofenadineChewableMobilePage,               // 1
 
     TumsKidsMobilePage,                 // 0
-      TumsRegularMobilePage,            // 1
+    TumsRegularMobilePage,            // 1
 
     MaaloxChildrenMobilePage,               // 0
-      MaaloxJuniorMobilePage,                   // 1
-      MaaloxRegularMobilePage,                  // 2
+    MaaloxJuniorMobilePage,                   // 1
+    MaaloxRegularMobilePage,                  // 2
+
+    SudafedPseudoMobilePage,                  // 0
+    SudafedPeMobilePage,                      // 1
+    SudafedColdCoughMobilePage,               // 2
+    SudafedPseudotabMobilePage,               // 3
+
+    PediacareMultiSymptomColdMobilePage,                  // 0
+    PediacareCoughRunnynoseMobilePage,                    // 1
+    PediacareCoughCongestionMobilePage,                   // 2
+    PediacareDaytimeMsColdMobilePage,                     // 3
+    PediacareFluMobilePage,                               // 4
+    PediacareNightimeMsColdMobilePage,                    // 5
+    PediacareCoughSorethroatMobilePage,                   // 6
+
+    DimetappColdCoughMobilePage,                  // 0
+    DimetappColdAllergyMobilePage,                // 1
+    DimetappColdFluMobilePage,                    // 2
+    DimetappColdCoughlaMobilePage,                // 3
+    DimetappColdCongestionMobilePage,             // 4
+
+    TriaminicMultiSymptomFeverColdMobilePage,               // 0
+    TriaminicCoughCongestionMobilePage,                       // 1
+    TriaminicCoughSorethroatMobilePage,                       // 2
+    TriaminicDaytimeColdCoughMobilePage,                      // 3
+    TriaminicNighttimeColdCoughMobilePage,                    // 4
+
+    MucinexMsColdFeverMobilePage,                 // 0
+    MucinexMsColdMobilePage,                      // 1
+    MucinexColdCoughSorethroatMobilePage,         // 2
+    MucinexNighttimeMsColdMobilePage,             // 3
   ],
   providers: [
     StatusBar,

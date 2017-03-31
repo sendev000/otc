@@ -1,18 +1,82 @@
-<!--
-  Generated template for the Mucinex page.
+<!--    
+  Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>mucinex</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p>Children's Mucinex</p>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding class="ui-page-theme-a">
+	<div class="ui-content transparentButton">
+	    <div class="opacity8">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Which formulation of <span class="orangefont">mucinex</span> do you want a dose for?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-christina.svg" width="100"></div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p>&nbsp;</p>
+	        <!-- ---------------End Border right person------------------- -->
+	    </div>
+	    <div class="opacity1" style="padding:0 15px;">
+	        <br>
+	        <ul data-role="listview" class="ui-nodisc-icon ui-listview" data-corners="false">
+	            <li class="ui-first-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+	                    <h3 class="purple_redfont">Multi-Symptom Cold &amp; Fever</h3>
+	                    <p class="grayfontSmallSmall">Acetaminophen 160 mg<br>Guaifenesion 100 mg,<br>Dextromethorphan 5 mg<br>Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/mucinex/mucinex-ms-cold-fever.png" height="60" alt="mucinex multi-symptom cold and fever"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+	                    <h3 class="purple_bluefont">Multi-Symptom Cold</h3>
+	                    <p class="grayfontSmallSmall">Guaifenesion 100 mg,<br>Dextromethorphan 5 mg<br>Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/mucinex/mucinex-ms-cold.png" height="60" alt="mucinex multi-symptom cold"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(2)">
+	                    <h3 class="bluefont">Cold, Cough &amp; Sore Throat</h3>
+	                    <p class="grayfontSmallSmall">Acetaminophen 160 mg<br>Guaifenesion 100 mg,<br>Dextromethorphan 5 mg<br>Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/mucinex/mucinex-cold-cough-sorethroat.png" height="60" alt="mucinex cold cough and sore throat"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li class="ui-last-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(3)">
+	                    <h3 class="purplefont">Night Time Multi-Symptom Cold</h3>
+	                    <p class="grayfontSmallSmall">Acetaminophen 160 mg<br>Diphenhydramine 6.25 mg<br>Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/mucinex/mucinex-nighttime-ms-cold.png" height="60" alt="mucinex night time multi-symptom cold"></p>
+	                </a>
+	            </li>
+	            <hr>
+	        </ul>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>
+

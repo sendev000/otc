@@ -1,0 +1,571 @@
+@charset "utf-8";
+/* CSS Document */	
+	
+.ui-body-i,
+.ui-page-theme-i .ui-body-inherit,
+html body .ui-group-theme-i .ui-body-inherit,
+html .ui-panel-page-container-i {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+	/*text-shadow:  {a-body-shadow-x}*/  /*{a-body-shadow-y}*/  /*{a-body-shadow-radius}*/  /*{a-body-shadow-color};*/
+}
+
+/* Button up */
+.ui-page-theme-i #q1 .ui-btn, 
+/* Button visited */
+.ui-page-theme-i #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-i #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+}
+/* Button down */
+.ui-page-theme-i #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-i .transparentButton .ui-btn, 
+/* Button visited */
+.ui-page-theme-i .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-i .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+}
+/* Button down */
+.ui-page-theme-i .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Active checkbox icon */
+.ui-page-theme-i .ui-checkbox-on:after,
+html .ui-bar-i .ui-checkbox-on:after,
+html .ui-body-i .ui-checkbox-on:after,
+html body .ui-group-theme-i .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-i:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+.ui-body-a,
+.ui-page-theme-a .ui-body-inherit,
+html body .ui-group-theme-a .ui-body-inherit,
+html .ui-panel-page-container-a {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-a #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-a #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-a #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-a #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-a .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-a .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-a .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-a .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+
+
+/* Active checkbox icon */
+.ui-page-theme-a .ui-checkbox-on:after,
+html .ui-bar-a .ui-checkbox-on:after,
+html .ui-body-a .ui-checkbox-on:after,
+html body .ui-group-theme-a .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-a:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+
+
+.ui-body-o,
+.ui-page-theme-o .ui-body-inherit,
+html body .ui-group-theme-o .ui-body-inherit,
+html .ui-panel-page-container-o {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-o #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-o #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-o #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-o #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-o .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-o .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-o .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-o .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+
+
+/* Active checkbox icon */
+.ui-page-theme-o .ui-checkbox-on:after,
+html .ui-bar-o .ui-checkbox-on:after,
+html .ui-body-o .ui-checkbox-on:after,
+html body .ui-group-theme-o .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-o:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+.ui-body-g,
+.ui-page-theme-g .ui-body-inherit,
+html body .ui-group-theme-g .ui-body-inherit,
+html .ui-panel-page-container-g {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-g #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-g #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-g #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-g #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+
+/* Button up */
+.ui-page-theme-g .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-g .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-g .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-g .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+
+/* Active checkbox icon */
+.ui-page-theme-g, .ui-checkbox-on:after,
+html .ui-bar-g .ui-checkbox-on:after,
+html .ui-body-g .ui-checkbox-on:after,
+html body .ui-group-theme-g .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-g:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+
+.ui-body-d,
+.ui-page-theme-d .ui-body-inherit,
+html body .ui-group-theme-d .ui-body-inherit,
+html .ui-panel-page-container-d {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-d #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-d #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-d #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-d #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-d .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-d .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-d .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-d .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+
+
+/* Active checkbox icon */
+.ui-page-theme-d .ui-checkbox-on:after,
+html .ui-bar-d .ui-checkbox-on:after,
+html .ui-body-d .ui-checkbox-on:after,
+html body .ui-group-theme-d .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-d:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+
+.ui-body-p,
+.ui-page-theme-p .ui-body-inherit,
+html body .ui-group-theme-p .ui-body-inherit,
+html .ui-panel-page-container-p {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-p #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-p #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-p #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-p #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-p .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-p .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-p .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-p .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Active checkbox icon */
+.ui-page-theme-p .ui-checkbox-on:after,
+html .ui-bar-p .ui-checkbox-on:after,
+html .ui-body-p .ui-checkbox-on:after,
+html body .ui-group-theme-p .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-p:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+.ui-body-c,
+.ui-page-theme-c .ui-body-inherit,
+html body .ui-group-theme-c .ui-body-inherit,
+html .ui-panel-page-container-c {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-c #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-c #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-c #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-c #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-c .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-c .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-c .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-c .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Active checkbox icon */
+.ui-page-theme-c .ui-checkbox-on:after,
+html .ui-bar-c .ui-checkbox-on:after,
+html .ui-body-c .ui-checkbox-on:after,
+html body .ui-group-theme-c .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-c:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}
+
+
+
+
+.ui-body-n,
+.ui-page-theme-n .ui-body-inherit,
+html body .ui-group-theme-n .ui-body-inherit,
+html .ui-panel-page-container-n {
+	background:rgba(255,255,255,0.1) /*{a-body-background-color}*/;
+	border-color:transparent /*{a-body-border}*/;
+}
+
+/* Button up */
+.ui-page-theme-n #q1 .ui-btn,
+/* Button visited */
+.ui-page-theme-n #q1 .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-n #q1 .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-n #q1 .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Button up */
+.ui-page-theme-n .transparentButton .ui-btn,
+/* Button visited */
+.ui-page-theme-n .transparentButton .ui-btn:visited {
+	background: rgba(255,255,255,0.1)/*{a-bup-background-color}*/;
+	border-color:transparent /*{a-bup-border}*/;
+	padding-bottom:10px;
+	color: #000000 /*{a-bup-color}*/;
+}
+
+/* Button hover */
+.ui-page-theme-n .transparentButton .ui-btn:hover {
+	background: rgba(255,255,255,0.1) /*{a-bhover-background-color}*/;
+	border-color:transparent /*{a-bhover-border}*/;
+	color: #000000 /*{a-bhover-color}*/;
+	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 1px /*{a-bhover-shadow-radius}*/ #eeeeee /*{a-bhover-shadow-color}*/;
+}
+/* Button down */
+.ui-page-theme-n .transparentButton .ui-btn:active {
+	background:  rgba(255,255,255,0.1) /*{a-bdown-background-color}*/;
+	border-color:transparent/*{a-bdown-border}*/;
+	color: #000000 /*{a-bdown-color}*/;
+}
+
+/* Active checkbox icon */
+.ui-page-theme-n .ui-checkbox-on:after,
+html .ui-bar-n .ui-checkbox-on:after,
+html .ui-body-n .ui-checkbox-on:after,
+html body .ui-group-theme-n .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-n:after
+{
+	background-color: rgba(255,255,255,0.1) /*{a-active-background-color}*/;
+	border-color: #ffffff /*{a-active-border}*/;
+	color: #ffffff /*{a-active-color}*/;
+}

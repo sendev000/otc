@@ -8,21 +8,29 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { CommentLoginPage } from '../comment-login/comment-login';
 
 @Component({
   selector: 'page-dosing',
   templateUrl: 'dosing.html'
 })
 export class DosingPage {
+  currentPage: number;
 	AbsoluteURL: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
+    this.currentPage = 0;
   }
   showMenu() {
   	this.menu.open();
   }
-
+  transitPage(pageNumber: number) {
+    this.currentPage = pageNumber;
+  }
+  gotoLogin() {
+    this.navCtrl.push(CommentLoginPage);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DosingPage');
   }

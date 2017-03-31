@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { SelfCarePage } from '../self-care/self-care';
 import { ComparePage } from '../compare/compare';
-import { ChildrenPage } from '../children/children';
+import { DosingPage } from '../dosing/dosing';
 import { DrugPage } from '../drug/drug';
 import { AboutPage } from '../about/about';
 
@@ -78,7 +78,7 @@ export class HomePage {
 	items = {
 		self_care 	: SelfCarePage,
 		compare			: ComparePage,
-		children		: ChildrenPage,
+		dosing		: DosingPage,
 		drug 				: DrugPage,
 		about 			: AboutPage,
 	}

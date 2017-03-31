@@ -1,0 +1,77 @@
+<!--     
+  Generated template for the Dosing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+     -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange">
+    <p>Ibuprofen</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ui-page-theme-a">
+	<div class="ui-content transparentButton">
+	    <div class="opacity1">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Which formulation of <span class="bluefont">loratadine</span> do you want a dose for?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-marilyn.svg" width="100" alt="pharmacist Marilyn"></div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	    </div>
+	    <div class="opacity1" style="padding:0 15px;">
+	        <br>
+	        <ul data-role="listview" class="ui-nodisc-icon ui-listview" data-corners="false">
+	            <li class="ui-first-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+	                    <h3 class="bluefont">Loratadine Solution / Syrup<br><span class="orangefontSmall">5 mg / 5 ml</span></h3>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/loratadine/loratadine-liquid.png" height="60" alt="loratadine liquid"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+	                    <h3 class="bluefont">Loratadine Chewable<br><span class="orangefontSmall">5 mg / tablet</span></h3>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/loratadine/loratadine-chewable.png" height="30" alt="loratadine chewable"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(2)">
+	                    <h3 class="bluefont">Disintegrating Tablets<br><span class="orangefontSmall">10 mg / tablet</span></h3>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/loratadine/loratadine-adult-tabs.png" height="30" alt="loratadine adult tablets"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li class="ui-last-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(3)">
+	                    <h3 class="bluefont">Adult Tablets<br><span class="orangefontSmall">10 mg / tablet</span></h3>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/loratadine/loratadine-adult-tabs.png" height="30" alt="loratadine adult tablets"></p>
+	                </a>
+	            </li>
+	            <hr>
+	        </ul>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+</ion-content>
+

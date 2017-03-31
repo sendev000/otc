@@ -1,0 +1,65 @@
+<!--    
+  Generated template for the Dosing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+    -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight shadowBottom bgPurple">
+    <p>Fexofenadine</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ui-page-theme-d">
+	<div class="ui-content transparentButton">
+		<div class="opacity8">
+		    <p>&nbsp;</p>
+		    <div class="maxwidth450">
+		        <div class="ovalBorderRightPurple_red"> <span>Which formulation of <span class="purple_redfont">fexofenadine</span> do you want a dose for?</span><br>
+		        </div>
+		        <div align="right"><img src="assets/img/pharm/female/pharm-alicia-purple.svg" width="100"></div>
+		    </div>
+		    <p>&nbsp;</p>
+		    <div class="clearboth divider1"></div>
+		    <p>&nbsp;</p>
+		    <!-- ---------------End Border right person------------------- -->
+		</div>
+		<div class="opacity1" style="padding:0 15px;">
+		    <br>
+		    <ul data-role="listview" class="ui-nodisc-icon ui-listview" data-corners="false">
+		        <li class="ui-first-child">
+		            <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+		                <h3 class="purple_redfont">Fexofenadine Suspension<br><span class="orangefontSmall">30 mg / 5 ml</span></h3>
+		                <p class="ui-li-aside"><img src="assets/img/dosing/fexofenadine/allegra-susp.png" height="60" alt="fexofenadine liquid"></p>
+		            </a>
+		        </li>
+		        <hr>
+		        <li class="ui-last-child">
+		            <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+		                <h3 class="purple_redfont">Disintegrating Tabs<br><span class="orangefontSmall">30 mg / tablet</span></h3>
+		                <p class="ui-li-aside"><img src="assets/img/dosing/fexofenadine/fexofenadine-odt.png" height="30" alt="fexofenadine liquid"></p>
+		            </a>
+		        </li>
+		        <hr>
+		    </ul>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		</div>
+	</div>
+</ion-content>
+

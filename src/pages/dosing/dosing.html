@@ -74,25 +74,30 @@
 		        <!-- ---------------End Point Right------------------- -->
 		    </div>
 		    <p>&nbsp;</p>
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="redfont">MOST POPULAR</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[0]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[0], 'ui-icon-arrow-d': !pages[0]}" (click)="togglePage(0)">
+		        		<span class="redfont">MOST POPULAR</span>
+		        		<span class="ui-collapsible-heading-status"> click to expand contents</span>
+		        	</a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[0]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="acetaminophen/Acetaminophen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(14)">
 		                        <h3 class="redfont">Acetaminophen</h3>
 		                        <p><span class="redfontSmall">Tylenol®, Pediacare®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="ibuprofen/Ibuprofen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(15)">
 		                        <h3 class="orangefont">Ibuprofen</h3>
 		                        <p><span class="orangefontSmall">Motrin®</span> | <span class="bluefontSmall">Advil®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="diphenhydramine/Diphenhydramine.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
 		                        <h3 class="purple_redfont">Diphenhydramine</h3>
 		                        <p><span class="purple_redfontSmall">Benadryl®</span> | Store Brands</p>
 		                    </a>
@@ -102,31 +107,33 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="greenfont">Allergy Relief</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[1]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[1], 'ui-icon-arrow-d': !pages[1]}" (click)="togglePage(1)"><span class="greenfont">Allergy Relief</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[1]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="diphenhydramine/Diphenhydramine.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
 		                        <h4 class="redfont">Diphenhydramine</h4>
 		                        <p><span class="redfontSmall">Benadryl®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="loratadine/loratadine.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
 		                        <h4 class="bluefont">Loratadine</h4>
 		                        <p><span class="bluefontSmall">Claritin®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="cetirizine/Cetirizine.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(2)">
 		                        <h3 class="greenfont">Cetirizine</h3>
 		                        <p><span class="greenfontSmall">Zyrtec®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="fexofenadine/fexofenadine.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(3)">
 		                        <h3 class="purple_redfont">Fexofenadine</h3>
 		                        <p><span class="purple_redfontSmall">Allergra®</span> | Store Brands</p>
 		                    </a>
@@ -136,19 +143,21 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="bluefont">Antacid | Antigas</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[2]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[2], 'ui-icon-arrow-d': !pages[2]}" (click)="togglePage(2)"><span class="bluefont">Antacid | Antigas</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[2]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="tums/tums.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(4)">
 		                        <h3 class="redfont">Tums®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="maalox/maalox.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(5)">
 		                        <h3 class="bluefont">Maalox®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
@@ -160,13 +169,13 @@
 		                    </a>
 		                    </li> -->
 		                <li>
-		                    <a href="others/pepto.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(11)">
 		                        <h3 class="pinkfont">Children's Pepto®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="others/mylicon.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(6)">
 		                        <h3 class="greenfont">Infants's Mylicon®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
@@ -176,49 +185,51 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="purplefont">Cold |</span> <span class="pinkfont">Flu |</span> <span class="orangefont">Cough</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[3]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[3], 'ui-icon-arrow-d': !pages[3]}" (click)="togglePage(3)"><span class="purplefont">Cold |</span> <span class="pinkfont">Flu |</span> <span class="orangefont">Cough</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[3]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="sudafed/sudafed.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(7)">
 		                        <h3 class="redfont">Children's Sudafed®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="dimetapp/Dimetapp.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(9)">
 		                        <h3 class="purplefont">Children's Dimetapp®</h3>
 		                        <p><span class="purplefontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="pediacare/pediacare.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(8)">
 		                        <h3 class="orangefont">Children's Pediacare®</h3>
 		                        <p><span class="orangefontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="triaminic/triaminic.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(10)">
 		                        <h3 class="bluefont">Children's Triaminic®</h3>
 		                        <p><span class="bluefontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="mucinex/mucinex.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(12)">
 		                        <h3 class="orangefont">Children's Mucinex®</h3>
 		                        <p><span class="orangefontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="little/little_remedies.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(13)">
 		                        <h3 class="purplefont">Little Remedies®</h3>
 		                        <p><span class="purplefontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="robitussin/robitussin.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(21)">
 		                        <h3 class="greenfont">Children's Robitussin®</h3>
 		                        <p><span class="greenfontSmall">Brand®</span> | Store Brands</p>
 		                    </a>
@@ -228,19 +239,21 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="redfont">Fever Reducers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[4]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[4], 'ui-icon-arrow-d': !pages[4]}" (click)="togglePage(4)"><span class="redfont">Fever Reducers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[4]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="acetaminophen/Acetaminophen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(14)">
 		                        <h3 class="redfont">Acetaminophen</h3>
 		                        <p><span class="redfontSmall">Tylenol®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="ibuprofen/Ibuprofen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(15)">
 		                        <h3 class="orangefont">Ibuprofen</h3>
 		                        <p><span class="orangefontSmall">Motrin®</span> | <span class="bluefontSmall">Advil®</span> | Store Brands</p>
 		                    </a>
@@ -250,41 +263,43 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="purple_redfont">Laxatives |</span><span class="greenfont"> Anti-diarrhea</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[5]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[5], 'ui-icon-arrow-d': !pages[5]}" (click)="togglePage(5)"><span class="purple_redfont">Laxatives |</span><span class="greenfont"> Anti-diarrhea</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[5]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="others/miralax.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(16)">
 		                        <h3 class="purple_redfont">Miralax®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands<br>Strength</p>
 		                        <p class="ui-li-aside"><img src="assets/img/dosing/others/miralax.png" height="60" alt="miralax"></p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="pedialax/pedialax.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(17)">
 		                        <h3 class="bluefont">Pedia.Lax®</h3>
 		                        <p><span class="redfontSmall">Brand®</span> | Store Brands<br></p>
 		                        <p class="ui-li-aside"><img src="assets/img/dosing/others/pedialax.png" height="60" alt="pedialax"></p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="others/fletchers.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(18)">
 		                        <h3 class="greenfont">Fletcher's Laxative®</h3>
 		                        <p class="grayfontSmallSmall"><span class="redfontSmall">Brand®</span> | Store Brands<br>Senna pod concentrate:	167 mg/teaspoon</p>
 		                        <p class="ui-li-aside"><img src="assets/img/dosing/others/fletchers.png" height="60" alt="Fletcher's castoria"></p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="others/imodium.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(19)">
 		                        <h3 class="purplefont">Imodium A-D®</h3>
 		                        <p class="grayfontSmallSmall"><span class="redfontSmall">Brand®</span> | Store Brands<br>Loperamide 1 mg / 7.5 ml</p>
 		                        <p class="ui-li-aside"><img src="assets/img/dosing/others/imodium.png" height="60" alt="imodium"></p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="others/milk_magnesia.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(20)">
 		                        <h3 class="bluefont">Milk of Magnesia</h3>
 		                        <p class="grayfontSmallSmall"><span class="redfontSmall">Brand®</span> | Store Brands<br>Magnesium hydroxide 1200 mg / 15 ml</p>
 		                        <p class="ui-li-aside"><img src="assets/img/dosing/others/milk-magnesia.png" height="60" alt="Milk of magnesia"></p>
@@ -295,19 +310,21 @@
 		        </div>
 		    </div>
 		    <hr class="pink">
-		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span class="orangefont">Pain Relievers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-		        <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" [ngClass]="{'ui-collapsible-collapsed': pages[6]}">
+		        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		        	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[6], 'ui-icon-arrow-d': !pages[6]}" (click)="togglePage(6)"><span class="orangefont">Pain Relievers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a>
+		        </h3>
+		        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[6]}">
 		            <br>
 		            <ul data-role="listview" class="ui-listview">
 		                <li class="ui-first-child">
-		                    <a href="acetaminophen/Acetaminophen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(14)">
 		                        <h3 class="redfont">Acetaminophen</h3>
 		                        <p><span class="redfontSmall">Tylenol®</span> | Store Brands</p>
 		                    </a>
 		                </li>
 		                <li class="ui-last-child">
-		                    <a href="ibuprofen/Ibuprofen.php" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+		                    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(15)">
 		                        <h3 class="orangefont">Ibuprofen</h3>
 		                        <p><span class="orangefontSmall">Motrin®</span> | <span class="bluefontSmall">Advil®</span> | Store Brands</p>
 		                    </a>

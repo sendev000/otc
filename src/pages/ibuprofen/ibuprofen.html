@@ -1,0 +1,95 @@
+<!--    
+  Generated template for the Dosing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+    -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange">
+    <p>Ibuprofen</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ui-page-theme-o">
+	<div class="ui-content transparentButton">
+	    <div class="opacity8">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange">
+	                <span>Choose the formulation of <span class="redfont">ibuprofen</span> you want a dose for from the list below.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-meg-orange.svg" width="100" alt="Pharmacist Meg"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="orangefontSmall redBorderAll centerText">To get the correct dose for your child be sure to choose the right formulation.</p>
+	        <div class="clearboth divider1"></div>
+	    </div>
+	    <div class="maxwidth650">
+	        <div data-role="collapsible" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" data-corners="false" [ngClass]="{'ui-collapsible-collapsed': pages[0]}">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+	            	<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-plus': pages[0], 'ui-icon-minus': !pages[0]}" (click)="togglePage(0)"><span class="orangefont">Liquid Formulations</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[0]}">
+	                <ul data-role="listview" class="ui-listview">
+	                    <li class="ui-first-child">
+	                        <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+	                            <h3 class="redfont">Ibuprofen Infant Drops <br><span class="redfontSmall">50mg/1.25ml</span></h3>
+	                            <p class="ui-li-aside"><img src="assets/img/dosing/ibuprofen/ibu-infant-bottle.png" height="60" alt="infant ibuprofen"></p>
+	                        </a>
+	                    </li>
+	                    <hr>
+	                    <li class="ui-last-child">
+	                        <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+	                            <h3 class="orangefont">Ibuprofen Suspension<br> <span class="orangefontSmall">100mg/5ml</span></h3>
+	                            <p class="ui-li-aside"><img src="assets/img/dosing/ibuprofen/ibu-suspension.png" height="60" alt="children ibuprofen suspension"></p>
+	                        </a>
+	                    </li>
+	                    <hr>
+	                </ul>
+	                <br>
+	            </div>
+	        </div>
+	        <div data-role="collapsible" data-collapsed="true" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" data-corners="false" [ngClass]="{'ui-collapsible-collapsed': pages[1]}">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-plus': pages[1], 'ui-icon-minus': !pages[1]}" (click)="togglePage(1)"><span class="purplefont">Chewables</span> <span class="purple_redfont">| Tablets</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit" aria-hidden="true" [ngClass]="{'ui-collapsible-content-collapsed': pages[1]}">
+	                <ul data-role="listview" class="ui-listview">
+	                    <li class="ui-first-child">
+	                        <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(2)">
+	                            <h3 class="purplefont">Ibuprofen Jr Strength<br> <span class="purplefontSmall">100mg/tablet</span></h3>
+	                            <p class="ui-li-aside"><img src="assets/img/dosing/ibuprofen/ibu-chewable.png" height="40" alt="ibuprofen chewable tablets"></p>
+	                        </a>
+	                    </li>
+	                    <hr>
+	                    <li class="ui-last-child">
+	                        <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(3)">
+	                            <h3 class="purple_redfont">Adult Ibuprofen Tablets<br><span class="purple_redfontSmall">200mg/tablet</span></h3>
+	                            <p class="ui-li-aside"><img src="assets/img/dosing/ibuprofen/ibu-tabs.png" height="40" alt="ibuprofen adult tablets"></p>
+	                        </a>
+	                    </li>
+	                    <hr>
+	                </ul>
+	                <br>
+	            </div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+</ion-content>
+

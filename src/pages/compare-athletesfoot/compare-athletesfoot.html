@@ -1,0 +1,750 @@
+<!--  
+  Generated template for the AntifungiMeds page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  -->
+<ion-header class="ui-header">
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Compare
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content class="ui-page-theme-n">
+	<ion-header class="ui-header">
+		<ion-navbar class="fullWidth robotoLight bgDeepOrange shadowBottom">
+		    <p>Athletes' foot</p>
+		</ion-navbar>
+	</ion-header>
+	<div class="fullWidth">
+		<p>&nbsp;</p>
+		<!-- --------------------Start  Questions----------------- -->     
+		<div id="all_questions_div">
+		    <div id="compare_athletesfoot_mobile_1" *ngIf="currentPage==-1">
+		        <!-- ---Start follow up intro--- -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange centerText"> 
+		                <span></span><br>
+		                Side by side comparison of athlete's foot medications won't be any use to you. 
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll">
+		            <p style="text-align: center;">Answering a few questions would serve you better<br>
+		                Let's do that
+		            </p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="transitPage(0)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- End follow up intro -->
+		    <div id="compare_athletesfoot_mobile_2_n" *ngIf="currentPage==0">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Are you looking for something that will work the <span class="purplefont">fastest?</span></span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(1)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(2)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end first follow up question div -->
+		    <!-- start follow up 3 div -->
+		    <div id="compare_athletesfoot_mobile_3_y" *ngIf="currentPage==1">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Then get something with <span class="purplefont">terbinafine.</span>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll">
+		            <p>You should get relief within a week.</p>
+		            <p>But to make sure it doesn't come back, you should continue using it for at least 1 more week after the skin surface has cleared.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_3_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(2)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_3_n" *ngIf="currentPage==2">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Is this athletes foot also on the <span class="purple_redfont">bottom</span> or <span class="purple_redfont">side</span> of the foot?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_4_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(3)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_4_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(4)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 3 div -->
+		    <div id="compare_athletesfoot_mobile_4_y" *ngIf="currentPage==3">
+		        <!-- start follow up 4 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Then go with <span class="orangefont">clotrimazole.</span>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Expand some more.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_4_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(4)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_4_n" *ngIf="currentPage==4">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Cream, gel or powder. Like to know what to get?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_5_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(5)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_5_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(6)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 4 div -->
+		    <div id="compare_athletesfoot_mobile_5_y" *ngIf="currentPage==5">
+		        <!-- start follow up 5 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                This will depend on the nature of the affected area.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll">
+		            <p>Expand some more</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_5_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(6)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_5_n" *ngIf="currentPage==6">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Is the affected area <span class="bluefont">wet</span> or <span class="purple_bluefont">moist?</span></span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll">
+		            <p style="text-align: center;">In other words, do you have <span style="color:#FF8C00;">sweaty feet?</span></p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_6_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(7)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_6_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(8)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 5 div -->
+		    <div id="compare_athletesfoot_mobile_6_y" *ngIf="currentPage==7">
+		        <!-- start follow up 6 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Get the <span class="orangefont">powder.</span>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll">
+		            <p>Gold bond foot powder + lamisil or tinactin foot powder or lotrimin foot powder.</p>
+		            <p>Use domeboro&nbsp;packets in water if the foot is soggy.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_6_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(8)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_6_n" *ngIf="currentPage==8">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Do you see yourself having difficulty keeping the area <span class="purplefont">dry?</span></span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll">
+		            <p>May be you are an athlete or work in humid temperatures and so on.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_7_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(9)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_7_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(10)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 6 div -->
+		    <div id="compare_athletesfoot_mobile_7_y" *ngIf="currentPage==9">
+		        <!-- start follow up 7 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Get the powder.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll">
+		            <p>The powders or powder sprays dries out the feet past the point of what any towel can do while also showing antifungal effect.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_7_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(10)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_7_n" *ngIf="currentPage==10">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Is the affected area <span class="orangefont">very itchy,</span> <span class="purplefont">sore</span> and <span class="orangefont">inflammed?</span></span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_8_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(11)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_8_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(12)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 7 div -->
+		    <div id="compare_athletesfoot_mobile_8_y" *ngIf="currentPage==11">
+		        <!-- start follow up 8 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                May want to add <span class="purplefontItalic">hydrocortisone 1% cream</span> to the regimen.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll">
+		            <p>This will help stop the itch faster while taking care of the inflammation. But use the hydrocortisone cream for no more than 7 days. After 7 days, you can keep using the antifungal cream or powder without the hydrocortisone.</p>
+		            <p>If you think the area is infected from scratching, add triple antibiotic cream to the mix.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_8_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(12)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_8_n" *ngIf="currentPage==12">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Would you say the area is <span class="purplefont">dry</span> and <span class="orangefont">scaly?</span></span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_9_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(13)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_9_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(14)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 8 div -->
+		    <div id="compare_athletesfoot_mobile_9_y" *ngIf="currentPage==13">
+		        <!-- start follow up 9 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Get the cream, lotion or gel.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="pinkBorderAll">
+		            <p>These will keep the area moisturized making it easier to remove the dead skin cells.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_9_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(14)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_9_n" *ngIf="currentPage==14">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span>Brand or generic cream or lotion. Like to know what to get?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll">
+		            <p>This assumes cost is not a factor for you and you just want to know if the generic will be just as effective.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_10_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(15)">Yes</button>
+		            <button data-inline="true" class="compare_athletesfoot_mobile_10_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(16)">No</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 9 div -->
+		    <div id="compare_athletesfoot_mobile_10_y" *ngIf="currentPage==15">
+		        <!-- start follow up 10 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		                Stick with brand name.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll">
+		            <p>Store brands vary in effectiveness.</p>
+		            <p>Know that when dealing with the skin, the quality of the inactive ingredients&nbsp;matters.</p>
+		            <p>Some will help the cream penetrate the skin better or make the active ingredient last longer on the skin.</p>
+		            <p>Some inactive ingredients in some store brand can even add to the problem by irritating the skin.</p>
+		            <p>Some manufacturers do offer savings coupons on their websites.</p>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_10_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(16)">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_10_n" *ngIf="currentPage==16">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link" (click)="transitPage(-1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 10 div -->
+		    <div id="compare_athletesfoot_mobile_11_y" *ngIf="currentPage==17">
+		        <!-- start follow up 11 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_11_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_11_n" *ngIf="currentPage==18">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 11 div -->
+		    <!-- -------------------------------Start attachment------------------------- -->
+		    <div id="compare_athletesfoot_mobile_12_y" *ngIf="currentPage==19">
+		        <!-- start follow up 12 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_12_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_12_n" *ngIf="currentPage==20">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 12 div -->
+		    <div id="compare_athletesfoot_mobile_13_y" *ngIf="currentPage==21">
+		        <!-- start follow up 13 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_13_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_13_n" *ngIf="currentPage==22">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 13 div -->
+		    <div id="compare_athletesfoot_mobile_14_y" *ngIf="currentPage==23">
+		        <!-- start follow up 14 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_14_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_14_n" *ngIf="currentPage==24">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 14 div -->
+		    <div id="compare_athletesfoot_mobile_15_y" *ngIf="currentPage==25">
+		        <!-- start follow up 15 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_15_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_15_n" *ngIf="currentPage==26">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 15 div -->
+		    <div id="compare_athletesfoot_mobile_16_y" *ngIf="currentPage==27">
+		        <!-- start follow up 16 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="orangeBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_16_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_16_n" *ngIf="currentPage==28">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		        <p>&nbsp;</p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <!-- end follow up 16 div --> 
+		    <div id="compare_athletesfoot_mobile_17_y" *ngIf="currentPage==29">
+		        <!-- start follow up 17 div -->       
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span class="bluefontLarge">Yes?</span><br>
+		            </div>
+		            <div align="right"><img src="assets/img/admin/compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="blueBorderAll"></div>
+		        <div class="clearboth divider1"></div>
+		        <p class="centerText">
+		            <button data-inline="true" class="compare_athletesfoot_mobile_17_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+		        </p>
+		        <p>&nbsp;</p>
+		    </div>
+		    <div id="compare_athletesfoot_mobile_17_n" *ngIf="currentPage==30">
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightOrange"> 
+		                <span></span><br>
+		                OK. Hope that will help you decide on what to get.        
+		            </div>
+		            <div align="right"><img src="assets/img/admin/Compare/pharm-danny-cyan.svg" width="100" alt="Pharmacist"> 
+		            </div>
+		        </div>
+		        <div class="clearboth divider1"></div>
+		        <br>
+		        <!-- ---------------End Border right person------------------- -->
+		        <div class="redBorderAll">
+		            <p>Here is a brief summary of what to look out for when choosing an OTC athlete's foot medication:</p>
+		            <p>--- Put list here</p>
+		        </div>
+		        <p>&nbsp;</p>
+		        <p class="grayfontSmallSmall centerText">
+		            Last updated by pharmacist on : 
+		            08/17/2015 at 10:06:am<br>
+		        </p>
+		        <p class="centerText">
+		            <a href="#" data-inline="true" class="linkOrange back_compare_athletesfoot_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+		        </p>
+		    </div>
+		    <!-- end follow up 17 div -->
+		</div>
+		<!-- -------------End Questions total div2------------ -->
+	</div>
+</ion-content>

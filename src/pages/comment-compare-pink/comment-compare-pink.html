@@ -1,0 +1,57 @@
+<!--
+  Generated template for the CommentCompareOrange page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+
+  <ion-navbar class="mini-navbar">
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p>Comments</p>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="ui-page-theme-i">
+	<p>&nbsp;</p>
+	<div class="maxwidth450">
+	  <div class="ovalBorderRightPurple_red centerText"> 
+	  	<span>No <span class="bluefont">comments</span> on this comparison yet. How about being the first to say something?</span>
+		</div>
+	  <div align="right"> 
+	    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"> 
+	  </div>
+	</div>
+	<div class="clearboth divider1"></div>
+	<br>
+	<p class="centerText"> 
+	  <a class="linkRedBorder robotoLightSmall ui-link" href="#" (click)="showComment()">Leave a comment</a> 
+	  <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleReason()">Why?</a> 
+	</p>
+	<div class="comment_why_div" *ngIf="reasonShown"><br>
+	    <ul>
+	      <li>Let others know which of the medications worked for you.</li>
+	      <li>Share your treatment outcome with others.</li>
+	      <li>Add to the comparison.</li>
+	      <li>Improve on the comparison.</li>
+	      <li>Quickest way to ask the comparing pharmacist a question.</li>
+	      <li>What about you answering a question?</li>
+	    </ul>
+	  </div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</ion-content>
+

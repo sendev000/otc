@@ -8,6 +8,8 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { CompareYeastPage } from '../compare-yeast/compare-yeast';
+import { CompareAthletesfootPage } from '../compare-athletesfoot/compare-athletesfoot';
 
 @Component({
   selector: 'page-antifungi-meds',
@@ -15,6 +17,10 @@ import { GlobalVars } from '../providers/globalvars';
 })
 export class AntifungiMedsPage {
 	AbsoluteURL: string;
+  page = [
+    CompareYeastPage,
+    CompareAthletesfootPage
+  ];
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
@@ -22,7 +28,9 @@ export class AntifungiMedsPage {
   showMenu() {
   	this.menu.open();
   }
-
+  showPage(id: number) {
+    this.navCtrl.push(this.page[id]);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AntifungiMedsPage');
   }

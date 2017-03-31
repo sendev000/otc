@@ -18,117 +18,161 @@
       </button>
     </ion-buttons>
 	</ion-navbar>
-  <ion-navbar class="fullWidth robotoLight bgCyan shadowBottom">
-    <p>Sleep aids</p>
-  </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-	<p>&nbsp;</p>
-	<div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;">
-	  <a class="btn-floating btn-large cyan ui-link">
-	    <i class="large material-icons">arrow_upward</i>
-	  </a>
+<ion-content class="ui-page-theme-n" has-subheader="true">
+	<ion-header class="ui-header">
+	    <ion-navbar class="fullWidth robotoLight bgCyan shadowBottom">
+		    <p>Sleep aids</p>
+		  </ion-navbar>
+	  </ion-header>
+	<div class="fullWidth" role="main" #mainBody>
+		<div class="fixed-action-btn" style="bottom: 45px; right: 24px; display: none;" id="arrow_upward">
+		  <a class="btn-floating btn-large cyan ui-link" href='#' (click)="gotoTop(1000)">
+		    <i class="large material-icons">arrow_upward</i>
+		  </a>
+		</div>
+		<div class="maxwidth450 paddingSides">
+		  <div class="ovalBorderRightBlue">
+		    <span>Compare over-the-counter <span class="bluefont"> sleep aids</span> using the table below.</span><br>
+		  </div>
+		  <div align="right">
+		    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"> 
+		  </div>
+		</div>
+		<div class="clearboth divider1"></div>
+		<br>
+		<p class="blueBorderAll grayfontSmall centerText">Filter columns with the <span class="redfont">"Sort"</span> button.<br> For best results in a mobile device, check (√) <span class="redfont">one column</span> at a time.</p>
+		<div class="clearboth divider1"></div>
+		<br>
+		<div class="centerText">
+		  <a href="#" data-inline="true" class="linkBlueThin showFeedbackAlert ui-link" (click)="toggleFeedbackDlg(true)"><span class="mbsc-ic mbsc-ic-ion-chatbubble-working mbsc-ic-font36"></span>Give Feedback</a> 
+		  <a href="#" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkBlue ui-link" (click)="showCommentCompare()"></a>
+		  <a href="#" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkBlue ui-link" aria-haspopup="true" aria-owns="filtersleep_aidsTable-pop" aria-expanded="false" (click)="toggleSearchDlg(true)"></a>
+		</div>
+		<br>
+		<hr class="hrblue">
+		<br>
+		<div style="display: none;" id="filtersleep_aidsTable-pop-placeholder">
+		</div>
+		<div style="display: none;" id="sleep_aids_table-popup-placeholder">
+		</div>
+		<a href="#" class="ui-table-columntoggle-btn ui-btn ui-btn-n ui-corner-all ui-shadow ui-mini" data-rel="popup" (click)="toggleSortDlg(true)">Sort</a>
+		<table data-role="table" id="sleep_aids_table" data-filter="true" data-input="#filtersleep_aidsTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="n" data-column-btn-text="Sort" data-column-popup-theme="n centerText">
+		  	<thead>
+			    <tr class="ui-bar-n">
+			      	<th data-colstart="1"></th>
+			      	<th data-priority="1" data-colstart="2" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[0]['ui-checkbox-on']}">
+			              <div class="centerText">{{ShowTabs[0]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="3" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[1]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[1]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="4" class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': ShowTabs[2]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[2]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="5" class="ui-table-priority-4" [ngClass]="{'ui-table-cell-visible': ShowTabs[3]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[3]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="6" class="ui-table-priority-5" [ngClass]="{'ui-table-cell-visible': ShowTabs[4]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[4]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="7" class="ui-table-priority-5" [ngClass]="{'ui-table-cell-visible': ShowTabs[5]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[5]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="8" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[6]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[6]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="9" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[7]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[7]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="10" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[8]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[8]['title']}}</div>
+		            </th>
+		            <th data-priority="1" data-colstart="11" class="ui-table-priority-6" [ngClass]="{'ui-table-cell-visible': ShowTabs[9]['ui-checkbox-on']}">
+		              <div class="centerText">{{ShowTabs[9]['title']}}</div>
+		            </th>
+			    </tr>
+		  	</thead>
+		  	<tbody>
+		    	<tr *ngFor="let eachData of TableTempData">
+		            <th style="font-size:14px"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['drug_name'])"></div></th>
+		            <td style="font-size:14px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[0]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['ingredients'])"></div></td>
+		            <td style="font-size:12px" [ngClass]="{'ui-table-cell-hidden': ShowTabs[1]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['description'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[2]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['onset'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[3]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['duration'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[4]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['pros'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[5]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['cons'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[6]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['comments'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[7]['ui-checkbox-off']}">
+		              <div class="grayfont">
+		                Did this medication help you? <br><br><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['user_vote'])"></div>
+		                What about you?                       
+		              </div>
+		            </td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[8]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['cost'])"></div></td>
+		            <td [ngClass]="{'ui-table-cell-hidden': ShowTabs[9]['ui-checkbox-off']}"><div [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachData['brand_names'])"></div></td>
+		          </tr>
+		  	</tbody>
+		</table>
+		<p>&nbsp;</p>
+	    <p>&nbsp;</p>
 	</div>
-	<div class="maxwidth450 paddingSides">
-	  <div class="ovalBorderRightBlue">
-	    <span>Compare over-the-counter <span class="bluefont"> sleep aids</span> using the table below.</span><br>
-	  </div>
-	  <div align="right">
-	    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"> 
-	  </div>
+	<div class="ui-popup-screen ui-overlay-b in" id="filterallergy_medsTable-pop-screen" *ngIf="SearchDlg.show" (click)="toggleSearchDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="filterallergy_medsTable-pop-popup" *ngIf="SearchDlg.show" [ngStyle]="{'max-width': SearchDlg.maxWidth+'px','top': SearchDlg.top+'px', 'left': SearchDlg.left+'px', 'width': SearchDlg.width+'px'}">
+	<div data-role="popup" id="filterallergy_medsTable-pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	  <a href="#" data-rel="back" data-role="button" data-icon="check" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-check ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleSearchDlg(false)">Close</a>
+	  <form>
+	    <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+	      <input id="filterallergy_medsTable-input" type="text" data-type="search" name="search" data-clear-btn="false" placeholder="Find sleep aids" [(ngModel)]="searchText" (input)="filterItems($event)" />
+	      <a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" title="Clear text" *ngIf="searchText.length>0" (click)="clearSearch()">Clear text</a>
+	    </div>
+	  </form>
 	</div>
-	<div class="clearboth divider1"></div>
-	<br>
-	<p class="blueBorderAll grayfontSmall centerText">Filter columns with the <span class="redfont">"Sort"</span> button.<br> For best results in a mobile device, check (√) <span class="redfont">one column</span> at a time.</p>
-	<div class="clearboth divider1"></div>
-	<br>
-	<div class="centerText">
-	  <a href="#" data-inline="true" class="linkBlueThin showFeedbackAlert ui-link"><span class="mbsc-ic mbsc-ic-ion-chatbubble-working mbsc-ic-font36"></span>Give Feedback</a> 
-	  <a href="#comment_compare_mobile" class="mbsc-ic mbsc-ic-stream-bubble-comment-talk mbsc-ic-font36 linkBlue ui-link"></a>
-	  <a href="#filtersleep_aidsTable-pop" data-rel="popup" data-transition="pop" class="mbsc-ic mbsc-ic-ion-ios7-search-strong mbsc-ic-font36 linkBlue ui-link" aria-haspopup="true" aria-owns="filtersleep_aidsTable-pop" aria-expanded="false"></a>
 	</div>
-	<br>
-	<hr class="hrblue">
-	<br>
-	<div style="display: none;" id="filtersleep_aidsTable-pop-placeholder">
+	<div class="ui-popup-screen ui-overlay-inherit" id="allergy_meds_table-popup-screen" *ngIf="SortDlg.show" (click)="toggleSortDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+	<div class="ui-popup-container ui-popup-active" id="allergy_meds_table-popup-popup" *ngIf="SortDlg.show" [ngStyle]="{'max-width': SortDlg.maxWidth+'px','top': SortDlg.top+'px', 'left': SortDlg.left+'px'}">
+		<div class="ui-table-columntoggle-popup ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="allergy_meds_table-popup">
+		  <fieldset class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+		    <div class="ui-controlgroup-controls ">
+		      <div class="ui-checkbox" *ngFor="let tabs of ShowTabs" (click)="toggleSort(tabs)">
+		        <label class="ui-btn ui-corner-all ui-btn-n ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': tabs['ui-checkbox-on'], 'ui-checkbox-off': tabs['ui-checkbox-off']}">{{tabs.title}}</label>
+		        <input type="checkbox" checked="">
+		      </div>
+		    </div>
+		  </fieldset>
+		</div>
 	</div>
-	<div style="display: none;" id="sleep_aids_table-popup-placeholder">
-	</div>
-	<a href="#sleep_aids_table-popup" class="ui-table-columntoggle-btn ui-btn ui-btn-n ui-corner-all ui-shadow ui-mini" data-rel="popup">Sort</a>
-	<table data-role="table" id="sleep_aids_table" data-filter="true" data-input="#filtersleep_aidsTable-input" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="n" data-column-btn-text="Sort" data-column-popup-theme="n centerText">
-	  <thead>
-	    <tr class="ui-bar-n">
-	      <th data-colstart="1"></th>
-	      <th data-priority="1" data-colstart="2" class="ui-table-priority-1">Ingredients</th>
-	      <th data-priority="2" data-colstart="3" class="ui-table-priority-2">Description</th>
-	      <th data-priority="2" data-colstart="4" class="ui-table-priority-2">Onset</th>
-	      <th data-priority="3" data-colstart="5" class="ui-table-priority-3">Duration</th>
-	      <th data-priority="4" data-colstart="6" class="ui-table-priority-4">Pros</th>
-	      <th data-priority="5" data-colstart="7" class="ui-table-priority-5">Cons</th>
-	      <th data-priority="5" data-colstart="8" class="ui-table-priority-5">FYI</th>
-	      <th data-priority="5" data-colstart="9" class="ui-table-priority-5">
-	        <div class="centerText">User Votes</div>
-	      </th>
-	      <th data-priority="5" data-colstart="10" class="ui-table-priority-5">Avg. Cost</th>
-	      <th data-priority="5" data-colstart="11" class="ui-table-priority-5">Manufacturer</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    <tr>
-	      <th style="font-size:14px">
-	        <p><span style="color:#0066cc;">Unisom</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-	        <p><img alt="" src="{{AbsoluteURL}}/admin/images/articles/html_editor_uploads/unisom.png" style="width: 40px; height: 34px;"></p>
-	      </th>
-	      <td style="font-size:12px" class="ui-table-priority-1">
-	        <p><span style="color:#FFA500;">SleepTabs:</span><br>
-	          Doxylamine succinate 25&nbsp;mg / tablet&nbsp;&nbsp;&nbsp;&nbsp;
-	        </p>
-	        <p><span style="color:#6699ff;">SleepGels</span><br>
-	          Diphenhydramine HCL 50 mg / softgel&nbsp;&nbsp;&nbsp;&nbsp;
-	        </p>
-	        <p><span style="color:#800080;">QuickMelts</span><br>
-	          Diphenhydramine HCL 25 mg / tablet
-	        </p>
-	        <p><span style="color:#800000;">Liquid</span><br>
-	          <span style="font-size: 13px; line-height: 20.7999992370605px;">Diphenhydramine HCL 50 mg / 30 ml cup</span>&nbsp;&nbsp;&nbsp;&nbsp;
-	        </p>
-	        <p><span style="color:#4B0082;">PM Pain</span>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-	          Diphenhydramine 50 mg,<br>
-	          Acetaminophen 325 mg / tablet<br>
-	          &nbsp;
-	        </p>
-	      </td>
-	      <td style="font-size:14px" class="ui-table-priority-2">
-	        <p>Antihistamine sleep aid. Histamine keeps you awake and alert. This tries to block that effect.</p>
-	      </td>
-	      <td class="ui-table-priority-2">
-	        <p>15 to 30 minutes.</p>
-	      </td>
-	      <td class="ui-table-priority-3">
-	        <p>6 to 8 hours</p>
-	      </td>
-	      <td class="ui-table-priority-4">
-	        <p>1. Comes in liquid and quick melts.<br>
-	          2. Can alternate between sleepTabs and sleepGel to help reduce tolerance. They contain different ingredients.
-	        </p>
-	      </td>
-	      <td class="ui-table-priority-5">
-	        <p>1. SleepTabs and sleepGel contains two different antihistamines. Confusing.&nbsp;Alternate the two to help reduce tolerance.<br>
-	          2. Possible memory problems next day.<br>
-	          3. Reduced reaction time even if not drowsy.
-	        </p>
-	      </td>
-	      <td class="ui-table-priority-5">
-	        <p>1. If after 1 hour you still can't sleep. &nbsp;Do not take another dose. You will be wired. Take melatonin instead.</p>
-	      </td>
-	      <td class="ui-table-priority-5">
-	        <div class="grayfont">
-	          Did this sleep-aid help you? <br><br><br>
+	<div class="ui-popup-screen ui-overlay-b in" id="filterallergy_medsTable-pop-screen" *ngIf="FeedbackDlg.show" (click)="toggleFeedbackDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+	<div role="dialog" tabindex="-1" class="ui-popup-container pop in ui-popup-active mbsc-mobi-blue mbsc-mobiscroll dw-modal mbsc-wdg" *ngIf="FeedbackDlg.show" [ngStyle]="{'max-width': FeedbackDlg.maxWidth+'px','top': FeedbackDlg.top+'px', 'left': FeedbackDlg.left+'px', 'width': FeedbackDlg.width+'px'}">
+	    <div class="dwwr" style="width: 309px; white-space: nowrap;">
+	        <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	        <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	            <div class="feedbackAlert mbsc-comp" style="display: block;" id="mobiscroll1490899336998">
+	                <div class="alertWidth">
+	                    <div class="maxwidth300">
+	                        <div class="ovalBorderRightBlue" align="center">
+	                            <span>Help improve this comparison of OTC sleep medications.</span><br>
+	                        </div>
+	                        <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80"></div>
+	                    </div>
+	                    <div class="clearboth"></div>
+	                    <hr class="hrblue">
+	                    <p align="center"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
+	                    <!------------End show if columns  are the same--------------> 
+	                    <hr class="hrblue">
+	                </div>
+	            </div>
 	        </div>
-	      </td>
-	    </tr>
-	  </tbody>
-	</table>
+	        <div class="dwbc">
+	            <div class="dwbw ">
+	                <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="showCompare()">Not Now</div>
+	            </div>
+	            <div class="dwbw ">
+	                <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="showFeedback()">Give Feedback</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 </ion-content>

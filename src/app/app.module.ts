@@ -43,6 +43,7 @@ import { CommentCompareBluePage } from '../pages/comment-compare-blue/comment-co
 import { CommentCompareCyanPage } from '../pages/comment-compare-cyan/comment-compare-cyan';
 import { CommentCompareOrangePage } from '../pages/comment-compare-orange/comment-compare-orange';
 import { CommentCompareGreenPage } from '../pages/comment-compare-green/comment-compare-green';
+import { CommentComparePinkPage } from '../pages/comment-compare-pink/comment-compare-pink';
 import { CommentLoginPage } from '../pages/comment-login/comment-login';
 
 import { DecongestantsPage } from '../pages/decongestants/decongestants';
@@ -58,6 +59,9 @@ import { HeartburnGroupPage } from '../pages/heartburn-group/heartburn-group';
 import { PainPillsPage } from '../pages/pain-pills/pain-pills';
 import { PainCreamsPage } from '../pages/pain-creams/pain-creams';
 import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
+import { CompareFeedbackPage } from '../pages/compare-feedback/compare-feedback';
+import { CompareYeastPage } from '../pages/compare-yeast/compare-yeast';
+import { CompareAthletesfootPage } from '../pages/compare-athletesfoot/compare-athletesfoot';
 
 @NgModule({
   declarations: [
@@ -100,6 +104,7 @@ import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
     CommentCompareCyanPage,
     CommentCompareOrangePage,
     CommentCompareGreenPage,
+    CommentComparePinkPage,
     CommentLoginPage,
 
     DecongestantsPage,
@@ -114,7 +119,10 @@ import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
     HeartburnGroupPage,
     PainPillsPage,
     PainCreamsPage,
-    PainPatchesPage
+    PainPatchesPage,
+    CompareFeedbackPage,
+    CompareYeastPage,
+    CompareAthletesfootPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -160,6 +168,7 @@ import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
     CommentCompareCyanPage,
     CommentCompareOrangePage,
     CommentCompareGreenPage,
+    CommentComparePinkPage,
     CommentLoginPage,
 
     DecongestantsPage,
@@ -174,7 +183,10 @@ import { PainPatchesPage } from '../pages/pain-patches/pain-patches';
     HeartburnGroupPage,
     PainPillsPage,
     PainCreamsPage,
-    PainPatchesPage
+    PainPatchesPage,
+    CompareFeedbackPage,
+    CompareYeastPage,
+    CompareAthletesfootPage
   ],
   providers: [
     StatusBar,

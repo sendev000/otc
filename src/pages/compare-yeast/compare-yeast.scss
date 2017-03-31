@@ -1,22 +1,12 @@
 
-$toolbar-background-color: #FF9800;
-page-pain-creams {
+$toolbar-background-color: #00BCD4;
+
+page-compare-yeast {
 	font-size: 16px;
-	.toolbar-background, .toolbar-background-md, .toolbar-background-ios{
+	background-color: #FFF;
+
+	.toolbar-background-md{
 		background: $toolbar-background-color;
-		border: 0px none !important;
-	}
-	ion-navbar{
-		height: 55px !important;
-	}
-	fieldset.ui-controlgroup{
-		border: 0px none !important;
-	}
-	.ui-title{
-		padding-top: 0px !important;
-	}
-	.ui-input-search input{
-		padding-left: 1.75em !important;
 	}
 	.bar-button-md{
 		padding: 0px;
@@ -28,6 +18,7 @@ page-pain-creams {
 		font-weight: bold;
 		font-size: 16px;
 	}
+
 	ion-slides{
 		height: 220px;
 	}
@@ -41,6 +32,9 @@ page-pain-creams {
 	    max-height: 50%;
 	    max-width: 60%;
 	    margin: 18px 0;
+	}
+	.content-md{
+		background-color: transparent;
 	}
 }
 #ion-diagnostics-toast{

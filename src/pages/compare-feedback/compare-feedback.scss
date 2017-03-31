@@ -1,6 +1,6 @@
 
-$toolbar-background-color: #FF9800;
-page-pain-creams {
+$toolbar-background-color: #00BCD4;
+page-compare-feedback {
 	font-size: 16px;
 	.toolbar-background, .toolbar-background-md, .toolbar-background-ios{
 		background: $toolbar-background-color;
@@ -8,6 +8,14 @@ page-pain-creams {
 	}
 	ion-navbar{
 		height: 55px !important;
+	}
+	.bgNavGray{
+		color: rgba(0,0,0,0.54);
+	    opacity: 1;
+	    padding: 0 0 0 1em;
+	}
+	.bgNavGray .toolbar-background, .bgNavGray .toolbar-background-md, .bgNavGray .toolbar-background-ios{
+		background: #e0e0e0 !important;
 	}
 	fieldset.ui-controlgroup{
 		border: 0px none !important;

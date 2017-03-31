@@ -1,17 +1,11 @@
-$toolbar-background-color: #00BCD4;
 
-page-antifungi-meds {
+$toolbar-background-color: #E91E63;
+page-comment-compare-pink {
 	font-size: 16px;
 	background-color: #FFF;
-	.fullWidth{
-		background-image: url(../assets/img/dosing/blue-flower.jpg);
-	    background-repeat: no-repeat;
-	    background-position: bottom;
-	    background-attachment: fixed;
-	    height: 500px;
-	}
-	.toolbar-background-md{
-		background: $toolbar-background-color;
+
+	.toolbar-background, .toolbar-background-md, .toolbar-background-ios {
+	  background: $toolbar-background-color;
 	}
 	.bar-button-md{
 		padding: 0px;
@@ -40,6 +34,22 @@ page-antifungi-meds {
 	}
 	.content-md{
 		background-color: transparent;
+	}
+	.fontBold{
+		font-weight: bold;
+	}
+	.mini-navbar{
+		min-height: 26px;
+	    height: 36px;
+	    padding: 12px 4px 0px;
+	}
+	.ui-header .ui-title{
+		padding: 0px;
+		margin: 0px;
+	}
+	h3{
+		font-size: 1.8em;
+		font-weight: bold;
 	}
 }
 #ion-diagnostics-toast{

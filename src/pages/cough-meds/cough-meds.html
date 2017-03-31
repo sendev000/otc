@@ -1,9 +1,9 @@
-<!--
+<!-- 
   Generated template for the CoughMeds page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
+ -->
 <ion-header class="ui-header">
 
   <ion-navbar>
@@ -27,58 +27,771 @@
 <ion-content padding class="ui-page-theme-a">
 	<p>&nbsp;</p> 
 	<div id="all_questions_div">
-	  <div id="compare_cough_mobile_1">
-	    <div class="maxwidth450">
-	      <div class="ovalBorderRightBlue centerText"> 
-	        <span></span><br>
-	        Answer a few questions to compare OTC <span class="bluefont">cough medications</span> more efficiently. 
-	      </div>
-	      <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
-	      </div>
+	    <div id="compare_cough_mobile_1" *ngIf="currentPage==-1">
+	        <!-- ---Start follow up intro--- -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText"> 
+	                <span></span><br>
+	                Answer a few questions to compare OTC <span class="bluefont">cough medications</span> more efficiently. 
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p>This will assume you are comparing cough medications to see which would work best for you.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="transitPage(0)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
 	    </div>
-	    <div class="clearboth divider1"></div>
-	    <br>
-	    <div class="blueBorderAll">
-	      <p>This will assume you are comparing cough medications to see which would work best for you.</p>
+	    <!-- End follow up intro -->
+	    <div id="compare_cough_mobile_2_n" *ngIf="currentPage==0">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Are you experiencing a <span class="purplefont">dry</span> <span class="purplefont">cough?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p>That is, you are not <span style="color:#4B0082;">coughing</span> &nbsp;up stuff?</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(1)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(2)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
 	    </div>
-	    <div class="clearboth divider1"></div>
-	    <p class="centerText">
-	      <button data-inline="true" class="compare_cough_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
-	    </p>
-	    <p>&nbsp;</p>
-	  </div>
-	  <div id="compare_cough_mobile_2_n" class="displayNone">
-	    <div class="maxwidth450">
-	      <div class="ovalBorderRightBlue"> 
-	        <span>Are you experiencing a <span class="purplefont">dry</span> <span class="purplefont">cough?</span></span><br>
-	      </div>
-	      <div align="right"><img src="{{AbsoluteURL}}/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
-	      </div>
+	    <!-- end first follow up question div -->
+	    <!-- start follow up 3 div -->
+	    <div id="compare_cough_mobile_3_y" *ngIf="currentPage==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Get a cough syrup with <span class="greenfont">dextromethorphan</span> as an active ingredient.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_3_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(2)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
 	    </div>
-	    <div class="clearboth divider1"></div>
-	    <div class="orangeBorderAll">
-	      <p>That is, you are not <span style="color:#4B0082;">coughing</span> &nbsp;up stuff?</p>
+	    <div id="compare_cough_mobile_3_n" *ngIf="currentPage==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Is the cough <span class="bluefont">wet</span> and <span class="orangefont">producing mucus?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p>A &nbsp;feeling of <span style="color:#0000CD;">heaviness</span> on your chest?</p>
+	        </div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_4_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(3)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_4_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
 	    </div>
-	    <div class="clearboth divider1"></div>
-	    <p class="centerText">
-	      <button data-inline="true" class="compare_cough_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-	      <button data-inline="true" class="compare_cough_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
-	    </p>
-	    <p>&nbsp;</p>
-	  </div>
+	    <!-- end follow up 3 div -->
+	    <div id="compare_cough_mobile_4_y" *ngIf="currentPage==3">
+	        <!-- start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You will need something to make the <span class="orangefont">mucus</span> <span class="bluefont">thinner</span> so you can spit it out.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>A cough medicine with <strong><span style="color:#006400;">guaifenesin</span></strong> as an active ingredient would suffice.</p>
+	            <p>This is an <span style="color:#FF8C00;">expectorant </span>&nbsp;that will thin the mucus making it easier for you to cough it up and clear the breathing passages.</p>
+	            <p>Be sure to drink a lot of water with this.&nbsp;</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_4_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(4)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_4_n" *ngIf="currentPage==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Is this a dry cough that <span class="bluefont">keeps you up </span>  at <span class="bluefont"> night?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_5_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(5)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_5_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 4 div -->
+	    <div id="compare_cough_mobile_5_y" *ngIf="currentPage==5">
+	        <!-- start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                A cough syrup with <span class="purplefont">dextromethorphan</span> as an active ingredient will be good.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_5_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(6)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_5_n" *ngIf="currentPage==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Is this a <span class="bluefont">wet</span> cough that is producing <span class="pinkfont">mucus</span> and keeping you up at night?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_6_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(7)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_6_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 5 div -->
+	    <div id="compare_cough_mobile_6_y" *ngIf="currentPage==7">
+	        <!-- start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You will need a cough medication with <span class="greenfont">Guaifenesin</span> + <span class="purplefont">dextrometorphan.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="blueBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_6_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_6_n" *ngIf="currentPage==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Like to know if you should get the cough <span class="orangefont">syrup </span> or <span class="redfontItalic">tablets?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_7_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(9)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_7_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 6 div -->
+	    <div id="compare_cough_mobile_7_y" *ngIf="currentPage==9">
+	        <!-- start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This will depend on the <span class="bluefont">factors</span> listed below.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p>List reasons to get the syrup here.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_7_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(10)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_7_n" *ngIf="currentPage==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Long acting (12hr), maximum strength or regular strength. Like to know what you should get?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_8_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(11)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_8_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 7 div -->
+	    <div id="compare_cough_mobile_8_y" *ngIf="currentPage==11">
+	        <!-- start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                If the cough keeps you up at night,  get the <span class="orangefont">12 hour</span> cough syrup or tablets.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="greenBorderAll">
+	            <p>With the regular acting (every 4 to 6 hours) cough syrups or tablets, you don't want the cough waking you up around 4 or 5 in the morning when the effects of the medication wears off.</p>
+	            <p>Nothing as bad as starting your day with a morning cough. You will have a headache the rest of the day.</p>
+	            <p>If you have a sore throat stay away from the <span style="color:#B22222;">maximum strength</span>&nbsp;12 hr&nbsp;<span style="color:#FF8C00;">tablets.</span>&nbsp;&nbsp;&nbsp;&nbsp;These will be too big for you to swallow. The pills are &nbsp;big. Should you need a 12 hour cough relief tablet and you have a sore throat, stick with the <span style="color:#0000CD;">regular</span> strength. One tablet should do it for most people. But if you need the maximum strength dose, just take it twice.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_8_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(12)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_8_n" *ngIf="currentPage==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span><span class="orangefont">Cough drops</span>. Like to know if you should get these too?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_9_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(13)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_9_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 8 div -->
+	    <div id="compare_cough_mobile_9_y" *ngIf="currentPage==13">
+	        <!-- start follow up 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Get these if your throat is also sore. Maybe from the coughing.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="pinkBorderAll">
+	            <p>Cough drops will help <span style="color:#4B0082;">soothe</span> the throat and <span style="color:#FF0000;">suppress</span> the cough.&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	            <p>Also get cough drops if you are experiencing a tickly cough.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_9_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(14)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_9_n" *ngIf="currentPage==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span>Assuming you need a cough drop. Like to know what type to get?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p>So many different types out there. We can help you with that.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_10_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="transitPage(15)">Yes</button>
+	            <button data-inline="true" class="compare_cough_mobile_10_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="transitPage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 9 div -->
+	    <div id="compare_cough_mobile_10_y" *ngIf="currentPage==15">
+	        <!-- start follow up 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You should get the cough drops with <span class="greenfont">menthol</span> as an active ingredient.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p>The higher the strength the better? May be. fisherman's friend contains 10 mg of menthol, Halls intense cool (15 mg menthol), ricola extra strength (8.3 mg menthol).</p>
+	            <p>Bear in mind too that some are uniquely formulated blends. Like ricola.</p>
+	            <p>Here is the deal, stay with the higher strength if you also have nasal congestion with this cough and soreness of the throat.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_10_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="transitPage(16)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_10_n" *ngIf="currentPage==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link" (click)="transitPage(-1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 10 div -->
+	    <div id="compare_cough_mobile_11_y" *ngIf="currentPage==17">
+	        <!-- start follow up 11 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_11_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_11_n" *ngIf="currentPage==18">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 11 div -->
+	    <!-- -------------------------------Start attachment------------------------- -->
+	    <div id="compare_cough_mobile_12_y" *ngIf="currentPage==19">
+	        <!-- start follow up 12 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_12_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_12_n" *ngIf="currentPage==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 12 div -->
+	    <div id="compare_cough_mobile_13_y" *ngIf="currentPage==21">
+	        <!-- start follow up 13 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_13_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_13_n" *ngIf="currentPage==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 13 div -->
+	    <div id="compare_cough_mobile_14_y" *ngIf="currentPage==23">
+	        <!-- start follow up 14 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_14_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_14_n" *ngIf="currentPage==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 14 div -->
+	    <div id="compare_cough_mobile_15_y" *ngIf="currentPage==25">
+	        <!-- start follow up 15 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_15_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_15_n" *ngIf="currentPage==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 15 div -->
+	    <div id="compare_cough_mobile_16_y" *ngIf="currentPage==27">
+	        <!-- start follow up 16 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="orangeBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_16_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_16_n" *ngIf="currentPage==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end follow up 16 div --> 
+	    <div id="compare_cough_mobile_17_y" *ngIf="currentPage==29">
+	        <!-- start follow up 17 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span class="bluefontLarge">Yes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="blueBorderAll"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="compare_cough_mobile_17_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="compare_cough_mobile_17_n" *ngIf="currentPage==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue"> 
+	                <span></span><br>
+	                Alright. We just went through choosing the <span class="greenfont">cough medication</span> that will work best for you.        
+	            </div>
+	            <div align="right"><img src="assets/img/admin/Compare/pharm-lindsey.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p>Remember to seek urgent care if:</p>
+	            <ul>
+	                <li>this cough is so bad that you get a headache when you cough</li>
+	                <li>you can't sleep at night because of the cough for more than 3 nights now.</li>
+	                <li>coughing up blood.</li>
+	            </ul>
+	            <p>Hoped this helped you a little bit. If not, &nbsp;contact us with any questions you may have.&nbsp;</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p class="grayfontSmallSmall centerText">
+	            Last updated by pharmacist on : 
+	            08/17/2015 at 10:30:am<br>
+	        </p>
+	        <p class="centerText">
+	            <a href="#" data-inline="true" class="linkBlue back_compare_cough_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+	        </p>
+	    </div>
+	    <!-- end follow up 17 div -->
+	    <script>
+	        firstname=sessionStorage.getItem("firstname");
+	        $('.firstname').text(firstname + ',');
+	    </script>
 	</div>
 	<div class="feedbackAlert mbsc-comp" style="display: none;" id="mobiscroll1488898693889">
-	  <div class="alertWidth">
-	    <div class="maxwidth300">
-	      <div class="ovalBorderRightBlue" align="center">
-	        <span>Help improve this comparison of OTC cough medications.</span><br>
-	      </div>
-	      <div align="right"><img src="{{AbsoluteURL}}/admin/compare/pharm-lindsey.svg" alt="Pharmacist" width="80"></div>
+	    <div class="alertWidth">
+	        <div class="maxwidth300">
+	            <div class="ovalBorderRightBlue" align="center">
+	                <span>Help improve this comparison of OTC cough medications.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/admin/compare/pharm-lindsey.svg" alt="Pharmacist" width="80"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <hr class="hrblue">
+	        <p align="center"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
+	        <hr class="hrblue">
 	    </div>
-	    <div class="clearboth"></div>
-	    <hr class="hrblue">
-	    <p align="center"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback if you've seen changes since you last visited.</p>
-	    <hr class="hrblue">
-	  </div>
 	</div>
 </ion-content>

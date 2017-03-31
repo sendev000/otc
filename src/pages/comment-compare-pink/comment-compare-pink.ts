@@ -2,33 +2,37 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 
 /*
-  Generated class for the CoughMeds page.
+  Generated class for the CommentCompare page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { CommentLoginPage } from '../comment-login/comment-login';
 
 @Component({
-  selector: 'page-cough-meds',
-  templateUrl: 'cough-meds.html'
+  selector: 'page-comment-compare-pink',
+  templateUrl: 'comment-compare-pink.html'
 })
-export class CoughMedsPage {
-  currentPage: number;
+export class CommentComparePinkPage {
+	reasonShown: boolean;
   AbsoluteURL: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
-    this.AbsoluteURL = GlobalVars.getAbsoluteURL();
-    this.currentPage = -1;
+  	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
+    this.reasonShown = false;
   }
   showMenu() {
   	this.menu.open();
   }
-  transitPage(pageNumber: number) {
-    this.currentPage = pageNumber;
+  showComment() {
+  	this.navCtrl.push(CommentLoginPage);
+  }
+  toggleReason() {
+      this.reasonShown = !this.reasonShown;
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CoughMedsPage');
+    console.log('ionViewDidLoad CommentComparePage');
   }
 
 }

@@ -149,6 +149,18 @@ import { MucinexMsColdMobilePage } from '../pages/mucinex-ms-cold-mobile/mucinex
 import { MucinexColdCoughSorethroatMobilePage } from '../pages/mucinex-cold-cough-sorethroat-mobile/mucinex-cold-cough-sorethroat-mobile';
 import { MucinexNighttimeMsColdMobilePage } from '../pages/mucinex-nighttime-ms-cold-mobile/mucinex-nighttime-ms-cold-mobile';
 
+import { LittleMsColdFeverMobilePage } from '../pages/little-ms-cold-fever-mobile/little-ms-cold-fever-mobile';
+import { LittleDecongestantDropsMobilePage } from '../pages/little-decongestant-drops-mobile/little-decongestant-drops-mobile';
+
+import { RobitussinCoughColdMobilePage } from '../pages/robitussin-cough-cold-mobile/robitussin-cough-cold-mobile';
+import { RobitussinCoughChestMobilePage } from '../pages/robitussin-cough-chest-mobile/robitussin-cough-chest-mobile';
+import { RobitussinCoughColdLaMobilePage } from '../pages/robitussin-cough-cold-la-mobile/robitussin-cough-cold-la-mobile';
+
+import { PedialaxChewableMobilePage } from '../pages/pedialax-chewable-mobile/pedialax-chewable-mobile';
+import { PedialaxLiquidMobilePage } from '../pages/pedialax-liquid-mobile/pedialax-liquid-mobile';
+import { PedialaxGlycerinMobilePage } from '../pages/pedialax-glycerin-mobile/pedialax-glycerin-mobile';
+import { PedialaxEnemaMobilePage } from '../pages/pedialax-enema-mobile/pedialax-enema-mobile';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -295,6 +307,18 @@ import { MucinexNighttimeMsColdMobilePage } from '../pages/mucinex-nighttime-ms-
     MucinexMsColdMobilePage,                      // 1
     MucinexColdCoughSorethroatMobilePage,         // 2
     MucinexNighttimeMsColdMobilePage,             // 3
+
+    LittleMsColdFeverMobilePage,
+    LittleDecongestantDropsMobilePage,
+
+    RobitussinCoughColdMobilePage,                  // 0
+    RobitussinCoughChestMobilePage,                   // 1
+    RobitussinCoughColdLaMobilePage,                  // 2
+
+    PedialaxChewableMobilePage,                 // 0
+    PedialaxLiquidMobilePage,                 // 1
+    PedialaxGlycerinMobilePage,               // 2
+    PedialaxEnemaMobilePage                   // 3
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -445,6 +469,18 @@ import { MucinexNighttimeMsColdMobilePage } from '../pages/mucinex-nighttime-ms-
     MucinexMsColdMobilePage,                      // 1
     MucinexColdCoughSorethroatMobilePage,         // 2
     MucinexNighttimeMsColdMobilePage,             // 3
+
+    LittleMsColdFeverMobilePage,
+    LittleDecongestantDropsMobilePage,
+
+    RobitussinCoughColdMobilePage,                  // 0
+    RobitussinCoughChestMobilePage,                   // 1
+    RobitussinCoughColdLaMobilePage,                  // 2
+
+    PedialaxChewableMobilePage,                 // 0
+    PedialaxLiquidMobilePage,                 // 1
+    PedialaxGlycerinMobilePage,               // 2
+    PedialaxEnemaMobilePage                   // 3
   ],
   providers: [
     StatusBar,

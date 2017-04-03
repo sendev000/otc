@@ -1,18 +1,68 @@
-<!--
-  Generated template for the LittleRemedies page.
+<!--    
+  Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>little-remedies</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p>Little Remedies</p>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding class="ui-page-theme-o">
+	<div class="ui-content transparentButton">
+	    <div class="opacity1">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red">
+	                <span>Which formulation of <span class="purple_redfont">little remedies</span> do you want a dose for?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100"></div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p>&nbsp;</p>
+	        <!-- ---------------End Border right person------------------- -->
+	    </div>
+	    <div class="opacity1" style="padding:0 15px;">
+	        <br>
+	        <ul data-role="listview" class="ui-nodisc-icon ui-listview" data-corners="false">
+	            <li class="ui-first-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(0)">
+	                    <h3 class="purplefont">Multi-Symptom Cold &amp; Fever</h3>
+	                    <p class="grayfontSmallSmall">Acetaminophen 160 mg<br>Dextromethorphan 5 mg<br>Phenylephrine 2.5 mg / 5 ml</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/little/little-remedies-ms-cold.png" height="60" alt="little multi-symptom cold and fever"></p>
+	                </a>
+	            </li>
+	            <hr>
+	            <li class="ui-last-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="gotoSubPage(1)">
+	                    <h3 class="purple_redfont">Decongestant Nose Drops</h3>
+	                    <p class="grayfontSmallSmall">Phenylephrine HCl 0.125%</p>
+	                    <p class="ui-li-aside"><img src="assets/img/dosing/little/little-remedies-decongestant-drops.png" height="50" alt="little remedies decongestant nose drops"></p>
+	                </a>
+	            </li>
+	            <hr>
+	        </ul>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>
+

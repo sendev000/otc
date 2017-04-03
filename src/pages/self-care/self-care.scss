@@ -19,10 +19,7 @@ page-self-care {
 	.toolbar-title-md{
 		font-size: 16px;
 	}
-	.toolbar-background {
-	  background: $toolbar-background-color;
-	}
-	.toolbar-background-md{
+	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}
 	.content-md{

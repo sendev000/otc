@@ -6,14 +6,16 @@ page-robitussin {
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
-    
+    fieldset{
+    	border: 0px none;
+    }
 	a.linkGrayLight{
     	position: relative;
     	top: 2rem;
 	}
     .mainPage{
     }
-	.toolbar-background-md{
+	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}
 	.bar-button-md{

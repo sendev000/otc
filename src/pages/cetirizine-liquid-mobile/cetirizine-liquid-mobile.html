@@ -1,18 +1,92 @@
-<!--
-  Generated template for the CetirizineLiquidMobile page.
+<!--     
+  Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+     -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>cetirizine_liquid_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Cetirizine
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgGreen">
+    <p>Liquid / syrup<br><span class="grayLightfontSmallSmall">(5 mg in each 5 ml)</span></p>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding class="ui-page-theme-g">
+	<div class="ui-content" role="main">
+	    <div class="opacity7" style="padding:10px;">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen">
+	                <span>Let's do the<span class="redfont"> right thing</span> before getting the dose.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="redfontSmall greenBorderAll centerText">**Must check each statement before you will see the option to continue.</p>
+	        <div class="clearboth divider1"></div>
+	    </div>
+	    <div class="maxwidth650" id="q1">
+	        <div data-role="fieldcontain" id="check_div2" class="ui-field-contain">
+	            <fieldset data-role="controlgroup" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+	                <div class="ui-controlgroup-controls ">
+	                    <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">If new, make sure the seal is not broken.</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
+	                    <hr>
+	                    <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
+	                    <hr>
+	                    <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">If giving another medicine with this, check that it does not contain cetirizine.</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
+	                    <hr>
+	                    <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not allergic to any of the ingredients (active or inactive).</label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
+	                    <hr>
+	                    <!--<input type="checkbox" name="child_check" id="child_check_4" class="child_check" value="" />
+	                        <label for="child_check_4">Your child is not......................</label><hr>-->
+	                    <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Aware that giving too much cetirizine can be harmful.</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
+	                    <hr>
+	                    <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check active ingredient again. It is <span class="greenfont">Cetirizine Liquid  5 mg / 5 ml</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
+	                    <hr>
+	                    <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
+	                    <hr>
+	                </div>
+	            </fieldset>
+	            <div class="clearboth divider1"></div>
+	        </div>
+	    </div>
+	    <div class="opacity3">
+	        <p class="centerText">
+	            <a href="#" data-role="none" class="disclaimerFYI linkAmber" data-inline="true">FYI</a>
+	            <a href="#dosing_slider_mobile" id="child_check_button" class="displayNone linkPinkBorder" data-role="none" data-inline="true" data-transition="slide">Please Continue</a>
+	        </p>
+	    </div>
+	    <div class="opacity8 disclaimerDiv displayNone paddingSides centerText">
+	        <div class="redBorderAll">
+	            <h3 class="redfont centerText">Terms of use/Disclaimer</h3>
+	            <p>Put disclaimer here via ajax load or display none interactin.</p>
+	        </div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>
+

@@ -6,9 +6,6 @@ $red-text-color: #F00;
 page-home {
 	font-size: 16px;
 	color: #FFF;
-	.toolbar-background {
-	  background-color: $toolbar-background-color;
-	}
 	figcaption {
 	    margin: 10px 2px;
 	    font-size: 0.75em;
@@ -52,7 +49,7 @@ page-home {
 	.toolbar-title-md{
 		font-size: 1em;
 	}
-	.toolbar-background-md{
+	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}
 	.ui-title span{

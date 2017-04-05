@@ -22,11 +22,18 @@
     <p class="boxSpinnerRed"></p>
     <p class="font14 fontBold">Medication Dosing</p>
   </ion-navbar>
-  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="currentPage==1">
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="currentPage==1 && isLoggedIn == false">
   	<div class="floatright"> 
 	    <a href="#" class="linkGrayLight font12 absoluteRight ui-link" data-inline="true" (click)="gotoLogin()">Login</a>  
 	</div>
 	<p class="font14">Which medication?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="currentPage==1 && isLoggedIn == true">
+  	<div class="spinner floatright"></div>
+	<div class="floatright savedDose">
+	   <a href="#" class="linkGrayBorderLightThin font12 absoluteRight ui-link" data-inline="true" (click)="gotoSavedDose()">Saved Doses</a>  
+	</div>
+	<p>Medication?</p>
   </ion-navbar>
 </ion-header>
 

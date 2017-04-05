@@ -161,6 +161,16 @@ import { PedialaxLiquidMobilePage } from '../pages/pedialax-liquid-mobile/pedial
 import { PedialaxGlycerinMobilePage } from '../pages/pedialax-glycerin-mobile/pedialax-glycerin-mobile';
 import { PedialaxEnemaMobilePage } from '../pages/pedialax-enema-mobile/pedialax-enema-mobile';
 
+import { SaveDoseInsertPage } from '../pages/save-dose-insert/save-dose-insert';
+import { SaveDoseLoginPage } from '../pages/save-dose-login/save-dose-login';
+import { SaveDoseInsertSuccessPage } from '../pages/save-dose-insert-success/save-dose-insert-success';
+import { SaveDoseListPage } from '../pages/save-dose-list/save-dose-list';
+import { SaveDoseLogoutConfirmPage } from '../pages/save-dose-logout-confirm/save-dose-logout-confirm';
+import { SaveDoseLoginDirectPage } from '../pages/save-dose-login-direct/save-dose-login-direct';
+import { SaveDoseRegisterPage } from '../pages/save-dose-register/save-dose-register';
+
+import { AuthService} from '../pages/providers/auth-service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -318,7 +328,15 @@ import { PedialaxEnemaMobilePage } from '../pages/pedialax-enema-mobile/pedialax
     PedialaxChewableMobilePage,                 // 0
     PedialaxLiquidMobilePage,                 // 1
     PedialaxGlycerinMobilePage,               // 2
-    PedialaxEnemaMobilePage                   // 3
+    PedialaxEnemaMobilePage,                  // 3
+
+    SaveDoseInsertPage,
+    SaveDoseLoginPage,
+    SaveDoseInsertSuccessPage,
+    SaveDoseListPage,
+    SaveDoseLogoutConfirmPage,
+    SaveDoseLoginDirectPage,
+    SaveDoseRegisterPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -480,9 +498,18 @@ import { PedialaxEnemaMobilePage } from '../pages/pedialax-enema-mobile/pedialax
     PedialaxChewableMobilePage,                 // 0
     PedialaxLiquidMobilePage,                 // 1
     PedialaxGlycerinMobilePage,               // 2
-    PedialaxEnemaMobilePage                   // 3
+    PedialaxEnemaMobilePage,                  // 3
+
+    SaveDoseInsertPage,
+    SaveDoseLoginPage,
+    SaveDoseInsertSuccessPage,
+    SaveDoseListPage,
+    SaveDoseLogoutConfirmPage,
+    SaveDoseLoginDirectPage,
+    SaveDoseRegisterPage,
   ],
   providers: [
+    AuthService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

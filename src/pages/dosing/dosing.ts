@@ -8,7 +8,9 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
-import { CommentLoginPage } from '../comment-login/comment-login';
+import { AuthService} from '../providers/auth-service';
+import { SaveDoseLoginPage } from '../save-dose-login/save-dose-login';
+import { SaveDoseListPage } from '../save-dose-list/save-dose-list';
 
 import { DiphenhydraminePage } from '../diphenhydramine/diphenhydramine';
 import { LoratadinePage } from '../loratadine/loratadine';
@@ -42,7 +44,13 @@ export class DosingPage {
 	AbsoluteURL: string;
   pages: any;
   subPages: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+  isLoggedIn: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private authService: AuthService) {
+    let user = this.authService.getUserInfo();
+    if (user == null)
+      this.isLoggedIn = false;
+    else
+      this.isLoggedIn = true;
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
     this.currentPage = 0;
@@ -85,7 +93,10 @@ export class DosingPage {
     this.navCtrl.push(this.subPages[id]);
   }
   gotoLogin() {
-    this.navCtrl.push(CommentLoginPage);
+    this.navCtrl.push(SaveDoseLoginPage);
+  }
+  gotoSavedDose() {
+    this.navCtrl.push(SaveDoseListPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DosingPage');

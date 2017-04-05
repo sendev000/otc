@@ -1,0 +1,95 @@
+<!--     
+  Generated template for the Dosing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+      -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth roboto bgCyan">
+    <p> Save this dose </p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ui-page-theme-n ui-mobile">
+	<div class="ui-content">
+	   <div class="opacity7" style="padding:16px;">
+	      <p>&nbsp;</p>
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span><span class="orangefontLarge">First</span><br> &nbsp; Please enter the child's <span class="bluefont">name</span> below.</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Remember to add a <span class="bluefont">comment.</span>
+	               </div>
+	            </div>
+	            <div class="grid_4" align="right"> 
+	               <img src="assets/img/pharm/female/pharm-amanda-cyan.svg" width="80" alt="Pharmacist"> 
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-- ---------------End Point Right-------------------  -->
+	   </div>
+	   <p>&nbsp;</p>
+	   <div style="padding:16px;">
+	      <!-- ------------------Form----------------------------------------------------------  -->
+	      <form (ngSubmit)="saveDosingPage()" #saveDosingForm="ngForm" id="save_dose_insert_form" name="save_dose_insert_form" >
+	      	<ion-row>
+		        <ion-col>
+		          <ion-list inset>
+		            
+		            <ion-item>
+		              <ion-input type="text" placeholder="Child's name is..." name="child_name" [(ngModel)]="dose.child" required></ion-input>
+		            </ion-item>
+		              
+		            <ion-item>
+		              <ion-textarea placeholder="Gave medication because..." name="dose_comment" [(ngModel)]="dose.comment" required></ion-textarea>
+		            </ion-item>
+		            
+		          </ion-list>
+		        </ion-col>
+			</ion-row>
+			<br>
+	         <!-- <input name="user_id" type="hidden" id="user_id" value="117">
+	         <input name="user_email" type="hidden" id="user_email" value="lightmorning46@gmail.com">
+	         <input name="dose_direction" type="hidden" id="dose_direction" value="
+	            <p>&amp;nbsp;</p>
+	            <p><span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;>Give&amp;nbsp;</span><span style=&quot;line-height: 20.7999992370605px; font-size: 22px;&quot;><span style=&quot;color: rgb(255, 0, 0);&quot;>&amp;nbsp;3.75 ml (¾ teaspoonful)</span></span><span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;>&amp;nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style=&quot;line-height: 20.7999992370605px; font-size: 18px;&quot;><span style=&quot;color: rgb(255, 0, 0);&quot;>&amp;nbsp;4 to 6 hours</span></span><span style=&quot;font-size: 13px; line-height: 20.7999992370605px;&quot;>&amp;nbsp;as needed.</span></p>
+	            <p><img alt=&quot;3.75 ml syringe&quot; src=&quot;http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3-75ml-cherry-syringe.png&quot; style=&quot;width: 180px; height: 340px;&quot;>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</p>
+	            <p><span style=&quot;color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;&quot;>Not more than 5 times a day.</span></p>
+	            ">
+	         <input name="dose_medication" type="hidden" id="dose_medication" value=" 
+	            Acetaminophen Infant Suspension<br> <span class=&quot;redfontSmall centerText&quot;> 
+	            160 mg / 5 ml</span>"> 
+	         <input type="hidden" name="saved_on" value=""> -->
+	         <div class="clearboth divider1"></div>
+	         <p class="centerText">
+	            <input type="submit" id="insert_child_dose" name="insert_child_dose" data-enhanced="false" data-role="none" class="buttonCyanBorder" value="Save Dose" [disabled]="!saveDosingForm.form.valid">
+	         </p>
+	      </form>
+	   </div>
+	   <!---------------------End Form-------------------------------- -->    
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
+</ion-content>
+

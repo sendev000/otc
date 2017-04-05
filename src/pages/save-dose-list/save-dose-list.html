@@ -1,0 +1,83 @@
+<!--     
+  Generated template for the Dosing page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+     -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth roboto bgCyan">
+    <p class="floatright paddingSides">
+    	<a href="#" class="linkGrayLightThin ui-link" (click)="logout()">Log out</a>
+    </p>
+    <p>Saved doses</p>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ui-page-theme-n ui-mobile">
+	<div class="ui-content">
+	   <p>&nbsp;</p>
+	   <div class="maxwidth450">
+	      <div class="centerText">
+	         <img src="assets/img/illustration/process/swipe-left-right.svg" width="50" alt="swipe left or right gesture">
+	      </div>
+	      <p class="font12 centerText">
+	         <span class="bluefont">Swipe Right</span> for <span class="orangefont">details</span> or <span class="bluefont">complete</span> actions.<br>
+	         <span class="redfont">Swipe Left</span> for <span class="greenfont">in progress</span> or <span class="redfont">delete</span> actions.
+	      </p>
+	   </div>
+	   <p>&nbsp;</p>
+	   <div class="mbsc-lv-cont mbsc-lv-mobi-blue mbsc-lv-mobiscroll mbsc-lv-ic-anim mbsc-lv-alt-row  mbsc-lv-handle-right">
+	      <ul class="mbsc-lv mbsc-lv-dummy"></ul>
+	      <div class="mbsc-lv-sl-c" data-ref="1">
+	         <ul id="saved_dose_list" class="dose-list mbsc-comp mbsc-lv mbsc-lv-v mbsc-lv-root mbsc-lv-sl-curr" style="">
+	            <li *ngFor="let eachDosing of dosingData" class="mbsc-lv-item mbsc-lv-item-enhanced">
+				   <h3 class="mbsc-lv-txt">
+				   	<span class="grayfontSmall">Dose for</span> 
+				   	<span class="cyanfontLarge caps" [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachDosing['child_name'])"></span></h3>
+				   <p class="mbsc-lv-txt"> 
+				      Acetaminophen Infant Suspension<br> <span class="redfontSmall centerText"> 
+				      160 mg / 5 ml</span><br>
+				      <span class="grayfontSmall">Saved on: <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachDosing['saved_date'])"></span> at <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachDosing['saved_time'])"></span></span>
+				   </p>
+				   <br>
+				   <div *ngIf="eachDosing['complete'] == 'Yes'">
+            			<div>
+            				<span class="redfontLarge">Completed</span> 
+            				<span class="grayfontSmall"> on: <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachDosing['completed_date'])"></span> at <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(eachDosing['completed_time'])"></span></span>
+            			</div>
+            		</div>
+            		<div *ngIf="eachDosing['complete'] == 'No'">
+            			<div class="greenfontLarge">In Progress ...</div>
+            		</div>
+				   <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+				      <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+				         <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+				         <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+				         <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+				      </div>
+				   </div>
+				</li>
+	         </ul>
+	      </div>
+	   </div>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
+</ion-content>
+

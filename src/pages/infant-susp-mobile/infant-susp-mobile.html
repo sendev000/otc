@@ -1,9 +1,9 @@
-<!--    
+<!--     
   Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
-    -->
+     -->
 <ion-header class="ui-header">
 
   <ion-navbar>
@@ -19,12 +19,13 @@
     </ion-buttons>
 	</ion-navbar>
   <ion-navbar class="fullWidth roboto bgPink">
-    <p>Infant suspension<br><span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
+    <p *ngIf="currentPage == 0">Infant suspension<br><span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
+    <p *ngIf="currentPage > 0">Child's weight?</p>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="ui-page-theme-i ui-mobile">
-	<div class="fullWidth mainPage">
+	<div class="fullWidth mainPage" *ngIf="currentPage == 0">
 		<div class="opacity5" style="padding:10px;">
 		    <p>&nbsp;</p>
 		    <div class="maxwidth450">
@@ -35,7 +36,7 @@
 		        </div>
 		    </div>
 		    <div class="clearboth divider1"></div>
-		    <!-- ---------------End Border right person------------------- -->
+		    <!--  ---------------End Border right person-------------------  -->
 		    <p class="redfontSmall redBorderAll centerText">**Must check each statement before you will see the option to continue.</p>
 		    <div class="clearboth divider1"></div>
 		</div>
@@ -43,21 +44,21 @@
 		    <div data-role="fieldcontain" id="check_div2" class="ui-field-contain">
 		        <fieldset data-role="controlgroup" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
 		            <div class="ui-controlgroup-controls ">
-		                <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-first-child ui-checkbox-off">If new, make sure the seal is not broken</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value="" data-cacheval="true"></div>
+		                <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-first-child" [ngClass]="{'ui-checkbox-off': !options[0], 'ui-checkbox-on': options[0]}" (click)="toggleOptions(0)">If new, make sure the seal is not broken</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[1], 'ui-checkbox-on': options[1]}" (click)="toggleOptions(1)">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Giving another medicine with this? Check that it does not contain acetaminophen.</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[2], 'ui-checkbox-on': options[2]}" (click)="toggleOptions(2)">Giving another medicine with this? Check that it does not contain acetaminophen.</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not allergic to any of the ingredients <span class="grayfontSmall">(active or inactive)</span></label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[3], 'ui-checkbox-on': options[3]}" (click)="toggleOptions(3)">Child is not allergic to any of the ingredients <span class="grayfontSmall">(active or inactive)</span></label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not taking a blood thinner like warfarin.</label><input type="checkbox" name="child_check" id="child_check_4" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[4], 'ui-checkbox-on': options[4]}" (click)="toggleOptions(4)">Child is not taking a blood thinner like warfarin.</label><input type="checkbox" name="child_check" id="child_check_4" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">You are aware that giving too much acetaminophen can lead to severe liver problems</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[5], 'ui-checkbox-on': options[5]}" (click)="toggleOptions(5)">You are aware that giving too much acetaminophen can lead to severe liver problems</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check active ingredient again. It is Acetaminophen Infant Suspension  <span class="purple_redfont">160 mg / 5 ml</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !options[6], 'ui-checkbox-on': options[6]}" (click)="toggleOptions(6)">Check active ingredient again. It is Acetaminophen Infant Suspension  <span class="purple_redfont">160 mg / 5 ml</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
 		                <hr class="hrpink">
-		                <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
+		                <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-last-child" [ngClass]="{'ui-checkbox-off': !options[7], 'ui-checkbox-on': options[7]}" (click)="toggleOptions(7)">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
 		                <hr class="hrpink">
 		            </div>
 		        </fieldset>
@@ -67,7 +68,7 @@
 		<div>
 		    <p class="centerText">
 		        <a href="#" data-role="none" class="disclaimerFYI linkOrange" data-inline="true" (click)="toggleTerm()">FYI</a>
-		        <a href="#dosing_slider_mobile" id="child_check_button" class="displayNone linkPinkBorder" data-role="none" data-inline="true" data-transition="slide">Please Continue</a>
+		        <a href="#" id="child_check_button" class="linkPinkBorder" data-role="none" data-inline="true" data-transition="slide" *ngIf="options[7] == true" (click)="setCurrentPage(1)">Please Continue</a>
 		    </p>
 		</div>
 		<div class="opacity8 disclaimerDiv paddingSides centerText" [ngClass]="{'displayNone': !showTerm}">
@@ -87,6 +88,420 @@
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
 		<p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="currentPage>0">
+	    <p>&nbsp;</p>
+	    <p id="header" class="displayNone centerText"> 
+	        Acetaminophen Infant Suspension<br> <span class="redfontSmall centerText"> 
+	        160 mg / 5 ml</span>
+	    </p>
+	    <div id="slider_div" class="opacity3 padding0" *ngIf="currentPage==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red">
+	                <span> Use the slider below to tell us the <span class="redfont">weight</span><br> in <span class="redfont">(lbs)</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="grayfontSmall centerText">
+	            Tap on <span class="orangefont">"FYI"</span> to convert from <span class="orangefont"> Kg </span> to <span class="redfont"> Ibs </span> if you need to.
+	        </p>
+	        <br>
+	        <!--  ---------------End Border right person-------------------  -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <div class="ui-slider">
+	                <ion-item>
+						<ion-range min="5" max="40" [(ngModel)]="currentWeight" color="sliderPink">
+							<ion-label range-left>{{currentWeight}}(lbs)</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	            <a href="#" id="mobi_wt_link" data-role="none" data-inline="true" class="linkOrange">FYI</a>
+	            <input type="button" id="get_slider" data-inline="true" class="buttonPinkBorder" data-role="none" value="Here you go" (click)="setCurrentPage(2)">
+	        </div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- -==========================Slider Responses========================================- -->
+	    <!-- --------------------------------------Container-------------------------------------- --> 
+	    <div class="opacity5" *ngIf="currentPage==2">
+	        <div class="container_12" id="slider_value_container" *ngIf="currentPage==2">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red">
+	                    <div id="slider_value">You said: <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentWeight}} </span> (lbs)<br> <br> <span class="redfontSmall">(This assumes output in lbs)</span> </div>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" width="100" alt="Pharmacist"> 
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <!-- ------------------------------Response divisions------------------------ -->
+	        <div id="5lb" class="" *ngIf="currentWeight==5">
+	            <h4 class="redBorderAll redfont centerText">If this is correct</h4>
+	            <div id="5D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="text-align: center;"><span style="font-size:18px;"><strong><span style="color:#FF0000;">No dosing information available for this weight.</span></strong></span></p>
+	                <p style="text-align: center;"><span style="color:#EE82EE;"><span style="font-size:16px;">Please see a healthcare provider for dosing.</span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmber" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="7lb" *ngIf="currentWeight==7 || currentWeight == 6">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="7D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="text-align: center;">Give <span style="font-size:20px;"><span style="color:#FF0000;">1.25 ml (¼ teaspoonful)</span></span> using the medicine syringe or a store brand dosing syringe usually every <span style="color:#FF0000;"><span style="font-size:18px;">4 to 6 hours</span></span> as needed.</p>
+	                <p style="text-align: center;"><img alt="1.25 ml syringe" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/1-25ml-cherry-syringe.png" style="width: 180px; height: 355px;"></p>
+	                <p style="text-align: center;"><span style="color:#FF0000;"><span style="font-size:18px;">Not more than 5 times a day.</span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_7" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="9lb" *ngIf="currentWeight==9 || currentWeight == 8">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="9D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="text-align: center;">Give <span style="font-size:22px;"><strong><span style="color:#FF0000;">1.5 ml</span></strong></span> &nbsp;using the medicine syringe or a store brand dosing syringe &nbsp;every <span style="color:#FF0000;"><span style="font-size:18px;">4 to 6 hours</span></span> as needed.</p>
+	                <p style="text-align: center;"><img alt="1.5 ml syringe" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/1-5ml-cherry-syringe.png" style="width: 180px; height: 350px;"></p>
+	                <p style="text-align: center;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_9" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="11lb" *ngIf="currentWeight==11 || currentWeight == 10">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="11D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p>Give <span style="font-size:22px;"><span style="color:#FF0000;">2 ml</span></span> using the medicine syringe or a store brand dosing syringe usually every<span style="font-size:18px;"><span style="color:#FF0000;"> 4 to 6 hours</span></span> as needed.</p>
+	                <p><img alt="2 ml syringe" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/2ml-cherry-syringe.png" style="width: 180px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_11" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="13lb" *ngIf="currentWeight==13 || currentWeight == 12 || currentWeight == 11">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="13D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give&nbsp;</span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">2.5 ml (½ teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="2.5 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/2-5ml-cherry-syringe.png" style="width: 180px; height: 340px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_13" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="16lb" *ngIf="currentWeight==16 || currentWeight == 15 || currentWeight == 14">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="16D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give </span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">&nbsp;3 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="3 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3ml-cherry-syringe.png" style="width: 180px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_16" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="19lb" *ngIf="currentWeight==19 || currentWeight == 18 || currentWeight == 17">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="19D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give&nbsp;</span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">&nbsp;3.5 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="3.5 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3-5ml-cherry-syringe.png" style="width: 180px; height: 353px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_19" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- --> 
+	        <div id="22lb" *ngIf="currentWeight==22 || currentWeight == 21 || currentWeight == 20">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="22D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give&nbsp;</span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">&nbsp;3.75 ml (¾ teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="3.75 ml syringe" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3-75ml-cherry-syringe.png" style="width: 180px; height: 340px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_22" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="25lb" *ngIf="currentWeight==25 || currentWeight == 24 || currentWeight == 23">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="25D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give&nbsp;</span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="4 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/4ml-cherry-syringe.png" style="width: 180px; height: 358px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_25" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="28lb" *ngIf="currentWeight>=26 && currentWeight<=28">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="28D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="font-size: 13px; line-height: 20.7999992370605px;">Give&nbsp;</span><span style="line-height: 20.7999992370605px; font-size: 22px;"><span style="color: rgb(255, 0, 0);">&nbsp;5 ml (1 teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every</span><span style="line-height: 20.7999992370605px; font-size: 18px;"><span style="color: rgb(255, 0, 0);">&nbsp;4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;as needed.</span></p>
+	                <p><img alt="5 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/5ml-cherry-syringe.png" style="width: 180px; height: 385px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Not more than 5 times a day.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_28" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="32lb" *ngIf="currentWeight>=29 && currentWeight<=32">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="32D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="text-align: center;"><span style="font-size:22px;"><strong><span style="color:#EE82EE;">Please use the children's suspension</span></strong></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_32" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="36lb" *ngIf="currentWeight>=33 && currentWeight<=36">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="36D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="color:#EE82EE;"><span style="font-size:22px;">Please use the children's suspension</span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_36" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="41lb" *ngIf="currentWeight>=37 && currentWeight<=41">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="41D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p><span style="color:#EE82EE;"><span style="font-size:22px;">Please use the children's suspension</span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_41" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="46lb" *ngIf="currentWeight>=42 && currentWeight<=46">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="46D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_46" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="52lb" *ngIf="currentWeight>=47 && currentWeight<=52">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="52D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_52" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="58lb" *ngIf="currentWeight>=53 && currentWeight<=58">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="58D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_58" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="64lb" *ngIf="currentWeight>=59 && currentWeight<=64">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="64D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_64" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="70lb" *ngIf="currentWeight>=65 && currentWeight<=70">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="70D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_70" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="77lb" *ngIf="currentWeight>=71 && currentWeight<=77">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="77D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_77" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="84lb" *ngIf="currentWeight>=78 && currentWeight<=84">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="84D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_84" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="90lb" *ngIf="currentWeight>=85 && currentWeight<=90">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="90D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_90" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="91lb" *ngIf="currentWeight>=91">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="91D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" id="save_91" data-role="none" data-inline="true" class="linkCyanBorderThin" (click)="saveDoseWeight()">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- ----End Opacity5------ -->
+	    <!-- -----------------------------Start Mobiscroll------------------------ -->
+	    <div class="feedbackAlert mbsc-comp" style="display: none;" id="mobiscroll1491316343323">
+	        <div class="alertWidth">
+	            <div class="maxwidth300">
+	                <div class="ovalBorderRightPurple_red">
+	                    <span>Help improve this over-the-counter child dosing project.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" alt="Pharmacist Alicia" width="80"></div>
+	            </div>
+	            <div class="clearboth"></div>
+	            <hr class="hrpink">
+	            <p class="centerText"><span class="redfont">Thanks for your past feedback.</span><br> You may give another feedback if you've seen changes since your last visit.</p>
+	            <!-- ----------End show if columns  are the same------------ --> 
+	            <hr class="hrpink">
+	        </div>
+	    </div>
+	    <!-- -----------------------------End Mobiscroll------------------------ -->
 	</div>
 </ion-content>
 

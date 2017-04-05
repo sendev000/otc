@@ -1,12 +1,16 @@
-$toolbar-background-color: #E91E63;
-page-dosing {
+$toolbar-background-color: #00BCD4;
+page-save-dose-list {
 	font-size: 16px;
-	background-image: url(../assets/img/dosing/pink-balls.jpg);
+	background-image: url(../assets/img/dosing/blue-balls.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
-    .savedDose{
-    	margin-top: 15px !important;
+    .item-inner, .list-md .item-input{
+    	border-bottom: 0px none !important;
+    	box-shadow: inherit !important;
+    }
+    input[aria-hidden="true"]{
+    	display: none !important;
     }
 	a.linkGrayLight{
     	position: relative;

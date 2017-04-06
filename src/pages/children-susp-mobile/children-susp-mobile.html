@@ -1,9 +1,9 @@
-<!--    
+<!--     
   Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
-    -->
+     -->
 <ion-header class="ui-header">
 
   <ion-navbar>
@@ -19,12 +19,13 @@
     </ion-buttons>
 	</ion-navbar>
   <ion-navbar class="fullWidth robotoLight bgPink">
-    <p>Children Suspension<br><span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
+  	<p *ngIf="currentPage == 0">Children Suspension<span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
+    <p *ngIf="currentPage > 0">Child's weight?</p>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="ui-page-theme-i">
-	<div class="ui-content">
+<ion-content padding class="ui-page-theme-i" [ngClass]="{'no-scroll': convertDlgInfo.noscroll}">
+	<div class="ui-content" *ngIf="currentPage == 0">
 	    <div class="opacity9" style="padding:10px;">
 	        <p>&nbsp;</p>
 	        <div class="maxwidth450">
@@ -35,7 +36,7 @@
 	            </div>
 	        </div>
 	        <div class="clearboth divider1"></div>
-	        <!-- ---------------End Border right person------------------- -->
+	        <!--  ---------------End Border right person-------------------  -->
 	        <p class="redfontSmall redBorderAll centerText">**Must check each statement before you will see the option to continue.</p>
 	        <div class="clearboth divider1"></div>
 	    </div>
@@ -43,21 +44,21 @@
 	        <div data-role="fieldcontain" id="check_div2" class="ui-field-contain">
 	            <fieldset data-role="controlgroup" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
 	                <div class="ui-controlgroup-controls ">
-	                    <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">If new, make sure the seal is not broken</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-first-child" [ngClass]="{'ui-checkbox-off': !options[0], 'ui-checkbox-on': options[0]}" (click)="toggleOptions(0)">If new, make sure the seal is not broken</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[1], 'ui-checkbox-on': options[1]}" (click)="toggleOptions(1)">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">If giving another medicine with this, check that it does not contain acetaminophen.</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[2], 'ui-checkbox-on': options[2]}" (click)="toggleOptions(2)">If giving another medicine with this, check that it does not contain acetaminophen.</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not allergic to any of the ingredients (active or inactive).</label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[3], 'ui-checkbox-on': options[3]}" (click)="toggleOptions(3)">Child is not allergic to any of the ingredients (active or inactive).</label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not taking a blood thinning drug like warfarin.</label><input type="checkbox" name="child_check" id="child_check_4" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[4], 'ui-checkbox-on': options[4]}" (click)="toggleOptions(4)">Child is not taking a blood thinning drug like warfarin.</label><input type="checkbox" name="child_check" id="child_check_4" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Aware that giving too much acetaminophen can lead to severe liver problems.</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[5], 'ui-checkbox-on': options[5]}" (click)="toggleOptions(5)">Aware that giving too much acetaminophen can lead to severe liver problems.</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check active ingredient again. It is Acetaminophen Children Suspension  <span class="purple_redfont">160 mg / 5 ml</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[6], 'ui-checkbox-on': options[6]}" (click)="toggleOptions(6)">Check active ingredient again. It is Acetaminophen Children Suspension  <span class="purple_redfont">160 mg / 5 ml</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-last-child" [ngClass]="{'ui-checkbox-off': !options[7], 'ui-checkbox-on': options[7]}" (click)="toggleOptions(7)">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
 	                    <hr>
 	                </div>
 	            </fieldset>
@@ -66,11 +67,11 @@
 	    </div>
 	    <div class="opacity3">
 	        <p class="centerText">
-	            <a href="#" data-role="none" class="disclaimerFYI linkAmber" data-inline="true">FYI</a>
-	            <a href="#dosing_slider_mobile" id="child_check_button" class="displayNone linkPinkBorder" data-role="none" data-inline="true" data-transition="slide">Please Continue</a>
+	            <a href="#" data-role="none" class="disclaimerFYI linkAmber" data-inline="true" (click)="toggleTerm()">FYI</a>
+	            <a href="#" id="child_check_button" class="linkPinkBorder" data-role="none" data-inline="true" data-transition="slide" *ngIf="options[7] == true" (click)="setCurrentPage(1)">Please Continue</a>
 	        </p>
 	    </div>
-	    <div class="opacity8 disclaimerDiv displayNone paddingSides centerText">
+	    <div class="opacity8 disclaimerDiv paddingSides centerText" [ngClass]="{'displayNone': !showTerm}">
 	        <div class="redBorderAll">
 	            <h3 class="redfont centerText">Terms of use/Disclaimer</h3>
 	            <p>Put disclaimer here via ajax load or display none interactin.</p>
@@ -87,6 +88,700 @@
 	    <p>&nbsp;</p>
 	    <p>&nbsp;</p>
 	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="currentPage>0">
+		<p>&nbsp;</p>
+		<p id="header" class="displayNone"> Acetaminophen Children Suspension<br> <span class="purple_redfontSmall"> 160 mg / 5 ml</span></p>
+		<div id="slider_div" class="opacity3 padding0" *ngIf="currentPage==1">
+		  <div class="maxwidth450">
+		     <div class="ovalBorderRightPurple_red">
+		        <span> Use the slider below to tell us the <span class="redfont">weight</span> <br>in <span class="purplefont">(lbs)</span></span><br>
+		     </div>
+		     <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" width="100" alt="Pharmacist"> 
+		     </div>
+		  </div>
+		  <div class="clearboth divider1"></div>
+		  <br>
+		  <!-- ---------------End Border right person------------------- -->
+		  <p class="grayfontSmall centerText">
+		     Tap on <span class="orangefont">"FYI"</span> to convert from <span class="orangefont"> Kg </span> to <span class="purplefont"> Ibs </span> if you need to.
+		  </p>
+		  <br>
+		  <div data-role="fieldcontain" class="ui-field-contain">
+		     <div class="ui-slider">
+		        <ion-item>
+					<ion-range min="5" max="40" [(ngModel)]="currentWeight" color="sliderPink">
+						<ion-label range-left>{{currentWeight}}(lbs)</ion-label>
+					</ion-range>
+				</ion-item>
+		     </div>
+		  </div>		
+		  <div class="clearboth divider1"></div>
+		  <div class="centerText">
+		     <a href="#" id="mobi_wt_link" data-role="none" data-inline="true" class="linkOrange" (click)="toggleConvertDlg(true)">FYI</a>
+		     <input type="button" id="get_slider" data-inline="true" class="buttonPinkBorder" data-role="none" value="Here you go" (click)="setCurrentPage(2)">
+		  </div>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		</div>
+		<!-- -==========================Slider Responses========================================- -->
+		<!-- --------------------------------------Container-------------------------------------- --> 
+		<div class="opacity5" *ngIf="currentPage==2">
+		  <div class="container_12" id="slider_value_container" *ngIf="currentPage==2">
+		     <div class="maxwidth450">
+		        <div class="ovalBorderRightPurple_red">
+		           	<div id="slider_value">
+		           		You said: <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentWeight}}</span> (lbs)
+		           	</div>
+		        </div>
+		        <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" width="100" alt="Pharmacist"> 
+		        </div>
+		     </div>
+		  </div>
+		  <div class="clearboth divider1"></div>
+		  <!-- ---------------End Border right person------------------- -->
+		  <!-- -----------------Response divisions------------------ -->
+		  <div id="5lb" *ngIf="currentWeight<=5">
+		     <h4 class="redBorderAll redfont centerText">If this is correct</h4>
+		     <div id="5D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size:20px;">Dosing information<strong><span style="color:#FF0000;"> not available</span></strong> for this weight</span></p>
+		        <p style="text-align: center;"><span style="font-size:16px;"><span style="color:#EE82EE;">Please see a healthcare provider</span></span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true"  (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" data-role="none" data-inline="true" class="linkOrange" (click)="gotoDosePage()">New Formulation.</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <div id="7lb" *ngIf="currentWeight==7 || currentWeight == 6">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="7D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;">Give <span style="color:#FF0000;"><span style="font-size:22px;">1.25 ml (¼ teaspoonful)</span></span> using the medicine syringe or a store brand dosing syringe &nbsp;every <span style="font-size:18px;"><span style="color:#FF0000;">4 to 6 hours</span></span> as needed.</p>
+		        <p style="text-align: center;"><img alt="1.25 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/1-25ml-orange-syringe.png" style="width: 180px; height: 355px;"></p>
+		        <p style="text-align: center;"><span style="font-size:18px;"><span style="color:#FF0000;">Don't give more than 5 times a day.</span></span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_7" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="9lb" *ngIf="currentWeight==8 || currentWeight == 9">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="9D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;">Give <span style="color:#FF0000;"><span style="font-size:22px;">1.5 ml</span></span> &nbsp;using the medicine syringe or a store brand dosing syringe usually every <span style="font-size:18px;"><span style="color:#FF0000;">4 to 6 hours</span></span> as needed.</p>
+		        <p style="text-align: center;"><img alt="1.5 ml" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/1-5ml-orange-syringe.png" style="width: 180px; height: 350px;"></p>
+		        <p style="text-align: center;"><span style="font-size:18px;"><span style="color:#FF0000;">Don't give more than 5 times a day.</span></span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_9" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="11lb" *ngIf="currentWeight==10 || currentWeight == 11">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="11D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">2 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/2ml-orange-syringe.png" style="width: 180px; height: 350px;"></p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_11" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="13lb" *ngIf="currentWeight==12 || currentWeight == 13">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="13D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">2.5 ml (½ teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/2-5ml-orange-syringe.png" style="width: 186px; height: 350px;"></p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_13" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="16lb" *ngIf="currentWeight==16 || currentWeight == 15 || currentWeight == 14">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="16D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give </span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;3 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3ml-orange-syringe.png" style="width: 180px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_16" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="19lb" *ngIf="currentWeight==17 || currentWeight == 18 || currentWeight == 19">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="19D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">3.5 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/3-5ml-orange-syringe.png" style="width: 179px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_19" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- --> 
+		  <div id="22lb" *ngIf="currentWeight==22 || currentWeight == 21 || currentWeight == 20">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="22D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">4 ml</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/4ml-orange-syringe.png" style="width: 176px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_22" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="25lb" *ngIf="currentWeight==25 || currentWeight == 24 || currentWeight == 23">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="25D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">5 ml (1 teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/5ml-orange-syringe.png" style="width: 152px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_25" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="28lb" *ngIf="currentWeight>=26 && currentWeight<=28">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="28D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">5 ml (1 teaspoonful)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/5ml-orange-syringe.png" style="width: 152px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_28" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="32lb" *ngIf="currentWeight>=29 && currentWeight<=32">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="32D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give </span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;6 ml </span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/6ml-orange-syringe.png" style="width: 159px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_32" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="36lb" *ngIf="currentWeight>=33 && currentWeight<=36">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="36D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;7 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/7ml-orange-syringe.png" style="width: 157px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_36" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="41lb" *ngIf="currentWeight>=37 && currentWeight<=41">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="41D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;8 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/8ml-orange-syringe.png" style="width: 157px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_41" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="46lb" *ngIf="currentWeight>=43 && currentWeight<=46">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="46D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;9 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/9ml-orange-syringe.png" style="width: 157px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_46" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="52lb" *ngIf="currentWeight>=47 && currentWeight<=52">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="52D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;10 ml (2 teaspoonfuls)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/10ml-orange-syringe.png" style="width: 155px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_52" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="58lb" *ngIf="currentWeight>=53 && currentWeight<=58">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="58D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;11 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/11ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_58" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="64lb" *ngIf="currentWeight>=59 && currentWeight<=64">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="64D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;12 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/12ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_64" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="70lb" *ngIf="currentWeight>=65 && currentWeight<=70">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="70D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;14 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/14ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_70" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="77lb" *ngIf="currentWeight>=71 && currentWeight<=77">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="77D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;15 ml (3 teaspoonfuls)</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/15ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_77" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="84lb" *ngIf="currentWeight>=78 && currentWeight<=84">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="84D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;16 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/16ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_84" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="90lb" *ngIf="currentWeight>=85 && currentWeight<=90">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="90D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;18 ml&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/18ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_90" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <div id="91lb" *ngIf="currentWeight>=91">
+		     <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+		     <div id="91D" class="centerText">
+		        <p>&nbsp;</p>
+		        <p style="text-align: center;"><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">Give&nbsp;</span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center; color: rgb(255, 0, 0);"><span style="font-size: 22px;">&nbsp;20 ml (4 teaspoonfuls)&nbsp;</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;using the medicine syringe or a store brand dosing syringe usually every&nbsp;</span><span style="line-height: 20.7999992370605px; text-align: center; font-size: 18px;"><span style="color: rgb(255, 0, 0);">4 to 6 hours</span></span><span style="font-size: 13px; line-height: 20.7999992370605px; text-align: center;">&nbsp;as needed.</span></p>
+		        <p style="text-align: center;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/20ml-orange-syringe.png" style="width: 219px; height: 350px;">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+		        <p style="text-align: center;"><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 20.7999992370605px; text-align: center;">Don't give more than 5 times a day.</span></p>
+		     </div>
+		     <div class="clearboth divider1"></div>
+		     <p class="centerText">
+		        <a href="#" (click)="saveDoseWeight()" id="save_91" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+		        <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>    
+		        <a href="#" (click)="gotoDosePage()" data-role="none" data-inline="true" class="linkAmberBorderThin">New Dose</a>
+		     </p>
+		     <p>&nbsp;</p>
+		  </div>
+		  <!-- -----------End Option Div-------------------- -->
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		</div>
+		<!-- ----End Opacity None------ -->
+		<!-- -----------------------------Start Mobiscroll------------------------ -->
+		<div class="feedbackAlert mbsc-comp" style="display: none;" id="mobiscroll1491426204917">
+		  <div class="alertWidth">
+		     <div class="maxwidth300">
+		        <div class="ovalBorderRightPurple_red" align="center">
+		           <span>Help improve this over-the-counter child dosing project.</span><br>
+		        </div>
+		        <div align="right"><img src="assets/img/pharm/female/pharm-alicia-red.svg" alt="Pharmacist Alicia" width="80"></div>
+		     </div>
+		     <div class="clearboth"></div>
+		     <hr class="hrpurple_red">
+		     <p align="center"><span class="redfont">Thanks for your past feedback.</span><br> You may give another feedback if you've seen changes since your last visit.</p>
+		     <!-- ----------End show if columns  are the same------------ --> 
+		     <hr class="hrpurple_red">
+		  </div>
+		</div>
+		<!-- -----------------------------End Mobiscroll------------------------ -->
+	</div>
+	<div lang="en" class="mbsc-mobi-red mbsc-mobiscroll dw-modal" *ngIf="showConvertDlg==true">
+		<div class="dw-persp" [ngStyle]="{'height': convertDlgInfo.screenHeight+'px'}">
+	      <div class="dwo"></div>
+	      <div role="dialog" tabindex="-1" class="dw dw-ltr" [ngStyle]="{'top': convertDlgInfo.top+'px', 'left': convertDlgInfo.left+'px'}">
+	         <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': convertDlgInfo.width+'px'}">
+	            <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	            <div class="dwv">Convert from <span class="redfont">kg</span> to <span class="redfont">lbs</span> <br>(Please <span class="bluefontLarge">output</span> result in <span class="bluefont">lbs</span>)</div>
+	            <div class="dwcc">
+	               <div class="mbsc-w-p dwc dwsc dwhl">
+	                  <div class="dwwc" style="max-width:600px;">
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl0" data-index="0">
+	                           <div class="dwl">Whole</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Whole" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, 0px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="2" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">2</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="3" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">3</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="4" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">4</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">5</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="6" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">6</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="7" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">7</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="8" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">8</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="9" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">9</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="11" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">11</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="12" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">12</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="13" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">13</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="14" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">14</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">15</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="16" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">16</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="17" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">17</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="18" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">18</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl1" data-index="1">
+	                           <div class="dwl">Fraction</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Fraction" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, -400px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl2" data-index="2">
+	                           <div class="dwl">Unit</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Unit" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0.1s ease-out; transform: translate3d(0px, -40px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">kg</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="1" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">lb</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                  </div>
+	               </div>
+	            </div>
+	            <div class="dwbc">
+	               <div class="dwbw dwb-s">
+	                  <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="doneConvert()">Here You Go</div>
+	               </div>
+	               <div class="dwbw dwb-c">
+	                  <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="toggleConvertDlg(false)">Cancel</div>
+	               </div>
+	            </div>
+	         </div>
+	      </div>
+	   </div>
 	</div>
 </ion-content>
 

@@ -169,6 +169,11 @@ import { SaveDoseLogoutConfirmPage } from '../pages/save-dose-logout-confirm/sav
 import { SaveDoseLoginDirectPage } from '../pages/save-dose-login-direct/save-dose-login-direct';
 import { SaveDoseRegisterPage } from '../pages/save-dose-register/save-dose-register';
 
+import { ChildrenDiphenhydramineMobilePage } from '../pages/children-diphenhydramine-mobile/children-diphenhydramine-mobile';
+import { DiphenLiquidMobilePage } from '../pages/diphen-liquid-mobile/diphen-liquid-mobile';
+import { DiphenChewableMobilePage } from '../pages/diphen-chewable-mobile/diphen-chewable-mobile';
+import { DiphenAdultMobilePage } from '../pages/diphen-adult-mobile/diphen-adult-mobile';
+
 import { AuthService} from '../pages/providers/auth-service';
 
 @NgModule({
@@ -337,6 +342,11 @@ import { AuthService} from '../pages/providers/auth-service';
     SaveDoseLogoutConfirmPage,
     SaveDoseLoginDirectPage,
     SaveDoseRegisterPage,
+
+    ChildrenDiphenhydramineMobilePage,
+    DiphenLiquidMobilePage,                 // 0
+    DiphenChewableMobilePage,             // 1
+    DiphenAdultMobilePage,                // 2
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -507,6 +517,11 @@ import { AuthService} from '../pages/providers/auth-service';
     SaveDoseLogoutConfirmPage,
     SaveDoseLoginDirectPage,
     SaveDoseRegisterPage,
+
+    ChildrenDiphenhydramineMobilePage,
+    DiphenLiquidMobilePage,                 // 0
+    DiphenChewableMobilePage,             // 1
+    DiphenAdultMobilePage,                // 2
   ],
   providers: [
     AuthService,

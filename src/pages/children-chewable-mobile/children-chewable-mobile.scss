@@ -1,5 +1,4 @@
 
-
 $toolbar-background-color: #E91E63;
 page-children-chewable-mobile {
 	font-size: 16px;
@@ -7,6 +6,20 @@ page-children-chewable-mobile {
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
+    .no-scroll{
+    	.scroll-content {
+	        overflow-y: hidden;
+	    }
+    }
+    .dww{
+    	overflow: inherit;
+    }
+    .dw-bf {
+	    -webkit-backface-visibility: inherit;
+	    -webkit-perspective: inherit;
+	    backface-visibility: inherit;
+	    perspective: inherit;
+	}
     fieldset{
     	border: 0px none;
     }

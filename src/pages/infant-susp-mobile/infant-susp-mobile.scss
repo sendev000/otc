@@ -5,7 +5,20 @@ page-infant-susp-mobile {
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
-    
+    .no-scroll{
+    	.scroll-content {
+	        overflow-y: hidden;
+	    }
+    }
+    .dww{
+    	overflow: inherit;
+    }
+    .dw-bf {
+	    -webkit-backface-visibility: inherit;
+	    -webkit-perspective: inherit;
+	    backface-visibility: inherit;
+	    perspective: inherit;
+	}
 	a.linkGrayLight{
     	position: relative;
     	top: 2rem;

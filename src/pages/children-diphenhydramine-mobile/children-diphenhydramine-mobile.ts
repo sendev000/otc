@@ -8,19 +8,27 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 
-import { ChildrenDiphenhydramineMobilePage } from '../children-diphenhydramine-mobile/children-diphenhydramine-mobile';
+import { DiphenLiquidMobilePage } from '../diphen-liquid-mobile/diphen-liquid-mobile';
+import { DiphenChewableMobilePage } from '../diphen-chewable-mobile/diphen-chewable-mobile';
+import { DiphenAdultMobilePage } from '../diphen-adult-mobile/diphen-adult-mobile';
 
 @Component({
-  selector: 'page-diphenhydramine',
-  templateUrl: 'diphenhydramine.html'
+  selector: 'page-children-diphenhydramine-mobile',
+  templateUrl: 'children-diphenhydramine-mobile.html'
 })
-export class DiphenhydraminePage {
+export class ChildrenDiphenhydramineMobilePage {
 
   AbsoluteURL: string;
   pages: any;
+  subPages: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   	this.menu = menu;
     this.pages = [true, true];
+    this.subPages = [
+      DiphenLiquidMobilePage,  				// 0
+      DiphenChewableMobilePage,       		// 1
+      DiphenAdultMobilePage,       			// 2
+    ];
   }
   showMenu() {
   	this.menu.open();
@@ -28,8 +36,8 @@ export class DiphenhydraminePage {
   togglePage(ind: number) {
     this.pages[ind] = !this.pages[ind];
   }
-  goContinue() {
-    this.navCtrl.push(ChildrenDiphenhydramineMobilePage);
+  gotoSubPage(id: number) {
+    this.navCtrl.push(this.subPages[id]);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DosingPage');

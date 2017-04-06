@@ -19,12 +19,12 @@
     </ion-buttons>
 	</ion-navbar>
   <ion-navbar class="fullWidth roboto bgPink">
-    <p *ngIf="currentPage == 0">Infant suspension<br><span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
+    <p *ngIf="currentPage == 0">Infant suspension<span class="grayLightfontSmallSmall">(160 mg in 5 ml)</span></p>
     <p *ngIf="currentPage > 0">Child's weight?</p>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="ui-page-theme-i ui-mobile">
+<ion-content padding class="ui-page-theme-i ui-mobile" [ngClass]="{'no-scroll': convertDlgInfo.noscroll}">
 	<div class="fullWidth mainPage" *ngIf="currentPage == 0">
 		<div class="opacity5" style="padding:10px;">
 		    <p>&nbsp;</p>
@@ -120,7 +120,7 @@
 	        </div>
 	        <div class="clearboth divider1"></div>
 	        <div class="centerText">
-	            <a href="#" id="mobi_wt_link" data-role="none" data-inline="true" class="linkOrange">FYI</a>
+	            <a href="#" id="mobi_wt_link" data-role="none" data-inline="true" class="linkOrange" (click)="toggleConvertDlg(true)">FYI</a>
 	            <input type="button" id="get_slider" data-inline="true" class="buttonPinkBorder" data-role="none" value="Here you go" (click)="setCurrentPage(2)">
 	        </div>
 	        <p>&nbsp;</p>
@@ -142,7 +142,7 @@
 	        <div class="clearboth divider1"></div>
 	        <!-- ---------------End Border right person------------------- -->
 	        <!-- ------------------------------Response divisions------------------------ -->
-	        <div id="5lb" class="" *ngIf="currentWeight==5">
+	        <div id="5lb" class="" *ngIf="currentWeight<=5">
 	            <h4 class="redBorderAll redfont centerText">If this is correct</h4>
 	            <div id="5D" class="centerText">
 	                <p>&nbsp;</p>
@@ -502,6 +502,252 @@
 	        </div>
 	    </div>
 	    <!-- -----------------------------End Mobiscroll------------------------ -->
+	</div>
+	<div lang="en" class="mbsc-mobi-red mbsc-mobiscroll dw-modal" *ngIf="showConvertDlg==true">
+		<div class="dw-persp" [ngStyle]="{'height': convertDlgInfo.screenHeight+'px'}">
+	      <div class="dwo"></div>
+	      <div role="dialog" tabindex="-1" class="dw dw-ltr" [ngStyle]="{'top': convertDlgInfo.top+'px', 'left': convertDlgInfo.left+'px'}">
+	         <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': convertDlgInfo.width+'px'}">
+	            <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	            <div class="dwv">Convert from <span class="redfont">kg</span> to <span class="redfont">lbs</span> <br>(Please <span class="bluefontLarge">output</span> result in <span class="bluefont">lbs</span>)</div>
+	            <div class="dwcc">
+	               <div class="mbsc-w-p dwc dwsc dwhl">
+	                  <div class="dwwc" style="max-width:600px;">
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl0" data-index="0">
+	                           <div class="dwl">Whole</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Whole" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, 0px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="2" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">2</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="3" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">3</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="4" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">4</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">5</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="6" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">6</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="7" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">7</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="8" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">8</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="9" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">9</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="11" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">11</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="12" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">12</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="13" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">13</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="14" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">14</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">15</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="16" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">16</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="17" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">17</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="18" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">18</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl1" data-index="1">
+	                           <div class="dwl">Fraction</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Fraction" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, -400px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl2" data-index="2">
+	                           <div class="dwl">Unit</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Unit" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0.1s ease-out; transform: translate3d(0px, -40px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">kg</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="1" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">lb</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                  </div>
+	               </div>
+	            </div>
+	            <div class="dwbc">
+	               <div class="dwbw dwb-s">
+	                  <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="doneConvert()">Here You Go</div>
+	               </div>
+	               <div class="dwbw dwb-c">
+	                  <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="toggleConvertDlg(false)">Cancel</div>
+	               </div>
+	            </div>
+	         </div>
+	      </div>
+	   </div>
 	</div>
 </ion-content>
 

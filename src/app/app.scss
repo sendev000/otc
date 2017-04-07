@@ -39,6 +39,9 @@ ion-navbar button{
 ion-header{
 	border: 0px none !important;
 }
+.item.item-range{
+  background: transparent !important;
+}
 .item.item-block .item-inner,
 .item-md.item-block .item-inner, 
 .item-ios.item-block .item-inner{

@@ -1,9 +1,9 @@
-<!--     
+<!--      
   Generated template for the Dosing page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
-     -->
+      -->
 <ion-header class="ui-header">
 
   <ion-navbar>
@@ -19,12 +19,13 @@
     </ion-buttons>
 	</ion-navbar>
   <ion-navbar class="fullWidth robotoLight bgGreen">
-    <p>Adult tablets<br><span class="grayLightfontSmallSmall">(10 mg / tablet)</span></p>
+    <p *ngIf="currentPage == 0">Adult tablets<span class="grayLightfontSmallSmall">(10 mg / tablet)</span></p>
+    <p *ngIf="currentPage > 0">Child's weight?</p>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="ui-page-theme-g">
-	<div class="ui-content" role="main">
+<ion-content padding class="ui-page-theme-g" [ngClass]="{'no-scroll': convertDlgInfo.noscroll}">
+	<div class="ui-content" role="main" *ngIf="currentPage == 0">
 	    <div class="opacity9" style="padding:10px;">
 	        <p>&nbsp;</p>
 	        <div class="maxwidth450">
@@ -35,7 +36,7 @@
 	            </div>
 	        </div>
 	        <div class="clearboth divider1"></div>
-	        <!-- ---------------End Border right person------------------- -->
+	        <!--  ---------------End Border right person-------------------  -->
 	        <p class="redfontSmall greenBorderAll centerText">**Must check each statement before you will see the option to continue.</p>
 	        <div class="clearboth divider1"></div>
 	    </div>
@@ -43,21 +44,21 @@
 	        <div data-role="fieldcontain" id="check_div2" class="ui-field-contain">
 	            <fieldset data-role="controlgroup" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
 	                <div class="ui-controlgroup-controls ">
-	                    <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">If new, make sure the seal is not broken.</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[0], 'ui-checkbox-on': options[0]}" (click)="toggleOptions(0)">If new, make sure the seal is not broken.</label><input type="checkbox" name="child_check" id="child_check_0" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[1], 'ui-checkbox-on': options[1]}" (click)="toggleOptions(1)">Check expiration date.</label><input type="checkbox" name="child_check" id="child_check_1" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">If giving another medicine with this, check that it does not contain cetirizine</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[2], 'ui-checkbox-on': options[2]}" (click)="toggleOptions(2)">If giving another medicine with this, check that it does not contain cetirizine</label><input type="checkbox" name="child_check" id="child_check_2" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Child is not allergic to any of the ingredients (active or inactive).</label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[3], 'ui-checkbox-on': options[3]}" (click)="toggleOptions(3)">Child is not allergic to any of the ingredients (active or inactive).</label><input type="checkbox" name="child_check" id="child_check_3" class="child_check" value=""></div>
 	                    <hr>
-	                    <!--  <input type="checkbox" name="child_check" id="child_check_4" class="child_check" value="" />
-	                        <label for="child_check_4">Your child is not......................</label><hr>-->
-	                    <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">You are aware that giving too much cetirizine can be harmful.</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
+	                    <!--   <input type="checkbox" name="child_check" id="child_check_4" class="child_check" value="" />
+	                        <label for="child_check_4">Your child is not......................</label><hr> -->
+	                    <div class="ui-checkbox"><label for="child_check_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[4], 'ui-checkbox-on': options[4]}" (click)="toggleOptions(4)">You are aware that giving too much cetirizine can be harmful.</label><input type="checkbox" name="child_check" id="child_check_5" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Check active ingredient again. It is <span class="greenfont">Cetirizine Adult Tablets  10 mg / tablet</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[5], 'ui-checkbox-on': options[5]}" (click)="toggleOptions(5)">Check active ingredient again. It is <span class="greenfont">Cetirizine Adult Tablets  10 mg / tablet</span></label><input type="checkbox" name="child_check" id="child_check_6" class="child_check" value=""></div>
 	                    <hr>
-	                    <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
+	                    <div class="ui-checkbox"><label for="child_check_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-off': !options[6], 'ui-checkbox-on': options[6]}" (click)="toggleOptions(6)">You have read and agree to the terms of use and disclaimers provided by makers and sponsors of this application and its contents.<br> <span class="redfontSmall">(Tap on <span class="orangefont">"FYI"</span> below for a brief review)</span></label><input type="checkbox" name="child_check" id="child_check_7" class="child_check" value=""></div>
 	                    <hr>
 	                </div>
 	            </fieldset>
@@ -66,11 +67,11 @@
 	    </div>
 	    <div class="opacity3">
 	        <p class="centerText">
-	            <a href="#" data-role="none" class="disclaimerFYI linkAmber" data-inline="true">FYI</a>
-	            <a href="#dosing_slider_mobile" id="child_check_button" class="displayNone linkPinkBorder" data-role="none" data-inline="true" data-transition="slide">Please Continue</a>
+	            <a href="#" data-role="none" class="disclaimerFYI linkAmber" data-inline="true" (click)="toggleTerm()">FYI</a>
+	            <a href="#" id="child_check_button" *ngIf="options[6] == true" (click)="setCurrentPage(1)" class=" linkPinkBorder" data-role="none" data-inline="true" data-transition="slide">Please Continue</a>
 	        </p>
 	    </div>
-	    <div class="opacity8 disclaimerDiv displayNone paddingSides centerText">
+	    <div class="opacity8 disclaimerDiv paddingSides centerText" [ngClass]="{'displayNone': !showTerm}">
 	        <div class="redBorderAll">
 	            <h3 class="redfont centerText">Terms of use/Disclaimer</h3>
 	            <p>Put disclaimer here via ajax load or display none interactin.</p>
@@ -87,6 +88,498 @@
 	    <p>&nbsp;</p>
 	    <p>&nbsp;</p>
 	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="currentPage>0">
+	    <p>&nbsp;</p>
+	    <p id="header" class="displayNone"> Cetirizine Adult Tablets<br> <span class="greenfontSmall"> 10 mg / tablet</span></p>
+	    <div id="slider_div" class="opacity3 padding0" *ngIf="currentPage==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span> Use the slider below to tell us the <span class="greenfont">weight</span> <br>in <span class="redfont">(lbs)</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" width="100" alt="Pharmacist"> 
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="greenBorderTrans grayfontSmall centerText">
+	            Tap on <span class="orangefont">"FYI"</span> to convert from <span class="orangefont"> Kg </span> to <span class="greenfont"> Ibs </span> if you need to.
+	        </p>
+	        <br>
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <div class="ui-slider">
+	                <ion-item>
+						<ion-range min="25" max="100" [(ngModel)]="currentWeight" color="sliderPink">
+							<ion-label range-left>{{currentWeight}}(lbs)</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	            <a href="#" id="mobi_wt_link" data-role="none" data-inline="true" class="linkOrange" (click)="toggleConvertDlg(true)">FYI</a>
+	            <input type="button" id="get_slider" data-inline="true" class="buttonPinkBorder" data-role="none" value="Here you go" (click)="setCurrentPage(2)">
+	        </div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- -==========================Slider Responses========================================- -->
+	    <!-- --------------------------------------Container-------------------------------------- --> 
+	    <div class="opacityNone padding0" *ngIf="currentPage==2">
+	        <div class="container_12" id="slider_value_container" *ngIf="currentPage==2">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightGreen centerText">
+	                    <div id="slider_value">
+	                    	You said: <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentWeight}}</span> (lbs)
+	                    </div>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" width="100" alt="Pharmacist"> 
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <!-- ------------------------------Response divisions--------------------- -->
+	        <div id="14lb" *ngIf="currentWeight<=14">
+	            <h4 class="redBorderAll redfont centerText">If this is correct</h4>
+	            <div id="14D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="24lb" *ngIf="currentWeight>=15 && currentWeight<=24">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="24D" class="centerText">
+	                <p>&nbsp;</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="34lb" *ngIf="currentWeight>=25 && currentWeight<=34">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="34D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="color: rgb(238, 130, 238);"><span style="font-size: 18px;">Please use the liquid.</span></span></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">Choking hazard.</span></span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="44lb" *ngIf="currentWeight>=35 && currentWeight<=44">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="44D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size: 16px;">Give&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">½&nbsp;a &nbsp;tablet&nbsp;</span></span>by mouth&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 18px;">once a day.</span></span></span>&nbsp;&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size:18px;"><span style="color:#FF0000;">Possible choking hazard.</span></span> &nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="Half a tablet" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tab-white-half.svg" style="width: 70px; height: 64px;"></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <ul style="font-size: 13px; line-height: 20.7999992370605px;">
+	                    <li style="line-height: 20.7999992370605px;">May cause drowsiness.</li>
+	                </ul>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" (click)="saveDoseWeight()" id="save_44" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="59lb" *ngIf="currentWeight>=45 && currentWeight<=59">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="59D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size: 16px;">Give&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">&nbsp;½ to 1&nbsp;tablet&nbsp;</span></span>by mouth&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 18px;">once a day.</span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="color:#FF0000;"><span style="font-size:18px;">Possible choking hazard.</span></span></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="Half a tablet" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tab-white-half.svg" style="font-size: 13px; line-height: 20.7999992370605px; width: 50px; height: 64px;"> TO&nbsp;<img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tablet-white.svg" style="font-size: 13px; line-height: 20.7999992370605px; width: 100px; height: 46px;"></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <ul style="font-size: 13px; line-height: 20.7999992370605px;">
+	                    <li style="line-height: 20.7999992370605px;">May cause drowsiness.</li>
+	                    <li style="line-height: 20.7999992370605px;">Maximum 10 mg in a day.</li>
+	                </ul>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" (click)="saveDoseWeight()" id="save_59" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="74lb" *ngIf="currentWeight>=60 && currentWeight<=74">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="74D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size: 16px;">Take&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">&nbsp;1 &nbsp;tablet&nbsp;</span></span>by mouth&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 18px;">once a day.</span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tablet-white.svg" style="width: 100px; height: 46px;"></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <ul style="font-size: 13px; line-height: 20.7999992370605px;">
+	                    <li style="line-height: 20.7999992370605px;">May cause drowsiness.</li>
+	                    <li style="line-height: 20.7999992370605px;">Maximum 1 tablet in a day.</li>
+	                </ul>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" (click)="saveDoseWeight()" id="save_74" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="89lb" *ngIf="currentWeight>=75 && currentWeight<=89">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="89D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size: 16px;">Take&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">&nbsp;1 &nbsp;tablet&nbsp;</span></span>by mouth&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 18px;">once a day.</span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tablet-white.svg" style="font-size: 13px; line-height: 20.7999992370605px; width: 100px; height: 46px;"></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <ul style="font-size: 13px; line-height: 20.7999992370605px;">
+	                    <li style="line-height: 20.7999992370605px;">May cause drowsiness.</li>
+	                    <li style="line-height: 20.7999992370605px;">Maximum 1 tablet in a day.</li>
+	                </ul>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" (click)="saveDoseWeight()" id="save_89" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <div id="90lb" *ngIf="currentWeight>=90">
+	            <h4 class="redBorderAll redfont centerText">If this is correct:</h4>
+	            <div id="90D" class="centerText">
+	                <p>&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><span style="font-size: 16px;">Take&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 20px;">&nbsp;1 &nbsp;tablet&nbsp;</span></span>by mouth&nbsp;<span style="color: rgb(255, 0, 0);"><span style="font-size: 18px;">once a day.</span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;"><img alt="" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/oval-tablet-white.svg" style="font-size: 13px; line-height: 20.7999992370605px; width: 100px; height: 46px;"></p>
+	                <p style="font-size: 13px; line-height: 20.7999992370605px;">&nbsp;</p>
+	                <ul style="font-size: 13px; line-height: 20.7999992370605px;">
+	                    <li style="line-height: 20.7999992370605px;">May cause drowsiness.</li>
+	                    <li style="line-height: 20.7999992370605px;">Maximum 1 tablet in a day.</li>
+	                </ul>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" (click)="saveDoseWeight()" id="save_90" data-role="none" data-inline="true" class="linkCyanBorderThin">Save</a> 
+	                <button class="back_slider buttonPinkBorder" data-role="none" data-inline="true" (click)="setCurrentPage(1)">New Wt.</button>
+	                <a href="#" data-role="none" data-inline="true" class="linkAmberBorderThin" (click)="gotoDosePage()">New Dose</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- -----------End Option Div-------------------- -->
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- ----End Opacity None------ -->
+	</div>
+	<div lang="en" class="mbsc-mobi-red mbsc-mobiscroll dw-modal  mbsc-wdg" *ngIf="showFeedbackDlg==true">
+	    <div class="dw-persp" [ngStyle]="{'height': feedbackDlgInfo.screenHeight+'px'}">
+	        <div class="dwo"></div>
+	        <div role="dialog" tabindex="-1" class="dw dw-ltr" [ngStyle]="{'top': feedbackDlgInfo.top+'px', 'left': feedbackDlgInfo.left+'px'}">
+	            <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': feedbackDlgInfo.width+'px'}">
+	                <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	                <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	                    <div class="feedbackAlert mbsc-comp" style="" id="mobiscroll1491572070785">
+	                        <div class="alertWidth">
+	                            <div class="maxwidth300">
+	                                <div class="ovalBorderRightPurple_red" align="center">
+	                                    <span>Help improve this over-the-counter child dosing project.</span><br>
+	                                </div>
+	                                <div align="right"><img src="assets/img/pharm/male/pharm-john-port-red.svg" alt="Pharmacist" width="80"></div>
+	                            </div>
+	                            <div class="clearboth"></div>
+	                            <hr class="hrpurple_red">
+	                            <p align="center"><span class="redfont">Thanks for your past feedback.</span><br> You may give another feedback if you've seen changes since your last visit.</p>
+	                            <!--   ----------End show if columns  are the same------------   --> 
+	                            <hr class="hrpurple_red">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="dwbc">
+	                    <div class="dwbw ">
+	                        <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="gotoDosePage()">Not Now</div>
+	                    </div>
+	                    <div class="dwbw ">
+	                        <div tabindex="0" role="button" class="dwb1 dwb-e dwb">Give Feedback</div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div lang="en" class="mbsc-mobi-red mbsc-mobiscroll dw-modal" *ngIf="showConvertDlg==true">
+		<div class="dw-persp" [ngStyle]="{'height': convertDlgInfo.screenHeight+'px'}">
+	      <div class="dwo"></div>
+	      <div role="dialog" tabindex="-1" class="dw dw-ltr" [ngStyle]="{'top': convertDlgInfo.top+'px', 'left': convertDlgInfo.left+'px'}">
+	         <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': convertDlgInfo.width+'px'}">
+	            <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	            <div class="dwv">Convert from <span class="redfont">kg</span> to <span class="redfont">lbs</span> <br>(Please <span class="bluefontLarge">output</span> result in <span class="bluefont">lbs</span>)</div>
+	            <div class="dwcc">
+	               <div class="mbsc-w-p dwc dwsc dwhl">
+	                  <div class="dwwc" style="max-width:600px;">
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl0" data-index="0">
+	                           <div class="dwl">Whole</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Whole" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, 0px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="2" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">2</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="3" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">3</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="4" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">4</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">5</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="6" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">6</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="7" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">7</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="8" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">8</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="9" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">9</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="11" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">11</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="12" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">12</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="13" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">13</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="14" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">14</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">15</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="16" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">16</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="17" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">17</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="18" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">18</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl1" data-index="1">
+	                           <div class="dwl">Fraction</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Fraction" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, -400px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="----90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                    <div class="dw-bf">
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="---90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--90" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.90</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-0" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.00</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-10" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.10</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-20" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.20</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-30" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.30</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-40" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.40</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-50" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.50</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-60" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.60</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-70" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.70</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-80" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">.80</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                     <div class="dwfl" style="min-width:80px;">
+	                        <div class="dwwl dwwl2" data-index="2">
+	                           <div class="dwl">Unit</div>
+	                           <div tabindex="0" aria-live="off" aria-label="Unit" role="listbox" class="dwww">
+	                              <div class="dww" style="height:200px;">
+	                                 <div class="dw-ul" style="margin-top: 80px; transition: -webkit-transform 0.1s ease-out; transform: translate3d(0px, -40px, 0px);">
+	                                    <div class="dw-bf">
+	                                       <div role="option" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;" aria-selected="true">
+	                                          <div class="dw-i">kg</div>
+	                                       </div>
+	                                       <div role="option" aria-selected="false" class="dw-li dw-v" data-val="1" style="height:40px;line-height:40px;">
+	                                          <div class="dw-i">lb</div>
+	                                       </div>
+	                                    </div>
+	                                 </div>
+	                              </div>
+	                              <div class="dwwo"></div>
+	                           </div>
+	                           <div class="dwwol" style="height:40px;margin-top:-21px;"></div>
+	                        </div>
+	                     </div>
+	                  </div>
+	               </div>
+	            </div>
+	            <div class="dwbc">
+	               <div class="dwbw dwb-s">
+	                  <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="doneConvert()">Here You Go</div>
+	               </div>
+	               <div class="dwbw dwb-c">
+	                  <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="toggleConvertDlg(false)">Cancel</div>
+	               </div>
+	            </div>
+	         </div>
+	      </div>
+	   </div>
 	</div>
 </ion-content>
 

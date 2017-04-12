@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, MenuController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the Pepto page.
@@ -13,10 +13,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PeptoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+  	this.menu = menu;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PeptoPage');
   }
-
+  showMenu() {
+  	this.menu.open();
+  }
 }

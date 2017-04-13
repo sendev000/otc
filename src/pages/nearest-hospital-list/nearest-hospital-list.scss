@@ -1,0 +1,78 @@
+
+$toolbar-background-color: #00BCD4;
+
+page-nearest-hospital-list {
+	font-size: 16px;
+	sebm-google-map{
+		height: 300px;
+	}
+	.navbarButtons{
+		background-color: transparent !important;
+	}
+	h1{
+		text-transform: capitalize;
+		font-size: 2.4em;
+	    line-height: 1.8;
+	    margin-bottom: 50px;
+	    margin-top: 30px;
+	    text-align: center;
+	    font-weight: 700;
+	}
+	.toolbar-title-md{
+		font-size: 16px;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+	.toolbar-background-md, .toolbar-background{
+		background: $toolbar-background-color;
+	}
+	.ui-content a.ui-btn {
+		border: 0px none !important;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.ui-content{
+		background-image: url(../assets/img/backgrounds/nearest/hospital_bg.jpg);
+	    background-repeat: no-repeat;
+	    background-position: bottom;
+	    background-attachment: fixed;
+	    height: 480px;
+	}
+	.spinner-blue {
+	  width: 50px;
+	  height: 50px;
+	  background-color:#B9F6CA;
+	  margin-right:50px;
+	  border-radius: 100%;  
+	  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+	  animation: scaleout 1.0s infinite ease-in-out;
+	}
+
+	@-webkit-keyframes scaleout {
+	  0% { -webkit-transform: scale(0.0) }
+	  100% {
+	    -webkit-transform: scale(1.0);
+	    opacity: 0;
+	  }
+	}
+
+	@keyframes scaleout {
+	  0% { 
+	    transform: scale(0.0);
+	    -webkit-transform: scale(0.0);
+	    opacity: 0.5;
+	  }
+	  50% { 
+	    transform: scale(0.5);
+	    -webkit-transform: scale(0.5);
+	    opacity: 0.5;
+	  } 
+	  100% {
+	    transform: scale(1.0);
+	    -webkit-transform: scale(1.5);
+	    opacity: 0;
+	  }
+	}
+}

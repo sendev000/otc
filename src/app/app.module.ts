@@ -1,6 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -173,6 +176,9 @@ import { ChildrenDiphenhydramineMobilePage } from '../pages/children-diphenhydra
 import { DiphenLiquidMobilePage } from '../pages/diphen-liquid-mobile/diphen-liquid-mobile';
 import { DiphenChewableMobilePage } from '../pages/diphen-chewable-mobile/diphen-chewable-mobile';
 import { DiphenAdultMobilePage } from '../pages/diphen-adult-mobile/diphen-adult-mobile';
+
+import { AgmCoreModule } from "angular2-google-maps/core";
+import { NearestHospitalListPage } from '../pages/nearest-hospital-list/nearest-hospital-list';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -347,9 +353,19 @@ import { AuthService} from '../pages/providers/auth-service';
     DiphenLiquidMobilePage,                 // 0
     DiphenChewableMobilePage,             // 1
     DiphenAdultMobilePage,                // 2
+
+    NearestHospitalListPage,
+
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyAB-IzrU8UFGLp9h772cgt3-5DscZYMnYE",
+      libraries: ["places"]
+    }),
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -522,6 +538,8 @@ import { AuthService} from '../pages/providers/auth-service';
     DiphenLiquidMobilePage,                 // 0
     DiphenChewableMobilePage,             // 1
     DiphenAdultMobilePage,                // 2
+
+    NearestHospitalListPage,
   ],
   providers: [
     AuthService,

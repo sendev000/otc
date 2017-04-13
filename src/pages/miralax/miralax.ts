@@ -22,6 +22,7 @@ import { SaveDoseLoginPage } from '../save-dose-login/save-dose-login';
 })
 export class MiralaxPage {
 
+@ViewChild(Content) content: Content;
 AbsoluteURL: string;
   showTerm: boolean;
   showButton: boolean;

@@ -27,13 +27,7 @@
 </ion-header>
 
 <ion-content class="ui-page-theme-a">
-	<div class="ui-content" role="main">
-	    <form action="" method="post" data-ajax="false">
-	        <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
-	            <input id="userzipcode_div" name="userzipcode_div" type="hidden" value="">
-	        </div>
-	        <input id="useraddress_div" name="useraddress_div" type="hidden" value="New York, NY, United States">
-	    </form>
+	<div class="ui-content" role="main" #mainWindow>
 	    <div id="pharmacist_speech" class="opacity4" style="display: none;">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightBlue centerText">
@@ -44,7 +38,7 @@
 	        <div class="clearboth divider1"></div>
 	        <!--  ---------------End Border right person------------------- -->
 	    </div>
-	    <div id="results" style="display: block;">
+	    <div id="results" [ngStyle]="{'display': DataDisplay[0]}">
 	        <div style="display: none;" id="popupMenu-placeholder">
 	            <!--  placeholder for popupMenu  -->
 	        </div>
@@ -53,163 +47,57 @@
 	            <ul data-role="listview" id="list-database" data-inset="true" class="searchResult ui-listview ui-listview-inset ui-corner-all ui-shadow">
 	            </ul>
 	            <p>&nbsp;</p>
-	            <div class="floatright"><a href="#popupMenu" data-rel="popup" data-transition="slidedown" class="buttonBlue ui-link" aria-haspopup="true" aria-owns="popupMenu" aria-expanded="false">Sort List</a></div>
+	            <div class="floatright"><a href="#" data-rel="popup" data-transition="slidedown" class="buttonBlue ui-link" aria-haspopup="true" aria-owns="popupMenu" aria-expanded="false" (click)="toggleSortDlg(true)">Sort List</a></div>
 	            <div class="clearboth"></div>
 	            <!-- <p>From Google</p> --> 
-	            <ul data-role="listview" id="list-canvas" data-inset="true" class="searchResult ui-listview ui-listview-inset ui-corner-all ui-shadow" sortby="placeaddress">
-	                <li class="ul-first-child">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJyWxSK55ZwokRxITNu26xCuw" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Mount Sinai Beth Israel</h3>
-	                        <p class="grayfontSmall placeaddress">1 Nathan D Perlman Pl, New York, NY 10003, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>3.9 mi</span> <span>(about</span> 18 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJdzAXRhdawokR450x3dFH7W4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NYU Langone at Trinity</h3>
-	                        <p class="grayfontSmall placeaddress">1-11 Thames St, New York, NY 10006, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>1.2 mi</span> <span>(about</span> 11 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJrylCl4NZwokR7_Vzt1ZPFRQ" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Mount Sinai Doctors - 94 East 1st Street</h3>
-	                        <p class="grayfontSmall placeaddress">108 E 1st St, New York, NY 10009, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>3.0 mi</span> <span>(about</span> 12 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJxa0W_cNYwokRA3JuPzBnsmM" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">1320-1324 York Ave, New York, NY 10021, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>5.9 mi</span> <span>(about</span> 16 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJCQGqpfBbwokRmdgPurJ5qqo" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NYC Health + Hospitals/Woodhull</h3>
-	                        <p class="grayfontSmall placeaddress">147-163 Throop Ave, Brooklyn, NY 11206, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>4.4 mi</span> <span>(about</span> 20 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJ27iHmkhXwokRQDMFaWXvmNY" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Christ Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">176 Palisade Ave, Jersey City, NJ 07306, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>3.9 mi</span> <span>(about</span> 17 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJ01doELRbwokRuYbRjJwUWOM" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Brooklyn Hospital Center</h3>
-	                        <p class="grayfontSmall placeaddress">250 Willoughby St, Brooklyn, NY 11201, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>2.6 mi</span> <span>(about</span> 13 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJryiJj6hZwokR3WmzzHRNkO8" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">290-292 5th Ave, New York, NY 10001, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>5.1 mi</span> <span>(about</span> 20 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJ40Zz559ZwokRTnw1sU-kxL8" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NYU Hospital Center</h3>
-	                        <p class="grayfontSmall placeaddress">294-302 2nd Ave, New York, NY 10003, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>4.0 mi</span> <span>(about</span> 15 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJay0FsElawokRxolIA1qzU9E" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Mount Sinai Medical Center</h3>
-	                        <p class="grayfontSmall placeaddress">300 Cadman Plaza W, Brooklyn, NY 11201, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>1.9 mi</span> <span>(about</span> 9 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJCW5juYhZwokR6b89TzLlJxM" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NYC Health + Hospitals | Judson Health Clinic</h3>
-	                        <p class="grayfontSmall placeaddress">33 Spring St, New York, NY 10012, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>1.5 mi</span> <span>(about</span> 15 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJ6ZpyAr9ZwokRanj7OM8oRSQ" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">St Vincent's Cancer Center</h3>
-	                        <p class="grayfontSmall placeaddress">330-336 W 15th St, New York, NY 10011, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>2.6 mi</span> <span>(about</span> 17 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJryA_SFlYwokR7lqiFNhZtUA" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Saint Luke's-Roosevelt Hospital:Hematology/Oncology</h3>
-	                        <p class="grayfontSmall placeaddress">428-498 W 59th St, New York, NY 10019, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>5.1 mi</span> <span>(about</span> 29 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="ul-last-child">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJJzHAjh9awokR7MKjTvrZJEE" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Weill Cornell Medicine</h3>
-	                        <p class="grayfontSmall placeaddress">45 Worth St, New York, NY 10013, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>0.8 mi</span> <span>(about</span> 8 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJqVYLyZZZwokRriM4A_LeI-Y" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Mount Sinai Doctors - 8th Street</h3>
-	                        <p class="grayfontSmall placeaddress">47 W 8th St, New York, NY 10011, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>1.9 mi</span> <span>(about</span> 13 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJpYoZlyJawokRv65psH6e2pI" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NewYork-Presbyterian/Lower Manhattan Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">49 Beekman St, New York, NY 10038, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>0.3 mi</span> <span>(about</span> 3 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJk7pgcwNbwokRT8vulcya0O0" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">NewYork-Presbyterian Brooklyn Methodist Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">509 6th St, Brooklyn, NY 11215, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>6.7 mi</span> <span>(about</span> 20 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJzQtHCQ9ZwokRt0QutuNH8Yg" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Tisch Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">546 1st Avenue, New York, NY 10016, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>4.1 mi</span> <span>(about</span> 16 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="ul-first-child">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJWcn-xphZwokReKgtFEGLFic" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">Beth Israel Medical Center - Berger Dept. of Urology</h3>
-	                        <p class="grayfontSmall placeaddress">6 Union Square E, New York, NY 10003, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>2.7 mi</span> <span>(about</span> 20 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
-	                <li class="ul-last-child">
-	                    <a href="../urgentcare/place_details.php?placeid=ChIJe-SG50pawokRg4etfWZZno8" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-	                        <h3 class="bluefont placename">New York Methodist Hospital</h3>
-	                        <p class="grayfontSmall placeaddress">69 Myrtle Ave, Brooklyn, NY 11201, USA</p>
-	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>2.2 mi</span> <span>(about</span> 11 mins <span>drive)</span></p>
-	                    </a>
-	                </li>
+	            <ul data-role="listview" id="list-canvas" data-inset="true" class="searchResult ui-listview ui-listview-inset ui-corner-all ui-shadow">
+	            	<li *ngFor="let each of TableData | orderby: sortby : false ; let i=index">
+	            		<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" *ngIf="i<TableMaxDisplayCount" (click)="showDetails(each)" >
+	            			<h3 class="bluefont placename">{{each.name}}</h3>
+	                        <p class="grayfontSmall placeaddress">{{each.address}}</p>
+	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>{{each.distance}}</span> <span>(about</span> {{each.duration}} <span>drive)</span></p>
+	            		</a>
+	            	</li>
 	            </ul>
 	            <br>
 	            <p id="more" class="centerText">
-	                <button data-inline="true" class=" ui-btn ui-btn-inline ui-shadow ui-corner-all">More...</button>
+	                <button data-inline="true" class=" ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="ShowMore()">More...</button>
 	            </p>
 	        </div>
-	        <input id="userlatlng" type="hidden" name="userlatlng" value="(40.7127837, -74.00594130000002)">
 	    </div>
-	    <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [scrollwheel]="false" [zoom]="mapData.zoom">
-	    	<sebm-google-map-marker *ngFor="let each of TableData" [latitude]="each.lat" [longitude]="each.lng"></sebm-google-map-marker>
-        	<!-- <sebm-google-map-marker [latitude]="mapData.latitude" [longitude]="mapData.longitude"></sebm-google-map-marker> -->
-	    	}
+	    <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [ngStyle]="{'display': DataDisplay[1], 'height': MapHeight + 'px'}" >
+	    	<ng-container *ngFor="let m of TableData; let i = index">
+		    	<sebm-google-map-marker 
+		    		*ngIf="i<TableMaxDisplayCount" 
+			        (markerClick)="clickedMarker(m.name, i)"
+			        [latitude]="m.lat"
+			        [longitude]="m.lng"
+			        
+			        [markerDraggable]="false"
+			        [iconUrl]="m.marker_icon">
+			        
+			      	<sebm-google-map-info-window class="info_window" [isOpen] = "m.iw_open">
+			      		<div (click)="showDetails(m)">
+			      			{{m.iw_open}}
+					    	{{m.name}}<br>
+					    	{{m.formatted_address}}
+					    </div>
+			      	</sebm-google-map-info-window>
+			    </sebm-google-map-marker>
+        	</ng-container>
 		</sebm-google-map>
 	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-popup-screen ui-overlay-inherit in" id="popupMenu-screen" *ngIf="sortDlg" (click)="toggleSortDlg(false)"></div>
+	<div class="ui-popup-container slidedown in ui-popup-active" id="popupMenu-popup" style="max-width: 702px; top: 33px; right: 70px;" *ngIf="sortDlg">
+	    <div data-role="popup" id="popupMenu" data-theme="n centerText" class="ui-popup ui-body-n centerText ui-overlay-shadow ui-corner-all">
+	        <div>Sort by:</div>
+	        <hr class="hrblue">
+	        <button data-inline="true" data-role="none" class="buttonBlue" id="by_distance" (click)="SortBy('distance')">Distance</button>
+	        <hr class="hrblue">
+	        <button data-inline="true" data-role="none" class="buttonCyan" id="by_name" (click)="SortBy('name')">Name</button>
+	        <hr class="hrblue">
+	        <button data-inline="true" data-role="none" class="buttonPink" id="by_address" (click)="SortBy('address')">Address</button>
+	    </div>
 	</div>
 </ion-content>

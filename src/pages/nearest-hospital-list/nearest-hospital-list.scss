@@ -3,8 +3,16 @@ $toolbar-background-color: #00BCD4;
 
 page-nearest-hospital-list {
 	font-size: 16px;
-	sebm-google-map{
-		height: 300px;
+	.info_window{
+		border: 0px none; 
+		margin: 8px; 
+		background: white; 
+		padding: 5px; 
+		color: #black;
+		max-width: 280px;
+	}
+	#popupMenu button:focus{
+		background-color: transparent;
 	}
 	.navbarButtons{
 		background-color: transparent !important;
@@ -32,13 +40,6 @@ page-nearest-hospital-list {
 	}
 	.bar-button-md{
 		padding: 0px;
-	}
-	.ui-content{
-		background-image: url(../assets/img/backgrounds/nearest/hospital_bg.jpg);
-	    background-repeat: no-repeat;
-	    background-position: bottom;
-	    background-attachment: fixed;
-	    height: 480px;
 	}
 	.spinner-blue {
 	  width: 50px;

@@ -179,6 +179,8 @@ import { DiphenAdultMobilePage } from '../pages/diphen-adult-mobile/diphen-adult
 
 import { AgmCoreModule } from "angular2-google-maps/core";
 import { NearestHospitalListPage } from '../pages/nearest-hospital-list/nearest-hospital-list';
+import { PlaceDetailsPage } from '../pages/place-details/place-details';
+import { OrderByPipe } from '../pages/orderby/orderby';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -355,6 +357,8 @@ import { AuthService} from '../pages/providers/auth-service';
     DiphenAdultMobilePage,                // 2
 
     NearestHospitalListPage,
+    PlaceDetailsPage,
+    OrderByPipe,
 
   ],
   imports: [
@@ -540,6 +544,7 @@ import { AuthService} from '../pages/providers/auth-service';
     DiphenAdultMobilePage,                // 2
 
     NearestHospitalListPage,
+    PlaceDetailsPage,
   ],
   providers: [
     AuthService,

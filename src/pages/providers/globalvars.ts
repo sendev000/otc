@@ -8,6 +8,7 @@ export var GlobalVars = {
         longitude: 0,
         zoom: 1
     },
+    mapPlaceId: "",
     getAbsoluteURL : function() {
         return this.AbsoluteURL;
     },
@@ -25,5 +26,11 @@ export var GlobalVars = {
     },
     setMapData: function(data: any) {
         this.mapData = data;
+    },
+    getMapPlaceId: function() {
+        return this.mapPlaceId;
+    },
+    setMapPlaceId: function(placeId: string) {
+        this.mapPlaceId = placeId;
     }
 };

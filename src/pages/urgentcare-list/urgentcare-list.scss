@@ -1,7 +1,6 @@
+$toolbar-background-color: #E91E63;
 
-$toolbar-background-color: #00BCD4;
-
-page-nearest-hospital-list {
+page-urgentcare-list {
 	font-size: 16px;
 	.info_window{
 		border: 0px none; 
@@ -20,6 +19,13 @@ page-nearest-hospital-list {
 	.searchResult li a{
 		background-color: transparent !important;
 	}
+	.ui-listview > li p.placeaddress{
+		color: #000;
+		font-weight: 700;
+	}
+	.buttonOrange, .buttonAmberBorder {
+    	background-color: transparent;
+    }
 	#popupMenu button:focus{
 		background-color: transparent;
 	}

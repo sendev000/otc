@@ -19,12 +19,13 @@
 	</ion-navbar>
 	<ion-navbar class="fullWidth">
   	<div class="spinner-blue floatright"></div>
-    <p class="robotoLight bgLightBlue">Nearby Dentist</p>
+    <p *ngIf="locationPage==1" class="robotoLight bgLightBlue">Nearby Dentist</p>
+	<p *ngIf="locationPage==2" class="robotoLight bgLightBlue">Search By Address</p>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="ui-page-theme-a">
-	<div class="dentist_content ui-content">
+	<div class="dentist_content ui-content" *ngIf="locationPage==1">
 		<div class="opacity5">
 		  <div class="opacity7">
 		    <div class="maxwidth450">
@@ -36,22 +37,43 @@
 		    <p>&nbsp;</p>
 		    <hr class="hrblue">
 		    <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-				  <li class="ui-li-has-icon ui-first-child">
-				    <a href="#dentist_current_location_mobile" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				      <img src="assets/img/icons/Map-Marker-Ball-Pink.png" alt="Pink location icon" class="ui-li-icon ui-corner-none">
-				      <h3 class="orangefont">Use My Current Location</h3>
-				      <p class="grayfontSmall">Search based on where you are now.</p>
-				    </a>
-				  </li>
-				  <hr class="hrblue">
-				  <li data-icon="arrow-d" class="ui-li-has-icon ui-last-child">
-				    <a href="#" id="show_address_form" class="ui-btn ui-btn-icon-right ui-icon-arrow-d">
-				      <img src="assets/img/icons/Map-Marker-Ball-Blue.png" alt="Blue location icon" class="ui-li-icon ui-corner-none">
-				      <h3 class="bluefont">I will enter a Location</h3>
-				      <p class="grayfontSmall">Address | City, State | Zip code</p>
-				    </a>
-				  </li>
-				</ul>
+			  <li class="ui-li-has-icon ui-first-child" (click)="useCurrentLocation()">
+			    <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+			      <img src="assets/img/icons/Map-Marker-Ball-Pink.png" alt="Pink location icon" class="ui-li-icon ui-corner-none">
+			      <h3 class="orangefont">Use My Current Location</h3>
+			      <p class="grayfontSmall">Search based on where you are now.</p>
+			    </a>
+			  </li>
+			  <hr class="hrblue">
+			  <li data-icon="arrow-d" class="ui-li-has-icon ui-last-child" (click)="toggleLocationByInput()">
+			    <a href="#" id="show_address_form" class="ui-btn ui-btn-icon-right ui-icon-arrow-d">
+			      <img src="assets/img/icons/Map-Marker-Ball-Blue.png" alt="Blue location icon" class="ui-li-icon ui-corner-none">
+			      <h3 class="bluefont">I will enter a Location</h3>
+			      <p class="grayfontSmall">Address | City, State | Zip code</p>
+			    </a>
+			  </li>
+			</ul>
+			<div id="address_form" [ngClass]="{'displayNone': !enterLocation}">
+			    <div>
+			    	<img src="assets/img/backgrounds/nearest/pointing-arrow-address.png" width="200" height="auto" alt="tap here to enter address arrow">
+			    </div>
+			    <div id="map"></div>
+			    <form action="" method="get" name="address_search" id="address_search" data-ajax="false" class="mbsc-comp mbsc-form mbsc-mobiscroll mbsc-ltr">
+			        <div data-role="fieldcontain" class="ui-field-contain">
+			            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset mbsc-input">
+			            	<span class="mbsc-input-wrap">
+			            		<input name="enter_address" id="enter_address" placeholder="Start typing address here...." autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" class="mbsc-control mbsc-control-ev">
+				            </span>
+				            <!-- <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom">
+				            	<sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+							</sebm-google-map> -->
+			            </div>
+			            <p class="centerText"><br>
+			                <a href="#" class="linkAmberBorder ui-link" data-inline="true" (click)="transitionPage(2)">Here You Go</a>
+			            </p>
+			        </div>
+			    </form>
+			</div>
 		    <p>&nbsp;</p>
 		    <p>&nbsp;</p>
 		  </div>
@@ -64,5 +86,74 @@
 		  <p>&nbsp;</p>
 		  <p>&nbsp;</p>
 		</div>
+	</div>
+	<div class="ui-content hospital_content" role="main" *ngIf="locationPage==2">
+	    <div class="opacity8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+					<span>The <span class="bluefont">address you entered</span> is shown below. If correct, let's find the nearby dental clinic to you.</span><br>
+				</div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter.svg" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p>&nbsp;</p>
+	        <h3 class="lineBlue bluefont">You entered a location of:</h3>
+        	<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset bg_highlight">
+        		{{mapData.location}}
+        	</div>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" class="linkBlueBorder ui-link" id="hospital_list" data-inline="true" (click)="findHospital()">Find Nearby Dentist</a>
+	        </p>
+	        <div class="spinner-blue floatright"></div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-mobile ui-content hospital_content" role="main" *ngIf="locationPage==3">
+	    <div class="opacity8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+					<span>Your <span class="bluefont">current location</span> is shown below. If correct, let's find the nearby dental clinic to you.</span><br>
+				</div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter.svg" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p>&nbsp;</p>
+	        <form action="" method="post" name="search" id="search" data-ajax="false">
+	            <div data-role="fieldcontain" class="ui-field-contain">
+	                <label for="your_location" class="bluefont">Your current location is:</label>
+	                <div class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow">
+	                	{{mapData.location}}
+	                </div>
+	            </div>
+	        </form>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <a href="#" class="linkBlueBorder ui-link" id="hospital_list" data-inline="true" (click)="findHospital()">Find Nearby Dentist</a>
+	        </p>
+	        <div class="spinner-blue floatright"></div>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
 	</div>
 </ion-content>

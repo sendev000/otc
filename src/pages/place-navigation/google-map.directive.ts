@@ -49,7 +49,6 @@ export class DirectionsMapDirective {
             if (status === 'OK') {
               me.directionsDisplay.setDirections(response);
               map.setZoom(11);
-              //console.log(me.getcomputeDistance (latLngA, latLngB));
               var point = response.routes[ 0 ].legs[ 0 ];
               me.detailRoute = point.steps;
               me.estimatedTime = point.duration.text ;

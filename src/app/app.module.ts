@@ -183,6 +183,11 @@ import { PlaceDetailsPage } from '../pages/place-details/place-details';
 import { OrderByPipe } from '../pages/orderby/orderby';
 import { PlaceNavigationPage } from '../pages/place-navigation/place-navigation';
 import { DirectionsMapDirective } from '../pages/place-navigation/google-map.directive';
+import { UrgentcareListPage } from '../pages/urgentcare-list/urgentcare-list';
+import { DoctorOfficeListPage } from '../pages/doctor-office-list/doctor-office-list';
+import { ChildrenClinicListPage } from '../pages/children-clinic-list/children-clinic-list';
+import { DentalCareListPage } from '../pages/dental-care-list/dental-care-list';
+import { PharmacyCareListPage } from '../pages/pharmacy-care-list/pharmacy-care-list';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -363,6 +368,11 @@ import { AuthService} from '../pages/providers/auth-service';
     OrderByPipe,
     PlaceNavigationPage,
     DirectionsMapDirective,
+    UrgentcareListPage,
+    DoctorOfficeListPage,
+    ChildrenClinicListPage,
+    DentalCareListPage,
+    PharmacyCareListPage,
 
   ],
   imports: [
@@ -549,7 +559,12 @@ import { AuthService} from '../pages/providers/auth-service';
 
     NearestHospitalListPage,
     PlaceDetailsPage,
-    PlaceNavigationPage
+    PlaceNavigationPage,
+    UrgentcareListPage,
+    DoctorOfficeListPage,
+    ChildrenClinicListPage,
+    DentalCareListPage,
+    PharmacyCareListPage
   ],
   providers: [
     AuthService,

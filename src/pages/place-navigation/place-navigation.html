@@ -24,8 +24,14 @@
 
 <ion-content class="ui-page-theme-a">
     <div class="ui-content" role="main">
-        <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [scrollwheel]="false" [ngStyle]="{'height': MapHeight + 'px'}" >
+        <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [scrollwheel]="true" [ngStyle]="{'height': MapHeight + 'px'}" >
         	<sebm-google-map-directions [origin]="origin" [destination]="destination"></sebm-google-map-directions>
+			<sebm-google-map-polyline [strokeColor]="'#2196f3'" [geodesic]="true" [strokeOpacity]="0.6" [strokeWeight]="7">
+				<sebm-google-map-polyline-point [latitude]="origin.latitude" [longitude]="origin.longitude">
+				</sebm-google-map-polyline-point>
+				<sebm-google-map-polyline-point [latitude]="destination.latitude" [longitude]="destination.longitude">
+				</sebm-google-map-polyline-point>
+			</sebm-google-map-polyline>
         </sebm-google-map>
         <div id="directions" [innerHTML]="sanitizer.bypassSecurityTrustHtml(vc.routeHtml)">
 

@@ -16,13 +16,13 @@ import 'rxjs/add/operator/map';
 import { GlobalVars } from '../providers/globalvars';
 import { PlaceDetailsPage } from '../place-details/place-details';
 import { OrderByPipe } from '../orderby/orderby';
-
 @Component({
-	selector: 'page-nearest-hospital-list',
-	templateUrl: 'nearest-hospital-list.html',
+  selector: 'page-urgentcare-list',
+  templateUrl: 'urgentcare-list.html'
 })
-export class NearestHospitalListPage implements OnInit {
-	mapData = {
+export class UrgentcareListPage {
+
+  mapData = {
 		latitude: 0,
 		longitude: 0,
 		zoom: 1,
@@ -59,7 +59,7 @@ export class NearestHospitalListPage implements OnInit {
         this.ib = new google.maps.InfoWindow();
         this.MapHeight = platform.height() - 160;
 
-		this.RestApiURL = GlobalVars.getApiURL() + "ppp=nearest_hospital";
+		this.RestApiURL = GlobalVars.getApiURL() + "ppp=urgentcare_list";
 	}
 	ShowMore() {
 		this.TableMaxDisplayCount = this.TableMaxDisplayCount + 15;
@@ -91,7 +91,7 @@ export class NearestHospitalListPage implements OnInit {
 		let request = {
 				location: userlocation,
 				// radius: "500",
-				query: "hospital"
+				query: "urgent care clinic"
 			};
 		let $this = this;
 		this.map = new google.maps.Map(document.createElement('div'), {
@@ -144,7 +144,7 @@ export class NearestHospitalListPage implements OnInit {
 							var duration = element.duration.text;
 							var place_address = destinations[j];
 							var obj = {};
-							let image = 'http://www.selfcarepharmacist.com/mobile//images/icons/Map-Marker-Ball-Blue.png';
+							let image = 'http://www.selfcarepharmacist.com/mobile//images/icons/Map-Marker-Ball-Purple.png';
 							obj['id'] = placeID;
 							obj['lat'] = places.geometry.location.lat();
 							obj['lng'] = places.geometry.location.lng();
@@ -189,4 +189,5 @@ export class NearestHospitalListPage implements OnInit {
 		this.loadData();
 		console.log('ionViewDidLoad NearestHospitalListPage');
 	}
+
 }

@@ -8,7 +8,7 @@
 	<ion-navbar>
     <ion-title>
     	<h1 class="ui-title">
-      	Hospital Care
+      	Doctor's Offices
       </h1>
     </ion-title>
     <ion-buttons end>
@@ -26,14 +26,14 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content class="ui-page-theme-a">
+<ion-content class="ui-page-theme-o">
 	<div class="ui-content" role="main" #mainWindow>
 	    <div id="pharmacist_speech" class="opacity4" style="display: none;">
 	        <div class="maxwidth450">
-	            <div class="ovalBorderRightBlue centerText">
-	                <span>These are the <span class="bluefont">nearby hospitals or ER</span> we found for you using google places.</span><br>
-	            </div>
-	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-green.svg" width="70"></div>
+	            <div class="ovalBorderRightOrange centerText">
+					<span>These are the <span class="orangefont">nearby doctor's offices</span> we found for you using google places.</span><br>
+				</div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-karen-orange.svg" width="70"></div>
 	        </div>
 	        <div class="clearboth divider1"></div>
 	        <!--  ---------------End Border right person------------------- -->
@@ -53,8 +53,8 @@
 	            <ul data-role="listview" id="list-canvas" data-inset="true" class="searchResult ui-listview ui-listview-inset ui-corner-all ui-shadow">
 	            	<li *ngFor="let each of TableData | orderby: sortby : false ; let i=index">
 	            		<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" *ngIf="i<TableMaxDisplayCount" (click)="showDetails(each)" >
-	            			<h3 class="bluefont placename">{{each.name}}</h3>
-	                        <p class="grayfontSmall placeaddress">{{each.address}}</p>
+	            			<h3 class="orangefont placename">{{each.name}}</h3>
+	                        <p class="grayfont placeaddress">{{each.address}}</p>
 	                        <p class="graygrayfontSmall"><span>Distance:</span> <span>{{each.distance}}</span> <span>(about</span> {{each.duration}} <span>drive)</span></p>
 	            		</a>
 	            	</li>

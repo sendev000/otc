@@ -18,10 +18,11 @@ import { PlaceDetailsPage } from '../place-details/place-details';
 import { OrderByPipe } from '../orderby/orderby';
 
 @Component({
-	selector: 'page-nearest-hospital-list',
-	templateUrl: 'nearest-hospital-list.html',
+  selector: 'page-doctor-office-list',
+  templateUrl: 'doctor-office-list.html'
 })
-export class NearestHospitalListPage implements OnInit {
+export class DoctorOfficeListPage implements OnInit {
+
 	mapData = {
 		latitude: 0,
 		longitude: 0,
@@ -91,7 +92,7 @@ export class NearestHospitalListPage implements OnInit {
 		let request = {
 				location: userlocation,
 				// radius: "500",
-				query: "hospital"
+				query: "family practice primary care medical doctor"
 			};
 		let $this = this;
 		this.map = new google.maps.Map(document.createElement('div'), {
@@ -189,4 +190,5 @@ export class NearestHospitalListPage implements OnInit {
 		this.loadData();
 		console.log('ionViewDidLoad NearestHospitalListPage');
 	}
+
 }

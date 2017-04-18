@@ -3,7 +3,7 @@ import { NavController, NavParams, MenuController, Platform } from 'ionic-angula
 
 import { NgZone } from '@angular/core';
 
-import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper} from 'angular2-google-maps/core';
 
 import { DomSanitizer } from '@angular/platform-browser';
 import { Http } from '@angular/http';

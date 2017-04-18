@@ -18,11 +18,12 @@ import { PlaceDetailsPage } from '../place-details/place-details';
 import { OrderByPipe } from '../orderby/orderby';
 
 @Component({
-	selector: 'page-nearest-hospital-list',
-	templateUrl: 'nearest-hospital-list.html',
+  selector: 'page-dental-care-list',
+  templateUrl: 'dental-care-list.html'
 })
-export class NearestHospitalListPage implements OnInit {
-	mapData = {
+export class DentalCareListPage {
+
+  mapData = {
 		latitude: 0,
 		longitude: 0,
 		zoom: 1,
@@ -91,7 +92,7 @@ export class NearestHospitalListPage implements OnInit {
 		let request = {
 				location: userlocation,
 				// radius: "500",
-				query: "hospital"
+				query: "dentist"
 			};
 		let $this = this;
 		this.map = new google.maps.Map(document.createElement('div'), {
@@ -189,4 +190,5 @@ export class NearestHospitalListPage implements OnInit {
 		this.loadData();
 		console.log('ionViewDidLoad NearestHospitalListPage');
 	}
+
 }

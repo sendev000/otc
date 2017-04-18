@@ -1,7 +1,6 @@
+$toolbar-background-color: #4CAF50;
 
-$toolbar-background-color: #00BCD4;
-
-page-nearest-hospital-list {
+page-pharmacy-care-list {
 	font-size: 16px;
 	.info_window{
 		border: 0px none; 
@@ -40,7 +39,7 @@ page-nearest-hospital-list {
 	}
 	.content-md{
 		background-color: transparent;
-	}
+	} 
 	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}

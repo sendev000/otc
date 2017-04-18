@@ -40,8 +40,8 @@ export class NearestHospitalListPage implements OnInit {
 	ib: any;
 	MapHeight: any;
 	DataDisplay = {
-		0: 'block',
-		1: 'none'
+		0: 'none',
+		1: 'block'
 	};
 	constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController,
     	private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, public http: Http, 
@@ -57,7 +57,7 @@ export class NearestHospitalListPage implements OnInit {
 		this.bounds = new google.maps.LatLngBounds();
         this.infowindow = new google.maps.InfoWindow();
         this.ib = new google.maps.InfoWindow();
-        this.MapHeight = platform.height() - 200;
+        this.MapHeight = platform.height() - 140;
 
 		this.RestApiURL = GlobalVars.getApiURL() + "ppp=nearest_hospital";
 	}

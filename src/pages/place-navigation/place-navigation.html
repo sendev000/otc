@@ -1,0 +1,34 @@
+<!--
+  Generated template for the PlaceDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="ui-header">
+	<ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Directions
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+	<ion-navbar class="fullWidth">
+	  	<div class="spinner floatright"></div>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="ui-page-theme-a">
+    <div class="ui-content" role="main">
+        <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [scrollwheel]="false" [ngStyle]="{'height': MapHeight + 'px'}" >
+        	<sebm-google-map-directions [origin]="origin" [destination]="destination"></sebm-google-map-directions>
+        </sebm-google-map>
+        <div id="directions" [innerHTML]="sanitizer.bypassSecurityTrustHtml(vc.routeHtml)">
+
+        </div>
+    </div>
+</ion-content>

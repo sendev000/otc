@@ -50,13 +50,15 @@ export class NearestHospitalPage implements OnInit {
     GlobalVars.setMapData(this.mapData);
     this.navCtrl.push(NearestHospitalListPage);
   }
+  useCurrentLocation() {
+    this.setCurrentPosition();
+    this.locationPage = 3;
+  }
   toggleLocationByInput() {
     this.enterLocation = !this.enterLocation;
   }
   ionViewDidLoad() {
   }  
-
-
   ngOnInit() {
     //set google maps defaults
     this.mapData.zoom = 4;
@@ -87,8 +89,8 @@ export class NearestHospitalPage implements OnInit {
           //set latitude, longitude and zoom
           this.mapData.latitude = place.geometry.location.lat();
           this.mapData.longitude = place.geometry.location.lng();
-          this.mapData.zoom = 12;
-
+          this.mapData.zoom = 11;
+          this.mapData.location = place.formatted_address;
         });
       });
     });
@@ -99,8 +101,21 @@ export class NearestHospitalPage implements OnInit {
       navigator.geolocation.getCurrentPosition((position) => {
         this.mapData.latitude = position.coords.latitude;
         this.mapData.longitude = position.coords.longitude;
-        this.mapData.zoom = 12;
+        this.mapData.zoom = 11;
+        this.printAddress(this.mapData.latitude, this.mapData.longitude);
       });
     }
+  }
+  printAddress(latitude, longitude){
+    var geocoder = new google.maps.Geocoder();
+    var userLocation = new google.maps.LatLng(latitude, longitude);
+    var $this = this;
+    geocoder.geocode({'location' : userLocation}, function (results, status){
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          $this.mapData.location = results[0].formatted_address;
+        }
+      }
+    });
   }
 }

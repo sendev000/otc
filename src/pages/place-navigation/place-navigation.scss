@@ -1,0 +1,268 @@
+
+$toolbar-background-color: #FF9800;
+
+page-place-navigation {
+	font-size: 16px;
+
+	a.authorLink:link, a.authorLink:visited {
+		font-weight: bold;
+		text-decoration:none;
+		color:#FF9800 !important;
+		letter-spacing: 2px;
+		background:none;
+	}
+	#popupMenu button:focus{
+		background-color: transparent;
+	}
+	.navbarButtons{
+		background-color: transparent !important;
+	}
+	h1{
+		text-transform: capitalize;
+		font-size: 2.4em;
+	    line-height: 1.8;
+	    margin-bottom: 50px;
+	    margin-top: 30px;
+	    text-align: center;
+	    font-weight: 700;
+	}
+	.toolbar-title-md{
+		font-size: 16px;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+	.toolbar-background-md, .toolbar-background{
+		background: $toolbar-background-color;
+	}
+	.ui-content a.ui-btn {
+		border: 0px none !important;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.spinner-blue {
+	  width: 50px;
+	  height: 50px;
+	  background-color:#B9F6CA;
+	  margin-right:50px;
+	  border-radius: 100%;  
+	  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+	  animation: scaleout 1.0s infinite ease-in-out;
+	}
+
+	.adp,
+	.adp table {
+	    font-family: Roboto, Arial, sans-serif;
+	    font-weight: 300;
+	    color: #2c2c2c
+	}
+	.adp-substep {
+		min-width: 10em;
+	}
+	.adp b,
+	.adp-list b {
+	    font-weight: 400
+	}
+	.adp-warnbox {
+	    margin: 5px 0 3px
+	}
+	.warnbox-content {
+	    background: #fff1a8;
+	    padding: 5px 6px
+	}
+	.warnbox-c1,
+	.warnbox-c2 {
+	    background: #fff1a8;
+	    font-size: 1px;
+	    height: 1px;
+	    overflow: hidden
+	}
+	.warnbox-c1 {
+	    margin: 0 2px
+	}
+	.warnbox-c2 {
+	    margin: 0 1px
+	}
+	.adp-list {
+	    background: #fff;
+	    border: 1px solid #cdcdcd;
+	    cursor: pointer;
+	    padding: 4px;
+	    font-family: Roboto, Arial, sans-serif;
+	    font-weight: 300;
+	    color: #2c2c2c
+	}
+	.adp-fullwidth {
+	    width: 100%
+	}
+	.adp-listsel {
+	    background: #eee;
+	    text-decoration: none
+	}
+	.adp-listheader {
+	    padding: 4px
+	}
+	.adp-placemark {
+	    background: #eee;
+	    border: 1px solid silver;
+	    color: #000;
+	    cursor: pointer;
+	    margin: 10px 0;
+	    vertical-align: middle
+	}
+	img.adp-marker {
+	    width: 22px;
+	    height: 40px
+	}
+	.adp-details,
+	.adp-legal {
+	    color: #676767
+	}
+	.adp-summary {
+	    padding: 0 3px 3px
+	}
+	.adp-step,
+	.adp-substep {
+	    border: 1px solid #cdcdcd;
+	    margin: 0;
+	    padding: .3em 3px;
+	    vertical-align: top
+	}
+	.adp-list img,
+	.adp-substep img {
+	    width: 15px;
+	    height: 15px;
+	    position: relative;
+	    top: 2px;
+	    margin-right: 3px
+	}
+	.adp-distance {
+	    white-space: nowrap
+	}
+	.adp-step,
+	.adp-text {
+	    width: 100%
+	}
+	.adp-directions {
+	    cursor: pointer;
+	    border-collapse: collapse
+	}
+	.adp-list .gm-arrow {
+	    width: 8px;
+	    height: 9px;
+	    margin: 5px 0 3px
+	}
+	.adp-agencies {
+	    font-size: 80%;
+	    margin: 5px 0
+	}
+	.adp-summary-duration {
+	    float: right;
+	    margin-left: 7px;
+	    white-space: nowrap
+	}
+	.adp-substep .gm-line {
+	    margin-right: 4px
+	}
+	.adp-substep .adp-stepicon {
+	    overflow: hidden;
+	    position: relative;
+	    top: 0;
+	    left: 0;
+	    width: 16px;
+	    height: 16px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver {
+	    background-size: 19px 630px;
+	    position: absolute;
+	    left: 0;
+	    width: 16px;
+	    height: 16px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-ferry {
+	    background-position: 0 -614px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-ferry-train {
+	    background-position: 0 -566px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-merge {
+	    background-position: 0 -143px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-straight {
+	    background-position: 0 -534px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-fork-left {
+	    background-position: 0 -550px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-left {
+	    background-position: 0 -598px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-left {
+	    background-position: 0 -197px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-left,
+	.adp-substep .adp-stepicon .adp-maneuver.adp-keep-left {
+	    background-position: 0 -413px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-left {
+	    background-position: 0 0
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-left {
+	    background-position: 0 -378px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-left {
+	    background-position: 0 -305px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-fork-right {
+	    background-position: 0 -499px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-ramp-right {
+	    background-position: 0 -429px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-roundabout-right {
+	    background-position: 0 -232px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-right,
+	.adp-substep .adp-stepicon .adp-maneuver.adp-keep-right {
+	    background-position: 0 -483px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-sharp-right {
+	    background-position: 0 -582px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-turn-slight-right {
+	    background-position: 0 -51px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver.adp-uturn-right {
+	    background-position: 0 -35px
+	}
+	.adp-substep .adp-stepicon .adp-maneuver {
+	    background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers.png);
+	}
+
+	@-webkit-keyframes scaleout {
+	  0% { -webkit-transform: scale(0.0) }
+	  100% {
+	    -webkit-transform: scale(1.0);
+	    opacity: 0;
+	  }
+	}
+
+	@keyframes scaleout {
+	  0% { 
+	    transform: scale(0.0);
+	    -webkit-transform: scale(0.0);
+	    opacity: 0.5;
+	  }
+	  50% { 
+	    transform: scale(0.5);
+	    -webkit-transform: scale(0.5);
+	    opacity: 0.5;
+	  } 
+	  100% {
+	    transform: scale(1.0);
+	    -webkit-transform: scale(1.5);
+	    opacity: 0;
+	  }
+	}
+}

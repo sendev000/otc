@@ -6,9 +6,11 @@ export var GlobalVars = {
     mapData : {
         latitude: 0,
         longitude: 0,
-        zoom: 1
+        zoom: 1,
+        location: ""
     },
     mapPlaceId: "",
+    address2: "",
     getAbsoluteURL : function() {
         return this.AbsoluteURL;
     },
@@ -32,5 +34,11 @@ export var GlobalVars = {
     },
     setMapPlaceId: function(placeId: string) {
         this.mapPlaceId = placeId;
+    },
+    getAddress2: function() {
+        return this.address2;
+    },
+    setAddress2: function(addr: string) {
+        this.address2 = addr;
     }
 };

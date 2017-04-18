@@ -181,6 +181,8 @@ import { AgmCoreModule } from "angular2-google-maps/core";
 import { NearestHospitalListPage } from '../pages/nearest-hospital-list/nearest-hospital-list';
 import { PlaceDetailsPage } from '../pages/place-details/place-details';
 import { OrderByPipe } from '../pages/orderby/orderby';
+import { PlaceNavigationPage } from '../pages/place-navigation/place-navigation';
+import { DirectionsMapDirective } from '../pages/place-navigation/google-map.directive';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -359,6 +361,8 @@ import { AuthService} from '../pages/providers/auth-service';
     NearestHospitalListPage,
     PlaceDetailsPage,
     OrderByPipe,
+    PlaceNavigationPage,
+    DirectionsMapDirective,
 
   ],
   imports: [
@@ -545,6 +549,7 @@ import { AuthService} from '../pages/providers/auth-service';
 
     NearestHospitalListPage,
     PlaceDetailsPage,
+    PlaceNavigationPage
   ],
   providers: [
     AuthService,

@@ -65,20 +65,18 @@
 	            </p>
 	        </div>
 	    </div>
-	    <sebm-google-map [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [ngStyle]="{'display': DataDisplay[1], 'height': MapHeight + 'px'}" >
+	    <sebm-google-map [scrollwheel]="false" [latitude]="mapData.latitude" [longitude]="mapData.longitude" [zoom]="mapData.zoom" [ngStyle]="{'display': DataDisplay[1], 'height': MapHeight + 'px'}" >
 	    	<ng-container *ngFor="let m of TableData; let i = index">
 		    	<sebm-google-map-marker 
 		    		*ngIf="i<TableMaxDisplayCount" 
 			        (markerClick)="clickedMarker(m.name, i)"
 			        [latitude]="m.lat"
-			        [longitude]="m.lng"
-			        
+			        [longitude]="m.lng" 
 			        [markerDraggable]="false"
 			        [iconUrl]="m.marker_icon">
 			        
 			      	<sebm-google-map-info-window class="info_window" [isOpen] = "m.iw_open">
 			      		<div (click)="showDetails(m)">
-			      			{{m.iw_open}}
 					    	{{m.name}}<br>
 					    	{{m.formatted_address}}
 					    </div>
@@ -89,7 +87,7 @@
 	    <p>&nbsp;</p>
 	</div>
 	<div class="ui-popup-screen ui-overlay-inherit in" id="popupMenu-screen" *ngIf="sortDlg" (click)="toggleSortDlg(false)"></div>
-	<div class="ui-popup-container slidedown in ui-popup-active" id="popupMenu-popup" style="max-width: 702px; top: 33px; right: 70px;" *ngIf="sortDlg">
+	<div class="ui-popup-container slidedown in ui-popup-active" id="popupMenu-popup" style="max-width: 702px; top: 33px; right: 90px;" *ngIf="sortDlg">
 	    <div data-role="popup" id="popupMenu" data-theme="n centerText" class="ui-popup ui-body-n centerText ui-overlay-shadow ui-corner-all">
 	        <div>Sort by:</div>
 	        <hr class="hrblue">

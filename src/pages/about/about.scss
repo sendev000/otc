@@ -5,6 +5,40 @@ page-about{
   .toolbar-background-md, .toolbar-background{
     background: #03a9f4;
   }
+  .ui-page-theme-a a.ui-btn{
+    border-color: transparent;
+  }
+  .grayback{
+    padding: 0px !important;
+    height: 82px;
+  }
+  .grayback .bgGray{
+    height: 82px;
+  }
+  .grayback .bgGray p{
+    line-height: 48px;
+  }
+  .grayback .toolbar-background-md, .grayback .toolbar-background{
+    background: #f7f7f7;
+  }
+  .mbsc-ms-icons{
+    height:82px; 
+    overflow: scroll;
+    white-space: nowrap;
+  }
+  #about_menustrip{
+    border-bottom: 1px solid #03A9F4;
+  }
+  #about_menustrip li{
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .feedback_selects ion-label{
+    text-align: left;
+  }
+  .feedback_selects button:focus{
+    background-color: transparent;
+  }
 }
 
 .about-header {

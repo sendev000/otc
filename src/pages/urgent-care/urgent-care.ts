@@ -13,6 +13,7 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GlobalVars } from '../providers/globalvars';
 import { UrgentcareListPage } from '../urgentcare-list/urgentcare-list';
 
+declare var google: any;
 @Component({
   selector: 'page-urgent-care',
   templateUrl: 'urgent-care.html'

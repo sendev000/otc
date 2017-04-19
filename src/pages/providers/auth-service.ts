@@ -5,6 +5,7 @@ import { GlobalVars } from './globalvars';
 import { Loading } from 'ionic-angular';
  
 export class User {
+  user_id: string;
   name: string;
   email: string;
  

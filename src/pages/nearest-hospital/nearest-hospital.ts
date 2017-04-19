@@ -13,6 +13,7 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GlobalVars } from '../providers/globalvars';
 import { NearestHospitalListPage } from '../nearest-hospital-list/nearest-hospital-list';
 
+declare var google: any;
 @Component({
   selector: 'page-nearest-hospital',
   templateUrl: 'nearest-hospital.html'

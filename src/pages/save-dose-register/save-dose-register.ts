@@ -32,9 +32,9 @@ export class SaveDoseRegisterPage {
   	this.menu.open();
   }
   registerPage(){
-	this.authService.setMainPage(this);
-	this.authService.setLoginPage(SaveDoseLoginPage);
-	this.authService.register(this.registerCredentials);
+  	this.authService.setMainPage(this);
+  	this.authService.setLoginPage(SaveDoseLoginPage);
+  	this.authService.register(this.registerCredentials);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DosingPage');

@@ -17,6 +17,8 @@ import { GlobalVars } from '../providers/globalvars';
 import { PlaceDetailsPage } from '../place-details/place-details';
 import { OrderByPipe } from '../orderby/orderby';
 
+declare var google: any;
+
 @Component({
 	selector: 'page-nearest-hospital-list',
 	templateUrl: 'nearest-hospital-list.html',

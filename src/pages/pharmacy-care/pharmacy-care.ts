@@ -13,6 +13,7 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GlobalVars } from '../providers/globalvars';
 import { PharmacyCareListPage } from '../pharmacy-care-list/pharmacy-care-list';
 
+declare var google: any;
 @Component({
   selector: 'page-pharmacy-care',
   templateUrl: 'pharmacy-care.html'

@@ -16,6 +16,8 @@ import 'rxjs/add/operator/map';
 import { GlobalVars } from '../providers/globalvars';
 import { PlaceNavigationPage } from '../place-navigation/place-navigation';
 
+declare var google: any;
+
 @Component({
   selector: 'page-place-details',
   templateUrl: 'place-details.html'

@@ -13,6 +13,7 @@ import { MapsAPILoader } from 'angular2-google-maps/core';
 import { GlobalVars } from '../providers/globalvars';
 import { ChildrenClinicListPage } from '../children-clinic-list/children-clinic-list';
 
+declare var google: any;
 @Component({
   selector: 'page-children-clinic',
   templateUrl: 'children-clinic.html'

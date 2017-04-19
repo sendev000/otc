@@ -51,7 +51,7 @@
 					<a href="{{each.url}}" target="_self" class="ui-btn ui-btn-icon-right ui-icon-carat-r"> 
 						<img src="http://www.selfcarepharmacist.com/images/coupons/{{each.image_file}}" height="80" />
 						<div [innerHTML]="sanitizer.bypassSecurityTrustHtml(each.drug_name)"></div>
-						<p [innerHTML]="sanitizer.bypassSecurityTrustHtml(each.program_name)"></p>
+						<div [innerHTML]="sanitizer.bypassSecurityTrustHtml(each.program_name)"></div>
 						<p class="graygrayfontSmallSmall" style="font-size:10px;">Last reviewed: {{each.last_view}}</p>
 					</a>
 				</li>
@@ -84,7 +84,7 @@
 	</div>
 	<div lang="en" class="mbsc-mobi-light-orange mbsc-mobiscroll dw-top mbsc-wdg" *ngIf="page==1">
 	    <div class="dw-persp slidedown in">
-	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}"></div>
+	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}" (click)="transitPage(0)"></div>
 	        <div role="dialog" tabindex="-1" class="dw dw-ltr" style="left: 0px;" [ngStyle]="{'top': topPx+'px'}">
 	            <div class="dwwr">
 	                <div aria-live="assertive" class="dw-aria dw-hidden"></div>
@@ -111,7 +111,7 @@
 	</div>
 	<div lang="en" class="mbsc-mobi-blue mbsc-mobiscroll dw-top  mbsc-wdg" *ngIf="page==2">
 	    <div class="dw-persp slidedown in">
-	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}"></div>
+	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}" (click)="transitPage(0)"></div>
 	        <div role="dialog" tabindex="-1" class="dw dw-ltr" style="left: 0px;" [ngStyle]="{'top': topPx+'px'}">
 	            <div class="dwwr">
 	                <div aria-live="assertive" class="dw-aria dw-hidden"></div>

@@ -183,7 +183,7 @@ export class PainPillsPage {
     this.MyContent.scrollPos = 0;
     this.MyContent.isArrowShow = false;
   }
-  loadData() {0
+  loadData() {
     //this.RestApiURL
     this.http.get(this.RestApiURL).map(res => res.json())
       .subscribe(data => {

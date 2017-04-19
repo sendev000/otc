@@ -20,51 +20,120 @@
 </ion-header>
 
 
-<ion-content class="ui-page-theme-a">
+<ion-content class="ui-page-theme-a" [ngClass]="{'no-scroll': noscroll}">
 	<div class="fullWidth robotoLight bgGray">
 		<p>Drug Manufacturer Savings</p>
 	</div>
-	<div class="opacity5">
-		<div class="maxwidth450">
-			<div class="ovalBorderRightBlue">
-				<span>Get a <span class="purple_redfont">drug manufacturer's</span>  prescription co-pay assistance or drug savings program.</span>
-			</div>
-			<div align="right">
-				<img src="assets/img/pharm/male/pharm-donald.svg" alt="Pharmacist donald" width="120">
+	<div class="ui-content">
+		<div class="opacity5">
+			<div class="maxwidth450">
+				<div class="ovalBorderRightBlue">
+					<span>Get a <span class="purple_redfont">drug manufacturer's</span>  prescription co-pay assistance or drug savings program.</span>
+				</div>
+				<div align="right">
+					<img src="assets/img/pharm/male/pharm-donald.svg" alt="Pharmacist donald" width="120">
+				</div>
+				<br />
+				<div class="clearboth divider1"></div>
 			</div>
 			<br />
-			<div class="clearboth divider1"></div>
-		</div>
-		<br />
-		<div>
-			<img src="assets/img/coupons/pointing-arrow.png" width="250" height="auto" alt="tap here to enter drug name arrow">
-		</div>
-		<form class="ui-filterable">
-			<div class="ui-input-search ui-shadow-inset ui-input-has-clear ui-body-inherit ui-corner-all">
-				<input data-type="search" placeholder="Search for drug">
-				<a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a>
+			<div>
+				<img src="assets/img/coupons/pointing-arrow.png" width="250" height="auto" alt="tap here to enter drug name arrow">
 			</div>
-		</form>
-		<hr class="hrblue">
-		<p class="centerText grayfontSmallSmall redBorderAll">
-			Tap on <span class="orangefont">"FYI"</span> for search tips and <span class="bluefont">"FAQ"</span> for Q and As.<br>Improve the savings card database by suggesting a program or report a broken link.
-		</p>
-		<hr class="hrblue">
-		<p class="centerText">
-			<button class="buttonAmber robotoLight" data-enhanced="false" data-role="none" id="fyi_btn">FYI</button>
-			<button class="buttonBlue robotoLight" data-enhanced="false" data-role="none" id="faq_btn">FAQ</button> 
-		</p>
-		<p class="centerText"> 
-	    <a href="mailto:contactus@selfcare-otc.com?subject=Drug%20coupons%20improvement%20suggestions" class="linkGrayBorder robotoLightSmall ui-link" data-inline="true">Suggest A Savings Card</a>
-		</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
+			<form class="ui-filterable">
+				<div class="ui-input-search ui-shadow-inset ui-input-has-clear ui-body-inherit ui-corner-all">
+					<input type="text" [(ngModel)]="dsearch" name="title" placeholder="Search for drug" (input)='onInputSearch($event.target.value)'/>
+					<a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" *ngIf="dsearch.length>0" title="Clear text" (click)="clearSearch()">Clear text</a>
+				</div>
+			</form>
+			<ul id="coursemates" data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search for drug" data-inset="true" class="ui-nodisc-icon ui-alt-icon ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<li *ngFor="let each of CouponData" class="ui-li-has-thumb">
+					<a href="{{each.url}}" target="_self" class="ui-btn ui-btn-icon-right ui-icon-carat-r"> 
+						<img src="http://www.selfcarepharmacist.com/images/coupons/{{each.image_file}}" height="80" />
+						<div [innerHTML]="sanitizer.bypassSecurityTrustHtml(each.drug_name)"></div>
+						<p [innerHTML]="sanitizer.bypassSecurityTrustHtml(each.program_name)"></p>
+						<p class="graygrayfontSmallSmall" style="font-size:10px;">Last reviewed: {{each.last_view}}</p>
+					</a>
+				</li>
+			    <li id="search-list" class="no-results ui-li-static ui-body-inherit" [ngClass]="{'ui-screen-hidden': noFound}" (click)="hideNoFound()">
+			        <p class="centerText">Oops, No drug savings program found.<br>Tap on the FAQ button below<br> for possible reasons. </p>
+			    </li>
+			</ul>
+			<hr class="hrblue">
+			<p class="centerText grayfontSmallSmall redBorderAll">
+				Tap on <span class="orangefont">"FYI"</span> for search tips and <span class="bluefont">"FAQ"</span> for Q and As.<br>Improve the savings card database by suggesting a program or report a broken link.
+			</p>
+			<hr class="hrblue">
+			<p class="centerText">
+				<button class="buttonAmber robotoLight" data-enhanced="false" data-role="none" id="fyi_btn" (click)="transitPage(1)">FYI</button>
+				<button class="buttonBlue robotoLight" data-enhanced="false" data-role="none" id="faq_btn" (click)="transitPage(2)">FAQ</button> 
+			</p>
+			<p class="centerText"> 
+		    <a href="mailto:contactus@selfcare-otc.com?subject=Drug%20coupons%20improvement%20suggestions" class="linkGrayBorder robotoLightSmall ui-link" data-inline="true">Suggest A Savings Card</a>
+			</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+		</div>
+	</div>
+	<div lang="en" class="mbsc-mobi-light-orange mbsc-mobiscroll dw-top mbsc-wdg" *ngIf="page==1">
+	    <div class="dw-persp slidedown in">
+	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}"></div>
+	        <div role="dialog" tabindex="-1" class="dw dw-ltr" style="left: 0px;" [ngStyle]="{'top': topPx+'px'}">
+	            <div class="dwwr">
+	                <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	                <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	                    <div id="fyi_div" style="display: block;" class="mbsc-comp">
+	                        <div class="maxwidth450">
+	                            <h1 align="center"> FYI: </h1>
+	                            <ul>
+	                                <li>Manufacturer's coupons has limits on how much they can take off. For this reason, $4 copay does not mean $4 copay. You are responsible for anything above the maximum payable amount.</li>
+	                                <li>All do not apply to Government programs such as medicaid, medicare, Federal employee, Tricare and so on.</li>
+	                                <li><strong>Some programs require:</strong><br>- You to fill out forms<br>- You to print the coupon<br>- Downloading the coupon as a PDF<br>- Sending the coupon to your email.</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="dwbc">
+	                    <div class="dwbw dwb-c">
+	                        <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="transitPage(0)">GOT IT</div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div lang="en" class="mbsc-mobi-blue mbsc-mobiscroll dw-top  mbsc-wdg" *ngIf="page==2">
+	    <div class="dw-persp slidedown in">
+	        <div class="dwo" [ngStyle]="{'top': topPx+'px'}"></div>
+	        <div role="dialog" tabindex="-1" class="dw dw-ltr" style="left: 0px;" [ngStyle]="{'top': topPx+'px'}">
+	            <div class="dwwr">
+	                <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	                <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	                    <div id="faq_div" style="" class="maxwidth450 mbsc-comp">
+	                        <div>
+	                            <h1 align="center"> FAQ: </h1>
+	                            <ul>
+	                                <li><strong>No drug savings found?</strong><br>- May have expired<br>- Check the drug name. Just 3 xters will do<br>- Manufacturer has no coupon.</li>
+	                                <li><strong>Broken link to program?</strong><br>- Please <a href="mailto:contactus@selfcare-otc.com?subject=Broken link for drug coupon program" class="ui-link">Contact Us</a> with the drug name. Help us improve accuracy.</li>
+	                                <li><strong>Can I still use coupon after filling my Rx?</strong><br>Your pharmacy may be able to rebill your prescription with this coupon if not more than 10 days. But you have to ask politely. There is no obligation to.</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="dwbc">
+	                    <div class="dwbw dwb-c">
+	                        <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="transitPage(0)">GOT IT</div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 	</div>
 </ion-content>

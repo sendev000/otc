@@ -8,7 +8,27 @@ page-drug {
     background-attachment: fixed;
     height: 500px;
     min-height: 760px;
-
+    .ui-input-search input {
+	    padding-left: 1.75em !important;
+	    width: 100% !important;
+	}
+	.no-scroll{
+    	.scroll-content {
+	        overflow-y: hidden;
+	    }
+    }
+    .no-results{
+    	padding: 0px !important;
+    }
+    .no-results p {
+	    border: 1px solid #fffee58;
+	    font-size: 100% !important;
+	    padding: .7em 1em;
+	    background-color: #ffff00;
+	}
+	button:focus{
+		background-color: transparent;
+	}
 	h1{
 		text-transform: capitalize;
 		font-size: 2.4em;

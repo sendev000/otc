@@ -564,7 +564,8 @@ import { AuthService} from '../pages/providers/auth-service';
     DoctorOfficeListPage,
     ChildrenClinicListPage,
     DentalCareListPage,
-    PharmacyCareListPage
+    PharmacyCareListPage,
+    
   ],
   providers: [
     AuthService,

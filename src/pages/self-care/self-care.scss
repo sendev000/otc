@@ -2,11 +2,38 @@ $toolbar-background-color: #03a9f4;
 
 page-self-care {
 	font-size: 16px;
-	background-image: url('../assets/img/illustration/male-model.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
-    height: 555px;
+    .back1{
+    	background-image: url('../assets/img/illustration/male-model.jpg');
+	    background-repeat: no-repeat;
+	    background-position: bottom;
+	    background-attachment: fixed;
+    }
+    .back2{
+    	background-image: url(../assets/img/dosing/blue-balls.jpg);
+	    background-repeat: no-repeat;
+	    background-position: bottom;
+	    background-attachment: fixed;
+    }
+    .no-scroll{
+    	.scroll-content {
+	        overflow-y: hidden;
+	    }
+    }
+    .mbsc-mobi-blue.mbsc-mobiscroll.mbsc-wdg{
+		position: fixed;
+	    top: 0px;
+	    width: 100%;
+	    height: 100%;
+		z-index: 9999;
+    }
+    .mbsc-mobi-blue.mbsc-mobiscroll .dwo{
+    	position: static;
+    	top: 112px;
+    }
+    .mbsc-mobi-blue.mbsc-mobiscroll .dw.dw-ltr{
+    	position: fixed;
+    	top: 112px;
+    }
 	h1{
 		text-transform: capitalize;
 		font-size: 2.4em;

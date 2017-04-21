@@ -8,8 +8,8 @@ import { AlertController, ToastController, LoadingController } from 'ionic-angul
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-import { AdultTakeMobileListPage } from '../adult-take-mobile-list/adult-take-mobile-list';
-import { ChildTakeMobileListPage } from '../child-take-mobile-list/child-take-mobile-list';
+import { AdultTakeMobileIntroPage } from '../adult-take-mobile-intro/adult-take-mobile-intro';
+import { ChildTakeMobileIntroPage } from '../child-take-mobile-intro/child-take-mobile-intro';
 
 @Component({
   selector: 'page-self-care',
@@ -58,9 +58,9 @@ export class SelfCarePage {
   }
   gotoPage(p: number) {
     if (p == 0)
-      this.navCtrl.push(AdultTakeMobileListPage);
+      this.navCtrl.push(AdultTakeMobileIntroPage);
     else
-      this.navCtrl.push(ChildTakeMobileListPage);
+      this.navCtrl.push(ChildTakeMobileIntroPage);
   }
   transitPage(p: number){
     this.page = p;

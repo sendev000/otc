@@ -1,21 +1,14 @@
 
 $toolbar-background-color: #03a9f4;
 
-page-adult-take-mobile-symptoms-list {
+page-adult-take-mobile-intro {
 	font-size: 16px;
 	background-image: url(../assets/img/dosing/blue-balls.jpg);
     background-repeat: no-repeat;
     background-position: bottom;
     background-attachment: fixed;
     height: 620px;
-    .ui-page-theme-a a.ui-btn,
-    .ui-page-theme-a a.ui-btn:hover,
-    .ui-page-theme-a a.ui-btn:focus,
-    {
-    	border: 0px none;
-    	background-color: transparent;
-    	color: #000;
-    }
+
 	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}

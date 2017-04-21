@@ -1,0 +1,240 @@
+<!--  
+  Generated template for the AdultTakeMobileList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p>This first</p>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" role="main">
+	    <div class="opacity5">
+	        <div id="adult_take_mobile_intro_1" *ngIf="page==0">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span> Our goal is to <span class="bluefont">figure out</span> what to do about your minor <span class="purple_bluefont">healthcare</span> need.</span><br>
+	                </div>
+	                <div class="clearboth"></div>
+	                <div class="container_12">
+	                    <div class="grid_8">
+	                        <br>
+	                        <div class="bubbleRightBlue">
+	                            Just a <span class="purple_bluefont">few </span><span class="bluefont">questions</span> to start with.
+	                        </div>
+	                    </div>
+	                    <div class="grid_4">
+	                        <img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist" align="right">
+	                    </div>
+	                </div>
+	            </div>
+	            <br>
+	            <div class="clearboth divider1"></div>
+	            <br>
+	            <!-- ---------------End Point Right------------------- -->
+	            <p class="centerText">
+	                <button data-inline="true" class="adult_take_mobile_intro_2_n_link buttonBlueBorder" data-role="none" (click)="movePage(1)">Continue</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- End Intro -->
+	        <div id="adult_take_mobile_intro_2_n" *ngIf="page==1">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Are you having <span class="redfont">difficulty</span> breathing or <span class="orangefont">shortness</span> of breath?</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <img src="assets/img/people/adult/demo/shortness-of-breath-lady.svg" height="180" alt="Lady short on breath">
+	            </p>
+	            <p>&nbsp;</p>
+	            <p class="centerText">
+	                <button data-inline="true" class="adult_take_mobile_intro_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="movePage(2)">Yes</button>
+	                <button data-inline="true" class="adult_take_mobile_intro_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="movePage(3)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- end first question div --> 
+	        <!-- start 3 div -->   
+	        <div id="adult_take_mobile_intro_3_y" *ngIf="page==2">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightYellow centerText">
+	                    <span class="redfontLarge">Go to the Emergency Room or call 911.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <p class="orangeBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	            <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="movePage(0)"></span> to start over.<br></p>
+	            <br>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoNearest()">Nearest ER</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="adult_take_mobile_intro_3_n" *ngIf="page==3">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>What about <span class="redfont">severe</span> unexplained <span class="purple_redfont">chest pain?</span></span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="centerText">
+	                <img src="assets/img/people/adult/demo/chestpain-man.svg" height="180" alt="man with chest pain">
+	            </p>
+	            <p>&nbsp;</p>
+	            <p class="centerText">
+	                <button data-inline="true" class="adult_take_mobile_intro_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="movePage(4)">Yes</button>
+	                <button data-inline="true" class="adult_take_mobile_intro_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="movePage(5)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- end 3 div --> 
+	        <div id="adult_take_mobile_intro_4_y" *ngIf="page==4">
+	            <!-- start 4 div -->
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightYellow centerText">
+	                    <span class="redfontLarge">Call 911 or seek emergency room visit.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="orangeBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	            <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="movePage(0)"></span> to start over.<br></p>
+	            <br>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoNearest()">Nearest ER</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="adult_take_mobile_intro_4_n" *ngIf="page==5">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Are you looking at an <span class="pinkfont">excessive</span> <span class="redfont">bleeding</span> situation?</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="centerText">
+	                <img src="assets/img/people/adult/demo/bleeding-lady.svg" height="180" alt="Lady bleeding from the head">
+	            </p>
+	            <p>&nbsp;</p>
+	            <p class="centerText">
+	                <button data-inline="true" class="adult_take_mobile_intro_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="movePage(6)">Yes</button>
+	                <button data-inline="true" class="adult_take_mobile_intro_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="movePage(7)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- end 4 div --> 
+	        <div id="adult_take_mobile_intro_5_y" *ngIf="page==6">
+	            <!-- start 5 div -->
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightYellow centerText">
+	                    <span class="redfontLarge">Go to the emergency room.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="orangeBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	            <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="movePage(0)"></span> to start over.<br></p>
+	            <br>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoNearest()">Nearest ER</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="adult_take_mobile_intro_5_n" *ngIf="page==7">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Is this a case of <span class="orangefont">severe</span> <span class="redfont">allergic </span><span class="orangefont">reaction</span> to something?</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="centerText">
+	                <img src="assets/img/people/adult/demo/allergic-rxn-lady.svg" height="180" alt="Lady showing allergic reaction">
+	            </p>
+	            <p>&nbsp;</p>
+	            <p class="centerText">
+	                <button data-inline="true" class="adult_take_mobile_intro_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="movePage(8)">Yes</button>
+	                <button data-inline="true" class="adult_take_mobile_intro_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="movePage(9)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- end 5  div --> 
+	        <div id="adult_take_mobile_intro_6_y" *ngIf="page==8">
+	            <!-- start 6 div -->
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightYellow centerText">
+	                    <span class="redfontLarge">Seek urgent care or go to the emergency room.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="orangeBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	            <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="movePage(0)"></span> to start over.<br></p>
+	            <br>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoNearest()">Nearest ER</a>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="adult_take_mobile_intro_6_n" *ngIf="page==9">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span class="purplefont firstname">Few,</span><br>
+	                    We had to make sure this is not an <span class="redfont">emergency</span> situation.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-john.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-- ---------------End Border right person------------------- -->
+	            <p class="blueBorder">This app is only recommended for situations that may require an over-the-counter medication.</p>
+	            <p class="blueBorderAll grayfontSmall">If this is the case, read our terms of use below. If you agree, then let's see how we can help meet your get well self care needs.</p>
+	            <p class="centerText">
+	                <img src="assets/img/people/adult/demo/reading-lady.svg" height="180" alt="lady reading from ipad">
+	            </p>
+	            <p>&nbsp;</p>
+	            <p class="centerText">
+	                <a href="#" data-role="none" class="linkAmber" data-inline="true" (click)="gotoAbout()">Terms of use</a>
+	                <a href="#" data-role="none" class="linkBlueBorder" data-transition="slide" data-inline="true" (click)="gotoList()">I Agree</a>
+	            </p>
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!-- end 6 div --> 
+	        <p>&nbsp;</p>
+	    </div>
+	</div>
+</ion-content>

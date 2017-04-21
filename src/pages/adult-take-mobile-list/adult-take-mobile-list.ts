@@ -8,6 +8,8 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
+import { AdultTakeMobileSymptomsListPage } from '../adult-take-mobile-symptoms-list/adult-take-mobile-symptoms-list';
+import { AdultTakeMobileToPharmacistListPage } from '../adult-take-mobile-to-pharmacist-list/adult-take-mobile-to-pharmacist-list';
 
 @Component({
   selector: 'page-adult-take-mobile-list',
@@ -22,7 +24,12 @@ export class AdultTakeMobileListPage {
   showMenu() {
   	this.menu.open();
   }
-
+  movePage(p: number){
+    if (p == 0)
+      this.navCtrl.push(AdultTakeMobileSymptomsListPage);
+    else
+      this.navCtrl.push(AdultTakeMobileToPharmacistListPage);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdultTakeMobileListPage');
   }

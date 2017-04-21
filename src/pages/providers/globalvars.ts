@@ -11,6 +11,7 @@ export var GlobalVars = {
     },
     mapPlaceId: "",
     address2: "",
+    firstname: "",
     getAbsoluteURL : function() {
         return this.AbsoluteURL;
     },
@@ -40,5 +41,11 @@ export var GlobalVars = {
     },
     setAddress2: function(addr: string) {
         this.address2 = addr;
+    },
+    getFirstname: function() {
+        return this.firstname;
+    },
+    setFirstname: function(name: string) {
+        this.firstname = name;
     }
 };

@@ -1,18 +1,987 @@
-<!--
-  Generated template for the ColdMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>cold_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Cold
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p *ngIf="page==0">Have a cold?</p>
+    <p *ngIf="page==1">Any fever?</p>
+    <p *ngIf="page>=2 && page<10">You Have Fever</p>
+    <p *ngIf="page>=10 && page<20">{{firstname}}</p>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">A cold</span><br>
+	            is a <span class="purple_bluefont">viral infection</span> of your nose, sinuses and throat.
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="100"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <br>
+	    <div class="blueBorder">
+	        <p>Now, how do you know you have a cold and not something like allergy, flu, sinusitis and so on?</p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/cold-lady-intro.svg" width="180" alt="lady with cold symptoms">
+	        </p>
+	    </div>
+	    <p class="blueBorderAll">Well let's see what you are looking at.</p>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <div class="blueBorderBanner">
+	        <a href="#8SIDa-jpg-modal" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="8SIDa-jpg-modal" aria-expanded="false">
+	            <p>Before we take care of this cold, <span style="color:#3399ff;">kindly take a look</span> at what our sponsors have to say <span style="color:#FF8C00;">here.</span> We think you will find it useful.</p>
+	        </a>
+	    </div>
+	    <div style="display: none;" id="8SIDa-jpg-modal-placeholder">
+	        <!--  placeholder for 8SIDa-jpg-modal  -->
+	    </div>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <!-- ----Start Popoup div----- -->   
+	    <div style="display: none;" id="cold_mobile_pop-placeholder">
+	        <!--  placeholder for cold_mobile_pop  -->
+	    </div>
+	    <!-- ----End Popoup div----- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="cold_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page==1">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span><span class="redfont firstname">{{firstname}}</span> <br><span class="grayfont">Do you have any</span> <span class="redfont">fever?</span></span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <div class="centerText">
+	        <img src="assets/img/people/adult/cold/fever-lady.svg" width="150" alt="lady testing her temperature">
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(2)">Yes, fever</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">No fever</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=2 && page<10">
+	    <div id="slider_cold_fever_mobile_div" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Use the <span class="purple_bluefont">slider</span> below to tell us your body <span class="orangefont">temperature.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="blueBorder grayfontSmall">
+	            Give an estimate in <span class="redfont">"°F"</span>. Tap on <span class="orangefont">"FYI"</span> to convert from <span class="orangefont">°C </span> to <span class="redfont">°F</span> if you need to. 
+	        </p>
+	        <br>
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_cold_fever_mobile" id="slider_cold_fever_mobile-label">Temp <span class="redfont">( °F )</span>:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="97" max="110" step="0.1" [(ngModel)]="currentTemp" color="sliderPink">
+							<ion-label range-left>{{currentTemp}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	            <input type="hidden" id="mobi_cold_temp" name="mobi_cold_temp" value="" class="displayNone mbsc-comp" readonly="">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	            <a href="#" id="mobi_cold_temp_link" data-role="button" data-inline="true" data-theme="o" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+		        <div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">
+		        	Here you  go
+		        	<input type="button" id="get_cold_fever_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(3)"/>
+		        </div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="container_12" id="selected_cold_fever_mobile_value_container" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <div id="selected_cold_fever_mobile_value">You said: <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentTemp}}</span> °F</div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	    </div>
+	    <p>&nbsp;</p>
+	    <div id="cold_fever_mobile_option1" *ngIf="page==3 && currentTemp<=98">
+	        <h3 class="orangeBorder orangefont centerText">Temperature is low</h3>
+	        <p class="blueBorder">Are you sure you have a fever? If not, then let's continue.</p>
+	        <p class="blueBorder grayfontSmall">If you converted from °C to °F, please be sure to output your selection in °F</p>
+	    </div>
+	    <div id="cold_fever_mobile_option2" *ngIf="page==3 && currentTemp>98 && currentTemp<=99.9">
+	        <h3 class="greenBorder centerText">Temperature is within <span class="greenfont">normal range.</span></h3>
+	        <p class="greenBorderWhite">We don't think you have fever.</p>
+	        <p class="greenBorderWhite">Let's continue with cold if the temperature you entered is correct.</p>
+	    </div>
+	    <div id="cold_fever_mobile_option3" *ngIf="page==3 && currentTemp>99.9 && currentTemp<=103">
+	        <h3 class="blueBorder centerText">Temperature is getting <span class="redfont">high.</span></h3>
+	        <p class="blueBorderAll">Hope you are not looking at a flu illness. If you have severe body aches, we might start suspecting the flu.</p>
+	        <p class="blueBorderAll">Well, let's continue with cold for now.</p>
+	    </div>
+	    <div id="cold_fever_mobile_option4" *ngIf="page==3 && currentTemp>103 && currentTemp<=110">
+	        <h3 class="blueBorder redfont centerText">Temperature is very high!</h3>
+	        <p class="blueBorderWhite">You may want to go to an urgent care clinic right away. Do you want to continue with cold for now or go to the nearest urgent care clinic?</p>
+	        <p class="blueBorder">Do you want to continue with cold for now or go to the nearest urgent care clinic?</p>
+	    </div>
+	    <!-- -----------Start Options button------------------ --> 
+	    <div id="options_btn_cold_fever_mobile" *ngIf="page==3">
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_cold_fever_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="togglePage(2)">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Continue</a>
+	        </p>
+	    </div>
+	    <!-- ------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=10 && page<20">
+		<div id="cold_nofever_mobile_q1" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span> Which of the <span class="redfont">symptoms</span> below apply to you right now?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="centerText">
+	         <img src="assets/img/people/adult/cold/cold-lady.svg" width="120" alt="lady with a cold">
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div id="cold_nofever_mobile_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-blue mbsc-mobiscroll mbsc-ltr">
+	         <label for="cold_nofever_mobile_q1_0" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_0" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[0]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">         
+	         Sneezing
+	         </span></label>
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_1" class="mbsc-checkbox"><input name="cold_nofever_mobile_q1" type="checkbox" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" id="cold_nofever_mobile_q1_1" value="" [(ngModel)]="symptoms[1]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Stuffy nose
+	         </span></label>
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_2" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_2" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[2]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Scratchy throat
+	         </span></label> 
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_3" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_3" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[3]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Runny nose
+	         </span></label> 
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_4" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_4" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[4]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Cough
+	         </span></label> 
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_5" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_5" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[5]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Watery eyes
+	         </span></label> 
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_8" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_8" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[6]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Sore throat
+	         </span></label> 
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_9" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_9" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[7]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Some headache
+	         </span></label>
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_11" class="mbsc-checkbox"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_11" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[8]"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         Pain around the eyes and cheeks
+	         </span></label>
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_7" class="mbsc-checkbox" (click)="toggleAllSymptoms(true)"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_7" class="cold_nofever_mobileQ1 mbsc-control mbsc-control-ev" value=""><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         All of the above
+	         </span></label>
+	         <hr class="hrblue">
+	         <label for="cold_nofever_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="cold_nofever_mobile_q1" id="cold_nofever_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev"><span class="mbsc-checkbox-box"></span>
+	         <span class="mbsc-label">
+	         None of these
+	         </span></label> 
+	         <br>
+	         <div class="clearboth divider1"></div>
+	         <p class="centerText">
+	         	<input type="button" data-inline="true" id="get_cold_nofever_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(11)">
+	         </p>
+	      </div>
+	      <div id="selected_cold_nofever_mobile_q1_container" *ngIf="mode==6">
+		      <div class="maxwidth450">
+		         <div class="ovalBorderRightBlue centerText">
+		            <div id="selected_cold_nofever_mobile_q1 centerText">
+		            	<span class="redfontLarge">Oops!,</span>You told us nothing 
+		            </div>
+		         </div>
+		         <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		   </div>
+	   </div>
+	  	<div *ngIf="page==11">
+		   <div id="cold_nofever_mobile_choice" *ngIf="mode==5">
+		      <div>
+		         <div class="maxwidth450">
+		            <div class="ovalBorderRightBlue centerText">
+		               <span class="purplefont">Alright.</span><br>
+		               Looks like this cold is starting to hit hard.
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		            </div>
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		      <p class="blueBorderAll">Let's continue and see what a pharmacist recommend for this cold.</p>
+		   </div>
+		   <div id="cold_nofever_mobile_other" *ngIf="mode==4">
+		      <div>
+		         <div class="maxwidth450">
+		            <div class="ovalBorderRightBlue centerText">
+		               <span class="greenfontLarge">No runny nose?</span><br>
+		               We see you don't have a runny nose. At least not yet.
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		            </div>
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		      <p class="blueBorderAll">Probably just starting to come on or you will know very soon. Let's continue for now.</p>
+		   </div>
+		   <div id="cold_nofever_mobile_all" *ngIf="mode == 2">
+		      <div>
+		         <div class="maxwidth450">
+		            <div class="ovalBorderRightBlue centerText">
+		               <span class="greenfont">All of the above?</span><br>
+		               You must have the cold real bad. we think you should <span class="redfont">seek urgent care.</span>
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		            </div>
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		      <p class="blueBorder">Well, let's Continue.</p>
+		   </div>
+		   <div id="cold_nofever_mobile_sinus" *ngIf="mode == 3">
+		      <div class="centerText">
+		         <div class="maxwidth450">
+		            <div class="ovalRightBlue">
+		               <span class="redfontLarge">Hmmm.</span><br>
+		               Did you also say pain around the eyes and cheeks?
+		            </div>
+		            <img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		      <p class="blueBorder">You may be looking at a sinus  inflammation or infection here.</p>
+		      <p class="blueBorderAll">Would you like to see what we have for sinuses or continue with cold for now?</p>
+		   </div>
+		   <div id="cold_nofever_mobile_none" *ngIf="mode == 1">
+		      <div>
+		         <div class="maxwidth450">
+		            <div class="ovalBorderRightBlue centerText">
+		               <span class="redfont">None of these?</span><br>
+		               Then you may not have a cold.
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		            </div>
+		         </div>
+		      </div>
+		      <div class="clearboth divider1"></div>
+		      <p class="blueBorder">Do you want to continue with cold or check out something else?</p>
+		   </div>
+		   <!-- -----------Start Options button------------------ -->
+		   <div class="clearboth divider1"></div>
+		   <div id="options_btn_cold_nofever_mobile" *ngIf="mode==2||mode==4||mode==5">
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <div class="clearboth divider1"></div>
+		      <p class="centerText">
+		         <button class="back_cold_nofever_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button> 
+		         <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Let's continue</a>
+		      </p>
+		   </div>
+		   <!-- ------------End Options Button----------------------- -->
+		   <!-- -----------Start Options button------------------ --> 
+		   <div id="options_btn_cold_nofever_mobile_sinus" *ngIf="mode==3">
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <div class="clearboth divider1"></div>
+		      <p class="centerText"> 
+		         <button class="back_cold_nofever_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+		         <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">See Sinus</a>
+		         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">continue</a>
+		      </p>
+		   </div>
+		   <!-- ------------End Options Button----------------------- -->
+		   <p>&nbsp;</p>
+		   <!-- -----------Start Options button------------------ --> 
+		   <div id="options_btn_cold_nofever_mobile_none" *ngIf="mode==1">
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <!-- ------------------------Banner Link----------------------------- -->
+		      <div class="clearboth divider1"></div>
+		      <p class="centerText">
+		         <button class="back_cold_nofever_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+		         <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Something else</a>
+		         <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">continue</a>
+		      </p>
+		   </div>
+	   </div>
+	   <!-- ------------End Options Button----------------------- -->
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	   <p>&nbsp;</p>
+	   <div id="cold3_mobile_1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did your symptoms develop <span class="purplefont">gradually</span> or  <span class="orangefont">quickly?</span></span><br>
+	         </div>
+	         <div align="right"><img src="../../../../images/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <!-----------------End Border right person------------------- --> 
+	      <p class="blueBorder"><span class="purplefont">Gradually</span> would mean starting with a scratchy or sore throat and gradually progressing to runny or stufy nose.
+	      </p>
+	      <p class="blueBorder"> <span class="orangefont">Quickly</span> would mean the symptoms happened pretty fast.</p>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <img src="../../../../images/people/adult/cold/fast-slow-animals2.svg" width="200" alt="fast and slow animals">
+	      </p>
+	      <p class="centerText">
+	         <button data-inline="true" class="cold3_mobile_2_y_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e">Quickly</button>
+	         <button data-inline="true" class="cold3_mobile_2_n_link ui-btn ui-btn-d ui-btn-inline ui-shadow ui-corner-all" data-theme="d">Gradually</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="cold3_mobile_2_y" class="displayNone">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge">Quickly?</span><br>
+	            Probably looking at an allergy situation if it started quickly.
+	         </div>
+	         <div align="right"><img src="../../../../images/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="greenBorderWhite">If you have sneezing or a runny nose and it started all of a sudden, then you may be looking at <span class="greenfont">allergy</span> rather than a <span class="bluefont">cold.</span> If it started gradually, then we may suspect a cold.</p>
+	      <p class="greenBorder">Would you like to see the allergy section or continue with cold?<br>Continuing with cold will assume it started gradually.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 
+	         <a href="allergies_mobile.php" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button"> Allergy</a>
+	         <button class="cold3_mobile_2_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" data-inline="true">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="cold3_mobile_2_n" class="displayNone">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="purplefont firstname">Qwer,</span><br>
+	            suspect a <span class="purplefont">cold</span> if the symptoms started slowly. If quickly, suspect <span class="greenfont">allergies.</span>
+	         </div>
+	         <div align="right"><img src="../../../../images/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="blueBorder centerText">Answering a few more questions will do some good.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#cold_mobile_3a" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <p>&nbsp;</p>
+	</div>
+	<div class="ui-content">
+		<p>&nbsp;</p>
+		<div id="slider_cold_mobile_3a_div">
+		  <div class="maxwidth450">
+		     <div class="ovalBorderRightBlue centerText">
+		        <span>On what <span class="purplefont">day</span> are your <span class="redfont">symptoms</span> now?</span><br>
+		     </div>
+		     <div align="right"><img src="../../../../images/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		     </div>
+		  </div>
+		  <div class="clearboth divider1"></div>
+		  <!-----------------End Border right person------------------- -->
+		  <div class="centerText">
+		     <img src="../../../../images/objects/calendar.svg" width="120" alt="calendar">
+		  </div>
+		  <p class="blueBorder grayfontSmall centerText">Use the slider below to let us know. </p>
+		  <p>&nbsp;</p>
+		  <div data-role="fieldcontain" class="ui-field-contain">
+		     <label for="slider_cold_mobile_3a" id="slider_cold_mobile_3a-label">Day:</label>
+		     <div class="ui-slider">
+		        <div class="ui-slider-popup ui-shadow ui-corner-all ui-body-a" style="display: none; top: -85px; left: -12px;">0</div>
+		        <input type="number" data-type="range" name="slider_cold_mobile_3a" id="slider_cold_mobile_3a" value="0" min="0" max="14" step="0.5" data-theme="a" data-highlight="true" data-popup-enabled="true" class="ui-shadow-inset ui-body-a ui-corner-all ui-slider-input">
+		        <div role="application" class="ui-slider-track ui-shadow-inset ui-bar-a ui-corner-all">
+		           <div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div>
+		           <a href="#" class="ui-slider-handle ui-btn ui-btn-a ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="14" aria-valuenow="0" aria-valuetext="0" aria-labelledby="slider_cold_mobile_3a-label" style="left: 0%;"></a>
+		        </div>
+		     </div>
+		  </div>
+		  <br>
+		  <div class="clearboth divider1"></div>
+		  <p class="centerText">
+		  <div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_cold_mobile_3a_value" data-inline="true" value="Here you  go"></div>
+		  </p>
+		</div>
+		<br>
+		<div class="container_12 displayNone" id="selected_cold_mobile_3a_value_container">
+		  <div class="maxwidth450">
+		     <div class="ovalBorderRightBlue centerText">
+		        <div id="selected_cold_mobile_3a_value"></div>
+		     </div>
+		     <div align="right"><img src="../../../../images/pharm/male/pharm-justin.svg" alt="pharmacist" width="80">
+		     </div>
+		  </div>
+		  <div class="clearboth divider1"></div>
+		  <!-----------------End Border right person------------------- -->
+		</div>
+		<div id="cold_mobile_3a_option1" class="displayNone">
+		  <h3 class="greenBorderWhite greenfontLarge centerText">Just starting ugh?</h3>
+		  <p class="orangeBorderWhite">Symptoms usually start about 2 or 3 days after you come in contact with the virus (It may take up to a week). </p>
+		  <p class="blueBorder">Let's see what the pharmacist can recommend you take for this cold.</p>
+		  <!------Start Popoup div----- -->   
+		  <div style="display: none;" id="cold_3a_mobile_option1_pop-placeholder">
+		     <!-- placeholder for cold_3a_mobile_option1_pop -->
+		  </div>
+		  <!------End Popoup div----- -->
+		</div>
+		<div id="cold_mobile_3a_option2" class="displayNone">
+		  <h3 class="blueBorderWhite bluefontLarge centerText">Less than a week.</h3>
+		  <p class="orangeBorderWhite">You will need to manage the symptoms and make life more comfortable.</p>
+		  <p class="blueBorder">Let's see what the pharmacist can recommend you take for this cold.</p>
+		</div>
+		<div id="cold_mobile_3a_option3" class="displayNone">
+		  <h3 class="blueBorderWhite redfont centerText">More than a week?</h3>
+		  <p>This is taking too long. you may be looking at a sinus infection by now or getting close to having one.</p>
+		  <p class="blueBorder">It would be a good idea to seek urgent care if you've had this cold for this length of time. </p>
+		  <!------Start Popoup div----- -->   
+		  <div style="display: none;" id="cold_3a_mobile_option3_pop-placeholder">
+		     <!-- placeholder for cold_3a_mobile_option3_pop -->
+		  </div>
+		  <!------End Popoup div----- -->
+		</div>
+		<!-------------Start Options button------------------ --> 
+		<div id="options_btn_cold_mobile_3a_option1" class="displayNone">
+		  <!--------------------------Banner Link----------------------------- -->
+		  <div class="clearboth divider1"></div>
+		  <!--------------------------Banner Link----------------------------- -->
+		  <div class="clearboth divider1"></div>
+		  <p class="centerText">
+		     <button class="back_cold_mobile_3a_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true">Back</button>
+		     <a href="#cold_3a_mobile_option1_pop" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="cold_3a_mobile_option1_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">FYI</a>
+		     <a href="#cold_mobile_3b" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+		  </p>
+		</div>
+		<!--------------End Options Button----------------------- -->
+		<!-------------Start Options button------------------ --> 
+		<div id="options_btn_cold_mobile_3a_option3" class="displayNone">
+		  <!--------------------------Banner Link----------------------------- -->
+		  <div class="clearboth divider1"></div>
+		  <!--------------------------Banner Link----------------------------- -->
+		  <div class="clearboth divider1"></div>
+		  <p class="centerText">
+		     <button class="back_cold_mobile_3a_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true">Back</button>
+		     <a href="#cold_3a_mobile_option3_pop" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="cold_3a_mobile_option3_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">FYI</a>
+		     <a href="#cold_mobile_3b" data-role="button" data-inline="true" onclick="clickCounter80()" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+		  </p>
+		</div>
+		<!--------------End Options Button----------------------- -->
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="cold_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="cold_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-alt-icon ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="blueBorder">
+	            <img style="float:left; padding-right:10px;" src="assets/img/people/adult/cold/cold-lady-intro.svg" alt="Lady with a cold" width="80">
+	            A viral infection of you nose, sinuses and throat can lead to upper respiratory symptoms, such as runny nose, sneezing, nasal congestion, cough, and sore throat.
+	        </p>
+	        <p>Cold symptoms usually start about 24 to 72 hours after you come in contact with the virus.</p>
+	    </div>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_mobile_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div role="dialog" tabindex="-1" class="dw dw-ltr" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}" style="background: #FFF;">
+		<div class="dwwr" style="width: 241px; white-space: nowrap;">
+		  <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+		  <div class="dwv">Convert from <span class="redfont">°C</span> to <span class="redfont">°F</span> <br>(Please <span class="redfontSmall">output</span> result in <span class="redfont">°F</span>)</div>
+		  <div class="dwcc">
+		     <div class="mbsc-w-p dwc dwsc dwhl">
+		        <div class="dwwc" style="max-width:600px;">
+		           <div class="dwfl" style="min-width:80px;">
+		              <div class="dwwl dwwl0" data-index="0">
+		                 <div class="dwl">Whole</div>
+		                 <div tabindex="0" aria-live="off" aria-label="Whole" role="listbox" class="dwww">
+		                    <div class="dww" style="height:120px;">
+		                       <div class="dw-ul" style="margin-top: 40px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, 0px, 0px);">
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="true" class="dw-li dw-v dw-sel" data-val="35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="36" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">36</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="37" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">37</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="38" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">38</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="39" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">39</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">40</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="41" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">41</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="42" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">42</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="43" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">43</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="44" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">44</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">45</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="46" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">46</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="47" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">47</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="48" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">48</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="49" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">49</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">50</div>
+		                             </div>
+		                          </div>
+		                       </div>
+		                    </div>
+		                    <div class="dwwo"></div>
+		                 </div>
+		                 <div class="dwwol"></div>
+		              </div>
+		           </div>
+		           <div class="dwfl" style="min-width:80px;">
+		              <div class="dwwl dwwl1" data-index="1">
+		                 <div class="dwl">Fraction</div>
+		                 <div tabindex="0" aria-live="off" aria-label="Fraction" role="listbox" class="dwww">
+		                    <div class="dww" style="height:120px;">
+		                       <div class="dw-ul" style="margin-top: 40px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, -1200px, 0px);">
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.50</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--55" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.55</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--60" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.60</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--65" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.65</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--70" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.70</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--75" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.75</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--80" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.80</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--85" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.85</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--90" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.90</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="--95" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.95</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.00</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-5" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.05</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-10" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.10</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-15" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.15</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-20" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.20</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-25" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.25</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-30" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.30</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.40</div>
+		                             </div>
+		                          </div>
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.45</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.50</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-55" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.55</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-60" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.60</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-65" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.65</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-70" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.70</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-75" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.75</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-80" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.80</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-85" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.85</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-90" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.90</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="-95" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.95</div>
+		                             </div>
+		                             <div role="option" aria-selected="true" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.00</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.05</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.10</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.15</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="20" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.20</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="25" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.25</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="30" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.30</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.40</div>
+		                             </div>
+		                          </div>
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.45</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.50</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="55" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.55</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="60" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.60</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="65" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.65</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="70" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.70</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="75" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.75</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="80" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.80</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="85" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.85</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="90" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.90</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="95" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.95</div>
+		                             </div>
+		                             <div role="option" aria-selected="true" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.00</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.05</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.10</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.15</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="20" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.20</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="25" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.25</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="30" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.30</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.40</div>
+		                             </div>
+		                          </div>
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.45</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.50</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="55" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.55</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="60" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.60</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="65" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.65</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="70" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.70</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="75" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.75</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="80" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.80</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="85" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.85</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="90" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.90</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="95" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.95</div>
+		                             </div>
+		                             <div role="option" aria-selected="true" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.00</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="5" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.05</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="10" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.10</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="15" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.15</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="20" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.20</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="25" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.25</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="30" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.30</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.40</div>
+		                             </div>
+		                          </div>
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.45</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="50" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.50</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="55" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.55</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="60" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.60</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="65" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.65</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="70" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.70</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="75" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.75</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="80" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.80</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="85" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.85</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="90" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.90</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="95" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.95</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.00</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+5" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.05</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+10" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.10</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+15" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.15</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+20" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.20</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+25" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.25</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+30" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.30</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+35" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.35</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+40" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.40</div>
+		                             </div>
+		                          </div>
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="+45" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">.45</div>
+		                             </div>
+		                          </div>
+		                       </div>
+		                    </div>
+		                    <div class="dwwo"></div>
+		                 </div>
+		                 <div class="dwwol"></div>
+		              </div>
+		           </div>
+		           <div class="dwfl" style="min-width:80px;">
+		              <div class="dwwl dwwl2" data-index="2">
+		                 <div class="dwl">Unit</div>
+		                 <div tabindex="0" aria-live="off" aria-label="Unit" role="listbox" class="dwww">
+		                    <div class="dww" style="height:120px;">
+		                       <div class="dw-ul" style="margin-top: 40px; transition: -webkit-transform 0s ease-out; transform: translate3d(0px, 0px, 0px);">
+		                          <div class="dw-bf">
+		                             <div role="option" aria-selected="true" class="dw-li dw-v dw-sel" data-val="0" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">°C</div>
+		                             </div>
+		                             <div role="option" aria-selected="false" class="dw-li dw-v" data-val="1" style="height:40px;line-height:40px;">
+		                                <div class="dw-i">°F</div>
+		                             </div>
+		                          </div>
+		                       </div>
+		                    </div>
+		                    <div class="dwwo"></div>
+		                 </div>
+		                 <div class="dwwol"></div>
+		              </div>
+		           </div>
+		        </div>
+		     </div>
+		  </div>
+		  <div class="dwbc">
+		     <div style="width:50%" class="dwbw dwb-s">
+		        <div tabindex="0" role="button" class="dwb0 dwb-e dwb">Here You Go</div>
+		     </div>
+		     <div style="width:50%" class="dwbw dwb-c">
+		        <div tabindex="0" role="button" class="dwb1 dwb-e dwb">Cancel</div>
+		     </div>
+		  </div>
+		</div>
+		</div>
 </ion-content>

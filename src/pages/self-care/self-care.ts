@@ -8,6 +8,7 @@ import { AlertController, ToastController, LoadingController } from 'ionic-angul
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+import { GlobalVars } from '../providers/globalvars';
 import { AdultTakeMobileIntroPage } from '../adult-take-mobile-intro/adult-take-mobile-intro';
 import { ChildTakeMobileIntroPage } from '../child-take-mobile-intro/child-take-mobile-intro';
 
@@ -57,6 +58,7 @@ export class SelfCarePage {
     toast.present();
   }
   gotoPage(p: number) {
+    GlobalVars.setFirstname(this.dsearch);
     if (p == 0)
       this.navCtrl.push(AdultTakeMobileIntroPage);
     else

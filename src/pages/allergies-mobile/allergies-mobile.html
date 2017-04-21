@@ -1,18 +1,236 @@
-<!--
+<!-- 
   Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+ -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>allergies_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Allergy
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightGreen">
+    <p *ngIf="page==0">Allergy Relief?</p>
+    <p *ngIf="page==1">Answer These First</p>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-h">
+	<div class="ui-content" role="main" *ngIf="page==0">
+	    <div>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="greenfontLarge">Allergies</span><br>
+	                due to pollens, dust, dander or mold  will be discussed here.
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <!-- ----Start Popoup div----- -->   
+	        <div style="display: none;" id="allergy_mobile_pop-placeholder">
+	            <!--  placeholder for allergy_mobile_pop  -->
+	        </div>
+	        <!-- ----End Popoup div----- -->
+	        <div class="greenBorder centerText">
+	            <p>
+	                Let's find out if you have allergies or if you may have a cold or something else. 
+	            </p>
+	            <br>
+	            <p>
+	                <img src="assets/img/people/adult/cold/allergy-lady-intro.svg" width="160" alt="lady with allergy cleaning her nose">
+	            </p>
+	        </div>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="blueBorderBanner">
+	            <a href="#9SIDa-jpg-modal" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="9SIDa-jpg-modal" aria-expanded="false">
+	                <p>Before you continue, <span style="color:#009933;">our sponsor</span>&nbsp;would like to share this message with you. We think you will find it useful. <span style="color:#FF0000;">Take a look.</span></p>
+	            </a>
+	        </div>
+	        <div style="display: none;" id="9SIDa-jpg-modal-placeholder">
+	            <!--  placeholder for 9SIDa-jpg-modal  -->
+	        </div>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="allergy_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" data-transition="slide" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	        </p>
+	        <br>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	</div>
+	<div class="ui-content" *ngIf="page>0 && page<10">
+	    <p>&nbsp;</p>
+	    <div id="allergy1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Do you have any <span class="redfont">fever?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/objects/thermometer-hand-green.svg" width="150" alt="hand holding thermometer">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="allergy1_mobile_2_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="allergy1_mobile_2_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_2_y" class=" centerText" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                May be looking at <span class="bluefont">cold</span> or <span class="redfont">flu.</span> Allergies never involve fever. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="allergy1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_2_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span> What about <span class="grayfont">severe</span> <span class="orangefont">body ache?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/people/adult/bodyache/bodyache-lady-green.svg" width="150" alt="lady holding her shoulder with pain">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="allergy1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="allergy1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_3_y" class=" centerText" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                May be looking at the <span class="redfont">Flu.</span> Allergies never include severe body aches.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="allergy1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_3_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Did your symptoms <span class="grayfont">start</span> <span class="bluefont">slowly</span> or did it come on <span class="orangefont">quickly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <img src="assets/img/objects/fast-slow-animals.svg" width="250" alt="fast and slow animals">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="allergy1_mobile_4_y_link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" data-theme="j" (click)="togglePage(6)">Slowly</button>
+	            <button data-inline="true" class="allergy1_mobile_4_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="togglePage(7)">Quickly</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_4_y" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefont">Slowly?</span><br>
+	                Likely looking at a <span class="bluefont">cold </span>in this situation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <p class="greenBorder">Colds take some time to develop while allergies start all of a sudden because your body's immune system is reacting to something you inhaled like pollens or dust.</p>
+	        <p class="greenBorderAll">Let's continue and see what rational we are using to differentiate an allergy from a cold situation.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="allergy1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="allergy1_mobile_4_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Trying to <span class="grayfont">eliminate</span> <span class="bluefont">cold</span> or <span class="redfont">flu.</span></span> Sometimes they can get mixed up.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-green.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-- ----Start Popoup div----- -->   
+	        <div style="display: none;" id="allergy1_mobile_4_pop-placeholder">
+	            <!--  placeholder for allergy1_mobile_4_pop  -->
+	        </div>
+	        <!-- ----End Popoup div----- -->
+	        <p class="greenBorder centerText">Tap on the <span class="orangefont">"FYI"</span> button below for the rationale we used to eliminate cold or flu.</p>
+	        <p class="greenBorder centerText">Then decide if you want to check out cold or flu or continue with allergy.</p>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="allergy1_mobile_4_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Cold</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- ----End 4 n----- -->
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="allergy_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="allergy_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="allergy_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="greenBorderAll">Although colds and seasonal allergies may share some of the same symptoms, they are different things altogether. Common colds are caused by viruses, whereas seasonal allergies are immune system reaction triggered by exposure to an allergen.</p>
+	    </div>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="allergy1_mobile_4_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="allergy1_mobile_4_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="allergy1_mobile_4_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="greenBorder centerText">Here are the rationale we used:</p>
+	        <ul>
+	            <li>Allergy start all of a sudden because your body is reacting to something you inhaled.</li>
+	            <li>Cold symptoms take time to develop as the cold virus is invading the nasal passages. </li>
+	            <li>Allergy never include fever</li>
+	            <li>Allergy never include severe body aches</li>
+	            <li>Allergy rarely include sore throat until later when all the drainage might have irritated the throat area.</li>
+	        </ul>
+	    </div>
+	</div>
 </ion-content>

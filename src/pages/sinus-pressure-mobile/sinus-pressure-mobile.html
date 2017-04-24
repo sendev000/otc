@@ -1,18 +1,831 @@
-<!--
-  Generated template for the SinusPressureMobile page.
+<!--   
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>sinus_pressure_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Sinus Pressure
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page==0">
+    <p>sinus pain, pressure?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=20">
+    <p>what caused it?</p>
+  </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span><span class="redfont">Inflamed</span> sinuses can cause a build up of pressure in the sinus cavities.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-- ---------------End Border right person------------------- -->
+	    <div class="redBorder">
+	        <p>Before you see what a pharmacist recommend over the counter for sinus pressure relief, let's make sure it is sinus pressure you are looking at.</p>
+	        <hr class="hrpink">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/nose/sinus-lady.svg" width="180" alt="Lady with sinus pain and pressure">
+	        </p>
+	    </div>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <!-- ----Start Popoup div----- -->   
+	    <div style="display: none;" id="sinus_mobile_pop-placeholder">
+	        <!--  placeholder for sinus_mobile_pop  -->
+	    </div>
+	    <!-- ----End Popoup div----- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="sinus_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="sinus1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you feel <span class="bluefont">tightness</span> and <span class="redfont">pain</span> behind the eyes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="sinus1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end first question div --> 
+	    <!-- start 3 div -->   
+	    <div id="sinus1_mobile_3_y" *ngIf="page==2">
+	        <h3>Yes?</h3>
+	        <p>&nbsp;</p>
+	        <button data-inline="true" class="sinus1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="purplefont">pounding</span> on the forehead and face?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="sinus1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end 3 div --> 
+	    <div id="sinus1_mobile_4_y" *ngIf="page==4">
+	        <!-- start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                Chances you are looking at <span class="purple_redfont">sinus pressure</span> is getting <span class="redfont">high.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="sinus1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Any <span class="redfont">ear pain</span> and <span class="orangefont">pressure?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="sinus1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end 4 div --> 
+	    <div id="sinus1_mobile_5_y" *ngIf="page==6">
+	        <!-- start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Most likely looking at <span class="orangefont">sinus pressure.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus1_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Does this make it <span class="grayfont">feel like</span> you have a <span class="bluefont">toothache?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="sinus1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end 5  div --> 
+	    <div id="sinus1_mobile_6_y" *ngIf="page==8">
+	        <!-- start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Sinus pressure may make it feel like you have a <span class="bluefont">toothache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Tightness and pain behind the eyes.</li>
+	                <li>Pounding on the forehead and face</li>
+	                <li>Ear pain and pressure.</li>
+	                <li>Feeling the tooth ache.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="sinus1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus1_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="redfont">pain</span> and <span class="orangefont">pressure</span> across the cheek?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="sinus1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end 6 div --> 
+	    <div id="sinus1_mobile_7_y" *ngIf="page==10">
+	        <!-- start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Possibly looking at <span class="purple_redfont">sinus pressure.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="redBorder centerText">Let's continue and see how to take care of this.</p>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus1_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Those were a few signs of a <span class="orangefont">sinus pressure.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-- ---------------End Border right person------------------- -->
+	        <p class="purpleRedBorder centerText">Let's see how to take care of this if you think you are experiencing one.</p>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!-- ------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-- end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="sinus2_mobile_1" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red">
+	                <span>Eliminating the cause of this <span class="orangefont">pressure</span> will help provide relief.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="redBorder centerText">Let's see what you are looking at.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="sinus2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="sinus2_mobile_2_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is the pressure as a result of a <span class="bluefont">cold</span> or <span class="pinkfont">flu?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="sinus2_mobile_3_y" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                Cold and flu can produce mucus causing pressure build up in the sinuses.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Continue to make sure the sinuses are not infected since bacterial and other germs can grow more easily in this build up of mucus.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="sinus2_mobile_3_pop-placeholder">
+	            <!-- placeholder for sinus2_mobile_3_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="j" aria-haspopup="true" aria-owns="sinus2_mobile_3_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <button data-inline="true" class="sinus2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_3_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is it as a result of allergy to for instance <span class="orangefont">pollens</span> or <span class="redfont">dust?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(24)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(25)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="sinus2_mobile_4_y" *ngIf="page==24">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="sinus2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(25)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_4_n" *ngIf="page==25">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="purple_redfontLarge">Alright.</span><br>
+	                Let's look for signs of <span class="redfont">infection</span> or <span class="redfont">inflammation</span>.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="sinus2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="sinus2_mobile_5_y" *ngIf="page==26">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="sinus2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(27)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_5_n" *ngIf="page==27">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>In addition to this sinus pressure, do you also have <span class="redfont">fever?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(28)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(29)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="sinus2_mobile_6_y" *ngIf="page==28">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a sinus infection</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(29)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_6_n" *ngIf="page==29">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Does your face feel <span class="purple_redfont">tender</span> and <span class="purplefont">swollen</span> with this pressure?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(30)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(31)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="sinus2_mobile_7_y" *ngIf="page==30">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at a sinus infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_7_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="bluefont">headache</span> and a very bad <span class="bluefont">cough</span> especially at <span class="bluefont">night?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="sinus2_mobile_8_y" *ngIf="page==32">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a sinus infection</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_8_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Have you lost your <span class="orangefont">sense of smell</span> with this sinus pressure?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="sinus2_mobile_9_y" *ngIf="page==34">
+	        <!--start 9 div -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_9_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you sometimes experience a <span class="purple_bluefont">foul</span> or <span class="bluefont">metallic</span> taste since the sinus pressure started?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="sinus2_mobile_10_y" *ngIf="page==36">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Sinus infection possibility.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_10_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Has this sinus pressure thing been going on for <span class="bluefont">longer</span> than <span class="purple_bluefont">2 weeks?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus2_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	            <button data-inline="true" class="sinus2_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div -->
+	    <div id="sinus2_mobile_11_y" *ngIf="page==38">
+	        <!--start 11 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>The sinuses are going to be infected by now.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus2_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus2_mobile_11_n" *ngIf="page==39">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge firstname"> </span><br>
+	                Those were common symptoms of a <span class="redfont">sinus infection.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder"> There are other reasons to have pressure in your sinuses besides a sinus infection.</p>
+	        <p class="redBorderAll">Let's continue if you don't think you are looking at a <span class="orangefont">sinus infection.</span></p>
+	        <p class="redBorder">If you think you are looking at a sinus infection, you will have to see a doctor. Nothing over the counter will take care of a sinus infection.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 11 div --> 
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="sinus3_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span>Have you been diagnosed with <span class="bluefont">nasal polyps</span> in the past?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">The symptoms are usually:</p>
+	            <ul>
+	                <li>Nose feeling blocked</li>
+	                <li>Reduced or complete loss of sense of smell</li>
+	                <li>Runny nose</li>
+	                <li>Breathing through the mouth.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="sinus3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="sinus3_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>These may have returned.</li>
+	                <li>They may block the opening of the sinuses leading to pressure and pain in the sinuses.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus3_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about a <span class="purplefont">deviated septum?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="purple_redfont">nasal bone spur?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="sinus3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="sinus3_mobile_4_y" *ngIf="page==43">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span>Seek urgent care or a doctor for further evaluation.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need further evaluation. Do not seek self care.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus3_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span>Did the sinus pressure <span class="greenfont">improve</span> initially for about 3 to 4 days and now is getting <span class="redfont">worse?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sinus3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="sinus3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="sinus3_mobile_5_y" *ngIf="page==45">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at <span class="redfont">sinus infection.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="sinus3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sinus3_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Alright.</span><br>
+	                Improving sinus drainage will help relieve some pressure in the sinuses.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Let's see what a pharmacist recommend to help improve sinus drainage and relieve other symptoms accompanying this sinus pain and pressure that is available over the counter.</p>
+	        <p class="redBorderAll">This will assume you are not looking at a sinus infection. If you think this is a sinus infection, you should seek urgent care.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="400">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="sinus_pressure_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div -->   
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="sinus_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="sinus_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+		<div data-role="popup" id="sinus_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+		    <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+		    <p class="redBorder">If the openings from the sinuses into the nasal passage become blocked, a vacuum within the sinus cavity can lead to negative pressure resulting in sinus pain and pressure.</p>
+		    <p class="redBorderAll">Sinuses are filled with air and lined with mucus membranes. They produce mucus which cleans and moistens the lining of the nose and throat. The nose allows for free exchange of air and mucus with the sinus.</p>
+		</div>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="sinus2_mobile_3_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="sinus2_mobile_3_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="sinus2_mobile_3_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="redBorderAll">Usually in a healthy sinus, air and mucus are able to flow between the nasal passages and the sinuses easily. </p>
+	        <p class="redBorderAll">If mucus blocks the nasal passages due to the small hairs in there not working properly to move mucus out, or if a cold causes too much mucus to be produced and blocks the opening of the sinuses or even if nasal polyps block this openings, you will be looking at a sinus pressure build up.</p>
+	    </div>
+	</div>
 </ion-content>

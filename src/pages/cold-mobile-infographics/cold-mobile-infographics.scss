@@ -1,9 +1,19 @@
-$toolbar-background-color: #E91E63;
+$toolbar-background-color: #03a9f4;
 
-page-sinus-pressure-mobile {
+page-cold-mobile-infographics {
 	font-size: 16px;
 	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
+	}
+	.mbsc-mobi-blue{
+		z-index: 1100;
+	    display: inline-block;
+	    position: absolute;
+	    padding: 0;
+	    outline: 0;
+	}
+	button:focus{
+		background: none;
 	}
 	.bar-button-md{
 		padding: 0px;

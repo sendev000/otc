@@ -1,0 +1,346 @@
+<!--  
+  Generated template for the AllergiesMobile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  -->
+<ion-header class="ui-header">
+
+  <ion-navbar>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Cold
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content class="ui-page-theme-a">
+	<div class="fullWidth robotoLight bgGray">
+    	<p *ngIf="feedbackPage==0">Clinic or  OTC</p>
+    	<p *ngIf="feedbackPage>0">Quick Feedback</p>
+    </div>
+    <div class="ui-content" *ngIf="feedbackPage==0">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Tap on <span class="bluefont">"FYI"</span> below to see what our pharmacists think you should do based on your answers.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="
+	            Pharmacist" width="100"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <p class="blueBorderAll">Then you can get a pharmacist's over-the-counter recommend if you still think that is necessary.</p>
+	    <p>&nbsp;</p>
+	    <div class="adult_progress_div displayNone">
+	        <h3 class="bluefont lineBlue centerText">Our Pharmacists Say:</h3>
+	        <div id="DWInfographics2" class="DWInfographics_container skin13">
+	            <div id="DWInfographics2_widget2" class="DWInfographics_widget">
+	                <div class="DWInfographics_widget_wrapper">
+	                    <span class="DWInfographics_widget_label">Seek Urgent Care</span>
+	                    <div class="progress_bar">
+	                        <div class="goalProgress almost-full">
+	                            <div class="progressBar" style="height: 100%;">
+	                                <div class="progressBarText" style="margin-top: -8px;">
+	                                    <div class="progressBarNumber odometer odometer-auto-theme">
+	                                        <div class="odometer-inside">
+	                                        <span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div>
+	                                    </div>
+	                                    %
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div id="DWInfographics2_widget1" class="DWInfographics_widget">
+	                <div class="DWInfographics_widget_wrapper">
+	                    <span class="DWInfographics_widget_label">Over The Counter</span>
+	                    <div class="progress_bar">
+	                        <div class="goalProgress">
+	                            <div class="progressBar">
+	                                <div class="progressBarText" style="margin-top: -8px;">
+	                                    <div class="progressBarNumber odometer odometer-auto-theme">
+	                                        <div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div>
+	                                    </div>
+	                                    %
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div id="alertColdSessionError" style="display:none; max-width:280px;" class="mbsc-comp">
+	        <div>
+	            <h3 align="center"><span class="orangefontLarge">Oops!</span></h3>
+	            <p class="centerText">No answers to our questions available to help our pharmacists make a decision. <br>Answers may have expired. <br><span class="fontSmallSmall">Leaving this page earlier will void previous answers.</span><br><span class="redfont">Or Development in progress.</span></p>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <button data-inline="true" data-role="none" class="adult_progress_btn buttonOrange" (click)="toggleFYIDlg(true)">FYI</button>
+	        <button data-inline="true" data-role="none" class="showSurveyAlertClinic buttonBlueBorder" (click)="toggleFYIDlg2(true)">Clinic</button>
+	        <button data-inline="true" data-role="none" class="showSurveyAlertPharmacist buttonGreen" (click)="toggleFYIDlg3(true)">Pharmacist</button>
+	    </p>
+	    <p>&nbsp;</p>
+	    <div class="surveyAlertPharmacist mbsc-comp" style="display: none;" id="mobiscroll1493005156659">
+	        <div class="alertWidth">
+	            <div class="maxwidth250">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Help improve this article on cold relief symptoms</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="Pharmacist Justin" width="80"></div>
+	            </div>
+	            <div class="clearboth"></div>
+	            <hr class="hrblue">
+	            <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback or continue to get a pharmacist's over-the-counter recommendation.</p>
+	            <!------------End show if columns  are the same--------------> 
+	            <hr class="hrblue">
+	        </div>
+	    </div>
+	    <div class="surveyAlertClinic mbsc-comp" style="display: none;" id="mobiscroll1493005156660">
+	        <div class="alertWidth">
+	            <div class="maxwidth250">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Help improve this article on cold relief symptoms</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="Pharmacist Justin" width="80"></div>
+	            </div>
+	            <div class="clearboth"></div>
+	            <hr class="hrblue">
+	            <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback or continue to see the nearest clinic to you.</p>
+	            <hr class="hrblue">
+	        </div>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_3a_mobile_option1_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="mbsc-mobi-blue mbsc-mobiscroll dw-modal  mbsc-wdg pop in" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+		<div role="dialog" tabindex="-1" class="dw dw-ltr">
+		    <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': FYIDlg.width+'px'}">
+		        <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+		        <div class="dwcc mbsc-wdg-c mbsc-w-p">
+		            <div id="alertColdSessionError" style="max-width: 280px; display: block;" class="mbsc-comp">
+		                <div>
+		                    <h3 align="center"><span class="orangefontLarge">Oops!</span></h3>
+		                    <p class="centerText">No answers to our questions available to help our pharmacists make a decision. <br>Answers may have expired. <br><span class="fontSmallSmall">Leaving this page earlier will void previous answers.</span><br><span class="redfont">Or Development in progress.</span></p>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="dwbc">
+		            <div class="dwbw dwb-s">
+		                <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="toggleFYIDlg(false)">OK, Got It</div>
+		            </div>
+		            <div class="dwbw ">
+		                <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="gotoSubPage(0)">Start Over</div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_3a_mobile_option1_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="mbsc-mobi-blue mbsc-mobiscroll dw-modal  mbsc-wdg pop in" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+		<div role="dialog" tabindex="-1" class="dw dw-ltr">
+		    <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': FYIDlg2.width+'px'}">
+		        <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+		        <div class="dwcc mbsc-wdg-c mbsc-w-p">
+		            <div class="surveyAlertClinic mbsc-comp" style="display: block;" id="mobiscroll1493032463686">
+		                <div class="alertWidth">
+		                    <div class="maxwidth250">
+		                        <div class="ovalBorderRightBlue centerText">
+		                            <span>Help improve this article on cold relief symptoms</span><br>
+		                        </div>
+		                        <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="Pharmacist Justin" width="80"></div>
+		                    </div>
+		                    <div class="clearboth"></div>
+		                    <hr class="hrblue">
+		                    <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback or continue to see the nearest clinic to you.</p>
+		                    <hr class="hrblue">
+		                </div>
+		            </div>
+		        </div>
+		        <div class="dwbc">
+		            <div class="dwbw ">
+		                <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="gotoSubPage(1)">Clinic</div>
+		            </div>
+		            <div class="dwbw ">
+		                <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="startFeedback()">Give Feedback</div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_3a_mobile_option1_pop-screen" *ngIf="FYIDlg3.show" (click)="toggleFYIDlg3(false)"></div>
+	<div class="mbsc-mobi-blue mbsc-mobiscroll dw-modal  mbsc-wdg pop in" *ngIf="FYIDlg3.show" [ngStyle]="{'max-width': FYIDlg3.maxWidth+'px','top': FYIDlg3.top+'px', 'left': FYIDlg3.left+'px', 'width': FYIDlg3.width+'px'}">
+	    <div role="dialog" tabindex="-1" class="dw dw-ltr">
+	        <div class="dwwr" style="white-space: nowrap;" [ngStyle]="{'width': FYIDlg3.width+'px'}">
+	            <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	            <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	                <div class="surveyAlertPharmacist mbsc-comp" style="" id="mobiscroll1493033245100">
+	                    <div class="alertWidth">
+	                        <div class="maxwidth250">
+	                            <div class="ovalBorderRightBlue centerText">
+	                                <span>Help improve this article on cold relief symptoms</span><br>
+	                            </div>
+	                            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="Pharmacist Justin" width="80"></div>
+	                        </div>
+	                        <div class="clearboth"></div>
+	                        <hr class="hrblue">
+	                        <p class="centerText"><span class="redfont">Thanks for your past feedback on this article.</span><br> You may give another feedback or continue to get a pharmacist's over-the-counter recommendation.</p>
+	                        <!------------End show if columns  are the same--------------> 
+	                        <hr class="hrblue">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="dwbc">
+	                <div class="dwbw ">
+	                    <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="gotoSubPage(2)">Pharmacist</div>
+	                </div>
+	                <div class="dwbw ">
+	                    <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="startFeedback()">Give Feedback</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="ui-content" *ngIf="feedbackPage>0">
+	    <div class="surveyIntroDiv">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Let's improve this article on cold relief with your feedback.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin.svg" alt="Pharmacist Justin" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="grayfontSmall centerText">The goal is to capture your first reaction to a question. We think this will eliminate bias as much as possible.</p>
+	        <p class="graygrayfontSmall centerText">Do not use the back button as it will not take you to the previous question. Once you answer it, it is gone.</p>
+	        <p class="centerText">
+	            <button data-inline="true" data-role="none" class="buttonBlueBorder showSurveyA1">Let's Start</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!---------------------End Survey Intro Div-------------->
+	    <!---------------------------Start Form---------------------->
+	    <form action="" method="POST" name="cold_survey_form" id="cold_survey_form">
+	        <input type="hidden" name="userid" class="useridField" id="userid" value="6268">
+	        <input type="hidden" name="survey_type" value="Article">
+	        <input type="hidden" name="survey_name" value="Adult Cold">
+	        <div data-role="fieldcontain" class="surveyA1 displayNone ui-field-contain">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <input type="hidden" name="surveyQ1" value="How satisfied are you with this article on cold symptoms?">
+	            <label for="surveyA1"><span class="bluefont">How satisfied are you with this article on cold symptoms?</span></label><br>
+	            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="cold_surveyA1_dummy" class="mbsc-control mbsc-control-ev " readonly="" placeholder="Please answer here"></div>
+	            <select name="surveyA1" id="cold_surveyA1" data-role="none" class="mbsc-comp dw-hsel" tabindex="-1">
+	                <option selected="" disabled=""></option>
+	                <option value="Very satisfied">Very satisfied</option>
+	                <option value="Satisfied">Satisfied</option>
+	                <option value="Unsure">Unsure</option>
+	                <option value="Dissatisfied">Dissatisfied</option>
+	                <option value="Very dissatisfied">Very dissatisfied</option>
+	            </select>
+	            <div class="clearboth"></div>
+	            <br>
+	            <p align="center" class="showSurveyA2 displayNone">                     
+	                <a href="#" class="linkBlue ui-link" data-inline="true">Next Question <span class="mbsc-ic mbsc-ic-ion-arrow-right-c mobi-icon-font24"></span><br> <span class="graygrayfontSmall">2 of 5</span></a>
+	            </p>
+	        </div>
+	        <div data-role="fieldcontain" class="surveyA2 displayNone ui-field-contain">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <input type="hidden" name="surveyQ2" value="Please rate the self-care steps presented in this article that someone with a cold should take  in terms of appropriateness.">
+	            <label for="surveyA2"><span class="bluefont">Please rate the self-care steps presented in this article that someone with a cold should take  in terms of appropriateness.</span></label><br>
+	            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="cold_surveyA2_dummy" class="mbsc-control mbsc-control-ev " readonly="" placeholder="Please answer here"></div>
+	            <select name="surveyA2" id="cold_surveyA2" data-role="none" class="mbsc-comp dw-hsel" tabindex="-1">
+	                <option selected="" disabled=""></option>
+	                <option value="Very appropriate">Very appropriate</option>
+	                <option value="Slightly appropriate">Slightly appropriate</option>
+	                <option value="Appropriate">Appropriate</option>
+	                <option value="Inappropriate">Inappropriate</option>
+	                <option value="Very inappropriate">Very inappropriate</option>
+	            </select>
+	            <div class="clearboth"></div>
+	            <p align="center" class="showSurveyA3 displayNone"> 
+	                <a href="#" class="linkBlue ui-link" data-inline="true">Next Question <span class="mbsc-ic mbsc-ic-ion-arrow-right-c mobi-icon-font24"></span><br> <span class="graygrayfontSmall">3 of 5</span></a>
+	            </p>
+	        </div>
+	        <div data-role="fieldcontain" class="surveyA3 displayNone ui-field-contain">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <input type="hidden" name="surveyQ3" value="How important, in your opinion, is this article to someone with a cold?">
+	            <label for="surveyA3"><span class="bluefont">How important, in your opinion, is this article to someone with a cold?</span></label><br>
+	            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="cold_surveyA3_dummy" class="mbsc-control mbsc-control-ev " readonly="" placeholder="Please answer here"></div>
+	            <select name="surveyA3" id="cold_surveyA3" data-role="none" class="mbsc-comp dw-hsel" tabindex="-1">
+	                <option selected="" disabled=""></option>
+	                <option value="Not at all important">Not at all important</option>
+	                <option value="Low importance">Low importance</option>
+	                <option value="Slightly important">Slightly important</option>
+	                <option value="Important">Important</option>
+	                <option value="Extremely important">Extremely important</option>
+	            </select>
+	            <div class="clearboth"></div>
+	            <br>
+	            <p align="center" class="displayNone showSurveyA4"> 
+	                <a href="#" class="linkBlue ui-link" data-inline="true">Next Question <span class="mbsc-ic mbsc-ic-ion-arrow-right-c mobi-icon-font24"></span><br> <span class="graygrayfontSmall">4 of 5</span></a>
+	            </p>
+	        </div>
+	        <div data-role="fieldcontain" class="surveyA4 displayNone ui-field-contain">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <input type="hidden" name="surveyQ4" value="Your family member has a cold, how likely will you recommend this article to them?">
+	            <label for="surveyA4"><span class="bluefont">Your family member has a cold, how likely will you recommend this article to them?</span></label><br>
+	            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="cold_surveyA4_dummy" class="mbsc-control mbsc-control-ev " readonly="" placeholder="Please answer here"></div>
+	            <select name="surveyA4" id="cold_surveyA4" data-role="none" class="mbsc-comp dw-hsel" tabindex="-1">
+	                <option selected="" disabled=""></option>
+	                <option value="Extremely unlikely">Extremely unlikely</option>
+	                <option value="unlikely">unlikely</option>
+	                <option value="Neutral">Neutral</option>
+	                <option value="likely">likely</option>
+	                <option value="Extremely likely">Extremely likely</option>
+	            </select>
+	            <div class="clearboth"></div>
+	            <br>
+	            <p align="center" class="showSurveyA5 displayNone"> 
+	                <a href="#" class="linkBlue ui-link" data-inline="true">Next Question <span class="mbsc-ic mbsc-ic-ion-arrow-right-c mobi-icon-font24"></span><br> <span class="graygrayfontSmall">5 of 5</span></a>
+	            </p>
+	        </div>
+	        <div data-role="fieldcontain" class="surveyA5 displayNone ui-field-contain">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <input type="hidden" name="surveyQ5" value="This article meets the needs of someone with cold symptoms.">
+	            <label for="surveyA5"><span class="bluefont">This article meets the needs of someone with cold symptoms.</span></label><br>
+	            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" id="cold_surveyA5_dummy" class="mbsc-control mbsc-control-ev " readonly="" placeholder="Please answer here"></div>
+	            <select name="surveyA5" id="cold_surveyA5" data-role="none" class="mbsc-comp dw-hsel" tabindex="-1">
+	                <option selected="" disabled=""></option>
+	                <option value="Strongly disagree">Strongly disagree</option>
+	                <option value="Disagree">Disagree</option>
+	                <option value="Neither agree or disagree">Neither agree or disagree</option>
+	                <option value="Agree">Agree</option>
+	                <option value="Strongly agree">Strongly agree</option>
+	            </select>
+	            <div class="clearboth"></div>
+	            <br>
+	            <p class="submitSurvey displayNone centerText">
+	                <input type="submit" id="submitSurvey" name="submitSurvey" data-role="none" class="buttonRedBorder fontLarge" value="Send Feedback">
+	            </p>
+	        </div>
+	    </form>
+	    <!---------------End Form---------------------->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+</ion-content>

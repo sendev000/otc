@@ -1,18 +1,998 @@
-<!--
-  Generated template for the AdultTakeMobileToPharmacistList page.
+<!--  
+  Generated template for the AdultTakeMobileList page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>adult_take_mobile_to_pharmacist_list</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	&nbsp;
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan">
+    <p>Straight to pharmacist</p>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" role="main">
+	    <div class="opacity3">
+	        <div class="opacity8">
+	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightBlue centerText">
+	                    <span>Skipping the symptoms analyzer will take you straight to an <span class="orangefont">over-the-counter</span> recommendation?</span><br>
+	                </div>
+	                <div class="clearboth"></div>
+	                <div class="container_12">
+	                    <div class="grid_8">
+	                        <br>
+	                        <div class="bubbleRightBlue">
+	                            We strongly recommend checking your symptoms first.
+	                        </div>
+	                    </div>
+	                    <div class="grid_4">
+	                        <img src="assets/img/pharm/male/pharm-john-port.svg" width="100" align="right" alt="Pharmacist">
+	                    </div>
+	                </div>
+	            </div>
+	            <br>
+	            <!-- ---------------End Point Right------------------- -->
+	            <div class="redBorderAll">
+	                <p class="orangeBorderAll orangefont centerText">Going straight to a pharmacist's recommendation will  assume:</p>
+	                <ul>
+	                    <li>You know what your symptoms are and just like to know what to take over-the-counter.</li>
+	                    <br>
+	                    <li>You are reviewing the recommendation one more time.</li>
+	                    <br>
+	                    <li>You are leaving a comment or contributing to the pharmacist's recommendation.</li>
+	                    <br>
+	                    <li>You are contacting the pharmacist.</li>
+	                </ul>
+	                <p class="orangeBorderAll grayfontSmall">If this is the case, please use the list below to go straight to a pharmacist's over the counter recommendation.</p>
+	                <div class="clearboth"></div>
+	            </div>
+	        </div>
+	        <p>&nbsp;</p>
+	        <!-- ----------------------Start COLD Collapsible--------------------- -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-allergy.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="purple_bluefontLarge">Cold</span>  | <span class="redfontLarge">Flu</span>  | <span class="greenfontLarge">Allergy</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">What do you think you are looking at?</p>
+	                    <p class="centerText">
+	                        <img src="assets/img/interface/adult/allergy-main.svg" alt="" width="140">
+	                    </p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="cold/treatment/allergy_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-allergy.svg" alt="Allergy" height="100"></div>
+	                                <br><span class="greenfont roboto">Allergy</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="cold/treatment/cold_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-cold.svg" alt="Cold" height="100"></div>
+	                                <br><span class="bluefont roboto">Cold</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="cold/treatment/flu_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-flu.svg" alt="Flu" height="100"></div>
+	                                <br><span class="redfont roboto">Flu</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------END COLD Collapsible-------------------- -->
+	        <!-- ----------------------Start HEAD Collapsible------------------------- -->   
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-headache-man.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Head</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <div class="centerText"><img src="assets/img/interface/adult/head-woman-main.svg" alt="" width="150"></div>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="head/treatment/headache_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-headache-man.svg" alt="Headache" height="100"></div>
+	                                <br><span class="bluefont roboto">Headache</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="head/treatment/sleep_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-sleeping-lady.svg" alt="Sleep" height="100"></div>
+	                                <br><span class="bluefont roboto">Sleep</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="head/treatment/hairloss_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-hairloss.svg" alt="Hair Loss" height="100"></div>
+	                                <br><span class="bluefont roboto">Hair Loss</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="head/treatment/dandruff_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-dandruff-woman.svg" alt="Dandruff" height="100"></div>
+	                                <br><span class="bluefont roboto">Dandruff</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="head/treatment/lice_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-lice-lady.svg" alt="Head Lice" height="100"></div>
+	                                <br><span class="bluefont roboto">Head Lice</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ---------------------End HEAD Collapsible------------------------ -->
+	        <!-- ----------------------Start Eye Collapsible-------------------- -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-pinkeye.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="redfontLarge">Eye</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/eye-main.svg" alt="" width="200"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="eye/treatment/pinkeye_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-pinkeye.svg" alt="Pinkeye" height="100"></div>
+	                                <br><span class="redfont roboto">Pinkeye</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="eye/treatment/redeye_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-redeye.svg" alt="Red Eye" height="100"></div>
+	                                <br><span class="redfont roboto">Red Eye</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="eye/treatment/sty_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-stye.svg" alt="Sty" height="100"></div>
+	                                <br><span class="redfont roboto">Sty</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="eye/treatment/dryeye_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-dryeyes-lady.svg" alt="Dry Eyes" height="100"></div>
+	                                <br><span class="redfont roboto">Dry Eyes</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- -----------------End EYE Collapsible--------------------------------- -->
+	        <!-- -------------------------Start EAR Collapsible--------------------- -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-earache.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Ear</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">What would you like a remedy for?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/ear-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="ear/treatment/earache_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-earache.svg" alt="Earache" height="100"></div>
+	                                <br><span class="bluefont roboto">Earache</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="ear/treatment/swimear_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-swimear.svg" alt="Swimmer's Ear" height="100"></div>
+	                                <br><span class="bluefont roboto">Swimmer's Ear</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="ear/treatment/earwax_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-earwax.svg" alt="Earwax" height="100"></div>
+	                                <br><span class="bluefont roboto">Earwax</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="ear/treatment/motion_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-motionsickness.svg" alt="Motion Sickness" height="100"></div>
+	                                <br><span class="bluefont roboto">Motion Sickness</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="ear/treatment/vertigo_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-vertigo.svg" alt="Vertigo" height="100"></div>
+	                                <br><span class="bluefont roboto">Vertigo</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End EAR Collapsible------------------------------------------ --> 
+	        <!-- ------------------------------------------Start MOUTH Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-toothache.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="orangefontLarge">Mouth</span> | <span class="redfontLarge">Teeth</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/mouth-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="mouth/treatment/toothache_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-toothache.svg" alt="Toothache" height="100"></div>
+	                                <br><span class="redfont roboto">Toothache</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="mouth/treatment/coldsore_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-coldsore.svg" alt="Cold Sore" height="100"></div>
+	                                <br><span class="redfont roboto">Cold Sore</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="mouth/treatment/canker_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-cankersore.svg" alt="Canker Sore" height="100"></div>
+	                                <br><span class="redfont roboto">Canker Sore</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="mouth/treatment/drymouth_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-drymouth.svg" alt="Dry Mouth" height="100"></div>
+	                                <br><span class="redfont roboto">Dry Mouth</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="mouth/treatment/badbreath_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-badbreath.svg" alt="Bad Breath" height="100"></div>
+	                                <br><span class="redfont roboto">Bad Breath</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End MOUTH Collapsible------------------------------------------ -->  
+	        <!-- ------------------------------------------Start NOSE Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-stuffynose.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="purple_redfontLarge">Nose</span> | <span class="pinkfontLarge">Sinuses</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/nose-main.svg" alt="" width="200"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="nose/treatment/stuffy_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-stuffynose.svg" alt="Stuffy Nose" height="100"></div>
+	                                <br><span class="purplefont roboto">Stuffy Nose</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="nose/treatment/runny_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-runnynose.svg" alt="Runny Nose" height="100"></div>
+	                                <br><span class="purplefont roboto">Runny Nose</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="nose/treatment/sinus_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-sinuspain.svg" alt="Sinus Pain" height="100"></div>
+	                                <br><span class="purplefont roboto">Sinus Pain</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="nose/treatment/snoring_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-snoring.svg" alt="Snoring" height="100"></div>
+	                                <br><span class="purplefont roboto">Snoring</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End NOSE Collapsible------------------------------------------ --> 
+	        <!-- ------------------------------------------Start NECK Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-sorethroat-lady.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Throat</span> | <span class="purplefontLarge roboto">Neck</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/throat-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="throat/treatment/cough_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-cough-lady.svg" alt="Cough" height="100"></div>
+	                                <br><span class="redfont roboto">Cough</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="throat/treatment/sorethroat_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-sorethroat-lady.svg" alt="Sore Throat" height="100"></div>
+	                                <br><span class="redfont roboto">Sore Throat</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="throat/treatment/stiffneck_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-stiffneck.svg" alt="Stiff Neck" height="100"></div>
+	                                <br><span class="redfont roboto">Stiff Neck</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <hr>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End NECK Collapsible------------------------------------------ -->
+	        <!-- ------------------------------------------Start BACK Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-heartburn.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="orangefontLarge">chest</span> | <span class="bluefontLarge">Back</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/back-main.svg" alt="" width="200"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="chest/treatment/chest_congestion_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-chestcongestion.svg" alt="Chest Congestion" height="100"></div>
+	                                <br><span class="cyanfont roboto">Chest Congestion</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="chest/treatment/back_pain_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-backpain.svg" alt="Back Pain" height="100"></div>
+	                                <br><span class="cyanfont roboto">Back Pain</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="stomach/treatment/heartburn_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-heartburn.svg" alt="Heartburn" height="100"></div>
+	                                <br><span class="cyanfont roboto">Heartburn</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="chest/treatment/chestpain_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-chestpain.svg" alt="Chest Pain" height="100"></div>
+	                                <br><span class="cyanfont roboto">Chest Pain</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End BACK Collapsible------------------------------------------ -->  
+	        <!-- ----------------------Start SHOULDER Collapsible------------------------- -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-elbowpain.svg" alt="" height="50"> &nbsp;<span class="purple_redfontLarge">Shoulder</span> | <span class="orangefontLarge">Elbow </span>| <span class="purple_redfontLarge">Wrist </span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/shoulder-main.svg" alt="" width="200"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="shoulder/treatment/shoulder_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-shoulderpain.svg" alt="Shoulder Pain" height="100"></div>
+	                                <br><span class="redfont roboto">Shoulder Pain</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="shoulder/treatment/wrist_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-wristpain.svg" alt="Wrist Pain" height="100"></div>
+	                                <br><span class="redfont roboto">Wrist Pain</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="shoulder/treatment/elbow_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-elbowpain.svg" alt="Elbow Pain" height="100"></div>
+	                                <br><span class="redfont roboto">Elbow Pain</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End SHOULDER Collapsible------------------------------------------ -->    
+	        <!-- ----------------------Start STOMACH Collapsible------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-stomachache.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Stomach</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/stomach-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="stomach/treatment/constipation_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-constipation.svg" alt="constipated" height="100"></div>
+	                                <br><span class="cyanfont roboto">Constipation</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="stomach/treatment/diarrhea_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-diarrhea.svg" alt="Diarrhea" height="100"></div>
+	                                <br><span class="cyanfont roboto">Diarrhea</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="stomach/treatment/heartburn_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-heartburn.svg" alt="Heartburn" height="100"></div>
+	                                <br><span class="cyanfont roboto">Heartburn</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="stomach/treatment/nausea_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-nausea.svg" alt="Nausea / Vomiting" height="100"></div>
+	                                <br><span class="cyanfont roboto">Nausea / Vomiting</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="stomach/treatment/stomachache_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-stomachache.svg" alt="Stomach Ache" height="100"></div>
+	                                <br><span class="cyanfont roboto">Stomach Ache</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="stomach/treatment/stomachflu_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-stomachvirus.svg" alt="Stomach Virus" height="100"></div>
+	                                <br><span class="cyanfont roboto">Stomach Virus</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="stomach/treatment/foodpoisoning_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-foodpoisoning.svg" alt="Food Poisoning" height="100"></div>
+	                                <br><span class="cyanfont roboto">Food Poisoning</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->     
+	                    <br>
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End STOMACH Collapsible------------------------------------------ --> 
+	        <!-- ------------------------------------------Start PELVIC Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-yeastinfection.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Pelvic Area</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/pelvic-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="pelvic/treatment/yeast_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-yeastinfection.svg" alt="Yeast Infection" height="100"></div>
+	                                <br><span class="redfont roboto">Yeast </span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="pelvic/treatment/uti_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-uti.svg" alt="UTI" height="100"></div>
+	                                <br><span class="redfont roboto">UTI</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="pelvic/treatment/jockitch_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-jockitch.svg" alt="Jock Itch" height="100"></div>
+	                                <br><span class="redfont roboto">Jock Itch</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="pelvic/treatment/hemorrhoids_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-hemorrhoid.svg" alt="Hemorrhoids" height="100"></div>
+	                                <br><span class="redfont roboto">Hemorrhoids</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="pelvic/treatment/pinworm_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-pinworm.svg" alt="Pinworms" height="100"></div>
+	                                <br><span class="redfont roboto">Pinworms</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="pelvic/treatment/menstrual_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-menstrualpain.svg" alt="Menstrual Pain" height="100"></div>
+	                                <br><span class="redfont roboto">Menstrual Pain</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ------------------------------------------End PELVIC Collapsible------------------------------------------ --> 
+	        <!-- ------------------------------------------Start SKIN Collapsible------------------------------------------ -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-ringworm.svg" alt="" height="50"> &nbsp;&nbsp;&nbsp;<span class="bluefontLarge roboto">Skin</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/skin-main.svg" alt="" width="200"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="skin/treatment/bites_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-bites.svg" alt="Insect Bites" height="100"></div>
+	                                <br><span class="bluefont roboto">Insect Bites</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/acne_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-acne.svg" alt="Acne" height="100"></div>
+	                                <br><span class="bluefont roboto">Acne</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="skin/treatment/rash_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-rash.svg" alt="Skin Rash" height="100"></div>
+	                                <br><span class="bluefont roboto">Skin Rash</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/eczema_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-eczema.svg" alt="Eczema" height="100"></div>
+	                                <br><span class="bluefont roboto">Eczema</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="skin/treatment/burn_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-burn.svg" alt="Burn" height="100"></div>
+	                                <br><span class="bluefont roboto">Burn</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/sunburn_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-sunburn.svg" alt="Sunburn" height="100"></div>
+	                                <br><span class="bluefont roboto">Sunburn</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="skin/treatment/poisonivy_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-poisonivy.svg" alt="Poison Ivy" height="100"></div>
+	                                <br><span class="bluefont roboto">Poison Ivy</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/hives_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-hives.svg" alt="Hives" height="100"></div>
+	                                <br><span class="bluefont roboto">Hives</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="skin/treatment/ringworm_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-ringworm.svg" alt="Ringworm" height="100"></div>
+	                                <br><span class="bluefont roboto">Ringworm</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/warts_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-wartfinger.svg" alt="Warts" height="100"></div>
+	                                <br><span class="bluefont roboto">Warts</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <hr class="hrblue">
+	        <br>
+	        <!-- ----------------------End SKIN Collapsible-------------------------- --> 
+	        <!-- ---------------------Start LEG Collapsible---------------------- -->
+	        <div data-role="collapsible" data-collapsed="true" data-inset="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit"><img src="assets/img/interface/adult/icon-footpain-man.svg" alt="" height="40"> &nbsp;&nbsp;<span class="orangefontLarge">Legs</span> | <span class="purple_redfontLarge">Foot</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+	                <div>
+	                    <hr>
+	                    <p class="centerText">Which of these are you experiencing?</p>
+	                    <!-- ----------Main image------------- -->   
+	                    <p class="centerText"><img src="assets/img/interface/adult/leg-main.svg" alt="" width="150"></p>
+	                    <br>
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="leg/treatment/sprain_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-anklesprain.svg" alt="Ankle Sprain" height="100"></div>
+	                                <br><span class="redfont roboto">Ankle Sprain</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="leg/treatment/athletesfoot_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-athletesfoot.svg" alt="Athletes Foot" height="100"></div>
+	                                <br><span class="redfont roboto">Athletes Foot</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="leg/treatment/footpain_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-footpain-man.svg" alt="Foot Pain" height="100"></div>
+	                                <br><span class="redfont roboto">Foot Pain</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="leg/treatment/arthritis_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-arthritis.svg" alt="Arthritis" height="100"></div>
+	                                <br><span class="redfont roboto">Arthritis</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="leg/treatment/nailfungus_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-nailfungus.svg" alt="Nail Fungus" height="100"></div>
+	                                <br><span class="redfont roboto">Nail Fungus</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="skin/treatment/warts_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-wartfinger-2.svg" alt="Warts" height="100"></div>
+	                                <br><span class="redfont roboto">Warts</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="leg/treatment/swollenfoot_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-swollenleg.svg" alt="Swollen Leg" height="100"></div>
+	                                <br><span class="redfont roboto">Swollen Leg</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">
+	                            <a href="leg/treatment/corn_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-corn.svg" alt="Corns Calluses" height="100"></div>
+	                                <br><span class="redfont roboto">Corns Calluses</span>
+	                            </a>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <!-- ----------Start Grid---------------- -->        
+	                    <div class="ui-grid-a">
+	                        <div class="ui-block-a padded centerText">
+	                            <a href="leg/treatment/ingrown_adult_recom_mobile.php" class="ui-link">
+	                                <div class="loaderBlue"><img src="assets/img/interface/adult/icon-ingrowntoenail.svg" alt="Ingrown Toenail" height="100"></div>
+	                                <br><span class="redfont roboto">Ingrown Toenail</span>
+	                            </a>
+	                        </div>
+	                        <div class="ui-block-b padded centerText">&nbsp;</div>
+	                    </div>
+	                    <br>
+	                    <hr class="hrblue">
+	                    <br>
+	                    <!-- ----------End Grid---------------- -->
+	                    <div class="clearboth divider9"></div>
+	                </div>
+	                <p>&nbsp;</p>
+	            </div>
+	        </div>
+	        <br>
+	        <!-- -----------------------End LEG Collapsible---------------- --> 
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	</div>
 </ion-content>

@@ -262,7 +262,10 @@ import { SwollenFootMobilePage } from '../pages/swollen-foot-mobile/swollen-foot
 import { CornMobilePage } from '../pages/corn-mobile/corn-mobile';
 import { IngrownNailMobilePage } from '../pages/ingrown-nail-mobile/ingrown-nail-mobile';
 
-import { SinusPressureMobilePage } from '../pages/sinus-pressure-mobile/sinus-pressure-mobile';
+import { ColdMobileInfographicsPage } from '../pages/cold-mobile-infographics/cold-mobile-infographics';
+import { ColdAdultRecomMobilePage } from '../pages/cold-adult-recom-mobile/cold-adult-recom-mobile';
+import { SinusPressureInfographicsMobilePage } from '../pages/sinus-pressure-infographics-mobile/sinus-pressure-infographics-mobile';
+import { SinusAdultRecomMobilePage } from '../pages/sinus-adult-recom-mobile/sinus-adult-recom-mobile';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -523,7 +526,10 @@ import { AuthService} from '../pages/providers/auth-service';
     CornMobilePage,
     IngrownNailMobilePage,
 
-    SinusPressureMobilePage,
+    ColdMobileInfographicsPage,
+    ColdAdultRecomMobilePage,
+    SinusPressureInfographicsMobilePage,
+    SinusAdultRecomMobilePage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -790,7 +796,10 @@ import { AuthService} from '../pages/providers/auth-service';
     CornMobilePage,
     IngrownNailMobilePage,
 
-    SinusPressureMobilePage,
+    ColdMobileInfographicsPage,
+    ColdAdultRecomMobilePage,
+    SinusPressureInfographicsMobilePage,
+    SinusAdultRecomMobilePage,
   ],
   providers: [
     AuthService,

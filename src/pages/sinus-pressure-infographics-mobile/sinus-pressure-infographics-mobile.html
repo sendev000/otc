@@ -1,0 +1,116 @@
+<!--  
+  Generated template for the AllergiesMobile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  -->
+<ion-header class="ui-header">
+
+  	<ion-navbar>
+	    <ion-title>
+	    	<h1 class="ui-title">
+	      		Sinus pressure
+	      	</h1>
+	    </ion-title>
+	    <ion-buttons end>
+			<button ion-button icon-only (click)="showMenu()">
+				<ion-icon name="menu"></ion-icon>
+			</button>
+	    </ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="ui-page-theme-a">
+	<div class="fullWidth robotoLight bgGray">
+    	<p>Clinic or use OTC?</p>
+    </div>
+	<div class="ui-content">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span>Tap on <span class="purple_redfont">"FYI"</span> below to see what our pharmacists think you should do based on your answers.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <p class="redBorderAll">Then you can get a pharmacist's over-the-counter recommend if you still think that is necessary.</p>
+	    <p>&nbsp;</p>
+	    <div class="adult_progress_div displayNone">
+	        <h3 class="purple_redfont centerText">Our Pharmacists Say ( % ):</h3>
+	        <p>&nbsp;</p>
+	        <div id="DWInfographics3" class="DWInfographics_container skin1">
+	            <div id="DWInfographics3_widget1" class="DWInfographics_widget">
+	                <div class="DWInfographics_widget_wrapper" style="width: 150px;">
+	                    <div class="DWInfographics_widget_number odometer odometer-auto-theme" style="top: 75px;">
+	                        <div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div>
+	                    </div>
+	                    <div class="DWInfographics_widget_label" style="top: 75px;">Urgent Care</div>
+	                    <div id="DWInfographics3_gauge1" class="gauge" style="width: 150px; height: 150px;">
+	                        <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;">
+	                            <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+	                            <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+	                            <path fill="#dbdbdb" stroke="none" d="M10,75L0,75A75,75,0,0,1,150,75A75,75,0,0,1,0,75.00000000000001L10,75.00000000000001A65,65,0,0,0,140,75A65,65,0,0,0,10,75Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+	                            <path fill="#0099ff" stroke="none" d="M10,75L0,75A65,65,0,0,0,10,75Z" transform="matrix(0,1,-1,0,150,0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+	                        </svg>
+	                    </div>
+	                </div>
+	            </div>
+	            <div id="DWInfographics3_widget2" class="DWInfographics_widget">
+	                <div class="DWInfographics_widget_wrapper" style="width: 150px;">
+	                    <div class="DWInfographics_widget_number odometer odometer-auto-theme" style="top: 75px;">
+	                        <div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div>
+	                    </div>
+	                    <div class="DWInfographics_widget_label" style="top: 75px;">Use OTC</div>
+	                    <div id="DWInfographics3_gauge2" class="gauge" style="width: 150px; height: 150px;">
+	                        <svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;">
+	                            <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+	                            <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+	                            <path fill="#dbdbdb" stroke="none" d="M10,75L0,75A75,75,0,0,1,150,75A75,75,0,0,1,0,75.00000000000001L10,75.00000000000001A65,65,0,0,0,140,75A65,65,0,0,0,10,75Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+	                            <path fill="#55bc45" stroke="none" d="M10,75L0,75A65,65,0,0,0,10,75Z" transform="matrix(0,1,-1,0,150,0)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+	                        </svg>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div id="alertSinuspressureSessionError" style="max-width: 280px; display: none;" class="mbsc-comp">
+	        <div>
+	            <h3 align="center"><span class="orangefontLarge">Oops!</span></h3>
+	            <p class="centerText">No answers to our questions available to help our pharmacists make a decision. <br>Answers may have expired. <br><span class="fontSmallSmall">Leaving this page earlier will void previous answers.</span><br><span class="redfont">Or Development in progress.</span></p>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <div class="centerText">
+	    	<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input class="sessiontype" value=""></div>
+		    <button data-inline="true" class="adult_progress_btn ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="toggleFYIDlg(true)">FYI</button>
+		    <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+		    <a href="#" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_3a_mobile_option3_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="dw-persp mbsc-mobi-red mbsc-mobiscroll dw-modal  mbsc-wdg pop in" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div role="dialog" tabindex="-1" class="dw dw-ltr">
+	        <div class="dwwr" style="white-space: nowrap;" >
+	            <div aria-live="assertive" class="dw-aria dw-hidden"></div>
+	            <div class="dwcc mbsc-wdg-c mbsc-w-p">
+	                <div id="alertSinuspressureSessionError" style="max-width: 280px; display: block;" class="mbsc-comp">
+	                    <div>
+	                        <h3 align="center"><span class="orangefontLarge">Oops!</span></h3>
+	                        <p class="centerText">No answers to our questions available to help our pharmacists make a decision. <br>Answers may have expired. <br><span class="fontSmallSmall">Leaving this page earlier will void previous answers.</span><br><span class="redfont">Or Development in progress.</span></p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="dwbc">
+	                <div class="dwbw dwb-s">
+	                    <div tabindex="0" role="button" class="dwb0 dwb-e dwb" (click)="gotoSubPage(2)">OK, Got It</div>
+	                </div>
+	                <div class="dwbw ">
+	                    <div tabindex="0" role="button" class="dwb1 dwb-e dwb" (click)="toggleFYIDlg(false)">Start Over</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</ion-content>

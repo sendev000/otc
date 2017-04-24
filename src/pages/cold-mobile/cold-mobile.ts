@@ -11,6 +11,10 @@ import { GlobalVars } from '../providers/globalvars';
 import { UrgentCarePage } from '../urgent-care/urgent-care';
 import { AdultTakeMobileListPage } from '../adult-take-mobile-list/adult-take-mobile-list';
 import { SinusPressureMobilePage } from '../sinus-pressure-mobile/sinus-pressure-mobile';
+import { AllergiesMobilePage } from '../allergies-mobile/allergies-mobile';
+import { ColdMobileInfographicsPage } from '../cold-mobile-infographics/cold-mobile-infographics';
+
+import { SinusAdultRecomMobilePage } from '../sinus-adult-recom-mobile/sinus-adult-recom-mobile';
 
 @Component({
   selector: 'page-cold-mobile',
@@ -18,7 +22,7 @@ import { SinusPressureMobilePage } from '../sinus-pressure-mobile/sinus-pressure
 })
 export class ColdMobilePage {
 
-@ViewChild(Content) content: Content;
+	@ViewChild(Content) content: Content;
 	MyContent = {
 	    screenWidth: 0,
 	    screenHeight: 0,
@@ -39,20 +43,44 @@ export class ColdMobilePage {
 	    left: 0,
 	    top: 0
 	  };
+	FYIDlg3 = {
+	    show: false,
+	    height: 304,
+	    width: 0,
+	    maxWidth: 0,
+	    left: 0,
+	    top: 0
+	  };
+	FYIDlg4 = {
+	    show: false,
+	    height: 243,
+	    width: 0,
+	    maxWidth: 0,
+	    left: 0,
+	    top: 0
+	  };
 	firstname: string;
 	page: number;
 	mode: number;
+	mode2: number;
 	subPages: any;
 	currentTemp: any;
+	currentDay: any;
   AbsoluteURL: string;
   symptoms: any;
+  triedlist: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, public platform: Platform) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
   	this.page = 0;
   	this.mode = 0;
+  	this.mode2 = 0;
   	this.currentTemp = 98;	// default;
+  	this.currentDay  = 0;
   	this.symptoms = [
+  			false, false, false, false, false, false, false, false, false, false, false
+  		]
+  	this.triedlist = [
   			false, false, false, false, false, false, false, false, false, false, false
   		]
   	this.firstname = GlobalVars.getFirstname();
@@ -62,18 +90,35 @@ export class ColdMobilePage {
   			UrgentCarePage, 			// 0
   			AdultTakeMobileListPage,	// 1
   			SinusPressureMobilePage,	// 2
+  			AllergiesMobilePage,		// 3
+  			ColdMobileInfographicsPage,	// 4
   		];
+
   }
   showMenu() {
   	this.menu.open();
+  }
+  toggleSymptom(ind: number){
+  	this.symptoms[10] = false;
   }
   toggleAllSymptoms(b: boolean){
   	for (let i=0;i<9;i++)
   		this.symptoms[i] = b;
   	if (b == true)
-  		this.symptoms[9] = !this.symptoms[9];
+  		this.symptoms[10] = false;
   	else
-  		this.symptoms[10] = !this.symptoms[10];
+  		this.symptoms[9] = false;
+  	// if (b == true)
+  	// 	this.symptoms[9] = !this.symptoms[9];
+  	// else
+  	// 	this.symptoms[10] = !this.symptoms[10];
+  }
+  toggleTriedlist(ind: number){
+  	this.triedlist[6] = false;
+  }
+  toggleAllTriedlists(b: boolean){
+  	for (let i=0;i<5;i++)
+  		this.triedlist[i] = b;
   }
   gotoSubPage(id: number) {
     this.navCtrl.push(this.subPages[id]);
@@ -113,6 +158,36 @@ export class ColdMobilePage {
     }
     this.FYIDlg2.show = b;
   }
+  toggleFYIDlg3(b: boolean) {
+  	if (b)
+    {
+		var scrollPos = this.content.getContentDimensions().scrollTop;
+		this.MyContent.screenWidth = this.platform.width();
+		this.MyContent.screenHeight = this.platform.height();
+		this.FYIDlg3.width = this.MyContent.screenWidth * 0.9;
+		this.FYIDlg3.maxWidth = 600;
+		if (this.FYIDlg3.width > this.FYIDlg3.maxWidth)
+			this.FYIDlg3.width = this.FYIDlg3.maxWidth;
+		this.FYIDlg3.left = (this.MyContent.screenWidth - this.FYIDlg3.width) / 2;
+		this.FYIDlg3.top = (this.MyContent.screenHeight - this.FYIDlg3.height) / 2 + scrollPos - 60;
+    }
+    this.FYIDlg3.show = b;
+  }
+  toggleFYIDlg4(b: boolean) {
+  	if (b)
+    {
+		var scrollPos = this.content.getContentDimensions().scrollTop;
+		this.MyContent.screenWidth = this.platform.width();
+		this.MyContent.screenHeight = this.platform.height();
+		this.FYIDlg4.width = this.MyContent.screenWidth * 0.9;
+		this.FYIDlg4.maxWidth = 300;
+		if (this.FYIDlg4.width > this.FYIDlg4.maxWidth)
+			this.FYIDlg4.width = this.FYIDlg4.maxWidth;
+		this.FYIDlg4.left = (this.MyContent.screenWidth - this.FYIDlg4.width) / 2;
+		this.FYIDlg4.top = (this.MyContent.screenHeight - this.FYIDlg4.height) / 2 + scrollPos - 60;
+    }
+    this.FYIDlg4.show = b;
+  }
   togglePage(ind: number) {
   	if (ind == 11){
   		let trueCount = 0;
@@ -135,7 +210,25 @@ export class ColdMobilePage {
     		ind = 10;
     	}
     }
+    if (ind == 42){
+    	let trueCount = 0;
+	  	for (let i=0;i<this.triedlist.length-1;i++)
+	  		if (this.triedlist[i] == true)
+	  			trueCount ++;
+	  	if (this.symptoms[6] == true)
+	  		this.mode2 = 3;
+	  	else if (trueCount > 0)
+	  		this.mode2 = 2;
+	  	else{
+	  		this.mode2 = 1;
+	  		ind = 41;
+	  	}
+    }
     this.page = ind;
+  }
+  goBackDay() {
+  	this.page = 30;
+  	this.currentDay = 0;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdultTakeMobileListPage');

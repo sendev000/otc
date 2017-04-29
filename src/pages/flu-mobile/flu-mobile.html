@@ -1,18 +1,2309 @@
-<!--
-  Generated template for the FluMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>flu_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Flu
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<30">
+    <p *ngIf="page==0">Thinking Flu?</p>
+    <p *ngIf="page>=1 && page<20">How Serious Is it?</p>
+    <p *ngIf="page>=20 && page<30">You Have Fever</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=60 && page!=100">
+  	<p *ngIf="page>=60 && page<90">Need To See A Doctor?</p>
+    <p *ngIf="page>=90 && page<100">Nothing yet.</p>
+    <p *ngIf="page>=101 && page<110">Tried Something.</p>
+    <p *ngIf="page>=110 && page<120">Know This For Flu</p>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfontLarge">Flu</span><br>
+	            is contagious and can lead to hospitalization.
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="100">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person-------------------  -->
+	    <br>  
+	    <div class="purpleRedBorder">
+	        <p class="purpleRedBorder">Let's see how bad it is and if you need to see a doctor or even go to the emergency room. If you don't have to,  a pharmacist will recommend something for you to take over-the-counter.
+	        </p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/flu-lady.svg" width="150" alt="lady with flu symptoms">
+	        </p>
+	        <p class="purpleRedBorderWhite purple_redfontSmall">Before then, how do you know you have the flu anyway? Could it be a cold? What about strep throat, sinusitis and other respiratory illnesses?</p>
+	    </div>
+	    <p class="redBorderAll">While it can be difficult to distinguish between a cold and a flu. We will give it a try.</p>
+	    <div>
+	        <!-----------------------Start Banner Display-----------------------------  --> 
+	        <div class="blueBorderBanner">
+	            <a href="#5SIDa-jpg-modal" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="5SIDa-jpg-modal" aria-expanded="false">
+	                <p>Our sponsors would like to share something important with you before we continue. We think it would be useful to you. <span style="color:#ff3399;">See what they are talking about </span><span style="color:#FF0000;">here.</span></p>
+	            </a>
+	        </div>
+	        <div style="display: none;" id="5SIDa-jpg-modal-placeholder">
+	            <!-- placeholder for 5SIDa-jpg-modal  -->
+	        </div>
+	    </div>
+	    <!-----------------------End Banner Display-----------------------------  -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="flu1_mobile_1" *ngIf="page==1">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>First thing is how <span class="purple_redfont">serious</span> is this suspected flu illness?</span><br>
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="redBorder">Answering this will help  decide on the <span class="purple_bluefont">best course</span> of action to take.</p>
+	        <p class="redBorder centerText">Let's determine this first.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="flu1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro  -->
+	    <div id="flu1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="grayfont">shortness of</span> <span class="bluefont">breath?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="grayfont">difficulty</span> <span class="bluefont">breathing?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/short-of-breath-lady.svg" width="100" alt="lady with shortness of breath">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div  --> 
+	    <!--start 3 div  -->   
+	    <div id="flu1_mobile_3_y" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>It can get worse very fast before you know it.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <br>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="orangefont">feeling dizzy</span> all of a sudden?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="redfont">confused?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/dizzy-lady.svg" width="150" alt="lady with shortness of breath">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div  --> 
+	    <div id="flu1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>You may pass out very soon.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="redfont">pain</span> or <span class="orangefont">pressure</span> in the <span class="redfont">chest</span> with these suspected flu symptoms?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/chestpain-lady-flu.svg" width="120" alt="lady with shortness of breath">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div  --> 
+	    <div id="flu1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911 or at a minimum go to the emergency room</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>An emergency warning sign of flu illness</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <br>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <a href="#" data-role="button" data-theme="m" data-inline="true" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Any <span class="blue_brightfont">stomach pain</span> with these suspected flu symptoms?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/stomachache-recom.svg" width="100" alt="lady with stomach ache">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div  --> 
+	    <div id="flu1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You will need a lot more detailed evaluation by a healthcare professional because of the stomach pain.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care-------------  -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>
+	        </p>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are your lips turning <span class="purplefont">purple</span> or <span class="bluefont">blue?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/lady-lips.svg" width="150" alt="lady with purple lips">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div  --> 
+	    <div id="flu1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>An emergency warning sign of flu illness.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <br>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="m" data-inline="true" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="grayfont">severe or  persistent</span> <span class="purple_redfont">vomiting?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/nausea-lady-pink.svg" width="120" alt="lady with nausea or vomiting">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="flu1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div  --> 
+	    <div id="flu1_mobile_8_y" *ngIf="page==13">
+	        <!--start 8 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>It will get worse very fast. Don't try to ride it out.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <br>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="m" data-inline="true" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_8_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="purple_redfontLarge firstname"> </span><br>
+	                According to the CDC, those were <span class="redfont">emergency</span> warning signs of <span class="redfont">flu </span>sickness.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="redBorder">We likely ruled out emergency room visit, if those signs <span class="redfont">did not</span> apply to you. </p>
+	        <p>Now, let's see if you are looking at the flu anyway. It may be a cold or something else.</p>
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="flu1_mobile_8_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <button data-inline="true" class="flu1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <!------Start Popoup div-----  -->   
+	        <div style="display: none;" id="flu1_mobile_8_pop-placeholder">
+	            <!-- placeholder for flu1_mobile_8_pop  -->
+	        </div>
+	        <!------End Popoup div-----  -->
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div  --> 
+	    <div id="flu1_mobile_9_y" *ngIf="page==15">
+	        <!--start 9 div  -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="flu1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu1_mobile_9_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfont">Are you experiencing any fever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="m" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Yes, fever</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">No fever</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div  --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
 
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	    <p>&nbsp;</p>
+	    <div id="slider_flu_div" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Need to know your body <span class="redfont">temperature.</span> </span><br>
+	                <br><span class="purple_redfontLarge">What is it?</span>
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p>&nbsp;</p>
+	        <p class="yellowBorder grayfontSmall">
+	            Use the slider below to give an estimate in <span class="redfont">"°F"</span>. Tap on <span class="orangefont">"FYI"</span> to convert from <span class="orangefont">°C </span> to <span class="redfont">°F</span> 
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_flu_mobile" class="redfont" id="slider_flu_mobile-label">Temp ( °F: )</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="97" max="107" step="0.1" [(ngModel)]="currentTemp" color="sliderPink">
+							<ion-label range-left>{{currentTemp}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	            <br>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText"> 
+	            <a href="#" id="mobi_flu_temp_link" data-role="button" data-inline="true" data-theme="m" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" >FYI</a>
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_flu_mobile_value" data-inline="true" value="Here you  go" (click)="togglePage(21)"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <br>
+	    <div class="container_12" id="selected_flu_mobile_value_container" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <div id="selected_flu_mobile_value">
+	                	You said: <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentTemp}}</span>°F</div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	    </div>
+	    <div id="flu_mobile_fever_option1" *ngIf="page==21 && currentTemp<=98">
+	        <h3 class="orangeBorder orangefont centerText">Low temperature!</h3>
+	        <p class="redBorderAll centerText">Are you sure you have a fever?</p>
+	        <p class="redBorderAll">If converting from <span class="orangefont">°C </span> to <span class="redfont">°F,</span> please  output the result in <span class="redfont">°F</span></p>
+	        <p class="redBorderAll">We can continue with the flu discussion or go back to choose another temperature.</p>
+	    </div>
+	    <div id="flu_mobile_fever_option2" *ngIf="page==21 && currentTemp<=99.9 && currentTemp>98">
+	        <h3 class="greenBorder greenfont centerText">This is within normal range.</h3>
+	        <p class="greenBorderAll">We won't consider this a fever of the flu type. Let's continue to see if we are looking at a flu anyway. Not everyone with flu will have a fever. You may have a flu and not have a fever.</p>
+	    </div>
+	    <div id="flu_mobile_fever_option3" *ngIf="page==21 && currentTemp<=103 && currentTemp>99.9">
+	        <h3 class="orangeBorder orangefont centerText">Temperature is getting high.</h3>
+	        <p class="orangeBorderAll">Let's continue to see if you are looking at the flu.</p>
+	        <p class="orangeBorder">Usually, the first symptom of a flu is a fever between 102 and 106°F.<br>But then again, not everyone with a flu will have a fever. Let's see if we can narrow it down to the flu.</p>
+	    </div>
+	    <div id="flu_mobile_fever_option4" *ngIf="page==21 && currentTemp<=110 && currentTemp>103">
+	        <h3 class="redBorder redfont centerText">Your temperature is very high!</h3>
+	        <p class="redBorderAll">This must have knocked you down. Well, let's continue to see if you are looking at a flu here.</p>
+	    </div>
+	    <div id="continue_btn_flu_mobile_nofever" *ngIf="page==21 && currentTemp<=99.9">
+	        <!------Continue No Fever------  -->    
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	            <div class="redBorderAll bannerDisplayBtn-SOD1a">
+	                <p>Before we continue, spend a <span style="color:#EE82EE;">few seconds</span> to see what our sponsor is talking about using the <span style="color:#0099ff;">CTO</span> button. We think It might be useful to you.</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <div class="bannerDisplay-SOD1a displayNone centerText">
+	                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	                <div align="right" style="width:320px;">
+	                    <br>
+	                    <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                    <a href="#" class="bannerDisplayBtn-SOD1a linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+	                </div>
+	            </div>
+	            <br> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_flu_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack2()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="continue_btn_flu_mobile_2" *ngIf="page==21 && currentTemp<=110 && currentTemp>99.9">
+	        <!-------Continue flu_mobile_2------  -->    
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	            <div class="redBorderAll bannerDisplayBtn-SOD1a">
+	                <p>Before we continue, spend a <span style="color:#EE82EE;">few seconds</span> to see what our sponsor is talking about using the <span style="color:#0099ff;">CTO</span> button. We think It might be useful to you.</p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <div class="bannerDisplay-SOD1a displayNone centerText">
+	                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	                <div align="right" style="width:320px;">
+	                    <br>
+	                    <a href="#" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                    <a href="#" class="bannerDisplayBtn-SOD1a linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+	                </div>
+	            </div>
+	            <br> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_flu_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack2()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <p>&nbsp;</p>
+	    <div id="flu_nofever_mobile_1" *ngIf="page==30">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span>Although a <span class="redfont">fever</span>  is usually the first symptom of a <span class="purple_redfont">flu,</span> not all people with the flu have fever.</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <p class="redBorder purplefont centerText">Just a few more questions.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro  -->
+	    <div id="flu_nofever_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did this start <span class="bluefont">gradually</span> over a few days or began <span class="orangefont">quickly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/fast-slow-animals.svg" width="200" alt="lady with purple lips">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_3_y_link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" data-theme="j" (click)="togglePage(32)">Gradually</button>
+	            <button data-inline="true" class="flu_nofever_mobile_3_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="togglePage(33)">Quickly</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div  --> 
+	    <!--start 3 div  -->   
+	    <div id="flu_nofever_mobile_3_y" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Gradually?</span><br>
+	                You may be leaning towards a <span class="bluefont">cold</span> here.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="redBorder"> A cold usually start gradually as the cold virus invade the nasal area, while the flu hits you all at once.</p>
+	        <p class="redBorderAll">Well, let's answer a few more questions because it is often difficult to tell a cold from the flu.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is your nose <span class="bluefont">runny</span> and / or <span class="purple_redfont">stuffed up?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/man-flu.svg" width="150" alt="man with a stuffy nose">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div  --> 
+	    <div id="flu_nofever_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Suspect <span class="bluefont">cold</span> if this is at the beginning of the illness.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="redBorder">Runny and or stuffy nose is among the first symptoms with a cold as the virus invades the nasal area. Whereas with the flu, it is until the later stages.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="bluefont">headaches?</span><br><span class="redfont"> Do you have any?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/headache-flu-lady.svg" width="150" alt="lady with a headache">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div  --> 
+	    <div id="flu_nofever_mobile_5_y" *ngIf="page==36">
+	        <!--start 5 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                The <span class="purple_redfont">flu</span> would involve a headache, but the cold, maybe a slight one if any. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_5_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="orangefont">nausea</span> and/or <span class="purple_redfont">vomiting?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/nausea-flu-lady.svg" width="150" alt="Lady with nausea and vomiting">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div  --> 
+	    <div id="flu_nofever_mobile_6_y" *ngIf="page==38">
+	        <!--start 6 div  -->
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalRightPurple_red">
+	                <span class="bluefontLarge">Hmmm.</span><br>
+	                Suspecting the <span class="redfont">flu</span>. A cold <span class="grayfont">doesn't</span> involve nausea or vomiting.
+	            </div>
+	            <div>
+	                <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <p class="redBorder">Suspect the flu if you have:</p>
+	            <ul>
+	                <li>Headache</li>
+	                <li class="redfont">Nausea and vomiting.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_6_n" *ngIf="page==39">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you <span class="purplefont">feeling dizzy?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/dizzy-lady-flu.svg" width="150" alt="lady feeling dizzy">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(40)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(41)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div  --> 
+	    <div id="flu_nofever_mobile_7_y" *ngIf="page==40">
+	        <!--start 7 div  -->
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalRightPurple_red">
+	                <span class="redfontLarge">Feeling dizzy?</span><br><br>
+	                Suspect the <span class="redfont">flu</span>. A cold doesn't involve dizziness.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            <div class="clearboth"></div>
+	            <br>
+	        </div>
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Suspect the flu if:</p>
+	            <ul>
+	                <li>Headache</li>
+	                <li>Nausea and vomiting</li>
+	                <li class="redfont">Feeling dizzy.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_7_n" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is your face <span class="orangefont">flushed?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/flushed-face-lady.svg" width="150" alt="woman looking at her face">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(42)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(43)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div  --> 
+	    <div id="flu_nofever_mobile_8_y" *ngIf="page==42">
+	        <!--start 8 div  -->
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalRightPurple_red">
+	                <span class="bluefontLarge">Flushed face?</span><br><br>
+	                Suspect the <span class="redfont">flu.</span> A cold doesn't involve flushing of the face.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            <div class="clearboth"></div>
+	            <br>
+	        </div>
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Suspect the flu if:</p>
+	            <ul>
+	                <li>Headache</li>
+	                <li>Nausea and vomiting</li>
+	                <li>Feeling dizzy.</li>
+	                <li class="redfont">Flushed face</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(43)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_8_n" *ngIf="page==43">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="redfont">severe</span> <span class="orangefont">body aches?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/shoulderpain-lady2.svg" width="150" alt="Lady with body aches">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(44)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(45)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div  --> 
+	    <div id="flu_nofever_mobile_9_y" *ngIf="page==44">
+	        <!--start 9 div  -->
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalLeftPurple_red">
+	                <span class="redfont">Yes?</span><br>
+	                Suspecting the <span class="redfont">flu.</span> A cold doesn't involve severe body aches.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            <div class="clearboth"></div>
+	            <br>
+	        </div>
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Suspect the flu if:</p>
+	            <ul>
+	                <li>Headache</li>
+	                <li>Nausea and vomiting</li>
+	                <li>Feeling dizzy</li>
+	                <li>Flushed face</li>
+	                <li class="redfont">Severe body aches.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="flu_nofever_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(45)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_9_n" *ngIf="page==45">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Have you been <span class="purple_bluefont">around someone</span> with a flu within the <span class="purple_bluefont">past week?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/stay-away.svg" width="200" alt="Stay away from me">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(46)">Yes</button>
+	            <button data-inline="true" class="flu_nofever_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(47)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div  --> 
+	    <div id="flu_nofever_mobile_10_y" *ngIf="page==46">
+	        <!--start 10 div  -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="flu_nofever_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(47)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_10_n" *ngIf="page==47">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purplefont firstname"> </span><br>
+	                <span>Is a <span class="purple_redfont">runny</span> or <span class="bluefont">stuffy</span> nose your <span class="grayfontLarge">main problem?</span></span>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or severe <span class="purple_redfont">body ache</span> and Lack of <span class="bluefont">energy?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right-------------------  -->
+	        <p class="redBorder">This assumes you are in the early stages of this illness.</p>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu_nofever_mobile_11_n_link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" data-theme="j" (click)="togglePage(49)">Runny / Stuffy </button>
+	            <button data-inline="true" class="flu_nofever_mobile_11_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">Body Ache</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div  -->
+	    <div id="flu_nofever_mobile_11_y" *ngIf="page==48">
+	        <!--start 11 div  -->
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalRightPurple_red">
+	                <span class="purple_redfontLarge">Body ache?</span><br>
+	                Suspecting the <span class="redfont">flu.</span> 
+	            </div>
+	            <div>
+	                <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder">A cold usually has runny or stuffy nose as the main symptom whereas with the flu, these come later after a severe body ache and so on.</p>
+	        <!------Start Popoup div-----  -->   
+	        <div style="display: none;" id="flu_nofever_mobile_11_pop-placeholder">
+	            <!-- placeholder for flu_nofever_mobile_11_pop  -->
+	        </div>
+	        <!------End Popoup div-----  -->
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	            <div class="bannerDisplay-EQS2a displayNone centerText">
+	                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	                <div align="right" style="width:320px;">
+	                    <br>
+	                    <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                    <a href="#" class="bannerDisplayBtn-EQS2a linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+	                </div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <div class="redBorderAll bannerDisplayBtn-EQS2a">
+	                <p>Testing end of question series 2 display. <span style="color:#EE82EE;">Take a look here.</span></p>
+	            </div>
+	            <br> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="flu_nofever_mobile_11_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu_nofever_mobile_11_n" *ngIf="page==49">
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalLeftPurple_red">
+	                <span class="bluefont">Hmmm.</span><br>
+	                If runny or stuffy nose, we are kind of thinking <span class="bluefont">cold</span> in this case.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle left person-------------------  -->
+	        <p class="redBorder">If you are thinking flu, then let's continue and probe further. Or do you want to check out the cold section?</p>
+	        <!------Start Popoup div-----  -->   
+	        <div style="display: none;" id="flu_nofever_mobile_11_n_pop-placeholder">
+	            <!-- placeholder for flu_nofever_mobile_11_n_pop  -->
+	        </div>
+	        <!------End Popoup div-----  -->
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	            <div class="bannerDisplay-EQS2a displayNone centerText">
+	                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	                <div align="right" style="width:320px;">
+	                    <br>
+	                    <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                    <a href="#" class="bannerDisplayBtn-EQS2a linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+	                </div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <div class="redBorderAll bannerDisplayBtn-EQS2a">
+	                <p>Testing end of question series 2 display. <span style="color:#EE82EE;">Take a look here.</span></p>
+	            </div>
+	            <br> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="flu_nofever_mobile_11_n_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg4(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Cold</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue Flu</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 11 div  -->    
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="flu2_mobile_q1" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Which of the <span class="purple_redfont">symptoms</span> we listed below also apply to you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/flu-lady.svg" width="100" alt="lady with flu symptoms">
+	        </p>
+	        <p class="yellowBorder">Flu symptoms usually start suddenly. It takes about 1 to 4 days with an average of 2 days for these symptoms to develop after you come in contact with the flu virus.</p>
+	        <br>
+	        <div id="flu2_mobile_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-red mbsc-mobiscroll mbsc-ltr">
+	            <label for="flu2_mobile_q1_0" class="mbsc-checkbox" (click)="toggleSymptom(0)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_0" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[0]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">         
+	            Severe body aches</span></label>
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_1" class="mbsc-checkbox" (click)="toggleSymptom(1)"><input name="flu2_mobile_q1" type="checkbox" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" id="flu2_mobile_q1_1" value="" [(ngModel)]="symptoms[1]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">
+	            Headache</span></label>
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_2" class="mbsc-checkbox" (click)="toggleSymptom(2)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_2" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[2]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">
+	            Dry cough</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_3" class="mbsc-checkbox" (click)="toggleSymptom(3)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_3" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[3]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">
+	            Sore throat</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_4" class="mbsc-checkbox" (click)="toggleSymptom(4)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_4" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[4]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">
+	            Chills</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_5" class="mbsc-checkbox" (click)="toggleSymptom(5)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_5" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[5]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Runny or stuffy nose</span></label>
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_7" class="mbsc-checkbox" (click)="toggleSymptom(6)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_7" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[6]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Lack of energy</span></label>
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_8" class="mbsc-checkbox" (click)="toggleSymptom(7)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_8" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[7]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Flushed face</span></label>
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_9" class="mbsc-checkbox" (click)="toggleAllSymptoms(true)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_9" class="flu2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[8]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">All of the above</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu2_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="flu2_mobile_q1" id="flu2_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[9]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">None of these</span></label> 
+	            <hr class="hrpink">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_flu2_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(51)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_flu2_mobile_q1_container" *ngIf="page==50 && mode==4">
+	        <div class="grid_9">
+	            <div class="bubbleRightPurple_red" id="selected_flu2_mobile_q1 centerText">
+	            	<span class="redfontLarge">Oops!,</span> You told us nothing 
+	            </div>
+	            <!--empty division--  -->
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="50" align="right">
+	        </div>
+	    </div>
+	    <div id="flu2_mobile_others" *ngIf="page==51 && mode==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>The first major flu symptom is usually a <span class="orangefont">fever </span><span class="redfontSmall">(between 102 and 106°F).</span> This may hit you quickly.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red centerText">
+	                        Then, <span class="redfont">body aches</span> <span class="grayfontSmall">(especially in the back and legs),</span> <span class="purple_redfont">chills,</span> <span class="redfont">headache</span> at first.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------  -->
+	        <p class="redBorderAll">After 2 to 3 days of having the flu, you may start getting dry cough, runny or stuffy nose, sneezing and sore throat.</p>
+	        <p class="redBorder">If these apply to you so far, then we say treat this like a flu.</p>
+	    </div>
+	    <div id="flu2_mobile_none" *ngIf="page==51 && mode==1">
+	        <div class="maxwidth450 centerText">
+	            <div class="ovalLeftPurple_red">
+	                <span class="redfont">None of these?</span><br>
+	                Well then, you may not have the flu.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle left person-------------------  -->
+	        <p class="redBorder orangefont">Like to continue with flu for now?</p>
+	    </div>
+	    <div id="flu2_mobile_all" *ngIf="page==51 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">All of the above?</span><br>
+	                Very likely looking at the flu.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="redBorder">The first symptom is usually a fever between 102 and 106°F that may start very quickly.</p>
+	        <p class="redBorderWhite">Then body aches (especially in the back and legs), chills, headache and so on.</p>
+	        <p class="redBorder">After 2 to 3 days of having the flu, you may start getting dry cough, runny or stuffy nose, sneezing and sore throat.</p>
+	        <p class="redBorderWhite">If you got here by clearly answering the questions we have asked so far, then you should treat this like a flu.</p>
+	    </div>
+	    <div id="continue_btn_flu_mobile_3" *ngIf="page==51">
+	        <p>&nbsp;</p>
+	        <div>
+	            <!-----------------------Start Banner Display-----------------------------  --> 
+	            <div class="redBorderAll bannerDisplayBtn-LOD1a">
+	                <p>Testing the List options div. <span style="color:#4B0082;">Check</span> <span style="color:#FF0000;">This</span> <span style="color:#800080;">Out.</span></p>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <div class="bannerDisplay-LOD1a displayNone centerText">
+	                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	                <div align="right" style="width:320px;">
+	                    <br>
+	                    <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                    <a href="#" class="bannerDisplayBtn-LOD1a linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+	                </div>
+	            </div>
+	            <br> 
+	        </div>
+	        <!-----------------------End Banner Display-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_flu2_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
+	        </p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<90">
+	    <div id="flu3_mobile_1" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Can you <span class="redfont">take care</span> of this on <span class="purple_redfont">your own?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or do you need to <span class="redfont">see a doctor?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/people/adult/cold/doctor-male-pink.svg" width="150" alt="male doctor illustration">
+	        </div>
+	        <p class="redBorder centerText">It is very important to rule out the risks of complications that can be dangerous.<br>Let's start by doing that.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="flu3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(61)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="flu3_mobile_2_n" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you <span class="grayfont">over </span>the <span class="orangefont">age of 65?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/people/adult/old-man-hand.svg" height="130px" alt="Old man raising the hand">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(62)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(63)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="flu3_mobile_3_y" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>The risk of complication from the flu is high at this age.</li>
+	                <li>The flu affects the lungs and you can easily develop pneumonia.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="flu3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(63)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_3_n" *ngIf="page==63">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you more than <span class="bluefont">3 months pregnant?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/people/adult/pregnant-woman.svg" height="140" alt="Pregnant woman">
+	        </div>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(64)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(65)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="flu3_mobile_4_y" *ngIf="page==64">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>If it turns out to be flu illness, the risk of complications are high with pregnancy.</li>
+	                <li>Your immune system is weaker when you're pregnant making you more vulnerable to flu illness. </li>
+	                <li>Self care is not advised.</li>
+	                <li>You have a greater chance for serious problems for the unborn baby, including premature labor and delivery.</li>
+	                <li>You may need antiviral medications even if it is past 48 hours.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(65)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_4_n" *ngIf="page==65">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you <span class="greenfont">diabetic?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/illustration/process/diabetic-testing.svg" width="120" alt="diabetic testing on finger">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(66)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(67)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="flu3_mobile_5_y" *ngIf="page==66">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It is going to be harder for you to fend off the flu virus leading to complications.</li>
+	                <li>Flu illness affects the muscles. This can cause wide variations in your blood sugar.</li>
+	                <li>Loss of appetite and thirst would make managing your diet harder.</li>
+	                <li>The ADA recommends checking the blood sugar at least every 3 to 4 hours and reporting any significant changes to your doctor right away. You may need more insulin if your blood sugar is too high, or less if too low.</li>
+	                <li>People with diabetes are about three times more likely to die from flu and pneumonia. Self care is not advised.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	            <div class="blueBorderBanner">
+	                <a href="#7DRD1a-jpg-modal" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="7DRD1a-jpg-modal" aria-expanded="false">
+	                    <p>Testing diabetes related division 1 ad spot. <span style="color:#008000;">See what we are talking about here</span></p>
+	                </a>
+	            </div>
+	            <div style="display: none;" id="7DRD1a-jpg-modal-placeholder">
+	                <!-- placeholder for 7DRD1a-jpg-modal  -->
+	            </div>
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(67)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_5_n" *ngIf="page==67">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="purplefont">heart disease?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/illustration/process/heartbeat-illus.svg" width="200" alt="yyyy">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(68)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(69)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="flu3_mobile_6_y" *ngIf="page==68">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Your body is going to be too weak to fight off the flu.</li>
+	                <li>You are at increased risk of having a heart attack.</li>
+	                <li>Increased risk of experiencing flu-related complications such as pneumonia.</li>
+	                <li>You will need to start antiviral medications as soon as possible.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(69)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_6_n" *ngIf="page==69">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="purple_redfont">kidney </span>or <span class="orangefont">lung</span> conditions?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="purple_redfont">liver disease?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/illustration/process/kidneys-illus.svg" width="150" alt="Illustration of kidneys">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(70)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(71)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="flu3_mobile_7_y" *ngIf="page==70">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Dangerous to attempt self care.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(71)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_7_n" *ngIf="page==71">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you <span class="purple_bluefont">coughing up</span> <span class="redfont">blood?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/coughing-lady-pink.svg" width="120" alt="Lady coughing">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(72)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(73)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="flu3_mobile_8_y" *ngIf="page==72">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at pneumonia.</li>
+	                <li>Self care is seriously <span class="redfont">not</span> recommended.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(73)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_8_n" *ngIf="page==73">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="purple_redfont">sickle cell anemia?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/sickle-cell.svg" width="200" alt="sickled blood cells illustration">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(74)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(75)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="flu3_mobile_9_y" *ngIf="page==74">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You are more likely to have flu complications that result in hospitalization.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(75)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_9_n" *ngIf="page==75">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have a weakened <span class="greenfont">immune system?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/lady-outline.svg" alt="Pharmacist" width="80">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(76)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(77)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="flu3_mobile_10_y" *ngIf="page==76">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You will need to start taking antiviral as soon as possible. Do not wait till it gets worse.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(77)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_10_n" *ngIf="page==77">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did the <span class="orangefont">flu</span> symptoms appear to be going away and...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        ...all of a sudden, <span class="orangefont">fever</span> and <span class="bluefont">cough</span> came back?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset redBorder" src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(78)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(79)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <div id="flu3_mobile_11_y" *ngIf="page==78">
+	        <!--start 11 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You are treading on pneumonia territory here. Do not wait any further.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(79)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_11_n" *ngIf="page==79">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is your <span class="orangefont">BMI</span>  <span class="grayfont">greater than 40?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderAll">If you don't know your Body Mass Index (BMI), tap on the "FYI" button to calculate it.</p>
+	        <div class="centerText">
+	            <img src="assets/img/people/adult/women-shapes.svg" height="180" alt="different shapes of women">
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" id="bmi" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all mbsc-comp" role="button" (click)="toggleFYIDlg5(true)">FYI</a>
+	            <button data-inline="true" class="flu3_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(80)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(81)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 11 div --> 
+	    <div id="flu3_mobile_12_y" *ngIf="page==80">
+	        <!--start 12 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Your risk of hospitalization for pneumonia or influenza is increased if it turns out to be the flu.</li>
+	                <li>Antiviral medication would need to be started as soon as possible if sickness with flu-like symptoms is suspected when the viruses are circulating.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(81)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_12_n" *ngIf="page==81">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Would you say you have <span class="purplefont">never</span> had the flu as <span class="bluefont">bad</span> as this before?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/cold/flu-lady-landing.svg" width="150" alt="lady with face mask">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="flu3_mobile_13_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(82)">Yes</button>
+	            <button data-inline="true" class="flu3_mobile_13_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(83)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 12 div --> 
+	    <div id="flu3_mobile_13_y" *ngIf="page==82">
+	        <!--start 13 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to see the doctor as soon as possible to start antiviral medication.<br>Will need to be started within 48 hours to be effective.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="flu3_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(83)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="flu3_mobile_13_n" *ngIf="page==83">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span class="orangefontLarge firstname"> </span><br>
+	                    One more question before we get a pharmacist's <span class="purple_bluefont">recommendation</span> for flu symptoms available over-the-counter. 
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(90)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 13 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=90 && page<100">
+	    <div id="slider_flu_mobile_4_div" *ngIf="page==90">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>On what <span class="redfont">day</span> are your symptoms now?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="centerText">
+	            <img src="assets/img/objects/calendar-red.svg" width="150" alt="calendar">
+	        </div>
+	        <p class="orangeBorder purple_redfontSmall centerText">Starting from when you first felt something.</p>
+	        <div class="clearboth divider1"></div>
+	        <br> 
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_flu_mobile_4_mobile" id="slider_flu_mobile_4_mobile-label">On day:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="10" step="0.5" [(ngModel)]="currentDay" color="sliderPink">
+							<ion-label range-left>{{currentDay}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_flu_mobile_4_value" data-inline="true" value="Here you  go" (click)="togglePage(91)"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <br>
+	    <div class="container_12" id="selected_flu_mobile_4_value_container" *ngIf="page==91">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <div id="selected_flu_mobile_4_value">You said on day : <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentDay}}</span></div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <div id="flu_mobile_4_option1" *ngIf="page==91 && currentDay<=2">
+	        <p class="redBorder">Better to see a doctor or go to the nearest urgent care. If it is determined to be a flu, you can be given an antiviral medication like tamiflu. This helps reduce the severity of the flu illness. But it has to be taken within 48 hours. </p>
+	        <p class="redBorderAll">If you don't think you can make it to the nearest urgent care, let's continue.</p>
+	    </div>
+	    <div id="flu_mobile_4_option2" *ngIf="page==91 && currentDay>2 && currentDay<=7">
+	        <p class="redBorder purplefont centerText">Hmmm, you must be down.</p>
+	        <p class="redBorderAll">It may be too late to get an antiviral medication such as tamiflu from the doctor. </p>
+	        <p>This has to be taken within 48 hours to make any difference. Well, you should try to reduce the duration of the flu and reduce complications.</p>
+	        <p class="redBorder centerText">Let's continue and see what a pharmacist recommend you do  to help with this.</p>
+	        <p class="centerText">Or do you want to see the nearest urgent care clinic to you?</p>
+	    </div>
+	    <div id="flu_mobile_4_option3" *ngIf="page==91 && currentDay>7">
+	        <p class="redBorder redfont centerText">This is taking long</p>
+	        <p>You should see a doctor or go to the nearest urgent care. You will want to reduce complications of the flu.</p>
+	        <p class="redBorder">However, if all you have left is a productive cough and chest congestion, then you are at the end of the illness and this will go away. You may not need to see a doctor.</p>
+	        <p class="redBorderAll redfontSmall">If you are coughing out yellowish, green or bloody mucus, then go to the doctor as soon as possible. One of the main complications of the flu is pneumonia.</p>
+	    </div>
+	    <div id="continue_btn_flu_mobile_5" *ngIf="page==91">
+	        <div>
+	            <!-----------------------Start Banner Display----------------------------- --> 
+	        </div>
+	        <!-----------------------End Banner Display----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_flu_mobile_4_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackDay()">Back</button>
+	            <a href="#" data-role="button" data-theme="b" data-inline="true" class="ui-link ui-btn ui-btn-b ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(100)">Continue</a>
+	        </p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page==100">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span class="orangefont">Have you taken something yet?</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="centerText">
+	        <img src="assets/img/people/adult/demo/medicine-taking2.svg" width="120" alt="lady taking medicine">
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(101)">Yes</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">No</a>
+	    </p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>100 && page<110">
+	    <p>&nbsp;</p>
+	    <div id="flu5_mobile_q1">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span class="greenfontLarge">Yes?</span><br>
+	                    Which of the <span class="purple_redfont">remedies</span> below have you tried?
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" id="flu5_mobile_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-red mbsc-mobiscroll mbsc-ltr">
+	            <label for="flu5_mobile_q1_0" class="mbsc-checkbox" (click)="toggleTriedlist(0)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_0" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[0]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label"> Just pain relievers</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_1" class="mbsc-checkbox" (click)="toggleTriedlist(1)"><input name="flu5_mobile_q1" type="checkbox" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" id="flu5_mobile_q1_1" value="" [(ngModel)]="triedlist[1]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Some kind of decongestant</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_2" class="mbsc-checkbox" (click)="toggleTriedlist(2)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_2" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[2]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Combination antihistamine and decongestant products</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_3" class="mbsc-checkbox" (click)="toggleTriedlist(3)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_3" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[3]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Saline nasal wash</span></label>  
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_4" class="mbsc-checkbox" (click)="toggleTriedlist(4)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_4" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[4]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Herbal formulations</span></label>  
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_5" class="mbsc-checkbox" (click)="toggleTriedlist(5)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_5" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[5]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Chicken soup</span></label> 
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_7" class="mbsc-checkbox" (click)="toggleTriedlist(6)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_7" class="flu5_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[6]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">Sleep aids</span></label>  
+	            <hr class="hrpink">
+	            <label for="flu5_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllTriedlists(false)"><input type="checkbox" name="flu5_mobile_q1" id="flu5_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="triedlist[7]"><span class="mbsc-checkbox-box"></span>
+	            <span class="mbsc-label">
+	            None of these</span></label>  
+	            <hr class="hrpink">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_flu5_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(102)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_flu5_mobile_q1_container" *ngIf="page==101 && mode==3">
+	        <div class="grid_9">
+	            <div class="bubbleRightPurple_red">
+	                <div id="selected_flu5_mobile_q1 centerText">
+	                	<span class="redfontLarge">Oops!,</span>You told us nothing 
+	                </div>
+	                <!--empty division- -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="50" align="right">
+	        </div>
+	    </div>
+
+	    <div id="flu5_mobile_others" *ngIf="page==102&&mode==1">
+		    <div>
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightPurple_red centerText">
+		                <span class="greenfontLarge">Good.</span><br>
+		                You are staying on top of things.
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+		            </div>
+		        </div>
+		    </div>
+		    <div class="clearboth divider1"></div>
+		    <!-----------------End Border right person------------------- -->
+		    <p class="redBorderAll">Let's continue to see what a pharmacist recommend you take to help with the flu that is available over-the-counter.</p>
+		</div>
+		<div id="flu5_mobile_none" *ngIf="page==102&&mode==2">
+		    <div>
+		        <div class="maxwidth450">
+		            <div class="ovalBorderRightPurple_red centerText">
+		                <span class="redfontLarge">None of these?</span><br><br>
+		                <span class="orangefont">Oops!</span> We must have left something out.
+		            </div>
+		            <div align="right"><img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+		            </div>
+		        </div>
+		    </div>
+		    <div class="clearboth divider1"></div>
+		    <!-----------------End Border right person------------------- -->
+		    <p class="redBorder">Anyway, let's continue to see what a pharmacist recommend you take to help with the flu.</p>
+		</div>
+		<div id="options_btn_flu5_mobile" *ngIf="page==102">
+		    <div>
+		        <!-- ---------------------Start Banner Display----------------------------- --> 
+		    </div>
+		    <!-- ---------------------End Banner Display----------------------------- -->
+		    <div class="clearboth divider1"></div>
+		    <p class="centerText">
+		        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">Continue</a>
+		    </p>
+		</div>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=110">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightYellow centerText">
+	            <span>A few things to know if you have <span class="redfont">flu symptoms</span> are listed below. </span><br>
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/female/pharm-selena-red.svg" alt="Pharmacist Selena" width="80">
+	        </div>
+	    </div>
+	    <!-----------------End Border right person------------------- -->
+	    <br>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <p class="redBorder purple_redfontSmall centerText">Summarized from cdc.gov</p>
+	    <div class="clearboth"></div>
+	    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content " [ngClass]="{'ui-collapsible-collapsed': pages[0]}" >
+	        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[0], 'ui-icon-arrow-d': !pages[0]}" (click)="togglePages(0)"><span class="redfont">Go to emergency room if... </span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': pages[0]}" aria-hidden="true">
+	            <br>
+	            <ul>
+	                <li class="check_orange">You have shortness of breath and difficulty breathing</li>
+	                <br>
+	                <li class="check_red">Feeling dizzy all of a sudden</li>
+	                <br>
+	                <li class="check_blue">Feeling confused</li>
+	                <br>
+	                <li class="check_red">Severe or persistently vomiting</li>
+	                <br>
+	                <li class="check_orange">Pain or pressure in the chest or abdomen</li>
+	                <br>
+	                <li class="check_purple">Purple or blue discoloration of the lips.</li>
+	                <br>
+	                <li class="check_red">Your flu improved but then return with fever and very bad cough</li>
+	            </ul>
+	            <p class="redfontSmall redBorderWhite">Go to the emergency room only if you have these emergency warning signs of flu sickness. </p>
+	            <p class="redBorder">Do not go if you are only mildly sick or else if you don't have the flu, you may get it from people who have it at the emergency room.</p>
+	            <p>&nbsp;</p>
+	        </div>
+	    </div>
+	    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content " [ngClass]="{'ui-collapsible-collapsed': pages[1]}" >
+	        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[1], 'ui-icon-arrow-d': !pages[1]}" (click)="togglePages(1)"><span class="purple_redfont">While you are sick..</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': pages[1]}" aria-hidden="true">
+	            <br>
+	            <div class="centerText"><img src="assets/img/objects/flubreak.jpg" width="200"></div>
+	            <ul>
+	                <li class="square_red">Stay away from others as much as possible to keep from making them sick. If you must leave home, wear a face mask if you have one or cover coughs and sneezes with a tissue.</li>
+	                <li class="square_blue">Wash your hands often to keep from spreading flu to others.</li>
+	                <br>
+	                <li class="square_green">CDC recommends you stay home from work, school, travel, shopping, social events and public gatherings for at least 24 hours after you fever is gone (without the use of fever reducing medications) except to get medical care or for other things you have to do and no one else can do for you.</li>
+	                <br>
+	                <li class="square_red">Keep surfaces like bedside tables, surfaces in the 
+	                    bathroom, kitchen counters and toys for children clean 
+	                    by wiping them down with a household disinfectant 
+	                    according to directions on the product label.
+	                </li>
+	                <br>
+	                <li class="square_blue">Try to stay in a separate room from others in the household if possible.</li>
+	            </ul>
+	        </div>
+	    </div>
+	    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content " [ngClass]="{'ui-collapsible-collapsed': pages[2]}" >
+	        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[2], 'ui-icon-arrow-d': !pages[2]}" (click)="togglePages(2)"><span class="purplefont">What to do at home:</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': pages[2]}" aria-hidden="true">
+	            <ul>
+	                <li class="hand_blue">Avoid close contact with well people in your house so you won't make them sick</li>
+	                <br>
+	                <li class="hand_red">Designate a sick room if possible and let all sick people share that room.</li>
+	                <br>
+	                <li class="hand_purple">If you have more than one bathroom, have sick people use one bathroom and well people use the other one.</li>
+	                <li class="hand_blue">Let each sick person have their own drinking glass, washcloth and towel.</li>
+	                <br>
+	                <li class="hand_red">If visitors must enter the sick room, they should stay away at least 6 feet away from the sick person.</li>
+	                <br>
+	                <li class="hand_purple">Open a window in the sick room or if possible use a fan to keep fresh air flowing.</li>
+	                <br>
+	                <li class="hand_blue">Take great steps to prevent dehydration. Drink clear fluids such as water, broth or sports drinks.</li>
+	                <br>
+	                <li class="hand_red">Check your urine color: Clear or light yellow-colored urine means you are getting enough fluid. Dark yellow may signal dehydration.</li>
+	            </ul>
+	            <p>&nbsp;</p>
+	        </div>
+	    </div>
+	    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content " [ngClass]="{'ui-collapsible-collapsed': pages[3]}" >
+	        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[3], 'ui-icon-arrow-d': !pages[3]}" (click)="togglePages(3)"><span class="pinkfont">How you might get the flu</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': pages[3]}" aria-hidden="true">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><a href="http://www.cdc.gov/flu/?s_cid=seasonalFlu2010_007" title="The Flu I.Q. widget is an interactive quiz to test your flu knowledge." class="ui-link"><img src="http://www.cdc.gov/images/campaigns/seasonalflu/flu0613-Summer-150x172.gif" style="width:150px; height:172px; border:0px;" alt="The Flu I.Q. widget is an interactive quiz to test your flu knowledge."></a></p>
+	            <p>Flu viruses travel through the air in droplets when someone with the infection coughs , sneezes or even talks. It can travel up to 6 feet away.</p>
+	            <p>You can inhale the droplets directly or you can pick up the germs by touching objects where the droplets have landed, such as telephone or computer keyboards, or even door handles. </p>
+	        </div>
+	    </div>
+	    <div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content " [ngClass]="{'ui-collapsible-collapsed': pages[4]}" >
+	        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" [ngClass]="{'ui-icon-arrow-r': pages[4], 'ui-icon-arrow-d': !pages[4]}" (click)="togglePages(4)"><span class="greenfont">Next time...</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': pages[4]}" aria-hidden="true">
+	            <span class="purplefontSmall">(These widgets will take you to CDC site)</span>
+	            <hr>
+	            <br>
+	            <h3 align="center" class="redfontLargeThick">Get a flu shot!</h3>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <a href="http://www.cdc.gov/flu/?s_cid=seasonalFlu2010_007" title="The FLU Ends with U. Learn more: www.flu.gov" class="ui-link"><img src="http://www.cdc.gov/images/campaigns/flu/2010/stopsign_180x150.gif" style="width:180px; height:150px; border:0px;" alt="The FLU Ends with U. Learn more: www.flu.gov"></a>
+	            </p>
+	            <p> The best time to be vaccinated is October and November. This will give your body enough time to develop antibodies to the flu virus before the peak flu season starts. This is typically between December and March. <br> But remember, you can always get one later. It is better than not getting at all and it may still protect you.</p>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><iframe id="flugovwidget" frameborder="0" marginwidth="0" marginheight="0" border="0" src="http://www.flu.gov/stay-connected/vaccinelocator_2011.html" width="269" height="175" scrolling="no" title="Flu Vaccine Locator">http://www.flu.gov/stay-connected/vaccinelocator_2011.html</iframe></p>
+	        </div>
+	    </div>
+	    <br>
+	    <div>
+	        <!-----------------------Start Banner Display----------------------------- --> 
+	        <div class="blueBorderBanner">
+	            <a href="#" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="3BPRa-jpg-modal" aria-expanded="false" (click)="toggleFYIDlg6(true)">
+	                <p>Before you see what a pharmacist recommend for flu symptoms available over the counter, <span style="color:#ff6633;">check this out.</span></p>
+	            </a>
+	        </div>
+	        <div style="display: none;" id="3BPRa-jpg-modal-placeholder">
+	            <!-- placeholder for 3BPRa-jpg-modal -->
+	        </div>
+	    </div>
+	    <!-----------------------End Banner Display----------------------------- -->
+	    <input type="hidden" class="ClickValuePage1" value="">
+	    <input type="hidden" class="ClickValuePage2" value="">
+	    <input type="hidden" class="ClickValuePage3" value="">
+	    <input type="hidden" class="ClickValue80" value="">
+	    <input type="hidden" class="ClickValue50" value="">
+	    <input type="hidden" class="totalResult" value="">
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-popup-screen ui-overlay-b in" id="flu1_mobile_8_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="flu1_mobile_8_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="flu1_mobile_8_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p>You should go to the emergency room only if you are very sure you have the flu. Else you will go in there and leave with the flu. <br>This is because, other people with the flu are coming in and you could get infected.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_mobile_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="flu_nofever_mobile_11_pop-screen" *ngIf="FYIDlg3.show" (click)="toggleFYIDlg3(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="flu_nofever_mobile_11_pop-popup" *ngIf="FYIDlg3.show" [ngStyle]="{'max-width': FYIDlg3.maxWidth+'px','top': FYIDlg3.top+'px', 'left': FYIDlg3.left+'px', 'width': FYIDlg3.width+'px'}">
+	    <div data-role="popup" id="flu_nofever_mobile_11_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(false)">Close</a>
+	        <p class="redBorder centerText">Suspect the flu if you have:</p>
+	        <ul>
+	            <li>Headache</li>
+	            <li>Nausea and vomiting</li>
+	            <li>Feeling dizzy</li>
+	            <li>Flushed face</li>
+	            <li>Severe body aches</li>
+	            <li>Been around someone with the flu lately.</li>
+	        </ul>
+	        <p class="redBorderAll">If not these symptoms and you mainly have runny or stuffy nose without severe body aches, headaches or chills, then we will think cold.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="flu_nofever_mobile_11_n_pop-screen" *ngIf="FYIDlg4.show" (click)="toggleFYIDlg4(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="flu_nofever_mobile_11_n_pop-popup" *ngIf="FYIDlg4.show" [ngStyle]="{'max-width': FYIDlg4.maxWidth+'px','top': FYIDlg4.top+'px', 'left': FYIDlg4.left+'px', 'width': FYIDlg4.width+'px'}">
+	    <div data-role="popup" id="flu_nofever_mobile_11_n_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg4(false)">Close</a>
+	        <p class="redBorder grayfont">Think cold if the following apply to you as much as possible:</p>
+	        <ul>
+	            <li>No fever</li>
+	            <li>No chills</li>
+	            <li>More of runny or stuffy nose</li>
+	            <li>No headache</li>
+	            <li>No severe body ache</li>
+	            <li>No nausea or vomiting</li>
+	            <li>No dizziness</li>
+	            <li>Face is not flushed.</li>
+	        </ul>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="flu_nofever_mobile_11_n_pop-screen" *ngIf="FYIDlg5.show" (click)="toggleFYIDlg5(false)"></div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="3BPRa-jpg-modal-screen" *ngIf="FYIDlg6.show" (click)="toggleFYIDlg6(false)"></div>
+	<div class="ui-popup-container slide in ui-popup-active" id="3BPRa-jpg-modal-popup" *ngIf="FYIDlg6.show" [ngStyle]="{'max-width': FYIDlg6.maxWidth+'px','top': FYIDlg6.top+'px', 'left': FYIDlg6.left+'px', 'width': FYIDlg6.width+'px'}">
+	    <div data-role="popup" id="3BPRa-jpg-modal" data-overlay-theme="b" data-position-to="window" data-dismissible="false" class="ui-corner-all centerText ui-popup ui-body-inherit ui-overlay-shadow">
+	        <div align="center" style="background-color:#ffffff;">
+	            <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+	            <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" width="300" height="250" alt="Testing alttext"></a>
+	            <div align="right" style="width:320px; padding:15px 0;">
+	                <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+	                <a href="#" data-rel="back" class="linkBlue robotoLightSmall ui-link" data-inline="true" (click)="toggleFYIDlg6(false)">Got It</a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 </ion-content>

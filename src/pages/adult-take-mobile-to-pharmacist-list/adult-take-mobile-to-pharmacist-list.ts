@@ -8,74 +8,72 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 import { GlobalVars } from '../providers/globalvars';
-import { AllergiesMobilePage }                 from '../allergies-mobile/allergies-mobile';
-import { ColdMobilePage }                      from '../cold-mobile/cold-mobile';
-import { FluMobilePage }                       from '../flu-mobile/flu-mobile';
-import { HeadacheMobilePage } from '../headache-mobile/headache-mobile';
-import { SleepMobilePage } from '../sleep-mobile/sleep-mobile';
-import { HairlossMobilePage } from '../hairloss-mobile/hairloss-mobile';
-import { DandruffMobilePage } from '../dandruff-mobile/dandruff-mobile';
-import { LiceMobilePage } from '../lice-mobile/lice-mobile';
-import { PinkeyeMobilePage } from '../pinkeye-mobile/pinkeye-mobile';
-import { RedeyeMobilePage } from '../redeye-mobile/redeye-mobile';
-import { StyeyeMobilePage } from '../styeye-mobile/styeye-mobile';
-import { DryeyeMobilePage } from '../dryeye-mobile/dryeye-mobile';
-import { EaracheMobilePage } from '../earache-mobile/earache-mobile';
-import { SwimearMobilePage } from '../swimear-mobile/swimear-mobile';
-import { EarwaxMobilePage } from '../earwax-mobile/earwax-mobile';
-import { MotionSicknessMobilePage } from '../motion-sickness-mobile/motion-sickness-mobile';
-import { VertigoMobilePage } from '../vertigo-mobile/vertigo-mobile';
-import { ToothacheMobilePage } from '../toothache-mobile/toothache-mobile';
-import { ColdSoreMobilePage } from '../cold-sore-mobile/cold-sore-mobile';
-import { CankerSoreMobilePage } from '../canker-sore-mobile/canker-sore-mobile';
-import { DrymouthMobilePage } from '../drymouth-mobile/drymouth-mobile';
-import { BadBreathMobilePage } from '../bad-breath-mobile/bad-breath-mobile';
-import { CongestionMobilePage } from '../congestion-mobile/congestion-mobile';
-import { RunnyNoseMobilePage } from '../runny-nose-mobile/runny-nose-mobile';
-import { SinusPressureMobilePage } from '../sinus-pressure-mobile/sinus-pressure-mobile';
-import { SnoringMobilePage } from '../snoring-mobile/snoring-mobile';
-import { CoughMobilePage } from '../cough-mobile/cough-mobile';
-import { SoreThroatMobilePage } from '../sore-throat-mobile/sore-throat-mobile';
-import { StiffNeckMobilePage } from '../stiff-neck-mobile/stiff-neck-mobile';
-import { ChestCongestionMobilePage } from '../chest-congestion-mobile/chest-congestion-mobile';
-import { BackPainMobilePage } from '../back-pain-mobile/back-pain-mobile';
-import { HeartburnMobilePage } from '../heartburn-mobile/heartburn-mobile';
-import { ChestpainMobilePage } from '../chestpain-mobile/chestpain-mobile';
-import { ShoulderMobilePage } from '../shoulder-mobile/shoulder-mobile';
-import { WristPainMobilePage } from '../wrist-pain-mobile/wrist-pain-mobile';
-import { ElbowMobilePage } from '../elbow-mobile/elbow-mobile';
-import { ConstipationMobilePage } from '../constipation-mobile/constipation-mobile';
-import { DiarrheaMobilePage } from '../diarrhea-mobile/diarrhea-mobile';
-import { NauseaMobilePage } from '../nausea-mobile/nausea-mobile';
-import { StomachAcheMobilePage } from '../stomach-ache-mobile/stomach-ache-mobile';
-import { StomachFluMobilePage } from '../stomach-flu-mobile/stomach-flu-mobile';
-import { FoodPoisoningMobilePage } from '../food-poisoning-mobile/food-poisoning-mobile';
-import { YeastMobilePage } from '../yeast-mobile/yeast-mobile';
-import { UtiMobilePage } from '../uti-mobile/uti-mobile';
-import { JockitchMobilePage } from '../jockitch-mobile/jockitch-mobile';
-import { HemorrhoidsMobilePage } from '../hemorrhoids-mobile/hemorrhoids-mobile';
-import { PinwormMobilePage } from '../pinworm-mobile/pinworm-mobile';
-import { MenstrualMobilePage } from '../menstrual-mobile/menstrual-mobile';
-import { BitesMobilePage } from '../bites-mobile/bites-mobile';
-import { AcneMobilePage } from '../acne-mobile/acne-mobile';
-import { RashMobilePage } from '../rash-mobile/rash-mobile';
-import { EczemaMobilePage } from '../eczema-mobile/eczema-mobile';
-import { BurnMobilePage } from '../burn-mobile/burn-mobile';
-import { SunburnMobilePage } from '../sunburn-mobile/sunburn-mobile';
-import { PoisonIvyMobilePage } from '../poison-ivy-mobile/poison-ivy-mobile';
-import { HivesMobilePage } from '../hives-mobile/hives-mobile';
-import { RingwormMobilePage } from '../ringworm-mobile/ringworm-mobile';
-import { WartsMobilePage } from '../warts-mobile/warts-mobile';
-import { ScabiesMobilePage } from '../scabies-mobile/scabies-mobile';
-import { ShinglesMobilePage } from '../shingles-mobile/shingles-mobile';
-import { AnkleSprainMobilePage } from '../ankle-sprain-mobile/ankle-sprain-mobile';
-import { AthletesMobilePage } from '../athletes-mobile/athletes-mobile';
-import { FootPainMobilePage } from '../foot-pain-mobile/foot-pain-mobile';
-import { ArthritisMobilePage } from '../arthritis-mobile/arthritis-mobile';
-import { NailFungusMobilePage } from '../nail-fungus-mobile/nail-fungus-mobile';
-import { SwollenFootMobilePage } from '../swollen-foot-mobile/swollen-foot-mobile';
-import { CornMobilePage } from '../corn-mobile/corn-mobile';
-import { IngrownNailMobilePage } from '../ingrown-nail-mobile/ingrown-nail-mobile';
+import { AllergyAdultRecomMobilePage } from '../allergy-adult-recom-mobile/allergy-adult-recom-mobile';
+import { ColdAdultRecomMobilePage } from '../cold-adult-recom-mobile/cold-adult-recom-mobile';
+import { FluAdultRecomMobilePage } from '../flu-adult-recom-mobile/flu-adult-recom-mobile';
+import { HeadacheAdultRecomMobilePage } from '../headache-adult-recom-mobile/headache-adult-recom-mobile';
+import { SleepAdultRecomMobilePage } from '../sleep-adult-recom-mobile/sleep-adult-recom-mobile';
+import { HairlossAdultRecomMobilePage } from '../hairloss-adult-recom-mobile/hairloss-adult-recom-mobile';
+import { DandruffAdultRecomMobilePage } from '../dandruff-adult-recom-mobile/dandruff-adult-recom-mobile';
+import { LiceAdultRecomMobilePage } from '../lice-adult-recom-mobile/lice-adult-recom-mobile';
+import { PinkeyeAdultRecomMobilePage } from '../pinkeye-adult-recom-mobile/pinkeye-adult-recom-mobile';
+import { RedeyeAdultRecomMobilePage } from '../redeye-adult-recom-mobile/redeye-adult-recom-mobile';
+import { StyAdultRecomMobilePage } from '../sty-adult-recom-mobile/sty-adult-recom-mobile';
+import { DryeyeAdultRecomMobilePage } from '../dryeye-adult-recom-mobile/dryeye-adult-recom-mobile';
+import { EaracheAdultRecomMobilePage } from '../earache-adult-recom-mobile/earache-adult-recom-mobile';
+import { SwimearAdultRecomMobilePage } from '../swimear-adult-recom-mobile/swimear-adult-recom-mobile';
+import { EarwaxAdultRecomMobilePage } from '../earwax-adult-recom-mobile/earwax-adult-recom-mobile';
+import { MotionAdultRecomMobilePage } from '../motion-adult-recom-mobile/motion-adult-recom-mobile';
+import { VertigoAdultRecomMobilePage } from '../vertigo-adult-recom-mobile/vertigo-adult-recom-mobile';
+import { ToothacheAdultRecomMobilePage } from '../toothache-adult-recom-mobile/toothache-adult-recom-mobile';
+import { ColdsoreAdultRecomMobilePage } from '../coldsore-adult-recom-mobile/coldsore-adult-recom-mobile';
+import { CankerAdultRecomMobilePage } from '../canker-adult-recom-mobile/canker-adult-recom-mobile';
+import { DrymouthAdultRecomMobilePage } from '../drymouth-adult-recom-mobile/drymouth-adult-recom-mobile';
+import { BadbreathAdultRecomMobilePage } from '../badbreath-adult-recom-mobile/badbreath-adult-recom-mobile';
+import { StuffyAdultRecomMobilePage } from '../stuffy-adult-recom-mobile/stuffy-adult-recom-mobile';
+import { RunnyAdultRecomMobilePage } from '../runny-adult-recom-mobile/runny-adult-recom-mobile';
+import { SinusAdultRecomMobilePage } from '../sinus-adult-recom-mobile/sinus-adult-recom-mobile';
+import { SnoringAdultRecomMobilePage } from '../snoring-adult-recom-mobile/snoring-adult-recom-mobile';
+import { CoughAdultRecomMobilePage } from '../cough-adult-recom-mobile/cough-adult-recom-mobile';
+import { SorethroatAdultRecomMobilePage } from '../sorethroat-adult-recom-mobile/sorethroat-adult-recom-mobile';
+import { StiffneckAdultRecomMobilePage } from '../stiffneck-adult-recom-mobile/stiffneck-adult-recom-mobile';
+import { ChestCongestionAdultRecomMobilePage } from '../chest-congestion-adult-recom-mobile/chest-congestion-adult-recom-mobile';
+import { BackPainAdultRecomMobilePage } from '../back-pain-adult-recom-mobile/back-pain-adult-recom-mobile';
+import { HeartburnAdultRecomMobilePage } from '../heartburn-adult-recom-mobile/heartburn-adult-recom-mobile';
+import { ChestpainAdultRecomMobilePage } from '../chestpain-adult-recom-mobile/chestpain-adult-recom-mobile';
+import { ShoulderAdultRecomMobilePage } from '../shoulder-adult-recom-mobile/shoulder-adult-recom-mobile';
+import { WristAdultRecomMobilePage } from '../wrist-adult-recom-mobile/wrist-adult-recom-mobile';
+import { ElbowAdultRecomMobilePage } from '../elbow-adult-recom-mobile/elbow-adult-recom-mobile';
+import { ConstipationAdultRecomMobilePage } from '../constipation-adult-recom-mobile/constipation-adult-recom-mobile';
+import { DiarrheaAdultRecomMobilePage } from '../diarrhea-adult-recom-mobile/diarrhea-adult-recom-mobile';
+import { NauseaAdultRecomMobilePage } from '../nausea-adult-recom-mobile/nausea-adult-recom-mobile';
+import { StomachacheAdultRecomMobilePage } from '../stomachache-adult-recom-mobile/stomachache-adult-recom-mobile';
+import { StomachfluAdultRecomMobilePage } from '../stomachflu-adult-recom-mobile/stomachflu-adult-recom-mobile';
+import { FoodpoisoningAdultRecomMobilePage } from '../foodpoisoning-adult-recom-mobile/foodpoisoning-adult-recom-mobile';
+import { YeastAdultRecomMobilePage } from '../yeast-adult-recom-mobile/yeast-adult-recom-mobile';
+import { UtiAdultRecomMobilePage } from '../uti-adult-recom-mobile/uti-adult-recom-mobile';
+import { JockitchAdultRecomMobilePage } from '../jockitch-adult-recom-mobile/jockitch-adult-recom-mobile';
+import { HemorrhoidsAdultRecomMobilePage } from '../hemorrhoids-adult-recom-mobile/hemorrhoids-adult-recom-mobile';
+import { PinwormAdultRecomMobilePage } from '../pinworm-adult-recom-mobile/pinworm-adult-recom-mobile';
+import { MenstrualAdultRecomMobilePage } from '../menstrual-adult-recom-mobile/menstrual-adult-recom-mobile';
+import { BitesAdultRecomMobilePage } from '../bites-adult-recom-mobile/bites-adult-recom-mobile';
+import { AcneAdultRecomMobilePage } from '../acne-adult-recom-mobile/acne-adult-recom-mobile';
+import { RashAdultRecomMobilePage } from '../rash-adult-recom-mobile/rash-adult-recom-mobile';
+import { EczemaAdultRecomMobilePage } from '../eczema-adult-recom-mobile/eczema-adult-recom-mobile';
+import { BurnAdultRecomMobilePage } from '../burn-adult-recom-mobile/burn-adult-recom-mobile';
+import { SunburnAdultRecomMobilePage } from '../sunburn-adult-recom-mobile/sunburn-adult-recom-mobile';
+import { PoisonivyAdultRecomMobilePage } from '../poisonivy-adult-recom-mobile/poisonivy-adult-recom-mobile';
+import { HivesAdultRecomMobilePage } from '../hives-adult-recom-mobile/hives-adult-recom-mobile';
+import { RingwormAdultRecomMobilePage } from '../ringworm-adult-recom-mobile/ringworm-adult-recom-mobile';
+import { WartsAdultRecomMobilePage } from '../warts-adult-recom-mobile/warts-adult-recom-mobile';
+import { SprainAdultRecomMobilePage } from '../sprain-adult-recom-mobile/sprain-adult-recom-mobile';
+import { AthletesfootAdultRecomMobilePage } from '../athletesfoot-adult-recom-mobile/athletesfoot-adult-recom-mobile';
+import { FootpainAdultRecomMobilePage } from '../footpain-adult-recom-mobile/footpain-adult-recom-mobile';
+import { ArthritisAdultRecomMobilePage } from '../arthritis-adult-recom-mobile/arthritis-adult-recom-mobile';
+import { NailfungusAdultRecomMobilePage } from '../nailfungus-adult-recom-mobile/nailfungus-adult-recom-mobile';
+import { SwollenfootAdultRecomMobilePage } from '../swollenfoot-adult-recom-mobile/swollenfoot-adult-recom-mobile';
+import { CornAdultRecomMobilePage } from '../corn-adult-recom-mobile/corn-adult-recom-mobile';
+import { IngrownAdultRecomMobilePage } from '../ingrown-adult-recom-mobile/ingrown-adult-recom-mobile';
 
 @Component({
   selector: 'page-adult-take-mobile-to-pharmacist-list',
@@ -91,74 +89,74 @@ export class AdultTakeMobileToPharmacistListPage {
 	  	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
 	  	this.pages = [true, true, true, true, true, true, true, true, true, true, true, true, true];
 	  	this.subPages = [
-  			AllergiesMobilePage,		// 0
-		    ColdMobilePage,				// 1
-		    FluMobilePage,				// 2
-		    HeadacheMobilePage,			// 3
-		    SleepMobilePage,			// 4
-		    HairlossMobilePage,			// 5
-		    DandruffMobilePage,			// 6
-		    LiceMobilePage,				// 7
-		    PinkeyeMobilePage,			// 8
-		    RedeyeMobilePage,			// 9
-		    StyeyeMobilePage,			// 10
-		    DryeyeMobilePage,			// 11
-		    EaracheMobilePage,			// 12
-		    SwimearMobilePage,			// 13
-		    EarwaxMobilePage,			// 14
-		    MotionSicknessMobilePage,	// 15
-		    VertigoMobilePage,			// 16
-		    ToothacheMobilePage,		// 17
-		    ColdSoreMobilePage,			// 18
-		    CankerSoreMobilePage,		// 19
-		    DrymouthMobilePage,			// 20
-		    BadBreathMobilePage,		// 21
-		    CongestionMobilePage,		// 22
-		    RunnyNoseMobilePage,		// 23
-		    SinusPressureMobilePage,	// 24
-		    SnoringMobilePage,			// 25
-		    CoughMobilePage,			// 26
-		    SoreThroatMobilePage,		// 27
-		    StiffNeckMobilePage,		// 28
-		    ChestCongestionMobilePage,	// 29
-		    BackPainMobilePage,			// 30
-		    HeartburnMobilePage,		// 31
-		    ChestpainMobilePage,		// 32
-		    ShoulderMobilePage,			// 33
-		    WristPainMobilePage,		// 34
-		    ElbowMobilePage,			// 35
-		    ConstipationMobilePage,		// 36
-		    DiarrheaMobilePage,			// 37
-		    NauseaMobilePage,			// 38
-		    StomachAcheMobilePage,		// 39
-		    StomachFluMobilePage,		// 40
-		    FoodPoisoningMobilePage,	// 41
-		    YeastMobilePage,			// 42
-		    UtiMobilePage,				// 43
-		    JockitchMobilePage,			// 44
-		    HemorrhoidsMobilePage,		// 45
-		    PinwormMobilePage,			// 46
-		    MenstrualMobilePage,		// 47
-		    BitesMobilePage,			// 48
-		    AcneMobilePage,				// 49
-		    RashMobilePage,				// 50
-		    EczemaMobilePage,			// 51
-		    BurnMobilePage,				// 52
-		    SunburnMobilePage,			// 53
-		    PoisonIvyMobilePage,		// 54
-		    HivesMobilePage,			// 55
-		    RingwormMobilePage,			// 56
-		    WartsMobilePage,			// 57
-		    ScabiesMobilePage,			// 58
-		    ShinglesMobilePage,			// 59
-		    AnkleSprainMobilePage,		// 60
-		    AthletesMobilePage,			// 61
-		    FootPainMobilePage,			// 62
-		    ArthritisMobilePage,		// 63
-		    NailFungusMobilePage,		// 64
-		    SwollenFootMobilePage,		// 65
-		    CornMobilePage,				// 66
-		    IngrownNailMobilePage,		// 67
+  			AllergyAdultRecomMobilePage, 
+			ColdAdultRecomMobilePage, 
+			FluAdultRecomMobilePage, 
+			HeadacheAdultRecomMobilePage, 
+			SleepAdultRecomMobilePage, 
+			HairlossAdultRecomMobilePage, 
+			DandruffAdultRecomMobilePage, 
+			LiceAdultRecomMobilePage, 
+			PinkeyeAdultRecomMobilePage, 
+			RedeyeAdultRecomMobilePage, 
+			StyAdultRecomMobilePage, 
+			DryeyeAdultRecomMobilePage, 
+			EaracheAdultRecomMobilePage, 
+			SwimearAdultRecomMobilePage, 
+			EarwaxAdultRecomMobilePage, 
+			MotionAdultRecomMobilePage, 
+			VertigoAdultRecomMobilePage, 
+			ToothacheAdultRecomMobilePage, 
+			ColdsoreAdultRecomMobilePage, 
+			CankerAdultRecomMobilePage, 
+			DrymouthAdultRecomMobilePage, 
+			BadbreathAdultRecomMobilePage, 
+			StuffyAdultRecomMobilePage, 
+			RunnyAdultRecomMobilePage, 
+			SinusAdultRecomMobilePage, 
+			SnoringAdultRecomMobilePage, 
+			CoughAdultRecomMobilePage, 
+			SorethroatAdultRecomMobilePage, 
+			StiffneckAdultRecomMobilePage, 
+			ChestCongestionAdultRecomMobilePage, 
+			BackPainAdultRecomMobilePage, 
+			HeartburnAdultRecomMobilePage, 
+			ChestpainAdultRecomMobilePage, 
+			ShoulderAdultRecomMobilePage, 
+			WristAdultRecomMobilePage, 
+			ElbowAdultRecomMobilePage, 
+			ConstipationAdultRecomMobilePage, 
+			DiarrheaAdultRecomMobilePage, 
+			HeartburnAdultRecomMobilePage, 
+			NauseaAdultRecomMobilePage, 
+			StomachacheAdultRecomMobilePage, 
+			StomachfluAdultRecomMobilePage, 
+			FoodpoisoningAdultRecomMobilePage, 
+			YeastAdultRecomMobilePage, 
+			UtiAdultRecomMobilePage, 
+			JockitchAdultRecomMobilePage,
+			HemorrhoidsAdultRecomMobilePage, 
+			PinwormAdultRecomMobilePage, 
+			MenstrualAdultRecomMobilePage, 
+			BitesAdultRecomMobilePage, 
+			AcneAdultRecomMobilePage, 
+			RashAdultRecomMobilePage, 
+			EczemaAdultRecomMobilePage, 
+			BurnAdultRecomMobilePage, 
+			SunburnAdultRecomMobilePage, 
+			PoisonivyAdultRecomMobilePage, 
+			HivesAdultRecomMobilePage, 
+			RingwormAdultRecomMobilePage, 
+			WartsAdultRecomMobilePage, 
+			SprainAdultRecomMobilePage, 
+			AthletesfootAdultRecomMobilePage, 
+			FootpainAdultRecomMobilePage, 
+			ArthritisAdultRecomMobilePage, 
+			NailfungusAdultRecomMobilePage, 
+			WartsAdultRecomMobilePage, 
+			SwollenfootAdultRecomMobilePage, 
+			CornAdultRecomMobilePage, 
+			IngrownAdultRecomMobilePage, 
   		];
 	}
 	showMenu() {

@@ -14,6 +14,8 @@ import { ChildrenClinicPage } from '../children-clinic/children-clinic';
 import { DentalCarePage } from '../dental-care/dental-care';
 import { PharmacyCarePage } from '../pharmacy-care/pharmacy-care';
 
+import { HeadacheMobilePage } from '../headache-mobile/headache-mobile';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -92,7 +94,8 @@ export class HomePage {
 		if (index.length > 0)
 		{
 			let page = (<any>this.items)[index];
-			this.navCtrl.push(page);
+			// this.navCtrl.push(page);
+			this.navCtrl.push(HeadacheMobilePage);
 		}
 	}
 }

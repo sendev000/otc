@@ -1,18 +1,2598 @@
-<!--
-  Generated template for the HeadacheMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+      -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>headache_mobile</ion-title>
+    <ion-title>
+		<h1 class="ui-title" *ngIf="page<170">
+      		Headache
+      	</h1>
+      	<h1 class="ui-title" *ngIf="page>=170">
+	      	Headache
+		</h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=0 && page<120">
+    <p *ngIf="page==0">Have a Headache?</p>
+    <p *ngIf="page>=1 && page<30">How Serious Is it?</p>
+    <p *ngIf="page>=30 && page<50">{{firstname}}</p>
+    <p *ngIf="page>=50 && page<70">glaucoma?</p>
+    <p *ngIf="page>=70 && page<80">{{firstname}}</p>
+    <p *ngIf="page>=80 && page<90">Describe This Headache</p>
+    <p *ngIf="page>=90 && page<110">Tension-like?</p>
+    <p *ngIf="page>=110 && page<120">How did it start?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=130 && page<140">
+  	<p *ngIf="page>=130 && page<140">How bad is it?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=170 && page<240">
+  	<p *ngIf="page==170">Cluster like!</p>
+  	<p *ngIf="page>=180 && page<200">Is it cluster headache?</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>The most <span class="bluefont">common type</span> of headache is tension headaches.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person-------------------   -->
+	    <!------Start Popoup div-----   -->   
+	    <div style="display: none;" id="headache_mobile_pop-placeholder">
+	        <!-- placeholder for headache_mobile_pop    -->
+	    </div>
+	    <!------End Popoup div-----   -->
+	    <div class="blueBorder">
+	        <p>
+	            Headaches can be a sign of something serious going on, let's rule out situations that may require urgent care or emergency room visit.
+	        </p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/head/headache-lady.svg" width="140" alt="lady with headache symptoms">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------   -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------   -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="headache_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content slide in" *ngIf="page>0 && page<30">
+	    <div id="headache_sudden_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this a headache that started <span class="redfont">suddenly,</span> <span class="grayfontSmall">coming on really fast...</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        ...or <span class="bluefont">slowly</span> <span class="grayfontSmall">gradually making you feel it?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Suddenly</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Slowly</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div   --> 
+	    <!--start follow up 3 div   -->   
+	    <div id="headache_sudden_mobile_3_y" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span> Headaches starting <span class="redfont">suddenly,</span> <span class="grayfontSmall">coming on fast,</span> may mean something serious going on.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="orangeBorder">Let's make sure you are not looking at an emergency situation like a <span class="redfont">stroke</span> coming on.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this your <span class="redfont">worst</span> headache ever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div   --> 
+	    <div id="headache_sudden_mobile_4_y" *ngIf="page==4">
+	        <!--start follow up 4 div   -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    Hmmm. Let's continue cautiously.
+	                </div>
+	                <img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this headache making you feel like <span class="blue_redfont">vomiting?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div   --> 
+	    <div id="headache_sudden_mobile_5_y" *ngIf="page==6">
+	        <!--start follow up 5 div   -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you having <span class="blue_bluefont">difficulty</span> finding <span class="bluefont">words</span> or <span class="bluefont">talking</span> with this headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div   --> 
+	    <div id="headache_sudden_mobile_6_y" *ngIf="page==8">
+	        <!--start follow up 6 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>May be looking at a <span class="redfont">stroke in progress.</span></li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Any difficulty moving your <span class="bluefont">arms?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="blue_redfont">legs?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div   -->
+	    <div id="headache_sudden_mobile_7_y" *ngIf="page==10">
+	        <!--start follow up 7 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Probably a stroke in progress.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about difficulty with your <span class="blue_redfont">balance </span>since this headache that started suddenly?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div   -->
+	    <div id="headache_sudden_mobile_8_y" *ngIf="page==12">
+	        <!--start follow up 8 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible stroke in progress.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your <span class="orangefont">vision</span> changing since the headache started suddenly?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Like getting <span class="pinkfont">blurred?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div   -->
+	    <div id="headache_sudden_mobile_9_y" *ngIf="page==14">
+	        <!--start follow up 9 div   -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_9_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing <span class="bluefont">drooping</span> of one <span class="blue_bluefont">side of the face?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="bluefont">eyelid?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div   -->
+	    <div id="headache_sudden_mobile_10_y" *ngIf="page==16">
+	        <!--start follow up 10 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible stroke coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_10_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing <span class="grayfont">sudden</span> <span class="bluefont">numbness</span> or <span class="blue_brightfont">weakness?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Especially on <span class="bluefont">one side</span> of the body?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div   -->
+	    <div id="headache_sudden_mobile_11_y" *ngIf="page==18">
+	        <!--start follow up 11 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible stroke coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="i" data-inline="true" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(19)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_11_n" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="blue_bluefont">losing vision</span> <span class="bluefont">on the side?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_sudden_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(20)">Yes</button>
+	            <button data-inline="true" class="headache_sudden_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(21)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 11 div   -->
+	    <div id="headache_sudden_mobile_12_y" *ngIf="page==20">
+	        <!--start follow up 12 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder bluefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible stroke coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="headache_sudden_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_sudden_mobile_12_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname">Ew,</span><br>
+	                We tried to rule out <span class="redfont">stroke</span> or a <span class="redfont">blood vessel</span> in the <span class="orangefont">brain</span> rupturing.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText"><span class="redfont">Call 911</span> or seek <span class="redfont">emergency</span> room visit if you are experiencing most of these symptoms:</p>
+	            <ul>
+	                <li>Worst headache ever</li>
+	                <li>Geting confused with this headache</li>
+	                <li>Nausea and vomiting</li>
+	                <li>Slurring of your speech</li>
+	                <li>Losing vision on the side</li>
+	                <li>Drooling</li>
+	                <li>Vision getting blurred</li>
+	                <li>Feeling lightheaded with severe headache.</li>
+	            </ul>
+	            <p class="orangeBorder">These are the main signs and symptoms of someone having a stroke. If this does not apply to you, then let's continue</p>
+	        </div>
+	        <br>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-----end follow up 12 div----   -->
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=30 && page<50">
+	    <div id="headache_fever_mobile_2_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have <span class="redfont">fever </span>with this headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div   --> 
+	    <!--start follow up 3 div   -->   
+	    <div id="headache_fever_mobile_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Headache with fever is not uncommon and may not require emergency room visit.
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        But let's rule out something like <span class="bluefont">meningitis</span> or <span class="redfont">encephalitis.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_fever_mobile_3_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Any <span class="bluefont">nausea</span> and/or <span class="blue_redfont">vomiting</span> with this fever and headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="headache_fever_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div   --> 
+	    <div id="headache_fever_mobile_4_y" *ngIf="page==33">
+	        <!--start follow up 4 div   -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_fever_mobile_4_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing increased <span class="blue_brightfont">sensitivity to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="headache_fever_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div   --> 
+	    <div id="headache_fever_mobile_5_y" *ngIf="page==35">
+	        <!--start follow up 5 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Need to rule out meningitis which is a medical emergency.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache_fever_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_fever_mobile_5_n" *ngIf="page==36">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="bluefont">breathing</span> <span class="blue_bluefont">rapidly</span> with this headache and fever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="headache_fever_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div   --> 
+	    <div id="headache_fever_mobile_6_y" *ngIf="page==37">
+	        <!--start follow up 6 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Need to rule out meningitis or encephalitis which is a medical emergency.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache_fever_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_fever_mobile_6_n" *ngIf="page==38">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your <span class="orangefont">neck</span> getting <span class="redfont">stiff?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_fever_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="headache_fever_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div   -->
+	    <div id="headache_fever_mobile_7_y" *ngIf="page==39">
+	        <!--start follow up 7 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible meningitis developing.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redfont centerText">Try touching your chin to the chest.</h3>
+	            <p class="redBorderWhite redfontSmall centerText">If the neck is so stiff that the chin cannot touch the chest, call 911.</p>
+	            <p>This is serious unless you are sure it is a nerve problem or something you are familiar with like a neck injury or surgery you had.</p>
+	            <p class="orangeBorder centerText"><span class="redfont">Meningitis</span> can quickly become a life-threatening illness. <span class="redfont">Early treatment</span> is important.</p>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	            <button data-inline="true" class="headache_fever_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_fever_mobile_7_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Those were to rule out <span class="bluefont">meningitis</span> or <span class="redfont">encephalitis.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="blueBorder"> These can be life threatening and require emergency care.</p>
+	        <p class="blueBorderAll">If this does not apply to you, let's continue or else seek emergency care by going to the nearest hospital.</p>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div   -->
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=50 && page<70">
+	    <div id="headache_glaucoma_mobile_2_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are your <span class="blue_bluefont">eyes</span> getting very <span class="redfont">red</span> with this headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div   --> 
+	    <!--start follow up 3 div   -->   
+	    <div id="headache_glaucoma_mobile_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Let's make sure you are not looking at something very serious like <span class="orangefont">glaucoma.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_3_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you seeing <span class="blue_brightfont">halos around lights?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	            <button data-inline="true" class="headache_glaucoma_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div   --> 
+	    <div id="headache_glaucoma_mobile_4_y" *ngIf="page==53">
+	        <!--start follow up 4 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">You are?</span><br>
+	                This is a symptom of <span class="orangefont">glaucoma.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person-------------------   -->
+	        <p class="redBorder centerText">Let's continue and see if we can rule out glaucoma. Don't panic yet.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_4_n" *ngIf="page==54">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you feel like throwing up with this <span class="redfont">red eyes</span> and <span class="bluefont">headache?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(55)">Yes</button>
+	            <button data-inline="true" class="headache_glaucoma_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(56)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div   --> 
+	    <div id="headache_glaucoma_mobile_5_y" *ngIf="page==55">
+	        <!--start follow up 5 div   -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="blue_redfont">You do?</span><br>
+	                    Hope we are not looking at something serious like glaucoma.
+	                </div>
+	                <img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	                <div class="clearboth"></div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="blueBorderAll">
+	            <p class="blueBorder">Symptoms of glaucoma include:</p>
+	            <ul>
+	                <li>Seeing halos around lights.</li>
+	                <li class="bluefont">Nausea and vomiting.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_5_n" *ngIf="page==56">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you having <span class="bluefont">blind spots</span> in your <span class="blue_bluefont">vision?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(57)">Yes</button>
+	            <button data-inline="true" class="headache_glaucoma_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(58)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div   --> 
+	    <div id="headache_glaucoma_mobile_6_y" *ngIf="page==57">
+	        <!--start follow up 6 div   -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="orangefont">Okay?</span><br>
+	                    This is a symptom of glaucoma.
+	                </div>
+	                <img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	                <div class="clearboth"></div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of glaucoma include:</p>
+	            <ul>
+	                <li>Seeing halos around lights.</li>
+	                <li>Nausea and vomiting.</li>
+	                <li><span class="bluefont">Blind spots</span> in one's vision.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(58)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_6_n" *ngIf="page==58">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you losing <span class="blue_bluefont">vision</span> to the <span class="orangefont">side?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(59)">Yes</button>
+	            <button data-inline="true" class="headache_glaucoma_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(60)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div   -->
+	    <div id="headache_glaucoma_mobile_7_y" *ngIf="page==59">
+	        <!--start follow up 7 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder bluefont centerText">Here is why:</h3>
+	            <p class="redBorderWhite">Symptoms of acute closed angle glaucoma include:</p>
+	            <ul>
+	                <li>Seeing halos around lights.</li>
+	                <li>Nausea and vomiting.</li>
+	                <li>Blind spots in one's vision.</li>
+	                <li class="bluefont">Loss of side vision</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache_glaucoma_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(60)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_7_n" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your <span class="grayfont">vision</span> getting <span class="orangefont">blurred </span>with this headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_glaucoma_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	            <button data-inline="true" class="headache_glaucoma_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(62)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div   -->
+	    <div id="headache_glaucoma_mobile_8_y" *ngIf="page==61">
+	        <!--start follow up 8 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder bluefont centerText">Here is why:</h3>
+	            <p class="redBorderWhite">Symptoms of acute closed angle glaucoma include:</p>
+	            <ul>
+	                <li>Seeing halos around lights.</li>
+	                <li>Nausea and vomiting.</li>
+	                <li>Blind spots in one's vision.</li>
+	                <li>Loss of side vision</li>
+	                <li class="bluefont">Blurred vision</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache_glaucoma_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_glaucoma_mobile_8_n" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname">Ew,</span><br>
+	                Tried to rule out acute angle closure <span class="orangefont">glaucoma,</span> a medical emergency.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="blueBorder">Damage to the optic nerve  may start rapidly and if not treated within 6 to 10 hours can lead to permanent loss of vision.</p>
+	        <p class="blueBorderWhite">If you are positive that this is not the case, then let's continue.<br>Else, you should start heading to the emergency room now.</p>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div   -->
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=70 && page<80">
+	    <div id="headache1_mobile_2_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the headache as a result of a <span class="redfont">head injury?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="headache1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div   --> 
+	    <!--start follow up 3 div   -->   
+	    <div id="headache1_mobile_3_y" *ngIf="page==71">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Will need further evaluation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care-------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache1_mobile_3_n" *ngIf="page==72">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you over 50 years old and you are experiencing <span class="blue_bluefont">throbbing pain?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        With <span class="bluefont">vision</span> problems and <span class="bluefont">sweating?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	            <button data-inline="true" class="headache1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div   --> 
+	    <div id="headache1_mobile_4_y" *ngIf="page==73">
+	        <!--start follow up 4 div   -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache1_mobile_4_n" *ngIf="page==74">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about over 50 years old and you are experiencing <span class="redfont">pain</span> when <span class="blue_bluefont">combing your hair?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or when <span class="bluefont">chewing?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	            <button data-inline="true" class="headache1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div   --> 
+	    <div id="headache1_mobile_5_y" *ngIf="page==75">
+	        <!--start follow up 5 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Giant cell arteritis</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder redfont centerText">Would you like to see the nearest hospital?</p>
+	        <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="headache1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache1_mobile_5_n" *ngIf="page==76">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Would you say this is the <span class="bluefont">worst headache</span> you have ever had in your life?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	            <button data-inline="true" class="headache1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div   --> 
+	    <div id="headache1_mobile_6_y" *ngIf="page==77">
+	        <!--start follow up 6 div   -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to rule out something serious going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care-------------   -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubpage(0)">Hospital</a>
+	            <button data-inline="true" class="headache1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache1_mobile_6_n" *ngIf="page==78">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>So far we tried ruling out  <span class="redfont">emergency room</span> visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------   -->
+	        <p class="blueBorder">Some headaches may be a sign of a more serious illness. It was important we eliminated those threats.</p>
+	        <p class="blueBorderAll">Now, let's continue and see how we can take care of your headache.</p>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------   -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(80)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div   -->
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=80 && page<90">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span> How would you <span class="orangefont">describe</span> this headache?</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person-------------------   -->
+	    <div class="clearboth divider12"></div>
+	    <br>
+	    <div>
+	        <ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow">
+	            <li class="ui-first-child">
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(90)">
+	                    <h3 class="redfont">Tension Like</h3>
+	                    <p>Like a tight band  squeezing my head<br>The pain is radiating and  diffuse.</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(170)">
+	                    <h3 class="orangefont">All Clustered Up!</h3>
+	                    <p>Severe pain in or around the eyes<br>Suddenly without any warning.</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#headache_mobile_migraine" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+	                    <h3 class="bluefont">I am thinking migraine</h3>
+	                    <p>Throbbing, pulsating, headache.<br> I feel like throwing up and very<br> sensitive to light and sound now.</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#headache_mobile_sinus" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+	                    <h3 class="blue_redfont">Sinuses acting up!</h3>
+	                    <p>Pain in the front of  head and face.<br>  Worse when I bend forward</p>
+	                </a>
+	            </li>
+	            <li class="ui-last-child">
+	                <a href="#headache_mobile_other" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+	                    <h3 class="greenfont">Other</h3>
+	                    <p>Rebound, alcohol, pms</p>
+	                </a>
+	            </li>
+	        </ul>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=90 && page<110">
+	    <div id="headache_tension_mobile_1" *ngIf="page==90">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>This is a <span class="redfont">common</span> type of headache. Let's take a look.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="headache_tension_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(91)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro  -->
+	    <div id="headache_tension_mobile_2_n" *ngIf="page==91">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Would you describe the headache as <span class="brownfont">all over</span> your head?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Not just in <span class="bluefont">one point</span> or <span class="bluefont">one side.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(92)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(93)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div  --> 
+	    <!--start 3 div  -->   
+	    <div id="headache_tension_mobile_3_y" *ngIf="page==92">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">All over?</span><br>
+	                This is one of the signs of a <span class="bluefont">tension headache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="headache_tension_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(93)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_3_n" *ngIf="page==93">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did this headache start at the <span class="bluefont">back</span> of the head and moved <span class="orangefont">forward?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(94)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(95)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div  --> 
+	    <div id="headache_tension_mobile_4_y" *ngIf="page==94">
+	        <!--start 4 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign and symptom of a <span class="bluefont">tension type</span> headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="blueBorderAll">
+	            <p class="blueRedBorder blue_redfont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Headache all over the head</li>
+	                <li>Headache starting at the back of the head and moving forward</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="headache_tension_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(95)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_4_n" *ngIf="page==95">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does this headache <span class="blue_redfont">feel dull?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(96)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(97)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div  --> 
+	    <div id="headache_tension_mobile_5_y" *ngIf="page==96">
+	        <!--start 5 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of a <span class="bluefont">tension headache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="orangeBorderAll">
+	            <p class="redBorder redfont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Headache all over the head</li>
+	                <li>Headache starting at the back of the head and moving forward</li>
+	                <li class="bluefont">Feeling dull</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="headache_tension_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(97)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_5_n" *ngIf="page==97">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Would you say it is like a <span class="orangefont">tight band</span> around your head?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        <span class="orangefont">Pressure-like?</span> <br><span class="grayfontSmall">(not throbbing)</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right-------------------  -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(98)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(99)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div  --> 
+	    <div id="headache_tension_mobile_6_y" *ngIf="page==98">
+	        <!--start 6 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Very likely looking at a <span class="bluefont">tension headache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <br>
+	        <div class="redBorderAll">
+	            <p class="orangeBorder orangefont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Headache all over the head</li>
+	                <li>Headache starting at the back of the head and moving forward</li>
+	                <li>Feeling dull</li>
+	                <li><span class="bluefont">Pressure-like</span> (not throbbing)</li>
+	                <li>Like a <span class="bluefont">tight band</span> around the head</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="headache_tension_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(99)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_6_n" *ngIf="page==99">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does this headache get worse at the <span class="blue_redfont">end of the day?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(100)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(101)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div  --> 
+	    <div id="headache_tension_mobile_7_y" *ngIf="page==100">
+	        <!--start 7 div  -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>More than likely looking at <span class="orangefont">tension headache.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Headache all over the head</li>
+	                <li>Headache starting at the back of the head and moving forward</li>
+	                <li>Feeling dull</li>
+	                <li>Pressure-like (not throbbing)</li>
+	                <li>Like a tight band around the head</li>
+	                <li>Headache that gets worse at the <span class="blue_redfont">end of the day.</span></li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="headache_tension_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(101)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_7_n" *ngIf="page==101">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Your shoulders and neck, do they somehow <span class="redfont">feel sore?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_tension_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(102)">Yes</button>
+	            <button data-inline="true" class="headache_tension_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(103)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div  --> 
+	    <div id="headache_tension_mobile_8_y" *ngIf="page==102">
+	        <!--start 8 div  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="headache_tension_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(103)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_tension_mobile_8_n" *ngIf="page==103">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname">Ew,</span><br>
+	                Those were <span class="bluefont">symptoms</span> of a <span class="bluefont">tension headache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <p class="blueBorder">If you think you are looking at tension headaches, let's continue and see how you can take of this with over-the-counter medications or measures.</p>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <!------Start Popoup div-----  -->   
+	        <div style="display: none;" id="headache_tension_mobile_8_pop-placeholder">
+	            <!-- placeholder for headache_tension_mobile_8_pop   -->
+	        </div>
+	        <!------End Popoup div-----  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="headache_tension_mobile_8_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div  -->     
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=110 && page<120">
+	    <div id="headache_tension1_mobile_q1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefont">Quick question.</span><br>
+	                Which of these below do you think started this headache? 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person-------------------  -->
+	        <div id="headache_tension1_mobile_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-cyan mbsc-mobiscroll mbsc-ltr">
+	            <label for="headache_tension1_mobile_q1_0" class="mbsc-checkbox" (click)="toggleSymptom(0)"><input type="checkbox" name="headache_tension1_mobile_q1" id="headache_tension1_mobile_q1_0" class="headache_tension1_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[0]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Stressed out right now
+	            </span>         
+	            </label>
+	            <hr class="hrcyan">
+	            <label for="headache_tension1_mobile_q1_1" class="mbsc-checkbox" (click)="toggleSymptom(1)"><input name="headache_tension1_mobile_q1" type="checkbox" class="headache_tension1_mobileQ1 mbsc-control mbsc-control-ev" id="headache_tension1_mobile_q1_1" value="" [(ngModel)]="symptoms[1]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Feeling depressed
+	            </span>
+	            </label>
+	            <hr class="hrcyan">
+	            <label for="headache_tension1_mobile_q1_2" class="mbsc-checkbox" (click)="toggleSymptom(2)"><input type="checkbox" name="headache_tension1_mobile_q1" id="headache_tension1_mobile_q1_2" class="headache_tension1_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[2]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Had a head injury
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <label for="headache_tension1_mobile_q1_3" class="mbsc-checkbox" (click)="toggleSymptom(3)"><input type="checkbox" name="headache_tension1_mobile_q1" id="headache_tension1_mobile_q1_3" class="headache_tension1_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[3]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">High blood pressure
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <label for="headache_tension1_mobile_q1_4" class="mbsc-checkbox" (click)="toggleSymptom(4)"><input type="checkbox" name="headache_tension1_mobile_q1" id="headache_tension1_mobile_q1_4" class="headache_tension1_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[4]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Sore neck and shoulders
+	            </span></label>
+	            <hr class="hrcyan">
+	            <label for="headache_tension1_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="headache_tension1_mobile_q1" id="headache_tension1_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[5]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Have no idea
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_headache_tension1_mobile_q1" value="Here you go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(111)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_headache_tension1_mobile_q1_container" *ngIf="page==110 && mode==4">
+	        <div class="grid_9">
+	            <div class="bubbleRightBlue centerText">
+	                <div id="selected_headache_tension1_mobile_q1"></div>
+	                <!--empty division-  -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="headache_tension1_mobile_other" *ngIf="page==111 && mode==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Alright.</span><br>
+	                Continue and see what a pharmacist would recommend over the counter.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_headache_tension1_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(120)">Continue</a>
+	        </p>
+	    </div>
+	    <div id="headache_tension1_mobile_bp" *ngIf="page==111 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">High blood pressure?</span><br>
+	                Hope you are taking medication for this.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_headache_tension1_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(120)">continue</a>
+	        </p>
+	    </div>
+	    <div id="headache_tension1_mobile_none" *ngIf="page==111 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Have no idea?</span><br>
+	                Oh well, let's continue and see what is available over the counter for tension headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_headache_tension1_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(120)">Continue</a>
+	        </p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=120 && page<130">
+	    <div id="headache3_mobile_2_n" *ngIf="page==120">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span> Do you get <span class="redfont">headaches</span> <span class="orangefont">often?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(121)">Yes</button>
+	            <button data-inline="true" class="headache3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(122)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div  --> 
+	    <!--start 3 div  -->   
+	    <div id="headache3_mobile_3_y" *ngIf="page==121">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                We are pretty sure you know what the triggers are, what to avoid and so on.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person-------------------  -->
+	        <p class="yellowBorder">Stick to what usually worked for you in the past. If they don't work for you anymore, then let's continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="headache3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(122)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache3_mobile_3_n" *ngIf="page==122">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you a <span class="bluefont">male</span> or a <span class="pinkfont">female?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	        	<button data-inline="true" class="headache3_mobile_4_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="togglePage(123)">Female</button>
+	            <a href="#" data-inline="true" data-role="button" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(130)">Male</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div  --> 
+	    <div id="headache3_mobile_4_y" *ngIf="page==123">
+	        <!--start 4 div  -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="headache3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(124)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache3_mobile_4_n" *ngIf="page==124">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="pinkfontLarge">Female?</span><br>
+	                <span>Is this headache related to your <span class="orangefont">menstrual period?</span></span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider10"></div>
+	        <!-----------------End Border left person-------------------  -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(130)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(130)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div  --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=130 && page<140">
+	    <div id="slider_headache_mobile_4_div" *ngIf="page==130">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>On a scale of 1 to 10, with 10 being I can't function right now.</span><br><br>
+	                <span class="redfont">How bad is this headache?</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_headache_mobile_4" class="bluefontLarge" id="slider_headache_mobile_4-label">I say a:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="10" step="1" [(ngModel)]="currentHeadache" color="sliderPink">
+							<ion-label range-left>{{currentHeadache}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_headache_mobile_4_value" data-inline="true" value="Here you go" (click)="togglePage(131)"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <div id="selected_headache_mobile_4_value_container" *ngIf="page==131">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span id="selected_headache_mobile_4_value">You gave it:   <br> <br><span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentHeadache}}</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue bluefontLarge">
+	                        Have you tried something?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <button class="back_headache_mobile_4_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="togglePage(130)">Back</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(140)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">No</a>
+	        </p>
+	    </div>
+	    <!-----------------End Point Right------------------- -->
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=140 && page<150">
+	    <div id="headache_mobile_5_q1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">What have you tried?</span><br>
+	                <span class="grayfontSmall">Some options are listed below.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider10"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" id="headache_mobile_5_q1_form_div centerText" class="ui-field-contain">
+	            <fieldset data-role="controlgroup" class="transparentButton ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+	                <div class="ui-controlgroup-controls ">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child" (click)="toggleTriedlist(0)">Aspirin</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_0" class="headache_mobile_5Q1" value="" [(ngModel)]="triedlist[0]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off" (click)="toggleTriedlist(1)">Motrin / Tylenol</label><input name="headache_mobile_5_q1" type="checkbox" class="headache_mobile_5Q1" id="headache_mobile_5_q1_1" value="" [(ngModel)]="triedlist[1]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off" (click)="toggleTriedlist(2)">Excedrin Headache</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_2" class="headache_mobile_5Q1" value="" [(ngModel)]="triedlist[2]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off" (click)="toggleTriedlist(3)">Cool patch</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_3" class="headache_mobile_5Q1" value="" [(ngModel)]="triedlist[3]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off" (click)="toggleTriedlist(4)">Heating pad</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_4" class="headache_mobile_5Q1" value="" [(ngModel)]="triedlist[4]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off" (click)="toggleTriedlist(5)">Just some rest</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_5" class="headache_mobile_5Q1" value="" [(ngModel)]="triedlist[5]"></div>
+	                    <hr class="hrblue">
+	                    <div class="ui-checkbox"><label for="headache_mobile_5_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child" (click)="toggleAllTriedlists(false)">None of these</label><input type="checkbox" name="headache_mobile_5_q1" id="headache_mobile_5_q1_6" value="" [(ngModel)]="triedlist[6]"></div>
+	                    <hr class="hrblue">
+	                </div>
+	            </fieldset>
+	            <div class="clearboth divider1"></div>
+	            <div class="centerText"> 
+	            	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" data-inline="true" id="get_headache_mobile_5_q1" value="Here you go" (click)="togglePage(141)"></div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_headache_mobile_5_q1_container" *ngIf="page==140 && mode==3">
+	        <div class="grid_9">
+	            <div class="bubbleRightBlue">
+	                <div id="selected_headache_mobile_5_q1 centerText">
+	                	<span class="redfontLarge">Oops!,</span>You told me nothing 
+	                </div>
+	                <!--empty division- -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="headache_mobile_5_other" *ngIf="page==141 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did it give you <span class="redfont">relief</span> from this headache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_headache_mobile_5_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack3()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">Not really</a>
+	        </p>
+	    </div>
+	    <div id="headache_mobile_5_none" *ngIf="page==141 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfont">None of these?</span><br>
+	                We must have left out something you may have tried.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder redfontLarge">Anyway, did it work?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_headache_mobile_5_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack3()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">Not really</a>
+	        </p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page>=150 && page<160">
+	    <div id="headache_mobile_6_q1" *ngIf="page==150">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Are you experiencing any other <span class="redfont">symptoms?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder bluefont centerText"> Choose from the list below if any.</p>
+	        <br>
+	        <div id="headache_mobile_6_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-cyan mbsc-mobiscroll mbsc-ltr">
+	            <label for="headache_mobile_6_q1_0" class="mbsc-checkbox" (click)="toggleSyms(0)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_0" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="syms[0]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Runny/stuffy nose
+	            </span></label>
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_1" class="mbsc-checkbox" (click)="toggleSyms(1)"><input name="headache_mobile_6_q1" type="checkbox" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" id="headache_mobile_6_q1_1" value="" [(ngModel)]="syms[1]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Nausea/vomiting
+	            </span>
+	            </label>
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_2" class="mbsc-checkbox" (click)="toggleSyms(2)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_2" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="syms[2]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Neck/shoulder pain
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_3" class="mbsc-checkbox" (click)="toggleSyms(3)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_3" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="syms[3]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">All the body ache
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_4" class="mbsc-checkbox" (click)="toggleSyms(4)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_4" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="syms[4]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">fever
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_5" class="mbsc-checkbox" (click)="toggleSyms(5)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_5" class="headache_mobile_6Q1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="syms[5]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Toothache
+	            </span>
+	            </label>
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_6" class="mbsc-checkbox" (click)="toggleSyms(6)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="syms[6]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">None of these
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <label for="headache_mobile_6_q1_7" class="mbsc-checkbox" (click)="toggleAllSyms(false)"><input type="checkbox" name="headache_mobile_6_q1" id="headache_mobile_6_q1_7" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="syms[7]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">No other symptoms
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"> <input type="button" data-inline="true" id="get_headache_mobile_6_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(151)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_headache_mobile_6_q1_container" *ngIf="page==150 && mode==6">
+	        <div class="grid_9">
+	            <div class="bubbleRightBlue">
+	                <div id="selected_headache_mobile_6_q1 centerText"><span class="redfontLarge">Oops!,</span>You told me nothing</div>
+	                <!--empty division- -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="headache_mobile_6_runny" *ngIf="page==151 && mode==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Runny/Stuffy nose?</span><br>
+	                We think you should see the entry for <span class="bluefont">Cold.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If not, you can see what a pharmacist recommend for this headache. Would you like to do this or visit the nearest urgent care clinic?</p>
+	    </div>
+	    <div id="headache_mobile_6_fever" *ngIf="page==151 && mode==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Fever?</span><br>
+	                We think you should also see the entry for <span class="redfont">fever.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If not, you can see what a pharmacist recommend for this headache. Would you like to do this or visit the nearest urgent care clinic?</p>
+	    </div>
+	    <div id="headache_mobile_6_other" *ngIf="page==151 && mode==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                See what a pharmacist <span class="bluefont">recommend</span> you take for this headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Would you like to do this or visit the nearest urgent care clinic?</p>
+	    </div>
+	    <div id="headache_mobile_6_none" *ngIf="page==151 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfont">None of these?</span><br>
+	                We must have left some things out. Anyway, let's see what is available over the counter for this headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Would you like to do this or visit the nearest urgent care clinic?</p>
+	    </div>
+	    <div id="headache_mobile_6_no_other" *ngIf="page==151 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="greenfont">No other symptoms.</span><br>
+	                Good. We are dealing with just headache then. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder">Note that some illness like a flu, cold or strep throat usually start with a headache.</p>
+	        <p class="greenBorderAll">Let's see what a pharmacist recommend to help with this headache that is available over the counter at least for now.</p>
+	        <p class="greenBorder">Would you like to do that or think you should go to the nearest urgent care clinic?</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_headache_mobile_6" *ngIf="page==151">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <button class="back_headache_mobile_6_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack4()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="page==160">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page==160">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Before we continue.</span><br>
+	            Headache is a major reason people seek urgent care. 
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <p class="blueBorderAll">It would be wise to see what our pharmacists think based on your answers to the questions so far.</p>
+	    <p class="blueBorderAll">This will help guide you on whether to seek urgent care or if over-the-counter medications will do.</p>
+	    <input type="hidden" class="ClickValuePage1_25" value="">
+	    <input type="hidden" class="ClickValuePage1_50" value="">
+	    <input type="hidden" class="ClickValuePage1_100" value="">
+	    <input type="hidden" class="ClickValuePage2_25" value="">
+	    <input type="hidden" class="ClickValuePage2_50" value="">
+	    <input type="hidden" class="ClickValuePage2_100" value="">
+	    <input type="hidden" class="ClickValuePage3_25" value="">
+	    <input type="hidden" class="ClickValuePage3_50" value="">
+	    <input type="hidden" class="ClickValuePage3_100" value="">
+	    <input type="hidden" class="totalResult" value="">
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content slide in" *ngIf="page==170">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span><span class="orangefont">Cluster headache</span> is the worst type of headache you will ever imagine.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <p class="orangeBorder"> It usually strike without any warning and happen in clusters on one side of the head.</p>
+	    <p class="orangeBorderAll">This may happen many times a day for months and then you might not get another one for months or even years.</p>
+	    <p class="orangeBorderWhite centerText">Though cluster headaches are very painful, it won't cause long-term harm to you.</p>
+	    <p class="orangeBorderAll centerText">Let's take a look.</p>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!-- ------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(180)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=180 && page<200">
+	    <div id="headache_cluster1_mobile_1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefont firstname"> </span><br>
+	                With a <span class="orangefont">cluster headache</span> you will have to see a doctor.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Let's start by making sure you are looking at a cluster headache and make the right decision on what to do.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="headache_cluster1_mobile_2_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did this headache begin <span class="blue_redfont">suddenly</span> and is very <span class="redfont">excruciating?</span> </span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="headache_cluster1_mobile_3_y" class="displayNone">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_3_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Would you describe the headache pain as <span class="bluefont">sharp</span> or <span class="redfont">burning?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Kind of <span class="bluefont">steady?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage1_100()">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="headache_cluster1_mobile_4_y" class="displayNone">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is one of the signs of a <span class="orangefont">cluster </span>headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_4_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you feeling the headache on <span class="blue_redfont">one side</span> of the head?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_5_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="headache_cluster1_mobile_5_y" class="displayNone">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">No?</span><br>
+	                You <span class="redfont">may not</span> be looking at cluster headache then.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Cluster headache usually involve one side of the head.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_5_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your face <span class="redfont">red</span> and <span class="orangefont">flushed?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="headache_cluster1_mobile_6_y" class="displayNone">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign of cluster headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_6_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did the headache <span class="bluefont">wake</span> you up from <span class="blue_bluefont">sleep?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="headache_cluster1_mobile_7_y" class="displayNone">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Cluster headaches  most commonly strike 2 to 3 hours after you fall asleep and may wake you up from sleep.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Note however the headache may occur while you are awake.</p>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_7_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the  <span class="bluefont">eye</span> on the <span class="grayfont">same side</span> as the head pain  also  affected?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <a href="#headache_cluster_mobile_2" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No.</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="headache_cluster1_mobile_8_y" class="displayNone">
+	        <!--start 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_8_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you <span class="redfont">feeling pain</span>  in, behind, and around the <span class="blue_bluefont">eye?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        <span class="redfont">Redness</span> of the eyes?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="headache_cluster1_mobile_9_y" class="displayNone">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign and symptom of a cluster headache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_9_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="blue_redfont">swelling</span> under or around the eye(s)?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or excessive <span class="bluefont">tearing?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-henry-cyan.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="headache_cluster1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="headache_cluster1_mobile_10_y" class="displayNone">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign and symptom of cluster headaches.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="headache_cluster1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="headache_cluster1_mobile_10_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Okay.</span><br>
+	                If your eye(s) is affected, you will have to see a doctor.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-henry-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Would you like to see the nearest clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#headache_cluster_mobile_2" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="headache_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="headache_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="headache_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="blueBorder">It is important to recognize what could set off some types of headaches because they can be dangerous or require treatment of the underlying cause.</p>
+	        <p class="orangeBorder orangefontSmall">For instance, dental or sinus infection could set off a headache and if not treated, the headache may not go away.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="headache_tension_mobile_8_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="headache_tension_mobile_8_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="headache_tension_mobile_8_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="orangeBorder">Tension headaches tend to start from the back of the head and spread towards the front.
+	            <br>The pain is usually like a band squeezing the head and it tends to be on both sides of the head or all over.
+	        </p>
+	        <p class="orangeBorderAll">It may be worse in the scalp, temples, or back of the neck, and even in the shoulders.</p>
+	        <p class="orangeBorderWhite">This is because they occur when neck and scalp muscles become tense, or contract in response to something like stress, dental problems, computer work, eye strain, alcohol, caffeine use, head injury,  anxiety or cold and flu.</p>
+	    </div>
+	</div>
 
 </ion-content>

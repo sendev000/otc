@@ -8,6 +8,9 @@ page-headache-mobile {
 	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
 	}
+	fieldset{
+		border: 0px none;
+	}
 	.bar-button-md{
 		padding: 0px;
 	}

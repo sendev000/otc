@@ -1,18 +1,1009 @@
-<!--
-  Generated template for the HairlossMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>hairloss_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Hair Loss
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<30">
+    <p *ngIf="page==0">Losing your hair?</p>
+    <p *ngIf="page==1">Male or female?</p>
+    <p *ngIf="page==2">Male hair loss</p>
+    <p *ngIf="page>=10 && page<30">Male pattern?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=50 && page<100">
+    <p *ngIf="page>=50 && page<70">Female hair loss</p>
+
   </ion-navbar>
 
 </ion-header>
 
+<ion-content class="ui-page-theme-p">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightGreen centerText">
+	            <span class="brassfontLarge">Hair loss</span><br>
+	            could be temporary or permanent depending on the cause.
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-- ---------------End Border right person-------------------  -->
+	    <div class="greenBorder">
+	        <p>
+	            Some cases could be medical and require a doctor's office visit to determine the cause of  the hair loss, whereas others are hereditary or due to medications.
+	        </p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/head/bald-man.svg" width="150" alt="man with hairloss symptoms">
+	        </p>
+	        <p class="greenBorderAll"> Men and women might loose hair for  different reasons.</p>
+	    </div>
+	    <p class="greenBorder centerText">Let's see what a pharmacist recommend over the counter for hair loss.</p>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page==1">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightGreen shadowRight centerText">
+	            <span> Who are we talking about here?</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(2)">Male</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Female</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==2">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightGreen centerText">
+	            <span><span class="redfont">Male pattern</span> hair loss is the most common type of hair loss in men.</span><br>
+	        </div>
+	        <div class="clearboth"></div>
+	        <div class="container_12">
+	            <div class="grid_8">
+	                <br>
+	                <div class="bubbleRightGreen">
+	                    Let's see if this is the case here.
+	                </div>
+	            </div>
+	            <div class="grid_4">
+	                <img class="shadowInset purpleBorder" src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	            </div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Point Right------------------- -->
+	    <p class="greenBorder centerText"> If not,  we can try to determine what may be causing it.</p>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=10 && page<30">
+	    <div id="hairloss_male_mobile_1" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen shadowRight centerText">
+	                <span>Is the <span class="orangefont">hairline</span> gradually moving backward?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male_mobile_2_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="hairloss_male_mobile_2_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_2_y" *ngIf="page==11">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="hairloss_male_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_2_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is it becoming <span class="bluefont">finer</span> or <span class="purple_bluefont">thinner?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Or <span class="bluefont">shorter?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="hairloss_male_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_3_y" *ngIf="page==13">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="hairloss_male_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_3_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is the hair loss forming an <span class="redfont">"M"</span> <span class="grayfont">shape?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="hairloss_male_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_4_y" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                You may be looking at a <span class="bluefont">pattern</span> of male balding or hair loss.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">Let's continue and see what else we have.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="hairloss_male_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_4_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Has it formed a <span class="purplefont">"U"</span> <span class="grayfont">shape?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	            <button data-inline="true" class="hairloss_male_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_5_y" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Looking at a  pattern of male <span class="purplefont">hair loss.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>Continue discussion on male pattern hair loss</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="hairloss_male_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_5_n" *ngIf="page==18">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Do you have a <span class="purple_bluefont">family history</span> of hair loss?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(19)">Yes</button>
+	            <button data-inline="true" class="hairloss_male_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(20)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_6_y" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Male pattern hair loss is an <span class="grayfont">androgen-dependent</span> hereditary disorder.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Dihydrotestosterone plays a major role.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="hairloss_male_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(20)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male_mobile_6_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                A quick review of where we are so far.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderWhite"> If your answer is <span class="greenfont">'Yes'</span> so far and <span class="redfont">no family history</span> of hair loss, you might want to rule out causes due to drugs.</p>
+	        <p class="redBorder">If you've answered <span class="redfont">'No'</span> so far, then your hair loss is not due to a pattern of baldness associated with men. It might be due to other reasons for which you will have to see a doctor for further evaluation.</p>
+	        <p class="redBorderAll centerText">Let's have an idea of what may be going on. We will start with medications.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#hairloss_male2_mobile" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="hairloss_male2_mobile_2_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Did you start taking any of the group of <span class="redfont"> drugs </span>listed below?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Within the <span class="bluefont">last 3 months?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset purpleBorder" src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="ui-grid-a">
+	            <div class="ui-block-a">
+	                <p class="blueBorderAll grayfontSmall">-Chemo agents<br>-Warfarin, Heparin<br>-ACE inhibitors<br>-β-blockers<br>-antithyroid drugs<br>
+	                    anticonvulsants<br>vitamin A excess<br>Accutane
+	                </p>
+	            </div>
+	            <div class="ui-block-b">
+	                <p class="blueBorderAll grayfontSmall">--lithium<br>
+	                    -Gemfibrozil, Clofibrate<br>
+	                    -Amphetamines<br>
+	                    -Allopurinol<br>
+	                    -Testosterone<br>
+	                    -NSAIDS<br>
+	                    -Methotrexate<br>
+	                    -Cimetidine, ranitidine
+	                </p>
+	            </div>
+	        </div>
+	        <div class="clearboth divider10"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="hairloss_male2_mobile_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Discuss your hair loss with your doctor.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">These drugs can cause you to lose your hair.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_3_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Did you have a major <span class="redfont">blood loss</span> within the past 3 or 4 months?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="hairloss_male2_mobile_4_y" *ngIf="page==33">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_4_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>What about a major <span class="purple_redfont">surgery?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="hairloss_male2_mobile_5_y" *ngIf="page==35">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This may be the cause of your hair loss.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder"> We think you might have a major number of your hair entering the resting phase.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_5_n" *ngIf="page==36">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Anything like a very<span class="redfont"> high fever</span> within the past 3 months or so?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="hairloss_male2_mobile_6_y" *ngIf="page==37">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can cause a large number of your hair to enter the <span class="purple_bluefont">resting phase.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_6_n" *ngIf="page==38">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is the skin on your scalp under the hairloss area <span class="redfont">red,</span> <span class="purple_bluefont">scaly</span> or <span class="redfont">itchy?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Or looking <span class="redfont">abnormal?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="hairloss_male2_mobile_7_y" *ngIf="page==39">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Might be looking at ringworm of the scalp</li>
+	                <li>Might be looking at lupus</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="hairloss_male2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_7_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is it <span class="purple_redfont">patchy?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Or <span class="grayfont">moth-eaten</span> in appearance?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="hairloss_male2_mobile_8_y" *ngIf="page==41">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Might be looking at secondary syphilis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="hairloss_male2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_8_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Are you suddenly experiencing <span class="grayfont">circular, smooth</span> <span class="orangefont">patches </span>of hair loss?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="hairloss_male2_mobile_9_y" *ngIf="page==43">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_9_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>What about exclamation point hairs at <span class="purplefont">edges</span> of bald patches?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Or <span class="purple_bluefont">Short, broken</span> hairs?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_male2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="hairloss_male2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="hairloss_male2_mobile_10_y" *ngIf="page==45">
+	        <!--start follow up 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfontLarge">Seek doctor office visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at<span class="redfont"> alopecia areata.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="redBorder">Alopecia areata is thought to be an autoimmune condition. This occurs when the immune system mistakenly attacks and destroys healthy body tissue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="hairloss_male2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_male2_mobile_10_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>If the questions so far <span class="redfont">does not</span> fit your profile...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        ...discuss this hair loss with your <span class="redfont">doctor.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset purpleBorder" src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="redBorderWhite">
+	            <p class="redBorder centerText">There are other causes of hair loss. To name a few:</p>
+	            <ul>
+	                <li>Stress</li>
+	                <li>Thyroid disorders</li>
+	                <li>Heavy metal poisoning (boric acid, mercury, thallium)</li>
+	                <li>Nutritional deficiencies</li>
+	                <li>Nervous habits such as  scalp rubbing</li>
+	                <li>Excessive shampooing and blow-drying</li>
+	                <li>Tumor of adrenal glands</li>
+	                <li>Lichen planus of the scalp.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder"><span class="bluefont">Note:</span><br> The hair loss that can be taken care of is mainly that due to male pattern baldness. For most others, it is advised you see a doctor and discuss the underlying cause of the hair loss.</p>
+	        <p class="redBorderAll">Let's see what a pharmacist recommend over the counter for male pattern hair loss.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=50 && page<70">
+	    <div id="hairloss_female_mobile_1" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's see if you are looking at <span class="purplefont">female pattern</span> hair loss.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder"> If not,  we will take a look at other things that may be causing this hair loss.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(51)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="hairloss_female_mobile_2_n" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Would you say your hair is <span class="purple_bluefont">thinning</span> mainly on the <span class="grayfont">top and crown</span> of the scalp?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(52)">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(53)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="hairloss_female_mobile_3_y" *ngIf="page==52">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(53)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_3_n" *ngIf="page==53">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is the <span class="purplefont">center</span> part <span class="purplefont">widening?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(54)">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(55)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="hairloss_female_mobile_4_y" *ngIf="page==54">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge">It is?</span><br>
+	                We are  beginning to think <span class="purplefont">female pattern</span> balding going on here.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="hairloss_female_mobile_4_pop-placeholder">
+	            <!-- placeholder for hairloss_female_mobile_4_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#hairloss_female_mobile_4_pop" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="hairloss_female_mobile_4_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10000)">FYI</a>
+	            <button data-inline="true" class="hairloss_female_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(55)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_4_n" *ngIf="page==55">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Do you have a <span class="orangefont">family</span> history of hair loss?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(56)">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(57)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="hairloss_female_mobile_5_y" *ngIf="page==56">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Looking at female pattern hair loss.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="hairloss_female_mobile_5_pop-placeholder">
+	            <!-- placeholder for hairloss_female_mobile_5_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#hairloss_female_mobile_5_pop" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="hairloss_female_mobile_5_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">FYI</a>
+	            <button data-inline="true" class="hairloss_female_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_5_n" *ngIf="page==57">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Are you also having hair in areas typically <span class="grayfont">associated with</span> men?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        ...like the beard, mustache, chin, chest areas?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="hairloss_female_mobile_6_y" *ngIf="page==58">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText"> 
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Hair growth depends on the balance between <span class="bluefont">androgens.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder"> Androgens promote thick, dark hair growth, whereas estrogens slow hair growth or modulate it toward finer, lighter hairs.</p>
+	        <p class="purpleBorder grayfontSmall">Examples of androgens include testosterone, dehydroepiandrosterone sulfate [DHEAS], dihydrotestosterone [DHT]).</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_6_n" *ngIf="page==59">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>What about increased <span class="bluefont">muscle mass?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Or <span class="bluefont">deepening voice?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-kerry-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="hairloss_female_mobile_7_y" *ngIf="page==60">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen">
+	                <span class="redfontLarge">Give the doctor a call.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Female pattern hair loss may be  an androgen-dependent disorder in which dihydrotestosterone plays a major role.</li>
+	                <li>You may need a prescription drug like <span class="orangefont">spironolactone.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_7_n" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Are you experiencing <span class="purplefont">acne</span> with this hair loss?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="hairloss_female_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="hairloss_female_mobile_8_y" *ngIf="page==62">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfontLarge">Call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may need something like <span class="orangefont">spironolactone.</span></li>
+	                <li>Female pattern hair loss could be  an androgen-dependent disorder in which dihydrotestosterone plays a major role.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="hairloss_female_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="hairloss_female_mobile_8_n" *ngIf="page==63">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Let's review where you are so far.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-kerry-teal.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder">  If you've answered <span class="greenfont">'Yes'</span> so far and no family history of hair loss, you may want to rule out  causes due to medications.</p>
+	        <p class="greenBorderAll">If you've answered <span class="redfont">'No'</span> so far, then your hair loss is <strong>NOT</strong> due to a pattern of baldness associated with women. It might be due to other reasons for which you will have to see a doctor for further evaluation.</p>
+	        <p class="greenBorder">Let's see if we can come up with some ideas of what might be going on. We will start with medications.</p>
+	        <p class="greenBorderAll">Or do you think you should see the nearest urgent care clinic to you from the discussions so far?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#hairloss_female2_mobile" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

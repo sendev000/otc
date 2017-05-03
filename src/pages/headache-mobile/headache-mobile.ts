@@ -9,14 +9,8 @@ import { NavController, NavParams, MenuController, Content, Platform } from 'ion
 */
 import { GlobalVars } from '../providers/globalvars';
 import { NearestPage } from '../nearest/nearest';
-import { UrgentCarePage } from '../urgent-care/urgent-care';
 import { HeadacheInfographicsMobilePage } from '../headache-infographics-mobile/headache-infographics-mobile';
-// import { AdultTakeMobileListPage } from '../adult-take-mobile-list/adult-take-mobile-list';
-import { SinusPressureMobilePage } from '../sinus-pressure-mobile/sinus-pressure-mobile';
-import { AllergiesMobilePage } from '../allergies-mobile/allergies-mobile';
-import { ColdMobileInfographicsPage } from '../cold-mobile-infographics/cold-mobile-infographics';
 
-import { SinusAdultRecomMobilePage } from '../sinus-adult-recom-mobile/sinus-adult-recom-mobile';
 
 @Component({
   selector: 'page-headache-mobile',
@@ -47,7 +41,7 @@ export class HeadacheMobilePage {
 	  };
 	FYIDlg3 = {
 	    show: false,
-	    height: 304,
+	    height: 523,
 	    width: 0,
 	    maxWidth: 0,
 	    left: 0,
@@ -85,10 +79,15 @@ export class HeadacheMobilePage {
 	pages: any;
 	currentTemp: any;
 	currentHeadache: any;
+  sinusHeadache: any;
   AbsoluteURL: string;
   symptoms: any;
   triedlist: any;
   syms: any;
+  sugs: any;
+  triggers: any;
+  auras: any;
+  sinus: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, public platform: Platform) {
   	this.menu = menu;
   	this.AbsoluteURL = GlobalVars.getAbsoluteURL();
@@ -97,6 +96,7 @@ export class HeadacheMobilePage {
   	this.mode2 = 0;
   	this.currentTemp = 98;	// default;
   	this.currentHeadache  = 0;
+    this.sinusHeadache = 0;
   	this.symptoms = [
   			false, false, false, false, false, false, false, false, false, false, false
   		]
@@ -106,6 +106,18 @@ export class HeadacheMobilePage {
   	this.syms = [
   			false, false, false, false, false, false, false, false, false, false, false
   		]
+    this.sugs = [
+        false, false, false, false, false, false, false, false, false, false, false
+      ]
+    this.triggers = [
+        false, false, false, false, false, false, false, false, false, false, false, false
+      ]
+    this.auras = [
+        false, false, false, false, false, false, false, false, false, false, false, false
+      ]
+    this.sinus = [
+        false, false, false, false, false, false, false, false, false, false, false, false
+      ]
   	this.pages = [true, true, true, true, true, true, true, true, true, true, true, true, true];
   	this.firstname = GlobalVars.getFirstname();
   	if (this.firstname != "")
@@ -113,13 +125,7 @@ export class HeadacheMobilePage {
   	this.subPages = [
   			NearestPage,						// 0
   			HeadacheInfographicsMobilePage,		// 1
-  			// UrgentCarePage, 			// 0
-  			// FluMobileInfographicsPage,	// 1
-  			// SinusPressureMobilePage,	// 2
-  			// AllergiesMobilePage,		// 3
-  			// ColdMobileInfographicsPage,	// 4
   		];
-
   }
   showMenu() {
   	this.menu.open();
@@ -157,6 +163,34 @@ export class HeadacheMobilePage {
   	for (let i=0;i<7;i++)
   		this.syms[i] = b;
   }
+  toggleSugs(ind: number){
+    this.sugs[7] = false;
+  }
+  toggleAllSugs(b: boolean){
+    for (let i=0;i<7;i++)
+      this.sugs[i] = b;
+  }
+  toggleTriggers(ind: number){
+    this.triggers[11] = false;
+  }
+  toggleAllTriggers(b: boolean){
+    for (let i=0;i<11;i++)
+      this.triggers[i] = b;
+  }
+  toggleAuras(ind: number){
+    this.auras[6] = false;
+  }
+  toggleAllAuras(b: boolean){
+    for (let i=0;i<6;i++)
+      this.auras[i] = b;
+  }
+  toggleSinus(ind: number){
+    this.sinus[9] = false;
+  }
+  toggleAllSinus(b: boolean){
+    for (let i=0;i<9;i++)
+      this.sinus[i] = b;
+  }
   gotoSubPage(id: number) {
     this.navCtrl.push(this.subPages[id]);
   }
@@ -181,6 +215,34 @@ export class HeadacheMobilePage {
   	this.syms[7] = false;
   	this.page = 150;
   	this.mode = 0;
+  }
+  goBack5() {
+    this.toggleAllSugs(false);
+    this.sugs[7] = false;
+    this.page = 210;
+    this.mode = 0;
+  }
+  goBack6() {
+    this.toggleAllTriggers(false);
+    this.triggers[11] = false;
+    this.page = 230;
+    this.mode = 0;
+  }
+  goBack7() {
+    this.toggleAllAuras(false);
+    this.auras[6] = false;
+    this.page = 240;
+    this.mode = 0;
+  }
+  goBack8() {
+    this.page=290;
+    this.sinusHeadache = 1;
+  }
+  goBack9() {
+    this.toggleAllSinus(false);
+    this.sinus[9] = false;
+    this.page = 301;
+    this.mode = 0;
   }
   toggleFYIDlg(b: boolean) {
     if (b)
@@ -290,7 +352,7 @@ export class HeadacheMobilePage {
 	  		ind = 110;
 	  	}
   	}
-  	if (ind == 141)
+  	else if (ind == 141)
   	{
   		let trueCount = 0;
 	  	for (let i=0;i<this.triedlist.length-1;i++)
@@ -305,7 +367,7 @@ export class HeadacheMobilePage {
 	  		ind = 140;
 	  	}
   	}
-  	if (ind == 151)
+  	else if (ind == 151)
   	{
   		let trueCount = 0;
 	  	for (let i=0;i<this.syms.length-1;i++)
@@ -326,6 +388,64 @@ export class HeadacheMobilePage {
 	  		ind = 150;
 	  	}
   	}
+    else if (ind == 211){
+      let trueCount = 0;
+      for (let i=0;i<this.sugs.length-1;i++)
+        if (this.sugs[i] == true)
+          trueCount ++;
+      if (this.sugs[7] == true)
+        this.mode = 1;
+      else if (trueCount > 0)
+        this.mode = 2;
+      else{
+        this.mode = 3;
+        ind = 210;
+      }
+    }
+    else if (ind == 231){
+      let trueCount = 0;
+      for (let i=0;i<this.triggers.length-1;i++)
+        if (this.triggers[i] == true)
+          trueCount ++;
+      if (this.triggers[10] == true)
+        this.mode = 1;
+      else if (trueCount > 0)
+        this.mode = 2;
+      else{
+        this.mode = 3;
+        ind = 230;
+      }
+    }
+    else if (ind == 241){
+      let trueCount = 0;
+      for (let i=0;i<this.auras.length-1;i++)
+        if (this.auras[i] == true)
+          trueCount ++;
+      if (this.auras[6] == true)
+        this.mode = 1;
+      else if (trueCount > 0)
+        this.mode = 2;
+      else{
+        this.mode = 3;
+        ind = 230;
+      }
+    }
+    else if (ind == 302){
+      let trueCount = 0;
+      for (let i=0;i<this.sinus.length-1;i++)
+        if (this.sinus[i] == true)
+          trueCount ++;
+      if (this.sinus[6] == true)
+        this.mode = 1;
+      else if (trueCount > 0)
+        this.mode = 2;
+      else{
+        this.mode = 3;
+        ind = 301;
+      }
+    }
+    else
+      this.mode = 0;
     this.page = ind;
   }
   goBackHeadache() {

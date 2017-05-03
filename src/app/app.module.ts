@@ -334,6 +334,7 @@ import { IngrownAdultRecomMobilePage } from '../pages/ingrown-adult-recom-mobile
 
 import { FluMobileInfographicsPage } from '../pages/flu-mobile-infographics/flu-mobile-infographics';
 import { HeadacheInfographicsMobilePage } from '../pages/headache-infographics-mobile/headache-infographics-mobile';
+import { SleepInfographicsMobilePage } from '../pages/sleep-infographics-mobile/sleep-infographics-mobile';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -668,6 +669,7 @@ import { AuthService} from '../pages/providers/auth-service';
     IngrownAdultRecomMobilePage, 
 
     FluMobileInfographicsPage,
+    SleepInfographicsMobilePage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -1007,6 +1009,7 @@ import { AuthService} from '../pages/providers/auth-service';
     IngrownAdultRecomMobilePage, 
 
     FluMobileInfographicsPage,
+    SleepInfographicsMobilePage,
   ],
   providers: [
     AuthService,

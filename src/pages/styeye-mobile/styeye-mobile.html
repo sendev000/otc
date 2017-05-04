@@ -1,18 +1,791 @@
-<!--
-  Generated template for the StyeyeMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>styeye_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Sty
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<50">
+    <p *ngIf="page==0">Thinking sty?</p>
+    <p *ngIf="page>=1 && page<30">Is it a sty?</p>
+    <p *ngIf="page>=30 && page<50">Need a doctor?</p>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>Sty(e) may result from <span class="orangefont">oil glands</span> of the eyelid becoming clogged and infected.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="styeye_mobile_pop-placeholder">
+	        <!-- placeholder for styeye_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <div class="redBorder">
+	        <p>Let's see if it is a sty you are looking at. For instance, how do you know it is not an insect bite or allergy or something more serious?</p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/eyes/eye-lady.svg" width="180" alt="lady with sty symptoms">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="styeye_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a> 
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
 
+	<div class="ui-content" *ngIf="page>=1 && page<30">
+	    <div id="styeye1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefont">Look at the mirror.</span><br>
+	                Is there a <span class="orangefont">bump</span> or <span class="orangefont">pimple</span> in the corner...
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        ... or any other area of the <span class="orangefont">eyelid?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-alicia-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="orangeBorder centerText">It could also be just below or above the eyelid.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_3_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(2)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="styeye1_mobile_3_y" *ngIf="page>=2 && page<10">
+	        <div id="styeye1_3_mobile_2_n" *ngIf="page==2">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange centerText">
+	                    <span class="redfontLarge">None?</span><br>
+	                    OK. Is there any kind of <span class="orangefont">swelling</span> on the eyelid?
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border right person------------------- -->
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button data-inline="true" class="styeye1_3_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	                <button data-inline="true" class="styeye1_3_mobile_3_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!--end first follow up question div --> 
+	        <!--start follow up 3 div -->   
+	        <div id="styeye1_3_mobile_3_y" *ngIf="page==3">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange">
+	                    <span class="bluefontLarge">NO?</span><br>
+	                    Oh well, this may not be a sty you are experiencing.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border left person------------------- -->
+	            <p class="purpleBorder">We will recommend you check out the other eye conditions we have listed and see which symptoms closely match what you are experiencing.</p>
+	            <p class="purpleBorderAll">Would you like to continue or check out the nearest urgent care medical center to you?</p>
+	            <p class="purpleBorder">Continuing would assume you are looking at some kind of swelling on the eyelid.</p>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"> 
+	                <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	                <button data-inline="true" class="styeye1_3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="styeye1_3_mobile_3_n" *ngIf="page==4">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange centerText">
+	                    <span>Does this swelling look like a <span class="purple_redfont">pimple?</span></span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border right person------------------- -->
+	            <p class="centerText">
+	                <button data-inline="true" class="styeye1_3_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	                <button data-inline="true" class="styeye1_3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!--end follow up 3 div --> 
+	        <div id="styeye1_3_mobile_4_y" *ngIf="page==5">
+	            <!--start follow up 4 div -->
+	            <h3>Yes?</h3>
+	            <button data-inline="true" class="styeye1_3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="styeye1_3_mobile_4_n" *ngIf="page==6">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange centerText">
+	                    <span>Is the swelling <span class="bluefont">painful</span> and/or <span class="orangefont">itchy?</span></span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border right person------------------- -->
+	            <p class="centerText">
+	                <button data-inline="true" class="styeye1_3_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	                <button data-inline="true" class="styeye1_3_mobile_5_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	            </p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!--end follow up 4 div --> 
+	        <div id="styeye1_3_mobile_5_y" *ngIf="page==7">
+	            <!--start follow up 5 div -->
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange">
+	                    <span class="bluefontLarge">No?</span><br>
+	                    Well, if you think you are looking at a sty, let's continue.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border left person------------------- -->
+	            <p class="blueBorder">We will assume you are looking at a bump or pimple from here forward.</p>
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><button data-inline="true" class="styeye1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button></p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <div id="styeye1_3_mobile_5_n" *ngIf="page==8">
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightOrange">
+	                    <span class="bluefontLarge">OK.</span><br>
+	                    Let's continue and see if you are looking at a stye and figure out what to do about it.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	            <div class="clearboth divider1"></div>
+	            <!-----------------End Border left person------------------- -->
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><button data-inline="true" class="styeye1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button></p>
+	            <p>&nbsp;</p>
+	        </div>
+	        <!--end follow up 5 div --> 
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_3_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is the bump or pimple <span class="redfont">red</span> or <span class="purple_redfont">tender?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or <span class="redfont">irritated?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-alicia-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_4_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="styeye1_mobile_4_y" *ngIf="page==11">
+	        <!--start 4 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightOrange">
+	                    <span class="redfontLarge">No?</span><br>
+	                    Hmmm. Usually, the bump of a sty might be red, tender and irritated. 
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-alicia-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p class="purpleBorder centerText">Let's answer some more questions.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_4_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are your eyes <span class="bluefont">watery?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="styeye1_mobile_5_y" *ngIf="page==13">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="styeye1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_5_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you feel your eyes more <span class="blue_brightfont">sensitive to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="styeye1_mobile_6_y" *ngIf="page==15">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                With <span class="purple_redfont">stye</span> your eyes gets more <span class="blue_brightfont">sensitive</span> to light. Let's continue.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_6_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is blinking the eyes <span class="purple_bluefont">uncomfortable</span> or <span class="bluefont">painful</span> for you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="styeye1_mobile_7_y" *ngIf="page==17">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefontLarge">They are?</span><br>
+	                This sometimes happens with stye.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_7_n" *ngIf="page==18">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you have any <span class="purple_redfont">swelling</span> on the <span class="orangefont">face?</span> <br><span class="grayfontSmall">(Not including the eyelids).</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(19)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(20)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="styeye1_mobile_8_y" *ngIf="page==19">
+	        <!--start 8 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightOrange">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    Hope you are not looking at an <span class="redfont">insect bite.</span>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-alicia-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p>&nbsp;</p>
+	        <p class="redBorderWhite"> A stye <span class="redfont">does not</span> cause swelling on the face.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(20)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_8_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you experiencing a <span class="bluefont">headache?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="styeye1_mobile_9_y" *ngIf="page==21">
+	        <!--start 9 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightOrange">
+	                    <span class="bluefontLarge">Headache?</span><br>
+	                    Hmmm. Sty <span class="redfont">does not</span> usually include a headache. Let's Continue.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-alicia-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_9_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did you share <span class="bluefont">cosmetic</span> <span class="purple_bluefont">eye product</span> with someone  who might have had a sty?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye1_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="styeye1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="styeye1_mobile_10_y" *ngIf="page==23">
+	        <!--start 10 div -->
+	        <button data-inline="true" class="styeye1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye1_mobile_10_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Have you <span class="orangefont">ever had</span> a stye before?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" data-inline="true" data-role="button" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Yes</a>
+	            <a href="#" data-inline="true" data-role="button" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="styeye2_mobile_1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span> Let's see if you need to see a doctor <span class="orangefont">assuming</span> you are looking at a sty.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">This will depend on how bad it is. Most of the time with sty, you will have to see a doctor. But some you can self manage.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="styeye2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="styeye2_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is the <span class="orangefont">affected eye(s)</span> itself <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="styeye2_mobile_3_y" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at more than a sty.</li>
+	                <li>May be an eye infection going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is there any <span class="purplefont">blister</span> on the eyelid?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="styeye2_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possibility of infection is high.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about <span class="bluefont">crusting</span> or <span class="blue_brightfont">scaling</span> of the eyelids?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="styeye2_mobile_5_y" *ngIf="page==36">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Nothing will take care of this over-the-counter.</li>
+	                <li>More than a sty going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_5_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is the bump or pimple <span class="redfont">bleeding?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="styeye2_mobile_6_y" *ngIf="page==38">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>High risk of infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_6_n" *ngIf="page==39">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is the bump or bumps <span class="purplefont">very painful</span> and <span class="purple_bluefont">large?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(40)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(41)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="styeye2_mobile_7_y" *ngIf="page==40">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Nothing over-the-counter will take care of this.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_7_n" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did this sty <span class="bluefont">come back</span> soon after you <span class="bluefont">treated</span> a previous one?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(42)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(43)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="styeye2_mobile_8_y" *ngIf="page==42">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to avoid risk of complications.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(43)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_8_n" *ngIf="page==43">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Have you had this for about a <span class="bluefont">week</span> and <span class="redfont">no improvement?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="styeye2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(44)">Yes</button>
+	            <button data-inline="true" class="styeye2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(45)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="styeye2_mobile_9_y" *ngIf="page==44">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfont">You have?</span><br>
+	                Time to seek <span class="purple_redfont">professional</span> help. Do not wait any longer.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">You will need prescription medications to get rid of this.</p>
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="styeye2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(45)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="styeye2_mobile_9_n" *ngIf="page==45">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefontLarge firstname"></span><br>
+	                Those were signs of a stye that require urgent care.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-alicia-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If you are satisfied you are looking at a sty and don't need to see a doctor yet. Let's see what a pharmacist recommend.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" class="styeye_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="styeye_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="styeye_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="styeye_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="redBorderAll">Also an infected hair follicle of the eyelash can cause a red bump at the base of the eyelash , under or  inside the eyelid. Then you will be looking at a sty(e). There are other reasons to develop a stye.</p>
+	    </div>
+	</div>
 </ion-content>

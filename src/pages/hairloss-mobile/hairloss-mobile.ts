@@ -9,13 +9,7 @@ import { NavController, NavParams, MenuController, Content, Platform } from 'ion
 */
 import { GlobalVars } from '../providers/globalvars';
 import { UrgentCarePage } from '../urgent-care/urgent-care';
-import { HairlossInfographicsMobile } from '../hairloss-infographics-mobile/hairloss-infographics-mobile';
-// import { AdultTakeMobileListPage } from '../adult-take-mobile-list/adult-take-mobile-list';
-import { SinusPressureMobilePage } from '../sinus-pressure-mobile/sinus-pressure-mobile';
-import { AllergiesMobilePage } from '../allergies-mobile/allergies-mobile';
-import { ColdMobileInfographicsPage } from '../cold-mobile-infographics/cold-mobile-infographics';
-
-import { SinusAdultRecomMobilePage } from '../sinus-adult-recom-mobile/sinus-adult-recom-mobile';
+import { HairlossInfographicsMobilePage } from '../hairloss-infographics-mobile/hairloss-infographics-mobile';
 
 @Component({
   selector: 'page-hairloss-mobile',
@@ -107,11 +101,7 @@ export class HairlossMobilePage {
   		this.firstname += ",";
   	this.subPages = [
   			UrgentCarePage, 			// 0
-  			HairlossInfographicsMobile,	// 1
-  			// FluMobileInfographicsPage,	// 1
-  			// SinusPressureMobilePage,	// 2
-  			// AllergiesMobilePage,		// 3
-  			// ColdMobileInfographicsPage,	// 4
+  			HairlossInfographicsMobilePage,	// 1
   		];
 
   }
@@ -246,38 +236,6 @@ export class HairlossMobilePage {
     this.FYIDlg6.show = b;
   }
   togglePage(ind: number) {
-  	if (ind == 51)
-  	{
-  		let trueCount = 0;
-	  	for (let i=0;i<this.symptoms.length-1;i++)
-	  		if (this.symptoms[i] == true)
-	  			trueCount ++;
-	  	if (this.symptoms[9] == true)
-	  		this.mode = 1;
-	  	else if (this.symptoms[8] == true)
-	  		this.mode = 2;
-	  	else if (trueCount > 0)
-	  		this.mode = 3;
-	  	else{
-	  		this.mode = 4;
-	  		ind = 50;
-	  	}
-  	}
-  	if (ind == 102)
-  	{
-  		let trueCount = 0;
-	  	for (let i=0;i<this.triedlist.length-1;i++)
-	  		if (this.triedlist[i] == true)
-	  			trueCount ++;
-	  	if (this.triedlist[7] == true)
-	  		this.mode = 1;
-	  	else if (trueCount > 0)
-	  		this.mode = 2;
-	  	else{
-	  		this.mode = 3;
-	  		ind = 101;
-	  	}
-  	}
     this.page = ind;
   }
   goBackDay() {

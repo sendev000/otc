@@ -23,7 +23,7 @@ import { SinusAdultRecomMobilePage } from '../sinus-adult-recom-mobile/sinus-adu
 })
 export class FluMobilePage {
 
-@ViewChild(Content) content: Content;
+	@ViewChild(Content) content: Content;
 	MyContent = {
 	    screenWidth: 0,
 	    screenHeight: 0,

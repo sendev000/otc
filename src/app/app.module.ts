@@ -335,6 +335,12 @@ import { IngrownAdultRecomMobilePage } from '../pages/ingrown-adult-recom-mobile
 import { FluMobileInfographicsPage } from '../pages/flu-mobile-infographics/flu-mobile-infographics';
 import { HeadacheInfographicsMobilePage } from '../pages/headache-infographics-mobile/headache-infographics-mobile';
 import { SleepInfographicsMobilePage } from '../pages/sleep-infographics-mobile/sleep-infographics-mobile';
+import { HairlossInfographicsMobilePage } from '../pages/hairloss-infographics-mobile/hairloss-infographics-mobile';
+import { DandruffInfographicsMobilePage } from '../pages/dandruff-infographics-mobile/dandruff-infographics-mobile';
+import { LiceInfographicsMobilePage } from '../pages/lice-infographics-mobile/lice-infographics-mobile';
+import { PinkeyeMobileInfographicsPage } from '../pages/pinkeye-mobile-infographics/pinkeye-mobile-infographics';
+import { RedeyeMobileInfographicsPage } from '../pages/redeye-mobile-infographics/redeye-mobile-infographics';
+import { StyeyeMobileInfographicsPage } from '../pages/styeye-mobile-infographics/styeye-mobile-infographics';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -670,6 +676,12 @@ import { AuthService} from '../pages/providers/auth-service';
 
     FluMobileInfographicsPage,
     SleepInfographicsMobilePage,
+    HairlossInfographicsMobilePage,
+    DandruffInfographicsMobilePage,
+    LiceInfographicsMobilePage,
+    PinkeyeMobileInfographicsPage,
+    RedeyeMobileInfographicsPage,
+    StyeyeMobileInfographicsPage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -1010,6 +1022,12 @@ import { AuthService} from '../pages/providers/auth-service';
 
     FluMobileInfographicsPage,
     SleepInfographicsMobilePage,
+    HairlossInfographicsMobilePage,
+    DandruffInfographicsMobilePage,
+    LiceInfographicsMobilePage,
+    PinkeyeMobileInfographicsPage,
+    RedeyeMobileInfographicsPage,
+    StyeyeMobileInfographicsPage,
   ],
   providers: [
     AuthService,

@@ -1,18 +1,998 @@
-<!--
-  Generated template for the LiceMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>lice_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Head Lice
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<50">
+    <p *ngIf="page==0">Thinking head lice?</p>
+    <p *ngIf="page>=1 && page<20">Why think head lice?</p>
+	<p *ngIf="page>=20 && page<30">Now, is it head lice?</p>
+	<p *ngIf="page>=30 && page<50">Looking for lice</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=60 && page<100">
+  	<p *ngIf="page>=60 && page<61">Wet combing directions</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span>Head lice are <span class="orangefont">tiny parasites</span> that live in the hair and make it itchy.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="purpleRedBorder">
+	        <p>They feed on blood from the scalp. Biting on the scalp makes it itch and irritated.</p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/head/headlice-lady.svg" width="150" alt="lady with headlice symptoms">
+	        </p>
+	    </div>
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="lice_mobile_pop-placeholder">
+	        <!-- placeholder for lice_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <p class="purpleRedBorder centerText">Well, let's find out what to do about this.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="lice_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=1 && page<20">
+	    <div id="lice1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What make you think you have <span class="purple_redfont">head lice?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">Let's answer that first.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="lice1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is it that <span class="orangefont">someone</span> in your house has it?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="lice1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="lice1_mobile_3_y" *ngIf="page==3">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did you come in close <span class="redfont">contact</span> with someone who has lice?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="lice1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="lice1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you think you have lice because of <span class="purple_redfont">tickling</span>  <span class="purple_redfont">movement</span> in the hair</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="lice1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="lice1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did you <span class="redfont">share</span> hats, towels, or combs with someone who has lice?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="lice1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="lice1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you thinking head lice due to <span class="purple_redfont">irritability</span> and <span class="purplefont">difficulty sleeping?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="lice1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="lice1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those were some reasons to think <span class="purple_redfont">head lice.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">If you still think you have head lice, let's answer a few more questions.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	    <div id="lice2_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="redfont">intense</span> <span class="orangefont">itching</span> of the scalp?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice2_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="lice2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="lice2_mobile_3_y" *ngIf="page==21">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice2_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="grayfont">small,</span> <span class="redfont">red bumps</span> on  your scalp?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red redfont">
+	                        Neck or shoulders?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice2_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="lice2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="lice2_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice2_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about  <span class="purple_redfont">crusty,</span> <span class="orangefont">oozing bumps</span> on the scalp?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="lice2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="lice2_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at an infection probably due to scratching.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="redBorderAll">Anyway, before you do that or if the bumps are not too bad, let's see if you can find some lice.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice2_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                To rule out lice infestation, it would be wise to look for lice or their eggs.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">Let's see how to do this.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="lice3_mobile_1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>You will look for <span class="redfont">adult louse</span> or <span class="purplefont">nits.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder redfont centerText">You will need the following:</p>
+	            <ul>
+	                <li>Someone to help</li>
+	                <br>
+	                <li>Disposable gloves</li>
+	                <br>
+	                <li>Magnifying glass (optional)</li>
+	                <br>
+	                <li>Bright light or daylight.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="lice3_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Alright.</span><br>
+	                The person helping should follow the instructions below.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">With the gloves on <span class="grayfontSmall">
+	            (Using a magnifying glass if any):</span> 
+	        </p>
+	        <p class="redBorder centerText">Look <span class="redfont">behind</span> the ear and <span class="orangefont">back</span> of the head near the neckline.</p>
+	        <p class="orangeBorderAll centerText">Let's answer a few questions when you have looked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="lice3_mobile_3_y" *ngIf="page==32">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice3_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you see anything like <span class="purple_bluefont">tiny white oval</span> eggs or <span class="redfont">adult</span> moving <span class="redfont">lice?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        See <span class="orangefont">"FYI"</span> to know if it is dandruff or nit.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="e" id="lice3_mobile_2_link" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg5(true)">FYI</a>
+	            <button data-inline="true" class="lice3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="lice3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="lice3_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                <span class="bluefont">Treatment</span> is recommended if even <span class="bluefont">one</span> egg is found. But let's look further.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice3_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Look at the <span class="bluefont">base</span> of the hair near the scalp for <span class="bluefont">eggs</span> (nits).</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Did you find something within <span class="bluefont">¼ inch</span> of the base of hair shafts?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="lice3_mobile_4_pop-placeholder">
+	            <!-- placeholder for lice3_mobile_4_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="lice3_mobile_4_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <button data-inline="true" class="lice3_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="lice3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="lice3_mobile_5_y" *ngIf="page==36">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice3_mobile_5_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfont">OK.</span><br>
+	                Look for <span class="brownfont">adult</span> louse.<br> <span class="grayfontSmall">Should be <span class="brownfont">tan</span> to grayish-white in color.</span>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red redfont">
+	                        Anything like that?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder">They should be about the size of sesame seed <span class="grayfontSmall">(1/16 to 1/8 of an inch)</span> with six legs.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	            <button data-inline="true" class="lice3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="lice3_mobile_6_y" *ngIf="page==38">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                Let's see how to treat this head lice.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder grayfontSmall">According to the CDC, the diagnosis of head lice infestation is best made by finding a live nymph or adult louse. </p>
+	        <p class="orangeBorderAll"> See <span class="orangefont">"FYI"</span> for CDC <span class="grayfontSmall">(Centers for disease control)</span> tips on how to prevent the spread of head lice.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Pharmacist</a>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice3_mobile_6_n" *ngIf="page==39">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">Nothing?</span><br>
+	                You will have to use the <span class="bluefont">Wet Combing</span> method.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">It is a more time consuming but it has been proven to correctly identify lice in 90% of cases, compared with a 29% accuracy rate for visual inspections.</p>
+	        <p class="blueBorderAll centerText">Let's try this if you think you are up for it.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page==50">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red shadowRight centerText">
+	            <span>To do <span class="bluefont">wet combing,</span> you will need some of the things listed below.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <div class="blueBorderAll">
+	        <p class="blueBorder centerText">Items for wet combing technique:</p>
+	        <ul>
+	            <li>Regular hair conditioner.</li>
+	            <br>
+	            <li>A quality lice comb such as the LiceMeister®.</li>
+	            <br>
+	            <li>Hair clips for separation.</li>
+	            <br>
+	            <li>A de-tangling comb.</li>
+	            <br>
+	            <li>Pin tail comb. </li>
+	            <br>
+	            <li>A bowl of hot water to rinse the lice comb.</li>
+	            <br>
+	            <li>White paper towels or rags.</li>
+	        </ul>
+	    </div>
+	    <p class="redBorder centerText">When you have most of these, let's continue</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page==60">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span>Follow the <span class="orangefont">directions</span> in the list form below.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <p class="greenfontSmall centerText">For ease of use, swipe left or right on a completed step to hide that step.</p>
+	    <p>&nbsp;</p>
+	    <p id="wet_combing_list_note" style="display:none; centerText"> Whooa, you did it! Tap here <span class="mbsc-ic mbsc-ic-loop2 redfont"></span> to refresh!<br></p>
+	    <p id="wet_combing_list_note2" style="display:none; centerText">Or continue if you are done</p>
+	    <div class="mbsc-lv-cont mbsc-lv-mobi-red mbsc-lv-mobiscroll mbsc-lv-ic-anim mbsc-lv-alt-row  mbsc-lv-handle-right">
+	        <ul class="mbsc-lv mbsc-lv-dummy"></ul>
+	        <div class="mbsc-lv-sl-c" data-ref="1">
+	            <ul id="wet_combing_list" style="" class="mbsc-comp mbsc-lv mbsc-lv-v mbsc-lv-root mbsc-lv-sl-curr">
+	                <li data-ref="2" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Apply the conditioner to saturate all the dry hair and scalp.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="3" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Using the de-tangling comb, comb hair to remove all knots.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="4" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Using the pin tail comb, separate the hair into 4 or 5 manageable sections.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="5" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Using the hair clips,  hold the sections in place.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="6" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Undo a section, starting at the bottom of the hair line closer to the neck or behind the ear, with the teeth of the lice comb as close to the root of the hair shaft as possible, pull through the whole length of the hair, from the shaft to the tip.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="7" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Wipe both sides of the comb between passes on a white paper towel or rag
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="8" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Thoroughly inspect the white paper towel or rag for lice and nits
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="9" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Rinse the comb with the hot water and work on small sections at a time
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="10" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Repeat process until you come to one conclusion or the other
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="11" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Once all sections have been combed out, remove the hair clips and pass the nit comb through the whole hair working from the shaft to the tip
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="12" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Wipe on a white paper towel and repeat several times
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="13" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Rinse out the conditioner, style hair
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="14" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    Soak all tools in hot soapy water, wash towels and rags in a washer at hot setting and dryer if lice was found.
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li data-ref="15" class="mbsc-lv-item mbsc-lv-item-enhanced">
+	                    <span class="redfont">∗∗∗</span>You may have to repeat every 3 days.<span class="redfont">∗∗∗</span>
+	                    <div class="mbsc-lv-handle-c mbsc-lv-item-h-right mbsc-lv-handle">
+	                        <div class=" mbsc-lv-handle-bar-c mbsc-lv-handle">
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                            <div class="mbsc-lv-handle-bar mbsc-lv-handle"></div>
+	                        </div>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=70 && page<80">
+	    <div id="lice6_mobile_2_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red shadowRight centerText">
+	                <span> Did you find any <span class="redfont">lice</span> or <span class="purple_bluefont">nit?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="lice6_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="lice6_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="lice6_mobile_3_y"  *ngIf="page==71">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Let's get an <span class="orangefont">over-the-counter</span> recommendation to treat this head lice.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">According to the CDC, the diagnosis of head lice infestation is best made by finding a live nymph or adult louse. </p>
+	        <p class="orangeBorderWhite"> See <span class="orangefont">"FYI"</span> for CDC <span class="grayfontSmall">(Centers for disease control)</span> tips on how to prevent the spread of head lice.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="m" data-inline="true" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="lice6_mobile_3_n"  *ngIf="page==72">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>  Well, treatment is recommended if <span class="purplefont">one nit</span> is found within ¼ inch from the scalp.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        If <span class="redfont">nothing</span> is found <span class="redfontLarge">no</span> treatment is recommended.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="orangeBorder"><span class="grayfontSmall">According to the CDC:</span> If no nymphs or adults are seen, and the only nits found are more than ¼ inch from the scalp, then the infestation is probably old and no longer active — and does not need to be treated</p>
+	        <p class="redBorderWhite centerText"><span class="redfont">Note that:</span><br>You have to find lice or eggs to use the over-the-counter shampoos or lotions. These shampoos do not prevent lice infestation.</p>
+	        <p class="orangeBorder"> See <span class="orangefont">"FYI"</span> below for CDC <span class="grayfontSmall">(Centers for disease control)</span> tips on how to prevent the spread of head lice.</p>
+	        <p class="redBorderAll">Would you like to see what a pharmacist recommend to get rid of head lice anyway?</p>
+	        <p class="redBorder">Or think you should go to the nearest urgent care clinic to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-popup-screen ui-overlay-b in" id="lice_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="lice_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="lice_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="redBorder centerText">Note that it has nothing to do with poor hygiene and there is no evidence that lice prefer clean or dirty hair. They feed on blood, not dirt or skin cells on the scalp.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="lice3_mobile_4_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="lice3_mobile_4_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="lice3_mobile_4_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="redBorder">They should be oval shaped, very small and hard to see. It may be yellow, white or even the same color as the hair.</p>
+	        <p><span class="grayfont">According to the CDC:</span> If crawling lice are not seen, finding nits attached firmly within ¼ inch of the base of hair shafts suggests, but does not confirm, the person is infested.</p>
+	        <p class="redBorder">Nits that are attached more than ¼ inch from the base of the hair shaft are almost always non-viable (hatched or dead). </p>
+	    </div>
+	</div>
+
+
+	<div class="ui-popup-screen ui-overlay-b in" id="lice3_mobile_4_pop-screen" *ngIf="FYIDlg3.show" (click)="toggleFYIDlg3(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="lice3_mobile_4_pop-popup" *ngIf="FYIDlg3.show" [ngStyle]="{'max-width': FYIDlg3.maxWidth+'px','top': FYIDlg3.top+'px', 'left': FYIDlg3.left+'px', 'width': FYIDlg3.width+'px'}">
+	    <div data-role="popup" id="lice3_mobile_4_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <p class="blueBorder centerText">CDC's prevention and control<br><span class="grayfontSmall">(copied text. See website for changes.)</span></p>
+	        <ul>
+			    <li>Avoid head-to-head (hair-to-hair) contact during play and other activities at home, school, and elsewhere (sports activities, playground, slumber parties, camp).</li>
+			    <li>Do not share clothing such as hats, scarves, coats, sports uniforms, hair ribbons, or barrettes</li>
+			    <li>Do not share combs, brushes, or towels. Disinfest combs and brushes used by an infested person by soaking them in hot water (at least 130°F) for 5–10 minutes.</li>
+			    <li>Do not lie on beds, couches, pillows, carpets, or stuffed animals that have recently been in contact with an infested person</li>
+			    <li>Machine wash and dry clothing, bed linens, and other items that an infested person wore or used during the 2 days before treatment using the hot water (130°F) laundry cycle and the high heat drying cycle. Clothing and items that are not washable can be dry-cleaned OR sealed in a plastic bag and stored for 2 weeks</li>
+			    <li>Vacuum the floor and furniture, particularly where the infested person sat or lay. However, spending much time and money on housecleaning activities is not necessary to avoid reinfestation by lice or nits that may have fallen off the head or crawled onto furniture or clothing.</li>
+			    <li>The risk of getting infested by a louse that has fallen onto a carpet or furniture is very small. Head lice survive less than 1–2 days if they fall off a person and cannot feed; nits cannot hatch and usually die within a week if they are not kept at the same temperature as that found close to the scalp.</li>
+			    <li>Do not use fumigant sprays or fogs; they are not necessary to control head lice and can be toxic if inhaled or absorbed through the skin.</li>
+			</ul>
+			<p class="centerText">
+			  <a href="#" data-rel="close" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(false)">Close</a>
+			</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="lice3_mobile_4_pop-screen" *ngIf="FYIDlg5.show" (click)="toggleFYIDlg5(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="lice3_mobile_4_pop-popup" *ngIf="FYIDlg5.show" [ngStyle]="{'max-width': FYIDlg5.maxWidth+'px','top': FYIDlg5.top+'px', 'left': FYIDlg5.left+'px', 'width': FYIDlg5.width+'px'}">
+	    <div data-role="popup" id="lice3_mobile_4_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	    	<div>
+			    <h3 align="center" class="linePurple purplefont redBorder">FAQs</h3>
+			    <ul>
+			        <li><strong>Is it a dandruff or a nit?</strong><br>
+			            If the nit look-alike does not stick to the base of the hair, you may be looking at dandruff or hair pray droplets or even dirt here. A nit will be something "glued" to the hair.
+			        </li>
+			        <li><strong>I see something that is tan, yellow or clear and not white:</strong><br>
+			            If these tiny eggs are yellow, tan, or brown, the lice haven't hatched yet. If the eggs are white or clear, the lice have hatched.
+			        </li>
+			        <li><strong>I see red bumps but no nit or lice:</strong><br>If you have red bumps on the scalp and no nit or lice is found, you may be looking at something else.</li>
+			        <li><strong>I found no eggs or lice. Do I still need to treat?</strong><br>No. Over the counter shampoos or lotion do not prevent head lice. You have to see an egg or lice to treat. If you found nothing, wait another day and look again.</li>
+			        <li><strong>How long does it take for the eggs to hatch?</strong><br>
+			            It takes about 8 to 9 days for the eggs to hatch.
+			        </li>
+			        <li><strong>Should I also treat my dog or cat?</strong><br>No. They do not play a role in the spread of human head lice.</li>
+			    </ul>
+			    <p class="centerText"><a href="#" data-role="button" data-inline="true" data-theme="j" data-rel="close" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg5(false)">Close</a></p>
+			</div>
+	    </div>
+	</div>
 </ion-content>

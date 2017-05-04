@@ -1,18 +1,1433 @@
-<!--
-  Generated template for the RedeyeMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>redeye_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Red Eye
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<80">
+    <p *ngIf="page==0">Eyes red?</p>
+    <p *ngIf="page>=1 && page<20">This first</p>
+	<p *ngIf="page>=20 && page<40">Is it keratitis?</p>
+	<p *ngIf="page>=40 && page<60">Is it blepharitis?</p>
+	<p *ngIf="page>=60 && page<80">Is it Pink eye?</p>
+	<p *ngIf="page>=80 && page<100">scratched cornea?</p>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span>A red eye may be due to <span class="purple_bluefont">dilation</span> of <span class="grayfont">blood vessels</span> in the eye's surface.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="redeye_mobile_pop-placeholder">
+	        <!-- placeholder for redeye_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <div class="redBorder centerText">
+	        <p>Let's rule out anything that require urgent or emergency care before seeing what a pharmacist recommend you use over-the-counter for red eye relief.</p>
+	        <hr class="hrpink">
+	        <br>
+	        <p>
+	            <img src="assets/img/people/adult/eyes/eye-red-lady.svg" width="200" alt="lady with red eye signs">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="redeye_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
 
+	<div class="ui-content" *ngIf="page>=1 && page<20">
+	    <div id="redeye_glaucoma_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Did this <span class="redfont">redness</span> of the eye start after a sudden <span class="redfont">severe</span> <span class="orangefont">eye pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_glaucoma_mobile_3_y" *ngIf="page==2">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's make sure you are not looking at an emergency situation like <span class="blue_brightfont">glaucoma.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_glaucoma_mobile_4_y" *ngIf="page==4">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you also experiencing <span class="bluefont">headache</span> with this <span class="orangefont">eye pain</span> and <span class="redfont">redness?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="redeye_glaucoma_mobile_5_y" *ngIf="page==6">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>These are main symptoms of acute angle glaucoma.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care">
+	        </p>
+	        <div class="clearboth"></div>
+	        <p class="redBorder purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="redBorderAll redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Hospital</a>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you having a <span class="purple_bluefont">decreased or blurred</span> <span class="purplefont">vision</span> with this <span class="grayfont">red eye and eye pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="redeye_glaucoma_mobile_6_y" *ngIf="page==8">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a symptom of acute angle glaucoma</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care">
+	        </p>
+	        <div class="clearboth"></div>
+	        <p class="redBorder purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="redBorderAll redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Hospital</a>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about getting <span class="orangefont">confused</span> with this <span class="redfont">redness</span> of the eyes and <span class="orangefont">eye pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="redeye_glaucoma_mobile_7_y" *ngIf="page==10">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a symptom of acute angle glaucoma</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care">
+	        </p>
+	        <div class="clearboth"></div>
+	        <p class="redBorder purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="redBorderAll redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Hospital</a>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you also seeing <span class="purple_bluefont">colored rainbows</span> or <span class="blue_brightfont">halos</span> around lights?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="redeye_glaucoma_mobile_8_y" *ngIf="page==12">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a major symptom of glaucoma</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care">
+	        </p>
+	        <div class="clearboth"></div>
+	        <p class="redBorderAll purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Hospital</a>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you experiencing <span class="purple_redfont">nausea </span>and/or <span class="orangefont">vomiting</span> with this red eye and eye pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_glaucoma_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="redeye_glaucoma_mobile_9_y" *ngIf="page==14">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a major symptom of acute angle glaucoma.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care">
+	        </p>
+	        <div class="clearboth"></div>
+	        <p class="redBorderAll purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="redBorder redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Hospital</a>
+	            <button data-inline="true" class="redeye_glaucoma_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_glaucoma_mobile_9_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge firstname"></span><br>
+	                Those were the main symptoms of <span class="redfont">acute angle closure glaucoma.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">This require emergency room visit if they applied to you.</p>
+	        <p>Discuss glaucoma (national eye institute)</p>
+	        <p class="redBorderWhite">If this does not apply to you, let's continue and rule out other things that causes redness of the eyes that be dangerous.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="redeye_keratitis_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>With the <span class="redfont">redness,</span> is the eye so <span class="bluefont">painful</span> you have difficulty opening the <span class="bluefont">eyelid?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_keratitis_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Let's make sure we are not looking at something like <span class="purplefont">keratitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_keratitis_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you seeing increased <span class="blue_brightfont">sensitivity</span> to light?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="redeye_keratitis_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_keratitis_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign and symptom of keratitis.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_keratitis_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about a <span class="pinkfont">feeling of something</span> in the eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="redeye_keratitis_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="redeye_keratitis_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="bluefont">Keratitis</span> sometimes cause a feeling that something is in the eye.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_keratitis_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you seeing <span class="bluefont">floaters</span> with this red eyes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="redeye_keratitis_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="redeye_keratitis_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a sign and symptom of <span class="bluefont">keratitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_keratitis_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is your <span class="redfont">vision</span> <span class="bluefont">decreasing</span> with this redness of the eye?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        <span class="bluefont">Or getting blurry?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="redeye_keratitis_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="redeye_keratitis_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is one of the symptoms of keratitis.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_keratitis_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(29)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_keratitis_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">OK.</span><br>
+	                We just went through the <span class="purple_bluefont">symptoms of keratitis</span> which require urgent care.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>Expand more on keratitis and advice to seek urgent care</p>
+	        <p>If this does not apply to you, let's continue.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="redeye_blepharitis_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you looking at <span class="redfont">rusting </span> or <span class="purple_bluefont">flaking</span> of the eyelids / eyelashes?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_blepharitis_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's make sure you are not looking at <span class="redfont">Blepharitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Do you feel a <span class="bluefont">gritty sensation</span> in the eyes?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Like  there is <span class="purple_bluefont">something</span> in the eye?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="redeye_blepharitis_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_blepharitis_mobile_4_y" *ngIf="page==43">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about a <span class="redfont">burning sensation?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="redeye_blepharitis_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="redeye_blepharitis_mobile_5_y" *ngIf="page==45">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are the eyes producing a lot of <span class="purplefont">tears?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="redeye_blepharitis_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="redeye_blepharitis_mobile_6_y" *ngIf="page==47">
+	        <!--start 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are the <span class="orangefont">eyelids margins</span> <span class="redfont">red</span> and <span class="redfont">swollen?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed orangefont">
+	                        And itchy?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(49)">Yes</button>
+	            <button data-inline="true" class="redeye_blepharitis_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(50)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="redeye_blepharitis_mobile_7_y" *ngIf="page==49">
+	        <!--start 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(50)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_7_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Do you see <span class="brassfont">crusted eyelashes</span> upon awakening?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Or <span class="brassfont">eyelids</span> that look <span class="purple_redfont">greasy?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <button data-inline="true" class="redeye_blepharitis_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(52)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="redeye_blepharitis_mobile_8_y" *ngIf="page==51">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign and symptom of<span class="redfont"> blepharitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_blepharitis_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_blepharitis_mobile_8_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge firstname"></span><br>
+	                We just went through the symptoms of <span class="redfont">blepharitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>Discuss blepharitis briefly.</p>
+	        <p>If you suspect you may be looking at blepharitis, call the doctor for a complete evaluation.</p>
+	        <p>If that is not the case, then let's continue and rule something else out.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div -->  
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=60 && page<80">
+	    <div id="redeye_pinkeye_mobile_2_n" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>With this red eye, are you having a <span class="orangefont">gritty feeling</span> of something in the eye?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Always <span class="orangefont">wanting</span> to rub the eye(s)?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(80)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_pinkeye_mobile_3_y" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's make sure you are not looking at a <span class="redfont">conjunctivitis</span> or <span class="pinkfont">pink eye.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_3_n" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Does the eye(s) look <span class="purple_redfont">swollen</span> or <span class="orangefont">inflammed?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(63)">Yes</button>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(64)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_pinkeye_mobile_4_y" *ngIf="page==63">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of <span class="pinkfont">pink eye. </span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Swelling of the conjunctiva <span class="grayfontSmall">(the thin layer that lines the white part of the eye and the inside of the eyelid)</span> is common with pink eye.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(64)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_4_n" *ngIf="page==64">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Any <span class="blue_brightfont">watery</span> or <span class="orangefont">mucus</span>  discharge with this <span class="redfont">red</span> eye(s)?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="redeye_pinkeye_mobile_5_y" *ngIf="page==65">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You may be looking at a<span class="pinkfont"> pink eye.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Would you like to see the entry for pink eye or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Pink eye</a>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_5_n" *ngIf="page==66">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about <span class="bluefont">crusting</span> of the eyelids or eyelashes?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Especially in the <span class="bluefont">morning?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(67)">Yes</button>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(68)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="redeye_pinkeye_mobile_6_y" *ngIf="page==67">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You may be looking at a <span class="pinkfont">pink eye</span> inflammation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Would you like to see our entry for pink eye for a more detailed discussion or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Pink eye</a>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(68)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_6_n" *ngIf="page==68">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is the eye(s) <span class="orangefont">itching</span> and <span class="redfont">tearing</span> with this redness?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed redfont">
+	                        Also burning?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(69)">Yes</button>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(70)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="redeye_pinkeye_mobile_7_y" *ngIf="page==69">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You may be looking at a <span class="pinkfont">pink eye</span> inflammation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Pink eye</a>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(70)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_7_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is the eye getting more <span class="blue_brightfont">sensitive to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="redeye_pinkeye_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="redeye_pinkeye_mobile_8_y" *ngIf="page==71">
+	        <!--start 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_pinkeye_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_pinkeye_mobile_8_n" *ngIf="page==72">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge" id="firstname_redeye_pinkeye_mobile_8">{{firstname}}</span><br>
+	                Those were symptoms of a <span class="pinkfont">pink eye</span> <span class="redfont">infection.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Pink eye is very contagious, so if you suspect you are experiencing one, see our entry on pink eye for a more detailed analysis so you can make the best decision on what to do. </p>
+	        <p class="redBorderAll centerText">If you don't think so, then let's continue.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Pink eye</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(80)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <p>&nbsp;</p>
+	</div>	
+
+
+	<div class="ui-content" *ngIf="page>=80 && page<100">
+	    <div id="redeye_cornea_mobile_2_n" *ngIf="page==80">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span> Do you <span class="blue_brightfont">feel eye pain</span> especially when opening or closing the eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(100)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_cornea_mobile_3_y" *ngIf="page==81">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Hope we are not looking at a <span class="purple_bluefont">scratched cornea.</span> Let's take a look.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_cornea_mobile_3_n" *ngIf="page==82">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Did you say earlier that it feels as if there is <span class="bluefont">sand</span> or<span class="bluefont"> grit</span> in the eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(83)">Yes</button>
+	            <button data-inline="true" class="redeye_cornea_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_cornea_mobile_4_y" *ngIf="page==83">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                We may be looking at a <span class="blue_brightfont">scratched cornea.</span> This is a sign and symptom.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_cornea_mobile_4_n" *ngIf="page==84">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Did you also say the eye is getting very <span class="purple_bluefont">sensitive to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(85)">Yes</button>
+	            <button data-inline="true" class="redeye_cornea_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(86)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="redeye_cornea_mobile_5_y" *ngIf="page==85">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This frequently happens with a <span class="orangefont"> scratched cornea.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(86)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_cornea_mobile_5_n" *ngIf="page==86">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Alright. Is your <span class="bluefont">vision</span> getting very blurry?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        A lot of <span class="bluefont">tearing </span>too.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(87)">Yes</button>
+	            <button data-inline="true" class="redeye_cornea_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(88)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="redeye_cornea_mobile_6_y" *ngIf="page==87">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="purplefont">OK</span><br>
+	                A cornea <span class="purple_bluefont">abrasion</span> or <span class="purple_bluefont">scratched</span> cornea can cause this.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of a scratched cornea include:</p>
+	            <ul>
+	                <li>Feeling like sand in the eye</li>
+	                <li>Eye pain when you open or close the eye</li>
+	                <li>Tearing</li>
+	                <li>Sensitivity to light</li>
+	                <li>Blurred vision</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_cornea_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(88)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_cornea_mobile_6_n" *ngIf="page==88">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="firstname"></span> We just went through the <span class="purplefont">symptoms</span> of a scratched cornea.<br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If you suspect you may be looking at a scratched cornea, go to the nearest urgent care center or hospital. Do not attempt to wait it out. It is very painful and would get worse with time.</p>
+	        <p class="redBorderAll">You don't know how bad the scratch is and severe complications can develop. Know that the signs and symptoms of a cornea abrasion may not show up until later. So you won't know when you poked the eye or had the incident that scratched the cornea.</p>
+	        <p class="redBorder centerText">If you are experiencing severe eye pain, seek urgent care. Else let's continue.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(100)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=100 && page<110">
+	    <div id="redeye_other_mobile_2_n" *ngIf="page==100">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Do you use <span class="blue_brightfont">contacts</span> and now your eyes are <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_other_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(101)">Yes</button>
+	            <button data-inline="true" class="redeye_other_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(102)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="redeye_other_mobile_3_y" *ngIf="page==101">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                <span class="blue_brightfont">Keratitis</span> is a major complication with using contact lenses.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If you are looking at symptoms listed below, seek urgent care immediately.</p>
+	        <p class="redBorderWhite">It could be bacterial, viral, or fungal. It can lead to corneal scarring that impairs vision, and may lead to the need for a cornea transplant.</p>
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Eye pain (often sudden)</li>
+	                <li>Reduced vision</li>
+	                <li>Increased light sensitivity</li>
+	                <li>Excessive tearing or discharge from the eyes</li>
+	                <li>Feelings of scratching each time he or she blinks the eye</li>
+	            </ul>
+	        </div>
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="redeye_other_mobile_3_pop-placeholder">
+	            <!-- placeholder for redeye_other_mobile_3_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="j" aria-haspopup="true" aria-owns="redeye_other_mobile_3_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="redeye_other_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(102)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_other_mobile_3_n" *ngIf="page==102">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>With the red eyes, do you also have <span class="bluefont">runny nose,</span> <span class="bluefont">sneezing</span> and <span class="bluefont">watery eyes?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed bluefont">
+	                        Also itchy eyes?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell-pink.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="redeye_other_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(103)">Yes</button>
+	            <button data-inline="true" class="redeye_other_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(104)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="redeye_other_mobile_4_y" *ngIf="page==103">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Probably mainly looking at an <span class="greenfont">allergy </span>related <span class="redfont">red</span> eyes.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder">Would you like to see what we have prepared regarding <span class="greenfont">seasonal allergy</span>  or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(3)">Allergy</a>
+	            <button data-inline="true" class="redeye_other_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(104)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="redeye_other_mobile_4_n" *ngIf="page==104">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>If <span class="redfont">none</span> of the discussions apply to you so far, you may not need to seek urgent care.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell-pink.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">You may be looking at a minor eye irritation or <span class="orangefont">subconjunctival</span> <span class="redfont">hemorrhage</span></p>
+	        <p class="redBorder">Subconjunctival hemorrhage is  like a bruise of the eye or a broken blood vessel on the surface of the eye. </p>
+	        <p class="redBorder">It usually appears as a single, concentrated spot of red, or many scattered red splotches, on the white of the eye. The redness is <span class="redfont">blood</span> under the conjunctiva.</p>
+	        <p class="redBorder">Treatment of a subconjunctival hemorrhage is generally not necessary. Over time, the blood spot will slowly disappear, clearing up on its own. This may take days or weeks.</p>
+	        <p class="redBorder">Let's see what a pharmacist recommend to help get rid of this red eye that is available over-the-counter.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="redeye_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(4)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-popup-screen ui-overlay-b in" id="redeye_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="redeye_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="redeye_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="redBorderAll">This could have been caused by a lot of things from conjunctivitis to sun exposure, dusts to name a few.<br> It could also have resulted from something very serious that will need urgent or emergency care.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="redeye_other_mobile_3_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="redeye_other_mobile_3_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="redeye_other_mobile_3_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p>Sometimes called CLARE (Contact lens acute red eye), this type of keratitis is often bacterial and you will need antibiotic eye drops urgently. How urgent, see it as bacteria invading your eyes. They spread very fast. The more you delay, the more bacteria is going to colonize the eye and do more damage. So hurry to the nearest urgent care clinic.</p>
+	    </div>
+	</div>
 </ion-content>

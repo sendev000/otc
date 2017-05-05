@@ -1,18 +1,1452 @@
-<!--
-  Generated template for the EaracheMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>earache_mobile</ion-title>
-  </ion-navbar>
-
+    <ion-title>
+    	<h1 class="ui-title">
+      	Flu
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+	<ion-navbar class="fullWidth robotoLight bgDeepOrange" *ngIf="page>=20 && page<100">
+    	<p *ngIf="page>=20 && page<40">Is it an ear infection?</p>
+    	<p *ngIf="page>=40 && page<60">Is it swimmer's ear?</p>
+    	<p *ngIf="page>=60 && page<80">Is it a TMJ disorder?</p>
+    	<p *ngIf="page>=80 && page<90">Could it be earwax?</p>
+    	<p *ngIf="page>=90 && page<100">What cause it?</p>
+    	<p *ngIf="page>=100 && page<110">How bad is it?</p>
+    </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightRed centerText">
+	            <span>First, let's see if you need to see a doctor <span class="redfont">urgently.</span></span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="orangeBorder">
+	        <p>If not, we will discuss what is available over-the-counter for earache relief.</p>
+	        <hr class="hrorange">
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/earache-lady-main.svg" width="150" alt="Lady with earache symptoms">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="earache_mobile_pop-placeholder">
+	        <!-- placeholder for earache_mobile_pop  -->
+	    </div>
+	    <!------End Popoup div----- -->   
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="earache_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
 
+	<div class="ui-content" *ngIf="page>=1 && page<20">
+	    <div id="earache_rupture_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Did you experience a <span class="redfont">severe</span> <span class="orangefont">sharp</span> ear pain that <span class="redfont">suddenly stopped?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/earache-recom.svg" width="120" alt="Lady with earache">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l"  (click)="togglePage(3)">Yes</button>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="earache_rupture_mobile_3_y" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's make sure you are not looking at a <span class="redfont">ruptured</span> <span class="orangefont">eardrum.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/ear-check.svg" width="200" alt="man getting ear checked">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Was this sharp pain followed by <span class="redfont">bloody</span> <span class="grayfont">drainage</span> from the <span class="orangefont">ear canal?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="earache_rupture_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="earache_rupture_mobile_4_y" *ngIf="page==4">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at a ruptured eardrum.</li>
+	                <br>
+	                <li>Quick treatment is important to preserve your hearing.</li>
+	                <br>
+	                <li>Complications such as hearing loss can develop. <br>Usually, this is  temporary and lasts only till the tear or hole in the eardrum has healed. But the size and location of the tear can affect the degree of hearing loss.</li>
+	                <br>
+	                <li>Risking middle ear infection (otitis media).<br>Bacteria can enter your middle ear which might lead to infection that can cause hearing loss later.</li>
+	                <br>
+	                <li>Complications due to middle ear cyst (cholesteatoma).<br>This cyst contains ear wax, dusts, bacteria which the ear drum usually keep out. If your eardrum is ruptured, the debris can pass into your middle ear and form a cyst providing a friendly place for bacteria to grow.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_rupture_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Was this sharp pain followed by <span class="orangefont">thick</span> <span class="orangefontSmall">pus-filled </span>drainage from the ear canal?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="earache_rupture_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="earache_rupture_mobile_5_y" *ngIf="page==6">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at a ruptured eardrum.</li>
+	                <li>Quick treatment is important to preserve your hearing.</li>
+	                <li>Complications such as hearing loss can develop. <br>Usually, this is  temporary and lasts only till the tear or hole in the eardrum has healed. But the size and location of the tear can affect the degree of hearing loss.</li>
+	                <li>Risking middle ear infection (otitis media).<br>Bacteria can enter your middle ear which might lead to infection that can cause hearing loss later.</li>
+	                <li>Complications due to middle ear cyst (cholesteatoma).<br>This cyst contains ear wax, dusts, bacteria which the ear drum usually keep out. If your eardrum is ruptured, the debris can pass into your middle ear and form a cyst providing a friendly place for bacteria to grow.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_rupture_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about a <span class="bluefont">spinning</span> <span class="purple_bluefont">sensation</span> after this sharp pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="earache_rupture_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="earache_rupture_mobile_6_y" *ngIf="page==8">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Propably looking at a ruptured eardrum.</li>
+	                <li>Quick treatment is important to preserve your hearing.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_rupture_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Was it followed by <span class="bluefont">ringing</span> in your ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="earache_rupture_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="earache_rupture_mobile_7_y" *ngIf="page==10">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Propably looking at a ruptured eardrum.</li>
+	                <li>Quick treatment is important to preserve your hearing.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_rupture_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is your <span class="redfont">face</span> feeling <span class="orangefont">weak</span> after this sharp pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_rupture_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="earache_rupture_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="earache_rupture_mobile_8_y" *ngIf="page==12">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Propably looking at a ruptured eardrum.</li>
+	                <li>Quick treatment is important to preserve your hearing.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_rupture_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_rupture_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span> Those were signs and symptoms of a <span class="redfont">ruptured</span> eardrum.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If any applied to you, seek urgent care. You don't want to take chances of hearing loss either now or down the road.</p>
+	        <p class="redBorderAll">If none apply to you, then let's continue and see what else we may be looking at.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="earache_infection_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Any <span class="redfont">fever</span> or <span class="orangefont">sore throat</span> with this <span class="grayfont">earache?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/sorethroat-lady.svg" width="130" alt="Woman holding her throat">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <a href="#" (click)="togglepage(40)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="earache_infection_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's make sure you are not looking at an <span class="orangefont">ear infection.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_infection_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Do you have <span class="bluefont">fluid</span> <span class="purple_bluefont">draining</span> from the ear with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="earache_infection_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="earache_infection_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at an ear infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_infection_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_infection_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Do you feel <span class="purple_redfont">nausea</span> and/or <span class="orangefont">vomiting</span> with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="earache_infection_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="earache_infection_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible ear infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_infection_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_infection_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about <span class="bluefont">diarrhea</span> with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="earache_infection_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="earache_infection_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible ear infection going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_infection_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_infection_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is there <span class="grayfont">fullness</span> or <span class="purple_bluefont">hearing loss</span> in the affected ear with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_infection_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="earache_infection_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="earache_infection_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible ear infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="earache_infection_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_infection_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those were possible signs and symptoms of an ear infection in adults.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Seek urgent care if any applied to you. If none apply to your situation, let's continue</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="togglepage(40)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div -->  
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="earache_swimear_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Does the <span class="purple_redfont">ear canal</span> <span class="orangefont">itch?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/itchy-ear-lady.svg" width="200" alt="Lady with itchy ear">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <a href="#" (click)="togglepage(60)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="earache_swimear_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Let's make sure you are not looking at a <span class="orangefont">swimmer's ear</span> infection.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_swimear_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Any <span class="purple_redfont">foul smelling</span>, yellow or yellow-green,<span class="purple_redfont"> pus-like</span> discharge from the ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="earache_swimear_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="earache_swimear_mobile_4_y" *ngIf="page==43">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_swimear_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Hold the <span class="bluefont">ear lobe</span> or <span class="grayfont">outer ear</span> and <span class="purple_bluefont">wiggle it.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Does this earache <span class="bluefont">get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="earache_swimear_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="earache_swimear_mobile_5_y" *ngIf="page==45">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Possible <span class="grayfont">swimmer's ear infection.</span> Would you like to see our entry on <span class="orangefont">swimmer's ear?</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="swimear_mobile.php" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Swimmer's ear</a>
+	            <button data-inline="true" class="earache_swimear_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_swimear_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Push on the little <span class="purplefont">"bump"</span> in front of your ear.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Does this ear pain you already have <span class="bluefont">get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="earache_swimear_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="earache_swimear_mobile_6_y" *ngIf="page==47">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Possible swimmer's ear infection. Would you like to see the entry on <span class="orangefont">swimmer's ear?</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder purplefont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Swelling in the ear</li>
+	                <li>Itchy ear or ear canal</li>
+	                <li>Hurts when you pull on the ear lobe</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="swimear_mobile.php" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Swimmer's ear</a>
+	            <button data-inline="true" class="earache_swimear_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_swimear_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Is the <span class="purple_bluefont">inside</span> of the ear <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_swimear_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(49)">Yes</button>
+	            <button data-inline="true" class="earache_swimear_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(50)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="earache_swimear_mobile_7_y" *ngIf="page==49">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign of a swimmer's ear infection. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder centerText">Symptoms of swimmer's ear infection include:</p>
+	            <ul>
+	                <li>Swelling in the ear</li>
+	                <li>Itchy ear or ear canal</li>
+	                <li>Hurts when you pull on the ear lobe</li>
+	                <li>Yellow, yellow-green, pus-like, or foul smelling drainage from the ear.</li>
+	                <li><span class="redfont">Redness</span> inside the ear</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder">Would you like to see our entry for swimmer's ear or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="swimear_mobile.php" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Swimmer's ear</a>
+	            <button data-inline="true" class="earache_swimear_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(50)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_swimear_mobile_7_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those were some of the signs and symptoms of a swimmer's ear infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">If they apply to you, seek urgent care or call the doctor. You will need antibiotic or steroidal ear drops among other things. None of these are available over-the-counter.</p>
+	        <p class="purpleBorderAll">If none apply to you or you don't think this is swimmer's ear infection, let's continue and figure this earache out.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="togglepage(60)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<80">
+	    <div id="earache_tmj_mobile_2_n" *ngif="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>With this ear pain, are you having <span class="redfont">difficulty</span> <span class="purple_bluefont">chewing or biting?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/toothache-lady.svg" width="150" alt="woman holding her mouth">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	            <a href="#" (click)="togglepage(80)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="earache_tmj_mobile_3_y" *ngif="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Let's make sure you are not looking at <span class="purplefont">temporomandibular joint (TMJ)</span> <span class="grayfont">disorder.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_tmj_mobile_3_n" *ngif="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Try <span class="orangefont">opening</span> or <span class="bluefont">closing</span> the mouth.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Does the jaw joint <span class="orangefont">"crack"</span> when doing this?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(63)">Yes</button>
+	            <button data-inline="true" class="earache_tmj_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(64)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="earache_tmj_mobile_4_y" *ngif="page==63">
+	        <!--start follow up 4 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalLeftOrange">
+	                    <span class="purplefont">Yes?</span><br>
+	                    Hope we are not looking at TMJ.<br> Let's Continue.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(64)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_tmj_mobile_4_n" *ngif="page==64">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Alright</span><br>
+	                What about <span class="purple_redfont">jaw pain</span> or <span class="redfont">tenderness</span> of the jaw...
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        ...With this <span class="purple_redfont">ear pain?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	            <button data-inline="true" class="earache_tmj_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="earache_tmj_mobile_5_y" *ngif="page==65">
+	        <!--start follow up 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightRed">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    Hmmm, hope you are not looking at <span class="redfont">TMJ</span>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="purpleBorder centerText">Symptoms of TMJ include:</p>
+	            <ul>
+	                <li>Difficulty chewing or biting stuff</li>
+	                <li>Jaw joint "crack" when opening or closing the mouth</li>
+	                <li>Jaw pain or <span class="purple_redfont">tenderness</span> of the jaw.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_tmj_mobile_5_n" *ngif="page==66">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Does your <span class="purple_bluefont">jaw</span> <span class="orangefont">lock?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(67)">Yes</button>
+	            <button data-inline="true" class="earache_tmj_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(68)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="earache_tmj_mobile_6_y" *ngif="page==67">
+	        <!--start follow up 6 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalLeftOrange">
+	                    <span class="purplefont">It locks?</span><br>
+	                    We are thinking <span class="redfont">TMJ.</span>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="purpleBorder centerText">Symptoms of TMJ include:</p>
+	            <ul>
+	                <li>Difficulty chewing or biting stuff</li>
+	                <li>Jaw joint "crack" when opening or closing the mouth</li>
+	                <li>Jaw pain or tenderness of the jaw</li>
+	                <li><span class="redfont">Locking</span> of the jaw.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(68)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_tmj_mobile_6_n" *ngif="page==68">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Alright. Are you experiencing a <span class="grayfont">dull,</span> <span class="purplefont">aching pain</span> in the <span class="grayfont">face?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(69)">Yes</button>
+	            <button data-inline="true" class="earache_tmj_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(70)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="earache_tmj_mobile_7_y" *ngif="page==69">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a symptom of TMJ disorder.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder centerText">Symptoms of TMJ include:</p>
+	            <ul>
+	                <li>Difficulty chewing or biting stuff</li>
+	                <li>Jaw joint "crack" when opening or closing the mouth</li>
+	                <li>Jaw pain or tenderness of the jaw</li>
+	                <li>Locking of the jaw</li>
+	                <li><span class="grayfont">Dull,</span> <span class="purplefont">aching</span> pain in the <span class="grayfont">face.</span></li>
+	            </ul>
+	        </div>
+	        <p class="redBorder">If you are looking at these symptoms, you will have to see a doctor as soon as possible.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_tmj_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(70)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_tmj_mobile_7_n" *ngif="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Well.</span><br>
+	                Those were the signs and symptoms of a <span class="orangefont">TMJ</span> disorder.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If you think you are looking at one, see a dentist or call your doctor for complete evaluation.</p>
+	        <p class="redBorderAll">If not, let's continue and see what else might be causing this earache you are experiencing before we see what a pharmacist recommend you use over-the-counter.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <a href="#" (click)="togglepage(80)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=80 && page<90">
+	    <div id="earache_earwax_mobile_2_n" *ngIf="page==80">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you experiencing a <span class="purple_bluefont">sensation</span> that the ear is <span class="purple_redfont">plugged</span> with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/earwax-plugged.svg" width="200" alt="Lady with plugged ear sensation">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_earwax_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <a href="#" (click)="togglePage(90)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="earache_earwax_mobile_3_y" *ngIf="page==81">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Let's rule out<span class="bluefont"> earwax</span> blockade.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_earwax_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_earwax_mobile_3_n" *ngIf="page==82">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you <span class="grayfont">hearing</span> <span class="orangefont">noises</span> in the affected ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_earwax_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(84)">Yes</button>
+	            <button data-inline="true" class="earache_earwax_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="earache_earwax_mobile_4_y" *ngIf="page==83">
+	        <!--start follow up 4 div -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_earwax_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_earwax_mobile_4_n" *ngIf="page==84">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Does the ear feel <span class="bluefont">full</span> to you with a <span class="purple_bluefont">partial</span> hearing loss?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_earwax_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(85)">Yes</button>
+	            <button data-inline="true" class="earache_earwax_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(86)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="earache_earwax_mobile_5_y" *ngIf="page==85">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of earwax blocking the ear canal.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">If a feeling of fullness in the ear or partial hearing loss is what you are experiencing with this ear pain, we may probably be looking at earwax blocking the ear canal. Check out the entry for earwax for a more detailed discussion.</p>
+	        <p class="purpleBorderAll centerText">If this is not the case, let's continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="earwax_mobile.php" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Earwax</a>
+	            <a href="#" (click)="togglePage(90)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_earwax_mobile_5_n" *ngIf="page==86">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Alright</span><br>
+	                We just went through some of the signs of earwax blocking the ear canal.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">If a feeling of fullness in the ear or partial hearing loss is what you are experiencing with this ear pain, we may probably be looking at earwax blocking the ear canal. Check out the entry for earwax for a more detailed discussion.</p>
+	        <p class="purpleBorderAll centerText">If this is not the case, let's continue.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="earwax_mobile.php" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Earwax</a>
+	            <a href="#" (click)="togglePage(90)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=90 && page<100">
+	    <div id="earache_other_mobile_2_n" *ngIf="page==90">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="purplefont firstname"> </span><br>
+	                Try <span class="purple_bluefont">biting down</span> on the <span class="purple_bluefont">same side</span> as the ear pain.
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightRed">
+	                        Do you feel a <span class="bluefont">toothache?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/biting-a-pencil.svg" width="120" alt="Lady biting a pencil">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_other_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(91)">Yes</button>
+	            <button data-inline="true" class="earache_other_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(92)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="earache_other_mobile_3_y" *ngIf="page==91">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You may have a <span class="purple_bluefont">toothache pain</span> that is radiating to the ear on the same side.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Would you like to see our entry for tootache or Continue if you don't think so?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(1)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Toothache</a>
+	            <button data-inline="true" class="earache_other_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(92)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_other_mobile_3_n" *ngIf="page==92">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>Are you hearing <span class="orangefont">fluid</span> in the ear that <span class="bluefont">yawning or coughing</span> cannot get rid of with this earache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/yawning-lady.svg" width="150" alt="Lady yawning">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_other_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(93)">Yes</button>
+	            <button data-inline="true" class="earache_other_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(94)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="earache_other_mobile_4_y" *ngIf="page==93">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_other_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(94)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_other_mobile_4_n" *ngIf="page==94">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span>What about <span class="redfont">feeling pressure</span> in the ear that yawning or coughing does not get rid of?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/yawning-lady.svg" width="150" alt="Lady yawning">
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_other_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(95)">Yes</button>
+	            <button data-inline="true" class="earache_other_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(96)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="earache_other_mobile_5_y" *ngIf="page==95">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                More than likely looking at a sinus pressure situation causing the earache.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">Pressure in the sinus cavities from a cold or sinus infection can increase the pressure in the middle ear causing it to ache.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="earache_other_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(96)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="earache_other_mobile_5_n" *ngIf="page==96">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge">Alright</span><br>
+	                We  tried to look at causes of <span class="redfont">earache.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Other causes of earache that you may come accross include earache during or after a flight (Barotruama).</p>
+	        <p class="orangeBorderAll">For what may be causing your earache that we did not touch,  seek urgent care if the pain is serious or call the primary care doctor.</p>
+	        <p class="orangeBorder">Let's see what a pharmacist recommend until you can do that.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	        	<a href="" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#earache_mobile_3" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=100 && page<110">
+	    <div id="slider_earache3_mobile_div" *ngIf="page==100">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                How <span class="redfont">bad</span> is this earache on a scale of 1 to 10?
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_earache3_mobile_mobile" id="slider_earache3_mobile_mobile-label">I say a:</label>
+	            <div class="ui-slider">
+	                <!-- <div class="ui-slider-popup ui-shadow ui-corner-all ui-body-f" style="display: none; top: -85px; left: -12px;">0</div>
+	                <input type="number" data-type="range" name="slider_earache3_mobile_mobile" id="slider_earache3_mobile_mobile" value="0" min="1" max="10" step="1" data-theme="f" data-highlight="true" data-popup-enabled="true" class="ui-shadow-inset ui-body-f ui-corner-all ui-slider-input">
+	                <div role="application" class="ui-slider-track ui-shadow-inset ui-bar-f ui-corner-all">
+	                    <div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div>
+	                    <a href="#" class="ui-slider-handle ui-btn ui-btn-f ui-shadow" role="slider" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" aria-valuetext="1" aria-labelledby="slider_earache3_mobile_mobile-label" style="left: 0%;"></a>
+	                </div> -->
+	            </div>
+	        </div>
+	        <br>
+	        <div class="centerText">
+	            <div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_earache3_mobile_value" data-inline="true" value="Here you  go"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="container_12 displayNone" id="selected_earache3_mobile_value_container">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <div id="selected_earache3_mobile_value"></div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <div id="earache3_mobile_option1" class="displayNone">
+	        <p>&nbsp;</p>
+	        <div class="blueBorderAll centerText">
+	            <h3>1 to 3</h3>
+	            <p>Send to pharmacist</p>
+	        </div>
+	    </div>
+	    <div id="earache3_mobile_option2" class="displayNone">
+	        <p>&nbsp;</p>
+	        <div class="purpleBorderAll centerText">
+	            <h3>4 to 7</h3>
+	            <p>Advice and send to pharmacist</p>
+	        </div>
+	    </div>
+	    <div id="earache3_mobile_option3" class="displayNone">
+	        <p>&nbsp;</p>
+	        <div class="redBorderAll centerText">
+	            <h3>Seek urgent care.</h3>
+	            <p>&nbsp;</p>
+	        </div>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_earache3_mobile" class="displayNone">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_earache3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true">Back</button>
+	            <a href="" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Find Clinic</a>
+	            <a href="earache_infographics_mobile.php" class="earache_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="earache_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="earache_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg6.maxWidth+'px','top': FYIDlg6.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="earache_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+		    <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+		    <p class="purpleBorder">Most of the time, what you think is an ear pain caused by ear infection may actually be referred pain.</p>
+		    <p>The pain may be coming from your teeth, throat, sinuses or TMJ (temporomandibular joint)</p>
+		</div>
+	</div>
 </ion-content>

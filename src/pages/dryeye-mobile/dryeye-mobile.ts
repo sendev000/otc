@@ -9,6 +9,7 @@ import { NavController, NavParams, MenuController, Content, Platform } from 'ion
 */
 import { GlobalVars } from '../providers/globalvars';
 import { UrgentCarePage } from '../urgent-care/urgent-care';
+import { DryeyeMobileInfographicsPage } from '../dryeye-mobile-infographics/dryeye-mobile-infographics';
 
 @Component({
   selector: 'page-dryeye-mobile',
@@ -100,6 +101,7 @@ export class DryeyeMobilePage {
   		this.firstname += ",";
   	this.subPages = [
   			UrgentCarePage, 			// 0
+  			DryeyeMobileInfographicsPage,	// 1
   		];
 
   }
@@ -234,38 +236,7 @@ export class DryeyeMobilePage {
     this.FYIDlg6.show = b;
   }
   togglePage(ind: number) {
-  	if (ind == 51)
-  	{
-  		let trueCount = 0;
-	  	for (let i=0;i<this.symptoms.length-1;i++)
-	  		if (this.symptoms[i] == true)
-	  			trueCount ++;
-	  	if (this.symptoms[9] == true)
-	  		this.mode = 1;
-	  	else if (this.symptoms[8] == true)
-	  		this.mode = 2;
-	  	else if (trueCount > 0)
-	  		this.mode = 3;
-	  	else{
-	  		this.mode = 4;
-	  		ind = 50;
-	  	}
-  	}
-  	if (ind == 102)
-  	{
-  		let trueCount = 0;
-	  	for (let i=0;i<this.triedlist.length-1;i++)
-	  		if (this.triedlist[i] == true)
-	  			trueCount ++;
-	  	if (this.triedlist[7] == true)
-	  		this.mode = 1;
-	  	else if (trueCount > 0)
-	  		this.mode = 2;
-	  	else{
-	  		this.mode = 3;
-	  		ind = 101;
-	  	}
-  	}
+  	
     this.page = ind;
   }
   goBackDay() {

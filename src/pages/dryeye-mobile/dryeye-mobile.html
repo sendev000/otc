@@ -21,6 +21,12 @@
   <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<30">
     <p *ngIf="page==0">Dry eyes?</p>
     <p *ngIf="page==1">Had it before?</p>
+    <p *ngIf="page==2">Diagnosed already?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=30 && page<100">
+    <p *ngIf="page>=30 && page<50">Is it blepharitis?</p>
+    <p *ngIf="page>=50 && page<70">Sjogren syndrome?</p>
+    <p *ngIf="page>=80 && page<100">Is it a dry eye?</p>
   </ion-navbar>
 </ion-header>
 
@@ -30,7 +36,7 @@
 	        <div class="ovalBorderRightBlue">
 	            <span> You must be having a <span class="bluefont">hard time</span> with activities that require your constant eye attention.</span><br>
 	        </div>
-	        <div align="right"><img src="../../../../images/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
 	    </div>
 	    <div class="clearboth divider1"></div>
 	    <br>
@@ -38,7 +44,7 @@
 	    <div class="blueBorder">
 	        <p> Let's see what we can do about it and have a pharmacist recommend something to give you some relief that is available over-the-counter.</p>
 	        <p class="centerText">
-	            <img src="../../../../images/people/adult/eyes/eye-dry-lady.svg" width="200" alt="lady with dry eyes symptoms">
+	            <img src="assets/img/people/adult/eyes/eye-dry-lady.svg" width="200" alt="lady with dry eyes symptoms">
 	        </p>
 	    </div>
 	    <!--------------------------Banner Link----------------------------- -->
@@ -53,7 +59,7 @@
 	    <div class="clearboth divider1"></div>
 	    <p class="centerText">
 	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="dryeye_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
-	        <a href="#dryeye_mobile_1a" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
 	    </p>
 	    <p>&nbsp;</p>
 	    <p>&nbsp;</p>
@@ -73,7 +79,7 @@
 	                </div>
 	            </div>
 	            <div class="grid_4">
-	                <img src="../../../../images/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
 	            </div>
 	        </div>
 	    </div>
@@ -82,11 +88,1334 @@
 	    <!-----------------End Point Right------------------- -->
 	    <div class="clearboth divider1"></div>
 	    <p class="centerText">
-	        <a href="#dryeye_mobile_diagnosed" data-role="button" data-inline="true" data-theme="c" class="ui-link ui-btn ui-btn-c ui-btn-inline ui-shadow ui-corner-all" role="button">Diagnosed</a>
-	        <a href="#dryeye_mobile_1" data-role="button" data-inline="true" data-theme="n" class="ui-link ui-btn ui-btn-n ui-btn-inline ui-shadow ui-corner-all" role="button">First time</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="c" class="ui-link ui-btn ui-btn-c ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(2)">Diagnosed</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="n" class="ui-link ui-btn ui-btn-n ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">First time</a>
 	    </p>
 	    <p>&nbsp;</p>
 	</div>
+
+	<div class="ui-content" *ngIf="page==2">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue">
+	            <span class="orangefont">Alright</span><br>
+	            In that case we will see what is available over-the-counter.
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border left person------------------- -->
+	    <p class="blueBorder">Would you like to see what a pharmacist recommend to use over the counter for dry eyes? </p>
+	    <p class="blueBorderAll">Or check if you are looking at dry eyes assuming you need a refresher?</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	    	<!-- ../../../recom/adult_recom_mobile.php?sub_category_name=Dryeyes -->
+	        <a href="#" data-role="button" data-theme="g" data-inline="true" class="ui-link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" role="button">Pharmacist</a>
+	        <a href="#" data-role="button" data-theme="n" data-inline="true" class="ui-link ui-btn ui-btn-n ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Refresher</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=10 && page<30">
+	    <div id="dryeye1_mobile_1" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Anything involving the eye requires a <span class="purple_bluefont">carefully</span> analysis.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Let's not assume dry eyes without ruling out other things, at least to the best of our knowledge.</p>
+	        <p class="blueBorderAll">And if still thinking dry eye, you will still need to see a doctor for diagnosis and management. It will get worse unless the underlying cause is treated or it is actively managed by a healthcare professional.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="dryeye1_mobile_2_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you have <span class="redfont">injury </span>to your eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="dryeye1_mobile_3_y" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="blueBorder shadowInset" src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="redfont blueBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It may be more serious than you think.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="dryeye1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_3_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are your eyes also <span class="redfont">red</span> and <span class="bluefont">very painful?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <a href="#" (click)="togglePage(30)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="dryeye1_mobile_4_y" *ngIf="page==14">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Hope you are not looking at <span class="redfont">acute angle glaucoma.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">Let's quickly make sure this is not the case.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_4_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this like a <span class="orangefont">severe </span>eye pain that started <span class="purple_redfont">suddenly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="dryeye1_mobile_5_y" *ngIf="page==16">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a symptom of acute angle closure glaucoma.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">Angle-closure (acute) glaucoma occurs when the exit path of the aqueous humor fluid is blocked suddenly. This quickly cause a  severe, and painful rise in the pressure in the eye leading to a sudden, severe eye pain usually in one eye for now.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_5_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you seeing <span class="orangefont">halos</span> like rainbow around <span class="blue_brightfont">lights?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="dryeye1_mobile_6_y" *ngIf="page==18">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of acute angle closure glaucoma.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(19)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_6_n" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="purple_redfont">nausea</span> and / or <span class="orangefont">vomiting</span> with this red eye and severe eye pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(20)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(21)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="dryeye1_mobile_7_y" *ngIf="page==20">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="blueBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible glaucoma which is very dangerous as time goes by.</li>
+	            </ul>
+	        </div>
+	        <p class="blueBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth"></div>
+	        <p class="blueBorder purplefont centerText">Would you like to see the nearest hospital or Continue?</p>
+	        <p class="blueBorderAll redfontSmall centerText">Note:<br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="dryeye1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_7_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your vision getting <span class="purplefont">cloudy</span> with this red eye and eye pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="dryeye1_mobile_8_y" *ngIf="page==22">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a symptom of acute angle closure glaucoma.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_8_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does the eye feel <span class="purple_redfont">swollen?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(24)">Yes</button>
+	            <button data-inline="true" class="dryeye1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(25)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="dryeye1_mobile_9_y" *ngIf="page==24">
+	        <!--start 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(25)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye1_mobile_9_n" *ngIf="page==25">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                Those were the symptoms of <span class="redfont">acute angle closure</span> glaucoma.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">This is a medical emergency. If this apply to you, seek <span class="redfont">emergency room</span> care.</p>
+	        <p class="blueBorderAll">If not, let's continue and rule out other things that might mimic a dry eye that can be dangerous.</p>
+	        <p class="blueBorderAll">Remember, with the eye, we cannot assume anything.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="togglePage(30)" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="dryeye_blepharitis_mobile_2_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing <span class="grayfont">rusting</span> of the <span class="purple_bluefont">eyelids / eyelashes?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <a href="#" (click)="togglePage(50)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="dryeye_blepharitis_mobile_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Let's make sure you are not looking at <span class="purplefont">Blepharitis.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_blepharitis_mobile_3_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the <span class="purple_bluefont">margins</span> of the eyelids <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="dryeye_blepharitis_mobile_4_y" *ngIf="page==33">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of <span class="purplefont">blepharitis.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Blepharitis is a condition that causes inflammation of the eyelids.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_blepharitis_mobile_4_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does it<span class="grayfont"> feel like</span> there is <span class="bluefont">something</span> in your eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="dryeye_blepharitis_mobile_5_y" *ngIf="page==35">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="purplefont">Blepharitis</span> can make it feel like there is a foreign body in the eye.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">A dry eye can also make your eyes feel this way.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_blepharitis_mobile_5_n" *ngIf="page==36">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your eye very <span class="blue_brightfont">sensitive to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="dryeye_blepharitis_mobile_6_y" *ngIf="page==37">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of <span class="purplefont">blepharitis.</span> The eyes gets <span class="blue_brightfont">sensitive to light.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_blepharitis_mobile_6_n" *ngIf="page==38">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you experience <span class="brownfont">crusting</span> of the eyelashes on <span class="orangefont">awakening?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="dryeye_blepharitis_mobile_7_y" *ngIf="page==39">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a symptom of <span class="bluefont">blepharitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Tearing</li>
+	                <li>Itchiness of the eye</li>
+	                <li>Redness in the eyelid margins</li>
+	                <li>Rusting of the eyelid/eyelashes</li>
+	                <li>Burning sensation</li>
+	                <li>Like something in the eye?</li>
+	                <li>Crusting of the eyelashes on awakening.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_blepharitis_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_blepharitis_mobile_7_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"></span><br>
+	                We just went through some of the symptoms of <span class="purplefont">blepharitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If most of them apply to you, you should seek doctor office visit for full evaluation. If none apply to you, then let's continue and rule out something else.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" (click)="togglePage(50)" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+
+	<div class="ui-content" *ngIf="page>=50 && page<70">
+	    <div id="dryeye_sjs_mobile_2_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>With this suspected dry eyes, does your<span class="orangefont"> mouth</span> also <span class="brownfont">feel dry?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <a href="#" (click)="togglePage(80)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="dryeye_sjs_mobile_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Let's make sure you are not looking at <span class="bluefont">Sjogren syndrome.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_sjs_mobile_3_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing a <span class="purple_bluefont">feeling</span> that there is <span class="bluefont">something in the eye?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	            <button data-inline="true" class="dryeye_sjs_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="dryeye_sjs_mobile_4_y" *ngIf="page==53">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_sjs_mobile_4_n" *ngIf="page==54">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about difficulty <span class="purple_redfont">chewing </span>or <span class="orangefont">swallowing?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(55)">Yes</button>
+	            <button data-inline="true" class="dryeye_sjs_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(56)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="dryeye_sjs_mobile_5_y" *ngIf="page==55">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a symptom of <span class="bluefont">Sjogren syndrome.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Sjogren syndrome is a disorder that leads to the destruction of the glands that produce tears and saliva. This causes dry mouth and dry eyes.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_sjs_mobile_5_n" *ngIf="page==56">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are your eyes <span class="purple_redfont">itchy</span> and <span class="blue_brightfont">sensitive to light?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(58)">Yes</button>
+	            <button data-inline="true" class="dryeye_sjs_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(58)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="dryeye_sjs_mobile_6_y" *ngIf="page==57">
+	        <!--start follow up 6 div -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" >Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_sjs_mobile_6_n" *ngIf="page==58">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Would you say your sense of <span class="bluefont">taste</span> and <span class="orangefont">smell</span> is diminishing?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(59)">Yes</button>
+	            <button data-inline="true" class="dryeye_sjs_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(59)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="dryeye_sjs_mobile_7_y" *ngIf="page==59">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye_sjs_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(60)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye_sjs_mobile_7_n" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"></span><br>
+	                Those were the main symptoms of <span class="bluefont">Sjogren syndrome.</span>  
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If most of them apply to you see the doctor for further evaluation. If none, then let's continue and take a look at the symptoms of a dry eye.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" (click)="togglePage(80)" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=80 && page<100">
+	    <div id="dryeye2_mobile_1" *ngIf="page==80">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue shadowRight centerText">
+	                <span>Let's take a look at the <span class="Bluefont">symptoms</span> of a dry eye.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorderAll">
+	            Remember, we are not here to <span class="purplefont">diagnose</span> a dry eye for you. Only your healthcare provider can do that.
+	        </p>
+	        <p class="blueBorder">Let's see if you should suspect a dry eye or something else so you can decide on the best course to take.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(81)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="dryeye2_mobile_2_n" *ngIf="page==81">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does it feel as if there is <span class="bluefont">something</span> in your eye(s)?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(82)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(83)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="dryeye2_mobile_3_y" *ngIf="page==82">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                With <span class="bluefont">dry eyes</span> it might feel as if there is something in the eye.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_3_n_link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" data-theme="j" (click)="togglePage(83)">Let's continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_3_n" *ngIf="page==83">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the eye <span class="purplefont">stinging</span> or <span class="redfont">burning?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="bluefont">scratchy?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(84)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(85)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="dryeye2_mobile_4_y" *ngIf="page==84">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfont">Yes?</span><br>
+	                This is a symptom of a <span class="bluefont">dry eye.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">The symptoms include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li class="redfont">Eye stinging, burning or scratchy.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(85)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_4_n" *ngIf="page==85">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does the eye get <span class="bluefont">fatigued</span> after <span class="purple_bluefont">reading</span> a little?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(86)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(87)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="dryeye2_mobile_5_y" *ngIf="page==86">
+	        <!--start 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="purplefont">It does?</span><br>
+	                    <span class="redfont">Hmmm.</span> Dryness of the eyes can cause this.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of a dry eye include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye <span class="bluefont">fatigue</span> after reading a little.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(87)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_5_n" *ngIf="page==87">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the eye <span class="purplefont">tearing</span> <span class="grayfont">excessively?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(88)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(89)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="dryeye2_mobile_6_y" *ngIf="page==88">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a <span class="bluefont">symptom </span>of a dry eye.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Other symptoms include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye fatigue after reading a little.</li>
+	                <li class="redfont">Tearing excessively.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(89)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_6_n" *ngIf="page==89">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does your vision become <span class="pinkfont">blurry</span> at the end of the day?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(90)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(91)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="dryeye2_mobile_7_y" *ngIf="page==90">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                With dry eyes, the sight gets <span class="pinkfont">blurry</span> at the end of the day.<br><span class="grayfontSmall"> See other symptoms below.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of a dry eye include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye fatigue after reading a little.</li>
+	                <li>Tearing excessively.</li>
+	                <li>Vision gets <span class="pinkfont">blurred</span> at end of day.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(91)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_7_n" *ngIf="page==91">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does <span class="purple_bluefont">smoke</span> or <span class="bluefont">wind</span> <span class="grayfont">irritate</span> your eyes quickly and excessively?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(92)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(93)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="dryeye2_mobile_8_y" *ngIf="page==92">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                This is a symptom of <span class="bluefont">dryness</span> of the eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">The symptoms of a dry eye include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye fatigue after reading a little.</li>
+	                <li>Tearing excessively.</li>
+	                <li>Vision gets blurry at end of day.</li>
+	                <li>Excessive eye <span class="redfont">irritation</span> from smoke or wind</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(93)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_8_n" *ngIf="page==93">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Anything like a little <span class="orangefont">mucus</span> discharge from the eye?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(94)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(95)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="dryeye2_mobile_9_y" *ngIf="page==94">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                This can be a symptom of a dry eye. See others below.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder">The symptoms of a dry eye include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye fatigue after reading a little.</li>
+	                <li>Tearing excessively.</li>
+	                <li>Vision gets blurred at end of day.</li>
+	                <li>Excessive eye irritation from smoke or wind</li>
+	                <li>Sometimes a little <span class="orangefont">mucus</span> discharge from the eye.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(95)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_9_n" *ngIf="page==95">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you use <span class="bluefont">contact lenses</span> and if so are they getting less comfortable?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(96)">Yes</button>
+	            <button data-inline="true" class="dryeye2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(97)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="dryeye2_mobile_10_y" *ngIf="page==96">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">OK.</span><br>
+	                With dry eyes <span class="purple_bluefont">contact lenses </span>become less comfortable.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of a dry eye include:</p>
+	            <ul>
+	                <li>Feeling as if there is something in the eye.</li>
+	                <li>Eye stinging, burning or scratchy.</li>
+	                <li>Eye fatigue after reading a little.</li>
+	                <li>Tearing excessively.</li>
+	                <li>Vision gets blurred at end of day.</li>
+	                <li>Excessive eye irritation from smoke or wind</li>
+	                <li>Sometimes a little mucus discharge from the eye.</li>
+	                <li class="redfont">Contact lens becoming uncomfortable.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="dryeye2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(97)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye2_mobile_10_n" *ngIf="page==97">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont firstname"></span><br>
+	                We just went through the main symptoms of a dry eye. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If none applied to you, then you may not be looking at a dry eye.</p>
+	        <p class="redBorder">If any applied to you, we encourage you to get your <span class="redfont">OSDI</span><span class="redfontSmall">©</span> <span class="grayfontSmall">(Ocular Surface Disease Index)</span> score by tapping on the <span class="orangefont">"FYI"</span> button below. </p>
+	        <p class="blueBorderAll">This will take you to the "grade your dry eye" tool provided by refreshbrand.</p>
+	        <p class="blueBorder">The <span class="redfontSmall">OSDI©</span> is a valid and reliable tool for measuring and classifying dry eye into normal, mild to moderate and severe.</p>
+	        <p class="blueBorder">If you are done with the OSDI© tool, remember to come back and see what is available over the counter for dry eyes recommended by the pharmacist.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="http://www.refreshbrand.com/#dkblue" data-role="button" data-theme="m" data-inline="true" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button">FYI</a> 
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(100)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=100 && page<120">
+	    <div id="dryeye3_mobile_2_n" *ngIf="page==100">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you currently taking <span class="purple_redfont">antihistamines</span> for cold or allergies?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or antihistamine <span class="purple_redfont">sleeping pills?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(101)">Yes</button>
+	            <button data-inline="true" class="dryeye3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(102)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="dryeye3_mobile_3_y" *ngIf="page==101">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                These can cause <span class="bluefont">dryness</span> of the eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(102)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye3_mobile_3_n" *ngIf="page==102">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="bluefont">beta-blockers</span> for heart or high blood pressure?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="purple_bluefont">diuretics?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(103)">Yes</button>
+	            <button data-inline="true" class="dryeye3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(104)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="dryeye3_mobile_4_y" *ngIf="page==103">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purplefont">Yes?</span><br>
+	                Discuss your <span class="bluefont">dry eyes</span> with the doctor. These can also cause dry eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(104)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye3_mobile_4_n" *ngIf="page==104">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you taking <span class="orangefont">Tricyclic anti-depressants?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="orangefont">SSRIs</span> for depression?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(105)">Yes</button>
+	            <button data-inline="true" class="dryeye3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(106)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="dryeye3_mobile_5_y" *ngIf="page==105">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                These can cause dry eyes. Discuss this with the doctor.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If the dryness started after you started taking the medication, you should let your doctor know. But <strong>do not stop</strong> taking the medication.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(106)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye3_mobile_5_n" *ngIf="page==106">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you taking <span class="orangefont">Isotretinoin</span> for <span class="purple_redfont">acne?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(107)">Yes</button>
+	            <button data-inline="true" class="dryeye3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(108)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="dryeye3_mobile_6_y" *ngIf="page==107">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                These can lead to dryness of the eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(108)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye3_mobile_6_n" *ngIf="page==108">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">OK</span><br>
+	                We listed below other <span class="orangefont">medications</span> that can cause dry eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Medications include:</p>
+	            <ul>
+	                <li>Atropine</li>
+	                <li>Birth control pills</li>
+	                <li>Lortab, Ibuprofen</li>
+	                <li>Prilosec, prevacid, nexium, pepcid, tagamet</li>
+	            </ul>
+	        </div>
+	        <p class="blueBorder">If the dryness of the eyes started after you began taking these medications, let the doctor know. But do not stop taking the medication unless directed by the doctor. </p>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(110)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="dryeye3_mobile_7_y" *ngIf="page==109">
+	        <!--start 7 div -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="dryeye3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(110)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="dryeye3_mobile_7_n" *ngIf="page==110">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Well.</span><br>
+	                This ends a brief discussion of dryness of the eyes.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Let's see what a pharmacist recommend you use to get relief that is available over-the-counter. </p>
+	        <p class="blueBorderAll">Or would you prefer from the discussions so far to see the nearest eye clinic to you?</p>
+	        <p class="blueBorder">If you are thinking dry eyes, you must be under the care of a medical professional. Take this seriously. It will get worse.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Eye Clinic</a>
+	            <a href="#" class="dryeye_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div -->   
+	    <p>&nbsp;</p>
+	</div>
+
 
 	<div class="ui-popup-screen ui-overlay-n in" id="dryeye_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
 	<div class="ui-popup-container pop in ui-popup-active" id="dryeye_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">

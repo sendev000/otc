@@ -341,6 +341,7 @@ import { LiceInfographicsMobilePage } from '../pages/lice-infographics-mobile/li
 import { PinkeyeMobileInfographicsPage } from '../pages/pinkeye-mobile-infographics/pinkeye-mobile-infographics';
 import { RedeyeMobileInfographicsPage } from '../pages/redeye-mobile-infographics/redeye-mobile-infographics';
 import { StyeyeMobileInfographicsPage } from '../pages/styeye-mobile-infographics/styeye-mobile-infographics';
+import { DryeyeMobileInfographicsPage } from '../pages/dryeye-mobile-infographics/dryeye-mobile-infographics';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -682,6 +683,7 @@ import { AuthService} from '../pages/providers/auth-service';
     PinkeyeMobileInfographicsPage,
     RedeyeMobileInfographicsPage,
     StyeyeMobileInfographicsPage,
+    DryeyeMobileInfographicsPage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -1028,6 +1030,7 @@ import { AuthService} from '../pages/providers/auth-service';
     PinkeyeMobileInfographicsPage,
     RedeyeMobileInfographicsPage,
     StyeyeMobileInfographicsPage,
+    DryeyeMobileInfographicsPage,
   ],
   providers: [
     AuthService,

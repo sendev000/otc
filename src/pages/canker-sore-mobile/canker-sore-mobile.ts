@@ -112,10 +112,10 @@ export class CankerSoreMobilePage {
     this.pages[ind] = !this.pages[ind];
   }
   toggleSymptom(ind: number){
-  	this.symptoms[8] = false;
+  	this.symptoms[9] = false;
   }
   toggleAllSymptoms(b: boolean){
-  	for (let i=0;i<8;i++)
+  	for (let i=0;i<9;i++)
   		this.symptoms[i] = b;
   }
   toggleTriedlist(ind: number){
@@ -130,7 +130,7 @@ export class CankerSoreMobilePage {
   }
   goBack() {
   	this.toggleAllSymptoms(false);
-  	this.symptoms[8] = false;
+  	this.symptoms[9] = false;
   	this.page = 30;
   }
   goBack2(){

@@ -363,6 +363,8 @@ import { YeastInfographicsMobilePage } from '../pages/yeast-infographics-mobile/
 import { BitesInfographicsMobilePage } from '../pages/bites-infographics-mobile/bites-infographics-mobile';
 import { AnkleSprainInfographicsMobilePage } from '../pages/ankle-sprain-infographics-mobile/ankle-sprain-infographics-mobile';
 
+import { ContactSocialMobilePage } from '../pages/contact-social-mobile/contact-social-mobile';
+
 import { AuthService} from '../pages/providers/auth-service';
 
 @NgModule({
@@ -724,6 +726,8 @@ import { AuthService} from '../pages/providers/auth-service';
     YeastInfographicsMobilePage,
     BitesInfographicsMobilePage,
     AnkleSprainInfographicsMobilePage,
+
+    ContactSocialMobilePage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -1091,6 +1095,8 @@ import { AuthService} from '../pages/providers/auth-service';
     YeastInfographicsMobilePage,
     BitesInfographicsMobilePage,
     AnkleSprainInfographicsMobilePage,
+
+    ContactSocialMobilePage,
   ],
   providers: [
     AuthService,

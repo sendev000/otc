@@ -1,18 +1,907 @@
-<!--
-  Generated template for the ColdSoreMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>cold_sore_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Cold sores
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=0 && page<20">
+    <p *ngIf="page==0">Cold sores?</p>
+    <p *ngIf="page>=1 && page<20">Is it a cold sore?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=30 && page<50">
+    <p *ngIf="page>=30 && page<50">Any warning signs?</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue">
+	            <span>It is also called <span class="orangefont">fever blisters.</span> Let's take a look.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border left person------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="cold_sore_mobile_pop-placeholder">
+	        <!-- placeholder for cold_sore_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <div class="blueBorder centerText">
+	        <p>How do you know you have cold sores anyway?</p>
+	        <p>
+	            <br>
+	            <img src="assets/img/people/adult/mouth/coldsore-lady.svg" width="180" alt="Lady with cold sores">
+	        </p>
+	        <p class="blueBorderAll">Let's see what you are looking at.</p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="cold_sore_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="coldsore1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you looking at small <span class="bluefont">fluid-filled</span> <span class="redfont">blisters?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="coldsore1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="coldsore1_mobile_3_y" *ngIf="page==2">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="coldsore1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are there blisters that are <span class="redfont">red,</span> <span class="bluefont">raised a little</span> from the skin surface?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="coldsore1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="coldsore1_mobile_4_y" *ngIf="page==4">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">Yes?</span><br>
+	                <span class="purple_bluefont">Cold sores</span> can present this way. This is a sign.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder bluefont centerText">Signs include:</p>
+	            <ul>
+	                <li>Small fluid-filled blisters.</li>
+	                <li>Red and raised a little.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="coldsore1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you seeing blisters that are <span class="yellowfont">yellow</span> or <span class="brownfont">crusty?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="coldsore1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="coldsore1_mobile_5_y" *ngIf="page==6">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign of a <span class="purple_bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder centerText">Cold sores can be:</p>
+	            <ul>
+	                <li>Small fluid filled</li>
+	                <li>Red and raised a little</li>
+	                <li>Yellow and crusty</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="coldsore1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore1_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about small blisters filled with clear <span class="yellowfont">yellowish</span> fluid?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="coldsore1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="coldsore1_mobile_6_y" *ngIf="page==8">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can be a sign of a <span class="purple_bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Cold sores can be:</p>
+	            <ul>
+	                <li>Small fluid filled</li>
+	                <li>Red and raised a little</li>
+	                <li>Yellow and crusty</li>
+	                <li>Blisters with clear <span class="yellowfontSmall">yellowish</span> fluid</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="coldsore1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore1_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you looking at <span class="purplefont">leaking</span> <span class="redfont">blisters?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="coldsore1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="coldsore1_mobile_7_y" *ngIf="page==10">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You are more than likely looking at a <span class="purple_bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Cold sores can be:</p>
+	            <ul>
+	                <li>Small fluid filled</li>
+	                <li>Red and raised a little</li>
+	                <li>Yellow and crusty</li>
+	                <li>Blisters with clear yellowish fluid</li>
+	                <li>Leaking <span class="redfontSmall">blisters</span></li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="coldsore1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore1_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">Alright.</span><br>
+	                Those were some of the physical signs of a <span class="bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">If you think you may be looking at a cold sore, let's continue.</p>
+	        <p class="purpleBorderAll centerText">Else, you will want to see your doctor for further evaluation.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	    <div id="coldsore2_mobile_q1" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Where do you have the <span class="redfont">blister</span> or <span class="purplefont">rash?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider12"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div id="coldsore2_mobile_q1_form_div" style="" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-cyan mbsc-mobiscroll mbsc-ltr">
+	            <label for="coldsore2_mobile_q1_0" class="mbsc-checkbox" (click)="toggleSymptom(0)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_0" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[0]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Lips
+	            </span> </label>
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_1" class="mbsc-checkbox" (click)="toggleSymptom(1)"><input name="coldsore2_mobile_q1" type="checkbox" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" id="coldsore2_mobile_q1_1" value="" [(ngModel)]="symptoms[1]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Gums
+	            </span></label>
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_2" class="mbsc-checkbox" (click)="toggleSymptom(2)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_2" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[2]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Mouth
+	            </span></label>
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_3" class="mbsc-checkbox" (click)="toggleSymptom(3)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_3" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[3]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Throat
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_4" class="mbsc-checkbox" (click)="toggleSymptom(4)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_4" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[4]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Nose
+	            </span></label>
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_5" class="mbsc-checkbox" (click)="toggleSymptom(5)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_5" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[5]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Cheeks
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_7" class="mbsc-checkbox" (click)="toggleSymptom(6)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_7" class="coldsore2_mobileQ1 mbsc-control mbsc-control-ev" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label" [(ngModel)]="symptoms[6]">Near the eyes
+	            </span></label> 
+	            <hr class="hrcyan">
+	            <label for="coldsore2_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="coldsore2_mobile_q1" id="coldsore2_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[7]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">None of these
+	            </span>
+	            </label> 
+	            <hr class="hrcyan">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_coldsore2_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(21)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_coldsore2_mobile_q1_container" *ngIf="page==20 && mode==4">
+	        <div class="grid_9">
+	            <div class="bubbleRightBlue">
+	                <div id="selected_coldsore2_mobile_q1 centerText">
+	                	<span class="redfontLarge">Oops!,</span> You told me nothing 
+	                </div>
+	                <!--empty division- -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="coldsore2_mobile_eyes" *ngIf="page==21 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">Near the eyes?</span><br>
+	                You will have to see a doctor for this.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Herpes infection may be severe and dangerous if it occurs in or near the eye. </p>
+	        <p class="redBorder">This is a leading cause of blindness in the United States as it causes scarring of the cornea.</p>
+	        <p class="redBorderAll">Would you like to visit the nearest urgent care or Continue?</p>
+	    </div>
+	    <div id="coldsore2_mobile_other" *ngIf="page==21 && mode==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">Alright.</span><br>
+	                A few more questions to determine the scope of this cold sore.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorderAll">Would you like do this or think you shoud see the nearest  urgent care clinic to you from the discussions so far?</p>
+	    </div>
+	    <div id="coldsore2_mobile_none" *ngIf="page==21 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefont">None of these?</span><br>
+	                You will have to see a healthcare provider for further evaluation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Would you like to visit the nearest urgent care or Continue?</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_coldsore2_mobile" *ngIf="page==21">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_coldsore2_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a> 
+	            <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="coldsore3_mobile_2_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you experience <span class="redfont">tingling</span> or <span class="redfont">burning</span> near the lips or mouth area?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue centerText">
+	                        Before the <span class="redfont">blister or blisters</span> appeared?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="coldsore3_mobile_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">You did?</span><br>
+	                This is one of the <span class="redfont">warning signs</span> of a cold sore.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="coldsore3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_3_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="pinkfont">itching</span> of the <span class="grayfont">lips or skin</span> around the <span class="bluefont">mouth?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="coldsore3_mobile_4_y" *ngIf="page==33">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a <span class="redfont">warning</span> sign of a cold sore.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder centerText">Warning signs include:</p>
+	            <ul>
+	                <li>Tingling or burning near the lips or mouth area</li>
+	                <li><span class="pinkfont">Itching</span> of the lips or skin around the mouth</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="coldsore3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_4_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>If this is on the lips, is the <span class="grayfont">whole lip</span> <span class="purplefont">swollen?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="coldsore3_mobile_5_y" *ngIf="page==35">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                You may be looking at an <span class="orangefont">insect bite</span> or <span class="redfont">allergic reaction.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">You should go to the nearest urgent care clinic.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="coldsore3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_5_n" *ngIf="page==36">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you have a <span class="purplefont">sore throat</span> before the <span class="pinkfont">blisters</span> appeared?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="coldsore3_mobile_6_y" *ngIf="page==37">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Sore throat sometimes occur before the blisters of a cold sore.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Warning signs of a cold sore include:</p>
+	            <ul>
+	                <li>Tingling or burning near the lips or mouth area</li>
+	                <li>Itching of the lips or skin around the mouth</li>
+	                <li>Sometimes a <span class="purplefont">sore throat</span></li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="coldsore3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_6_n" *ngIf="page==38">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Any <span class="redfont">fever </span>before the blisters appeared?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="coldsore3_mobile_7_y" *ngIf="page==39">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Warning sign of a cold sore. Hence the name <span class="orangefont">fever blisters.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Warning signs include:</p>
+	            <ul>
+	                <li>Tingling or burning near the lips or mouth area</li>
+	                <li>Itching of the lips or skin around the mouth</li>
+	                <li>Sometimes a sore throat</li>
+	                <li class="orangefont">Fever</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="coldsore3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_7_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you feel your <span class="purple_redfont">glands swollen</span> before all these started?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="coldsore3_mobile_8_y" *ngIf="page==41">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                This is a <span class="redfont">warning</span> sign of a <span class="bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Warning signs of a cold sore include:</p>
+	            <ul>
+	                <li>Tingling or burning near the lips or mouth area</li>
+	                <li>Itching of the lips or skin around the mouth</li>
+	                <li>Sometimes a sore throat</li>
+	                <li>Fever</li>
+	                <li>Sometimes <span class="purple_redfont">swollen glands</span></li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><button data-inline="true" class="coldsore3_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_8_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Have you been around <span class="bluefont">someone</span> with a cold sore for the <span class="bluefont">past 3 weeks?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore3_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="coldsore3_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="coldsore3_mobile_9_y" *ngIf="page==43">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">You have?</span><br>
+	                Chances of a cold sore is <span class="bluefont">high.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="redBorder centerText">Cold sore is very contagious.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="coldsore3_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore3_mobile_9_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                Those were the <span class="redfont">warning signs</span> of a <span class="bluefont">cold sore.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Let's see if you need to see a doctor for this or if you can take care of it with a pharmacist's recommended over-the-counter remedy.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div -->   
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="coldsore4_mobile_1" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this an <span class="redfont">outbreak.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorderAll centerText">An outbreak is having <span class="orangefont">many blisters</span> at the same time. </p>
+	        <p class="blueBorder centerText">Let's find out if this is the case.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(51)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="coldsore4_mobile_2_n" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you looking at small blisters that <span class="bluefont">grew together</span> into a large blister?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(52)">Yes</button>
+	            <button data-inline="true" class="coldsore4_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(53)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="coldsore4_mobile_3_y" *ngIf="page==52">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(53)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore4_mobile_3_n" *ngIf="page==53">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about small red blisters that <span class="purplefont">break</span> open and leak?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(54)">Yes</button>
+	            <button data-inline="true" class="coldsore4_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(55)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="coldsore4_mobile_4_y" *ngIf="page==54">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(55)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore4_mobile_4_n" *ngIf="page==55">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you seeing blisters<span class="purple_redfont"> filled with</span> clear yellowish fluid?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(56)">Yes</button>
+	            <button data-inline="true" class="coldsore4_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(57)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="coldsore4_mobile_5_y" *ngIf="page==56">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(57)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore4_mobile_5_n" *ngIf="page==57">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">Now,</span><br>
+	                have you been <span class="bluefont">diagnosed</span> with cold sore by a doctor before?
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or this is your <span class="purplefont">first time</span> experiencing cold sores?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-molly-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="coldsore4_mobile_6_y_link ui-btn ui-btn-n ui-btn-inline ui-shadow ui-corner-all" data-theme="n" (click)="togglePage(58)">Diagnosed</button>
+	            <button data-inline="true" class="coldsore4_mobile_6_n_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(59)">First time</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="coldsore4_mobile_6_y" *ngIf="page==58">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Diagnosed?</span><br>
+	                Better to continue with what worked for you in the past.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="purpleBorder purplefont">If you:</p>
+	            <ul>
+	                <li><strong>Used a prescription medication before:</strong><br>
+	                    Call the doctor for a refill or a new prescription. Doctors are aware of re-occurences and you may not have to go in and see the doctor.
+	                </li>
+	                <br>
+	                <li><strong>Still have the cream or pills you were prescribed last time:</strong><br>
+	                    See if they are not expired and use them as per the previous directions
+	                </li>
+	                <br>
+	                <li><strong>Have no doctor at the moment:</strong><br>
+	                    Continue to see what a pharmacist recommends over-the-counter until you can see a doctor.
+	                </li>
+	                <br>
+	                <li><strong>Used an over-the-counter cream before and it worked fine:</strong><br>
+	                    Then repeat it. It should work as before.
+	                </li>
+	            </ul>
+	        </div>
+	        <p class="blueBorder centerText">Would you like to see what a pharmacist recommend you use over the counter or visit the nearest urgent care clinic?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="coldsore4_mobile_6_n" *ngIf="page==59">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">First time?</span><br>
+	                See a doctor when experiencing this for the <span class="redfont">first time.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-molly-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">You need to be sure what you're dealing with. </p>
+	        <p class="blueBorder">If you are sure it is <span class="bluefont">cold sore</span> you are looking at, let's see a pharmacist for an  over-the-counter recommendation.</p>
+	        <p class="blueBorderAll grayfontSmall centerText">If <span class="redfont">after 2 weeks,</span> there is no improvement or you've had this cold sore for 2 weeks now  and there is no improvement, then you must see a doctor.</p>
+	        <p class="blueBorderAll centerText">Would you like to see what a pharmacist recommend or visit the nearest urgent care clinic for help?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="200">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="cold_sore_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_sore_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="cold_sore_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="cold_sore_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="blueBorderAll">A typical cold sore goes through 5 stages from when it is formed to going away in about 1 to 2 weeks. The stages include:</p>
+	        <ol>
+	            <li>Tingling or Prodrome stage</li>
+	            <li>Blistering stage</li>
+	            <li>Weeping or oozing stage</li>
+	            <li>Scabbing stage and</li>
+	            <li>Healing stage</li>
+	        </ol>
+	        <p class="blueBorder">Cold sore is very contagious. So keep in mind the risk of transmitting the cold sore virus while you are at it. Take special care to avoid contact with infants.</p>
+	    </div>
+	</div>
 </ion-content>

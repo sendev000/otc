@@ -1,18 +1,905 @@
-<!--
-  Generated template for the ShoulderMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>shoulder_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Shoulder Pain
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<60">
+    <p *ngIf="page==0">Shoulder Pain?</p>
+    <p *ngIf="page>0 && page<20">what is the nature?</p>
+    <p *ngIf="page>=20 && page<40">How bad is it?</p>
+    <p *ngIf="page>=40 && page<60">Is it bursitis?</p>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfont">Shoulder</span><span class="redfontLarge"> pain</span><br>
+	            may be caused by swelling, damage, or changes around the rotator cuff.
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="redBorder centerText">
+	        <p>Other causes include bursitis, dislocation, arthritis, bone spurs and so on. Let's see what we've got here.</p>
+	        <hr class="hrpink">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/shoulder/shoulderpain-lady.svg" width="150" alt="lady with shoulder pain holding the shoulder">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="shoulder_mobile_pop-placeholder">
+	        <!-- placeholder for shoulder_mobile_pop  -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="shoulder_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="shoulder_heart_mobile_1" *ngIf="page==1">
+	        <!-----Start follow up intro--- -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Alright.</span><br>
+	                Before we continue, let's rule out anything that may require urgent care.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End follow up intro -->
+	    <div id="shoulder_heart_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did this pain start <span class="redfont">suddenly</span> and now you have a <span class="orangefont">pressure-like</span> feeling in the shoulder?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="shoulder_heart_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="shoulder_heart_mobile_3_y" *ngIf="page==3">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did it start <span class="purple_redfont">suddenly</span> and now it is like a <span class="redfont">crushing pain</span> in the shoulder?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="shoulder_heart_mobile_4_y" *ngIf="page==5">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge firstname"> </span><br>
+	                Let's make sure you are not looking at a <span class="redfont">heart attack</span> in progress.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Does this pain <span class="purplefont">run</span> from your <span class="redfont">jaw</span> to the shoulder?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or run from the <span class="redfont">neck</span> to your shoulder?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="shoulder_heart_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="shoulder_heart_mobile_5_y" *ngIf="page==7">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Looking at a possible heart attack coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.<br>
+	            <span class="redfontSmallSmall">Pull down this page to continue.</span>
+	        </p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Does the pain <span class="bluefont">run from</span> your <span class="redfont">chest</span> to your shoulder?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="shoulder_heart_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="shoulder_heart_mobile_6_y" *ngIf="page==9">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Sign of a possible heart attack coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.<br>
+	            <span class="redfontSmallSmall">Pull down this page to continue.</span>
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="i" data-inline="true" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you <span class="orangefont">feeling dizzy</span> and <span class="bluefont">sweating</span> with this shoulder pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="shoulder_heart_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="shoulder_heart_mobile_7_y" *ngIf="page==11">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Sign of a heart attack coming on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.<br>
+	            <span class="redfontSmallSmall">Pull down this page to continue.</span>
+	        </p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="i" data-inline="true" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about feeling<span class="purple_bluefont"> short on breath</span> with this shoulder pain that started <span class="redfont">suddenly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder_heart_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="shoulder_heart_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="shoulder_heart_mobile_8_y" *ngIf="page==13">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Need to rule out anything serious.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth"></div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.<br>
+	            <span class="redfontSmallSmall">Pull down this page to continue.</span>
+	        </p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder_heart_mobile_8_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge firstname"> </span><br>
+	                We've tried to rule out a possible <span class="redfontLarge">heart attack</span> coming on.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Sudden unfamiliar shoulder pain may be a sign of a heart attack coming on.</p>
+	        <p class="redBorderAll">Now let's see if you need to visit the nearest urgent care or see a doctor for this shoulder pain.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <p>&nbsp;</p>
+	</div>
+	
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="shoulder1_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Can you <span class="purplefont">move</span> the shoulder at all?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="shoulder1_mobile_3_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="shoulder1_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible dislocation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="shoulder1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder1_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="orangefont">fever </span>with this shoulder pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="shoulder1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="shoulder1_mobile_4_y" *ngIf="page==23">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a possible <span class="redfont">infection.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="shoulder1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder1_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is the shoulder <span class="purple_redfont">swollen</span> and <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or looking <span class="purple_redfont">bluish?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="shoulder1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="shoulder1_mobile_5_y" *ngIf="page==25">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Highly inflamed.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="shoulder1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder1_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is this shoulder pain lasting longer than <span class="purple_bluefont">1 to 2 weeks?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="shoulder1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="shoulder1_mobile_6_y" *ngIf="page==27">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Time to see a doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It is going to get worse.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="shoulder1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder1_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have a history of <span class="bluefont">arthritis?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="shoulder1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="shoulder1_mobile_7_y" *ngIf="page==29">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need further evaluation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="shoulder1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder1_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge firstname"> </span><br>
+	                Seek urgent care if dislocation or a direct <span class="redfont">shoulder injury.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If none of the above discussions so far apply to you, then you may be looking at an inflammation such as bursitis, overuse or injury of nearby tendons, such as the bicep muscles of your arms.</p>
+	        <p class="orangeBorderAll centerText"> Let's continue and see what can come up with.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	</div>
 
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="shoulder2_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span><span class="orangefont">Bursitis</span> is <span class="pinkfont">inflammation</span> of the sac called bursa.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="shoulder2_mobile_2_pop-placeholder">
+	            <!-- placeholder for shoulder2_mobile_2_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <p class="redBorder centerText">Let's find out if this is what you are looking at.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="shoulder2_mobile_2_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <button data-inline="true" class="shoulder2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 2 div --> 
+	    <div id="shoulder2_mobile_3_y" *ngIf="page==41">
+	        <!--start 3 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="shoulder2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Try <span class="bluefont">pressing</span>  around the <span class="grayfont">shoulder joint.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Do you feel <span class="purplefont">pain</span> or <span class="purple_redfont">tenderness?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="shoulder2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div -->
+	    <div id="shoulder2_mobile_4_y" *ngIf="page==43">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="shoulder2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>OK. Try <span class="orangefont">moving</span> the shoulder joint.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Any feeling of <span class="redfont">stiffness</span> or <span class="orangefont">achiness?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="shoulder2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="shoulder2_mobile_5_y" *ngIf="page==45">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="shoulder2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is there <span class="purple_redfont">swelling</span> over the affected shoulder joint?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="shoulder2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5 div --> 
+	    <div id="shoulder2_mobile_6_y" *ngIf="page==47">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                You may be looking at <span class="redfont">bursitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">It is adviceable to see a doctor for this because you may need some steroid shots or your doctor may need to drain the fluid from the sac if it is infected and give appropriate antibiotics often against stap. aureus.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="shoulder2_mobile_6_pop-placeholder">
+	            <!-- placeholder for shoulder2_mobile_6_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="shoulder2_mobile_6_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(true)">FYI</a>
+	            <button data-inline="true" class="shoulder2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="redfont">redness</span> over the shoulder joint?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or feeling <span class="purple_redfont">warm to touch?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(49)">Yes</button>
+	            <button data-inline="true" class="shoulder2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(50)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="shoulder2_mobile_7_y" *ngIf="page==49">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Most likely looking at<span class="redfont"> bursitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">See a doctor for this. You may need steroid shots or the doctor may need to drain the fluid from the sac if it is infected and give appropriate antibiotics.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="shoulder2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(50)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_7_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Try <span class="purple_bluefont">putting on</span> a coat or a jacket.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Is the shoulder <span class="purplefont">painful?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <button data-inline="true" class="shoulder2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(52)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="shoulder2_mobile_8_y" *ngIf="page==51">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                We are thinking a possible <span class="redfont">bursitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="shoulder2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="shoulder2_mobile_8_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="orangefont">Oh well.</span><br>
+	                Those were the signs and symptoms of <span class="redfont">bursitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">
+	            If none of the signs or symptoms apply to you, you  may have just a shoulder sprain or slept on the shoulder in a wrong way.
+	        </p>
+	        <p class="orangeBorderAll"> You could also be looking at injury of nearby tendons, such as the bicep muscles of your arms.</p>
+	        <p class="orangeBorderAll">Let's see what a pharmacist recommend you do to help with the shoulder pain</p>
+	        <p class="orangeBorderAll centerText"> Or would like to go to the nearest urgent care clinic if you are thinking bursitis?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="500">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="200">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" class="shoulder_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="shoulder_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="shoulder_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="shoulder_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="blueBorder">This cuff is a group of four tendons in the shoulder that gives it a wide range of motion.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="shoulder2_mobile_2_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="shoulder2_mobile_2_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="shoulder2_mobile_2_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="redBorder"> This sac is flat and filled with fluid and usually  lies between a tendon and skin or bone  near joints where tendons or muscles pass over bony projections.</p>
+	        <p class="redBorderAll"> They help with movement and reduce friction between moving parts of the joints. They also provide cushioning where skin, muscles, tendons, and ligaments rub over the bones.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="shoulder2_mobile_6_pop-screen" *ngIf="FYIDlg3.show" (click)="toggleFYIDlg3(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="shoulder2_mobile_6_pop-popup" *ngIf="FYIDlg3.show" [ngStyle]="{'max-width': FYIDlg3.maxWidth+'px','top': FYIDlg3.top+'px', 'left': FYIDlg3.left+'px', 'width': FYIDlg3.width+'px'}">
+	    <div data-role="popup" id="shoulder2_mobile_6_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg3(false)">Close</a>
+	        <p class="purplefontSmall redBorderAll">The doctor may remove a sample of fluid from the bursa with a needle and have this sample tested for causes of the inflammation such as gout or an infection.</p>
+	    </div>
+	</div>
 </ion-content>

@@ -10,6 +10,7 @@ import { NavController, NavParams, MenuController, Content, Platform } from 'ion
 import { GlobalVars } from '../providers/globalvars';
 import { UrgentCarePage } from '../urgent-care/urgent-care';
 import { ToothacheMobilePage } from '../toothache-mobile/toothache-mobile';
+import { EaracheInfographicsMobilePage } from '../earache-infographics-mobile/earache-infographics-mobile';
 
 @Component({
   selector: 'page-earache-mobile',
@@ -76,7 +77,7 @@ export class EaracheMobilePage {
 	subPages: any;
 	pages: any;
 	currentTemp: any;
-	currentDay: any;
+	currentEarache: any;
   AbsoluteURL: string;
   symptoms: any;
   triedlist: any;
@@ -87,7 +88,7 @@ export class EaracheMobilePage {
   	this.mode = 0;
   	this.mode2 = 0;
   	this.currentTemp = 98;	// default;
-  	this.currentDay  = 0;
+  	this.currentEarache  = 0;
   	this.symptoms = [
   			false, false, false, false, false, false, false, false, false, false, false
   		]
@@ -101,6 +102,7 @@ export class EaracheMobilePage {
   	this.subPages = [
   			UrgentCarePage, 			// 0
   			ToothacheMobilePage,		// 1
+  			EaracheInfographicsMobilePage,	// 2
   		];
 
   }
@@ -238,9 +240,9 @@ export class EaracheMobilePage {
   	
     this.page = ind;
   }
-  goBackDay() {
-  	this.page = 90;
-  	this.currentDay = 0;
+  goBackEarache() {
+  	this.page = 100;
+  	this.currentEarache = 0;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdultTakeMobileListPage');

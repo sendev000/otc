@@ -1,18 +1,686 @@
-<!--
-  Generated template for the DrymouthMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>drymouth_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Dry Mouth
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page==0">
+    <p *ngIf="page==0">Dry Mouth?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=10 && page<50">
+    <p *ngIf="page>=10 && page<40">Is it dry mouth?</p>
+    <p *ngIf="page>=40 && page<50">What could be the cause?</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span><span class="blue_brightfont">Dry mouth</span> is unknown for some people, but to you it is killing you.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder">
+	        <p>Food is difficult to swallow, seem dry, not as tasteful as you would expect because of a dry tongue.</p>
+	        <p class="blueBorderAll">And since saliva is in short supply, some enzymes that aid in digestion or even saliva that help to prevent tooth decay will be lacking.</p>
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/mouth/drymouth-lady.svg" width="200" alt="Lady with dry mouth">
+	        </p>
+	        <p class="orangeBorderAll">It's okay. Let's see if there is anything over the counter to help with dry mouth.</p>
+	    </div>
+	    <p class="orangeBorderAll">But first, let's be sure you are looking at a dry mouth and not something more serious that will need urgent care or emergency room visit.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==1">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Have you been <span class="purplefont">diagnosed</span> with dry mouth <span class="purple_bluefont">(xerostomia)?</span></span><br>
+	        </div>
+	        <div class="clearboth"></div>
+	        <div class="container_12">
+	            <div class="grid_8">
+	                <br>
+	                <div class="bubbleRightBlue centerText">
+	                    Or this is your <span class="blue_brightfont">first time</span> feeling your mouth being dry?
+	                </div>
+	            </div>
+	            <div class="grid_4">
+	                <img src="assets/img/pharm/female/pharm-tonia.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	        </div>
+	    </div>
+	    <br>
+	    <!-----------------End Point Right------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" data-theme="b" class="ui-link ui-btn ui-btn-b ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">First time</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Diagnosed</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=10 && page<40">
+	    <div id="drymouth2_mobile_1" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefont">Alright, </span><br>
+	                let's be sure you are looking at a dry mouth.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder centerText">Lack of saliva which moistens the mouth and help with digestion will make your mouth feel dry.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="drymouth2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="drymouth2_mobile_2_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does it feel like your <span class="purple_bluefont">saliva</span> is <span class="orangefont">thick</span> and <span class="purple_bluefont">stringy?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="drymouth2_mobile_3_y" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="purple_bluefont">Dryness</span> of the mouth can make it feel this way.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_3_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does the <span class="orangefont">tongue</span> feel dry to you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="drymouth2_mobile_4_y" *ngIf="page==14">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a <span class="purplefont">symptom</span> of a dry mouth. The tongue feels dry.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="drymouth2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_4_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does <span class="orangefont">food</span> feel dry to you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="drymouth2_mobile_5_y" *ngIf="page==16">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                With a dry mouth <span class="orangefont">food </span>will feel dry. This is a symptom.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="drymouth2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_5_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the <span class="bluefont">corners</span> of the mouth splitting?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="drymouth2_mobile_6_y" *ngIf="page==18">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">They are?</span><br>
+	                With dry mouth the corners of the mouth start splitting.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Dry mouth symptoms include:</p>
+	            <ul>
+	                <li>Thick and Stringy saliva</li>
+	                <li>Tongue feeling dry</li>
+	                <li>Food feeling dry</li>
+	                <li><span class="purple_bluefont">Corners</span> of mouth splitting</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(19)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_6_n" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the lips <span class="pinkfont">cracking?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(20)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(21)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="drymouth2_mobile_7_y" *ngIf="page==20">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="purplefont"> Absence</span> of saliva to moisten the lips will make them crack.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Thick and Stringy saliva</li>
+	                <li>Tongue feeling dry</li>
+	                <li>Food feeling dry</li>
+	                <li>Corners of mouth splitting</li>
+	                <li class="purple_redfont">Cracking lips</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_7_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you losing <span class="orangefont">taste sensations?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="drymouth2_mobile_8_y" *ngIf="page==22">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a <span class="orangefont">symptom</span> of a dry mouth.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Thick and Stringy saliva</li>
+	                <li>Tongue feeling dry</li>
+	                <li>Food feeling dry</li>
+	                <li>Corners of mouth splitting</li>
+	                <li>Cracking lips</li>
+	                <li>Loss of <span class="orangefont">taste sensations</span></li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_8_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you having difficulty<span class="purplefont"> speaking?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(24)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(25)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="drymouth2_mobile_9_y" *ngIf="page==24">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                With a dry mouth, you will have <span class="grayfont">difficulty speaking.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(25)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_9_n" *ngIf="page==25">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you think you have <span class="purple_bluefont">dry mouth</span> because...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue centerText">
+	                        ...food is <span class="purple_bluefont">hard to swallow?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-tonia.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(27)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="drymouth2_mobile_10_y" *ngIf="page==26">
+	        <!--start 10 div -->
+	        <button data-inline="true" class="drymouth2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(27)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_10_n" *ngIf="page==27">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing more <span class="purple_redfont">tooth decaying?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(28)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(29)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div -->
+	    <div id="drymouth2_mobile_11_y" *ngIf="page==28">
+	        <!--start 11 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="bluefont">Tooth decay</span> usually accompany dryness of the mouth.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder">If you are also experiencing other symptoms described above, discuss this with your dentist or doctor.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="drymouth2_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(29)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_11_n" *ngIf="page==29">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you frequently experience <span class="redfont">soreness </span>of the throat?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth2_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(30)">Yes</button>
+	            <button data-inline="true" class="drymouth2_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(31)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 11 div --> 
+	    <div id="drymouth2_mobile_12_y" *ngIf="page==30">
+	        <!--start 12 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">You do?</span><br>
+	                Saliva not  reaching the throat to <span class="purplefont"> moisturize</span> it will make it sore.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth2_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth2_mobile_12_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont firstname"> </span><br>
+	                Those were the <span class="purple_bluefont">main symptoms</span> of a dry mouth.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">You should have a pretty good idea if you are looking at a dry mouth or not by now.</p>
+	        <p class="blueBorderAll centerText">Let's continue and see what may be causing this.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 12 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="drymouth3_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you currently taking <span class="redfont"> prescription medications?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorderAll">Most prescription medications can cause dry mouth.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="drymouth3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="drymouth3_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Call the pharmacy and see if it has dry mouth as a side effect and then discuss this with your doctor.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder centerText">Do not stop taking the medication without your doctor's knowledge.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="drymouth3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth3_mobile_3_n"*ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>With this dry mouth, do you also have <span class="redfont">fever?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="drymouth3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div -->
+	    <div id="drymouth3_mobile_4_y" *ngIf="page==43">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at something serious.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="drymouth3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth3_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have or had any <span class="greenfont">diarrhea?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="drymouth3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="drymouth3_mobile_5_y" *ngIf="page==45">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Sign of dehydration.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>	
+	            <button data-inline="true" class="drymouth3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(47)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth3_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you start feeling dry mouth after excessive <span class="purple_bluefont">sweating?</span> </span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="drymouth3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="drymouth3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="drymouth3_mobile_6_y" *ngIf="page==47">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at dehydration.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="drymouth3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="drymouth3_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont firstname"> </span><br>
+	                There are other causes of dryness of the mouth. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-tonia.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">The important thing is to make sure you are not looking at a <span class="redfont">dehydration</span> situation.</p>
+	        <p>If the dryness of the mouth is getting worse, you should discuss this with a doctor. It is very important to find out what is causing it. Bear in mind though that dry mouth is more common as you age and can be age related.
+	        </p>
+	        <p class="blueBorder">Let's see what a pharmacist recommend to help with this dry mouth that is available over-the-counter for now.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="drymouth_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

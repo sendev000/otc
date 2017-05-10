@@ -1,18 +1,903 @@
-<!--
-  Generated template for the CoughMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>cough_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Cough
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page==0">
+    <p *ngIf="page==0">Coughing?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=20 && page<50">
+    <p *ngIf="page>=20 && page<40">Need a doctor?</p>
+    <p *ngIf="page>=40 && page<50">Dry cough.</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=60 && page<80">
+    <p *ngIf="page==60">Productive cough.</p>
+    <p *ngIf="page>=70 && page<80">How long?</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Coughing helps clear the large breathing passages of secretions, foreign particles, bacteria and viruses.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder centerText">
+	        <p>There are dry (no mucus) and productive (brings up mucus) cough. </p>
+	        <hr class="hrblue">
+	        <br>
+	        <p>
+	            <br>
+	            <img src="assets/img/people/adult/throat/cough-lady.svg" width="180" alt="Coughing lady">
+	        </p>
+	    </div>
+	    <p class="blueBorderAll">Before you check with a pharmacist on what to take for this cough  over-the-counter, let's make sure this is not an emergency or a serious situation.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+	<div class="ui-content" *ngIf="page>=1 && page<20">
+	    <div id="cough1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>With this cough, are you experiencing <span class="bluefont">shortness of breath?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="redfont">difficulty</span> breathing?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-danny.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="cough1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="cough1_mobile_3_y" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek emergency room visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Need to rule out serious situation going on.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	            <button data-inline="true" class="cough1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you <span class="grayfont">break out</span> in <span class="orangefont">hives</span> with this cough?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="cough1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="cough1_mobile_4_y" *ngIf="page==4">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>looking at a possible allergic reaction that can be dangerous.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="cough1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you also experiencing <span class="bluefont">swollen face?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="redfont">swollen throat?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-danny.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="cough1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="cough1_mobile_5_y" *ngIf="page==6">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  the emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>looking at a possible allergic reaction that can be dangerous or a heart attack going on here.</li>
+	                <li>Need to rule out a heart attack going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="cough1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough1_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about difficulty <span class="bluefont">swallowing</span> and you <span class="grayfont">don't</span> have a sore throat?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="cough1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="cough1_mobile_6_y" *ngIf="page==8">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or the emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible anaphylactic reaction going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="cough1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough1_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does it feel like a <span class="blue_brightfont">tight band</span> around the<span class="purplefont"> chest</span> with this cough?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="cough1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="cough1_mobile_7_y" *ngIf="page==10">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Symptom of a heart attack.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="cough1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough1_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Those were to rule out <span class="redfont">emergency</span> situations. </span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Emergency situations that involve coughing include anaphylactic reactions and heart attack.</p>
+	        <p class="redBorderAll centerText">Let's continue and see how to take care of this cough of yours.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="cough2_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you also have <span class="redfont">fever </span>with this cough?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="cough2_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at a bacterial infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you coughing up <span class="redfont">blood?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="cough2_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Especially if you are experiencing:</p>
+	            <ul>
+	                <li>weight loss</li>
+	                <li>fever</li>
+	                <li>night sweats.</li>
+	            </ul>
+	            <p class="redBorder centerText">You may be looking at TB</p>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>When breathing in, do you make <span class="bluefont">high pitched</span> sound? </span><br>
+	                <span class="bluefontSmall">(called stridor)</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="cough2_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Stridor is a symptom, so the cause need to be found.</li>
+	                <li>Possible anaphylactic reaction.</li>
+	                <li>Possible swelling or severe fluid accumulation in the airways.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you cough up thick, foul-smelling, <span class="yellowfont">yellowish</span>-<span class="greenfont">green</span> mucus?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="cough2_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible bacteria infection</li>
+	                <li>Need to rule out pneumonia.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this a <span class="redfont">violent</span> cough that begins <span class="orangefont">suddenly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="cough2_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible bronchitis</li>
+	                <li>Possible spasm in the throat</li>
+	                <li>Be prepared to go from doctor to doctor trying to find out the cause.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have a history of heart disease and your legs are <span class="bluefont">swollen?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or cough  gets worse when you <span class="bluefont">lie down?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-danny.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="cough2_mobile_8_y" *ngIf="page==31">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek emergency room or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be signs of&nbsp;congestive heart failure.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_8_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this cough worse at<span class="bluefont"> night</span> or in the <span class="orangefont">early morning?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        When you first <span class="Bluefont">wake up?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-danny.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="cough2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="cough2_mobile_9_y" *ngIf="page==33">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible acid reflux (GERD).</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="blueBorder">Suspect GERD especially if you also have burning chest or abdominal pain and a sour taste in the mouth when you wake up.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="cough2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough2_mobile_9_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the cough <span class="bluefont">dry</span> <span class="grayfontSmall">(no mucus)</span> or <span class="orangefont">productive?</span> <span class="grayfontSmall">(brings up mucus)</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->  
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Dry</a>
+	            <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Productive</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="cough3_mobile_1" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span><span class="purple_bluefont">Dry cough</span> is an attempt to clear a foreign sensation in the throat.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">This sensation can be  a result of the throat and airways getting inflamed as in the beginning of a cold or flu or with inhaled pollens and so on.</p>
+	        <p class="blueBorderAll centerText">Let's see what may be causing the dry cough.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="cough3_mobile_2_n" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you just start taking a new prescription medication?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(42)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">No.</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="cough3_mobile_3_y" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                See if your medication can cause cough by checking with your pharmacist.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="cough_mobile_3b_2_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="purple_bluefont">heartburn or GERD.</span> Do you get one often?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough_mobile_3b_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <button data-inline="true" class="cough_mobile_3b_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(52)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="cough_mobile_3b_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This can lead to dry cough.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="cough_mobile_3b_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough_mobile_3b_3_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>There are other causes of <span class="bluefont">dry cough</span> not mentioned.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">For instance a small study has shown that dry cough can be caused by  a defficiency of vitamin B12. <span class="grayfont"><a href="http://www.ncbi.nlm.nih.gov/pubmed/21248188" class="ui-link">(Bucca CB et al)</a></span></p>
+	        <p class="blueBorderAll"> Your dry cough may mean you are coming down with a cold or flu.</p>
+	        <p class="blueBorder"> If there is fever, we recommend you go to the nearest urgent care clinic. It is going to be more that a cold.</p>
+	        <p class="blueBorderAll">Assuming the cough is due to viral infection or that you are coming down with a cold, let's see what a pharmacist recommend over-the-counter to take care of this. </p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page==60">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span><span class="orangefont">Symptom </span>of respiratory infections, Allergies, and heart conditions.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <p class="blueBorder">If you have a cold or flu, it is usually in the middle of the illness as the throat is trying to get rid of all the mucus that has been produced.</p>
+	    <p class="blueBorderAll">It is important to thin the mucus and expectorate it <span class="grayfontSmall">(bring it up)</span>. </p>
+	    <p class="blueBorderAll">A thick mucus could accumulate and block the respiratory pathways.</p>
+	    <p class="blueBorder"> Moreover, you want to bring it up and out rather than let it carry all the bacteria and viruses to the lungs thereby providing a risk for pneumonia.</p>
+	    <p class="blueBorderAll">Let's see if a pharmacist has any suggestions on what over-the-counter medications you can use to achieve this goals.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<80">
+	    <div id="slider_cough5_mobile_div" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>On what <span class="bluefont">day </span>is this cough?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider10"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_cough5_mobile" id="slider_cough5_mobile-label">Day:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="14" step="1" [(ngModel)]="currentDay" color="sliderPink">
+							<ion-label range-left>{{currentDay}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">
+	        		Here you go<input type="button" id="get_cough5_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(71)" />
+	        	</div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="" id="selected_cough5_mobile_value_container" *ngIf="page==71">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont firstname"> </span><br><br>
+	                <div id="selected_cough5_mobile_value">
+	                	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentDay}}</span>
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-danny.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div id="cough5_mobile_option1" *ngIf="page==71 && currentDay<=3">
+	        <h3>Option1</h3>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough5_mobile_option2" *ngIf="page==71 && currentDay<=7 && currentDay>3">
+	        <h3>Option2</h3>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="cough5_mobile_option3" *ngIf="page==71 && currentDay<=14 && currentDay>=8">
+	        <h3>Option3</h3>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_cough5_mobile" *ngIf="page==71">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button class="back_cough5_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackDay()">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Find Clinic</a>
+	            <a href="#" class="cough_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

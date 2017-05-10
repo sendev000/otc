@@ -18,7 +18,7 @@
       </button>
     </ion-buttons>
 	</ion-navbar>
-	<ion-navbar class="fullWidth robotoLight bgDeepOrange" *ngIf="page>=20 && page<100">
+	<ion-navbar class="fullWidth robotoLight bgDeepOrange" *ngIf="page>=20 && page<110">
     	<p *ngIf="page>=20 && page<40">Is it an ear infection?</p>
     	<p *ngIf="page>=40 && page<60">Is it swimmer's ear?</p>
     	<p *ngIf="page>=60 && page<80">Is it a TMJ disorder?</p>
@@ -371,7 +371,7 @@
 	        <br>
 	        <p class="centerText">
 	            <button data-inline="true" class="earache_infection_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
-	            <a href="#" (click)="togglepage(40)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	            <a href="#" (click)="togglePage(40)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -573,7 +573,7 @@
 	        <!--------------------------Banner Link----------------------------- -->
 	        <p class="centerText">
 	            <a href="#" (click)="gotosubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
-	            <a href="#" (click)="togglepage(40)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	            <a href="#" (click)="togglePage(40)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -600,7 +600,7 @@
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
 	            <button data-inline="true" class="earache_swimear_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
-	            <a href="#" (click)="togglepage(60)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	            <a href="#" (click)="togglePage(60)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -809,7 +809,7 @@
 	        <!--------------------------Banner Link----------------------------- -->
 	        <p class="centerText">
 	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
-	            <a href="#" (click)="togglepage(60)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	            <a href="#" (click)="togglePage(60)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -818,7 +818,7 @@
 	</div>
 
 	<div class="ui-content" *ngIf="page>=60 && page<80">
-	    <div id="earache_tmj_mobile_2_n" *ngif="page==60">
+	    <div id="earache_tmj_mobile_2_n" *ngIf="page==60">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span>With this ear pain, are you having <span class="redfont">difficulty</span> <span class="purple_bluefont">chewing or biting?</span></span><br>
@@ -835,13 +835,13 @@
 	        <br>
 	        <p class="centerText">
 	            <button data-inline="true" class="earache_tmj_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
-	            <a href="#" (click)="togglepage(80)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	            <a href="#" (click)="togglePage(80)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end first follow up question div --> 
 	    <!--start follow up 3 div -->   
-	    <div id="earache_tmj_mobile_3_y" *ngif="page==61">
+	    <div id="earache_tmj_mobile_3_y" *ngIf="page==61">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span>Let's make sure you are not looking at <span class="purplefont">temporomandibular joint (TMJ)</span> <span class="grayfont">disorder.</span></span><br>
@@ -856,7 +856,7 @@
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="earache_tmj_mobile_3_n" *ngif="page==62">
+	    <div id="earache_tmj_mobile_3_n" *ngIf="page==62">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span>Try <span class="orangefont">opening</span> or <span class="bluefont">closing</span> the mouth.</span><br>
@@ -884,7 +884,7 @@
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end follow up 3 div --> 
-	    <div id="earache_tmj_mobile_4_y" *ngif="page==63">
+	    <div id="earache_tmj_mobile_4_y" *ngIf="page==63">
 	        <!--start follow up 4 div -->
 	        <div class="centerText">
 	            <div class="maxwidth450">
@@ -903,7 +903,7 @@
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="earache_tmj_mobile_4_n" *ngif="page==64">
+	    <div id="earache_tmj_mobile_4_n" *ngIf="page==64">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span class="bluefontLarge">Alright</span><br>
@@ -931,7 +931,7 @@
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end follow up 4 div --> 
-	    <div id="earache_tmj_mobile_5_y" *ngif="page==65">
+	    <div id="earache_tmj_mobile_5_y" *ngIf="page==65">
 	        <!--start follow up 5 div -->
 	        <div class="centerText">
 	            <div class="maxwidth450">
@@ -958,7 +958,7 @@
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="earache_tmj_mobile_5_n" *ngif="page==66">
+	    <div id="earache_tmj_mobile_5_n" *ngIf="page==66">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span>Does your <span class="purple_bluefont">jaw</span> <span class="orangefont">lock?</span></span><br>
@@ -974,7 +974,7 @@
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end follow up 5 div --> 
-	    <div id="earache_tmj_mobile_6_y" *ngif="page==67">
+	    <div id="earache_tmj_mobile_6_y" *ngIf="page==67">
 	        <!--start follow up 6 div -->
 	        <div class="centerText">
 	            <div class="maxwidth450">
@@ -1001,7 +1001,7 @@
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="earache_tmj_mobile_6_n" *ngif="page==68">
+	    <div id="earache_tmj_mobile_6_n" *ngIf="page==68">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span>Alright. Are you experiencing a <span class="grayfont">dull,</span> <span class="purplefont">aching pain</span> in the <span class="grayfont">face?</span></span><br>
@@ -1017,7 +1017,7 @@
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end follow up 6 div -->
-	    <div id="earache_tmj_mobile_7_y" *ngif="page==69">
+	    <div id="earache_tmj_mobile_7_y" *ngIf="page==69">
 	        <!--start follow up 7 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
@@ -1045,7 +1045,7 @@
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="earache_tmj_mobile_7_n" *ngif="page==70">
+	    <div id="earache_tmj_mobile_7_n" *ngIf="page==70">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
 	                <span class="bluefontLarge">Well.</span><br>
@@ -1063,7 +1063,7 @@
 	        <!--------------------------Banner Link----------------------------- -->
 	        <p class="centerText">
 	            <a href="" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
-	            <a href="#" (click)="togglepage(80)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	            <a href="#" (click)="togglePage(80)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -1344,7 +1344,7 @@
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
 	        	<a href="" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
-	            <a href="#earache_mobile_3" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button">Pharmacist</a>
+	            <a href="#" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(100)">Pharmacist</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
@@ -1368,24 +1368,25 @@
 	        <div data-role="fieldcontain" class="ui-field-contain">
 	            <label for="slider_earache3_mobile_mobile" id="slider_earache3_mobile_mobile-label">I say a:</label>
 	            <div class="ui-slider">
-	                <!-- <div class="ui-slider-popup ui-shadow ui-corner-all ui-body-f" style="display: none; top: -85px; left: -12px;">0</div>
-	                <input type="number" data-type="range" name="slider_earache3_mobile_mobile" id="slider_earache3_mobile_mobile" value="0" min="1" max="10" step="1" data-theme="f" data-highlight="true" data-popup-enabled="true" class="ui-shadow-inset ui-body-f ui-corner-all ui-slider-input">
-	                <div role="application" class="ui-slider-track ui-shadow-inset ui-bar-f ui-corner-all">
-	                    <div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div>
-	                    <a href="#" class="ui-slider-handle ui-btn ui-btn-f ui-shadow" role="slider" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" aria-valuetext="1" aria-labelledby="slider_earache3_mobile_mobile-label" style="left: 0%;"></a>
-	                </div> -->
+	            	<ion-item>
+						<ion-range min="1" max="10" step="1" [(ngModel)]="currentEarache" color="sliderPink">
+							<ion-label range-left>{{currentEarache}}</ion-label>
+						</ion-range>
+					</ion-item>
 	            </div>
 	        </div>
 	        <br>
 	        <div class="centerText">
-	            <div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_earache3_mobile_value" data-inline="true" value="Here you  go"></div>
+	            <div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" id="get_earache3_mobile_value" data-inline="true" value="Here you  go" (click)="togglePage(101)"></div>
 	        </div>
 	    </div>
 	    <br>
-	    <div class="container_12 displayNone" id="selected_earache3_mobile_value_container">
+	    <div class="container_12" id="selected_earache3_mobile_value_container" *ngIf="page==101">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightRed centerText">
-	                <div id="selected_earache3_mobile_value"></div>
+	                <div id="selected_earache3_mobile_value">
+	                	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentEarache}}</span>
+	                </div>
 	            </div>
 	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
 	            </div>
@@ -1393,21 +1394,21 @@
 	        <div class="clearboth divider1"></div>
 	        <!-----------------End Border right person------------------- -->
 	    </div>
-	    <div id="earache3_mobile_option1" class="displayNone">
+	    <div id="earache3_mobile_option1" *ngIf="page==101 && currentEarache<=3">
 	        <p>&nbsp;</p>
 	        <div class="blueBorderAll centerText">
 	            <h3>1 to 3</h3>
 	            <p>Send to pharmacist</p>
 	        </div>
 	    </div>
-	    <div id="earache3_mobile_option2" class="displayNone">
+	    <div id="earache3_mobile_option2" *ngIf="page==101 && currentEarache<=7 && currentEarache>3">
 	        <p>&nbsp;</p>
 	        <div class="purpleBorderAll centerText">
 	            <h3>4 to 7</h3>
 	            <p>Advice and send to pharmacist</p>
 	        </div>
 	    </div>
-	    <div id="earache3_mobile_option3" class="displayNone">
+	    <div id="earache3_mobile_option3" *ngIf="page==101 && currentEarache<=10 && currentEarache>7">
 	        <p>&nbsp;</p>
 	        <div class="redBorderAll centerText">
 	            <h3>Seek urgent care.</h3>
@@ -1415,7 +1416,7 @@
 	        </div>
 	    </div>
 	    <!-------------Start Options button------------------ --> 
-	    <div id="options_btn_earache3_mobile" class="displayNone">
+	    <div id="options_btn_earache3_mobile" *ngIf="page==101">
 	        <!--------------------------Banner Link----------------------------- -->
 	        <div>
 	        </div>
@@ -1432,9 +1433,9 @@
 	        <input type="hidden" class="totalResult" value="">
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText"> 
-	            <button class="back_earache3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true">Back</button>
+	            <button class="back_earache3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackEarache()">Back</button>
 	            <a href="" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Find Clinic</a>
-	            <a href="earache_infographics_mobile.php" class="earache_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	            <a href="#" class="earache_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(2)">Continue</a>
 	        </p>
 	    </div>
 	    <!--------------End Options Button----------------------- -->
@@ -1442,7 +1443,7 @@
 	</div>
 
 	<div class="ui-popup-screen ui-overlay-b in" id="earache_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
-	<div class="ui-popup-container pop in ui-popup-active" id="earache_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg6.maxWidth+'px','top': FYIDlg6.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	<div class="ui-popup-container pop in ui-popup-active" id="earache_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
 	    <div data-role="popup" id="earache_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
 		    <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
 		    <p class="purpleBorder">Most of the time, what you think is an ear pain caused by ear infection may actually be referred pain.</p>

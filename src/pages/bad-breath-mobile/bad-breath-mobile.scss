@@ -1,3 +1,61 @@
-page-bad-breath-mobile {
+$toolbar-background-color: #009688;
 
+page-bad-breath-mobile {
+	font-size: 16px;
+	#slider_flu_mobile-label, #slider_flu_mobile_4_mobile-label{
+		font-size: 0.9em;
+	}
+	.toolbar-background-md, .toolbar-background{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.ui-popup-screen{
+		position: fixed;
+	}
+	.ui-popup.ui-content{
+		background: #FFF;
+	}
+	.mbsc-mobiscroll .mbsc-checkbox{
+		font-size: 1em;
+	}
+	.ui-popup-container.ui-popup-active{
+		background: transparent;
+	}
+	div.ui-slider{
+		position: relative;
+		top: -1em;
+	}
+	#slider_cold_fever_mobile-label{
+		font-size: 1em;
+	}
+	.item-md.item-block .item-inner{
+		border-bottom: 0px none;
+	}
+	ion-slide h2{
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	ion-slides{
+		height: 220px;
+	}
+	.slide-zoom {
+	    height: 100%;
+	}
+	.swiper-slide{
+		height: 200px !important;
+	}
+	.slide-image {
+	    max-height: 50%;
+	    max-width: 60%;
+	    margin: 18px 0;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+}
+#ion-diagnostics-toast{
+	background: transparent;
 }

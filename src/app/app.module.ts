@@ -342,6 +342,26 @@ import { PinkeyeMobileInfographicsPage } from '../pages/pinkeye-mobile-infograph
 import { RedeyeMobileInfographicsPage } from '../pages/redeye-mobile-infographics/redeye-mobile-infographics';
 import { StyeyeMobileInfographicsPage } from '../pages/styeye-mobile-infographics/styeye-mobile-infographics';
 import { DryeyeMobileInfographicsPage } from '../pages/dryeye-mobile-infographics/dryeye-mobile-infographics';
+import { EaracheInfographicsMobilePage } from '../pages/earache-infographics-mobile/earache-infographics-mobile';
+import { SwimearInfographicsMobilePage } from '../pages/swimear-infographics-mobile/swimear-infographics-mobile';
+import { EarwaxInfographicMobilePage } from '../pages/earwax-infographic-mobile/earwax-infographic-mobile';
+import { MotionSicknessInfographicsMobilePage } from '../pages/motion-sickness-infographics-mobile/motion-sickness-infographics-mobile';
+import { VertigoInfographicsMobilePage } from '../pages/vertigo-infographics-mobile/vertigo-infographics-mobile';
+import { ToothacheInfographicsMobilePage } from '../pages/toothache-infographics-mobile/toothache-infographics-mobile';
+import { ColdSoreInfographicsMobilePage } from '../pages/cold-sore-infographics-mobile/cold-sore-infographics-mobile';
+import { CankerSoreInfographicsMobilePage } from '../pages/canker-sore-infographics-mobile/canker-sore-infographics-mobile';
+import { DrymouthInfographicsMobilePage } from '../pages/drymouth-infographics-mobile/drymouth-infographics-mobile';
+import { BadBreathInfographicsMobilePage } from '../pages/bad-breath-infographics-mobile/bad-breath-infographics-mobile';
+import { CongestionInfographicsMobilePage } from '../pages/congestion-infographics-mobile/congestion-infographics-mobile';
+import { RunnyNoseInfographicsMobilePage } from '../pages/runny-nose-infographics-mobile/runny-nose-infographics-mobile';
+import { SnoringInfographicsMobilePage } from '../pages/snoring-infographics-mobile/snoring-infographics-mobile';
+import { CoughInfographicsMobilePage } from '../pages/cough-infographics-mobile/cough-infographics-mobile';
+import { ChestCongestionInfographicsMobilePage } from '../pages/chest-congestion-infographics-mobile/chest-congestion-infographics-mobile';
+import { ShoulderInfographicsMobilePage } from '../pages/shoulder-infographics-mobile/shoulder-infographics-mobile';
+import { ConstipationInfographicsMobilePage } from '../pages/constipation-infographics-mobile/constipation-infographics-mobile';
+import { YeastInfographicsMobilePage } from '../pages/yeast-infographics-mobile/yeast-infographics-mobile';
+import { BitesInfographicsMobilePage } from '../pages/bites-infographics-mobile/bites-infographics-mobile';
+import { AnkleSprainInfographicsMobilePage } from '../pages/ankle-sprain-infographics-mobile/ankle-sprain-infographics-mobile';
 
 import { AuthService} from '../pages/providers/auth-service';
 
@@ -684,6 +704,26 @@ import { AuthService} from '../pages/providers/auth-service';
     RedeyeMobileInfographicsPage,
     StyeyeMobileInfographicsPage,
     DryeyeMobileInfographicsPage,
+    EaracheInfographicsMobilePage,
+    SwimearInfographicsMobilePage,
+    EarwaxInfographicMobilePage,
+    MotionSicknessInfographicsMobilePage,
+    VertigoInfographicsMobilePage,
+    ToothacheInfographicsMobilePage,
+    ColdSoreInfographicsMobilePage,
+    CankerSoreInfographicsMobilePage,
+    DrymouthInfographicsMobilePage,
+    BadBreathInfographicsMobilePage,
+    CongestionInfographicsMobilePage,
+    RunnyNoseInfographicsMobilePage,
+    SnoringInfographicsMobilePage,
+    CoughInfographicsMobilePage,
+    ChestCongestionInfographicsMobilePage,
+    ShoulderInfographicsMobilePage,
+    ConstipationInfographicsMobilePage,
+    YeastInfographicsMobilePage,
+    BitesInfographicsMobilePage,
+    AnkleSprainInfographicsMobilePage,
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -1031,6 +1071,26 @@ import { AuthService} from '../pages/providers/auth-service';
     RedeyeMobileInfographicsPage,
     StyeyeMobileInfographicsPage,
     DryeyeMobileInfographicsPage,
+    EaracheInfographicsMobilePage,
+    SwimearInfographicsMobilePage,
+    EarwaxInfographicMobilePage,
+    MotionSicknessInfographicsMobilePage,
+    VertigoInfographicsMobilePage,
+    ToothacheInfographicsMobilePage,
+    ColdSoreInfographicsMobilePage,
+    CankerSoreInfographicsMobilePage,
+    DrymouthInfographicsMobilePage,
+    BadBreathInfographicsMobilePage,
+    CongestionInfographicsMobilePage,
+    RunnyNoseInfographicsMobilePage,
+    SnoringInfographicsMobilePage,
+    CoughInfographicsMobilePage,
+    ChestCongestionInfographicsMobilePage,
+    ShoulderInfographicsMobilePage,
+    ConstipationInfographicsMobilePage,
+    YeastInfographicsMobilePage,
+    BitesInfographicsMobilePage,
+    AnkleSprainInfographicsMobilePage,
   ],
   providers: [
     AuthService,

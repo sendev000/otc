@@ -1,18 +1,941 @@
-<!--
-  Generated template for the YeastMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>yeast_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Yeast Infection
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=0 && page<20">
+    <p *ngIf="page==0">Yeast Infection?</p>
+    <p *ngIf="page>0 && page<20">Need a doctor?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=30 && page<50">
+    <p *ngIf="page>30 && page<50">Is it a yeast infection?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=60 && page<70">
+    <p *ngIf="page>60 && page<70">One more thing</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page==70">
+    <p>First time?</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Let's figure out how to take care of this.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder">
+	        <p class="centerText">Does this look like a yeast infection?<br> This is a common question you are likely asking yourself.</p>
+	        <hr class="hrcyan">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/pelvic/yeast-lady.svg" width="170" alt="Woman covering her groin">
+	        </p>
+	    </div>
+	    <p class="blueBorderAll centerText">Let's get started.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="yeast1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>First, you will <span class="orangefont">rule in or out</span> having to seek urgent care.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="yeast1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="yeast1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this for a <span class="bluefont">pregnant</span> woman?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="yeast1_mobile_3_y" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Don't attempt selfcare.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you <span class="blue_brightfont">diabetic</span> and you think you have a yeast infection?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="yeast1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It will be hard to get rid of with over-the-counter medications. </li>
+	                <li>Will need a prescription yeast infection medication.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have any <span class="redfont">fever</span> with this suspected yeast infection?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="yeast1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Worse than you think.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing a <span class="greenfont">greenish</span> - <span class="yellowfont">yellow</span> vagina discharge?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="yeast1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a different type of infection.</li>
+	                <li>Possibly <span class="bluefont">Trichomonal vaginitis.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about a discharge that is <span class="purple_bluefont">watery,</span> <span class="redfont">bloody?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue redfont">
+	                        Or both?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="yeast1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May result from vulvar, vaginal, or cervical cancer</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have <span class="redfont">stomach pain</span> or <span class="purplefont">cramps</span> with this suspected yeast infection?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="yeast1_mobile_8_y" *ngIf="page==13">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at PID <span class="grayfontSmall">(Pelvic inflammatory disease)</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_8_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Has exposure to <span class="bluefont">STD</span> crossed your mind lately?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="yeast1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="yeast1_mobile_9_y" *ngIf="page==15">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need further evaluation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast1_mobile_9_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those questions were to rule out situations that require <span class="orangefont">urgent care.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Let's continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==20">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Have you ever had or experienced a <span class="blue_brightfont">yeast infection</span> before?</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Yes, I have</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">No</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="yeast4_mobile_1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span class="redfont">Reminder:</span><br>
+	                Diagnosis of a yeast infection is best done by a healthcare professional.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="yellowBorder">This may involve physical observation, history taking, checking vaginal pH, wet mount microscopy or even culture to confirm the diagnosis.
+	        </p>
+	        <p class="yellowBorderAll centerText"> A few more questions and we will see if you are looking at a yeast infection in the first place.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="yeast4_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="yeast4_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this a frequently <span class="grayfont">reoccurring</span> <span class="purple_bluefont">yeast infection</span> for you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="yeast4_mobile_3_y" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Women with frequent recurrences require fungi culture to confirm the diagnosis.</li>
+	                <li>Need to rule out other causes of the symptoms of vaginal infections.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast4_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you looking at a thin, gray discharge with a <span class="purple_redfont">fishy odor?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="yeast4_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at <span class="bluefont">bacteria vaginosis.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="blueBorder">In bacteria vaginosis a <span class="purple_redfont">fishy odor</span> is present, often becoming stronger when the discharge is more alkaline—after sex and menses.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="yeast4_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing itching <span class="bluefont">inside</span> the vagina?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And at the<span class="bluefont"> entrance?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="yeast4_mobile_5_y" *ngIf="page==36">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                <span class="purple_bluefont">Yeast</span> infection can cause this so also can a lot of other things. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">Let's continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="yeast4_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_5_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="orangefont">burning sensation</span> while urinating?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or having <span class="orangefont">intercourse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->    
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="yeast4_mobile_6_y" *ngIf="page==38">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This is a <span class="redfont">symptom</span> of a yeast infection. But other things can also cause this.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText"> Let's Continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button data-inline="true" class="yeast4_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_6_n" *ngIf="page==39">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the <span class="grayfont">entrance</span> to the vagina <span class="purplefont">swollen?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(40)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(41)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="yeast4_mobile_7_y" *ngIf="page==40">
+	        <!--start 7 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="yeast4_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_7_n" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the entrance <span class="redfont">reddish?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(42)">Yes</button>
+	            <button data-inline="true" class="yeast4_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(43)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="yeast4_mobile_8_y" *ngIf="page==42">
+	        <!--start 8 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="yeast4_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(43)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4_mobile_8_n" *ngIf="page==43">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Looking at the discharge again, is it <span class="purple_bluefont">whitish</span> in <span class="purplefont">appearance?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="yeast4a_mobile_2_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does the discharge appear <span class="orangefont">thick?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And <span class="orangefont">Lumpy?</span> <span class="grayfont"><br>(Like cottage cheese)</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4a_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <button data-inline="true" class="yeast4a_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(52)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="yeast4a_mobile_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Alright. Possibly a <span class="purple_bluefont">yeast infection.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <div class="blueBorderAll">
+	            <p class="blueBorder bluefont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Redness in vaginal/vulvar area</li>
+	                <li>Itching, burning in vaginal/vulvar area</li>
+	                <li>Pain during intercourse.</li>
+	                <li>White, clumpy or chunky <span class="grayfontSmall">(cottage cheese-like)</span>, discharge</li>
+	                <li>Increased amount of discharge.</li>
+	            </ul>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4a_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4a_mobile_3_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does the discharge <span class="orangefont">stick</span> to the <span class="pinkfont">vaginal wall</span> and not easily removed?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4a_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	            <button data-inline="true" class="yeast4a_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="yeast4a_mobile_4_y" *ngIf="page==53">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Looking at a possible yeast infection discharge.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder bluefont centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Redness in vaginal/vulvar area</li>
+	                <li>Itching, burning in vaginal/vulvar area</li>
+	                <li>Pain during intercourse.</li>
+	                <li>White, clumpy or chunky (cottage cheese-like), discharge</li>
+	                <li>Increased amount of discharge.</li>
+	                <li>Discharge <span class="purple_bluefont">adheres</span> to the vaginal walls.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="yeast4a_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="yeast4a_mobile_4_n" *ngIf="page==54">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span><span class="firstname purple_bluefont"> </span> Those were signs and symptoms of a <span class="purple_bluefont">yeast infection.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If you answered <span class="redfont">"No"</span> to the last 2 questions, you may not be looking at a yeast infection.</p>
+	        <p class="blueBorderAll">
+	            If you think you are looking at a yeast infection and you don't need to see a doctor, at least not yet, Let's get an over-the-counter recommendation from a pharmacist.
+	        </p>
+	        <p class="blueBorder centerText">Or would you like to seek urgent care for this because you are still not sure it is a yeast infection?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<70">
+	    <div id="slider_yeast_3_div" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">How bad is it?</span><br>
+	                On a scale of 1 to 10, how bad are your symptoms so far?
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_yeast_3_mobile" id="slider_yeast_3_mobile-label">I say:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="10" step="1" [(ngModel)]="currentSymptom" color="sliderPink">
+							<ion-label range-left>{{currentSymptom}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText"> 
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">
+	        		Here you go
+	        		<input type="button" id="get_yeast_3_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(61)">
+	        	</div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="container_12" id="selected_yeast_3_mobile_value_container" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <div id="selected_yeast_3_mobile_value">
+	                	You said :<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentSymptom}}</span>
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <br>
+	    <div id="yeast_mobile_5_option1" *ngIf="page==61 && currentSymptom<=3">
+	        <div class="clearboth divider1"></div>
+	        <p class="blueBorder bluefont centerText">Not too bad.</p>
+	        <p class="redBorder">Let's see what a pharmacist recommend you use over the counter.</p>
+	        <p class="redBorderAll">Would you like to do that or visit the nearest urgent care clinic to you?</p>
+	    </div>
+	    <div id="yeast_mobile_5_option2" *ngIf="page==61 && currentSymptom<=6 && currentSymptom>3">
+	        <div class="clearboth divider1"></div>
+	        <h3 class="orangeBorder orangefont centerText">Getting bad?</h3>
+	        <p class="orangeBorderAll">It may be better to see a doctor for a prescription medication.</p>
+	        <p class="redBorder">If not, then let's see what a pharmacist recommend you use over the counter.</p>
+	        <p class="redBorderAll">Would you like to do that or visit the nearest urgent care clinic to you?</p>
+	    </div>
+	    <div id="yeast_mobile_5_option3" *ngIf="page==61 && currentSymptom<=10 && currentSymptom>6">
+	        <div class="clearboth divider1"></div>
+	        <h3 class="redBorder redfont centerText">Pretty bad ugh?</h3>
+	        <p class="redBorderAll">We strongly suggest you see a doctor for a prescription medication.</p>
+	        <p class="redBorder">If not, then let's see what a pharmacist recommend you use over the counter.</p>
+	        <p class="redBorderAll">Would you like to do that or visit the nearest urgent care clinic to you?</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_yeast_mobile_5" *ngIf="page==61">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_yeast_3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack2()">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <a href="#" class="yeast_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page==70">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightYellow centerText">
+	            <span>See a doctor if this is your <span class="purple_bluefont">first time</span> experiencing this.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-selena-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <p class="orangeBorder">
+	        If you've had it before, maybe you can do self care. Won't you at least like to find out from the doctor why it happened in the first place? This way you can avoid it in the future.
+	    </p>
+	    <p class="orangeBorderAll">For instance the doctor may want to check for diseases that can lead to yeast infections like diabetes.</p>
+	    <p class="orangeBorder">Moreover, it is very difficult to know if it is a yeast infection the first time around.</p>
+	    <p class="redBorderAll">Would you like to see the nearest urgent care clinic to you or continue with this for now?</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

@@ -14,7 +14,7 @@ import { ChildrenClinicPage } from '../children-clinic/children-clinic';
 import { DentalCarePage } from '../dental-care/dental-care';
 import { PharmacyCarePage } from '../pharmacy-care/pharmacy-care';
 
-import { EaracheMobilePage } from '../earache-mobile/earache-mobile';
+import { AllergyAdultRecomMobilePage } from '../allergy-adult-recom-mobile/allergy-adult-recom-mobile';
 
 @Component({
   selector: 'page-home',
@@ -95,7 +95,7 @@ export class HomePage {
 		{
 			let page = (<any>this.items)[index];
 			// this.navCtrl.push(page);
-			this.navCtrl.push(EaracheMobilePage);
+			this.navCtrl.push(AllergyAdultRecomMobilePage);
 		}
 	}
 }

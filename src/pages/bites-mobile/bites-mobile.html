@@ -1,18 +1,1510 @@
-<!--
-  Generated template for the BitesMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>bites_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Insect bites
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=0 && page<2">
+    <p *ngIf="page==0">Insect bites / stings?</p>
+    <p *ngIf="page==1">This first</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgCyan" *ngIf="page>=3 && page<50">
+    <p *ngIf="page>=3 && page<20">emergency situation?</p>
+    <p *ngIf="page>=20 && page<30">Which insect bit you?</p>
+    <p *ngIf="page>=30 && page<40">What bit you?</p>
+    <p *ngIf="page>=40 && page<50">What could it be?</p>
+    <p *ngIf="page>=50 && page<70">Is it a spider bite?</p>
+    <p *ngIf="page>=70 && page<90">Is it a spider bite?</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Let's figure out what to use over the counter for <span class="purple_bluefont">insect bites</span>. </span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder centerText">
+	        <p>We will determine the type and nature of  the insect bite and then get a pharmacist's over-the-counter recommendation.</p>
+	        <hr class="hrcyan">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/skin/insect-bites-lady.svg" width="150" alt="Lady with insect bites on the arm">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==1">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>Have you had a <span class="redfontSmall">severe</span> <span class="redfontLarge">life threatening</span> <span class="redfontSmall">reaction</span> to an insect bite before?</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(2)">Yes</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(3)">No</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page==2">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="redBorderAll">
+	        <p class="redfont redBorder centerText">Here is why:</p>
+	        <ul>
+	            <li>Most likely will have the same reaction again.</li>
+	            <li>You should only continue if you have not had an emergency reaction before or you know you are only susceptible to a particular type of insect only.</li>
+	        </ul>
+	    </div>
+	    <br>
+	    <!---------------------End Seek urgent care------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(3)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=3 && page<30">
+	    <div id="bites1_mobile_2_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your whole <span class="pinkfont">face</span> or <span class="pinkfont">tongue</span> <span class="purple_redfont">swollen</span> with this bite?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or is inside the <span class="purple_redfont">mouth</span> swollen?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="bites1_mobile_3_y" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It is going to get worse.</li>
+	                <li>May be looking at an anaphylatic reaction.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>	
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_3_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your <span class="bluefont">throat</span> feeling <span class="purple_bluefont">tight?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="bites1_mobile_4_y" *ngIf="page==6">
+	        <!--start 4 div -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="bites1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_4_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Has <span class="bluefont">swallowing</span> become more <span class="redfont">difficult</span> since this insect bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="bites1_mobile_5_y" *ngIf="page==8">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or go to the emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Anaphylasis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_5_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your <span class="blue_brightfont">breathing</span> getting troubled since this bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="bites1_mobile_6_y" *ngIf="page==10">
+	        <!--start 6 div -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="bites1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_6_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you feel you are <span class="purple_bluefont">gasping for air</span> since this insect bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="bites1_mobile_7_y" *ngIf="page==12">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">Seek urgent care or ER visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Anaphylasis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_7_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is this insect bite causing you to have <span class="blue_brightfont">chest pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="bites1_mobile_8_y" *ngIf="page==14">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Anaphylasis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_8_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="purple_bluefont">feeling</span> <span class="bluefont">weak</span> since the bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="bites1_mobile_9_y" *ngIf="page==16">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Seek urgent care or go to the emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Anaphylasis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_9_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you <span class="grayfont">turning</span> <span class="bluefont">blue</span> with this insect bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	            <button data-inline="true" class="bites1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="bites1_mobile_10_y" *ngIf="page==18">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Anaphylasis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(3)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	            <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites1_mobile_10_n" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Tried to rule out an <span class="redfont">emergency</span> situation with this insect bite.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">Let's continue and figure out how to take care of this bite if you are not looking at an emergency.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	    <div id="bites2_mobile_1" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Know this:</span><br>
+	                Some insect bites or stings will produce swelling.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder"> Before we continue, if you were just bitten or felt like you were stung by something, remove any rings you may have on the finger, lips and so on. These places may swell.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="bites2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="bites2_mobile_2_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you know the <span class="orangefont">type</span> of insect that bit you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="bites2_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(22)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="f" class="ui-link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">No clue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="bites2_mobile_3_y" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Alright, let's see what to use over-the-counter.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Most reactions insect bites cause may be similar. Let's see what a pharmacist recommend to help with an insect bite that is available over the counter.</p>
+	        <p class="blueBorderAll centerText">Would you like to do this or visit the nearest urgent care clinic?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <a href="#" class="bites_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites2_mobile_3_n" *ngIf="page==23">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="bites2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div -->   
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<40">
+	    <div id="bites3_mobile_1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">No clue?</span><br>
+	                That's alright. Let's try to figure it out.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">The most common questions regarding insect bites are:</p>
+	            <ul>
+	                <li>Does this look like a mosquito bite?</li>
+	                <li>Is this a spider bite to you?</li>
+	                <li>I have no idea what bite me. Can you tell?</li>
+	            </ul>
+	            <p class="blueBorder grayfontSmall centerText">It is always a good idea to take the time to know what bit you and take a picture of it if possible. This will help in case of a medical emergency that might require an antidote.</p>
+	        </div>
+	        <p class="blueBorder centerText">Let's see what we can come up with regarding what bit you.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="bites3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="bites3_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>When bitten, did you feel an <span class="bluefont">immediate pain</span> and now the area is showing <span class="redfont">redness?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        <span class="bluefont">Wheal</span> and <span class="redfont">flare?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	            <button data-inline="true" class="bites3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="bites3_mobile_3_y" *ngIf="page==32">
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    We are thinking <span class="redfont">fire ant</span> bites.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p class="redBorder">Symptoms and signs of a fire ant sting are immediate pain followed by a raised itchy area (wheal) and spreading (flare) lesion.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="bites3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites3_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you feel and immediate <span class="redfont">burning</span> or <span class="pinkfont">transient</span> pain?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        With the affected area <span class="redfont">itching?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="bites3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="bites3_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightYellow">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    Suspecting being <span class="redfont">stung</span> by honeybees, wasps, yellow jackets or hornets.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="bites3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites3_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the bite area <span class="redfont">red,</span> <span class="purple_redfont">swollen?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        With <span class="pinkfont">induration</span> <span class="grayfontSmall">(hardening)</span> up to a few inch across?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	            <button data-inline="true" class="bites3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="bites3_mobile_5_y" *ngIf="page==36">
+	        <!--start 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span class="bluefontLarge">Yes?</span><br>
+	                    Suspecting being <span class="redfont">stung</span> by <span class="grayfontSmall">honeybees, bumblebees, wasps, yellow jackets or hornets.</span>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p class="blueBorder">The reactions are immediate burning, transient pain, and itching, with an area of redness, swelling and hardening up to a few inches across.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="bites3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites3_mobile_5_n" *ngIf="page==37">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                Those were signs of being <span class="redfont">stung</span> by a bee or wasp family.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="bites3_mobile_5_pop-placeholder">
+	            <!-- placeholder for bites3_mobile_5_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <p class="redBorder">If this is not the case with you, then let's continue and see what else we can come up with</p>
+	        <p class="redBorderAll">Or perhaps you would like to see what a pharmacist recommend over the counter.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="bites3_mobile_5_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="bites4_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>When bitten, did you feel an intense <span class="redfont">throbbing</span> and <span class="orangefont">burning</span> pain?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And now you have a <span class="redfont">red</span> spotty rash?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="redBorder centerText">If you are very susceptible, you may experience:</p>
+	            <ul>
+	                <li>Swelling</li>
+	                <li>Headache</li>
+	                <li>Abdominal pain</li>
+	                <li>Nausea.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites4_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="bites4_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="bites4_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Probably rubbed or pressed against a  <span class="purplefont">Puss Moth caterpillar.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">Tap on the "FYI" button for a brief description of the Puss Moth.</p>
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="bites4_mobile_3_pop-placeholder">
+	            <!-- placeholder for bites4_mobile_3_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="bites4_mobile_3_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(true)">FYI</a>
+	            <button data-inline="true" class="bites4_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites4_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span> Sometimes <span class="bluefont">where</span> the bite occurred and the <span class="blue_brightfont">pattern</span> of the reaction can help determine what bit you.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">Let's use this to narrow the cause down.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites4_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(43)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="bites4_mobile_4_y" *ngIf="page==43">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites4_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites4_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the bite spots in <span class="bluefont">groups</span> of three or four?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And mainly on the  <span class="grayfontSmall">ankles, around the waist, knees and elbow bends?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites4_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="bites4_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="bites4_mobile_5_y" *ngIf="page==45">
+	        <!--start follow up 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span>We are thinking <span class="purplefont">flea</span> bites.</span><br>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p class="blueBorder centerText">Pressing on the rash may make it turn white.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Pharmacist</a>
+	            <button data-inline="true" class="bites4_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites4_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are they on the <span class="orangefont">neck,</span> <span class="bluefont">face</span> and<span class="orangefont"> ear</span> area?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites4_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="bites4_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="bites4_mobile_6_y" *ngIf="page==47">
+	        <!--start follow up 6 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightBlue">
+	                    <span>Suspecting being bitten by  <span class="purplefont">black flies</span></span><br>
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Pharmacist</a>
+	            <button data-inline="true" class="bites4_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all"  (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites4_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Let's see if you are looking at a <span class="bluefont">spider</span> bite.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>Or would you like to see what a pharmacist recommend over the counter for insect bites assuming you know by now what bit you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Pharmacist</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<70">
+	    <div id="bites5_mobile_1" *ngIf="page==50">
+	        <!-----Start follow up intro--- -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Most <span class="bluefont">spider bites</span> produce a harmless itching or stinging that goes away in a day or two.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->  
+	        <p class="blueBorder">But <span class="brownfont">brown spiders</span> <span class="grayfontSmall">(violin, fiddleback, brown recluse)</span> and <span class="bluefont">widow spiders</span> <span class="grayfontSmall">(black widow)</span> can be very dangerous.</p>
+	        <p class="blueBorderAll centerText">Let's see what we can come up with.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(51)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End follow up intro -->
+	    <div id="bites5_mobile_2_n" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>When the bite occurred, did you feel a  <span class="bluefont">sharp,</span> <span class="redfont">stinging</span> pain like a <span class="bluefont">pinprick?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(52)">Yes</button>
+	            <button data-inline="true" class="bites5_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(53)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="bites5_mobile_3_y" *ngIf="page==52">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(53)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites5_mobile_3_n" *ngIf="page==53">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are there  <span class="purplefont">2 puncture</span> <span class="purple_bluefont">marks</span> in the skin at the bite area?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(54)">Yes</button>
+	            <button data-inline="true" class="bites5_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(55)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="bites5_mobile_4_y" *ngIf="page==54">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You are more than likely looking at a <span class="bluefont">black widow </span>bite.</li>
+	            </ul>
+	        </div>
+	        <p>Discuss the symptoms of black widow bite. (pubmed first aid).</p>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="bites5_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(55)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites5_mobile_4_n" *ngIf="page==55">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Those two questions were to eliminate a <span class="bluefont">black widow</span> bite.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">According to the CDC, a bite from a black widow can be distinguished from other insect bites by the two puncture marks it makes in the skin.</p>
+	        <p class="blueBorderAll">The bite starts with a slight swelling and redness at the site. There is usually pain at the bite area which then spread to the chest, abdomen or the whole body.</p>
+	        <p class="blueBorder">If you suspect, this is the case, then seek urgent care. Else, let's continue.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="bites5_mobile_5_y" *ngIf="page==56">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(57)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites5_mobile_5_n" *ngIf="page==57">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Was this bite <span class="purple_bluefont">painless</span> initially, then started getting <span class="purple_redfont">itchy?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(58)">Yes</button>
+	            <button data-inline="true" class="bites5_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(59)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="bites5_mobile_6_y" *ngIf="page==58">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(59)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites5_mobile_6_n" *ngIf="page==59">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is there a <span class="redfont">bull's eye</span> on the bite site?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        This bull's eye may be <span class="redfont">red</span> and slightly <span class="purple_redfont">swollen.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites5_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(60)">Yes</button>
+	            <button data-inline="true" class="bites5_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(61)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="bites5_mobile_7_y" *ngIf="page==60">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a possible <span class="brownfont">brown spider</span> bite.</li>
+	                <li>This bull's eye will become larger, fill with blood, rupture and turn into an ulcer.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="redBorder">Take this seriously. Systemic effects such as fever, chills, nausea, vomiting, muscle pain, rash, seizures, hypotension, blood clots, blood cell destruction and kidney failure are possible and responsible for all reported deaths from brown spider.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="bites5_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(61)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites5_mobile_7_n" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those were the signs of a <span class="purple_redfont">brown spider</span> bite.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorderAll">If you don't think it is  a dangerous spider bite, let's see if it is a tick bite or something of that group or even a bed bug bite.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<90">
+	    <div id="bites6_mobile_2_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the bite marks <span class="purple_redfont">itchy</span> and <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Maybe with a <span class="purple_redfont">darker</span> <span class="redfont">red spot</span> in the middle.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="bites6_mobile_3_y" *ngIf="page==71">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_3_n" *ngIf="page==72">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are the marks <span class="bluefont">located</span> on the face, neck, arms, back, hands and torso?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="bites6_mobile_4_y" *ngIf="page==73">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_4_n" *ngIf="page==74">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are these marks arranged in a <span class="orangefont">rough line?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Arranged in <span class="orangefont">clusters?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="bites6_mobile_5_y" *ngIf="page==75">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Possibly <span class="orangefont">bed bugs</span> that  bit you.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>Expand some more</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->   
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_5_n" *ngIf="page==76">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing severe <span class="purple_redfont">itching?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        With <span class="redfont">red</span> bumps that look like <span class="redfont">pimples</span> on the affected areas?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="blueBorder">In severe cases, the bite may look similar to the skin reaction  from exposure to poison ivy</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="bites6_mobile_6_y" *ngIf="page==77">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                You may be looking at <span class="orangefont">chigger</span> bites.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Bites that lead to severe itching usually occur about 3 to 6 hours after the chiggers attach to the skin.  
+	        </p>
+	        <p class="orangeBorderWhite">Most chigger bites occur in thin-skinned areas of the body like the ankles, waist, groin, armpits and backs of knees.</p>
+	        <p class="orangeBorder"> A skin rash may appear on parts of the body that are exposed and this rash may stop where clothes meets the legs. This is often a clue that the rash is due to chigger bites.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_6_n" *ngIf="page==78">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Was there a <span class="purple_redfont">tick</span> logged on your skin and now you are seeing a <span class="bluefont">rash?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(79)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(80)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="bites6_mobile_7_y" *ngIf="page==79">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(80)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_7_n" *ngIf="page==80">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing <span class="orangefont">fever</span> or <span class="pinkfont">flu-like</span> symptoms with this bite?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(82)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="bites6_mobile_8_y" *ngIf="page==81">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a tick bite</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="bites6_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_8_n" *ngIf="page==82">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you experiencing itchy, soft, pale<span class="redfont"> bumps?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        That are <span class="pinkfont">pink</span> or <span class="redfont">red?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="redBorderAll">
+	            <p class="blueBorder">If you are highly sensitive, you may have a much larger area of itching.</p>
+	            <p class="redBorderAll grayfontSmall">Bear in mind, that these signs may not have appeared for up to 2 days after the bite.</p>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(83)">Yes</button>
+	            <button data-inline="true" class="bites6_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="bites6_mobile_9_y" *ngIf="page==83">
+	        <!--start follow up 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                More than likely looking at <span class="blue_brightfont">mosquito</span> bites.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If a mosquito bite seems to be associated with more serious signs and symptoms - such as fever, severe headaches, body aches, nausea and vomiting - contact the doctor or visit the nearest urgent care clinic.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->   
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="bites6_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="bites6_mobile_9_n" *ngIf="page==84">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                There are other types of <span class="bluefont">insect bites</span> that were not covered.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-cyan.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">The reactions these insect bites cause may be similar.
+	            Let's see what a pharmacist recommend to help with an insect bite.
+	        </p>
+	        <p class="blueBorder">Would you like to do this or visit the nearest urgent care clinic?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->	
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="400">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <a href="#" (click)="gotoSubPage(1)" class="bites_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="bites3_mobile_5_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="bites3_mobile_5_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="bites3_mobile_5_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="redBorder">The reactions are usually immediate burning, transient pain, and itching, with an area of redness, swelling and induration up to a few inches across.</p>
+	        <p class="redBorderAll">Swelling and redness usually peak at 48 hours, can last for a week and  involve an entire part of the body like the arm, hand, neck or leg.</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="bites4_mobile_3_pop-screen" *ngIf="FYIDlg2.show" (click)="toggleFYIDlg2(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="bites4_mobile_3_pop-popup" *ngIf="FYIDlg2.show" [ngStyle]="{'max-width': FYIDlg2.maxWidth+'px','top': FYIDlg2.top+'px', 'left': FYIDlg2.left+'px', 'width': FYIDlg2.width+'px'}">
+	    <div data-role="popup" id="bites4_mobile_3_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg2(false)">Close</a>
+	        <p class="blueBorder">They are toxic caterpillars that resemble a tuft of cotton or fur with  color varying from yellow to gray to reddish brown. </p>
+	        <p>Puss moth caterpillars live in shade trees and shrubbery around homes and schools and in  parks.</p>
+	        <p class="blueBorder">When a puss moth caterpillar presses against the skin, hairs become embedded in the skin and these can cause significant reactions.</p>
+	        <p>These reactions include severe throbbing pain, burning, and a rash with red spots.</p>
+	        <p class="blueBorder">Treatments for the skin reactions may include putting tape on the site and pulling it off to remove the embedded hairs.</p>
+	    </div>
+	</div>
 </ion-content>

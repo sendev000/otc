@@ -1,18 +1,776 @@
-<!--
-  Generated template for the ToothacheMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>toothache_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Toothache
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page==0">
+    <p *ngIf="page==0">Toothache?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=20 && page<60">
+    <p *ngIf="page>=20 && page<40">Is it an infection?</p>
+    <p *ngIf="page>=40 && page<60">How bad is it?</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>A <span class="bluefont">toothache</span> may be caused by tooth decay, inflamed pulp or erupting wisdom tooth.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder">
+	        <p>There are other causes of toothache such as sinus pain affecting the tooth, earache or even a heart attack coming on. </p>
+	        <hr class="hrblue">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/mouth/toothache-lady.svg" width="150" alt="Lady with a toothache pain">
+	        </p>
+	        <p class="blueBorderAll">Let's see what will get you relief over the counter until you see a dentist at least. </p>
+	    </div>
+	    <p class="blueBorder centerText">We will start by ruling out medical emergencies.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=1 && page<20">
+	    <div id="toothache1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Did this toothache start as a <span class="bluefont">chest pain</span> that moved to the <span class="orangefont">arm</span> and then to the <span class="bluefont">teeth?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="toothache1_mobile_3_y" *ngIf="page==2">
+	        <h3>Yes?</h3>
+	        <p>&nbsp;</p>
+	        <button data-inline="true" class="toothache1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Did it start with a <span class="bluefont">chest pain</span> that moved to the <span class="purple_bluefont">jaw, neck</span> and then to the <span class="bluefont">teeth?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder">It might have felt like a <span class="purple_bluefont">tight band</span> around your chest or like <span class="grayfont">something heavy sitting </span>on your chest. Now you have jaw pain and toothache.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="toothache1_mobile_4_y" *ngIf="page==4">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>You  may be looking at a <span class="redfont">heart attack</span> in progress.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite redfontSmall centerText">Note:<br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>	
+	        </p>
+	        <!----------------End Go To Emergency Room--------------- -->
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>It was important to rule out something like a <span class="redfont">heart attack.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Sometimes, a heart attack can be the cause of a toothache. It is the responsible thing to rule out any possibilities and not take anything for granted.</p>
+	        <p class="blueBorderAll centerText">Let's continue</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="toothache1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="toothache1_mobile_5_y" *ngIf="page==6">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="toothache1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>With this toothache, do you also have <span class="pinkfont">pain</span> near the <span class="purple_redfont">ear?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="toothache1_mobile_6_y" *ngIf="page==8">
+	        <!--start 6 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="toothache1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>What about <span class="orangefont">cracking</span> sound when you <span class="purple_bluefont">chew</span> something?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="toothache1_mobile_7_y" *ngIf="page==10">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Possible TMJ syndrome. This condition affects the <span class="bluefont">jaw.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder centerText"> You would have to see a doctor or dentist on this one.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="toothache1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Do you feel the <span class="bluefont">tooth pain</span> after stimulation from <span class="redfont">hot</span> drinks or food?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="toothache1_mobile_8_y" *ngIf="page==12">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                You may be looking at <span class="orangefont">tooth decay</span> (dental caries).
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="toothache1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>Are you feeling the toothache after stimulation from <span class="bluefont">cold</span> drinks or food?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="toothache1_mobile_9_y" *ngIf="page==14">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Possible <span class="bluefont">tooth decay.</span> (dental caries)
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">Bacteria that live in your mouth work on the sugars and carbs on your teeth to form a sticky plaque that sticks to the surface of your teeth. </p>
+	        <p class="purpleBorderAll">With time, the acid in the plaque erodes your tooth's coating leading to tiny openings called cavities on the surface.</p>
+	        <p class="purpleBorderAll">The first sign of a decay may be a sensation when you eat sweet, very cold or very hot stuff. You need to see a dentist before it gets worse.</p>
+	        <p class="purpleBorder">Pain may be isolated to a single tooth and usually stops when the stimulus is removed.</p>
+	        <p class="purpleBorderAll centerText">Would you like to see the nearest dentist to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_9_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is it after stimulation from <span class="purple_redfont">sweet</span> food or drink?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="toothache1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="toothache1_mobile_10_y" *ngIf="page==16">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="greenfontLarge">Yes?</span><br>
+	                Possible <span class="purple_redfont">tooth decay</span> (dental caries) going on.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">The first sign of a tooth decay may be a sensation when you eat sweet, very cold or very hot stuff.</p>
+	        <p class="purpleBorderAll">You need to see a dentist before it gets worse.</p>
+	        <p class="purpleBorderAll">Pain may be isolated to a single tooth and usually stops when the stimulus is removed.</p>
+	        <p class="purpleBorder centerText">Would you like to see the nearest dentist to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache1_mobile_10_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                Let's see if you are looking at a <span class="redfont">tooth infection</span> or something else.  
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="toothache2_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is there <span class="purple_redfont">swelling</span> around the teeth or gums?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="toothache2_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="redfontLarge">Seek urgent care or call the dentist.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at an <span class="redfont">infection</span> or a <span class="orangefont">dental abscess.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is there <span class="purple_redfont">swelling</span> in your <span class="orangefont">face?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="toothache2_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the dentist.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at an <span class="redfont">infection</span> or a <span class="orangefont">dental abscess.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">  
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you feel <span class="bluefont">sharp pain</span> on release from a <span class="purple_bluefont">chewing stroke?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="toothache2_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the dentist.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at a <span class="bluefont">loose crown</span></li>
+	                <li>May be looking at <span class="bluefont">incomplete fracture</span> of the crown of a vital tooth.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your tooth very <span class="purple_bluefont">sensitive</span> to <span class="bluefont">cold?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="toothache2_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Possible <span class="purple_bluefont">loose crown</span> or <span class="grayfont">incomplete fracture</span> of the crown of a vital tooth.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">You should see a dentist as soon as possible. The toothache won't go away with over-the-counter measures.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">  
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are some of your teeth <span class="grayfontSmall">(molars, premolars)</span> <span class="bluefont">sensitive...</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue centerText">
+	                        ...When <span class="bluefont">chewing and moving</span> your mouth?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-john-port.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="toothache2_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="toothache2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you feel <span class="redfont">tooth pain</span> when <span class="orangefont">lowering</span> the head?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue centerText">
+	                        Example when <span class="orangefont">tying shoe laces?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-john-port.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="toothache2_mobile_8_y" *ngIf="page==31">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at <span class="redfont">sinusitis</span></li>
+	                <li>Your sinuses may be <span class="redfont">inflamed.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button data-inline="true" class="toothache2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_8_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you <span class="bluefont">hit</span> your teeth or mouth against something recently?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="toothache2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="toothache2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="toothache2_mobile_9_y" *ngIf="page==33">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="bluefont">See a dentist as soon as possible.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You must have <span class="redfont">chipped</span> a tooth.</li>
+	                <li>A tooth may be <span class="bluefont">loose</span> in its socket.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <button data-inline="true" class="toothache2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="toothache2_mobile_9_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                With a toothache, you will have to see a <span class="bluefont">dentist.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorderAll">Let's see what is available over the counter to help with the pain until you can see a dentist. Would you like to do that or see the nearest dental clinic to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>  
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="slider_toothache3_mobile_div" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span> On a scale of 1 to 10, <span class="redfont">how bad</span> is this toothache?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_toothache3_mobile" id="slider_toothache3_mobile-label">I say:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="0" max="10" step="1" [(ngModel)]="currentToothache" color="sliderPink">
+							<ion-label range-left>{{currentToothache}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">
+	        		Here you  go<input type="button" id="get_toothache3_mobile_value" data-inline="true" value="Here you  go" (click)="togglePage(41)">
+	        	</div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="container_12" id="selected_toothache3_mobile_value_container" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <div id="selected_toothache3_mobile_value">
+	                	You gave it a: <br> <br> <span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentToothache}}</span>
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-john-port.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <div id="toothache3_mobile_option1" *ngIf="page==41 && currentToothache<=3">
+	        <h3 class="blueBorder  bluefont centerText">Not too bad</h3>
+	        <p class="blueBorderAll">Let's see what a pharmacist recommend you take over the counter until you can see a dentist. </p>
+	        <p class="blueBorderAll">Or would you like to see the nearest dental care clinic to you now?</p>
+	    </div>
+	    <div id="toothache3_mobile_option2" *ngIf="page==41 && currentToothache<=5 && currentToothache>3">
+	        <h3 class="orangeBorder orangefont centerText">Mild pain</h3>
+	        <p class="orangeBorderAll">Let's see what a pharmacist recommend you take over the counter until you can see a dentist. </p>
+	        <p class="orangeBorderAll">Or would you like to see the nearest dental care clinic to you now?</p>
+	    </div>
+	    <div id="toothache3_mobile_option3" *ngIf="page==41 && currentToothache<=7 && currentToothache>5">
+	        <h3 class="purple_redBorder purple_redfont centerText">Moderate pain</h3>
+	        <p class="redBorderAll">Let's see what a pharmacist recommend you take over the counter until you can see a dentist. </p>
+	        <p class="redBorderAll">Or would you like to see the nearest dental care clinic to you now?</p>
+	    </div>
+	    <div id="toothache3_mobile_option4" *ngIf="page==41 && currentToothache<=10 && currentToothache>7">
+	        <h3 class="redBorder shadowInset redfont centerText">Severe pain</h3>
+	        <p class="redBorderAll">Let's see what a pharmacist recommend you take over the counter until you can see a dentist as soon as possible. </p>
+	        <p class="redBorderAll">Or would you like to see the nearest dental care clinic to you now?</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_toothache3_mobile" *ngIf="page==41">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_toothache3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack2()">Back</button> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Dentist</a>
+	            <a href="#" class="toothache_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

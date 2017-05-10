@@ -1,18 +1,898 @@
-<!--
-  Generated template for the SwimearMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
-
+ -->
+<ion-header class="ui-header">
   <ion-navbar>
-    <ion-title>swimear_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Swimmer's Ear
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<100">
+    <p *ngIf="page==0">Thinking swimmer's ear?</p>
+    <p *ngIf="page>0 && page<20">Is it swimmer's ear?</p>
+    <p *ngIf="page>=20 && page<40">How bad is it?</p>
+    <p *ngIf="page>=40 && page<60">In the moderate stage?</p>
+    <p *ngIf="page>=60 && page<80">A mild case?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Swimmer's ear is an <span class="redfont">infection</span> of the <span class="purple_redfont">outer</span> ear canal.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="swimear_mobile_pop-placeholder">
+	        <!-- placeholder for swimear_mobile_pop  -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <div class="orangeBorder centerText">
+	        <p>Let's see how you can go about taking care of this.</p>
+	        <p class="centerText">
+	            <img src="assets/img/people/adult/ear/swimear-lady-main.svg" width="180" alt="Lady with swimmers ear infection">
+	        </p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="swimear_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-inline="true" data-role="button" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="swimear1_mobile_1" *ngIf="page==1">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span class="purplefont firstname"> </span><br>
+	                    Let's find out if this is <span class="orangefont">swimmer's ear</span> infection.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Then we will see how bad it is and figure out what to do from there.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swimear1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="swimear1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Hold the <span class="orangefont">ear lobe</span> or <span class="redfont">outer ear</span> and <span class="orangefont">wiggle it.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Do you feel any <span class="redfont">pain</span> or does the pain you already have <span class="orangefont">get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="swimear1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="swimear1_mobile_3_y" *ngIf="page==3">
+	        <h3>Yes?</h3>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swimear1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span><span class="purple_bluefont">Push</span> on the little <span class="purplefont">"bump"</span> in front of your ear.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red centerText">
+	                        Is there any <span class="purplefont">pain</span> or does the pain you already have <span class="purple_bluefont">get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="swimear1_mobile_4_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="swimear1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span class="redfontLarge">No?</span><br>
+	                    You may want to see a doctor if you think you have swimmer's ear.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Swimmer's ear is infection of the external ear and pushing on this area should give you some kind of discomfort.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swimear1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="orangefont">itching</span> in your <span class="grayfont">ear canal?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="swimear1_mobile_5_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="swimear1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalRightPurple_red">
+	                    <span class="redfontLarge">No?</span><br>
+	                    Hmmm. Swimmer's ear symptoms usually include <span class="orangefont">itching</span> in the ear canal.
+	                </div>
+	                <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle right person------------------- -->
+	        <p class="centerText"><button data-inline="true" class="swimear1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about feeling of <span class="bluefont">fullness</span> inside the ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="swimear1_mobile_6_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="swimear1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple_red centerText">
+	                    <span class="purplefont">No such feeling?</span><br>
+	                    Usually with swimmer's ear, accumulated debris in the ear gives you a <span class="grayfont">feeling of fullness</span> in the ear.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder"> This is especially so when they trap water inside hence the name swimmer's ear.<br>If you think it is swimmer's ear, then let's Continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swimear1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purplefont firstname"> </span><br>
+	                If answer is yes so far, suspect <span class="orangefont">swimmer's ear </span>infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If you are thinking swimmer's ear, most of the time you will have to see a doctor. You will need some kind of antibiotic, steroidal or acetic acid ear drops and even removal of the debris in the ear.</p>
+	        <p class="orangeBorderWhite centerText">Let's see how bad it is and determine the best course of action to take.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="swimear2_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is there a <span class="purple_redfont">foul-smelling</span> <span class="grayfont">discharge</span> coming from the ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="swimear2_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at an infection.</li>
+	                <li>No over-the-counter stuff would take care of this.</li>
+	                <li>What over-the-counter drops do is attempt to dry the water in the ear. They don't take care of any infection or inflammation going on in the ear.</li>
+	                <li>Moreover, with discharge coming from the ear canal, it might be due to a ruptured eardrum or something more serious. So you must see a doctor.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Does the ear appear <span class="redfont">red</span> or <span class="purple_redfont">swollen?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="swimear2_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at an infection.</li>
+	                <li>Over the counter medications won't take care of any infection or inflammation going on in the ear.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have <span class="redfont">fever</span> with this <span class="grayfont">ear pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="swimear2_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at an infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="grayfont">severe</span><span class="redfont"> pain</span> that goes to your <span class="grayfont">face or neck?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="redfont">side of the head?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="swimear2_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at serious inflammation and infection</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="purplefont">swelling </span>in the <span class="purple_redfont">lymph nodes</span> in your neck?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="swimear2_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possibility of a serious infection</li>
+	                <li>Serious inflammation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is your ear canal <span class="grayfont">completely</span> <span class="bluefont">blocked?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="swimear2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="swimear2_mobile_8_y" *ngIf="page==31">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderWhite shadowInset" src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Will need to have debris removed</li>
+	                <li>Risk of ear infection is high</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <button data-inline="true" class="swimear2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear2_mobile_8_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red">
+	                <span>Doctors classify swimmer's ear infection into <span class="purplefont">mild,</span>&nbsp;  <span class="orangefont">moderate</span> and <span class="redfont">advanced.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <br>
+	        <p class="redBorder"><span class="bluefontLarge firstname"> </span> If you answered <span class="redfont">No</span> to the questions so far, then you do not have the <span class="redfont">advanced</span> stage of progression. At least not yet.</p>
+	        <p align="center" class="redBorder">Let's see if we are looking at the <span class="orangefont">moderate</span> stage of swimmer's ear infection.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="swimear_moderate_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing a <span class="orangefont"> pus-like</span> drainage that is <span class="purple_redfont">foul smelling?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Could be <span class="yellowfont">yellow</span> to <span class="greenfont">yellow green.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="swimear_moderate_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="swimear_moderate_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>This is a symptom of a <span class="orangefont">moderate</span> stage of swimmer's ear infection.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_moderate_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="bluefont">partial</span> blockage of your ear canal by swelling or fluid?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="swimear_moderate_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="swimear_moderate_mobile_4_y" *ngIf="page==43">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign of a moderate stage of swimmer's ear infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_moderate_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is the <span class="orangefont">itching</span> getting more <span class="redfont">intense?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="swimear_moderate_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="swimear_moderate_mobile_5_y" *ngIf="page==45">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_moderate_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about <span class="grayfont">increasing</span> <span class="orangefont">ear pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="swimear_moderate_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="swimear_moderate_mobile_6_y" *ngIf="page==47">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_moderate_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is your hearing<span class="purple_redfont"> muffled</span> and <span class="orangefont">reduced?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(49)">Yes</button>
+	            <button data-inline="true" class="swimear_moderate_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(50)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="swimear_moderate_mobile_7_y" *ngIf="page==49">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_moderate_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(50)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_moderate_mobile_7_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Alright.</span><br>
+	                Those were the signs and symptoms of a <span class="orangefont">moderate</span> stage.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">The moderate case of a swimmer's ear infection require professional care. You should seek urgent care or call the doctor if you think you are looking at one.</p>
+	        <p class="redBorderAll">We are talking about an infection here, and it will become worse the more you delay treatment. You need to get started on some antibiotics, steroidal ear drop or something to dry out the fluid. </p>
+	        <p class="redBorder"> Would you like to see the nearest urgent care clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<80">
+	    <div id="swimear_mild_mobile_2_n" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purplefont">Great.</span><br>
+	                Let's take a look at a <span class="purple_bluefont">mild </span>case of swimmer's ear infection. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="swimear_mild_mobile_3_y" *ngIf="page==61">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_mild_mobile_3_n" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you seeing drainage of <span class="purple_bluefont">clear,</span> <span class="bluefont">odorless</span> fluid</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(63)">Yes</button>
+	            <button data-inline="true" class="swimear_mild_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(64)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="swimear_mild_mobile_4_y" *ngIf="page==63">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a sign of a <span class="purple_bluefont">mild case</span> of swimmer's ear infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">When you start seeing yellow to yellowish green pus, then you will be looking at a moderate case.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(64)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_mild_mobile_4_n" *ngIf="page==64">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing a <span class="purple_bluefont">mild pain</span> made worse by <span class="bluefont">pulling</span> on the ear?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	            <button data-inline="true" class="swimear_mild_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="swimear_mild_mobile_5_y" *ngIf="page==65">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                If the pain is not intense, then you are probably looking at a <span class="purple_bluefont">mild case.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_mild_mobile_5_n" *ngIf="page==66">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is the ear canal <span class="grayfont">slightly</span> <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        And <span class="orangefont">itchy?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-justin-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(67)">Yes</button>
+	            <button data-inline="true" class="swimear_mild_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(68)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="swimear_mild_mobile_6_y" *ngIf="page==67">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Probably looking at a <span class="purple_bluefont">mild case</span> of swimmer's ear infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swimear_mild_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(68)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swimear_mild_mobile_6_n" *ngIf="page==68">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                Those were signs and symptoms of a <span class="purple_bluefont">mild case</span> of swimmer's ear infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-justin-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder"> If you think it is a swimmer's ear infection, if mild or not, we strongly recommend you see the doctor as soon as possible to avoid further damage to the ear.</p>
+	        <p class="orangeBorder">The keyword here is <span class="redfont">infection.</span> So you will need an antibiotic ear drop.</p>
+	        <p class="orangeBorderAll">Would you like to visit the nearest urgent care clinic or see what a pharmacist recommend you do for swimmer's ear <span class="purple_redfont">until</span> you can see a doctor?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="swimear_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="swimear_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="swimear_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="swimear_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="orangeBorder">Persistent moisture in the ear canal from let's say frequent swimming can lead to loss of earwax and ultimately a breakdown of the defense system against ear infection.</p>
+	        <p class="orangeBorderWhite">Bacteria grow in the presence of this moist conditions and infect the ear.</p>
+	    </div>
+	</div>
 </ion-content>

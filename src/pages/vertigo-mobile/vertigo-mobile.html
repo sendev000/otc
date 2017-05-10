@@ -1,18 +1,609 @@
-<!--
-  Generated template for the VertigoMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>vertigo_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Vertigo
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPurple" *ngIf="page==0">
+    <p *ngIf="page==0">Thinking vertigo?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgPurple" *ngIf="page>=20 && page<30">
+    <p *ngIf="page==20">Had vertigo before?</p>
+    <p *ngIf="page==22">First time?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPurple" *ngIf="page==40">
+    <p *ngIf="page==40">What could be the cause?</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-d">
+	<div class="ui-content" *ngIf="page==0">
+	    <div>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple">
+	                <span>With <span class="purplefont">vertigo</span> it would feel as if the world is spinning around you.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border left person-------------------  -->
+	    <div class="purpleBorder centerText">
+	        <p>This may be related to problems with the inner ear or to the brain.</p>
+	        <br>
+	        <hr class="hrpurple">
+	        <p>
+	            <img src="assets/img/people/adult/ear/vertigo-lady-main.svg" width="180" alt="lady experiencing vertigo">
+	        </p>
+	        <p class="purpleBorderAll">Now, let's see how we can help</p>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" data-theme="d" class="ui-link ui-btn ui-btn-d ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=10 && page<20">
+	    <div id="vertigo1_mobile_q1" *ngIf="page==10">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple">
+	                    <span>In addition to feeling <span class="orangefont">dizzy,</span> which of these are you also experiencing right now?</span><br>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border left person-------------------  -->
+	        <div style="" mbsc-enhance="" data-enhance="false" id="vertigo1_mobile_q1_form_div" class="mbsc-comp mbsc-form mbsc-mobi-purple mbsc-mobiscroll mbsc-ltr">
+	            <label for="vertigo1_mobile_q1_0" class="mbsc-checkbox" (click)="toggleSymptom(0)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_0" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[0]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Chest pain
+	            </span>         
+	            </label>
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_1" class="mbsc-checkbox" (click)="toggleSymptom(1)"><input name="vertigo1_mobile_q1" type="checkbox" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" id="vertigo1_mobile_q1_1" [(ngModel)]="symptoms[1]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Heart skipping beats
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_2" class="mbsc-checkbox" (click)="toggleSymptom(2)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_2" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[2]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Shortness of breath
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_3" class="mbsc-checkbox" (click)="toggleSymptom(3)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_3" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[3]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Fever over 101°F
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_4" class="mbsc-checkbox" (click)="toggleSymptom(4)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_4" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[4]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Had a head injury
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_5" class="mbsc-checkbox" (click)="toggleSymptom(5)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_5" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[5]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Cannot move my arm or leg
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_7" class="mbsc-checkbox" (click)="toggleSymptom(6)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_7" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[6]" value=""><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Headache or stiff neck
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_8" class="mbsc-checkbox" (click)="toggleSymptom(7)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_8" class="vertigo1_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[7]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Can't keep anything down
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo1_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="vertigo1_mobile_q1" id="vertigo1_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[8]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">None of these
+	            </span>
+	            </label>
+	            <hr class="hrpurple">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_vertigo1_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(11)"></p>
+	        </div>
+	    </div>
+	    <div class="container_12" id="selected_vertigo1_mobile_q1_container" *ngIf="page==10 && mode==3">
+	        <div class="grid_9">
+	            <div class="bubbleRightPurple">
+	                <div id="selected_vertigo1_mobile_q1 centerText">
+	                	<span class="redfontLarge">Oops!,</span>You told me nothing
+	                </div>
+	                <!--empty division-  -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/female/pharm-selena-purple.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="vertigo1_mobile_other" *ngIf="page==11 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek  emergency room visit.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person-------------------  -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Something serious may be going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care-------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_vertigo1_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-theme="i" data-inline="true" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">ER</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	    </div>
+	    <div id="vertigo1_mobile_none" *ngIf="page==11 && mode==1">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple">
+	                    <span class="redfont">None of these?</span><br>
+	                    Good. We just ruled out having to go to the emergency room.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person-------------------  -->
+	        <p class="redBorder">Just a few more questions for you before we see what a pharmacist can recommend for vertigo over-the-counter.</p>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link-----------------------------  -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <button class="back_vertigo1_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==20">
+    	<div class="maxwidth450">
+	        <div class="ovalBorderRightPurple centerText">
+	            <span>Have you been <span class="purplefont">diagnosed</span> with vertigo before?</span><br>
+	        </div>
+	        <div class="clearboth"></div>
+	        <div class="container_12">
+	            <div class="grid_8">
+	                <br>
+	                <div class="bubbleRightPurple centerText">
+	                    Or this is your first time experiencing <span class="orangefont">spinning</span> movements.
+	                </div>
+	            </div>
+	            <div class="grid_4">
+	                <img src="assets/img/pharm/female/pharm-selena-purple.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Point Right-------------------  -->
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(21)">Diagnosed</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(22)">First time</a>
+	    </p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page==21">
+	    <div>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>If you are experiencing it now, we have a <span class="purplefont">few advice</span> on what to do below.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	    </div>
+	    <div class="clearboth"></div>
+	    <!-----------------End Border right person-------------------  -->
+	    <p class="purpleBorder">Discuss what to do while experiencing it now. example <br>Keep still. Sit or lie down when symptoms occur.
+	        Gradually resume activity.
+	        Avoid sudden position changes.
+	        Do not try to read when symptoms occur.
+	        Avoid bright lights.
+	        You may need help walking when symptoms occur. Avoid hazardous activities such as driving, operating heavy machinery, and climbing until 1 week after symptoms have disappeared.
+	    </p>
+	    <p class="greenBorderAll">Send to a pharmacist</p>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link-----------------------------  -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a> 
+	        <a href="#" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Pharmacist</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page==22">
+	    <div>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>Well, let's find out if you are looking at <span class="redfont">vertigo</span> before we continue.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<40">
+	    <div id="vertigo3_mobile_q1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>Which of the <span class="purplefont">symptoms</span> listed below are you experiencing?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>&nbsp;</p>
+	        <div id="vertigo3_mobile_q1_form_div" style="background-color: rgb(255, 255, 255);" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-purple mbsc-mobiscroll mbsc-ltr">
+	            <label for="vertigo3_mobile_q1_0" class="mbsc-checkbox" (click)="toggleTriedlist(0)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_0" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[0]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Sensation that you or the room is moving or spinning
+	            </span>         
+	            </label>
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_1" class="mbsc-checkbox" (click)="toggleTriedlist(1)"><input name="vertigo3_mobile_q1" type="checkbox" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" id="vertigo3_mobile_q1_1" value="" [(ngModel)]="triedlist[1]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Nausea and vomiting
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_2" class="mbsc-checkbox" (click)="toggleTriedlist(2)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_2" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[2]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Feeling dizzy
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_3" class="mbsc-checkbox" (click)="toggleTriedlist(3)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_3" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[3]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Having difficulty focusing the eyes
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_4" class="mbsc-checkbox" (click)="toggleTriedlist(4)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_4" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[4]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Ringing in the ears
+	            </span></label>
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_5" class="mbsc-checkbox" (click)="toggleTriedlist(5)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_5" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[5]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Loss of balance
+	            </span> </label>
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_7" class="mbsc-checkbox" (click)="toggleTriedlist(6)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_7" class="vertigo3_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="triedlist[6]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Hearing loss in one ear
+	            </span></label> 
+	            <hr class="hrpurple">
+	            <label for="vertigo3_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllTriedlists(false)"><input type="checkbox" name="vertigo3_mobile_q1" id="vertigo3_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="triedlist[7]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">None of these
+	            </span>
+	            </label> 
+	            <hr class="hrpurple">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText"><input type="button" data-inline="true" id="get_vertigo3_mobile_q1" value="Here you  go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(31)"></p>
+	            <p>&nbsp;</p>
+	        </div>
+	    </div>
+	    <div class="container_12 " id="selected_vertigo3_mobile_q1_container" *ngIf="page==30 && mode==3">
+	        <div class="grid_9">
+	            <div class="bubbleRightPurple">
+	                <div id="selected_vertigo3_mobile_q1 centerText">
+	                	<span class="redfontLarge">Oops!,</span>You told me nothing 
+	                </div>
+	                <!--empty division- -->
+	            </div>
+	        </div>
+	        <div class="grid_3">
+	            <img src="assets/img/pharm/female/pharm-selena-purple.svg" width="80" alt="Pharmacist" align="right">
+	        </div>
+	    </div>
+	    <div id="vertigo3_mobile_other" *ngIf="page==31 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                These are symptoms of vertigo.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">With vertigo, you will see the world spinning around you like you just got off a fast merry go round.</p>
+	        <p>Let's continue or would you like to see the nearest urgent care clinic to you?</p>
+	    </div>
+	    <div id="vertigo3_mobile_none" *ngIf="page==31 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfont">None of these?</span><br>
+	                May <span class="redfont">not</span> be looking at vertigo.
+	                Those are the signs and symptoms of vertigo.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">Would you like to continue with vertigo or see the nearest urgent care clinic to you?</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_vertigo3_mobile" *ngIf="page==31">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">  
+	            <button class="back_vertigo3_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack3()">Back</button>
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="b" data-inline="true" class="ui-link ui-btn ui-btn-b ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<60">
+	    <div id="vertigo4_mobile_1" *ngIf="page==40">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="purplefont firstname"> </span><br>
+	                    <span>Are you currently taking any of these groups of <span class="bluefont">medications?</span> </span>
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <hr>
+	        <div class="ui-grid-a">
+	            <div class="ui-block-a">
+	                <strong>Aminoglycosides</strong><br><span class="grayfontSmall">Gentamicin</span><br>
+	                <strong>Diuretics</strong><br><span class="grayfontSmall">Furosemide</span><br>
+	                <strong>Salicylates</strong><br><span class="grayfontSmall">Aspirin</span><br>
+	                <strong>Sedatives</strong><br><span class="grayfontSmall">example</span><br>
+	                <strong>Others</strong><br><span class="grayfontSmall">Quinine</span>
+	            </div>
+	            <div class="ui-block-b">
+	                <strong>Aniticonvulsants</strong><br><span class="grayfontSmall">high doses of dilantin, primidone</span><br> 
+	                <strong>Antidepresants</strong><br><span class="grayfontSmall">Example</span><br>
+	                <strong>Antihypertensives</strong><br><span class="grayfontSmall">Example</span><br>
+	                <strong>Aminoglycosides</strong><br><span class="grayfontSmall">Example</span>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_2_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="vertigo4_mobile_2_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_2_y" *ngIf="page==41">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="purplefont">Yes?</span><br>
+	                    At <span class="redfont">high</span> doses they can cause <span class="redfont">ototoxicity</span> which can lead to vertigo.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If the vertigo started after you started these medications or if it continues, discuss this with your doctor.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="vertigo4_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_2_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>Are you <span class="greenfont">diabetic?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="vertigo4_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_3_y" *ngIf="page==43">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="bluefont">Yes?</span><br>
+	                    <span class="orangefont">Very low blood</span> sugar can cause <span class="orangefont">dizziness</span> which can be confused with vertigo.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="purpleBorderAll">
+	            <p class="blueBorder">Just starting a new diabetic drug  or increasing the dose of the current one you are taking can lower the blood sugar level suprisingly making you feel dizzy.</p>
+	            <p class="blueBorderWhite">If you are also sweating, we would suspect this and advice you to discuss this with your doctor.</p>
+	            <p class="blueBorder">We suggest you check your blood sugar level and make sure it is at recommended levels.</p>
+	        </div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_3_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>Are you a female of <span class="purple_bluefont">child bearing age?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple centerText">
+	                        If so have you taken a <span class="purple_bluefont">pregnancy test</span>?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-selena-purple.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="orangeBorder">You might be pregnant and not know it.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="vertigo4_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_4_y" *ngIf="page==45">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="purplefont">Yes?</span><br>
+	                    Being <span class="purple_bluefont">pregnant</span> and not knowing it can make you experience vertigo symptoms..
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_4_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span>Have you checked your <span class="orangefont">blood pressure</span> lately?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="vertigo4_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_5_y" *ngIf="page==47">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="purplefont">Very good.</span><br>
+	                    Low blood pressure can cause symptoms similar to vertigo. 
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorderAll">Know that increasing the dose of a blood pressure medication can cause symptoms similar to vertigo.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_5_n" *ngIf="page==48">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="redfont">Remember</span><br>
+	                    <span class="bluefont">Low blood pressure</span> can make you feel dizzy and lightheaded.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleRedBorder purple_redfont centerText">Do you have a thyroid disorder?</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(49)">Yes</button>
+	            <button data-inline="true" class="vertigo4_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(50)">No</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_6_y" *ngIf="page==49">
+	        <div>
+	            <div class="maxwidth450">
+	                <div class="ovalBorderRightPurple centerText">
+	                    <span class="purplefont">Yes?</span><br>
+	                    Intolerance to heat or cold or weight changes can mimic the symptoms of vertigo.
+	                </div>
+	                <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">We suggest you discuss this with your doctor.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="vertigo4_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(50)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="vertigo4_mobile_6_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple centerText">
+	                <span class="purplefont firstname"> </span><br>
+	                Other causes of vertigo include meniere's disease, migraine, multiple sclerosis among others.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-selena-purple.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If vertigo is persistent or troublesome for you, make sure you call the doctor for a detailed evaluation.</p>
+	        <p class="redBorderAll">Let's see what a pharmacist suggest you take for vertigo over-the-counter until you can talk to a doctor.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" class="vertigo_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(3)">Pharmacist</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

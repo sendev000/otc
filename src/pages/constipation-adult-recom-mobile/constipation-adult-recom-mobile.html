@@ -1,18 +1,1417 @@
-<!--
-  Generated template for the ConstipationAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>constipation_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar>  -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-n">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper opacity5" [ngStyle]="{'transform': tabConCss+''}">
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div id="adult_recom_constipation_mobile" *ngIf="page==0">
+				            <!-----Start follow up intro--- -->
+				            <p>&nbsp;</p>
+				            <div class="maxwidth450">
+				                <div class="ovalBorderRightBlue centerText"> 
+				                    <span class="firstname bluefont"> </span><br>
+				                    Constipation can be painful, let's see what to use over-the-counter.
+				                </div>
+				                <div align="right">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>
+				            <!-----------------End Border right person------------------- -->
+				            <div class="blueBorderAll">
+				                <p><span style="line-height: 1.6em;">Over the counter medications or measures that can help with constipation are listed below.</span></p>
+				                <p><span style="line-height: 1.6em;">Go through them. You will then answer a few questions to see which will work best for your situation.</span></p>
+				                <p><span style="line-height: 1.6em;">If still not satisfied, there is a comparison table at the end of the questions to further tailor the recommendation to your needs.&nbsp;</span></p>
+				                <hr class="hrblue">
+				                <p class="centerText">
+				                    <br>
+				                    <img src="assets/img/people/adult/stomach/constipation-recom.svg" style="width: 100px;" alt="Woman with constipation using the rest room">
+				                </p>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#3366cc;">Stool softeners</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+				                    <p>This allows more water and fat to get into the stool making it softer and easier to move along.</p>
+				                    <p>They are stimulant free and generally regarded as gentle.</p>
+				                    <p>But expect action in about 1 to 3 days.</p>
+				                    <p><span style="font-size:14px;">Docusate is a good example.</span></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#FF8C00;">Bulk-forming fibers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+				                    <p>These cause the stool to retain more water, bulk it up and form something like a gel making it easier to move along.</p>
+				                    <p>They are gentle and as such can be used daily to keep things moving.</p>
+				                    <p>Some of these fibers are sources of soluble and insoluble fibers. While the insoluble fibers help make things move in the intestine, the soluble fibers have been shown to reduce cholesterol and ultimately heart disease.</p>
+				                    <p><span style="font-size:14px;"><em><span style="color: rgb(80, 80, 80); font-family: Arial, Helvetica, sans-serif; line-height: normal;">In 1998, the U.S. Food and Drug Administration (FDA) authorized the use of a health clai</span></em><span style="color: rgb(80, 80, 80); font-family: Arial, Helvetica, sans-serif; line-height: normal;"><em>m that</em>&nbsp;...</span><span style="color:#808080;"><span style="font-family: Arial, Helvetica, sans-serif; line-height: normal;">diets low in saturated fat and cholesterol that include 7 grams of soluble fiber per day from psyllium&nbsp;may reduce the risk of heart disease by lowering cholesterol...</span></span><em><span style="color: rgb(80, 80, 80); font-family: Arial, Helvetica, sans-serif; line-height: normal;">&nbsp;in the labeling of foods and dietary supplements containing psyllium husk.</span></em>&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				                    <p><span style="font-size:16px;">If you have a history of constipation, you should include this in your daily routine.&nbsp; &nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				                    <p>Examples include:&nbsp;<span style="color: rgb(80, 80, 80); font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: normal;">&nbsp;Psyllium, cellulose, methylcellulose, carboxymethylcellulose sodium, karaya, malt soup extract, polycarbophil, and wheat bran.</span></p>
+				                    <p>&nbsp;</p>
+				                    <p>&nbsp;</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#FF0000;">Stimulants</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+				                    <p>These stimulates or make the intestine more active thereby causing a bowel movement.</p>
+				                    <p>They act on the walls and nerves of the intestine, altering the electrolytes and water movement.</p>
+				                    <p>They are the most powerful among laxatives, but also the most dangerous.</p>
+				                    <p>For instance, prolonged use can damage the ability of the folds in the colon to move stool along on its own because you've over stimulated it.</p>
+				                    <p>Then you will need to take another stimulant laxative to move things along and before you know it, you will end up with chronic constipation that is dependent on you having to take these laxatives before you can go. In other words, you will become dependent on them.</p>
+				                    <p>So use these on a short term basis. Never more than a week.</p>
+				                    <p><em>Examples are senna extracts, castor oil, bisacodyl, cascara, aloe vera, buckthorn.&nbsp;</em></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#A52A2A;">Lubricants</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+				                    <p>The idea is to make the stool slippery so it can pass out easily.</p>
+				                    <p>A good example is mineral oil.&nbsp;</p>
+				                    <p>Being an oil, mineral oil, also add more water to the stool making it softer, because it prevents the colon from absorbing water.</p>
+				                    <p>Only problem is that it will also prevent the absorption of fat-soluble vitamins and some minerals by dissolving them in the oil and passing them out.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#0099ff;">Saline laxatives</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+				                    <p>These draws water into the intestine and retain it to make stool softer and more comfortable to pass.</p>
+				                    <p>You should take this with a full glass of water not only to make it more effective, but &nbsp;also prevent side effects like dehydration or electrolyte imbalance.</p>
+				                    <p>Examples include magnesium citrate, magnesium hydroxide or milk of magnesia, magnesium sulfate and&nbsp;sodium phosphate.</p>
+				                    <p><span style="font-size:12px;">Stay away from <span style="color:#4B0082;">oral</span> <span style="color:#008000;">sodium phosphates.</span> <span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 22.3999996185303px;">These when taken at high doses </span><span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 22.3999996185303px;">&nbsp;in some individuals carry a risk of kidney injury. For this reason Fleet phospho-soda &nbsp;(Oral form. Not enema)</span><span style="color: rgb(37, 37, 37); font-family: sans-serif; line-height: 22.3999996185303px;">&nbsp;</span>&nbsp;was recalled by the manufacturer.</span></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span style="color:#800080;">Hyper-osmotic agents</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+				                    <p>These cause the intestine to hold more water within thereby soften the stool for easy passage.</p>
+				                    <p>Their goal is to hydrate the stool, soften it and make it easier to pass.</p>
+				                    <p>Examples include glycerin suppository, polyethylene glycol (PEG), sorbitol,&nbsp;lactulose.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <p class="grayfontSmallSmall centerText">
+				                Last updated by pharmacist on : 
+				                09/13/2014          
+				            </p>
+				            <div class="clearboth divider1"></div>
+				            <div class="redBorderAll grayfont">
+				                <p>You will use this information to choose a good over-the -counter remedy.</p>
+				                <p>Remember to compare the different types of over-the-counter laxatives for a more informed decision using our comparison tool.</p>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <p class="centerText">
+				                <button data-inline="true" class="show_constipation_options_mobile_div ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(1)">Continue</button>
+				            </p>
+				            <p>&nbsp;</p>
+				        </div>
+				        <!-----------------------Start all checkbox options div------------------ --> 
+				        <div class="adult_constipation_options_mobile_div" *ngIf="page>0">
+				            <div id="intro_adult_constipation_mobile_div" *ngIf="page==1">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue centerText"> 
+				                        <span class="redfont firstname"> </span><br>
+				                        Which of the <span class="greenfont">symptoms</span> listed below are you <span class="purple_redfont">experiencing</span> right now? 
+				                    </div>
+				                    <div align="right">
+				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <!--------------------------Banner Link----------------------------- -->
+				                <!--------------------------Banner Link----------------------------- -->
+				            </div>
+				            <!-----------------End Intro-------------------- -->
+				            <!--------------------------Start CheckBox----------------------------- -->
+				            <div id="adult_recom_constipation_mobile_q1" *ngIf="page==1">
+				                <div class="centerText">
+				                    <p>
+				                        <img src="assets/img/people/adult/stomach/constipation-recom.svg" alt="Woman using the rest room" style="width: 80px;">
+				                    </p>
+				                    <hr class="hrblue">
+				                    <p> Choose your symptoms from the list below and see what is recommended. </p>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <div data-role="fieldcontain" class="ui-field-contain">
+				                    <fieldset data-role="controlgroup" id="adult_recom_constipation_mobile_q1_form_div" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+				                        <div class="ui-controlgroup-controls ">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[0], 'ui-checkbox-off': !recs[0]}" (click)="toggleRecs(0)">Stool is hard. Need to soften it. </label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_0" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[0]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[1], 'ui-checkbox-off': !recs[1]}" (click)="toggleRecs(1)">Looking for something for overnight relief.</label><input name="adult_recom_constipation_mobile_q1" type="checkbox" class="adult_recom_constipation_mobileQ1" id="adult_recom_constipation_mobile_q1_1" value="" data-cacheval="true" [(ngModel)]="recs[1]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[2], 'ui-checkbox-off': !recs[2]}" (click)="toggleRecs(2)">Want this to work pretty fast.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_2" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[2]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[3], 'ui-checkbox-off': !recs[3]}" (click)="toggleRecs(3)">Need this for daily use to keep things moving.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_3" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[3]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[4], 'ui-checkbox-off': !recs[4]}" (click)="toggleRecs(4)">I have a history of constipation</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_4" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[4]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[5], 'ui-checkbox-off': !recs[5]}" (click)="toggleRecs(5)">Feel like throwing up with this constipation.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_5" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[5]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[6], 'ui-checkbox-off': !recs[6]}" (click)="toggleRecs(6)">I also have stomach ache. Stomach feel tense.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_6" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[6]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[7], 'ui-checkbox-off': !recs[7]}" (click)="toggleRecs(7)">I see blood when emptying the bowel or in the stool.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_7" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[7]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_8" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[8], 'ui-checkbox-off': !recs[8]}" (click)="toggleRecs(8)"> This constipation alternates with diarrhea that is watery.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_8" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[8]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_9" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[9], 'ui-checkbox-off': !recs[9]}" (click)="toggleRecs(9)">I can only pass thin pencil-like stool.</label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_9" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[9]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_13" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[10], 'ui-checkbox-off': !recs[10]}" (click)="toggleRecs(10)"><span class="bluefont">I prefer an enema </span></label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_13" class="adult_recom_constipation_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[10]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_12" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[11], 'ui-checkbox-off': !recs[11]}" (click)="toggleRecs(11)"><span class="greenfont">Prevention only</span> </label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_12" value="" data-cacheval="true" [(ngModel)]="recs[11]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_constipation_mobile_q1_11" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[12], 'ui-checkbox-off': !recs[12]}" (click)="toggleRecs(12)"><span class="orangefont">None of these</span></label><input type="checkbox" name="adult_recom_constipation_mobile_q1" id="adult_recom_constipation_mobile_q1_11" value="" data-cacheval="true" [(ngModel)]="recs[12]"></div>
+				                            <hr class="hrblue">
+				                        </div>
+				                    </fieldset>
+				                    <div class="clearboth divider1"></div>
+				                    <div class="centerText">
+				                    	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" data-inline="true" id="get_adult_recom_constipation_mobile_q1" value="Here you go" (click)="togglePage(2)"></div>
+				                    </div>
+				                </div>
+				            </div>
+				            <!-----------------End checkbox-------------------- -->
+				            <div id="adult_recom_constipation_mobile_all_options" *ngIf="mode>0">
+				                <!-----------------You told me nothing-------------------- -->
+				                <div class="container_12" id="selected_adult_recom_constipation_mobile_q1_container" *ngIf="page==1 && mode==50">
+				                    <div class="grid_9">
+				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_constipation_mobile_q1 centerText"></div>
+				                    </div>
+				                    <div class="grid_3"> 
+				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 80px;" align="right">
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				                <!--------------------------Single-Options-Pharmacist------------------------------------ -->
+				                <!---------------stool_softener--------------------------- -->
+				                <div id="stool_softener_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require a <span class="purplefont">stool softener.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------stimulant--------------------------- -->
+				                <div id="stimulant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require a <span class="purplefont">stimulant</span> type laxative type laxative.</span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------lubricant--------------------------- -->
+				                <div id="lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require a <span class="purplefont">lubricant</span> type laxative.</span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------fibers--------------------------- -->
+				                <div id="fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require you to take <span class="purplefont">fibers.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------saline--------------------------- -->
+				                <div id="saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require a <span class="purplefont">saline</span> type laxative.</span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------hyper_osmotic--------------------------- -->
+				                <div id="hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require a <span class="purplefont">hyper-osmotic</span> class of laxatives.</span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!-------------------------Double-Options-Pharmacist------------------------------------ -->
+				                <!---------------stool_softener + stimulant--------------------------- -->
+				                <div id="stool_softener_stimulant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">stimulant</span> type of laxative.</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant--------------------------- -->
+				                <div id="stool_softener_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">lubricant</span> type laxative.</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + fibers--------------------------- -->
+				                <div id="stool_softener_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and <span class="redfont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + saline--------------------------- -->
+				                <div id="stool_softener_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and <span class="redfont">hyper-osmotic</span> class laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + lubricant--------------------------- -->
+				                <div id="stimulant_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative or a <span class="redfont">lubricant</span> type laxative.</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + fibers--------------------------- -->
+				                <div id="stimulant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative and <span class="redfont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + saline--------------------------- -->
+				                <div id="stimulant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative or a <span class="redfont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative and <span class="redfont">hyper-osmotic</span> class laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + fibers--------------------------- -->
+				                <div id="lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative and <span class="redfont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + saline--------------------------- -->
+				                <div id="lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative or a <span class="redfont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + hyper_osmotic--------------------------- -->
+				                <div id="lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative or a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------fibers + saline--------------------------- -->
+				                <div id="fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require  <span class="purplefont">fibers</span> and a <span class="redfont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------fibers + hyper_osmotic--------------------------- -->
+				                <div id="fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require  <span class="purplefont">fibers</span> and a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------saline + hyper_osmotic--------------------------- -->
+				                <div id="saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">saline</span> type laxative or a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------Triple-Options-Pharmacist---------------------------- -->
+				                <!---------------stool_softener+ stimulant + lubricant--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative type laxative or a <span class="bluefont">lubricant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener+ stimulant + fibers--------------------------- -->
+				                <div id="stool_softener_stimulant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">stimulant</span> type laxative and  <span class="bluefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener+ stimulant + saline--------------------------- -->
+				                <div id="stool_softener_stimulant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener+ stimulant + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener+ lubricant + fibers--------------------------- -->
+				                <div id="stool_softener_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + saline--------------------------- -->
+				                <div id="stool_softener_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + fibers + saline--------------------------- -->
+				                <div id="stool_softener_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span> and a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + fibers + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span> and a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ lubricant + fibers--------------------------- -->
+				                <div id="stimulant_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative or a <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ lubricant + saline--------------------------- -->
+				                <div id="stimulant_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ lubricant + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ fibers + saline--------------------------- -->
+				                <div id="stimulant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative with <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative with fibers</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ fibers + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant+ saline + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + fibers + saline--------------------------- -->
+				                <div id="lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative with fibers</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + fibers + hyper_osmotic--------------------------- -->
+				                <div id="lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + saline + hyper_osmotic--------------------------- -->
+				                <div id="lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------Quad-Options-Pharmacist---------------------------- -->               
+				                <!---------------stool_softener + stimulant + lubricant + fibers--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + lubricant + saline--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + lubricant + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + fibers + saline--------------------------- -->
+				                <div id="stool_softener_stimulant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + fibers + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + fibers + saline--------------------------- -->
+				                <div id="stool_softener_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + fibers + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span>, and one of  a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + lubricant + fibers + saline--------------------------- -->
+				                <div id="stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + lubricant + fibers + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + lubricant + saline + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------lubricant + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------5-Options-Pharmacist---------------------------- -->              
+				                <!---------------stool_softener + stimulant + lubricant + fibers + saline--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + lubricant + fibers + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + lubricant + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + stimulant + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stool_softener + lubricant + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="stool_softener_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  <span class="purple_redfont">lubricant</span>, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------stimulant + lubricant + fibers + saline + hyper_osmotic--------------------------- -->
+				                <div id="stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purple_redfont">lubricant</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with <span class="purplefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------6-Options-Pharmacist---------------------------- -->              
+				                <!---------------stool_softener + stimulant + lubricant + fibers + saline + hyper_osmotic---------------- -->
+				                <div id="stool_softener_stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with <span class="purplefont">fibers</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------------Prevention only--------------------------- -->
+				                <div id="prevention_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            Something to <span class="orangefont">prevent?</span>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;">
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                    <!-----------------End Border right person------------------- -->
+				                    <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content">
+				                        <h3 class="ui-collapsible-heading"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span class="bluefont">Preventive measures</span><span class="ui-collapsible-heading-status"> click to collapse contents</span></a></h3>
+				                        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="false">
+				                            <br>
+				                            <p>1. Include enough fiber in the diet</p>
+				                            <p>2. Drink fluids more often</p>
+				                            <p>3. Exercise often</p>
+				                            <p>4. Avoid&nbsp;sitting in one place for too long. If on a long journey, find time to stretch and walk around.</p>
+				                            <!--------------------------Banner Link----------------------------- -->
+				                            <!--------------------------Banner Link----------------------------- -->
+				                            <p>&nbsp;</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <!---------------All-------------- -->
+				                <div id="allabove_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span class="purplefont">All of these?</span><br>
+				                            You must have this constipation really bad. 
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>You will need to see a healthcare provider.</p>
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------None of the above--------------------------- -->
+				                <div id="none_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">None of these?</span><br>
+				                            We must have left something out. 
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;"></div>
+				                    </div>
+				                    <div class="clearboth"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>We must have left some things out. Please choose what closely reflects what you are experiencing and see what is recommended.</p>
+				                </div>
+				                <!---------------------See Doctor--------------------------- -->
+				                <div id="doctor_adult_recom_constipation_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightRed centerText"> 
+				                            <span class="orangefont">See a doctor or urgent care </span>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 70px;">
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>You will need to see a doctor on this one. Nothing over-the-counter is going to cut this.</p>
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------------Individual Category Entry-------------------------- --> 
+				                <!--------------------------stool_softener Article----------------------------- -->               
+				                <div data-role="collapsible" id="stool_softener_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span class="purplefont">Stool Softener</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">This allows more water and fat to get into the stool making it softer and easier to move along.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">But expect action in about 1 to 3 days if you use this alone.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;"><span style="color:#3399ff;">Docusate</span> is a good example.</span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------stimulant Article----------------------------- -->               
+				                <div data-role="collapsible" id="stimulant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span class="purple_redfont">Stimulant Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">They cause&nbsp;a bowel movement by stimulating the intestines through<span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18.9px;">&nbsp;actions on the walls and nerves of the intestine, altering the electrolytes and water movement.</span></p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Know that prolonged use can damage the ability of the folds in the colon to move stool along on its own because you've over stimulated it.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="line-height: 1.35;">Use these on a short term basis. Never more than a week.</span></p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="font-size:11px;"><em style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline;">Examples are senna extracts, castor oil, bisacodyl, cascara, aloe vera, buckthorn.</em></span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------lubricant Article----------------------------- -->               
+				                <div data-role="collapsible" id="lubricant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span class="purple_redfont">Lubricant Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">The idea is to make the stool slippery so it can pass out easily.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">A good example is <span style="color:#FF8C00;">mineral oil.</span>&nbsp;</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Being an oil, mineral oil can also add more water to the stool making it softer by preventing absorption of water from the colon.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Know that it will also prevent the absorption of fat-soluble vitamins and&nbsp;minerals by dissolving them in the oil and passing them out.</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------fibers Article----------------------------- -->               
+				                <div data-role="collapsible" id="fibers_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-arrow-r': expands[10], 'ui-icon-arrow-d': !expands[10]}"><span class="purple_redfont">Fibers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Fibers cause the stool to retain more water, bulk it up and form something like a gel making it easier to move along.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">They are gentle and as such can be used daily to keep things moving.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Some of these fibers are sources of soluble and insoluble fibers. While the insoluble fibers help make things move in the intestine, the soluble fibers have been shown to reduce cholesterol and ultimately heart disease.<span style="line-height: 1.35;">&nbsp; &nbsp;&nbsp;</span></p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="margin: 0px; padding: 0px; border: 0px; font-size: 16px; vertical-align: baseline;"><span style="font-size:14px;">If you have a history of constipation, you should include this in your daily routine.&nbsp;</span> &nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><em>Examples include <span style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; color: rgb(80, 80, 80); line-height: normal;">&nbsp;Psyllium, cellulose, methylcellulose, carboxymethylcellulose sodium, karaya, malt soup extract, polycarbophil, and wheat bran.</span></em></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------saline Article----------------------------- -->               
+				                <div data-role="collapsible" id="saline_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-arrow-r': expands[11], 'ui-icon-arrow-d': !expands[11]}"><span class="purple_redfont">Saline Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">These draws water into the intestine and retain it to make the stool softer and more comfortable to pass.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">You should take this with a full glass of water not only to make it more effective but &nbsp;also prevent side effects like dehydration or electrolyte imbalance.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Examples include magnesium citrate, magnesium hydroxide or milk of magnesia, magnesium sulfate and&nbsp;sodium phosphate.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="margin: 0px; padding: 0px; border: 0px; font-size: 12px; vertical-align: baseline;">Stay away from&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(75, 0, 130);">oral</span>&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">sodium phosphates.</span>&nbsp;These, when taken at high doses in some individuals, <span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 22.4px;">carry a risk of kidney injury. For this reason, Fleet phospho-soda &nbsp;(Oral form. Not enema)</span><span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(37, 37, 37); font-family: sans-serif; line-height: 22.4px;">&nbsp;</span>&nbsp;was recalled by the manufacturer. But store brands still exist. Do not buy these.</span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------hyper_osmotic Article----------------------------- -->               
+				                <div data-role="collapsible" id="hyper_osmotic_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-arrow-r': expands[12], 'ui-icon-arrow-d': !expands[12]}"><span class="purple_redfont">Hyper-Osmotic Laxatives</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">These cause the intestine to hold more water within thereby softening the stool for easy passage.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Their goal is to hydrate the stool, soften it and make it easier to pass.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="font-size:12px;"><em>Examples include <span style="color:#008000;">glycerin suppository</span>, <span style="color:#800080;">polyethylene glycol (PEG)</span>, sorbitol,&nbsp;lactulose.</em></span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!----------------------------combination products--------------------------- -->
+				                <div data-role="collapsible" id="combination_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(13)" [ngClass]="{'ui-icon-arrow-r': expands[13], 'ui-icon-arrow-d': !expands[13]}"><span class="purplefont">Combination Products</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
+				                        <p>1.<strong> <span style="color:#3399ff;">Stool Softener</span> + <span style="color:#FF8C00;">Stimulant</span></strong></p>
+				                        <p>A good example is <span style="color:#3399ff;">docusate</span>&nbsp;+&nbsp;<span style="color:#FF8C00;"><span style="font-family: arial, sans-serif; font-size: small; line-height: 18.2px;">standardized senna concentrate.</span></span>&nbsp; The idea is to soften the stool while stimulating the bowels to move things along.</p>
+				                        <p>2. <span style="color:#DAA520;">Senna </span>+ <span style="color:#B22222;">Psyllium</span></p>
+				                        <p>This combination will improve stool moisture in a case of dry stools. &#8203;</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!----------------------------Worth Doing--------------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <div data-role="collapsible" id="worth_doing_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(14)" [ngClass]="{'ui-icon-arrow-r': expands[14], 'ui-icon-arrow-d': !expands[14]}"><span class="greenfont">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
+				                        <p style="font-size: 13px; line-height: 20.8px;">1. Include enough fiber in the diet</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">2. Drink fluids more often</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">3. Exercise often</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">4. Avoid&nbsp;sitting in one place for too long. If on a long journey, find time to stretch and walk around.</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">5. <strong><span style="color:#800080;">Compare over-the-counter laxatives</span></strong> using the comparison tool of this app.</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!-----------------------------------back_div------------------------- -->                
+				                <div data-inline="true" id="back_intro_adult_constipation_mobile_div" class="displayNone">
+				                    <div class="clearboth divider1"></div>
+				                    <div class="centerText">
+				                        <span class="grayfontSmallSmall">Last updated by pharmacist on  02/04/2016</span>
+				                    </div>
+				                    <p class="centerText">
+				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_constipation_mobile_q1 ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+				                    </p>
+				                    <br>
+				                    <hr class="hrblue">
+				                    <br>
+				                    <p class="centerText">
+				                        <a href="#" class="linkBlueBorder robotoLightSmall ui-link" data-inline="true" (click)="gotoSubPage(4)">Compare Laxatives</a>
+				                    </p>
+				                </div>
+				                <!------------------------------End back div---------------- -->
+				                <p>&nbsp;</p>
+				            </div>
+				            <!---------------adult_recom_constipation_mobile_all_options----------------- -->
+				        </div>
+				        <!---------------End adult_constipation_options_mobile_div----------------- -->
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide------------ -->   
+				</div>
+				<!-------------------------------End Swiper-slide------------------ -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+				            </div>
+				            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 80px;" alt="Article photo">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(15)" [ngClass]="{'ui-icon-plus': expands[15], 'ui-icon-minus': !expands[15]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[15]}" aria-hidden="true">
+				                <div class="redBorderWhite">
+				                    <ul>
+				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+				                        <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+				                        <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+				                            <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+				                            It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+				                        </li>
+				                        <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+				                        <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+				                    </ul>
+				                </div>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+				            </div>
+				            <div class="clearboth"></div>
+				            <div class="container_12">
+				                <div class="grid_8">
+				                    <br>
+				                    <div class="bubbleRightBlue">
+				                        Or if you have a question for the pharmacist?
+				                    </div>
+				                </div>
+				                <div class="grid_4">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				                </div>
+				            </div>
+				        </div>
+				        <br>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Point Right------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(16)" [ngClass]="{'ui-icon-plus': expands[16], 'ui-icon-minus': !expands[16]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[16]}" aria-hidden="true">
+				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(17)" [ngClass]="{'ui-icon-plus': expands[17], 'ui-icon-minus': !expands[17]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[17]}" aria-hidden="true">
+				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+				                        <div class="clearboth divider1"></div>
+				                        <p class="centerText">
+				                            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+				                        </p>
+				                        <div class="clearboth divider1"></div>
+				                        <br>                       
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(18)" [ngClass]="{'ui-icon-plus': expands[18], 'ui-icon-minus': !expands[18]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[18]}" aria-hidden="true">
+				                        <p>Expect a reply as soon as possible.<br>
+				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+				                        </p>
+				                        <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(19)" [ngClass]="{'ui-icon-plus': expands[19], 'ui-icon-minus': !expands[19]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[19]}" aria-hidden="true">
+				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+				                        <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText"> <span>No <span class="bluefont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+				            </div>
+				            <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <!-----------------End Border right person------------------- -->
+				        <p>&nbsp;</p>
+				        <p class="centerText"> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+				        </p>
+				        <div class="comment_why_div" *ngIf="why">
+				            <br>
+				            <ul>
+				                <li>Let others know if the recommendation worked for you.</li>
+				                <li>Share your treatment outcome with others.</li>
+				                <li>Add to the recommendation.</li>
+				                <li>Improve on the recommendation.</li>
+				                <li>Quickest way to ask a pharmacist a question.</li>
+				                <li>What about you answering a question?</li>
+				            </ul>
+				        </div>
+				        <!----------------------------Comments start here------------------------------ -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+			</div>
+		</div>
+	</div>
 </ion-content>

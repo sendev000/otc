@@ -46,7 +46,7 @@ export class AllergyAdultRecomMobilePage {
 			false, false, false, false, false, false, false, false, false, false, false, false, false
 		];
 		this.pages = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
-		this.expands = [true, true, true, true, true, true, true, true, true, true, true, true, true];
+		this.expands = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 		this.firstname = GlobalVars.getFirstname();
 		if (this.firstname != "")
 			this.firstname += ",";
@@ -65,11 +65,9 @@ export class AllergyAdultRecomMobilePage {
 	}
 	showTab(id: number){
 		this.tabId = id;
+		this.content.scrollToTop(0);
 		this.tabCss = "translate3d(" + ((id-1)*100) + "%, 0px, 0px)";
 		this.tabConCss = "translate3d(" + ((-id+1)*100) + "%, 0px, 0px)";
-	}
-	togglePages(ind: number) {
-		this.pages[ind] = !this.pages[ind];
 	}
 	toggleRecs(ind: number){
 		let temp = this.recs[ind];
@@ -215,9 +213,6 @@ export class AllergyAdultRecomMobilePage {
 			else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
 			    this.mode = 34;
 			} else {
-			    // $('#selected_adult_recom_allergy_mobile_q1').html('<span class="redfontLarge">Oops!,</span>' + ' ' + 'You told me nothing ');
-			    // $('#yes_adult_recom_allergy_mobile_q1').hide();;
-			    // $('#selected_adult_recom_allergy_mobile_q1_container').show(300).removeClass("displayNone");
 			    ind = 0; this.mode = 50;
 			}
 		}

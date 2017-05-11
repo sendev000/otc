@@ -113,6 +113,9 @@ page-allergy-adult-recom-mobile {
 	  width: 100%;
 	  margin: 0 auto;
 	}
+	.tabs a:hover{
+		opacity: 1;
+	}
 	.tabs a {
 	  display: block;
 	  float: left;
@@ -168,6 +171,10 @@ page-allergy-adult-recom-mobile {
 	}
 	fieldset{
 		border: 0px none;
+	}
+	.ui-controlgroup-controls label.ui-btn.ui-corner-all.ui-btn-inherit{
+		border: 0px none;
+		background-color: transparent;
 	}
 	.swiper-slide{
 		width: 100%;

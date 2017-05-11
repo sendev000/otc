@@ -1,18 +1,277 @@
-<!--
-  Generated template for the ToothacheAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>toothache_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar>  -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-a">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper opacity5" [ngStyle]="{'transform': tabConCss+''}">
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div id="adult_recom_toothache_mobile">
+				            <div class="maxwidth450">
+				                <div class="ovalBorderRightBlue centerText"> 
+				                    <span class="firstname bluefont"> </span><br>
+				                    Let's figure out what will give you relief from this toothache.
+				                </div>
+				                <div align="right">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald.svg" style="width: 100px;" alt="Pharmacist"> 
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>
+				            <!-----------------End Border right person------------------- -->
+				            <div class="blueBorderAll">
+				                <p>The goal of this recommendation is to see what you can use over the counter for toothache until you can see a dentist.</p>
+				                <p>With toothache, you will have to see a dentist. The more you delay, the worse it will get.</p>
+				                <p>You should try these in the order listed.</p>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>  
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#3366cc;">1. Salt water rinse</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+				                    <p>Place 2 to 3 teaspoonful of table salt in a glass<img alt="Woman rinsing the mouth" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/salt-drink-lady.svg" style="width: 100px; height: 92px; margin: 8px; float: right;"> of warm water you can tolerate.</p>
+				                    <p>Swiss and spit as a mouth wash for about 30 seconds as needed.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#FF0000;">2. Pain pills</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+				                    <p>NonSteroidal Anti-inflammatory Drugs (NSAIDS)</p>
+				                    <p><img alt="Lady taking medicine" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/lady-medicine4.svg" style="opacity: 0.9; font-size: 13px; line-height: 20.8px; width: 70px; height: 111px; margin: 8px; float: right;"><span style="line-height: 1.6em;">such as ibuprofen or naproxen would help with the inflammation, pain and swelling.</span></p>
+				                    <p>If you can't take NSAIDs, acetaminophen would be a second choice.</p>
+				                    <p>But don't take acetaminophen as a first choice. It is not very good with the inflammatory pain associated with a toothache.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#4B0082;">3a. Eugenol <span style="font-size:12px;">(clove oil)</span></span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+				                    <p>Use a Q-tip to apply clove oil to the toothache.<img alt="Bottle of clove oil" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/clove-oil.svg" style="width: 50px; height: 132px; margin: 8px; float: right;">&#8203;</p>
+				                    <p>Place a little folded gauze pad to prevent it from being washed away for maximum effect.</p>
+				                    <p><span style="color:#EE82EE;">Can't find clove oil?</span></p>
+				                    <p>Look for preparations in the dental aisle containing <span style="color:#4B0082;">eugenol.</span>&nbsp;<span style="font-size:12px;">(Red Cross Toothache®, DenTek®).</span></p>
+				                    <p>This is the pain relieving ingredient in clove oil.</p>
+				                    <p>If clove oil (eugenol) is not your thing, then go with <span style="color:#0000FF;">benzocaine.</span></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#0066ff;">3b. Benzocaine</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+				                    <p>Preparations containing <span style="color:#FF0000;">20% benzocaine</span> will <img alt="woman applying benzocaine to tooth" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/orajel-lady-toothache.svg" style="width: 100px; height: 108px; margin: 8px; float: right;">help numb the toothache pain for a few hours.</p>
+				                    <p>Know that the numbing agent will eventually wash away.</p>
+				                    <p>How long depends on the amount of saliva you are producing. So make sure you combine this with something like ibuprofen.&nbsp;</p>
+				                    <p>Average relief time is 4 hours.</p>
+				                    <p>Remember, it is clove oil (eugenol) or 20% benzocaine. <span style="color:#FF0000;">Not both.</span></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#9999cc;">4. Cold compress</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+				                    <p>If swollen and very painful, press an ice pack<img alt="Woman using cold compress" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/cold-compress-lady.svg" style="width: 100px; height: 71px; margin: 8px; float: right;"> against the cheek closest to the toothache for about 5 to 10 minutes 3 to 4 times a day to alleviate the pain.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span style="color:#EE82EE;">Worth mentioning</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+				                    <p>Massaging the web of the hand between the thumb and index finger on the same side as the body with the toothache pain with ice has been found to produce up to a 50% reduction in acute dental pain [ <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1801755/" target="_blank" class="ui-link">R. Melzack et </a>].</p>
+				                    <p>I haven't tried it yet, but it would be interesting to see the result the next time I have a toothache.</p>
+				                    <p>If you tried it, please post your experience in the comments section.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <p class="grayfontSmallSmall centerText">
+				                Last updated by pharmacist on : 
+				                01/30/2016           
+				            </p>
+				        </div>
+				    </div>
+				    <!-----------------------------End Content-slide------------ -->   
+				</div>
+				<!-------------------------------End Swiper-slide----------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+				            </div>
+				            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald.svg" style="width: 80px;" alt="Article photo">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-plus': expands[6], 'ui-icon-minus': !expands[6]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
+				                <div class="redBorderWhite">
+				                    <ul>
+				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+				                        <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+				                        <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+				                            <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+				                            It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+				                        </li>
+				                        <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+				                        <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+				                    </ul>
+				                </div>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+				            </div>
+				            <div class="clearboth"></div>
+				            <div class="container_12">
+				                <div class="grid_8">
+				                    <br>
+				                    <div class="bubbleRightBlue">
+				                        Or if you have a question for the pharmacist?
+				                    </div>
+				                </div>
+				                <div class="grid_4">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				                </div>
+				            </div>
+				        </div>
+				        <br>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Point Right------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-plus': expands[7], 'ui-icon-minus': !expands[7]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-plus': expands[8], 'ui-icon-minus': !expands[8]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+				                        <div class="clearboth divider1"></div>
+				                        <p class="centerText">
+				                            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+				                        </p>
+				                        <div class="clearboth divider1"></div>
+				                        <br>                       
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-plus': expands[9], 'ui-icon-minus': !expands[9]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+				                        <p>Expect a reply as soon as possible.<br>
+				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+				                        </p>
+				                        <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-plus': expands[10], 'ui-icon-minus': !expands[10]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
+				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+				                        <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText"> <span>No <span class="bluefont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+				            </div>
+				            <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <!-----------------End Border right person------------------- -->
+				        <p>&nbsp;</p>
+				        <p class="centerText"> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+				        </p>
+				        <div class="comment_why_div" *ngIf="why">
+				            <br>
+				            <ul>
+				                <li>Let others know if the recommendation worked for you.</li>
+				                <li>Share your treatment outcome with others.</li>
+				                <li>Add to the recommendation.</li>
+				                <li>Improve on the recommendation.</li>
+				                <li>Quickest way to ask a pharmacist a question.</li>
+				                <li>What about you answering a question?</li>
+				            </ul>
+				        </div>
+				        <!----------------------------Comments start here------------------------------ -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+			</div>
+		</div>
+	</div>
 </ion-content>

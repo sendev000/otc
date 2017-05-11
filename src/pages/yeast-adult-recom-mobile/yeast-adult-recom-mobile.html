@@ -1,18 +1,1069 @@
-<!--
-  Generated template for the YeastAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>yeast_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar>  -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-g">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper opacity5" [ngStyle]="{'transform': tabConCss+''}">
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div id="adult_recom_yeast_mobile">
+				            <!-----Start follow up intro--- -->
+				            <p>&nbsp;</p>
+				            <div class="maxwidth450">
+				                <div class="ovalBorderRightBlue centerText"> 
+				                    <span class="firstname bluefont"> </span><br>
+				                    Let's take care of this yeast infection you are experiencing.
+				                </div>
+				                <div align="right">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>
+				            <!-----------------End Border right person------------------- -->
+				            <div class="blueBorderAll">
+				                <p>This will assume that:</p>
+				                <ol>
+				                    <li>You are not pregnant.<br>
+				                        &nbsp;
+				                    </li>
+				                    <li>You have been previously diagnosed with yeast infection and now experiencing the same symptoms.<br>
+				                        &nbsp;
+				                    </li>
+				                    <li>You don't get a yeast infection quite often.<br>
+				                        &nbsp;
+				                    </li>
+				                </ol>
+				                <p>If this is the case, let's take a look at the over the counter medications that are used to treat a yeast infection.&nbsp;</p>
+				                <p>Choosing an over the counter medication for yeast infection may not be as easy as you would think.</p>
+				                <p>There are a few questions that will go through your mind. For instance:</p>
+				                <ul>
+				                    <li>Do you need a 1 day, 3 day or 7 day treatment?</li>
+				                    <li>Should you get the ovule, suppository, cream or ointment?</li>
+				                    <li>Looking to the side, you see 'Yeast infection tablets', but reading the warning, it tells you it does not cure a yeast infection. Only helps to relieve the symptoms. Go figure.</li>
+				                </ul>
+				                <p>Let's answer a few questions to help you reach a good decision.&nbsp;</p>
+				                <hr class="hrblue">
+				                <p class="centerText">
+				                    <img src="assets/img/people/adult/pelvic/yeast-lady2.svg" style="width: 130px;" alt="Lady holding her stomach">
+				                </p>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <p class="centerText">
+				                <button data-inline="true" class="yeast_mobile_1_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				            </p>
+				            <p>&nbsp;</p>
+				        </div>
+				        <!------------------------------------Start  Questions----------------------- -->     
+				        <div id="all_questions_div" class="displayNone">
+				            <div id="yeast_mobile_1">
+				                <!-----Start follow up intro--- -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Medications to treat a yeast infection are called <span class="orangefontItalic">Azoles.</span> 
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="blueBorderAll">
+				                    <p>Examples include fluconazole <span style="color:#808080;">(Prescription tablets)</span>, miconazole, clotrimazole, tioconazole, ketoconazole.</p>
+				                    <p>Of these,&nbsp;<span style="color:#808080;"><em>miconazole, clotrimazole and tioconazole</em></span> are available as over-the-counter yeast medications.</p>
+				                    <p>Any of these will work just as good. No preference here.</p>
+				                    <p>To make a good decision, here are the&nbsp;questions you may want to ask yourself.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--End follow up intro -->
+				            <div id="yeast_mobile_2_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Once again, is this your <span class="bluefont">first</span> yeast infection?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>This assumes you have never had or experienced a yeast infection before this.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end first follow up question div -->
+				            <!--start follow up 3 div -->
+				            <div id="yeast_mobile_3_y" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        <span class="redfont">Better to see a doctor or seek urgent care.</span>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>You should only continue if a doctor told</p>
+				                    <p><img alt="Female doctor" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/doctor-female.svg" style="font-size: 13px; line-height: 20.8px; width: 80px; height: 158px; margin: 8px; float: right;"> you what to look out for as a sign of a yeast infection. Example if you are taking antibiotics.</p>
+				                    <p>If you are experiencing a yeast infection for the first time, you must see a doctor even if your friends know it is a yeast infection.</p>
+				                    <p>Won't you at least want to know why it occurred in the first place?</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_3_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Is experiencing a <span class="redfont">burning</span> sensation a big concern for you?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>OTC yeast medications can cause a burning sensation.</p>
+				                </div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_4_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 3 div -->
+				            <div id="yeast_mobile_4_y" class="displayNone">
+				                <!--start follow up 4 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Then seek urgent care or call the doctor.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p>You will need to take the tablets. This requires a prescription.<img alt="Female doctor" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/doctor-female.svg" style="width: 80px; height: 158px; margin: 8px; float: right;"></p>
+				                    <p>If you are already very irritated, very itchy and experiencing pain from the yeast infection, over the counter creams or ovules will make the feeling worse initially before it gets better.</p>
+				                    <p>Anyway, people react to these creams, ovules or suppository differently. If you've tried them before and experienced no problems, you may continue.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_4_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Is using this every day for 1 week, even if it is better, a concern?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>Some creams will require you to use for one week even if the symptoms improve dramatically and you are better after the first few days.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_5_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 4 div -->
+				            <div id="yeast_mobile_5_y" class="displayNone">
+				                <!--start follow up 5 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Then get the 1-day or 3-day pack.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>These are more expensive, because you are paying for the convenience.</p>
+				                    <p>The 1-day is more expensive and concentrated than the 3-day which is more expensive and concentrated than the 7-day.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_5_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Is having no sex for the next one week a concern?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_6_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 5 div -->
+				            <div id="yeast_mobile_6_y" class="displayNone">
+				                <!--start follow up 6 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Then get the 1-day or 3-day pack.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="blueBorderAll">
+				                    <p><span style="font-size:14px;"><em style="font-size: 12px; line-height: 1.6em;">Know that 1-day doesn't mean you will get cured in one day. It will still take up to 7 days for complete relief.</em></span></p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_6_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Are you already very irritated and sore?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_7_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 6 div -->
+				            <div id="yeast_mobile_7_y" class="displayNone">
+				                <!--start follow up 7 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Stay away from the 1-day treatment.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="blueBorderAll">
+				                    <p>This is a highly concentrated form of the medication.</p>
+				                    <p>It will further irritate the vagina leading to a burning and painful sensation.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_7_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Do you have a yeast infection because of antibiotics you took?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_8_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 7 div -->
+				            <div id="yeast_mobile_8_y" class="displayNone">
+				                <!--start follow up 8 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Go with the 3-day or 7-day.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="greenBorderAll">
+				                    <p>You will want to gradually take care of this while recovering from the effect of the antibiotic.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_8_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Have you previously experienced a severe burning sensation with yeast medications?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_9_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 8 div -->
+				            <div id="yeast_mobile_9_y" class="displayNone">
+				                <!--start follow up 9 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        May want to stay away from the <span class="orangefont">1-day</span> treatment.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="pinkBorderAll">
+				                    <p>This will cause more burning than the 3 or 7-day treatments.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_9_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Like to know if you should get the brand name or generic store brand?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_10_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 9 div -->
+				            <div id="yeast_mobile_10_y" class="displayNone">
+				                <!--start follow up 10 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        If getting a prefilled applicator type, choose the brand.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="blueBorderAll">
+				                    <p>Store brands save money by using cheap devices.</p>
+				                    <p>You may open a prefilled applicator, and have a mess on your hand.</p>
+				                    <p><em><span style="font-size:12px;">Some manufacturers offer savings coupon which will virtually bring the cost down to store brand level. See our manufacturer coupon center for any deals going on.</span></em></p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_10_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Among the ingredients, like to know which works the best?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>Over the counter active ingredients for yeast infection are miconazole, clotrimazole, tioconazole.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_11_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 10 div -->
+				            <div id="yeast_mobile_11_y" class="displayNone">
+				                <!--start follow up 11 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        They are all <span class="greenfont">equally effective.</span>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p><strong><span style="color:#800080;">Miconazole:</span></strong><br>
+				                        Can be used in different strengths giving you more options of number of days or dosage forms.
+				                    </p>
+				                    <p>But 3-day offer more options of prefilled cream, suppository or ovule.</p>
+				                    <p><strong><span style="color:#3399cc;">Tioconazole:</span></strong><br>
+				                        Only available as an ointment in a single dose.
+				                    </p>
+				                    <p><strong><span style="color:#FF8C00;">Clotrimazole:</span></strong><br>
+				                        Available as 2% cream for 3-day and 1% cream for 7-day.
+				                    </p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_11_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span>Want to know if you should get the external cream?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>Some come&nbsp;in the form of a combination of prefilled or tube and an external cream.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_12_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 11 div -->
+				            <!---------------------------------Start attachment------------------------- -->
+				            <div id="yeast_mobile_12_y" class="displayNone">
+				                <!--start follow up 12 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                        Get only if you are experiencing itching outside the vagina. 
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll">
+				                    <p>If no&nbsp;external itching, save money and skip the external cream.&nbsp;</p>
+				                    <p>The combo cost more.</p>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_12_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				                <p>&nbsp;</p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 12 div -->
+				            <div id="yeast_mobile_13_y" class="displayNone">
+				                <!--start follow up 13 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll"></div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_13_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				                <p>&nbsp;</p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 13 div -->
+				            <div id="yeast_mobile_14_y" class="displayNone">
+				                <!--start follow up 14 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll"></div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_14_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_14_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				                <p>&nbsp;</p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 14 div -->
+				            <div id="yeast_mobile_15_y" class="displayNone">
+				                <!--start follow up 15 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll"></div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_15_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_15_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				                <p>&nbsp;</p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 15 div -->
+				            <div id="yeast_mobile_16_y" class="displayNone">
+				                <!--start follow up 16 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="orangeBorderAll"></div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_16_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_16_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				                <p>&nbsp;</p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <!--end follow up 16 div --> 
+				            <div id="yeast_mobile_17_y" class="displayNone">
+				                <!--start follow up 17 div -->
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefontLarge">Yes?</span><br>
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="blueBorderAll"></div>
+				                <div class="clearboth divider1"></div>
+				                <p class="centerText">
+				                    <button data-inline="true" class="yeast_mobile_17_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                </p>
+				                <p>&nbsp;</p>
+				            </div>
+				            <div id="yeast_mobile_17_n" class="displayNone">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
+				                        <span class="bluefont firstname"> </span><br>
+				                        Those are the Q &amp; As to consider before choosing a medication for yeast infection.        
+				                    </div>
+				                    <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <div class="redBorderAll">
+				                    <p><strong>Here is a brief summary:</strong></p>
+				                    <ul>
+				                        <li>If cost is not a factor, choose the 3-day.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If convenience is a factor, choose the 1-day <span style="color:#0000FF;">ointment</span> (tioconazole).<br>
+				                            Except you've used the 1-day <span style="color:#800080;">ovule</span> before and did not experience any burning or you are not very irritated.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>Should you decide to get the 7-day, <span style="color:#FF0000;">must</span> choose prefilled applicators.<br>
+				                            &nbsp;
+				                        </li>
+				                        <li>If no external itching, no need for the external cream. Save cost.</li>
+				                    </ul>
+				                    <p>If you have the time, you can compare side by side the over the counter yeast medications by tapping on the button below.&nbsp;</p>
+				                </div>
+				                <p>&nbsp;</p>
+				                <p class="grayfontSmallSmall centerText">
+				                    Last updated by pharmacist on : 
+				                    02/05/2016 at 11:32:pm<br>
+				                </p>
+				                <p class="centerText">
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                </p>
+				                <br>    
+				                <p class="centerText"> 
+				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                </p>
+				            </div>
+				            <!--end follow up 17 div -->
+				        </div>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->   
+				</div>
+				<!-------------------------------End Swiper-slide------------------------ -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+				            </div>
+				            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Article photo">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <div class="redBorderWhite">
+				                    <ul>
+				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+				                        <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+				                        <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+				                            <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+				                            It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+				                        </li>
+				                        <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+				                        <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+				                    </ul>
+				                </div>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+				            </div>
+				            <div class="clearboth"></div>
+				            <div class="container_12">
+				                <div class="grid_8">
+				                    <br>
+				                    <div class="bubbleRightBlue">
+				                        Or if you have a question for the pharmacist?
+				                    </div>
+				                </div>
+				                <div class="grid_4">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				                </div>
+				            </div>
+				        </div>
+				        <br>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Point Right------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+				                        <div class="clearboth divider1"></div>
+				                        <p class="centerText">
+				                            <a href="../../../../contact/contact_social_mobile.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Contact Pharmacist</a>
+				                        </p>
+				                        <div class="clearboth divider1"></div>
+				                        <br>                       
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                        <p>Expect a reply as soon as possible.<br>
+				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+				                        </p>
+				                        <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+				                        <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText"> <span>No <span class="bluefont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+				            </div>
+				            <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <!-----------------End Border right person------------------- -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <p class="centerText"> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="../../../../comments/comment_login_mobile.php">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#">Why?</a> 
+				        </p>
+				        <div class="comment_why_div displayNone">
+				            <br>
+				            <ul>
+				                <li>Let others know if the recommendation worked for you.</li>
+				                <li>Share your treatment outcome with others.</li>
+				                <li>Add to the recommendation.</li>
+				                <li>Improve on the recommendation.</li>
+				                <li>Quickest way to ask a pharmacist a question.</li>
+				                <li>What about you answering a question?</li>
+				            </ul>
+				        </div>
+				        <!----------------------------Comments start here------------------------------ -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+			</div>
+		</div>
+	</div>
 </ion-content>

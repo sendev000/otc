@@ -1,3 +1,190 @@
-page-ringworm-adult-recom-mobile {
 
+$toolbar-background-color: #E91E63S;
+page-ringworm-adult-recom-mobile {
+	font-size: 16px;
+	#slider_flu_mobile-label, #slider_flu_mobile_4_mobile-label{
+		font-size: 0.9em;
+	}
+	.toolbar-background-md, .toolbar-background{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.ui-popup-screen{
+		position: fixed;
+	}
+	.ui-popup.ui-content{
+		background: #FFF;
+	}
+	.mbsc-mobiscroll .mbsc-checkbox{
+		font-size: 1em;
+	}
+	.ui-popup-container.ui-popup-active{
+		background: transparent;
+	}
+	div.ui-slider{
+		position: relative;
+		top: -1em;
+	}
+	#slider_cold_fever_mobile-label{
+		font-size: 1em;
+	}
+	.item-md.item-block .item-inner{
+		border-bottom: 0px none;
+	}
+	ion-slide h2{
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	ion-slides{
+		height: 220px;
+	}
+	.slide-zoom {
+	    height: 100%;
+	}
+	.slide-image {
+	    max-height: 50%;
+	    max-width: 60%;
+	    margin: 18px 0;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+
+	.swiper-scrollbar {
+		position: fixed;
+		-ms-touch-action: none;
+		background: rgba(0,0,0,0.1);
+		height: 5px;
+		margin:46px auto 0px;
+		width: 100%;
+		z-index: 999;
+	}
+	.swiper-scrollbar-drag {
+		height: 5px;
+		width: 25%;
+		position: relative;
+		background:rgba(127, 206, 255, 1.0);
+		border-radius: 0px;
+		transition-duration: 500ms;
+	}
+	.swiper-scrollbar-cursor-drag {
+		cursor: move;
+	}
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn,
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn:visited {
+		background: rgba(255,255,255,0.1);
+		border-color:transparent;
+		padding-bottom:5px;
+		color: #000000;
+	}
+
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn:hover {
+		background: rgba(255,255,255,0.1);
+		border-color:transparent;
+		color: #000000;
+		text-shadow: 0 1px 1px #eeeeee;
+	}
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn:active {
+		background:  rgba(255,255,255,0.1);
+		border-color:transparent;
+		color: #000000;
+		text-shadow: 0 1px 1px #eeeeee;
+	}
+
+	input[type=checkbox] {
+		visibility: hidden;
+	}
+
+	.ui-page-theme-g .ui-checkbox-on:after,
+	html .ui-bar-a .ui-checkbox-on:after,
+	html .ui-body-a .ui-checkbox-on:after,
+	html body .ui-group-theme-g .ui-checkbox-on:after,
+	.ui-btn.ui-checkbox-on.ui-btn-a:after
+	{
+		background-color: rgba(255,255,255,0.1);
+		border-color: #ffffff;
+		color: #ffffff;
+		text-shadow: 0 1px 0 #090a0b;
+	}
+
+	.tabs {
+	  width: 100%;
+	  margin: 0 auto;
+	}
+	.tabs a:hover{
+		opacity: 1;
+	}
+	.tabs a {
+	  display: block;
+	  float: left;
+	  width: 25%;
+	  color: #e0e0e0 !important;
+	  text-align: center;
+	  line-height:20px;
+	  background: #E91E63;
+	  padding:15px 0px;
+	  text-decoration: none;
+	}
+	.tabs a.active {
+		color:#FFFF00;
+	}
+	.swiper-scrollbar {
+	  background: #E91E63
+	}
+	.swiper-scrollbar-drag {
+		background:#FFFF00;
+	}
+		
+	input[type='text'] {
+	    width: 400px;
+		font-size: 20px;
+		color:#666;
+		padding: 2px 8px 6px 8px;
+		position: relative;
+		display: block;
+		text-transform:capitalize;
+		outline: none;
+		border-bottom:1px solid #03A9F4;
+	}
+		
+	input[type='email'], input[type='password'] {
+	    width: 400px;
+		font-size: 20px;
+		color:#666;
+		padding: 2px 8px 6px 8px;
+		position: relative;
+		display: block;
+		outline: none;
+		border-bottom:1px solid #03A9F4;
+	}
+
+	input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus {
+		border-bottom:1px solid #FF9100;	
+	}
+
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn, 
+	.ui-page-theme-g #adult_recom_allergy_mobile_q1_form_div .ui-btn:visited{
+		background: rgba(255,255,255,0.1) ;
+    	border-color: transparent;
+	}
+	fieldset{
+		border: 0px none;
+	}
+	.ui-controlgroup-controls label.ui-btn.ui-corner-all.ui-btn-inherit{
+		border: 0px none;
+		background-color: transparent;
+	}
+	.swiper-slide{
+		width: 100%;
+		height: auto;
+		float: left;
+		box-sizing: content-box;
+		display: block;
+	}
+}
+#ion-diagnostics-toast{
+	background: transparent;
 }

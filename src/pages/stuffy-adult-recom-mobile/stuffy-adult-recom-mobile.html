@@ -1,18 +1,284 @@
-<!--
-  Generated template for the StuffyAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>stuffy_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar>  -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-n">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper" [ngStyle]="{'transform': tabConCss+''}">
+			    <div class="swiper-slide" >
+			        <div class="content-slide ui-content">
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <div id="adult_recom_stuffynose_mobile">
+			                <div class="maxwidth450">
+			                    <div class="ovalBorderRightBlue centerText"> 
+			                        <span class="firstname greenfont"></span><br>
+			                        Stuffy nose? Let's take care of this.
+			                    </div>
+			                    <div align="right">
+			                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+			                    </div>
+			                </div>
+			                <div class="clearboth divider1"></div>
+			                <br>
+			                <!-----------------End Border right person------------------- -->
+			                <div class="blueBorderAll">
+			                    <p>This will assume you are only looking at a stuffy nose for one reason or another.</p>
+			                    <p>The approach would be to thin the mucus, reduce the inflammation and shrink the swollen blood vessels.</p>
+			                    <p>With this in mind, see what I recommend below.</p>
+			                    <p class="centerText">
+			                        <br>
+			                        <img src="assets/img/people/adult/nose/stuffynose-lady.svg" style="width: 130px;" alt="Lady blowing her nose">
+			                    </p>
+			                    <br>
+			                </div>
+			                <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#0066ff;">Saline wash</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+			                        <p>Always better to start with a saline wash before using medications.<img alt="lady using saline spray" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/saline-spray-lady.svg" style="width: 100px; height: 112px; margin: 8px; float: right;"></p>
+			                        <p>Medications for stuffy nose comes with some baggage. They will either bump up the blood pressure, make you wired, deny you sleep, make you jittery or even cause stuffy nose if you use it for too long.</p>
+			                        <p>&nbsp;</p>
+			                        <p>&nbsp;</p>
+			                    </div>
+			                </div>
+			                <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#00cccc;">Neti-Pot</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+			                        <p>A good idea if you want to avoid using decongestant<img alt="Woman using neti-pot" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/netipot-woman.svg" style="width: 150px; height: 112px; margin: 8px; float: right;"> medications as much as possible.</p>
+			                        <p>The only problem is, you either like it or you don't. To like it, use it with <span style="color:#A52A2A;">Alkalol®</span> a&nbsp;<span style="color: rgb(70, 70, 70); font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; font-size: 11.52px; line-height: 17.28px;">saline rinse formulated with natural extracts and essential oils</span>&nbsp; for an invigorating clean.</p>
+			                        <p>Once you get past the initial feeling of accidentally inhaling water while swimming, you will love using it. &nbsp;</p>
+			                        <p>&nbsp;&nbsp;</p>
+			                        <p>&nbsp;</p>
+			                        <p>&nbsp;</p>
+			                    </div>
+			                </div>
+			                <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#FF0000;">Decongestants</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+			                        <p><span style="color:#800080;">Nasal sprays</span></p>
+			                        <p>Start with the decongestant nasal spray. These start to work within 10 minutes.<img alt="Hand holding nasal spray" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/hand-holding-nasalspray.svg" style="width: 120px; height: 80px; margin: 8px; float: right;"></p>
+			                        <p>You can then switch to decongestant tablets or syrup if still congested after 3 or 4 days.</p>
+			                        <p>At about 3&nbsp;to 5&nbsp;days, you must stop using the nasal spray if you still have a stuffy nose. That is when you will start experiencing the rebound effect of the nasal spray making you congested instead of providing relief (rebound effect).</p>
+			                        <p>&nbsp;</p>
+			                        <p><span style="font-size:12px;">Prefer nasal spray with<span style="color:#FF8C00;"> oxymetazoline</span> for 12-hour dosing.</span></p>
+			                        <p><span style="font-size:12px;">Those with<span style="color:#EE82EE;"> phenylephrine</span> require more frequent use of 4 to 6 hours.</span><br>
+			                            &nbsp;
+			                        </p>
+			                        <p><span style="color:#FF0000;">Pills</span>:</p>
+			                        <p>Ask for <span style="color:#4B0082;">pseudoephedrine</span> at the pharmacy counter.<img alt="Woman at the pharmacy counter" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/pharmacy-counter.svg" style="width: 120px; height: 81px; margin: 8px; float: right;"></p>
+			                        <p>You will need a government issued&nbsp;ID to monitor your daily or monthly quantity&nbsp;limit.</p>
+			                        <p><span style="color:#FF0000;">Do not use phenylephrine found in the cold aisle.</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			                        <p>The strength approved by the FDA for nasal congestion is not effective and using a higher dose will cause more side effects and won't work either. Stay away from that.</p>
+			                        <p>&nbsp;</p>
+			                    </div>
+			                </div>
+			                <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#663399;">Nasal spray steroids</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+			                        <p><span style="color:#800080;">Steroidal nasal sprays</span> can reduce<img alt="Lady using nasal spray" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/nasalspray-lady3.svg" style="width: 120px; height: 99px; margin: 8px; float: right;"> the inflammation that is causing the nasal congestion.</p>
+			                        <p>But you have to give it about 7 days&nbsp;to kick in.</p>
+			                        <p>If you&nbsp;get nasal congestion often as in allergy situations or nasal polyps,&nbsp;you will need to invest in this. Both for prevention and relief purposes.</p>
+			                        <p><strong><span style="color:#FF0000;">Do not</span></strong> get this if your stuffy nose is due to a <span style="color:#0000FF;">cold.</span> It won't work.</p>
+			                        <p>&nbsp;</p>
+			                    </div>
+			                </div>
+			                <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#33cc66;">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+			                        <p>1. Invest in a humidifier.&nbsp;<img alt="Humidifier" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/humidifier.svg" style="width: 80px; height: 108px; margin: 8px; float: right;"></p>
+			                        <p>&nbsp;</p>
+			                    </div>
+			                </div>
+			                <div class="clearboth divider1"></div>
+			                <p class="grayfontSmallSmall centerText">
+			                    Last updated by pharmacist on : 
+			                    02/02/2016 at 04:35:pm          
+			                </p>
+			                <br>
+			                <p class="centerText"> 
+			                    <a href="#" class="linkCyanBorder robotoLightSmall ui-link" data-inline="true" (click)="gotoSubPage(4)">Compare Decongestants</a>
+			                </p>
+			            </div>
+			        </div>
+			        <!----------------------End Content-slide---------------------------- -->   
+			    </div>
+			    <!-------------------------------End Swiper-slide------------------------ -->
+			    <div class="swiper-slide" >
+			        <div class="content-slide ui-content">
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <div class="maxwidth450">
+			                <div class="ovalBorderRightBlue centerText">
+			                    <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+			                </div>
+			                <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Article photo">
+			                </div>
+			            </div>
+			            <div class="clearboth divider1"></div>
+			            <br>
+			            <!-----------------End Border right person------------------- -->
+			            <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-plus': expands[5], 'ui-icon-minus': !expands[5]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+			                    <div class="redBorderWhite">
+			                        <ul>
+			                            <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+			                            <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+			                            <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+			                                <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+			                                It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+			                            </li>
+			                            <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+			                            <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+			                        </ul>
+			                    </div>
+			                </div>
+			            </div>
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			        </div>
+			        <!-----------------------------End Content-slide---------------------------- -->      
+			    </div>
+			    <!---------------------------End Swiper-slide--------------------------- -->
+			    <div class="swiper-slide" >
+			        <div class="content-slide ui-content">
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <div class="maxwidth450">
+			                <div class="ovalBorderRightBlue centerText">
+			                    <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+			                </div>
+			                <div class="clearboth"></div>
+			                <div class="container_12">
+			                    <div class="grid_8">
+			                        <br>
+			                        <div class="bubbleRightBlue">
+			                            Or if you have a question for the pharmacist?
+			                        </div>
+			                    </div>
+			                    <div class="grid_4">
+			                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+			                    </div>
+			                </div>
+			            </div>
+			            <br>
+			            <div class="clearboth divider1"></div>
+			            <br>
+			            <!-----------------End Point Right------------------- -->
+			            <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+			                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-plus': expands[6], 'ui-icon-minus': !expands[6]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
+			                    <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+			                    <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+			                        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-plus': expands[7], 'ui-icon-minus': !expands[7]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+			                            <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+			                            <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+			                            <div class="clearboth divider1"></div>
+			                            <p class="centerText">
+			                                <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+			                            </p>
+			                            <div class="clearboth divider1"></div>
+			                            <br>                       
+			                        </div>
+			                    </div>
+			                    <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+			                        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-plus': expands[8], 'ui-icon-minus': !expands[8]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+			                            <p>Expect a reply as soon as possible.<br>
+			                                If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+			                            </p>
+			                            <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+			                        </div>
+			                    </div>
+			                    <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+			                        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-plus': expands[9], 'ui-icon-minus': !expands[9]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+			                        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+			                            <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+			                            <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+			                            <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+			                            <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+			                        </div>
+			                    </div>
+			                    <p>&nbsp;</p>
+			                </div>
+			            </div>
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			        </div>
+			        <!-----------------------------End Content-slide---------------------------- -->      
+			    </div>
+			    <!-------------------------------End Swiper-slide---------------------------------- -->
+			    <div class="swiper-slide" >
+			        <div class="content-slide ui-content">
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <div class="maxwidth450">
+			                <div class="ovalBorderRightBlue centerText"> <span>No <span class="bluefont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+			                </div>
+			                <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+			                </div>
+			            </div>
+			            <div class="clearboth divider1"></div>
+			            <!-----------------End Border right person------------------- -->
+			            <p>&nbsp;</p>
+			            <p class="centerText"> 
+			                <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+			                <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+			            </p>
+			            <div class="comment_why_div" *ngIf="why">
+			                <br>
+			                <ul>
+			                    <li>Let others know if the recommendation worked for you.</li>
+			                    <li>Share your treatment outcome with others.</li>
+			                    <li>Add to the recommendation.</li>
+			                    <li>Improve on the recommendation.</li>
+			                    <li>Quickest way to ask a pharmacist a question.</li>
+			                    <li>What about you answering a question?</li>
+			                </ul>
+			            </div>
+			            <!----------------------------Comments start here------------------------------ -->
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			        </div>
+			        <!---------------------End Content-slide------------------------- -->
+			    </div>
+			    <!-----------------End Swiper-slide------------- -->
+			</div>
+		</div>
+	</div>
 </ion-content>

@@ -1,18 +1,943 @@
-<!--
-  Generated template for the CoughAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>cough_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar>  -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-g">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper opacity5" [ngStyle]="{'transform': tabConCss+''}">
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div id="adult_recom_cough_mobile" *ngIf="page==0">
+				            <!-----Start follow up intro--- -->
+				            <p>&nbsp;</p>
+				            <div class="maxwidth450">
+				                <div class="ovalBorderRightBlue centerText"> 
+				                    <span class="firstname bluefont"> </span><br>
+				                    Let's see what to use over the counter to quiet this cough.
+				                </div>
+				                <div align="right">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 100px;" alt="Pharmacist"> 
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>
+				            <!-----------------End Border right person------------------- -->
+				            <div class="blueBorderAll">
+				                <p>These recommendations assume a minor cough or a cough due to cold, allergy or flu.</p>
+				                <p>Coughing is a reflex action and should be taken seriously if you don't know the cause.</p>
+				                <p>With this in mind, let's go through what is available over-the-counter for cough and use this information to choose a good cough medicine that will give you relief.</p>
+				                <p class="centerText">
+				                    <img src="assets/img/people/adult/cold/cough-lady.svg" style="width:150px;" alt="Woman coughing">
+				                </p>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <br>  
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#ff6600;">Dextromethorphan (DM)</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+				                    <p>DM is a cough suppressant that decreases<img alt="Lady pouring cough syrup" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/taking-medicine-lady.svg" style="width: 80px; height: 105px; margin: 8px; float: right;"> activities in the part of the brain that controls the coughing reflex.</p>
+				                    <p>It is best for a dry and irritating cough where no mucus or phlegm is being produced. With a wet cough, you&nbsp;don't want to suppress it. You will need to cough it out. The only time you will need a cough suppressant if a cough is wet is to control coughing at night or if this&nbsp;cough is very bad and giving you chest pain.</p>
+				                    <p><span style="font-size:11px;"><span style="color:#FF8C00;">Delsym or store brands</span></span></p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#009933;">Guaifenesin</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+				                    <p>This is an expectorant. It helps loosen thick, dried up mucus in the throat and chest so it is easier for you to cough up.</p>
+				                    <p>You will take this if you are experiencing chest congestion and coughing up stuff. If it is a dry cough, skip this.</p>
+				                    <p>You need to drink a lot of water for this to work.<img alt="Woman drinking water" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/drinking-water-lady-bottle.svg" style="width: 120px; height: 118px; margin: 8px; float: right;"> Keep drinking water throughout the day not just when taking the medication. Because you need to keep the throat moist or lubricated so the mucus can flow.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#EE82EE;">Cough Drops</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+				                    <p>This is better for a dry, irritating, scratchy, and tickling cough. Look for one with honey added to it. Honey should help with suppressing the cough.</p>
+				                    <p>Know that some brands contain dextromethorphan. Do not use this with dextromethorphan syrup or DM tablets. It is one or the other.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#FF0000;">Decongestant</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+				                    <p>The recommended decongestant is <span style="color:#FF0000;">Pseudoephedrine.</span> You will need to get this at the pharmacy counter using your driver's license. This should reduce&nbsp;the nasal congestion, sinus pressure, and increase the drainage of sinus&nbsp;secretions.</p>
+				                    <p><span style="color:#FF0000;">Stay away</span> from <span style="color:#FF8C00;">phenylephrine.</span> If the pharmacy is closed, go with a <span style="color:#800080;">decongestant nasal spray</span> instead.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#ff3399;">Antihistamine</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+				                    <p>If fluid draining to the back of the throat is causing this cough, you will need to include an antihistamine.</p>
+				                    <p>You will also need this if you are experiencing a night time cough or the cough is keeping you awake at night.</p>
+				                    <p>Go with the antihistamine called <span style="color:#800080;">diphenhydramine.</span> This will dry up the drainage, get you some sleep and also work on the cough.&nbsp;</p>
+				                    <p>If you need something during the day, <span style="color:#008000;">chlorpheniramine</span> will be your best bet. This causes less drowsiness which is manageable to most people during the day.</p>
+				                    <p>&nbsp;</p>
+				                </div>
+				            </div>
+				            <div class="clearboth divider1"></div>
+				            <p class="grayfontSmallSmall centerText">
+				                Last updated by pharmacist on : 
+				                02/03/2016          
+				            </p>
+				            <div class="clearboth divider1"></div>
+				            <p class="centerText"><button data-inline="true" class="show_cough_options_mobile_div ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(1)">Continue</button>
+				            </p>
+				            <p>&nbsp;</p>
+				        </div>
+				        <!-----------------------Start all checkbox options div------------------ --> 
+				        <div class="adult_cough_options_mobile_div " *ngIf="page>0">
+				            <div id="intro_adult_cough_mobile_div" *ngIf="page==1">
+				                <div class="maxwidth450">
+				                    <div class="ovalBorderRightBlue centerText"> 
+				                        <span class="redfont firstname"> </span><br>
+				                        Which of the <span class="greenfont">symptoms</span> listed below are you <span class="purple_redfont">experiencing</span> right now? 
+				                    </div>
+				                    <div align="right">
+				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 100px;" alt="Pharmacist"> 
+				                    </div>
+				                </div>
+				                <div class="clearboth divider1"></div>
+				                <br>
+				                <!-----------------End Border right person------------------- -->
+				                <!--------------------------Banner Link----------------------------- -->
+				                <!--------------------------Banner Link----------------------------- -->
+				            </div>
+				            <!-----------------End Intro-------------------- -->
+				            <!--------------------------Start CheckBox----------------------------- -->
+				            <div id="adult_recom_cough_mobile_q1" *ngIf="page==1">
+				                <p class="centerText"> Choose the nature of this cough from the list below and see what to use over-the-counter. </p>
+				                <br>
+				                <p class="centerText">
+				                    <img src="assets/img/people/adult/cold/cough-lady.svg" width="120" alt="Lady coughing">
+				                </p>
+				                <div class="clearboth divider1"></div>
+				                <div data-role="fieldcontain" class="ui-field-contain">
+				                    <fieldset data-role="controlgroup" id="adult_recom_cough_mobile_q1_form_div" class="ui-nodisc-icon ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+				                        <div class="ui-controlgroup-controls ">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[0], 'ui-checkbox-off': !recs[0]}" (click)="toggleRecs(0)">  <span class="bluefont">Dry cough</span> <span class="grayfontSmall">(no mucus)</span></label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_0" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[0]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[1], 'ui-checkbox-off': !recs[1]}" (click)="toggleRecs(1)">  <span class="greenfont">Productive cough</span>  <span class="grayfontSmall">(Coughing up wet mucus)</span> </label><input name="adult_recom_cough_mobile_q1" type="checkbox" class="adult_recom_cough_mobileQ1" id="adult_recom_cough_mobile_q1_1" value="" [(ngModel)]="recs[1]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[2], 'ui-checkbox-off': !recs[2]}" (click)="toggleRecs(2)">Also nasal congestion </label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_2" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[2]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[3], 'ui-checkbox-off': !recs[3]}" (click)="toggleRecs(3)">With runny nose</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_3" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[3]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[4], 'ui-checkbox-off': !recs[4]}" (click)="toggleRecs(4)">Includes sore throat</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_4" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[4]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[5], 'ui-checkbox-off': !recs[5]}" (click)="toggleRecs(5)">Keeps me up at night</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_5" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[5]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[6], 'ui-checkbox-off': !recs[6]}" (click)="toggleRecs(6)">Kind of tickly</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_6" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[6]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_14" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[7], 'ui-checkbox-off': !recs[7]}" (click)="toggleRecs(7)">Throat is scratchy or itchy</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_14" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[7]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[8], 'ui-checkbox-off': !recs[8]}" (click)="toggleRecs(8)">Feeling of heaviness on the chest</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_7" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[8]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_8" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[9], 'ui-checkbox-off': !recs[9]}" (click)="toggleRecs(9)"> I get headaches when I cough, goes away when I stop coughing</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_8" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[9]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_9" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[10], 'ui-checkbox-off': !recs[10]}" (click)="toggleRecs(10)">coughing up blood</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_9" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[10]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_13" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[11], 'ui-checkbox-off': !recs[11]}" (click)="toggleRecs(11)">Haven't slept for more than 3 nights since this cough.</label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_13" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[11]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_10" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[12], 'ui-checkbox-off': !recs[12]}" (click)="toggleRecs(12)"><span class="bluefont">All of the above</span></label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_10" class="adult_recom_cough_mobileQ1" value="" [(ngModel)]="recs[12]"></div>
+				                            <hr class="hrblue">
+				                            <div class="ui-checkbox"><label for="adult_recom_cough_mobile_q1_11" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[13], 'ui-checkbox-off': !recs[13]}" (click)="toggleRecs(13)"><span class="orangefont">None of these</span></label><input type="checkbox" name="adult_recom_cough_mobile_q1" id="adult_recom_cough_mobile_q1_11" value="" [(ngModel)]="recs[13]"></div>
+				                            <hr class="hrblue">
+				                        </div>
+				                    </fieldset>
+				                    <div class="clearboth divider1"></div>
+				                    <div class="centerText">
+				                    	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" data-inline="true" id="get_adult_recom_cough_mobile_q1" value="Here you go" (click)="togglePage(2)"></div>
+				                    </div>
+				                </div>
+				            </div>
+				            <!-----------------End checkbox-------------------- -->
+				            <div id="adult_recom_cough_mobile_all_options" *ngIf="mode>0">
+				                <!-----------------You told me nothing-------------------- -->
+				                <div class="container_12 displayNone" id="selected_adult_recom_cough_mobile_q1_container">
+				                    <div class="grid_9">
+				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_cough_mobile_q1 centerText"></div>
+				                    </div>
+				                    <div class="grid_3"> 
+				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 80px;" align="right">
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				                <!--------------------------Single-Options-Pharmacist------------------------------------ -->
+				                <!---------------dextromethorphan--------------------------- -->
+				                <div id="dextromethorphan_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require <span class="purplefont">dextromethorphan.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------guaifenesin--------------------------- -->
+				                <div id="guaifenesin_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require <span class="purplefont">guaifenesin.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------coughDrops--------------------------- -->
+				                <div id="coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require <span class="purplefont">cough drops</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------decongestant--------------------------- -->
+				                <div id="decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require <span class="purplefont">decongestant.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!---------------antihistamine--------------------------- -->
+				                <div id="antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Selection require an <span class="purplefont">antihistamine.</span></span><br>
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-----------------End Display none div------------------- -->
+				                <!-------------------------Double-Options-Pharmacist------------------------------------ -->
+				                <!---------------dextromethorphan + guaifenesin--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and <span class="redfont">guaifenesin</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + coughDrops--------------------------- -->
+				                <div id="dextromethorphan_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and <span class="redfont">cough drops</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + decongestant--------------------------- -->
+				                <div id="dextromethorphan_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and a <span class="redfont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and an <span class="redfont">antihistamine.</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin + coughDrops--------------------------- -->
+				                <div id="guaifenesin_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and <span class="redfont">cough drops</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin + decongestant--------------------------- -->
+				                <div id="guaifenesin_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and a <span class="redfont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin + antihistamine--------------------------- -->
+				                <div id="guaifenesin_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and an <span class="redfont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------coughDrops + decongestant--------------------------- -->
+				                <div id="coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">cough drops</span> and a <span class="redfont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------coughDrops + antihistamine--------------------------- -->
+				                <div id="coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purplefont">cough drops</span> and an <span class="redfont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------decongestant + antihistamine--------------------------- -->
+				                <div id="decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require a <span class="purplefont">decongestant</span> and an <span class="redfont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------Triple-Options-Pharmacist---------------------------- -->
+				                <!---------------dextromethorphan+ guaifenesin + coughDrops--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and <span class="bluefont">cough drops.</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan+ guaifenesin + decongestant--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and a <span class="bluefont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan+ guaifenesin + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan+ coughDrops + decongestant--------------------------- -->
+				                <div id="dextromethorphan_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + coughDrops + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + decongestant + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin+ coughDrops + decongestant--------------------------- -->
+				                <div id="guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin+ coughDrops + antihistamine--------------------------- -->
+				                <div id="guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin+ decongestant + antihistamine--------------------------- -->
+				                <div id="guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------coughDrops + decongestant + antihistamine--------------------------- -->
+				                <div id="coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------Quad-Options-Pharmacist---------------------------- -->               
+				                <!---------------dextromethorphan + guaifenesin + coughDrops + decongestant--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + guaifenesin + coughDrops + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + guaifenesin + decongestant + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------dextromethorphan + coughDrops + decongestant + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------guaifenesin + coughDrops + decongestant + antihistamine--------------------------- -->
+				                <div id="guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!-------------------------5-Options-Pharmacist---------------------------- -->              
+				                <!---------------dextromethorphan + guaifenesin + coughDrops + decongestant + antihistamine--------------------------- -->
+				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------------Prevention only--------------------------- -->
+				                <div id="prevention_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            Something to <span class="orangefont">prevent?</span>
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;">
+				                        </div>
+				                    </div>
+				                    <div class="clearboth divider1"></div>
+				                    <p>&nbsp;</p>
+				                    <!-----------------End Border right person------------------- -->
+				                    <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content">
+				                        <div class="ui-collapsible-content ui-body-inherit" aria-hidden="false">
+				                            <p>Coughing is a reflex protective mechanism for the respiratory tract. Prevention is really not available.</p>
+				                            <!--------------------------Banner Link----------------------------- -->
+				                            <!--------------------------Banner Link----------------------------- -->
+				                            <p>&nbsp;</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <!---------------All-------------- -->
+				                <div id="allabove_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> 
+				                            <span class="purplefont">All of these?</span><br>
+				                            You must have this cough really bad. 
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;" alt="Pharmacist"> 
+				                        </div>
+				                    </div>
+				                    <div class="clearboth"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>Need to see a doctor or healthcare professional.</p>
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <!--------------------------Banner Link----------------------------- -->
+				                    <p>&nbsp;</p>
+				                </div>
+				                <!---------------None of the above--------------------------- -->
+				                <div id="none_adult_recom_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">None of these?</span><br>
+				                            We must have left something out. 
+				                        </div>
+				                        <div align="right">
+				                            <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;">
+				                        </div>
+				                    </div>
+				                    <div class="clearboth"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>We must have left some things out. Please choose what best describes what you are experiencing and let's see how to help.</p>
+				                </div>
+				                <!---------------See doctor--------------------------- -->
+				                <div id="see_doctor_cough_mobile" class="displayNone">
+				                    <div class="maxwidth450">
+				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">Seek Urgent Care</span><br>
+				                            Using over-the-counter medication is not recommended. 
+				                        </div>
+				                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 70px;"></div>
+				                    </div>
+				                    <div class="clearboth"></div>
+				                    <!-----------------End Border right person------------------- -->
+				                    <p>You will need to see a healthcare professional for this.&nbsp;</p>
+				                    <p>Don't use any over-the-counter medicine. Not only is it going to prolong the problem and make it worse, you will also be wasting your money.</p>
+				                </div>
+				                <!-----------------------Individual Category Entry-------------------------- --> 
+				                <!--------------------------dextromethorphan Article----------------------------- -->               
+				                <div data-role="collapsible" id="dextromethorphan_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span class="orangefont">Dextromethorphan</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">DM is a cough suppressant that decreases<img alt="Lady pouring cough syrup" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/taking-medicine-lady.svg" style="margin: 8px; padding: 0px; border: 0px; vertical-align: baseline; width: 80px; height: 105px; float: right;">&nbsp;activities in the part of the brain that controls the coughing reflex.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">It is best for a dry and irritating cough where no mucus or phlegm is being produced. With a wet cough, you&nbsp;don't want to suppress it. You will need to cough it out. The only time you will need a cough suppressant if a cough is wet is to control coughing at night or if this&nbsp;cough is very bad and giving you chest pain.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;"><span style="margin: 0px; padding: 0px; border: 0px; font-size: 11px; vertical-align: baseline;"><span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(255, 140, 0);">Delsym or store brands</span></span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------guaifenesin Article----------------------------- -->               
+				                <div data-role="collapsible" id="guaifenesin_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span class="greenfont">Guaifenesin</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
+				                        <p style="font-size: 13px; line-height: 20.8px;">This is an expectorant. It helps loosen thick, dried up mucus in the throat and chest so it is easier for you to cough up.</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">You will take this if you are experiencing chest congestion and coughing up stuff. If it is a dry cough, skip this.</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">You need to drink a lot of water for this to work.</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;"><img alt="Woman drinking water" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/drinking-water-lady-bottle.svg" style="font-size: 13px; line-height: 20.8px; width: 120px; height: 118px; margin: 8px; float: right;"></p>
+				                        <p style="font-size: 13px; line-height: 20.8px;">Keep drinking water throughout the day not just when taking the medication. Because you need to keep the throat moist or lubricated so the mucus can flow.</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------coughDrops Article----------------------------- -->               
+				                <div data-role="collapsible" id="coughDrops_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span class="purplefont">Cough Drops</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------decongestant Article----------------------------- -->               
+				                <div data-role="collapsible" id="decongestant_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span class="redfont">Decongestant</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+				                        <p style="font-size: 13px; line-height: 20.8px;">The recommended decongestant is&nbsp;<span style="color: rgb(255, 0, 0);">Pseudoephedrine.</span>&nbsp;You will need to get this at the pharmacy counter using your driver's license. This should reduce&nbsp;the nasal congestion, sinus pressure, and increase the drainage of sinus&nbsp;secretions.</p>
+				                        <p style="font-size: 13px; line-height: 20.8px;"><span style="color: rgb(255, 0, 0);">Stay away</span>&nbsp;from&nbsp;<span style="color: rgb(255, 140, 0);">phenylephrine.</span>&nbsp;If the pharmacy is closed, go with a&nbsp;<span style="color: rgb(128, 0, 128);">decongestant nasal spray</span>&nbsp;instead.</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!--------------------------antihistamine Article----------------------------- -->               
+				                <div data-role="collapsible" id="antihistamine_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span class="purple_redfont">Antihistamine</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">If fluid draining to the back of the throat is causing this cough, you will need to include an antihistamine.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">You will also need this if you are experiencing a night time cough or the cough is keeping you awake at night.</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Go with the antihistamine called<span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(128, 0, 128);">diphenhydramine.</span>&nbsp;This will dry up the drainage, get you some sleep and also work on the cough.&nbsp;</p>
+				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">If you need something during the day,&nbsp;<span style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; color: rgb(0, 128, 0);">chlorpheniramine</span>&nbsp;will be your best bet. This causes less drowsiness which is manageable to most people during the day.</p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!----------------------------combination products--------------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <div data-role="collapsible" id="combination_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-arrow-r': expands[10], 'ui-icon-arrow-d': !expands[10]}"><span class="purplefont">Combination Products</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
+				                        <p><strong><span style="color:#008000;">Guaifenesin + Dextromethorphan</span></strong></p>
+				                        <p>Take this if you have a wet or a productive cough and this cough is keeping you up at night or you just can't stop coughing.</p>
+				                        <p>Stay away if it is just a wet cough. You need to keep things moving or prevent the mucus from getting too far into the respiratory tracts. You need a cough reflex for this protective mechanism.</p>
+				                        <p><span style="font-size:10px;">Examples: Mucinex DM, Robitussin DM, Store brands</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
+				                        <p><span style="color:#FF8C00;">Guaifenesin + Pseudoephedrine</span></p>
+				                        <p>This combines an expectorant with a decongestant. You will get this at the pharmacy counter because of the pseudoephedrine.<br>
+				                            <span style="font-size:10px;">Mucinex D</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;
+				                        </p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!----------------------------Worth Doing--------------------------- -->
+				                <div class="clearboth divider1"></div>
+				                <div data-role="collapsible" id="worth_doing_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-arrow-r': expands[11], 'ui-icon-arrow-d': !expands[11]}"><span class="greenfont">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
+				                        <p><span style="color:#3399ff;"><strong>1. Drink Plenty of Water</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
+				                        <p><span style="color:#FF8C00;">2. Honey</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
+				                        <p><span style="color:#800080;">3. Steam showers</span></p>
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <!--------------------------Banner Link----------------------------- -->
+				                        <p>&nbsp;</p>
+				                        <p>&nbsp;</p>
+				                    </div>
+				                </div>
+				                <!-----------------------------------back_div------------------------- -->                
+				                <div data-inline="true" id="back_intro_adult_cough_mobile_div" class="displayNone">
+				                    <div class="clearboth divider1"></div>
+				                    <div class="centerText">
+				                        <span class="grayfontSmallSmall">Last updated by pharmacist on  02/03/2016</span>
+				                    </div>
+				                    <p class="centerText">
+				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_cough_mobile_q1 ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+				                    </p>
+				                    <div class="clearboth divider1"></div>
+				                    <br>
+				                </div>
+				                <!------------------------------End back div---------------- -->
+				                <p>&nbsp;</p>
+				            </div>
+				            <!---------------adult_recom_cough_mobile_all_options----------------- -->
+				        </div>
+				        <!---------------End adult_cough_options_mobile_div----------------- -->
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-------------End Content-slide---------- -->   
+				</div>
+				<!----------End Swiper-slide--------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+				            </div>
+				            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 80px;" alt="Article photo">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-plus': expands[12], 'ui-icon-minus': !expands[12]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
+				                <div class="redBorderWhite">
+				                    <ul>
+				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+				                        <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+				                        <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+				                            <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+				                            It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+				                        </li>
+				                        <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+				                        <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+				                    </ul>
+				                </div>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText">
+				                <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+				            </div>
+				            <div class="clearboth"></div>
+				            <div class="container_12">
+				                <div class="grid_8">
+				                    <br>
+				                    <div class="bubbleRightBlue">
+				                        Or if you have a question for the pharmacist?
+				                    </div>
+				                </div>
+				                <div class="grid_4">
+				                    <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				                </div>
+				            </div>
+				        </div>
+				        <br>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Point Right------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(13)" [ngClass]="{'ui-icon-plus': expands[13], 'ui-icon-minus': !expands[13]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
+				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(14)" [ngClass]="{'ui-icon-plus': expands[14], 'ui-icon-minus': !expands[14]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
+				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+				                        <div class="clearboth divider1"></div>
+				                        <p class="centerText">
+				                            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+				                        </p>
+				                        <div class="clearboth divider1"></div>
+				                        <br>                       
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(15)" [ngClass]="{'ui-icon-plus': expands[15], 'ui-icon-minus': !expands[15]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[15]}" aria-hidden="true">
+				                        <p>Expect a reply as soon as possible.<br>
+				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+				                        </p>
+				                        <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(16)" [ngClass]="{'ui-icon-plus': expands[16], 'ui-icon-minus': !expands[16]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[16]}" aria-hidden="true">
+				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+				                        <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!-----------------------------End Content-slide---------------------------- -->      
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+				<div class="swiper-slide" >
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightBlue centerText"> <span>No <span class="bluefont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+				            </div>
+				            <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <!-----------------End Border right person------------------- -->
+				        <p>&nbsp;</p>
+				        <p class="centerText"> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+				        </p>
+				        <div class="comment_why_div" *ngIf="why">
+				            <br>
+				            <ul>
+				                <li>Let others know if the recommendation worked for you.</li>
+				                <li>Share your treatment outcome with others.</li>
+				                <li>Add to the recommendation.</li>
+				                <li>Improve on the recommendation.</li>
+				                <li>Quickest way to ask a pharmacist a question.</li>
+				                <li>What about you answering a question?</li>
+				            </ul>
+				        </div>
+				        <!----------------------------Comments start here------------------------------ -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+				<!-------------------------------End Swiper-slide---------------------------------- -->
+			</div>
+		</div>
+	</div>
 </ion-content>

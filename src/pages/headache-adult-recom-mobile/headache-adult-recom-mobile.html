@@ -1,18 +1,428 @@
-<!--
-  Generated template for the HeadacheAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+    -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>headache_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-n">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+	    <div class="swiper-container">
+	        <div class="swiper-scrollbar shadowBottom"></div>
+	        <div class="swiper-wrapper" [ngStyle]="{'transform': tabConCss+''}">
+	            <div class="swiper-slide">
+	                <div class="content-slide ui-content">
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                    <!----------------------------Intro Division----------------------- -->    
+	                    <div id="adult_recom_headache_intro_mobile" *ngIf="page==0">
+	                        <div class="maxwidth450">
+	                            <div class="ovalBorderRightBlue centerText"> 
+	                                <span class="bluefont firstname"> </span><br>
+	                                Let's figure out something over the counter for this headache.
+	                            </div>
+	                            <div align="right">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <br>
+	                        <!-----------------End Border right person------------------- -->
+	                        <div class="blueBorderAll">
+	                            <p>Tap on the type of headache you think you are experiencing and see what is recommended to use over the counter.</p>
+	                        </div>
+	                        <p>&nbsp;</p>
+	                        <ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow">
+	                            <li class="ui-li-has-thumb ui-first-child">
+	                                <a id="adult_recom_headache_tension_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(1)">
+	                                    <img src="assets/img/people/adult/head/headache-tension-man.svg" alt="Man holding his head">
+	                                    <h3><span class="redfont">Tension</span></h3>
+	                                    <p>Dull, pressure-like pain.<br> Like a tight band around my head</p>
+	                                </a>
+	                            </li>
+	                            <li class="ui-li-has-thumb">
+	                                <a id="adult_recom_headache_migraine_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(2)">
+	                                    <img src="assets/img/people/adult/head/migraine-lady.svg" alt="Lady holding her head in pain">
+	                                    <h3><span class="purplefont">Migraine</span></h3>
+	                                    <p>Pulsating, throbbing pain<br>Very sensitive to light, sound</p>
+	                                </a>
+	                            </li>
+	                            <li class="ui-li-has-thumb">
+	                                <a id="adult_recom_headache_sinus_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(3)">
+	                                    <img src="assets/img/people/adult/head/sinus-headache-lady.svg" alt="Woman holding her sinuses">
+	                                    <h3><span class="orangefont">Sinus</span></h3>
+	                                    <p>Pain, pressure in forehead<br>Worse when I bend down</p>
+	                                </a>
+	                            </li>
+	                            <li class="ui-li-has-thumb ui-last-child">
+	                                <a id="adult_recom_headache_other_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(4)">
+	                                    <img src="assets/img/people/adult/head/headache-lady.svg" alt="Lady touching her head in pain">
+	                                    <h3><span class="greenfont">Others</span></h3>
+	                                    <p>Hangover, premenstrual.</p>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                        <br>
+	                        <div class="clearboth divider1"></div>
+	                        <p>&nbsp;</p>
+	                    </div>
+	                    <!---------------------End Intro division------------------------- -->  
+	                    <!--------------------------Start Div 1--------------------------------------- -->
+	                    <div id="adult_recom_headache_tension_mobile" *ngIf="page==1">
+	                        <div class="maxwidth450">
+	                            <div class="ovalBorderRightBlue centerText"> 
+	                                <span>Over the counter recommendation for <span class="redfont">tension</span> headaches are discussed below.</span><br>
+	                            </div>
+	                            <div align="right">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <br>
+	                        <!-----------------End Border right person------------------- -->
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#ff0066;">Acetaminophen</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+	                                <p>Acetaminophen is usually better for headaches compared with NSAIDS or others.&nbsp;</p>
+	                                <p>It may be better to combine it with caffeine to help boost its effectiveness.<img alt="Woman with a headache" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/headache-lady2.svg" style="width: 80px; height: 124px; margin: 8px; float: right;"></p>
+	                                <p>Another advantage is that it won't tear up your stomach as with NSAIDS. Usually, when you have a headache, you just want to lie down somewhere. Doing this can cause heartburn after taking something like ibuprofen. If you are prone to heartburn, go with acetaminophen.</p>
+	                                <p>&nbsp;</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#ff6600;">NSAIDs</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+	                                <p>These are anti-inflammatory pain relievers&nbsp;used to relieve headaches and other types of pain.<img alt="Lady with a headache" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/headache-lady3.svg" style="width: 100px; height: 94px; margin: 8px; float: right;"></p>
+	                                <h3><span style="color:#B22222;">First choice of NSAIDS:</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+	                                <p><span style="font-size: 13px; line-height: 20.8px;">Ibuprofen or buffered aspirin. Choose this if you can take it. See the 'know this' section to see who should not take it &nbsp;and the side effects to expect.</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
+	                                <h3><span style="color:#6699ff;">Others:</span></h3>
+	                                <p>Naproxen</p>
+	                                <p>&nbsp;</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#006400;">&nbsp;Caffeine</span>&nbsp;+<span style="color:#EE82EE;"> Pain reliever</span> &nbsp;&nbsp;<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+	                                <p><span style="font-size:16px;"><strong>Acetaminophen + <span style="color:#006400;">caffeine</span></strong></span>&nbsp;&nbsp;</p>
+	                                <p><span style="line-height: 1.6em;">This will provide quick relief for the head, neck and shoulder pain associated with most tension headaches.</span></p>
+	                                <p>The caffeine helps boost the effectiveness of acetaminophen for the headache.<img alt="Lady with headache" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/headache-lady3.svg" style="width: 100px; height: 94px; margin: 8px; float: left;"></p>
+	                                <p>The only catch, try not to take this late in the night because of the caffeine. The amount in 2 capsules is equivalent to a cup of coffee.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#FF0000;">Pain reliever</span> +<span style="color:#0000CD;"> PM</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+	                                <p><span style="font-size:16px;"><strong><span style="color:#4B0082;">Acetaminophen</span> <span style="color:#006400;">PM</span></strong></span></p>
+	                                <p>This is a good choice for a late night or at bedtime headaches.</p>
+	                                <p>They contain diphenhydramine (Benadryl). The goal is to ease your headache while getting you some sleep.<img alt="Lady with headache" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/headache-lady4.svg" style="width: 100px; height: 90px; margin: 8px; float: right;"></p>
+	                                <p><span style="font-size:16px;"><strong><span style="color:#FF8C00;">Ibuprofen</span> <span style="color:#006400;">PM</span></strong></span></p>
+	                                <p>This is a good choice if you also have body aches and other sore muscles with this headache.&nbsp;</p>
+	                                <p>But do not take this if you get frequent heartburn or other stomach irritation problems. You will wake up bloated in the morning with a headache coming back soon after.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#800080;">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+	                                <p>1. If you are prone to tension headaches and anticipate coming down with one because of a stressful day or hectic activity, take acetaminophen or an NSAID before hand.</p>
+	                                <p>2. If your tension headache is due to stress or anxiety. Take valerian with the headache medication before you go to sleep.<img alt="Man with ice bag over his head" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/icebag-man.svg" style="width: 100px; height: 96px; margin: 8px; float: right;"></p>
+	                                <p>3. Remember to rest with an ice bag over your forehead.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <p class="grayfontSmallSmall centerText">
+	                            Last updated by pharmacist on : 
+	                            01/25/2016 
+	                        </p>
+	                        <p class="centerText">
+	                            <a href="#" data-inline="true" class="linkBlue back_adult_recom_headache_intro_mobile ui-link" (click)="togglePage(0)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+	                        </p>
+	                    </div>
+	                    <!--------------------------Start Div 2--------------------------------------- -->
+	                    <div id="adult_recom_headache_migraine_mobile" *ngIf="page==2">
+	                        <div class="maxwidth450">
+	                            <div class="ovalBorderRightBlue centerText"> 
+	                                <span> Over the counter recommendations for <span class="purplefont">migraine</span> headaches are discussed below.</span><br>
+	                            </div>
+	                            <div align="right">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <br>
+	                        <!-----------------End Border right person------------------- -->
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span style="color:#FF8C00;">Acetaminophen</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+	                                <p>Acetaminophen is a non-specific medication for a migraine.<img alt="Woman with headache holding tablets" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/holding-pills-lady.svg" style="width: 120px; height: 90px; margin: 8px; float: left;"> That is it works on all kinds of headaches.&nbsp;</p>
+	                                <p>You may want to take this in a combination form. Like combined with caffeine and aspirin.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span style="color:#3399ff;">NSAIDS</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
+	                                <p>These are anti-inflammatory pain relievers. They can be effective for headaches in general and are worth a try in migraine headaches.&nbsp;</p>
+	                                <p>Ibuprofen and naproxen are good examples.&nbsp;</p>
+	                                <p>Remember, over-the-counter medicines are no substitute for prescription migraine medicines. Those are more specific and work much better. You should only use OTC medicines in the absence of prescription migraine medicines. It is very necessary you treat your migraine immediately with the medicine prescribed by your physician.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span style="color:#ff0099;">Worth Doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+	                                <p>We assume you know what your triggers are by now. If not, this is the first thing to do. Try including these in your migraine therapy. They should help.<img alt="Woman with migraine lying down" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/migraine-lady2.svg" style="width: 120px; height: 85px; margin: 8px; float: right;"></p>
+	                                <p>1. You must see a doctor for migraine headaches. Make sure you always have enough supply of your doctor's recommended medication on hand. It is hard enough to find which prescription medicine will work for you, when you find one, do your best to have it with you. Just a reminder, if a medicine prescribed is not working for you, call the doctor to try something else. Taking more won't make any difference.</p>
+	                                <p>2. Keep a headache journal. It is important you know how you respond to migraine medicines. Which one worked best for you? What triggered it? How bad is this migraine? These are questions you need to know as time goes on.</p>
+	                                <p>3. Know your triggers. Prevention is better than cure. Moreover, prescription migraine medications are not cheap. You need to be more focused on prevention and use those medicines only when you need them.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <p class="grayfontSmallSmall centerText">
+	                            Last updated by pharmacist on : 
+	                            01/25/2016 
+	                        </p>
+	                        <p class="centerText">
+	                            <a href="#" data-inline="true" class="linkBlue back_adult_recom_headache_intro_mobile ui-link" (click)="togglePage(0)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+	                        </p>
+	                    </div>
+	                    <!--------------------------Start Div 3--------------------------------------- -->
+	                    <div id="adult_recom_headache_sinus_mobile" *ngIf="page==3">
+	                        <div class="maxwidth450">
+	                            <div class="ovalBorderRightBlue centerText"> 
+	                                <span>Take a look at over the counter recommendations for <span class="orangefont">sinus</span>  headaches discussed below.</span><br>
+	                            </div>
+	                            <div align="right">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <br>
+	                        <!-----------------End Border right person------------------- -->
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span style="color:#FF8C00;">NSAIDS</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+	                                <p>Non-Steroidal Anti-inflammatory Drugs (NSAIDS) include ibuprofen, naproxen, aspirin. We recommend this for sinus pain and pressure. Most of the time, inflammation of the sinuses would lead to a headache. NSAIDS&nbsp;helps with the inflammation while working on the head pain.<img alt="Woman with sinus headache" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/sinus-headache-lady2.svg" style="width: 120px; height: 84px; margin: 8px; float: right;">&#8203;</p>
+	                                <p>If this headache also includes severe sinus pressure, you will be better off adding pseudoephedrine to relieve the pressure. Good combinations are available behind the pharmacy counter. <span style="color:#FF8C00;">Ibuprofen + pseudoephedrine;</span> <span style="color:#3399ff;">Naproxen + pseudoephedrine</span> are good examples. If the pharmacy is closed, a nasal spray with <span style="color:#800080;">oxymetazoline</span> will help. But use this as a last resort.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span style="color:#FF0000;">Acetaminophen</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+	                                <p>We recommend acetaminophen if you can't take NSAIDS. If all you have is a headache, acetaminophen will be better. For instance a&nbsp;lingering headache after a sinus infection. In this case, acetaminophen will be appropriate.<img alt="Lady taking pills" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/lady-taking-pills.svg" style="width: 100px; height: 108px; margin: 8px; float: right;"></p>
+	                                <p>If you cannot take NSAIDS and think acetaminophen will work better for you, we encourage you to combine it with pseudoephedrine which is available behind the pharmacy counter. This combination will be useful in a case of headache with sinus pain and pressure.</p>
+	                                <p>&nbsp;</p>
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <p class="grayfontSmallSmall centerText">
+	                            Last updated by pharmacist on : 
+	                            01/25/2016 
+	                        </p>
+	                        <p class="centerText">
+	                            <a href="#" data-inline="true" class="linkBlue back_adult_recom_headache_intro_mobile ui-link" (click)="togglePage(0)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+	                        </p>
+	                    </div>
+	                    <!--------------------------Start Div 4--------------------------------------- -->
+	                    <div id="adult_recom_headache_other_mobile" *ngIf="page==4">
+	                        <div class="maxwidth450">
+	                            <div class="ovalBorderRightBlue centerText"> 
+	                                <span>Over the counter recommendations for <span class="greenfont">other types</span> of headaches include:</span><br>
+	                            </div>
+	                            <div align="right">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 100px;" alt="Pharmacist"> 
+	                            </div>
+	                        </div>
+	                        <div class="clearboth divider1"></div>
+	                        <br>
+	                        <!-----------------End Border right person------------------- -->
+	                        <p>&nbsp;</p>
+	                        <p class="redBorder redfont centerText">Need treatment overview entry here</p>
+	                        <p>&nbsp;</p>
+	                        <p class="centerText">
+	                            <a href="#" data-inline="true" class="linkBlue back_adult_recom_headache_intro_mobile ui-link" (click)="togglePage(0)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+	                        </p>
+	                    </div>
+	                </div>
+	                <!---------------------End Content-slide------------------------- -->        
+	            </div>
+	            <!-------------------------End Swiper-slide------------------------- -->
+	            <!---------------------------------Know this slide------------------------------- -->      
+	            <div class="swiper-slide">
+	                <div class="content-slide ui-content">
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                    <div class="maxwidth450">
+	                        <div class="ovalBorderRightBlue centerText">
+	                            <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+	                        </div>
+	                        <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 80px;" alt="Article photo">
+	                        </div>
+	                    </div>
+	                    <div class="clearboth divider1"></div>
+	                    <br>
+	                    <!-----------------End Border right person------------------- -->
+	                    <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-plus': expands[10], 'ui-icon-minus': !expands[10]}" >Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
+	                            <div class="redBorderWhite">
+	                                <ul>
+	                                    <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
+	                                    <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+	                                    <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+	                                        <em>"If a patient presents with these symptoms, what will you recommend and why?"</em><br>
+	                                        It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice.
+	                                    </li>
+	                                    <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressured to recommend a particular product to drive sales. </li>
+	                                    <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                </div>
+	                <!---------------------End Content-slide------------------------- -->        
+	            </div>
+	            <!-------------------------End Swiper-slide----------------------------------- -->
+	            <div class="swiper-slide">
+	                <div class="content-slide ui-content">
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                    <div class="maxwidth450">
+	                        <div class="ovalBorderRightBlue centerText">
+	                            <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+	                        </div>
+	                        <div class="clearboth"></div>
+	                        <div class="container_12">
+	                            <div class="grid_8">
+	                                <br>
+	                                <div class="bubbleRightBlue">
+	                                    Or if you have a question for the pharmacist?
+	                                </div>
+	                            </div>
+	                            <div class="grid_4">
+	                                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <br>
+	                    <div class="clearboth divider1"></div>
+	                    <br>
+	                    <!-----------------End Point Right------------------- -->
+	                    <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+	                        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-plus': expands[11], 'ui-icon-minus': !expands[11]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                        <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
+	                            <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+	                            <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+	                                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-plus': expands[12], 'ui-icon-minus': !expands[12]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
+	                                    <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+	                                    <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+	                                    <div class="clearboth divider1"></div>
+	                                    <p class="centerText">
+	                                        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+	                                    </p>
+	                                    <div class="clearboth divider1"></div>
+	                                    <br>                       
+	                                </div>
+	                            </div>
+	                            <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+	                                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(13)" [ngClass]="{'ui-icon-plus': expands[13], 'ui-icon-minus': !expands[13]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
+	                                    <p>Expect a reply as soon as possible.<br>
+	                                        If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+	                                    </p>
+	                                    <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+	                                </div>
+	                            </div>
+	                            <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+	                                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(14)" [ngClass]="{'ui-icon-plus': expands[14], 'ui-icon-minus': !expands[14]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+	                                <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
+	                                    <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+	                                    <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+	                                    <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+	                                    <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+	                                </div>
+	                            </div>
+	                            <p>&nbsp;</p>
+	                        </div>
+	                    </div>
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                </div>
+	                <!---------------------End Content-slide------------------------- -->        
+	            </div>
+	            <!-------------------------End Swiper-slide----------------------------------- -->
+	            <div class="swiper-slide">
+	                <div class="content-slide ui-content">
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                    <div class="maxwidth450">
+	                        <div class="ovalBorderRightGreen centerText"> <span>No <span class="greenfont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+	                        </div>
+	                        <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port-cyan.svg" style="width: 80px;" alt="Pharmacist" align="right">
+	                        </div>
+	                    </div>
+	                    <div class="clearboth divider1"></div>
+	                    <!-----------------End Border right person------------------- -->
+	                    <p>&nbsp;</p>
+	                    <p class="centerText"> 
+	                        <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+	                        <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+	                    </p>
+	                    <div class="comment_why_div" *ngIf="why">
+	                        <br>
+	                        <ul>
+	                            <li>Let others know if the recommendation worked for you.</li>
+	                            <li>Share your treatment outcome with others.</li>
+	                            <li>Add to the recommendation.</li>
+	                            <li>Improve on the recommendation.</li>
+	                            <li>Quickest way to ask a pharmacist a question.</li>
+	                            <li>What about you answering a question?</li>
+	                        </ul>
+	                    </div>
+	                    <!----------------------------Comments start here------------------------------ -->
+	                    <p>&nbsp;</p>
+	                    <p>&nbsp;</p>
+	                </div>
+	                <!---------------------End Content-slide------------------------- -->
+	            </div>
+	            <!-------------------------End Swiper-slide----------------------------------- -->
+	        </div>
+	    </div>
+	</div>
 </ion-content>

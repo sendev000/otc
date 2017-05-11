@@ -1,18 +1,866 @@
-<!--
-  Generated template for the HivesAdultRecomMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
-  <ion-navbar>
-    <ion-title>hives_adult_recom_mobile</ion-title>
-  </ion-navbar>
-
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+  	<!-- <ion-navbar class="fullWidth robotoLight bgPink">
+  	</ion-navbar> -->
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="ui-page-theme-n">
+	<div class="fullWidth" style="padding:0px;">
+		<div class="fullWidth">
+		    <div class="tabs" style="position:fixed; z-index:99;">
+		        <a href="#" class="ui-link" (click)="showTab(1)" [ngClass]="{'active': tabId==1}">Take This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(2)" [ngClass]="{'active': tabId==2}">Know This</a> 
+		        <a href="#" class="ui-link" (click)="showTab(3)" [ngClass]="{'active': tabId==3}">What If</a> 
+		        <a href="#" class="ui-link" (click)="showTab(4)" [ngClass]="{'active': tabId==4}">Comments</a>
+		        <div class="clearboth"></div>
+		    </div>
+		    <div class="swiper-scrollbar shadowBottom">
+	            <div class="swiper-scrollbar-drag swiper-scrollbar-cursor-drag" [ngStyle]="{'transform': tabCss+''}"></div>
+	        </div>
+		</div>
+		<div class="swipe-container">
+			<div class="swiper-wrapper opacity5" [ngStyle]="{'transform': tabConCss+''}">
+				<div class="swiper-slide">
+					<div class="content-slide ui-content">
+					    <p>&nbsp;</p>
+					    <p>&nbsp;</p>
+					    <!-----------Start all check box options-------------------------------- --> 
+					    <div id="intro_adult_allergy_mobile_div" style="display: none;">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> 
+					                <span class="greenfont firstname"> </span><br>
+					                Which of the <span class="greenfont">symptoms</span> listed below are you <span class="purple_redfont">experiencing</span> right now? 
+					            </div>
+					            <div align="right">
+					                <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 100px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					        <br>
+					        <!-----------------End Border right person------------------- -->
+					        <!--------------------------Banner Link----------------------------- -->
+					        <div>
+					        </div>
+					        <!--------------------------Banner Link----------------------------- -->
+					    </div>
+					    <!-----------------End Intro-------------------- -->
+					    <!-----------------Start checkbox-------------------- -->
+					    <div id="adult_recom_allergy_mobile_q1" *ngIf="page==0">
+					        <p class="centerText">
+					            <img src="assets/img/people/adult/cold/allergy-lady.svg" alt="Lady with allergy symptoms" style="width: 120px;">
+					        </p>
+					        <br>
+					        <p class="greenBorder centerText"> Choose your allergy symptoms from the list below and see what is recommended. </p>
+					        <br>
+					        <div data-role="fieldcontain" class="ui-field-contain">
+					            <fieldset data-role="controlgroup" id="adult_recom_allergy_mobile_q1_form_div" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+					                <div class="ui-controlgroup-controls ">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-first-child" [ngClass]="{'ui-checkbox-on': recs[0], 'ui-checkbox-off': !recs[0]}" (click)="toggleRecs(0)"><span class="greenfont">Sore throat</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_0" class="adult_recom_allergy_mobileQ1" value="" data-cacheval="true" [(ngModel)]="recs[0]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[1], 'ui-checkbox-off': !recs[1]}" (click)="toggleRecs(1)" ><span class="greenfont">Scratchy throat</span> </label><input name="adult_recom_allergy_mobile_q1" type="checkbox" class="adult_recom_allergy_mobileQ1" id="adult_recom_allergy_mobile_q1_1" value="" [(ngModel)]="recs[1]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[2], 'ui-checkbox-off': !recs[2]}" (click)="toggleRecs(2)" ><span class="greenfont">Stuffy nose</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_2" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[2]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[3], 'ui-checkbox-off': !recs[3]}" (click)="toggleRecs(3)" ><span class="greenfont">Runny nose</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_3" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[3]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[4], 'ui-checkbox-off': !recs[4]}" (click)="toggleRecs(4)" ><span class="greenfont">Sneezing</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_4" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[4]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[5], 'ui-checkbox-off': !recs[5]}" (click)="toggleRecs(5)" ><span class="greenfont">Headache</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_5" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[5]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[6], 'ui-checkbox-off': !recs[6]}" (click)="toggleRecs(6)" ><span class="greenfont">Itchy eyes</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_6" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[6]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[7], 'ui-checkbox-off': !recs[7]}" (click)="toggleRecs(7)" ><span class="greenfont">Cough</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_7" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[7]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_8" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[8], 'ui-checkbox-off': !recs[8]}" (click)="toggleRecs(8)" ><span class="greenfont">Watery eyes</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_8" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[8]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_9" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[9], 'ui-checkbox-off': !recs[9]}" (click)="toggleRecs(9)" ><span class="greenfont">Chest congestion</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_9" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[9]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_10" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[10], 'ui-checkbox-off': !recs[10]}" (click)="toggleRecs(10)" ><span class="greenfont">All of the above</span></label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_10" class="adult_recom_allergy_mobileQ1" value="" [(ngModel)]="recs[10]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_12" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[11], 'ui-checkbox-off': !recs[11]}" (click)="toggleRecs(11)" ><span class="greenfont">Prevention only</span> </label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_12" value="" data-cacheval="false" [(ngModel)]="recs[11]"></div>
+					                    <hr class="hrgreen">
+					                    <div class="ui-checkbox"><label for="adult_recom_allergy_mobile_q1_11" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-last-child" [ngClass]="{'ui-checkbox-on': recs[12], 'ui-checkbox-off': !recs[12]}" (click)="toggleRecs(12)" ><span class="greenfont">None of these</span></label><input type="checkbox" name="adult_recom_allergy_mobile_q1" id="adult_recom_allergy_mobile_q1_11" value="" [(ngModel)]="recs[12]"></div>
+					                    <hr class="hrgreen">
+					                </div>
+					            </fieldset>
+					            <div class="clearboth divider1"></div>
+					            <div class="centerText">
+					            	<div class="ui-btn ui-input-btn ui-btn-l ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" data-inline="true" data-theme="l" id="get_adult_recom_allergy_mobile_q1" value="Here you go" (click)="togglePage(1)"></div>
+					            </div>
+					        </div>
+					    </div>
+					    <!-----------------End checkbox-------------------- -->
+					    <!-----------------You told me nothing-------------------- -->
+					    <div class="container_12" id="selected_adult_recom_allergy_mobile_q1_container" *ngIf="page==0 && mode==50">
+					        <div class="grid_9">
+					            <div class="bubbleRightGreen" id="selected_adult_recom_allergy_mobile_q1 centerText">
+					            	<span class="redfontLarge">Oops!,</span> You told me nothing 
+					            </div>
+					        </div>
+					        <div class="grid_3"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 40px;" align="right">
+					        </div>
+					    </div>
+					    <!-------------------------------------Single-Options------------------------------------ -->
+					    <!---------------Decongestant--------------------------- -->
+					    <div id="decong_adult_recom_allergy_mobile" *ngIf="page==1 && mode==5">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Selection require a <span class="purplefont">decongestant.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Antihistamine--------------------------- -->
+					    <div id="antihist_adult_recom_allergy_mobile" *ngIf="page==1 && mode==4">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span> An <span class="purple_redfont">antihistamine</span> will take of this.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain relief--------------------------- -->
+					    <div id="pain_adult_recom_allergy_mobile" *ngIf="page==1 && mode==6">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptom need a <span class="redfont">pain</span> relief medication.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Cough relief--------------------------- -->
+					    <div id="cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==7">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>A <span class="greenfont">cough</span> suppresant and / or something to loosen up the mucus is needed.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					        <p>&nbsp;</p>
+					    </div>
+					    <!---------------itchyeyes relief--------------------------- -->
+					    <div id="itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==8">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span><span class="orangefont">Eye allergy</span> relief eye drops will be needed.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!-----------------------------------Double-Options------------------------------------ -->
+					    <!---------------Pain + Decong relief--------------------------- -->
+					    <div id="pain_decong_adult_recom_allergy_mobile" *ngIf="page==1 && mode==9">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require a <span class="purplefont">decongestant</span> and <span class="pinkfont">pain relief</span> medications</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + antihistamine relief--------------------------- -->
+					    <div id="pain_antihist_adult_recom_allergy_mobile" *ngIf="page==1 && mode==10">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require <span class="purple_redfont">antihistamine</span> and a <span class="redfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------pain + cough relief--------------------------- -->
+					    <div id="pain_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==11">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Selections calls for <span class="greenfont">cough/chest congestion</span> and <span class="redfont">pain relief</span> medications</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + itchyeyes relief--------------------------- -->
+					    <div id="pain_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==12">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Better off with an <span class="orangefont">eye allergy</span> and a <span class="redfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihistamine + decong relief--------------------------- -->
+					    <div id="antihist_decong_adult_recom_allergy_mobile" *ngIf="page==1 && mode==13">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require an <span class="purple_redfont">antihistamine</span> and a <span class="purplefont">decongestant.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihist + cough relief--------------------------- -->
+					    <div id="antihist_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==14">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine</span> and a <span class="greenfont">cough relief</span> medication.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihist + itchyeyes relief--------------------------- -->
+					    <div id="antihist_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==15">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require <span class="redfont">oral</span> <span class="orangefont">antihistamine</span> with allergy relief <span class="orangefont">eye drops.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------decong + cough relief--------------------------- -->
+					    <div id="decong_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==16">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>A <span class="purplefont">decongestant</span> and <span class="greenfont">cough relief</span> medications will be adequate.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------decong + itchyeyes relief--------------------------- -->
+					    <div id="decong_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==17">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need a <span class="purplefont">decongestant</span> and <span class="pinkfont">eye drops</span> for the itch eyes.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------itchyeyes + cough relief--------------------------- -->
+					    <div id="itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==18">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Eye drops for <span class="orangefont">itchy eyes</span> and <span class="greenfont">cough relief</span> medications should do it.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!-------------------------------------Triple-Options------------------------------------ -->
+					    <!---------------Pain + antihist + decong--------------------------- -->
+					    <div id="pain_antihist_decong_adult_recom_allergy_mobile" *ngIf="page==1 && mode==19">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require <span class="purple_redfont">antihistamine</span>, <span class="purplefont">decongestant</span> and a <span class="pinkfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + antihist + cough--------------------------- -->
+					    <div id="pain_antihist_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==20">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine</span>, <span class="redfont">pain reliever</span> and something for <span class="greenfont">cough.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!--------------- Pain + antihist + itchyeyes --------------------------- -->
+					    <div id="pain_antihist_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==21">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require an <span class="purple_redfont">antihistamine,</span> <span class="orangefont"> eye drops</span> and a <span class="redfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + decong + cough--------------------------- -->
+					    <div id="pain_decong_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==22">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Selection require a <span class="purplefont">decongestant,</span> <span class="greenfont">cough</span> and <span class="redfont">pain</span> relievers.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + decong + itchyeyes--------------------------- -->
+					    <div id="pain_decong_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==23">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require a <span class="purplefont">decongestant,</span> <span class="orangefont"> eye drops</span> and a <span class="redfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + cough + itchyeyes--------------------------- -->
+					    <div id="pain_cough_itchyeyes_adult_recom_allergy_mobile" class="displayNone" style="display: none;">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Selection require an <span class="orangefont"> eye drop,</span> <span class="greenfont">cough</span> and <span class="pinkfont">pain relievers.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihistamine + decong + cough------------ -->
+					    <div id="antihist_decong_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==27">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine,</span> <span class="purplefont">decongestant</span> and <span class="redfont">cough relief</span> medication.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihistamine + decong + itchyeyes------------------ -->
+					    <div id="antihist_decong_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==28">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine,</span> <span class="purplefont">decongestant</span> and an <span class="orangefont">eye drop.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------antihistamine + itchyeyes + cough--------------------------- -->
+					    <div id="antihist_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==26">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Symptoms require an <span class="purple_redfont">antihistamine,</span> <span class="greenfont">cough</span> and allergy relief <span class="orangefont">eye drops.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------decongestant + itchyeyes + cough--------------------------- -->
+					    <div id="decong_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==25">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need a <span class="purplefont">decongestant,</span> <span class="greenfont">cough</span> and allergy relief <span class="orangefont">eye drops.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!--------------------------quadriple-Options------------------------------- -->
+					    <!---------------Pain + antihist + decongestant + cough------------- -->
+					    <div id="pain_antihist_decong_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==30">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Will need an <span class="purple_redfont">antihistamine,</span> <span class="purplefont">decongestant,</span> <span class="greenfont">cough</span> and <span class="redfont">pain relievers.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + antihist + decongestant + itchyeyes----------------- -->
+					    <div id="pain_antihist_decong_itchyeyes_adult_recom_allergy_mobile" *ngIf="page==1 && mode==29">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine,</span> <span class="purplefont">decongestant,</span> allergy <span class="orangefont">eye drops</span> and <span class="redfont">pain reliever.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + antihist + itchyeyes + cough-------------------- -->
+					    <div id="pain_antihist_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==31">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine,</span> allergy <span class="orangefont">eye drops,</span> <span class="greenfont">cough</span> and <span class="redfont">pain relievers.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Pain + decongestant + itchyeyes + cough--------------- -->
+					    <div id="pain_decong_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==32">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need a <span class="purplefont">decongestant,</span> <span class="orangefont"> eye drops,</span> <span class="greenfont">cough</span> and <span class="redfont">pain relief</span> medications.</span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!---------------Antihistamine + decongestant + itchyeyes + cough------------ -->
+					    <div id="antihist_decong_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==33">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span>Need an <span class="purple_redfont">antihistamine,</span> <span class="purplefont">decongestant,</span> <span class="greenfont">cough relief</span> and allegy <span class="orangefont">eye drops.</span></span><br>
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					    </div>
+					    <!-----------Pain + antihist + decong + cough + itchyeyes relief----- -->
+					    <div id="pain_antihist_decong_itchyeyes_cough_adult_recom_allergy_mobile" *ngIf="page==1 && mode==34">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span class="purplefont">Okay.</span><br>
+					                You must have this allergy really bad. 
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth"></div>
+					        <!-----------------End Border right person------------------- -->
+					        <p class="orangeBorder">Your best bet would be to visit the nearest urgent care clinic. if you don't think so, here is what I recommend to use over-the-counter.</p>
+					        <p>Talk about pain, antihistamine, cough, decongestant and itchyeyes relief.</p>
+					        <!--------------------------Banner Link----------------------------- -->
+					        <!--------------------------Banner Link----------------------------- -->
+					        <p>&nbsp;</p>
+					    </div>
+					    <!---------------Prevention only--------------------------- -->
+					    <div id="prevention_adult_recom_allergy_mobile" *ngIf="page==1 && mode==2">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> Something to <span class="orangefont">prevent</span> or <span class="purplefont">boost</span> your resistance to allergy? </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;"></div>
+					        </div>
+					        <div class="clearboth divider1"></div>
+					        <p>&nbsp;</p>
+					        <!-----------------End Border right person------------------- -->
+					        <div data-role="collapsible" data-collapsed="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+					            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span class="bluefont">Preventive measures</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
+					                <br>
+					                <h3><span style="color:#cc0000;">Prevent exposure</span>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+					                <p>Obviously, if you don't want to have symptoms, you will take preventing exposure to allergens seriously.&nbsp;</p>
+					                <ul>
+					                    <li>Get an app that shows you the pollen calendar and pollen counts in your area.&nbsp;<br>
+					                        Use this as a guide to &nbsp;prepare for outside activities.&nbsp;
+					                    </li>
+					                    <li>Use allergy mask or something similar if you need to mow the lawn or do some gardening.</li>
+					                    <li>Smear petroleum jelly in the nasal passages when outdoors to trap pollen and prevent it from getting to the inner lining of the nose.</li>
+					                    <li>Wear sunglasses when outdoors if the pollen count is high.</li>
+					                    <li>Keep windows closed.&nbsp;</li>
+					                </ul>
+					                <h3><span style="color:#6633cc;">&nbsp;Intranasal steroids</span></h3>
+					                <p>This is the most effective&nbsp;preventive treatment. It is also the best choice if symptoms are moderate to severe.</p>
+					                <p>The real benefit comes with daily use. Better to start about a week before the allergy season starts.&nbsp;</p>
+					                <p>Know that you can start it anytime, but &nbsp;you will get some symptoms relief within a day, but full beneficial effect may take up to 7 days of daily use.</p>
+					                <p>The goal for you is to use it daily until the allergy season is over for effective and enjoyable allergy season.</p>
+					                <h3><span style="color:#800080;">Antihistamine</span></h3>
+					                <p>Take first thing in the morning before you step outside for effective prevention. I personally take mine right after brushing my teeth. It may get hectic with the kids and all and&nbsp;I may forget to take it.</p>
+					                <p>Remember, you have to get the antihistamine in there to block the histamine receptors before the histamine starts causing havoc.</p>
+					                <!--------------------------Banner Link----------------------------- -->
+					                <!--------------------------Banner Link----------------------------- -->
+					                <p>&nbsp;</p>
+					            </div>
+					        </div>
+					    </div>
+					    <!---------------All-------------- -->
+					    <div id="all_adult_recom_allergy_mobile" *ngIf="page==1 && mode==3">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span class="purplefont">All of these?</span><br>
+					                You must have this allergy really bad. 
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist"> 
+					            </div>
+					        </div>
+					        <div class="clearboth"></div>
+					        <!-----------------End Border right person------------------- -->
+					        <p class="orangeBorder">Your best bet would be to visit the nearest urgent care clinic. if you don't think so, here is what I recommend to use over-the-counter.</p>
+					        <p>Send to nearest urgent care.</p>
+					        <!--------------------------Banner Link----------------------------- -->
+					        <!--------------------------Banner Link----------------------------- -->
+					        <p>&nbsp;</p>
+					    </div>
+					    <!---------------None of the above--------------------------- -->
+					    <div id="none_adult_recom_allergy_mobile" class="displayNone" style="display: none;">
+					        <div class="maxwidth450">
+					            <div class="ovalBorderRightGreen centerText"> <span class="greenfont">None of these?</span><br>
+					                We must have left something out. 
+					            </div>
+					            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;"></div>
+					        </div>
+					        <div class="clearboth"></div>
+					        <!-----------------End Border right person------------------- -->
+					        <h3 class="greenBorder centerText">If you think you have allergy:</h3>
+					        <p>Please go back and choose the symptom(s) that you feel closely relate to what you have or might have had and let's recommend something for you. </p>
+					        <p>Remember, there is no cure for allergy. All we can do is manage the symptoms.</p>
+					        <p>&nbsp;</p>
+					    </div>
+					    <div class="clearboth divider1"></div>
+					    <!--------------------------Decongestant  Article----------------------------- -->  
+					    <div data-role="collapsible" id="decongestant_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==5 || mode==9 || mode==13 || mode==16 || mode==17 || mode==19 || mode==22 || mode==23 || mode==25 || mode==27 || mode==28 || mode==29 || mode==30 || mode==32 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span class="purple_redfont">Decongestants</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
+					            <p>A <span style="color:#6666ff;">decongestant</span> will help ease the blocked or stuffy nose.</p>
+					            <p><img alt="Lady with itchy nose" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/itchy-nose-green.svg" style="width: 100px; height: 135px; margin: 8px; float: left;"></p>
+					            <p>Decongestants cause the blood vessels in the lining of the nose and sinuses to narrow, thereby reducing the stuffy nose or sinus congestion.</p>
+					            <p>&nbsp;</p>
+					            <p>An antihistamine will not reduce stuffy nose. It will only help&nbsp;if it is runny.&nbsp;</p>
+					            <p>A decongestant will not help with a runny nose only if it is congested or blocked.</p>
+					            <p>&nbsp;</p>
+					            <p>With this in mind, you may need a combination of both an antihistamine and a decongestant if you alternate between a runny and a stuffy nose.</p>
+					            <p>&nbsp;</p>
+					            <p>Tap on the<span style="color:#008000;"> "FYI"</span> below for a good way to choose a decongestant that will work best for you.</p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <div>
+					                <a href="#12Da-jpg-modal" data-rel="popup" data-transition="slide" class="linkBanner ui-link" aria-haspopup="true" aria-owns="12Da-jpg-modal" aria-expanded="false">
+					                    <p>If you have time, check out this new acne cream. We think you may find it useful. <span style="color:#EE82EE;">Take a look.</span></p>
+					                </a>
+					            </div>
+					            <div style="display: none;" id="12Da-jpg-modal-placeholder">
+					                <!-- placeholder for 12Da-jpg-modal -->
+					            </div>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Antihistamine  Article----------------------------- --> 
+					    <div data-role="collapsible" id="antihistamine_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==4 || mode==10 || mode==13 || mode==14 || mode==15 || mode==19 || mode==20 || mode==21 || mode==26 || mode==27 || mode==28 || mode==29 || mode==30 || mode==31 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span class="purple_redfont">Antihistamine</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
+					            <p>Contact with an allergen, a foreign substance like pollen, is causing the mast cells in the nose, eyes, throat &nbsp;to release more histamine than usual.<img alt="Girl rubbing the eye" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/puffy-eye-lady.svg" style="width: 100px; height: 132px; margin: 8px; float: left;">&#8203;</p>
+					            <p>This is causing the itchy eyes, throat, runny nose, sneezing, red,&nbsp;watery eyes &nbsp;you are experiencing.&nbsp;</p>
+					            <p>&nbsp;</p>
+					            <p>An<span style="color:#800080;"> antihistamine</span>&nbsp;blocks histamine from reaching the cells to cause these symptoms.&nbsp;</p>
+					            <p>This is why antihistamines&nbsp;are most effective when taken before you come in contact with the allergen.</p>
+					            <p>Be sure to compare antihistamines using our <span style="color:#4B0082;">comparison table</span> to see which will work best for you. A quick link to the comparison table is given at the end of this page.</p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <div class="bannerDisplayBtn-Aa blueBorderAll">
+					                <p>Testing a gif banner from google</p>
+					            </div>
+					            <div class="clearboth divider1"></div>
+					            <div class="bannerDisplay-Aa displayNone centerText">
+					                <div class="graygrayfontSmall" style="padding:5px;">Your interaction with this ad supports us. Thank you.<br><span><a href="" class="linkBlue robotoThinSmall ui-link" data-inline="true">Save Ad For Interaction Later</a></span></div>
+					                <a href="" class="ui-link"><img src="http://www.selfcarepharmacist.com/admin/images/banners/ad-placeholder.jpg" style="width: 300px;" height="250" alt=""></a>
+					                <div align="right" style="width:320px;">
+					                    <br>
+					                    <a href="" class="linkBlue robotoLightSmall ui-link" data-inline="true">Learn More</a>
+					                    <a href="#" class="bannerDisplayBtn-Aa linkBlue robotoLightSmall ui-link" data-inline="true">Got It</a>
+					                </div>
+					            </div>
+					            <br> 
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Pain Relief  Article----------------------------- --> 
+					    <div data-role="collapsible" id="pain_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==6 || mode==9 || mode==10 || mode==11 || mode==12 || mode==19 || mode==20 || mode==21 || mode==22 || mode==23 || mode==24 || mode==29 || mode==30 || mode==31 || mode==32 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span class="redfont">Pain / Fever reducer</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
+					            <p>Inflammation and swelling of the sinuses and severe nasal congestion can lead to sinus pressure causing headaches and facial or sinus pain.</p>
+					            <p><img alt="Woman with sinus pressure" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/allergy-sinus-lady.svg" style="width: 100px; height: 130px; margin: 8px; float: left;"></p>
+					            <p>It is usually better to take a decongestant along with a pain relief medication for a headache or sinus pain.</p>
+					            <p>&nbsp;</p>
+					            <p>You need to take care of the underlying cause of this pain before it will really go away.</p>
+					            <p><span style="color:#800080;">Acetaminophen</span> is preferred if it is just&nbsp;a headache.</p>
+					            <p><span style="color:#FF0000;">Ibuprofen</span> or <span style="color:#0000CD;">naproxen</span> is preferred if you have inflammation of the sinuses causing facial pain with&nbsp;a headache.<br>
+					                These also have anti-inflammatory properties compared to acetaminophen.
+					            </p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Cough Relief  Article----------------------------- --> 
+					    <div data-role="collapsible" id="cough_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==7 || mode==11 || mode==14 || mode==16 || mode==18 || mode==20 || mode==22 || mode==24 || mode==25 || mode==26 || mode==27 || mode==30 || mode==31 || mode==32 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span class="purplefont">Cough Relief</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
+					            <p>Mucus dripping down the throat from&nbsp;the back of the nose (post nasal drip) will trigger the cough reflex.</p>
+					            <p><img alt="Girl coughing" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/sneezing-lady-green.svg" style="width: 120px; height: 94px; margin: 8px; float: right;"></p>
+					            <p>We normally will not recommend a cough medication. Because if you do not take care of what is causing it, you will keep coughing.</p>
+					            <p>Here are situations that will warrant getting a cough medicine:</p>
+					            <ul>
+					                <li>A cough is waking you up at night.<br>
+					                    Dextromethorphan will &nbsp;suppress the cough for a good night's sleep.&nbsp;<br>
+					                    Diphenhydramine or doxylamine can suppress the cough while making you sleep. &nbsp;<br>
+					                    &nbsp;
+					                </li>
+					                <li>Mucus has accumulated&nbsp;giving a feeling of chest congestion.<br>
+					                    You will need to thin the mucus so you can cough it out.<br>
+					                    Guaifenesin with drinking a lot of water should help with this.
+					                </li>
+					            </ul>
+					            <p>&nbsp;</p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Eye drops Relief Article----------------------------- -->               
+					    <div data-role="collapsible" id="itchyeyes_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==8 || mode==12 || mode==15 || mode==17 || mode==18 || mode==21 || mode==23 || mode==24 || mode==25 || mode==26 || mode==28 || mode==29 || mode==31 || mode==32 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span class="purple_redfont">Allergy Relief Eye Drops</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
+					            <p>Just as allergens getting to the nose triggers a runny itchy nose, pollen or other allergens getting to the surface of the eyes can trigger histamine release leading to itchy, watery and even swollen eyes.</p>
+					            <p><img alt="Woman using eye-drops" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/eyedrops-lady.svg" style="width: 150px; height: 104px; margin: 8px; float: right;"></p>
+					            <p>You will need an antihistamine eye drops.</p>
+					            <p>&nbsp;</p>
+					            <p><span style="color:#B22222;">First choice</span><br>
+					                <span style="color:#FF8C00;">ketotifen fumarate opthalmic solution.</span> This work for up to 12 hours on a single dose and is more effective.
+					            </p>
+					            <p>&nbsp;</p>
+					            <p><span style="color:#0000CD;">Second choice</span><br>
+					                Eye drops that end with a <span style="color:#0000CD;">capital "A".</span> &nbsp;<span style="color:#696969;"><em>Naphcon A, visine A, opcon A</em></span> and so on.&nbsp;<br>
+					                They last for 4 to 6 hours. So you may have to carry them with you.<br>
+					                Choose this if the first choice is too expensive for you.
+					            </p>
+					            <p>&nbsp;</p>
+					            <p>See the <span style="color:#4B0082;">product comparison section</span> of this app for a good way to choose an allergy relief eye drops.</p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Steroidal Spray Relief Article----------------------------- -->               
+					    <div data-role="collapsible" id="steroid_relief_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==4 || mode==5 || mode==9 || mode==10 || mode==13 || mode==14 || mode==15 || mode==16 || mode==17 || mode==19 || mode==20 || mode==21 || mode==22 || mode==23 || mode==25 || mode==26 || mode==27 || mode==28 || mode==29 || mode==30 || mode==31 || mode==32 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span class="purple_redfont">Steroidal Nasal Sprays</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
+					            <p>Intranasal steroids (INS) have <span style="color:#FF0000;">anti-inflammatory</span> properties.</p>
+					            <p><img alt="Woman using nasal spray" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/woman-nasal-spray.svg" style="width: 120px; height: 94px; margin: 8px; float: right;"></p>
+					            <p>The inside of your nose can easily become<span style="color:#FF0000;"> inflamed</span> as a result of pollen or other allergens.</p>
+					            <p>A steroidal nasal spray will&nbsp;relieve &nbsp;symptoms like<em> a runny nose, stuffy nose, sneezing, itchy nose</em>&nbsp;by reducing and preventing this inflammation.</p>
+					            <p>&nbsp;</p>
+					            <p>They are recommended for<span style="color:#FFA500;"> moderate</span> to<span style="color:#FF0000;"> severe</span> allergic rhinitis.&nbsp; Now, how do you know you have moderate to severe allergic rhinitis?</p>
+					            <h3>You know&nbsp;if symptoms are:</h3>
+					            <ul>
+					                <li>getting more difficult to tolerate.</li>
+					                <li>getting so bad that it&nbsp;is hard to function at school, home or work.</li>
+					                <li>interfering with your sleep.</li>
+					                <li>making you change antihistamines because one is no longer working as good.</li>
+					                <li>making you put off activities like mowing,&nbsp;gardening or sports.</li>
+					            </ul>
+					            <p>If any one of these applies to you, add intranasal steroids to your regimen.&nbsp;&nbsp;</p>
+					            <p>A good example is <span style="color:#0000CD;">&nbsp;triamcinolone acetonide,</span>&nbsp;<span style="color:#008000;">fluticasone</span> nasal spray.</p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!--------------------------Multi-Symptoms Article----------------------------- -->               
+					    <div data-role="collapsible" id="multi_symptom_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && (mode==9 || mode==10 || mode==13 || mode==16 || mode==19 || mode==20 || mode==22 || mode==27 || mode==30 || mode==31 || mode==32 || mode==33 || mode==34)">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span class="purplefont">Multi-Symptoms</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!----------------------------Worth Doing--------------------------- -->
+					    <div class="clearboth divider1"></div>
+					    <div data-role="collapsible" id="worth_doing_allergy_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==1 && mode>2">
+					        <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit"  (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span class="greenfont">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+					        <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
+					            <h3><span style="color:#008000;">Allergy mask&nbsp;</span>&nbsp;&nbsp;&nbsp;</h3>
+					            <p>Wear an allergy mask if you are going to mow the lawn, work in the garden do other outside chores around the house. You will be surprised to see how much it helps.</p>
+					            <h3><span style="color:#800080;">Shower</span>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+					            <p>Those green or yellow pollen&nbsp;sitting on your car during allergy season, they are also on your hair. You need to wash more often.&nbsp;</p>
+					            <p>Your hair attracts more pollen than you can imagine. This include changing clothes more often.<br>
+					                &nbsp;
+					            </p>
+					            <!--------------------------Banner Link----------------------------- -->
+					            <!--------------------------Banner Link----------------------------- -->
+					            <p>&nbsp;</p>
+					            <p>&nbsp;</p>
+					        </div>
+					    </div>
+					    <!-----------------------------------back_div------------------------- -->                
+					    <div data-inline="true" id="back_intro_adult_allergy_mobile_div" class="" *ngIf="page==1 && mode!=2">
+					        <div class="clearboth divider1"></div>
+					        <div class="centerText"><span class="grayfontSmallSmall">Last updated by pharmacist on  01/25/2016 at 03:07:am</span>
+					        </div>
+					        <p class="centerText">
+					            <a href="#" data-inline="true" class="linkGreen back_adult_recom_allergy_mobile_q1 ui-link" (click)="goBackSymptom()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+					        </p>
+					        <div class="clearboth divider1"></div>
+					        <p class="grayfontSmall greenBorderAll centerText">You can compare <span class="orangefont">antihistamines</span>  or  <span class="redfont">decongestants</span> using our comparison table to see which will work best for you.
+					        </p>
+					        <br>
+					        <p class="centerText">
+					            <a href="#" data-inline="true" class="linkOrangeBorder ui-link" (click)="gotoSubPage(1)">Antihistamine</a>
+					            <a href="#" data-inline="true" class="linkGreenBorder ui-link">Decontestant</a>
+					        </p>
+					    </div>
+					    <!------------------------------End back div---------------- -->
+					    <p>&nbsp;</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightGreen centerText"> <span> Know this about the <span class="bluefont">safe and effective</span> use of this recommendation.</span><br>
+				            </div>
+				            <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Article photo">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <p class="centerText">
+				            <img src="assets/img/people/adult/cold/allergy-lady2.svg" style="width: 120px;" alt="Lady with allergy symptoms">
+				        </p>
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-plus': expands[9], 'ui-icon-minus': !expands[9]}">How this recommendation work<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
+				                <p></p>
+				                <p>Testing recordset join</p>
+				                <p></p>
+				            </div>
+				        </div>
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content" >
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-plus': expands[10], 'ui-icon-minus': !expands[10]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
+				                <div class="greenBorderWhite">
+				                    <ul>
+				                        <li>Recommendation is the opinion of a registegreen US Pharmacist currently practicing as a community pharmacist.</li>
+				                        <li>Recommendation is not an attempt to discuss all possible self care or treatment approach to this health challenge.</li>
+				                        <li>The responsibility of the recommending pharmacist is limited to this question:<br>
+				                            <span class="orangefont"> "If a patient presents with these symptoms, what will you recommend and why?"</span><br>
+				                            It is not an attempt to publish an article on the treatment of any condition. Just what would you tell a patient who present with so and so in the usual course of your practice. 
+				                        </li>
+				                        <li>The pharmacist image presented in this article may or may not be the actual image of the authoring pharmacist.<br>
+				                            Because we insist on using articles written by currently practicing community pharmacists, these pharmacists may choose to remain anonymous especially if they are employed by an employer to avoid being pressugreen to recommend a particular product to drive sales. 
+				                        </li>
+				                        <li>Please read the policies and terms of use for self-care OTC, selfcarepharmacist.com and it's affiliates by clicking on the button below.</li>
+				                    </ul>
+				                </div>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+				<div class="swiper-slide">
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightGreen centerText"> <span> What if you are currently <span class="orangefont">experiencing</span> the conditions listed below?</span><br>
+				            </div>
+				            <div class="clearboth"></div>
+				            <div class="container_12">
+				                <div class="grid_8">
+				                    <br>
+				                    <div class="bubbleRightGreen"> Or if you have a question for the pharmacist? </div>
+				                </div>
+				                <div class="grid_4"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				                </div>
+				            </div>
+				        </div>
+				        <br>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Point Right------------------- -->
+				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-plus': expands[11], 'ui-icon-minus': !expands[11]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
+				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-plus': expands[12], 'ui-icon-minus': !expands[12]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
+				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
+				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
+				                        <div class="clearboth divider1"></div>
+				                        <p class="centerText">
+				                            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
+				                        </p>
+				                        <div class="clearboth divider1"></div>
+				                        <br>                       
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(13)" [ngClass]="{'ui-icon-plus': expands[13], 'ui-icon-minus': !expands[13]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
+				                        <p>Expect a reply as soon as possible.<br>
+				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
+				                        </p>
+				                        <p>If you have a comment and not a question, please post it in the comments section for all to read.</p>
+				                    </div>
+				                </div>
+				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(14)" [ngClass]="{'ui-icon-plus': expands[14], 'ui-icon-minus': !expands[14]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
+				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
+				                        <p>Email addresses or questions are not saved.<br> They are deleted once answegreen and not stogreen in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
+				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authogreen. They are forwarded to the author of the topic and are under no obligation to reply.</p>
+				                        <p>We encourage pharmacists to respond to questions but are under no obligations to answer questions.</p>
+				                    </div>
+				                </div>
+				                <p>&nbsp;</p>
+				            </div>
+				        </div>
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+				<div class="swiper-slide">
+				    <div class="content-slide ui-content">
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				        <div class="maxwidth450">
+				            <div class="ovalBorderRightGreen centerText"> <span>No <span class="greenfont">comments</span> or <span class="orangefont">ratings</span> on this recommendation yet. How about being the first to say something?</span><br>
+				            </div>
+				            <div align="right"> <img src="http://www.selfcarepharmacist.com/images/articles/pharm-donald-green.svg" style="width: 80px;" alt="Pharmacist" align="right">
+				            </div>
+				        </div>
+				        <div class="clearboth divider1"></div>
+				        <br>
+				        <!-----------------End Border right person------------------- -->
+				        <p>&nbsp;</p>
+				        <p class="centerText"> 
+				            <a class="linkBlueBorderThin ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberThin comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
+				        </p>
+				        <div class="comment_why_div" *ngIf="why">
+				            <br>
+				            <ul>
+				                <li>Let others know if the recommendation worked for you.</li>
+				                <li>Share your treatment outcome with others.</li>
+				                <li>Add to the recommendation.</li>
+				                <li>Improve on the recommendation.</li>
+				                <li>Quickest way to ask a pharmacist a question.</li>
+				                <li>What about you answering a question?</li>
+				            </ul>
+				        </div>
+				        <!----------------------------Comments start here------------------------------ -->
+				        <p>&nbsp;</p>
+				        <p>&nbsp;</p>
+				    </div>
+				    <!---------------------End Content-slide------------------------- -->
+				</div>
+			</div>
+		</div>
+	</div>
 </ion-content>

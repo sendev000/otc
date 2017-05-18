@@ -1,18 +1,885 @@
-<!--
-  Generated template for the StomachFluMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>stomach_flu_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Stomach Virus
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgOrange">
+    <p *ngIf="page==0">stomach virus or flu?</p>
+    <p *ngIf="page>0 && page<20">How bad is it?</p>
+    <p *ngIf="page>=20 && page<40">Is it stomach flu?</p>
+    <p *ngIf="page>=40 && page<50">Need a doctor?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-e">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>Stomach flu is a <span class="orangefont">viral</span> inflammation of the stomach and intestines.</span><br>
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="orangeBorder">
+	        <p>Symptoms of stomach virus usually appear within 4 - 48 hours after exposure to the  viral contaminated food or water.</p>
+	        <hr class="hrorange">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/stomach/stomachvirus-lady.svg" width="150" alt="Woman with symptoms of stomach flu">
+	        </p>
+	    </div>
+	    <p class="orangeBorderAll">Let's see if you need to  go to the hospital right away or if it is something you can take care of yourself.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->   
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="stomachflu1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Alright.</span><br>
+	                Assuming you are having <span class="purple_bluefont">diarrhea</span> at the moment.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">The important thing with stomach virus illness is to make sure you are not looking at dehydration or any other potentially life threatening situation. </p>
+	        <p class="orangeBorderAll centerText">Let's start with that.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="stomachflu1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>In addition to the diarrhea, do you also have <span class="redfont">blood</span> in the stool?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or <span class="orangefont">mucus</span> in the stool?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="stomachflu1_mobile_3_y" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It may not be of viral origin.</li>
+	                <br>
+	                <li>You are possibly looking at a bacterial or parasitic cause of  stomach  inflammation.</li>
+	                <br>
+	                <li><span class="grayfont">E.coli, Salmonella, Shigella</span> comes to mind. You will have to go to the emergency room or urgent care clinic for stool testings and even documentation.</li>
+	                <br>
+	                <li> You may have to be given  antibiotic or antiparasitic medication depending on the stool culture and other clinic evaluations. Don't try to ride this out.</li>
+	                <br>
+	                <li>In viral infections,  stools rarely contain mucus or blood.</li>
+	                <br>
+	                <li>All patients with bloody diarrhea will have to be tested for E. coli at a minimum.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about <span class="redfont">fever</span> or <span class="bluefont">chills?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="stomachflu1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li></li>
+	                <li></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you feeling <span class="orangefont">faint,</span> <span class="bluefont">dizzy?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or <span class="orangefont">confused?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="stomachflu1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Trending towards dehydration.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does your mouth feel <span class="bluefont">dry</span> or <span class="orangefont">sticky?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 	 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="stomachflu1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible dehydration territory.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Signs of dehydration:</p>
+	            <ul>
+	                <li>Feeling lethargic</li>
+	                <li>Low blood pressure</li>
+	                <li class="bluefont">Dry mouth</li>
+	                <li class="redfont">Sticky mouth</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does your<span class="bluefont"> eyes</span> look <span class="orangefont">sunken?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 	 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="stomachflu1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Looking at a possible dehydration.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Signs of dehydration:</p>
+	            <ul>
+	                <li>Feeling lethargic</li>
+	                <li>Low blood pressure</li>
+	                <li>Dry mouth</li>
+	                <li>Sticky mouth</li>
+	                <li class="redfont">Sunken eyes</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Have you had a <span class="purple_redfont">urine output</span> the past <span class="orangefont">8 hours</span> or so?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="stomachflu1_mobile_8_y" *ngIf="page==100000">
+	        <!--start 8 div -->
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you feel your <span class="bluefont">heart pounding</span> or <span class="orangefont">racing?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="stomachflu1_mobile_9_y" *ngIf="page==14">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible sign of dehydration.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="stomachflu1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_9_n" *ngIf="page==15">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span><span class="redfont">Pinch</span> the skin of the stomach or thigh using the thumb and a bent forefinger.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Did the skin get <span class="redfont">back </span>to normal immediately after releasing it?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder centerText">This is known as the <span class="redfont">'Pinch test'.</span> Though it is used in children, but you can try it for yourself.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="stomachflu1_mobile_10_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="stomachflu1_mobile_10_y" *ngIf="page==16">
+	        <!--start  10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="redfontLarge">No?</span><br>
+	                If you are not dehydrated, the skin fold should retract immediately.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Results to expect:</p>
+	            <ul>
+	                <li><span class="greenfontSmall">Normal:</span><br>Skin fold retracts immediately.</li>
+	                <br>
+	                <li><span class="orangefontSmall">Mild or moderate dehydration:</span><br>Skin fold is visible for less than 2 seconds while retracting.</li>
+	                <br>
+	                <li><span class="redfontSmall">Severe dehydration:</span><br> Skin fold visible for longer than 2 seconds while retracting.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu1_mobile_10_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont firstname"> </span><br>
+	                Dehydration is a <span class="redfontSmall">life threatening</span> <span class="redfont">emergency. </span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If you are looking at dehydration, go to the emergency room or the nearest urgent care clinic. Do not delay.</p>
+	        <p class="redBorderAll centerText">If you don't think you are dehydrated, let's continue. If you answered <span class="greenfont">'Yes'</span> to the 'Pinch test' question, tap on the <span class="orangefont">'FYI'</span> button below to see the result to expect in case you want to try it later.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="stomachflu1_mobile_10_pop-placeholder">
+	            <!-- placeholder for stomachflu1_mobile_10_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="stomachflu1_mobile_10_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end  10 div -->
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="stomachflu2_mobile_1" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Alright.</span><br>
+	                <span class="purple_bluefont">Diarrhea</span> can be caused by many things, even nerve problems.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Let's narrow it down to <span class="orangefont">stomach flu</span> as much as possible. Then you will see if you can ride it out or need to go to the doctor.
+	        </p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="stomachflu2_mobile_2_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does anybody else have the same<span class="orangefont"> symptoms</span> you are experiencing?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="stomachflu2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="stomachflu2_mobile_3_y" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                <span class="redfont">Stomach flu</span> has an outbreak nature. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder"><span class="pinkfont">Gastroenteritis</span> can affect one person or a group of people who all ate the same food or drank the same water.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu2_mobile_3_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did you come <span class="bluefont">in contact </span>with similarly ill people within the last 2 days?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(24)">Yes</button>
+	            <button data-inline="true" class="stomachflu2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(25)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="stomachflu2_mobile_4_y" *ngIf="page==24">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                <span class="orangefont">Strong</span> possibility you are looking at<span class="redfont"> stomach flu.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(25)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu2_mobile_4_n" *ngIf="page==25">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did it start after you ate <span class="purple_bluefont">dairy products?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(26)">Yes</button>
+	            <button data-inline="true" class="stomachflu2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(27)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="stomachflu2_mobile_5_y" *ngIf="page==26">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Possibly looking at <span class="blue_brightfont">lactose intolerance.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(27)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu2_mobile_5_n" *ngIf="page==27">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you taking any <span class="bluefont">antibiotics</span> lately?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(28)">Yes</button>
+	            <button data-inline="true" class="stomachflu2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(29)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="stomachflu2_mobile_6_y" *ngIf="page==28">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Antibiotics can cause diarrhea.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(29)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu2_mobile_6_n" *ngIf="page==29">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did you eat a new kind of <span class="blue_brightfont">fat-free</span> potato chips or ice cream?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(30)">Yes</button>
+	            <button data-inline="true" class="stomachflu2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(31)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="stomachflu2_mobile_7_y" *ngIf="page==30">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                The <span class="orangefont">olestra</span> in these can cause diarrhea.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->   	 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="stomachflu2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="stomachflu2_mobile_7_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Alright.</span><br>
+	                Let's see if you need to see a doctor right away or if you can ride this out.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>State other things that might cause diarrhea. (See merck manual)</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="slider_stomachflu3_mobile_div" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>How many <span class="orangefont">times</span> have you used the bathroom since the diarrhea started?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="14" step="1" [(ngModel)]="currentTimes" color="sliderPink">
+							<ion-label range-left>{{currentTimes}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	            <label for="slider_stomachflu3_mobile" id="slider_stomachflu3_mobile-label">Times:</label>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_stomachflu3_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(41)"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="displayNone" id="selected_stomachflu3_mobile_value_container" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge firstname"> </span><br><br>
+	                <div id="selected_stomachflu3_mobile_value">
+	                	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentTimes}}</span>times
+	                </div>
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist">
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div id="stomachflu3_mobile_option1" *ngIf="page==41 && currentTimes<=4">
+	        <p class="greenBorder greenfont centerText">You may be able to ride this out.</p>
+	        <p class="greenBorderAll">If you are seeing the signs of dehydration, you must seek urgent care or give the doctor a call.</p>
+	        <div>
+	            <p class="greenBorder centerText">Those signs are:</p>
+	            <ul>
+	                <li>Dry or sticky mouth</li>
+	                <br>
+	                <li>Low or no urine output for 8 hrs. <span class="grayfontSmall">Urine looks dark yellow or amber</span></li>
+	                <br>
+	                <li>No tears</li>
+	                <br>
+	                <li>Sunken eyes</li>
+	                <br>
+	                <li>Increased thirst</li>
+	                <br>
+	                <li>Palpitations <span class="grayfontSmall">(feeling the heart pounding)</span></li>
+	                <br>
+	                <li>Confusion and dizziness</li>
+	                <br>
+	                <li>No sweat.</li>
+	                <br>
+	                <li>Dry skin that sags slowly into position when pinched up</li>
+	                <br>
+	                <li>Cool hands and feet.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorder">Let's see what a pharmacist recommend you do or use over-the-counter to take care of this stomach flu situation that you may have.</p>
+	    </div>
+	    <div id="stomachflu3_mobile_option2" *ngIf="page==41 && currentTimes<=7 && currentTimes>4">
+	        <p class="orangeBorder  orangefont centerText">Watch out for dehydration.</p>
+	        <p class="orangeBorderAll">If you have other symptoms or feeling weak from the diarrhea, you should seek urgent care or go to the emergency room.</p>
+	        <p class="orangeBorder">If you are seeing the signs of dehydration, you must seek urgent care or give the doctor a call.</p>
+	        <div>
+	            <p class="redBorder centerText">Those signs are:</p>
+	            <ul>
+	                <li>Dry or sticky mouth</li>
+	                <br>
+	                <li>Low or no urine output for 8 hrs. <span class="grayfontSmall">Urine looks dark yellow or amber</span></li>
+	                <br>
+	                <li>No tears</li>
+	                <br>
+	                <li>Sunken eyes</li>
+	                <li>Increased thirst</li>
+	                <br>
+	                <li>Palpitations <span class="grayfontSmall">(feeling the heart pounding)</span></li>
+	                <br>
+	                <li>Confusion and dizziness</li>
+	                <br>
+	                <li>No sweat.</li>
+	                <br>
+	                <li>Dry skin that sags slowly into position when pinched up</li>
+	                <br>
+	                <li>Cool hands and feet.</li>
+	            </ul>
+	        </div>
+	        <p class="orangeBorder">Let's see what a pharmacist recommend you do or use over-the-counter if the list above do not apply to you.</p>
+	    </div>
+	    <div id="stomachflu3_mobile_option3" *ngIf="page==41 && currentTimes<=14 && currentTimes>7">
+	        <p class="redBorder redfontLarge centerText">Seek Urgent Care.</p>
+	        <p class="redBorderAll">This may not be due to stomach flu or you have it very bad.</p>
+	        <p class="redBorder">If you are seeing the signs of dehydration, you must seek urgent care or go to the emergency room.</p>
+	        <div>
+	            <p class="redBorder centerText">Those signs are:</p>
+	            <ul>
+	                <li>Dry or sticky mouth</li>
+	                <br>
+	                <li>Low or no urine output for 8 hrs. <span class="grayfontSmall">Urine looks dark yellow or amber</span></li>
+	                <br>
+	                <li>No tears</li>
+	                <br>
+	                <li>Sunken eyes</li>
+	                <br>
+	                <li>Increased thirst</li>
+	                <br>
+	                <li>Palpitations <span class="grayfontSmall">(feeling the heart pounding)</span></li>
+	                <br>
+	                <li>Confusion and dizziness</li>
+	                <br>
+	                <li>No sweat.</li>
+	                <br>
+	                <li>Dry skin that sags slowly into position when pinched up</li>
+	                <br>
+	                <li>Cool hands and feet.</li>
+	            </ul>
+	        </div>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_stomachflu3_mobile" *ngIf="page==41">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_stomachflu3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackTimes()">Back</button>
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" class="stomach_flu_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Pharmacist</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="stomachflu1_mobile_10_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="stomachflu1_mobile_10_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="stomachflu1_mobile_10_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Results to expect:</p>
+	            <ul>
+	                <li><span class="greenfontSmall">Normal:</span><br>Skin fold retracts immediately.</li>
+	                <br>
+	                <li><span class="orangefontSmall">Mild or moderate dehydration:</span><br>Skin fold is visible for less than 2 seconds while retracting.</li>
+	                <br>
+	                <li><span class="redfontSmall">Severe dehydration:</span><br> Skin fold visible for longer than 2 seconds while retracting.</li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
 </ion-content>

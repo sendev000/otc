@@ -1008,12 +1008,12 @@
 	    <div class="clearboth divider1"></div>
 	    <p class="centerText">
 	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
-	        <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(61)">Continue</a>
+	        <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(61)">Continue</a>
 	    </p>
 	    <p>&nbsp;</p>
 	</div>
 
-	<div class="ui-content" *ngIf="page>=60 && page<70">
+	<div class="ui-content" *ngIf="page>60 && page<70">
 	    <div id="slider_nausea4_mobile_div" *ngIf="page==61">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
@@ -1034,9 +1034,9 @@
 	            <label for="slider_nausea4_mobile" id="slider_nausea4_mobile-label">Times</label>
 	        </div>
 	        <div class="clearboth divider1"></div>
-	        <p class="centerText">
-	        <div class="ui-btn ui-input-btn ui-btn-o ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_nausea4_mobile_value" data-inline="true" data-theme="o" value="Here you go" (click)="togglePage(62)"></div>
-	        </p>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-btn-o ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_nausea4_mobile_value" data-inline="true" data-theme="o" value="Here you go" (click)="togglePage(62)"></div>
+	        </div>
 	    </div>
 	    <br>
 	    <div class="container_12" id="selected_nausea4_mobile_value_container" *ngIf="page==62">
@@ -1121,14 +1121,14 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end first question div --> 
 	    <!--start 3 div -->   
-	    <div id="nausea3_mobile_3_y" class="displayNone">
+	    <div id="nausea3_mobile_3_y" *ngIf="page==71">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightYellow centerText">
 	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
@@ -1148,12 +1148,12 @@
 	        <!---------------------End Seek urgent care------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
-	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_3_n" class="displayNone">
+	    <div id="nausea3_mobile_3_n" *ngIf="page==72">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>Do you have <span class="redfont">burning pain</span> in the <span class="orangefont">stomach</span> with this nausea and or vomiting?</span><br>
@@ -1164,13 +1164,13 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 3 div --> 
-	    <div id="nausea3_mobile_4_y" class="displayNone">
+	    <div id="nausea3_mobile_4_y" *ngIf="page==73">
 	        <!--start 4 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightYellow centerText">
@@ -1191,12 +1191,12 @@
 	        <!---------------------End Seek urgent care------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
-	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_4_n" class="displayNone">
+	    <div id="nausea3_mobile_4_n" *ngIf="page==74">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>What about burning pain in the <span class="purplefont">lower part</span> of the <span class="purplefont">chest?</span></span><br>
@@ -1219,13 +1219,13 @@
 	        <!-----------------End Point Right------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 4 div --> 
-	    <div id="nausea3_mobile_5_y" class="displayNone">
+	    <div id="nausea3_mobile_5_y" *ngIf="page==75">
 	        <!--start 5 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
@@ -1238,11 +1238,11 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_5_n" class="displayNone">
+	    <div id="nausea3_mobile_5_n" *ngIf="page==76">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>Are you in addition to the nausea and/or vomiting <span class="purple_redfont">feeling dizzy?</span></span><br>
@@ -1266,13 +1266,13 @@
 	        <p class="orangeBorderAll">And you are in a motion situation like a moving boat, train, airplane, car, or amusement park rides?</p>
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 5  div --> 
-	    <div id="nausea3_mobile_6_y" class="displayNone">
+	    <div id="nausea3_mobile_6_y" *ngIf="page==77">
 	        <!--start 6 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
@@ -1287,11 +1287,11 @@
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText"> 
 	            <a href="../../ear/symptom/motion_sickness_mobile.php" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Motion<br>Sickness</a>
-	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>	
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_6_n" class="displayNone">
+	    <div id="nausea3_mobile_6_n" *ngIf="page==78">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>Do you have a severe <span class="bluefont">headache</span> with this nausea/vomiting?</span><br>
@@ -1314,13 +1314,13 @@
 	        </div>
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(79)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(80)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 6 div --> 
-	    <div id="nausea3_mobile_7_y" class="displayNone">
+	    <div id="nausea3_mobile_7_y" *ngIf="page==79">
 	        <!--start 7 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightYellow centerText">
@@ -1340,12 +1340,12 @@
 	        <!---------------------End Seek urgent care------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
-	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(80)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_7_n" class="displayNone">
+	    <div id="nausea3_mobile_7_n" *ngIf="page==80">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>Are you of child bearing age and if so did you <span class="pinkfont">miss a period?</span></span><br>
@@ -1356,13 +1356,13 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(82)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 7 div --> 
-	    <div id="nausea3_mobile_8_y" class="displayNone">
+	    <div id="nausea3_mobile_8_y" *ngIf="page==81">
 	        <!--start 8 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
@@ -1376,11 +1376,11 @@
 	        <p class="orangeBorder">Nausea or vomiting due to pregnancy often occur in the morning or can be triggered by food.</p>
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_8_n" class="displayNone">
+	    <div id="nausea3_mobile_8_n" *ngIf="page==82">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span> Are you <span class="greenfont">diabetic?</span></span><br>
@@ -1390,13 +1390,13 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(83)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 8 div --> 
-	    <div id="nausea3_mobile_9_y" class="displayNone">
+	    <div id="nausea3_mobile_9_y" *ngIf="page==83">
 	        <!--start 9 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightYellow centerText">
@@ -1416,12 +1416,12 @@
 	        <!---------------------End Seek urgent care------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
-	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_9_n" class="displayNone">
+	    <div id="nausea3_mobile_9_n" *ngIf="page==84">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span>Did you just start taking a new <span class="purplefont">medication?</span></span><br>
@@ -1432,13 +1432,13 @@
 	        <!-----------------End Border right person------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
-	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	            <button data-inline="true" class="nausea3_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(85)">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(86)">No</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
 	    <!--end 9  div --> 
-	    <div id="nausea3_mobile_10_y" class="displayNone">
+	    <div id="nausea3_mobile_10_y" *ngIf="page==85">
 	        <!--start 10 div -->
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
@@ -1452,11 +1452,11 @@
 	        <p class="orangeBorder">Some medications may also cause nausea or vomiting days after you started taking them. Even Acetaminophen.</p>
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(86)">Continue</button>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>
-	    <div id="nausea3_mobile_10_n" class="displayNone">
+	    <div id="nausea3_mobile_10_n" *ngIf="page==86">
 	        <div class="maxwidth450">
 	            <div class="ovalBorderRightOrange centerText">
 	                <span class="purplefont firstname"> </span><br>
@@ -1475,7 +1475,7 @@
 	        <!--------------------------Banner Link----------------------------- -->
 	        <div class="clearboth divider1"></div>
 	        <p class="centerText">
-	            <a href="#nausea_mobile_4" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
 	        </p>
 	        <p>&nbsp;</p>
 	    </div>

@@ -370,6 +370,9 @@ import { WristPainInfographicsMobilePage } from '../pages/wrist-pain-infographic
 import { ElbowInfographicsMobilePage } from '../pages/elbow-infographics-mobile/elbow-infographics-mobile';
 import { DiarrheaInfographicsMobilePage } from '../pages/diarrhea-infographics-mobile/diarrhea-infographics-mobile';
 import { NauseaInfographicsMobilePage } from '../pages/nausea-infographics-mobile/nausea-infographics-mobile';
+import { StomachAcheInfographicsMobilePage } from '../pages/stomach-ache-infographics-mobile/stomach-ache-infographics-mobile';
+import { StomachFluInfographicsMobilePage } from '../pages/stomach-flu-infographics-mobile/stomach-flu-infographics-mobile';
+import { FoodPoisoningInfographicsMobilePage } from '../pages/food-poisoning-infographics-mobile/food-poisoning-infographics-mobile';
 
 import { ContactSocialMobilePage } from '../pages/contact-social-mobile/contact-social-mobile';
 
@@ -742,6 +745,9 @@ import { AuthService} from '../pages/providers/auth-service';
     ElbowInfographicsMobilePage,
     DiarrheaInfographicsMobilePage,
     NauseaInfographicsMobilePage,
+    StomachAcheInfographicsMobilePage,
+    StomachFluInfographicsMobilePage,
+    FoodPoisoningInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],
@@ -1119,6 +1125,9 @@ import { AuthService} from '../pages/providers/auth-service';
     ElbowInfographicsMobilePage,
     DiarrheaInfographicsMobilePage,
     NauseaInfographicsMobilePage,
+    StomachAcheInfographicsMobilePage,
+    StomachFluInfographicsMobilePage,
+    FoodPoisoningInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],

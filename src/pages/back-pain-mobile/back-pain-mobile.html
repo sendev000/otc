@@ -1,18 +1,938 @@
-<!--
-  Generated template for the BackPainMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>back_pain_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Back Pain
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange" *ngIf="page==0">
+    <p *ngIf="page==0">Lower back pain?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange" *ngIf="page>=10 && page<30">
+    <p *ngIf="page>=10 && page<30">How bad is it?</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	    <p>&nbsp;</p>
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>We will refer mainly to pain felt in the <span class="orangefont">lower back.</span></span><br>
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="orangeBorder">
+	        <p>This is common because the lower back supports most of your body's weight.</p>
+	        <hr class="hrorange">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/chest/backpain-lady.svg" width="180" alt="">
+	        </p>
+	        <p class="orangeBorderAll centerText">Let's see what you are looking at.</p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> 
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>0 && page<10">
+	    <p>&nbsp;</p>
+	    <div id="backpain1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did this back pain occur after a severe <span class="redfont">injury?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Severe <span class="bluefont">blow</span> or <span class="redfont">fall?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="backpain1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="backpain1_mobile_3_y" *ngIf="page==2">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is this back pain so bad you can <span class="orangefont">hardly</span> move?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="backpain1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="backpain1_mobile_4_y" *ngIf="page==4">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Over-the-counter pain reliever is not going to cut this.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span> Let's have an idea of what may be <span class="purple_bluefont">causing</span> this back pain.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">This assumes no injury.</p>
+	        <p class="orangeBorderAll">Know that back pain can be caused by many things.  Even doctors have difficulties diagnosing back pain due to many factors involved.</p>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/chest/backache-lady.svg" width="100" alt="">
+	        </p>
+	        <p class="orangeBorderAll">Let's rule out anything major and see if over-the-counter remedies would give you relief until you see a specialist.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	</div>
 
+	<div class="ui-content" *ngIf="page>=10 && page<30">
+	    <div id="backpain_sciatica_mobile_2_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is this a pain that goes from the <span class="bluefont">lower back</span> into your <span class="bluefont">buttocks</span> and ...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        ... down the <span class="bluefont">back</span> of your thigh, calf and leg?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset orangeBorder" src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(12)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="backpain_sciatica_mobile_3_y" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Let's rule out <span class="redfont">sciatic nerve pain</span> <span class="grayfont">(sciatica)</span> or <span class="orangefont">herniated disc.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">Know that sciatic nerve pain is a symptom of a herniated or slipped disc.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_3_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you experiencing <span class="pinkfont">numbness</span> and <span class="orangefont">tingling</span> of the affected leg?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Leg feeling <span class="orangefont">weak?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="backpain_sciatica_mobile_4_y" *ngIf="page==13">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This is a sign of <span class="redfont">sciatica.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">You may have pain in one part of your leg and numbness in another.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_4_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is this like a <span class="redfont">burning</span> or <span class="orangefont">stabbing</span> pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="backpain_sciatica_mobile_5_y" *ngIf="page==15">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_5_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Try <span class="purplefont">lifting</span> your legs straight up while lying down.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Did the <span class="redfont">pain get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset orangeBorder" src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="backpain_sciatica_mobile_6_y" *ngIf="page==17">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Looking at a possible <span class="orangefont">sciatic nerve pain.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_6_n" *ngIf="page==18">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Try <span class="orangefont">coughing, laughing or sneezing.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Did the <span class="redfont">pain get worse?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset orangeBorder" src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(19)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(20)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="backpain_sciatica_mobile_7_y" *ngIf="page==19">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This is a sign of sciatic nerve pain <span class="orangefont">(sciatica).</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(20)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_7_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Try <span class="bluefont">bending</span> the foot inward or downwards.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Are you <span class="redfont">having difficulty</span> with this?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset orangeBorder" src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="backpain_sciatica_mobile_8_y" *ngIf="page==21">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Pressure on the <span class="orangefont">sciatic nerve</span> can make this hard to do.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_8_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did this start <span class="redfont">suddenly?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        And is getting <span class="orangefont">severe?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_sciatica_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="backpain_sciatica_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="backpain_sciatica_mobile_9_y" *ngIf="page==23">
+	        <!--start follow up 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to rule out nerve damage.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain_sciatica_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_sciatica_mobile_9_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont firstname"> </span><br>
+	                Those were brief signs and symptoms of <span class="redfont">sciatica.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Sciatica occurs when there is pressure or injury to the sciatic nerve which starts in the lower spine and runs down the back of each leg. </p>
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="backpain_sciatica_mobile_9_pop-placeholder">
+	            <!-- placeholder for backpain_sciatica_mobile_9_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <p class="redBorderAll">If the pain is sharp and severe, you should seek urgent care or go to the emergency room. </p>
+	        <p class="redBorder">If not, let's continue and see what a pharmacist recommend you do for now until you can see a doctor for a more comprehensive evaluation.</p>
+	        <p class="redBorderAll">We will take a brief look at other possible causes of lower back pain before you see what you can use over the counter.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-rel="dialog" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="backpain_sciatica_mobile_9_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="backpain_disc_mobile_2_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you feel the pain <span class="bluefont">anywhere else</span> apart from the back?</span><br>
+	                <span class="grayfontSmall">(like in your hip, thigh, leg or feet)</span>  
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="backpain_disc_mobile_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Possible nerve <span class="orangefont">pressure or damage</span> in the <span class="bluefont">spine</span> area.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">If the pain is sudden and sharp, you should seek urgent care or emergency room visit.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_3_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you have <span class="redfont">fever</span> with this back pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="backpain_disc_mobile_4_y" *ngIf="page==33">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible infection</li>
+	                <li>More serious than you think.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain_disc_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_4_n" *ngIf="page==34">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is the back and spine <span class="redfont">red</span> and/or <span class="purple_redfont">swollen</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="backpain_disc_mobile_5_y" *ngIf="page==35">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to rule out infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain_disc_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_5_n" *ngIf="page==36">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you also have <span class="redfont">blood </span>in the <span class="bluefont">urine</span> with this back pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="backpain_disc_mobile_6_y" *ngIf="page==37">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_6_n" *ngIf="page==38">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about <span class="redfont">burning</span> pain while <span class="bluefont">urinating </span>and your back is hurting you?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="backpain_disc_mobile_7_y" *ngIf="page==39">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible urinary tract infection</li>
+	                <li>Kidney infection.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain_disc_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_7_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>With this back pain is there also <span class="redfont"> sudden</span> loss of <span class="purple_bluefont">bowel or bladder</span> control?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="backpain_disc_mobile_8_y" *ngIf="page==41">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Need to rule out severe nerve damage.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="backpain_disc_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_8_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does the affected area on the back feel <span class="bluefont">tight?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        like a<span class="purplefont"> knot?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="" width="70" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="backpain_disc_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="backpain_disc_mobile_9_y" *ngIf="page==43">
+	        <!--start follow up 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Possible <span class="purple_bluefont">muscle spasm</span> going on with the back muscles.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">You will need to go to the nearest urgent care clinic for this as this can be very painful.</p>
+	        <p class="redBorder centerText"> There are no muscle relaxants over the counter.</p>
+	        <p class="redBorderAll">If the pain is not too severe, let's continue and see what a pharmacist recommend you do for now.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="backpain_disc_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="backpain_disc_mobile_9_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont">Alright.</span><br>
+	                Assuming from here on that you are looking at a back <span class="purple_redfont">muscle sprain / strain.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="blueBorder centerText">You'll usually first feel back pain just after you:</p>
+	            <ul>
+	                <li>improperly lifted a heavy object</li>
+	                <br>
+	                <li>suddenly exerted a physical effort</li>
+	                <br>
+	                <li>slept wrongly on your stomach</li>
+	                <br>
+	                <li>sat in one position for a long time</li>
+	                <br>
+	                <li>sat with a thick wallet in your back pocket</li>
+	                <br>
+	                <li>carried a heavy backpack or shoulder bag</li>
+	                <br>
+	                <li>lack muscle tone</li>
+	                <br>
+	                <li>have excess weight around your middle.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder centerText">Let's continue and see what a pharmacist recommend you do. </p>
+	        <p class="redBorderAll centerText">Or do you think you should seek urgent care from the discussions so far?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="slider_backpain3_mobile_div" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>How <span class="redfont">bad</span> is this back pain on a scale of 1 to 10</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <label for="slider_backpain3_mobile" id="slider_backpain3_mobile-label">I say a:</label>
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="10" step="1" [(ngModel)]="currentPain" color="sliderPink">
+							<ion-label range-left>{{currentPain}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText">
+	        	<div class="ui-btn ui-input-btn ui-btn-o ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_backpain3_mobile_value" data-inline="true" data-theme="o" value="Here you go" (click)="togglePage(51)"></div>
+	        </div>
+	    </div>
+	    <br>
+	    <div id="selected_backpain3_mobile_value_container" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <div id="selected_backpain3_mobile_value">
+	                	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentPain}}</span>
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-greg-orange.svg" alt="Pharmacist" width="100"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div id="backpain3_mobile_option1" *ngIf="currentPain<=3">
+	            <h3 class="blueBorder bluefont centerText">Not too bad so far.</h3>
+	            <p class="blueBorderAll">Let's see what a pharmacist recommend over the counter to help with this back pain.</p>
+	            <p class="blueBorderAll centerText">Or would you like to see the nearest urgent care clinic to you?</p>
+	        </div>
+	        <div id="backpain3_mobile_option2" *ngIf="currentPain<=7 && currentPain>3">
+	            <h3 class="orangeBorder orangefont centerText">Getting bad.</h3>
+	            <p class="orangeBorderAll">Let's see what a pharmacist recommend over the counter to help with this back pain.</p>
+	            <p class="orangeBorderAll">You should see a doctor as soon as possible except if you are familiar with the cause.</p>
+	            <p class="redBorderAll centerText">Would you like to see the nearest urgent care clinic to you?</p>
+	        </div>
+	        <div id="backpain3_mobile_option3" *ngIf="currentPain<=10 && currentPain>7">
+	            <h3 class="redBorder redfont centerText">Pretty bad.</h3>
+	            <p class="redBorderAll">You should see a doctor as soon as possible except if you are familiar with the cause.</p>
+	            <p class="redBorderAll">Let's see what a pharmacist recommend over the counter to help with this back pain until you can see a doctor.</p>
+	            <p class="redBorderAll centerText">Or do you think you should seek urgent care right now?</p>
+	        </div>
+	        <!-------------Start Options button------------------ --> 
+	        <div id="options_btn_backpain3_mobile">
+	            <!--------------------------Banner Link----------------------------- -->
+	            <div>
+	            </div>
+	            <!--------------------------Banner Link----------------------------- -->
+	            <input type="hidden" class="ClickValuePage1_25" value="">
+	            <input type="hidden" class="ClickValuePage1_50" value="">
+	            <input type="hidden" class="ClickValuePage1_100" value="200">
+	            <input type="hidden" class="ClickValuePage2_25" value="">
+	            <input type="hidden" class="ClickValuePage2_50" value="">
+	            <input type="hidden" class="ClickValuePage2_100" value="">
+	            <input type="hidden" class="ClickValuePage3_25" value="">
+	            <input type="hidden" class="ClickValuePage3_50" value="">
+	            <input type="hidden" class="ClickValuePage3_100" value="">
+	            <input type="hidden" class="totalResult" value="">
+	            <div class="clearboth divider1"></div>
+	            <p class="centerText">
+	                <button class="back_backpain3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackDay()">Back</button>
+	                <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	                <a href="#" class="back_pain_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	            </p>
+	        </div>
+	        <!--------------End Options Button----------------------- -->
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="backpain_sciatica_mobile_9_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="backpain_sciatica_mobile_9_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="backpain_sciatica_mobile_9_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p>Know that it is itself a symptom  of another medical condition, not a medical condition on its own. </p>
+	        <p>Causes include slipped or herniated discs, injury, spinal stenosis, pregnancy, cancer to name a few.</p>
+	        <p>Because of this, it is advisable to see a doctor as soon as possible to see what is causing it.</p>
+	        <p> If sciatica is suspected by the doctor, he or she may test your strength, reflexes, and sensation.</p>
+	    </div>
+	</div>
 </ion-content>

@@ -1,18 +1,1699 @@
-<!--
-  Generated template for the ChestpainMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>chestpain_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Chest pain
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight" *ngIf="page==0">
+    <p *ngIf="page==0">Chest pain?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight" *ngIf="page>=10 && page<170">
+    <p *ngIf="page>=10 && page<30">Heart attack?</p>
+    <p *ngIf="page>=30 && page<50">Is it pneumonia?</p>
+    <p *ngIf="page>=50 && page<70">Is it acid reflux?</p>
+    <p *ngIf="page>=70 && page<90">A panic attack?</p>
+    <p *ngIf="page>=90 && page<110">Costochondritis?</p>
+    <p *ngIf="page>=110 && page<130">Shingles?</p>
+    <p *ngIf="page>=130 && page<150">Is it gallstones?</p>
+    <p *ngIf="page>=150 && page<170">Text</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-p">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightGreen centerText">
+	            <span>This will assume pain  <span class="greenfont">between</span> your neck and upper abdomen.</span><br>
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/male/pharm-peter-teal.svg" alt="" width="100">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="greenBorder">
+	        <p>You must never  dismiss chest pain without an explanation of what is causing it.</p>
+	        <hr class="hrgreen">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/chest/chestpain-lady.svg" width="180" alt="">
+	        </p>
+	    </div>
+	    <p class="greenBorderAll centerText">Let's figure this out.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<10">
+	    <div id="chestpain_mobile_1_q1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>With this chest pain, which of these are you <span class="orangefont">currently</span> experiencing?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p>&nbsp;</p>
+	        <div data-role="fieldcontain" id="chestpain_mobile_1_q1_form_div" class="ui-field-contain">
+	            <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+	                <div class="ui-controlgroup-controls ">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[0], 'ui-checkbox-on': symptoms[0]}" (click)="toggleSymptom(0)">Crushing, squeezing or burning feeling in the chest</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_0" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[0]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[1], 'ui-checkbox-on': symptoms[1]}" (click)="toggleSymptom(1)">Tightness or pressure in the chest, <span class="grayfontSmall">like someone sitting on the chest.</span></label><input name="chestpain_mobile_1_q1" type="checkbox" class="chestpain_mobile_1Q1" id="chestpain_mobile_1_q1_1" value="" [(ngModel)]="symptoms[1]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[2], 'ui-checkbox-on': symptoms[2]}" (click)="toggleSymptom(2)">Pain spreading to the jaw</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_2" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[2]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[3], 'ui-checkbox-on': symptoms[3]}" (click)="toggleSymptom(3)">Pain spreading to between the shoulder blades</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_3" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[3]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[4], 'ui-checkbox-on': symptoms[4]}" (click)="toggleSymptom(4)">Pain spreading to the left arm</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_4" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[4]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_5" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[5], 'ui-checkbox-on': symptoms[5]}" (click)="toggleSymptom(5)">Pain centered under the breastbone,<span class="grayfontSmall"> a little to the left.</span></label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_5" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[5]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_7" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[6], 'ui-checkbox-on': symptoms[6]}" (click)="toggleAllSymptoms(true)">All of the above</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_7" class="chestpain_mobile_1Q1" value="" [(ngModel)]="symptoms[6]"></div>
+	                    <hr class="hrgreen">
+	                    <div class="ui-checkbox"><label for="chestpain_mobile_1_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left" [ngClass]="{'ui-checkbox-off': !symptoms[7], 'ui-checkbox-on': symptoms[7]}" (click)="toggleAllSymptoms(false)">None of these</label><input type="checkbox" name="chestpain_mobile_1_q1" id="chestpain_mobile_1_q1_6" value="" [(ngModel)]="symptoms[7]"></div>
+	                    <hr class="hrgreen">
+	                </div>
+	            </fieldset>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <div class="centerText"> 
+	        	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you  go<input type="button" data-inline="true" id="get_chestpain_mobile_1_q1" value="Here you  go" (click)="togglePage(2)"></div>
+	        </div>
+	    </div>
+	    <br><!-------Selected division----- -->
+	    <div id="selected_chestpain_mobile_1_q1_container" *ngIf="page==1 && mode==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <div id="selected_chestpain_mobile_1_q1">
+	                	<span class="redfontLarge">Oops!,</span>You told us nothing
+	                </div>
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	    </div>
+	    <!------End Selected division----- -->
+	    <div id="chestpain_mobile_1_other" *ngIf="page==2 && mode==3">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="redfont">Hmmm,</span><br>
+	                Let's answer the next questions <span class="purplefont">carefully.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder centerText">We need to rule out a <span class="redfont">heart attack</span> coming on.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_chestpain_mobile_1_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" (click)="togglePage(10)" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	    </div>
+	    <div id="chestpain_mobile_1_all" *ngIf="page==2 && mode==2">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="greenBorderAll">
+	            <h3 class="purpleBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible heart attack going on.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorderAll grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the questions asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_chestpain_mobile_1_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	        </p>
+	    </div>
+	    <div id="chestpain_mobile_1_none" *ngIf="page==2 && mode==1">
+	        <p>&nbsp;</p>
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="greenfontLarge">None?</span><br>
+	                That <span class="redfont">ruled out</span> a heart attack going on.
+	            </div>
+	            <div align="right">
+	                <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder">But bear in mind that some people <span class="grayfontSmall">(especially if you are diabetic)</span> have <span class="redfont">"silent"</span> heart attacks with mild symptoms or none at all.</p>
+	        <p class="greenBorderAll">Once again you must never  dismiss chest pain without an explanation of what is causing it.</p>
+	        <p class="greenBorder">Now, let's rule out other major potentially dangerous cause of chest pain.</p>
+	        <p class="greenBorderAll">Remember, chest pain isn't always caused by heart problems. But, because you can't always determine the cause yourself, don't delay in seeking medical attention.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_chestpain_mobile_1_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	    </div>
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=10 && page<30">
+	    <div id="chestpain_mobile_2_2_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Is this pain <span class="redfont">sharp</span> and you also have <span class="bluefont">shortness of breath?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="chestpain_mobile_2_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_mobile_2_3_y" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="greenBorderAll">
+	            <h3 class="purpleBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Might be looking at a heart attack.</li>
+	                <li>If you suspect one, or if you have a family history of heart disease, don't wait.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="greenBorderAll">Better safe than sorry. Call 911. </p>
+	        <p class="greenBorder">Don't try to drive yourself to the emergency room. Paramedics are trained to treat you on the way to the hospital.</p>
+	        <p class="greenBorderAll">While waiting for help, chew aspirin (one 325mg) tablet if you are not allergic to aspirin or do not have bleeding problems.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="chestpain_mobile_2_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_mobile_2_3_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Are you experiencing <span class="purplefont">rapid, fluttering</span> ...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        ... or <span class="purplefont">pounding</span> heartbeats?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="chestpain_mobile_2_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_mobile_2_4_y" *ngIf="page==13">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="greenBorderAll">
+	            <h3 class="purpleBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Might be looking at a heart attack.</li>
+	                <li>If you suspect one, or if you have a family history of heart disease, don't wait.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="greenBorderAll">Better safe than sorry. Call 911. </p>
+	        <p class="greenBorder">Don't try to drive yourself to the emergency room. Paramedics are trained to treat you on the way to the hospital.</p>
+	        <p class="greenBorderAll">While waiting for help, chew aspirin (one 325mg) tablet if you are not allergic to aspirin or do not have bleeding problems.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="chestpain_mobile_2_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_mobile_2_4_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>With this chest pain, are you feeling <span class="purple_redfont">nausea?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        <span class="purplefont">Dizzy</span> and or <span class="purple_redfont">sweating?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="chestpain_mobile_2_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_mobile_2_5_y" *ngIf="page==15">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="greenBorderAll">
+	            <h3 class="purpleBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Might be looking at a heart attack.</li>
+	                <li>If you suspect one, or if you have a family history of heart disease, don't wait.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="greenBorderAll">Better safe than sorry. Call 911. </p>
+	        <p class="greenBorder">Don't try to drive yourself to the emergency room. Paramedics are trained to treat you on the way to the hospital.</p>
+	        <p class="greenBorderAll">While waiting for help, chew aspirin (one 325mg) tablet if you are not allergic to aspirin or do not have bleeding problems.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="chestpain_mobile_2_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_mobile_2_5_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>What about being unusually <span class="redfont">tired?</span> </span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        ... and you <span class="redfont">don't</span> know why?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	            <button data-inline="true" class="chestpain_mobile_2_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_mobile_2_6_y" *ngIf="page==17">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_mobile_2_6_n" *ngIf="page==18">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>With this chest pain, are you feeling <span class="orangefont">anxious?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightGreen">
+	                        Feeling a <span class="orangefont">sense of doom?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-peter-teal.svg" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_mobile_2_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage1_100()">Yes</button>
+	            <button data-inline="true" class="chestpain_mobile_2_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_mobile_2_7_y" *ngIf="page==19">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="greenBorderAll">
+	            <h3 class="purpleBorder purplefont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Might be looking at a heart attack.</li>
+	                <li>If you suspect one, or if you have a family history of heart disease, don't wait.</li>
+	            </ul>
+	        </div>
+	        <p class="greenBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>We do not advice continuing for now. You should only continue if you are not experiencing the question asked.</p>
+	        <p class="greenBorderAll">Better safe than sorry. Call 911. </p>
+	        <p class="greenBorder">Don't try to drive yourself to the emergency room. Paramedics are trained to treat you on the way to the hospital.</p>
+	        <p class="greenBorderAll">While waiting for help, chew aspirin (one 325mg) tablet if you are not allergic to aspirin or do not have bleeding problems.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="chestpain_mobile_2_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(20)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_mobile_2_7_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span class="greenfontLarge firstname"> </span><br>
+	                Hope you answered <span class="redfontLarge">"No"</span> to the questions so far.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="greenBorder centerText">Those questions were to rule out a heart attack going on.</p>
+	        <p class="greenBorderAll">Bear in mind that some people <span class="grayfontSmall">(especially if you are diabetic)</span> have <span class="redfont">"silent"</span> heart attacks with mild symptoms or none at all</p>
+	        <p class="greenBorder">Let's rule out other major potentially dangerous cause of chest pain. You may have to seek the nearest urgent care on these ones or go to the nearest emergency room.</p>
+	        <p class="greenBorderAll">Remember, chest pain isn't always caused by heart problems. </p>
+	        <p class="greenBorder">But, because you can't always determine the cause yourself, don't delay in seeking medical attention.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	    <div id="chestpain_pneumonia_2_n" *ngIf="page==30">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_pneumonia_3_y" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at pneumonia.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_3_n" *ngIf="page==32">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_pneumonia_4_y" *ngIf="page==33">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_4_n" *ngIf="page==34">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_pneumonia_5_y" *ngIf="page==35">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_5_n" *ngIf="page==36">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_pneumonia_6_y" *ngIf="page==37">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_6_n" *ngIf="page==38">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_pneumonia_7_y" *ngIf="page==39">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_7_n" *ngIf="page==40">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(42)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_pneumonia_8_y" *ngIf="page==41">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_8_n" *ngIf="page==42">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_pneumonia_9_y" *ngIf="page==43">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_9_n" *ngIf="page==44">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_pneumonia_10_y" *ngIf="page==45">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_pneumonia_10_n" *ngIf="page==46">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_pneumonia_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_pneumonia_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<70">
+	    <div id="chestpain_gerd_2_n" *ngIf="page==50">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_gerd_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at GERD</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_3_n" *ngIf="page==52">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_gerd_4_y" *ngIf="page==53">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_4_n" *ngIf="page==54">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(55)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(56)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_gerd_5_y" *ngIf="page==55">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_5_n" *ngIf="page==56">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(57)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(58)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_gerd_6_y" *ngIf="page==57">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(58)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_6_n" *ngIf="page==58">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(59)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(60)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_gerd_7_y" *ngIf="page==59">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(60)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_7_n" *ngIf="page==60">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(62)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_gerd_8_y" *ngIf="page==61">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_8_n" *ngIf="page==62">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(62)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(63)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_gerd_9_y" *ngIf="page==63">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(63)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_9_n" *ngIf="page==64">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_gerd_10_y" *ngIf="page==65">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gerd_10_n" *ngIf="page==66">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gerd_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_gerd_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<90">
+	    <div id="chestpain_panic_2_n" *ngIf="page==70">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(90)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_panic_3_y" *ngIf="page==71">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at a panic attack.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_3_n" *ngIf="page==72">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_panic_4_y" *ngIf="page==73">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_4_n" *ngIf="page==74">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_panic_5_y" *ngIf="page==75">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_5_n" *ngIf="page==76">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_panic_6_y" *ngIf="page==77">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_6_n" *ngIf="page==78">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(79)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(80)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_panic_7_y" *ngIf="page==79">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(80)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_7_n" *ngIf="page==80">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(82)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_panic_8_y" *ngIf="page==81">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_8_n" *ngIf="page==82">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(83)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_panic_9_y" *ngIf="page==83">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_9_n" *ngIf="page==84">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(85)">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(86)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_panic_10_y" *ngIf="page==85">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(86)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_panic_10_n" *ngIf="page==86">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_panic_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_panic_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=90 && page<110">
+	    <div id="chestpain_costo_2_n" *ngIf="page==90">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(91)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_costo_3_y" *ngIf="page==91">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at costochondritis</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(92)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_3_n" *ngIf="page==92">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(93)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(94)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_costo_4_y" *ngIf="page==93">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(94)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_4_n" *ngIf="page==94">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(95)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(96)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_costo_5_y" *ngIf="page==95">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(96)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_5_n" *ngIf="page==96">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(97)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(98)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_costo_6_y" *ngIf="page==97">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(98)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_6_n" *ngIf="page==98">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(99)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(100)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_costo_7_y" *ngIf="page==99">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(100)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_7_n" *ngIf="page==100">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(101)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(102)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_costo_8_y" *ngIf="page==101">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(102)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_8_n" *ngIf="page==102">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(103)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(104)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_costo_9_y" *ngIf="page==103">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(104)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_9_n" *ngIf="page==104">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(105)">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(106)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_costo_10_y" *ngIf="page==105">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(106)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_costo_10_n" *ngIf="page==106">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_costo_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_costo_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=110 && page<130">
+	    <div id="chestpain_shingles_2_n" *ngIf="page==110">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(111)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(130)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_shingles_3_y" *ngIf="page==111">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at Shingles</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(112)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_3_n" *ngIf="page==112">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(113)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(114)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_shingles_4_y" *ngIf="page==113">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(114)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_4_n" *ngIf="page==114">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(115)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(116)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_shingles_5_y" *ngIf="page==115">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(116)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_5_n" *ngIf="page==116">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(117)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(118)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_shingles_6_y" *ngIf="page==117">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(118)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_6_n" *ngIf="page==118">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(119)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(120)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_shingles_7_y" *ngIf="page==119">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(120)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_7_n" *ngIf="page==120">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(121)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(122)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_shingles_8_y" *ngIf="page==121">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(122)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_8_n" *ngIf="page==122">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(123)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(124)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_shingles_9_y" *ngIf="page==123">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(124)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_9_n" *ngIf="page==124">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(125)">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(126)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_shingles_10_y" *ngIf="page==125">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(126)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_shingles_10_n" *ngIf="page==126">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_shingles_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_shingles_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=130 && page<150">
+	    <div id="chestpain_gallstones_2_n" *ngIf="page==130">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(131)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(150)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_gallstones_3_y" *ngIf="page==131">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at a gallstones attack.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(132)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_3_n" *ngIf="page==132">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(133)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(134)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_gallstones_4_y" *ngIf="page==133">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(134)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_4_n" *ngIf="page==134">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(135)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(136)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_gallstones_5_y" *ngIf="page==135">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(136)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_5_n" *ngIf="page==136">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(137)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(138)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_gallstones_6_y" *ngIf="page==137">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(138)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_6_n" *ngIf="page==138">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(139)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(140)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_gallstones_7_y" *ngIf="page==139">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(140)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_7_n" *ngIf="page==140">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(141)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(142)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_gallstones_8_y" *ngIf="page==141">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(142)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_8_n" *ngIf="page==142">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(143)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(144)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_gallstones_9_y" *ngIf="page==143">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(144)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_9_n" *ngIf="page==144">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(145)">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(146)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_gallstones_10_y" *ngIf="page==145">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(146)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_gallstones_10_n" *ngIf="page==146">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_gallstones_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_gallstones_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=150 && page<170">
+	    <div id="chestpain_others_2_n" *ngIf="page==150">
+	        <p>First question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(151)">Yes</button>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(152)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="chestpain_others_3_y" *ngIf="page==151">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightGreen centerText">
+	                <span>Let's make sure you are not looking at ...........</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-peter-teal.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(152)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_3_n" *ngIf="page==152">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(153)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(154)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="chestpain_others_4_y" *ngIf="page==153">
+	        <!--start follow up 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(154)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_4_n" *ngIf="page==154">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(155)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(156)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="chestpain_others_5_y" *ngIf="page==155">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(156)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_5_n" *ngIf="page==156">
+	        <p>Next question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(157)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(158)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="chestpain_others_6_y" *ngIf="page==157">
+	        <!--start follow up 6 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(158)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_6_n" *ngIf="page==158">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(159)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(160)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="chestpain_others_7_y" *ngIf="page==159">
+	        <!--start follow up 7 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(160)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_7_n" *ngIf="page==160">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(161)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(162)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="chestpain_others_8_y" *ngIf="page==161">
+	        <!--start follow up 8 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(162)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_8_n" *ngIf="page==162">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(163)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(164)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	    <div id="chestpain_others_9_y" *ngIf="page==163">
+	        <!--start follow up 9 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(164)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_9_n" *ngIf="page==164">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(165)">Yes</button>
+	            <button data-inline="true" class="chestpain_others_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(166)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 9 div -->
+	    <div id="chestpain_others_10_y" *ngIf="page==165">
+	        <!--start follow up 10 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(166)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="chestpain_others_10_n" *ngIf="page==166">
+	        <p>Question</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="chestpain_others_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="chestpain_others_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 10 div -->
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

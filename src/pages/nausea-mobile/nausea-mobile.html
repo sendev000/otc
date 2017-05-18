@@ -1,18 +1,1485 @@
-<!--
-  Generated template for the NauseaMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>nausea_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Nausea
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page==0">
+    <p *ngIf="page==0">Throwing up?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>1 && page<60">
+    <p *ngIf="page>1 && page<20">Stomach flu?</p>
+    <p *ngIf="page>=20 && page<40">appendicitis?</p>
+    <p *ngIf="page>=40 && page<50">Gallstones?</p>
+    <p *ngIf="page>=50 && page<60">Meningitis?</p>
+  </ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>60 && page<90">
+    <p *ngIf="page>60 && page<70">How bad is it?</p>
+    <p *ngIf="page>70 && page<90">No fever</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>Let's see what to use for <span class="purple_redfont">nausea</span> and or <span class="orangefont">vomiting</span> over-the-counter.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="orangeBorder">
+	        <p>Many things can cause nausea. Viral infection such as stomach flu, gallstones, motion sickness, pregnancy or even fear and anxiety to name a few.</p>
+	        <hr class="hrorange">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/stomach/nausea-lady.svg" width="180" alt="Lady about to throw up">
+	        </p>
+	    </div>
+	    <p class="orangeBorderAll centerText">Let's determine the best course of action to take with this nausea and vomiting.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page==1">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>With this nausea and or vomiting do you have any <span class="redfont">fever</span> <span class="grayfontSmall">(may be low-grade)</span> and or<span class="purple_bluefont"> chills?</span></span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-- ---------------End Border right person------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" data-theme="l" (click)="togglePage(2)" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button">Yes</a>
+	        <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">No</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>1 && page<20">
+	    <div id="nausea_stomachflu_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span><span class="orangefont">Nausea</span> with <span class="redfont">fever,</span> may indicate something serious going on.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Let's navigate this carefully and decide if you need to seek urgent care or if you can ride this out.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="nausea_stomachflu_mobile_3_y" *ngIf="page==3">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>In addition to this <span class="orangefont">nausea</span> and <span class="redfont">fever,</span> do you also have <span class="greenfont">diarrhea?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No.</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="nausea_stomachflu_mobile_4_y" *ngIf="page==5">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                May be looking at the <span class="purple_redfont">stomach flu</span> or <span class="orangefont">food poisoning.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">Let's see if that is what you are probably looking at.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Anybody else with the same symptoms, but you <span class="redfont">did not</span> eat the same food?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder centerText">In other words do you know if there is a bug going around?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="nausea_stomachflu_mobile_5_y" *ngIf="page==7">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Probably looking at <span class="purple_redfont">stomach flu. </span>
+	                <span class="grayfontSmall"> (viral gastroenteritis)</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Stomach flu starts when you:</p>
+	            <ul>
+	                <li>come in contact with an infected person,</li>
+	                <li>were exposed to an infected person through poor sanitation</li>
+	                <li>or you ate or drank a contaminated food or water.</li>
+	            </ul>
+	        </div>
+	        <p class="centerText">Would you like to see the entry for stomach flu or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Stomach flu</a>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Anybody else has the same symptoms and you <span class="bluefont">ate</span> the same food?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="nausea_stomachflu_mobile_6_y" *ngIf="page==9">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Probably looking at <span class="bluefont">food poisoning.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Suspect food poisoning if someone else is sick after you ate the same food and it all started at once. </p>
+	        <p class="redBorderAll">If you and someone else have the same symptoms but did not eat the same food lately, suspect the stomach flu.</p>
+	        <p class="redBorder centerText">Would you like to see our entry for food poisoning or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Food <br>poisoning</a>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you also have a <span class="purplefont">headache</span> with all these?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_7_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="nausea_stomachflu_mobile_7_y" *ngIf="page==11">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont">Alright.</span><br>
+	                See the entry for <span class="bluefont">food poisoning</span> or <span class="purple_redfont">stomach flu</span> if you are suspecting any of them.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">Would you like to Continue or see the nearest urgent care clinic to you?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Was this a nagging headache <span class="redfont">before</span> the nausea / vomiting and diarrhea started?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or <span class="bluefont">after</span> the nausea and vomiting?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stomachflu_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Before</button>
+	            <button data-inline="true" class="nausea_stomachflu_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">After</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="nausea_stomachflu_mobile_8_y" *ngIf="page==13">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont">Before?</span><br>
+	                If it is before, probably looking at <span class="purplefont">food poisoning.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Often times, food poisoning start with you feeling a nagging headache, then fever, feeling tired, before you start throwing up with diarrhea and the rest.</p>
+	        <p class="redBorderAll">Would you like to see our entry on food poisoning or Continue to see other situations associated with nausea and or vomiting?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Food <br>poisoning</a>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stomachflu_mobile_8_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefont">After?</span><br>
+	                Suspect food poisoning if a nagging headache <span class="purple_bluefont">before</span> the nausea and vomiting.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">If it is <span class="redfont">after</span> and you know someone else has the same symptoms and you did not eat the same food or you might have come in contact with some one with the stomach bug, then it is probably a <span class="purple_redfont">stomach flu.</span></p>
+	        <p class="orangeBorder centerText">Would you like to see the entry for stomach flu or Continue to check out the other situations that involve nausea and or vomiting with fever?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-rel="dialog" data-role="button" data-theme="i" data-inline="true" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Stomach flu</a>
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="nausea_appendix_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you feeling a <span class="bluefont">sharp pain</span> in your <span class="bluefont">lower</span><span class="redfont"> right or middle</span> abdomen?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        With this nausea, vomiting, fever?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <a href="#" (click)="togglePage(40)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="nausea_appendix_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Let's make sure you are not looking at <span class="redfont">appendicitis.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_appendix_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Was this a <span class="purple_bluefont">dull aching</span> pain that moved from your navel to the <span class="bluefont">right lower</span> part of you stomach?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        And grew <span class="redfont">sharper</span> with time?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="nausea_appendix_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="nausea_appendix_mobile_4_y" *ngIf="page==23">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This can be a sign of <span class="redfont">appendicitis.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Let's make sure you are not looking at one and if so do the right thing.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_appendix_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span><span class="bluefont">Press</span> on the area of the pain and <span class="purple_bluefont">release the pressure.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Does the pain get <span class="bluefont">sharper?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="nausea_appendix_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="nausea_appendix_mobile_5_y" *ngIf="page==25">
+	        <!--start follow up 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_appendix_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does the pain get worse when you <span class="bluefont">cough</span> or <span class="redfont">walk</span> and you prefer to lie still?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="nausea_appendix_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="nausea_appendix_mobile_6_y" *ngIf="page==27">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a sign of appendicitis.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="nausea_appendix_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_appendix_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you <span class="bluefont">shaking</span> with this pain, nausea and/or vomiting?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        With <span class="redfont">chills?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_appendix_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="nausea_appendix_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="nausea_appendix_mobile_7_y" *ngIf="page==29">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible signs of appendicitis.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	            <button data-inline="true" class="nausea_appendix_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_appendix_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge firstname"> </span><br>
+	                Those were possible signs of <span class="redfont">appendicitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">You should seek emergency room visit if most applied to you. </p>
+	        <p class="redBorderAll">Know that if your appendix ruptures, you may feel less pain for a short time and even feel better. </p>
+	        <p class="redBorderAll">But, the lining of the abdomen will get swollen and infected (peritonitis) and  then the pain will get worse and you will become very sick.</p>
+	        <p class="redBorder">If you don't think you are looking at appendicitis, let's continue and find out what else may be causing this nausea and vomiting.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-rel="dialog" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <a href="#" (click)="togglePage(40)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="nausea_gallstones_mobile_2_n" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>With this nausea and fever do you also have <span class="redfont">upper</span> <span class="bluefont">right or middle</span> abdominal pain?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(41)">Yes</button>
+	            <a href="#" (click)="togglePage(50)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(42)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="nausea_gallstones_mobile_3_y" *ngIf="page==41">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Let's make sure you are not looking at <span class="purple_redfont">gallstones</span> attack.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(42)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_gallstones_mobile_3_n" *ngIf="page==42">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is this like a <span class="bluefont"> dull, constant</span> pain?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        May also be <span class="redfont">sharp and cramping.</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(43)">Yes</button>
+	            <button data-inline="true" class="nausea_gallstones_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(44)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="nausea_gallstones_mobile_4_y" *ngIf="page==43">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This is a sign of a <span class="bluefont">gallstone</span> attack going on.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(44)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_gallstones_mobile_4_n" *ngIf="page==44">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Does this pain spread to below the <span class="purplefont">right</span> shoulder blade?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or your <span class="purplefont">back?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(45)">Yes</button>
+	            <button data-inline="true" class="nausea_gallstones_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(46)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="nausea_gallstones_mobile_5_y" *ngIf="page==45">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                This is a sign of <span class="bluefont">gallstone attack.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">You will need to seek emergency room visit or at a minimum urgent care if this apply to you. Would you like to do that or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="nausea_gallstones_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(46)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_gallstones_mobile_5_n" *ngIf="page==46">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Is your <span class="orangefont">skin</span> turning <span class="yellowfont">yellow?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or are you passing <span class="grayfontLarge">clay-colored</span> <span class="orangefont">stools?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_gallstones_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(47)">Yes</button>
+	            <button data-inline="true" class="nausea_gallstones_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(48)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="nausea_gallstones_mobile_6_y" *ngIf="page==47">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Sign of gallstone attack.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea_gallstones_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(48)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_gallstones_mobile_6_n" *ngIf="page==48">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge firstname"> </span><br>
+	                Those were signs of a <span class="redfont">gallstone</span> attack.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If this apply to you, seek emergency room visit. If not, let's see what else may be causing this nausea and or vomiting with fever.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	            <a href="#" (click)="togglePage(50)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="nausea_stiffneck_mobile_2_n" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you also have a <span class="redfont">stiff neck</span> along with this nausea and fever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stiffneck_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	            <a href="#" (click)="togglePage(60)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="nausea_stiffneck_mobile_3_y" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Let's make sure you are not looking at <span class="redfont">meningitis</span> which can be a life threatening emergency.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stiffneck_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stiffneck_mobile_3_n" *ngIf="page==52">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you have a <span class="redfont">severe headache</span> with this stiff neck and nausea?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stiffneck_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="nausea_stiffneck_mobile_4_y" *ngIf="page==53">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>This is a sign of meningitis.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stiffneck_mobile_4_n" *ngIf="page==54">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you more <span class="blue_brightfont">sensitive to light</span> with this stiff neck and nausea with fever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stiffneck_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(55)">Yes</button>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(56)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="nausea_stiffneck_mobile_5_y" *ngIf="page==55">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible sign of meningitis.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stiffneck_mobile_5_n" *ngIf="page==56">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you feel you are <span class="purple_bluefont">breathing rapidly</span> with this stiff neck, nausea and fever?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea_stiffneck_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(57)">Yes</button>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(58)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="nausea_stiffneck_mobile_6_y" *ngIf="page==57">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <div class="redBorderAll">
+	            <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>Possible sign of meningitis</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="redBorder centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Hospital</a>
+	            <button data-inline="true" class="nausea_stiffneck_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(58)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea_stiffneck_mobile_6_n" *ngIf="page==58">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge firstname"> </span><br>
+	                We just went through the main signs of <span class="redfont">meningitis.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">Bacteria meningitis is a <span class="redfont">medical emergency.</span> </p>
+	        <p class="redBorder">Urgent treatment is required to avoid serious complications and even death. Time is of a factor.</p>
+	        <p class="redBorderAll">If you don't think it is meningitis you are looking at, let's continue and see what else may be causing this nausea and or vomiting.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	            <a href="#" (click)="togglePage(60)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page==60">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightOrange centerText">
+	            <span>If you have <span class="orangefont">nausea</span> with <span class="redfont">fever,</span> chances are something serious is going on.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <p class="redBorder centerText">We will recommend you visit the nearest urgent care clinic.</p>
+	    <p class="redBorderAll">If any of the discussions does not apply to you, then let's continue.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	        <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(61)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<70">
+	    <div id="slider_nausea4_mobile_div" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>How <span class="bluefont">many times</span> have you <span class="purple_redfont">thrown up</span> since it all started?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" class="ui-field-contain">
+	            <div class="ui-slider">
+	            	<ion-item>
+						<ion-range min="1" max="10" step="1" [(ngModel)]="currentTime" color="sliderPink">
+							<ion-label range-left>{{currentTime}}</ion-label>
+						</ion-range>
+					</ion-item>
+	            </div>
+	            <label for="slider_nausea4_mobile" id="slider_nausea4_mobile-label">Times</label>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	        <div class="ui-btn ui-input-btn ui-btn-o ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_nausea4_mobile_value" data-inline="true" data-theme="o" value="Here you go" (click)="togglePage(62)"></div>
+	        </p>
+	    </div>
+	    <br>
+	    <div class="container_12" id="selected_nausea4_mobile_value_container" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <div id="selected_nausea4_mobile_value">
+	                	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentTime}}</span>
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <div id="nausea4_mobile_option1" *ngIf="page==62 && currentTime<=3">
+	        <div class="clearboth divider1"></div>
+	        <h3 class="redBorder purple_redfont centerText">Less than 3 times?</h3>
+	        <p class="redBorder">Let's see what a pharmacist recommend you use over-the-counter to help with the nausea and vomiting.</p>
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">This will assume that:</p>
+	            <ul>
+	                <li>No other symptoms are present or nausea and or vomiting is the predominant symptom.</li>
+	                <br>
+	                <li>You know what is causing the nausea and vomiting.</li>
+	                <br>
+	                <li>You want to know what is available for nausea and or vomiting over the counter.</li>
+	            </ul>
+	        </div>
+	    </div>
+	    <div id="nausea4_mobile_option2" *ngIf="page==62 && currentTime<=7 && currentTime>3">
+	        <div class="clearboth divider1"></div>
+	        <h3 class="redBorder orangefont centerText">More than 3 times?</h3>
+	        <p class="orangeBorder">Watch out for the signs and symptoms of dehydration.</p>
+	        <p class="orangeBorder">Seek urgent care if other symptoms are present.</p>
+	        <p class="orangeBorderAll">Let's see what a pharmacist recommend you use over-the-counter to help with the nausea and vomiting.</p>
+	    </div>
+	    <div id="nausea4_mobile_option3" *ngIf="page==62 && currentTime<=10 && currentTime>7">
+	        <div class="clearboth divider1"></div>
+	        <h3 class="redBorder redfont centerText">Pretty bad?</h3>
+	        <p class="redBorder">Have to seek urgent care or give the doctor a call.</p>
+	        <p class="redBorderAll">Call the doctor or the after hours line. They can always call in a prescription to take care of this nausea and/or vomiting for you. You don't have to wait till the office is opened for business.</p>
+	        <p class="redBorderAll">Let's see what a pharmacist recommend you use over-the-counter to help with the nausea and vomiting at least until you see a doctor.</p>
+	    </div>
+	    <!-------------Start Options button------------------ --> 
+	    <div id="options_btn_nausea4_mobile" *ngIf="page==62">
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_nausea4_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackTime()">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <a href="#" class="nausea_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(3)">Continue</a>
+	        </p>
+	    </div>
+	    <!--------------End Options Button----------------------- -->
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<90">
+	    <div id="nausea3_mobile_2_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you also have <span class="greenfont">diarrhea</span> with this nausea or vomiting?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="nausea3_mobile_3_y" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Most likely looking at bacterial cause of food poisoning.</li>
+	                <li>Risk of dehydration high.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_3_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you have <span class="redfont">burning pain</span> in the <span class="orangefont">stomach</span> with this nausea and or vomiting?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="nausea3_mobile_4_y" class="displayNone">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at peptic ulcer or gastritis</li>
+	                <li>If you have a history of ulcer, it is a good time to check with your doctor.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_4_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about burning pain in the <span class="purplefont">lower part</span> of the <span class="purplefont">chest?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        With a sour or bitter <span class="purplefont">taste</span> in the mouth or throat.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="nausea3_mobile_5_y" class="displayNone">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Most likely looking at a <span class="redfont">serious</span> case of heartburn or GERD.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_5_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you in addition to the nausea and/or vomiting <span class="purple_redfont">feeling dizzy?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="bubbleTopRightOrange">
+	            <p class="orangeBorder orangefont"> With these symptoms:</p>
+	            <ul>
+	                <li>Sweating</li>
+	                <li>Drooling saliva</li>
+	                <li>Feeling cold</li>
+	                <li>Headaches</li>
+	                <li>Pale skin</li>
+	                <li>Fatigue</li>
+	            </ul>
+	        </div>
+	        <p class="orangeBorderAll">And you are in a motion situation like a moving boat, train, airplane, car, or amusement park rides?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="nausea3_mobile_6_y" class="displayNone">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Most likely looking at <span class="orangefont">motion sickness.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorderAll">Would you like to take a look at the entry for motion sickness or Continue?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="../../ear/symptom/motion_sickness_mobile.php" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Motion<br>Sickness</a>
+	            <button data-inline="true" class="nausea3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_6_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Do you have a severe <span class="bluefont">headache</span> with this nausea/vomiting?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="bubbleTopRightOrange">
+	            <p class="orangeBorder bluefont">Especially with:</p>
+	            <ul>
+	                <li>Sensitivity to light</li>
+	                <li>Sensitivity to sounds</li>
+	                <li>Sensitivity to smells</li>
+	                <li>Blurred vision</li>
+	                <li>Headache that has a pulsating, throbbing feel to it</li>
+	                <li>Lightheadedness.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="nausea3_mobile_7_y" class="displayNone">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at a <span class="purplefont">migraine</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_7_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you of child bearing age and if so did you <span class="pinkfont">miss a period?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="nausea3_mobile_8_y" class="displayNone">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Take a <span class="purple_bluefont">pregnancy test</span> especially if it is triggered by food.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Nausea or vomiting due to pregnancy often occur in the morning or can be triggered by food.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_8_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span> Are you <span class="greenfont">diabetic?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" onclick="clickCounterPage2_100()">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="nausea3_mobile_9_y" class="displayNone">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible ketoacidosis</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="../../../../nearest/urgentcare/nearest_urgentcare.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="nausea3_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_9_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Did you just start taking a new <span class="purplefont">medication?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l">Yes</button>
+	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="nausea3_mobile_10_y" class="displayNone">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Most medications will<span class="orangefont"> cause</span> nausea and/or vomiting.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">Some medications may also cause nausea or vomiting days after you started taking them. Even Acetaminophen.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="nausea3_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="nausea3_mobile_10_n" class="displayNone">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="purplefont firstname"> </span><br>
+	                There are other causes of vomiting not talked about here.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-stephanie-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="orangeBorder">For instance, you can trigger the vomiting center as a result of being stressed out.</p>
+	        <p class="orangeBorder">Eating some mushrooms can cause vomiting many days later.</p>
+	        <p class="centerText">Let's see what a pharmacist recommend you use over-the-counter.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#nausea_mobile_4" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

@@ -1,3 +1,48 @@
-page-sore-throat-mobile {
 
+$toolbar-background-color: #E91E63;
+
+page-sore-throat-mobile {
+	font-size: 16px;
+	.toolbar-background-md, .toolbar-background{
+		background: $toolbar-background-color;
+	}
+	.bar-button-md{
+		padding: 0px;
+	}
+	.ui-popup-screen{
+		position: fixed;
+	}
+	.ui-popup-container.ui-popup-active{
+		background: transparent;
+	}
+	.item-md.item-block .item-inner{
+		border-bottom: 0px none;
+	}
+	fieldset.ui-controlgroup-vertical{
+		border: 0px none;
+	}
+	ion-slide h2{
+		font-weight: bold;
+		font-size: 16px;
+	}
+	ion-slides{
+		height: 220px;
+	}
+	.slide-zoom {
+	    height: 100%;
+	}
+	.swiper-slide{
+		height: 200px !important;
+	}
+	.slide-image {
+	    max-height: 50%;
+	    max-width: 60%;
+	    margin: 18px 0;
+	}
+	.content-md{
+		background-color: transparent;
+	}
+}
+#ion-diagnostics-toast{
+	background: transparent;
 }

@@ -1,18 +1,610 @@
-<!--
-  Generated template for the ElbowMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>elbow_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Elbow Pain
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p *ngIf="page==0">Elbow pain?</p>
+    <p *ngIf="page>0 && page<20">How bad is it?</p>
+    <p *ngIf="page>=20 && page<40">Is it tennis elbow?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue centerText">
+	            <span>This is commonly caused by <span class="redfont">tendonitis.</span></span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="blueBorder">
+	        <p>Tendonitis is inflammation and injury to the soft tissues <span class="grayfont">(like a cord)</span> that hold the muscles to the bone called tendons.</p>
+	        <hr class="hrblue">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/shoulder/elbowpain-lady.svg" width="150" alt="Lady holding her elbow">
+	        </p>
+	        <p class="blueBorderAll centerText">Let's see how we can help</p>
+	    </div>
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="elbow_mobile_pop-placeholder">
+	        <!-- placeholder for elbow_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="elbow_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="elbow1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="purple_bluefontLarge firstname"> </span><br>
+	                We will take a look at the elbow pain and make sure you don't have to seek urgent care.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="elbow1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="elbow1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have any <span class="orangefont">fever</span> in addition to this <span class="purple_bluefont">elbow pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="elbow1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="elbow1_mobile_3_y" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>It is worse than you think.</li>
+	                <li>May be looking at an <span class="redfont">elbow infection.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="elbow1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the affected elbow area <span class="redfont">red?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Severely <span class="purple_redfont">swollen?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="elbow1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="elbow1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img class="redBorderAll shadowInset" src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>The elbow might be <span class="redfont">infected</span></li>
+	                <li>You may be looking at <span class="orangefont">bursitis</span></li>
+	                <li>You may be looking at <span class="bluefont">arthritis</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="elbow1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you <span class="bluefont">able to use</span> the elbow at all?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="elbow1_mobile_5_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="elbow1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>The elbow might be <span class="redfont">infected</span></li>
+	                <li>You may be looking at <span class="orangefont">bursitis</span></li>
+	                <li>You may be looking at <span class="bluefont">arthritis</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> 
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="elbow1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the pain due to a <span class="redfont">direct</span> elbow injury?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="elbow1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="elbow1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="elbow1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Has this elbow pain been going on for more than <span class="pinkfont">2 weeks</span> now?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="elbow1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="elbow1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>You may be looking at <span class="redfont">bursitis</span></li>
+	                <li>You may be looking at <span class="bluefont">arthritis</span></li>
+	                <li>May be looking at a <span class="purple_redfont">serious sprain</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <button data-inline="true" class="elbow1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Well, let's see if you are looking at <span class="bluefont">tennis elbow</span> or something else.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="elbow2_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did the pain start <span class="bluefont">slowly</span> and <span class="grayfont">gradually</span> got <span class="bluefont">worse?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="elbow2_mobile_3_y" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                This is a symptom of tennis elbow.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Then again, you may be looking at: </p>
+	            <ul>
+	                <li>Bursitis</li>
+	                <li>Narrowing of the joint space</li>
+	                <li>Loss of cartilage in the elbow</li>
+	                <li>An elbow strain</li>
+	                <li>Or infection in the elbow</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the pain on the <span class="purplefont">outside</span> of the <span class="purple_redfont">upper arm</span> near the elbow?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="elbow2_mobile_4_y" *ngIf="page==23">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">It is?</span><br>
+	                We are getting close to suspecting <span class="bluefont">tennis elbow.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">But then again, it might be bursitis.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Try <span class="purplefont">grasping</span> or <span class="bluefont">twisting</span> something.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Does the pain radiate <span class="bluefont">from</span> the outside of the elbow <span class="redfont">to </span>the forearm?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="elbow2_mobile_5_y" *ngIf="page==25">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                You are most likely looking at tennis elbow.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">When you grasp or twist something, the pain will radiate from the outside of the elbow to the forearm.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did the pain radiate to the <span class="purple_bluefont">back of the hand?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="elbow2_mobile_6_y" *ngIf="page==27">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                You are most likely looking at tennis elbow.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">With tennis elbow, when you grasp or twist something, the pain will radiate from the outside of the elbow to the back of the hand.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Try <span class="purple_bluefont">bending</span> the <span class="purple_redfont">wrist</span> backward.</span><br>
+	                <span class="grayfontSmall"> (Like you are  revving the engine of a motorcycle against resistance.)</span>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Do you feel pain <span class="purple_redfont">near</span> the elbow?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-darrell.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div -->
+	    <div id="elbow2_mobile_7_y" *ngIf="page==29">
+	        <!--start follow up 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                You are more than likely looking at tennis elbow pain.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Suspect tennis elbow if you also have a weak grasp.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you do activities that involve <span class="purple_bluefont">repetitive</span> <span class="bluefont">twisting</span> of the wrist?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Like the following professionals?</p>
+	            <ul>
+	                <li>Plumbers</li>
+	                <li>Painters</li>
+	                <li>Construction workers</li>
+	                <li>cooks</li>
+	                <li>Butchers</li>
+	                <li>Handy men</li>
+	                <li>Mechanics.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="elbow2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	            <button data-inline="true" class="elbow2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 7 div -->
+	    <div id="elbow2_mobile_8_y" *ngIf="page==31">
+	        <!--start follow up 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Well, you should suspect tennis elbow.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">There may be a partial tear of the tendon fibers, which connect muscle to bone. The tear may be at or near where these fibers begin, on the outside of the elbow.</p>
+	        <p class="blueBorderAll centerText">Let's see what a pharmacist recommend to help with this elbow pain. Or would you like to see the nearest urgent care clinic to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="elbow2_mobile_8_n" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname"> </span><br>
+	                We just went through the signs of a tennis elbow pain.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-darrell.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder centerText">If you suspect a tennis elbow pain, let's see what a pharmacist recommend you do to help with this pain. Or would you like to see the nearest urgent care clinic to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	            <a href="#" (click)="gotoSubPage(1)" class="elbow_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 8 div -->
+	</div>
 
+	<div class="ui-popup-screen ui-overlay-b in" id="elbow_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="elbow_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="elbow_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="blueBorderAll"><strong>Tennis players</strong> are more likely to injure the tendons on the outside of the elbow (tennis elbow). <br>
+	            <strong>Golfers</strong> are more likely to injure the tendons on the inside of the elbow (golfer's elbow).
+	        </p>
+	    </div>
+	</div>
 </ion-content>

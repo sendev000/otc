@@ -1,18 +1,1088 @@
-<!--
-  Generated template for the SoreThroatMobile page.
+<!-- 
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>sore_throat_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Sore Throat
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=0 && page<20">
+    <p *ngIf="page==0">Sore Throat?</p>
+    <p *ngIf="page>0 && page<10">Is it strep throat?</p>
+    <p *ngIf="page>=10 && page<20">With Fever</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgPink" *ngIf="page>=40 && page<60">
+    <p *ngIf="page>=40 && page<50">Other symptoms?</p>
+    <p *ngIf="page>=50 && page<60">Strept or Mono?</p>
+    <p *ngIf="page>=60 && page<70">Started suddenly</p>
+    <p *ngIf="page>=70 && page<90">Gradually</p>
+  </ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span><span class="purple_redfont">Sore throat</span> can be caused by many things.</span><br>
+	        </div>
+	        <div align="right">
+	            <img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist">
+	        </div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="redBorder">
+	        <p class="redBorder">Such as: </p>
+	        <ul>
+	            <li>Viruses<br> <span class="italicSmall">(cold, flu and mononucleosis)</span></li>
+	            <li>Bacteria<br><span class="italicSmall"> (strep throat)</span></li>
+	            <li>Allergies<br><span class="italicSmall">(pollens, pet dander, or molds)</span></li>
+	        </ul>
+	        <br>
+	        <hr class="hrpink">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/throat/sorethroat-lady.svg" width="180" alt="Lady holding the throat">
+	        </p>
+	    </div>
+	    <p class="redBorderAll">Of these, the one most likely to cause serious complications is having a strep throat. Because if it isn't treated on time, it may lead to  kidney inflammation or rheumatic fever. <span class="grayfontSmall">Rheumatic fever can lead to a rash, inflamed joints and, in severe cases, damage to the valves of the heart.</span></p>
+	    <p class="redBorder centerText">With this in mind, let's get started.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button"(click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>0 && page<10">
+	    <div id="sorethroat1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>The top question regarding sore throat is usually:<br> <span class="redfont">"Is this a strep throat?"</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText"> Let's start with that.</p>
+	        <p class="purpleRedBorder">Symptoms alone cannot diagnose strep throat. You will need a  rapid test or throat culture to test for strep throat at the healthcare provider's office. </p>
+	        <p class="purpleRedBorderAll">The earlier we send you to the doctor's office, the better for you and your family </p>
+	        <p class="purpleRedBorder centerText"><span class="redfont">Strep is contagious.</span></p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="sorethroat1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>In <span class="orangefont">addition</span> to this sore throat, do you also have or had a <span class="redfont">fever?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(10)">Yes</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">No</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div -->  
+	    <p>&nbsp;</p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=10 && page<20">
+	    <div id="sorethroat_fever_mobile_2_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did this <span class="orangefont">fever</span> start <span class="redfont">suddenly?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="sorethroat_fever_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="sorethroat_fever_mobile_3_y" *ngIf="page==11">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_fever_mobile_3_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Was this fever <span class="redfont">highest</span> on the second day?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="sorethroat_fever_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="sorethroat_fever_mobile_4_y" *ngIf="page==13">
+	        <!--start 4 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalLeftPurple">
+	                    <span class="purple_redfont">Yes?</span><br>
+	                    Hmmm. Start suspecting <span class="redfont">strep.</span> Although not so fast.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth"></div>
+	        <!-----------------End middle left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_fever_mobile_4_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you also have <span class="bluefont">headache </span>with this fever and sore throat?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="sorethroat_fever_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="sorethroat_fever_mobile_5_y" *ngIf="page==15">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                This is a symptom of a <span class="redfont">strep throat</span> infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_fever_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_fever_mobile_5_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Fever of strep throat starts <span class="purple_bluefont">suddenly</span> and ...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        ... Would be at its <span class="bluefont">highest point</span> on the second day.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder centerText">Let's answer a few more questions and see if you may be looking at strep.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->	  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	    <div id="sorethroat_nofever_mobile_2_n" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Take a look at your <span class="purple_redfont">tonsils</span> in the mirror.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Are they <span class="redfont">red</span> and <span class="purple_redfont">swollen?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder grayfontSmall">Tap on <span class="orangefont">"FYI"</span> below to turn on your device's camera lights so you can see better.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" data-theme="m" class=" ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all">FYI</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="sorethroat_nofever_mobile_3_y" *ngIf="page==21">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_nofever_mobile_3_n" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are the <span class="purple_redfont">lymph nodes</span> in the neck <span class="redfont">swollen?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="sorethroat_nofever_mobile_4_y" *ngIf="page==23">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_nofever_mobile_4_n" *ngIf="page==24">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="blue_brightfont">loss of appetite?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or <span class="bluefont">abnormal taste</span> in the mouth?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="sorethroat_nofever_mobile_5_y" *ngIf="page==25">
+	        <!--start 5 div -->
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_nofever_mobile_5_n" *ngIf="page==26">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Using a mirror, look near the <span class="bluefont">back</span> of the throat towards the <span class="redfont">tonsils.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Any <span class="purple_bluefont">white or yellow</span> <span class="redfont">spots</span>  on the throat and tonsils?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder">Note that, the throat can also appear bright red or dark red with spots on the roof of the mouth.</p>
+	        <p class="redBorder grayfontSmall">Tap on <span class="orangefont">"FYI"</span> below to turn on your device's camera lights so you can see better.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" data-theme="m" class=" ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all">FYI</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="sorethroat_nofever_mobile_6_y" *ngIf="page==27">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Suspect strep throat.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- --> 
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage()">Nearest Clinic</a>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_nofever_mobile_6_n" *ngIf="page==28">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Look over the <span class="purple_redfont">neck</span> and <span class="orangefont">chest region.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Any <span class="orangefont">skin rash</span> that was not there before?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_nofever_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="sorethroat_nofever_mobile_7_y" *ngIf="page==29">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Suspect strep especially if there is also fever and sore throat.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- --> 
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <button data-inline="true" class="sorethroat_nofever_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_nofever_mobile_7_n" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="bluefont">Alright.</span><br>
+	                Those were symptoms of a <span class="orangefont">strep throat infection.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">If those apply to you, seek urgent care or call the doctor.</p>
+	        <p class="redBorder">Let's rule out  other things that can cause a sore throat which may need doctor visit if you don't think they apply to you.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(40)	">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=40 && page<50">
+	    <div id="sorethroat2_mobile_5_q1" *ngIf="page==40">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Which of the symptoms listed below are you also <span class="redfont">experiencing</span> right now?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <br>
+	        <!-----------------End Border right person------------------- -->
+	        <div data-role="fieldcontain" id="sorethroat2_mobile_5_q1_form_div" class="ui-field-contain">
+	            <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+	                <div class="ui-controlgroup-controls ">
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_0" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[0], 'ui-checkbox-off': !symptoms[0]}" (click)="toggleSymptom(0)">Dry cough.</label><input type="checkbox" name="sorethroat2_mobile_5_q1" id="sorethroat2_mobile_5_q1_0" class="sorethroat2_mobile_5Q1" value="" [(ngModel)]="symptoms[0]"></div>
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_1" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[1], 'ui-checkbox-off': !symptoms[1]}" (click)="toggleSymptom(1)">Runny nose (clear and watery).</label><input name="sorethroat2_mobile_5_q1" type="checkbox" class="sorethroat2_mobile_5Q1" id="sorethroat2_mobile_5_q1_1" value="" [(ngModel)]="symptoms[1]"></div>
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_2" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[2], 'ui-checkbox-off': !symptoms[2]}" (click)="toggleSymptom(2)">Sneezing.</label><input type="checkbox" name="sorethroat2_mobile_5_q1" id="sorethroat2_mobile_5_q1_2" class="sorethroat2_mobile_5Q1" value="" [(ngModel)]="symptoms[2]"></div>
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_3" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[3], 'ui-checkbox-off': !symptoms[3]}" (click)="toggleSymptom(3)">Laryngitis.</label><input type="checkbox" name="sorethroat2_mobile_5_q1" id="sorethroat2_mobile_5_q1_3" class="sorethroat2_mobile_5Q1" value="" [(ngModel)]="symptoms[3]"></div>
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_4" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[4], 'ui-checkbox-off': !symptoms[4]}" (click)="toggleSymptom(4)">Nausea and vomiting.</label><input type="checkbox" name="sorethroat2_mobile_5_q1" id="sorethroat2_mobile_5_q1_4" class="sorethroat2_mobile_5Q1" value="" [(ngModel)]="symptoms[4]"></div>
+	                    <div class="ui-checkbox"><label for="sorethroat2_mobile_5_q1_6" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left " [ngClass]="{'ui-checkbox-on': symptoms[5], 'ui-checkbox-off': !symptoms[5]}" (click)="toggleAllSymptoms(false)">None of these.</label><input type="checkbox" name="sorethroat2_mobile_5_q1" id="sorethroat2_mobile_5_q1_6" value="" [(ngModel)]="symptoms[5]"></div>
+	                </div>
+	            </fieldset>
+	            <div class="clearboth divider1"></div>
+	            <div class="centerText">
+	            	<div class="ui-btn ui-input-btn ui-btn-i ui-corner-all ui-shadow ui-btn-inline">
+	            		Here you go
+	            		<input type="button" data-inline="true" id="get_sorethroat2_mobile_5_q1" data-theme="i" value="Here you go" (click)="togglePage(41)">
+	            	</div>
+	            </div>
+	        </div>
+	    </div>
+	    <br>
+	    <div class="container_12" id="selected_sorethroat2_mobile_5_q1_container" *ngIf="page==40 && mode==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <div id="selected_sorethroat2_mobile_5_q1_value">
+	                	<span class="redfontLarge">Oops!,</span> You told us nothing 
+	                </div>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	    </div>
+	    <div id="sorethroat2_mobile_5_other" *ngIf="page==41 && mode==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="orangefont firstname"> </span><br>
+	                You <span class="redfont">may not</span> be looking at a strep throat infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">You may be looking at a cold or flu here.</p>
+	        <p class="redBorderAll">Cough, laryngitis, and stuffy nose are not characteristic of strep throat infection. Their presence suggests another cause <span class="grayfont">(usually viral or allergic).</span></p>
+	        <p class="redBorder">If you feel it is a strep throat, visit the nearest urgent care clinic. Even if it comes out negative and is a flu, you can still get started with flu treatment such as tamiflu.</p>
+	        <p class="redBorderAll">Would you like to see what a pharmacist recommend you use over the counter to give you some relief for the sore throat or see the nearest urgent care to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_sorethroat2_mobile_5_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Nearest Clinic</a>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat2_mobile_5_none" *ngIf="page==41 && mode==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfont">None of these?</span><br>
+	                Looking at a <span class="bluefont">high probability</span> of strep throat or infectious mononucleosis.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If all you have is just a sore throat and fever, let's continue to see if you are looking at strep throat or infectious mononucleosis.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->  
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button class="back_sorethroat2_mobile_5_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	    <div id="sorethroat3_mobile_1" *ngIf="page==50">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>It is <span class="redfont">highly</span> recommended you visit the nearest urgent care clinic or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder centerText">You will need  a  <span class="bluefont">rapid test</span> or <span class="orangefont">throat culture</span> to test for strep throat.</p>
+	        <p class="redBorderAll centerText">This is the  way to distinguish between infectious mono and strep throat.</p>
+	        <p class="redBorderAll">Even, detection of streptococci in the throat area does not exclude infectious mononucleosis. </p>
+	        <p class="redBorderAll">The doctor would have to make sure that your spleen is not enlarged. If it is, then would probably rule in infectious mononucleosis and do some other tests.</p>
+	        <p class="redBorder centerText">Let's continue and see if we can rule out infectious mono for now.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(51)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="sorethroat3_mobile_2_n" *ngIf="page==51">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did the sore throat develop <span class="orangefont">quickly</span> <span class="grayfontSmall">(suddenly)</span> or <span class="purple_redfont">slowly</span> <span class="grayfontSmall">(gradually)</span> over time?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" data-theme="o" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Suddenly</a>
+	            <a href="#" data-role="button" data-inline="true" data-theme="a" class="ui-link ui-btn ui-btn-a ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Gradually</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<70">
+	    <div id="sorethroat_suddenly_mobile_2_n" *ngIf="page==60">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Did you have a <span class="orangefont">fever</span> that was <span class="redfont">highest </span>on the second day?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(62)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="sorethroat_suddenly_mobile_3_y" *ngIf="page==61">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                This is a sign and symptom of a <span class="orangefont">strep throat</span> infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Strep symptoms include:</p>
+	            <ul>
+	                <li>Sore throat that starts suddenly.</li>
+	                <li><span class="redfont">Fever highest</span> on the second day.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_suddenly_mobile_3_n" *ngIf="page==62">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing any <span class="bluefont">chills?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(63)">Yes</button>
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(64)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="sorethroat_suddenly_mobile_4_y" *ngIf="page==63">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                This is a symptom of <span class="redfont">strep throat</span> infection.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder centerText">Strep symptoms include:</p>
+	            <ul>
+	                <li>Sore throat that starts suddenly.</li>
+	                <li>Fever highest on the second day.</li>
+	                <li class="bluefont">Chills</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(64)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_suddenly_mobile_4_n" *ngIf="page==64">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="bluefont">loss of appetite?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="sorethroat_suddenly_mobile_5_y" *ngIf="page==65">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                <span class="bluefont">Suspect strep</span> if you are experiencing the symptoms listed below.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Strep symptoms include:</p>
+	            <ul>
+	                <li>Sore throat that starts suddenly.</li>
+	                <li>Fever highest on the second day.</li>
+	                <li>Chills</li>
+	                <li class="bluefont">Loss of appetite</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_suddenly_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_suddenly_mobile_5_n" *ngIf="page==66">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>If you answered <span class="greenfont">"No"</span> to the questions so far ...</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        You<span class="redfont"> may not</span> be looking at a strep throat infection.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="blueBorder">Moving forward, we will assume that the sore throat started <span class="bluefont">slowly</span> or you are not sure how it all started.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(70)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<90">
+	    <div id="sorethroat_gradually_mobile_2_n" *ngIf="page==70">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span> Now, is the sore throat getting <span class="redfont">worse</span> by the day?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(72)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="sorethroat_gradually_mobile_3_y" *ngIf="page==71">
+	        <h3>Yes?</h3>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_3_n" *ngIf="page==72">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have a <span class="orangefont">fever</span> that normally peak in the <span class="orangefont">afternoon</span> or <span class="redfont">early evening?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="sorethroat_gradually_mobile_4_y" *ngIf="page==73">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                Chances we are looking at <span class="pinkfont">infectious mono</span> increasing.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of <span class="pinkfont">infectious mono</span> include:</p>
+	            <ul>
+	                <li>Starting gradually. </li>
+	                <li>Sore throat getting worse by the day.</li>
+	                <li><span class="redfont">Fever</span> usually peaking in the afternoon or early evening.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_4_n" *ngIf="page==74">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Have you been feeling <span class="bluefont">fatigued</span> for a while now?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="sorethroat_gradually_mobile_5_y" *ngIf="page==75">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                This is a sign and symptom of <span class="pinkfont">infectious mono.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of infectious mono include:</p>
+	            <ul>
+	                <li>Starting gradually. </li>
+	                <li>Sore throat getting worse by the day.</li>
+	                <li>Fever usually peaking in the afternoon or early evening.</li>
+	                <li>Feeling <span class="redfontSmall">fatigued </span>for sometime.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_5_n" *ngIf="page==76">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Do you have  tender <span class="purple_redfont">lymph nodes</span> along the back of the neck?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="sorethroat_gradually_mobile_6_y" *ngIf="page==77">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                A symptom of <span class="redfont">infectious mono.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms of infectious mono include:</p>
+	            <ul>
+	                <li>Starting gradually. </li>
+	                <li>Sore throat getting worse by the day.</li>
+	                <li>Fever usually peaking in the afternoon or early evening.</li>
+	                <li>Feeling fatigued for sometime.</li>
+	                <li><span class="redfontSmall">Tender lymph nodes</span> along the back of the neck.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_6_n" *ngIf="page==78">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about feeling <span class="bluefont">drowsy?</span> <span class="grayfontSmall">In addition to the sore throat and maybe fever.</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(79)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(80)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="sorethroat_gradually_mobile_7_y" *ngIf="page==79">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                This is a symptom of <span class="pinkfont">infectious mono.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">Symptoms include:</p>
+	            <ul>
+	                <li>Sore throat that started slowly. </li>
+	                <li>Sore throat getting worse by the day.</li>
+	                <li>Fever usually peaking in the afternoon or early evening.</li>
+	                <li>Feeling fatigued for sometime.</li>
+	                <li>Tender lymph nodes along the back of the neck.</li>
+	                <li class="bluefont">Feeling drowsy</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(80)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_7_n" *ngIf="page==80">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you experiencing <span class="bluefont">muscle aches</span> or <span class="redfont">stiffness?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	            <button data-inline="true" class="sorethroat_gradually_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(82)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="sorethroat_gradually_mobile_8_y" *ngIf="page==81">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                There is usually muscle aches and stiffness with <span class="pinkfont">infectious mono.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="sorethroat_gradually_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="sorethroat_gradually_mobile_8_n" *ngIf="page==82">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfont firstname"> </span><br>
+	                Those were to rule in or out <span class="orangefont">strep throat</span> or <span class="redfont">infectious mono.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If you suspect any of those two from the discussions above, you should visit the nearest urgent care clinic or your doctor's office as soon as possible.</p>
+	        <!------Start Popoup div----- -->   
+	        <div style="display: none;" id="sorethroat_gradually_mobile_8_pop-placeholder">
+	            <!-- placeholder for sorethroat_gradually_mobile_8_pop -->
+	        </div>
+	        <!------End Popoup div----- -->
+	        <p class="orangeBorder">Would you like to see what a pharmacist recommend you use over the counter to give you some relief for this sore throat?</p>
+	        <p class="orangeBorderAll">Or you think you should see the nearest urgent care to you from the discussions so far?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="m" aria-haspopup="true" aria-owns="sorethroat_gradually_mobile_8_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-m ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	            <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Clinic</a>
+	            <a href="#" class="sore_throat_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div -->  
+	    <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="cold_3a_mobile_option3_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="sorethroat_gradually_mobile_8_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="sorethroat_gradually_mobile_8_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="redBorderAll">If the healthcare provider suspects mono, they will need to examine you and do some blood tests especially what is called a monotest.</p>
+	        <p class="redBorderAll">This test looks for antibodies that form in the body during the infection, called heterophile antibodies.</p>
+	        <p class="blueBorder">If strep is the suspicion, then the doctor would have to do a rapid test or throat culture to test for strep.</p>
+	        <p class="orangeBorderAll">This is the  way to distinguish between infectious mono and strep throat.</p>
+	        <p class="orangetextBorderWhiteItalic">Even, detection of streptococci in the throat area does not exclude infectious mononucleosis. The healthcare provider would have to make sure that your spleen is not enlarged. If it is, would have to rule in infectious mononucleosis and do some other tests.</p>
+	    </div>
+	</div>
 </ion-content>

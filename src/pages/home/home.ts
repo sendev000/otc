@@ -14,7 +14,7 @@ import { ChildrenClinicPage } from '../children-clinic/children-clinic';
 import { DentalCarePage } from '../dental-care/dental-care';
 import { PharmacyCarePage } from '../pharmacy-care/pharmacy-care';
 
-// import { SprainAdultRecomMobilePage } from '../sprain-adult-recom-mobile/sprain-adult-recom-mobile';
+import { NauseaMobilePage } from '../nausea-mobile/nausea-mobile';
 
 @Component({
   selector: 'page-home',
@@ -94,8 +94,8 @@ export class HomePage {
 		if (index.length > 0)
 		{
 			let page = (<any>this.items)[index];
-			this.navCtrl.push(page);
-			// this.navCtrl.push(SprainAdultRecomMobilePage);
+			// this.navCtrl.push(page);
+			this.navCtrl.push(NauseaMobilePage);
 		}
 	}
 }

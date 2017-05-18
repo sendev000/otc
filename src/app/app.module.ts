@@ -362,6 +362,14 @@ import { ConstipationInfographicsMobilePage } from '../pages/constipation-infogr
 import { YeastInfographicsMobilePage } from '../pages/yeast-infographics-mobile/yeast-infographics-mobile';
 import { BitesInfographicsMobilePage } from '../pages/bites-infographics-mobile/bites-infographics-mobile';
 import { AnkleSprainInfographicsMobilePage } from '../pages/ankle-sprain-infographics-mobile/ankle-sprain-infographics-mobile';
+import { SoreThroatInfographicsMobilePage } from '../pages/sore-throat-infographics-mobile/sore-throat-infographics-mobile';
+import { StiffNeckInfographicsMobilePage } from '../pages/stiff-neck-infographics-mobile/stiff-neck-infographics-mobile';
+import { BackPainInfographicsMobilePage } from '../pages/back-pain-infographics-mobile/back-pain-infographics-mobile';
+import { HeartburnInfographicsMobilePage } from '../pages/heartburn-infographics-mobile/heartburn-infographics-mobile';
+import { WristPainInfographicsMobilePage } from '../pages/wrist-pain-infographics-mobile/wrist-pain-infographics-mobile';
+import { ElbowInfographicsMobilePage } from '../pages/elbow-infographics-mobile/elbow-infographics-mobile';
+import { DiarrheaInfographicsMobilePage } from '../pages/diarrhea-infographics-mobile/diarrhea-infographics-mobile';
+import { NauseaInfographicsMobilePage } from '../pages/nausea-infographics-mobile/nausea-infographics-mobile';
 
 import { ContactSocialMobilePage } from '../pages/contact-social-mobile/contact-social-mobile';
 
@@ -726,6 +734,14 @@ import { AuthService} from '../pages/providers/auth-service';
     YeastInfographicsMobilePage,
     BitesInfographicsMobilePage,
     AnkleSprainInfographicsMobilePage,
+    SoreThroatInfographicsMobilePage,
+    StiffNeckInfographicsMobilePage,
+    BackPainInfographicsMobilePage,
+    HeartburnInfographicsMobilePage,
+    WristPainInfographicsMobilePage,
+    ElbowInfographicsMobilePage,
+    DiarrheaInfographicsMobilePage,
+    NauseaInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],
@@ -1095,6 +1111,14 @@ import { AuthService} from '../pages/providers/auth-service';
     YeastInfographicsMobilePage,
     BitesInfographicsMobilePage,
     AnkleSprainInfographicsMobilePage,
+    SoreThroatInfographicsMobilePage,
+    StiffNeckInfographicsMobilePage,
+    BackPainInfographicsMobilePage,
+    HeartburnInfographicsMobilePage,
+    WristPainInfographicsMobilePage,
+    ElbowInfographicsMobilePage,
+    DiarrheaInfographicsMobilePage,
+    NauseaInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],

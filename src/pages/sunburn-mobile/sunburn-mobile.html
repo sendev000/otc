@@ -1,18 +1,527 @@
-<!--
-  Generated template for the SunburnMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>sunburn_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Sunburn
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange">
+    <p *ngIf="page==0">Sunburn?</p>
+    <p *ngIf="page>0 && page<20">Need urgent care?</p>
+    <p *ngIf="page>=20 && page<30">How bad is it?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightYellow centerText">
+	         <span> Better to prevent than treat.<br><span class="grayfontSmall"> Keep this in mind for next time.</span></span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border right person------------------- -->
+	   <!------Start Popoup div----- -->   
+	   <div style="display: none;" id="sunburn_mobile_pop-placeholder">
+	      <!-- placeholder for sunburn_mobile_pop -->
+	   </div>
+	   <!------End Popoup div----- -->
+	   <div class="redBorder">
+	      <p class="redBorderAll">Before we begin, if it just happened, soak a towel or t-shirt in cool water, wring out the excess water and place on the sunburned area. </p>
+	      <p>Now, go in front or under a fan or air conditioner to start cooling off as you are using this app to figure out how to take care of this.</p>
+	      <hr class="hrorange">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/sunburn-lady.svg" width="160" alt="Lady under the sun at the beach">
+	      </p>
+	      <p>It is important to rule out the need for emergency medical care or urgent care. </p>
+	   </div>
+	   <p class="orangeBorderAll centerText">So let's get started.</p>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText">
+	      <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="sunburn_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	      <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="sunburn1_mobile_2_n" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Do you have <span class="redfont">fever</span> or <span class="bluefont">chills?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="sunburn1_mobile_3_y" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Worse than you are imagining.</li>
+	            <li>Know that the effect of the sun burn is ongoing and it would get worse.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="sunburn1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_3_n" *ngIf="page==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span>What about a <span class="bluefont">headache</span> in addition to the <span class="orangefont">sunburn?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="sunburn1_mobile_4_y" *ngIf="page==4">
+	      <!--start 4 div -->
+	      <button data-inline="true" class="sunburn1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_4_n" *ngIf="page==5">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Do you feel <span class="purple_bluefont">faint,</span> <span class="pinkfont">dizzy?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightOrange">
+	                  Or <span class="purple_redfont">nauseated?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="sunburn1_mobile_5_y" *ngIf="page==6">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need to rule out possible dehydration.</li>
+	            <li>It is going to get worse.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="sunburn1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_5_n" *ngIf="page==7">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Any <span class="redfont">blisters</span> that are covering a <span class="grayfontLarge">large part</span> of your body?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightOrange">
+	                  <span class="redfont">Very painful?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="sunburn1_mobile_6_y" *ngIf="page==7">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>May need corticosteroid pills.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="sunburn1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_6_n" *ngIf="page==8">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span>Do you have <span class="redfont">red</span> streaks along the arm or legs?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="sunburn1_mobile_7_y" *ngIf="page==9">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Possible infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="sunburn1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_7_n" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Are you experiencing <span class="purple_redfont">swelling</span> of the skin?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightOrange">
+	                  And is the pain becoming <span class="bluefont">unbearable?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="sunburn1_mobile_8_y" *ngIf="page==11">
+	      <!--start 8 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need professional evaluation.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="sunburn1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_8_n" *ngIf="page==12">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Is your skin <span class="redfont">red</span> and <span class="purple_redfont">tender?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="sunburn1_mobile_9_y" *ngIf="page==13">
+	      <!--start 9 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="sunburn1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_9_n" *ngIf="page==14">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Is your skin <span class="redfont">warm</span> or <span class="orangefont">painful</span> to touch?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	         <button data-inline="true" class="sunburn1_mobile_10_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="sunburn1_mobile_10_y" *ngIf="page==15">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="orangefontLarge">No?</span><br>
+	            You <span class="redfont">may not</span> be looking at sunburn. If you think otherwise, let's Continue.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="sunburn1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="sunburn1_mobile_10_n" *ngIf="page==16">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="orangefontLarge"></span><br>
+	            The effect of the sunburn may still be ongoing.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="orangeBorder centerText">One more question before we send you to the pharmacist for an over-the-counter recommendation.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	   <div id="slider_sunburn2_mobile_div" *ngIf="page==20">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span>In your estimation, what <span class="orangefont">percentage (%)</span> of your body is <span class="yellowfont">sunburned?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <!-----------------End Border right person------------------- -->
+	      <div data-role="fieldcontain" class="ui-field-contain">
+	         <label for="slider_sunburn2_mobile_mobile" id="slider_sunburn2_mobile_mobile-label">%</label>
+	         <div class="ui-slider">
+	         	<ion-item>
+					<ion-range min="10" max="100" step="10" [(ngModel)]="currentPer" color="sliderPink">
+						<ion-label range-left>{{currentPer}}</ion-label>
+					</ion-range>
+				</ion-item>
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <div class="centerText">
+	      	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_sunburn2_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(21)"></div>
+	      </div>
+	   </div>
+	   <br>
+	   <div class="container_12" id="selected_sunburn2_mobile_value_container" *ngIf="page==21">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <div id="selected_sunburn2_mobile_value">
+	            	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentPer}}</span>%
+	            </div>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-lindsey-orange.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	   </div>
+	   <br>
+	   <div id="sunburn2_mobile_option1" *ngIf="page==21 && currentPer<=30">
+	      <div class="clearboth divider1"></div>
+	      <div class="orangeBorderAll">
+	         <p class="purpleRedBorderWhite">Once sunburn occurs, there is little you can do to limit skin damage.</p>
+	         <p class="purpleRedBorder purple_redfont centerText">Now, make sure you:</p>
+	         <ul>
+	            <li>Drink plenty of fluid to prevent dehydration</li>
+	            <br>
+	            <li>Get a towel, dampen it with cool tap water and apply it to the affected areas</li>
+	            <br>
+	            <li>Or just take a cool bath or shower if you can.</li>
+	         </ul>
+	         <p class="orangeBorder">The sunburned area will be peeling for some days after the sunburn. The pain is worst between 6 and 48 hours after sun exposure.</p>
+	      </div>
+	      <p class="orangeBorderAll centerText">Let's see what a pharmacist recommend you use over-the-counter.</p>
+	   </div>
+	   <div id="sunburn2_mobile_option2" *ngIf="page==21 && currentPer>=30 && currentPer<60">
+	      <div class="clearboth divider1"></div>
+	      <p class="orangeBorder centerText"><span class="orangefontLarge">Note that: </span><br>Symptoms and signs appear in 1 to 24 hours and usually peak within 72 hours except in severe cases.</p>
+	      <p class="orangeBorderAll">Skin is going to be peeling  on sunburned areas for many days after the sunburn.</p>
+	      <p class="orangeBorder">The pain is worst between 6 and 48 hours after sun exposure.</p>
+	      <p class="orangeBorderAll">Well, let's see what a pharmacist recommend you use over-the-counter for this sunburn or would you like to visit the nearest urgent care clinic to you?</p>
+	   </div>
+	   <div id="sunburn2_mobile_option3" *ngIf="page==21 && currentPer>=60">
+	      <div class="clearboth divider1"></div>
+	      <h3 class="redBorderWhite redfont centerText">Pretty much all over?</h3>
+	      <p class="redBorder">Symptoms such as fever, chills, weakness and/or shock may develop if a large portion of the body surface is affected. So if at anytime you feel it is getting worse, seek urgent medical care.</p>
+	      <p class="redBorder grayfontSmall">Peeled skin may be extremely vulnerable to sunlight for several weeks. Further exposure should be avoided until sunburn has completely subsided. </p>
+	      <p class="redBorderAll redfontSmall centerText"><span class="firstname"> </span> we strongly recommend you visit the nearest urgent care clinic to you.</p>
+	      <p class="redBorder">You may need steroidal pills for the inflammation. You cannot put over the counter steroid creams to a large skin surface area.</p>
+	      <p class="redBorderAll centerText">If you don't think so, well, let's see what a pharmacist recommend you use over-the-counter for this sunburn.</p>
+	   </div>
+	   <!-------------Start Options button------------------ --> 
+	   <div id="options_btn_sunburn2_mobile" *ngIf="page==21">
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button class="back_sunburn2_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackPer()">Back</button>
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <a href="#" (click)="gotoSubPage(1)" class="sunburn_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Pharmacist</a>
+	      </p>
+	   </div>
+	   <!--------------End Options Button----------------------- -->
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-popup-screen ui-overlay-b in" id="sunburn_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="sunburn_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	   <div data-role="popup" id="sunburn_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	      <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	      <p class="orangeBorder">The full effect of the sunburn to your skin may not appear for a day or more. By the time the skin starts to become  red, the damage has been done. </p>
+	      <p class="orangeBorderAll orangefontSmall">For example, blisters can develop hours to days later. Meanwhile, stay away from the sun until you have taken care of this.</p>
+	   </div>
+	</div>
 </ion-content>

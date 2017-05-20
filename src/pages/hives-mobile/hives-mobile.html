@@ -1,18 +1,508 @@
-<!--
-  Generated template for the HivesMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>hives_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Hives
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgDeepOrange">
+    <p *ngIf="page==0">Hives?</p>
+    <p *ngIf="page>0 && page<20">An Emergency?</p>
+    <p *ngIf="page>=20 && page<30">What caused it?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-o">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightOrange centerText">
+	         <span> <span class="orangefont">Hives</span> are raised, itchy, red wheals with defined edges on the skin.</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border right person------------------- -->
+	   <div class="orangeBorder">
+	      <p>This is usually a result of the body releasing histamine and other chemicals into the bloodstream in response to a reaction one may be having.</p>
+	      <hr class="hrorange">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/hives-lady.svg" width="150" alt="lady with hives">
+	      </p>
+	      <p class="orangeBorderAll">Let's continue and see what a pharmacist recommend for hives over the counter.</p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText"> 
+	      <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="hives1_mobile_2_n" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>With this hives, are you also experiencing <span class="bluefont">shortness of breath?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="hives1_mobile_3_y" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>It is going to get worse.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_3_n" *ngIf="page==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Any <span class="blue_brightfont">tightness</span> in the <span class="bluefont">throat</span> with this hives?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="hives1_mobile_4_y" *ngIf="page==4">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylasis</li>
+	            <li>Call for emergency medical help even if you don't know the cause.</li>
+	            <li>If you have medications to treat an allergy attack like epipen, use it immediately.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_4_n" *ngIf="page==5">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>What about a <span class="purple_redfont">swollen</span> <span class="grayfont">tongue or face</span> with this hives?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="hives1_mobile_5_y" *ngIf="page==6">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylasis</li>
+	            <li>Call for emergency medical help even if you don't know the cause.</li>
+	            <li>If you have medications to treat an allergy attack like epipen, use it immediately.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_5_n" *ngIf="page==7">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Do you feel like <span class="blue_brightfont">fainting?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="hives1_mobile_6_y" *ngIf="page==8">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylasis</li>
+	            <li>Call for emergency medical help even if you don't know the cause.</li>
+	            <li>If you have medications to treat an allergy attack like epipen, use it immediately.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_6_n" *ngIf="page==9">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>Any <span class="bluefont">wheezing</span> with this <span class="orangefont">hives?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->   
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="hives1_mobile_7_y" *ngIf="page==10">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylasis</li>
+	            <li>Call for emergency medical help even if you don't know the cause.</li>
+	            <li>If you have medications to treat an allergy attack like epipen, use it immediately.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_7_n" *ngIf="page==11">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightRed centerText">
+	            <span>Has your <span class="bluefont">pulse</span> become <span class="grayfont">weak and rapid</span> since this hives started?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="hives1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	         <button data-inline="true" class="hives1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="hives1_mobile_8_y" *ngIf="page==12">
+	      <!--start 8 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="redBorderAll">
+	         <h3 class="orangeBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylasis</li>
+	            <li>Call for emergency medical help even if you don't know the cause.</li>
+	            <li>If you have medications to treat an allergy attack like epipen, use it immediately.</li>
+	         </ul>
+	      </div>
+	      <p class="redBorderWhite centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="hives1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="hives1_mobile_8_n" *ngIf="page==13">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfont firstname"> </span><br>
+	            Those were the emergency signs of an <span class="redfont">anaphylactic</span> <span class="redfont">reaction.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="orangeBorder">Anaphylactic reactions can be deadly and are considered emergency situations.</p>
+	      <p class="orangeBorderAll">If you are confident you are not looking at an emergency situation, let's continue to see what a pharmacist recommend you take for this hives.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div -->  
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
-
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	   <div id="hives2_mobile_q1" *ngIf="page==20">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span>What do you think may have<span class="orangefont"> caused it?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div id="hives2_mobile_q1_form_div" style="" mbsc-enhance="" data-enhance="false" class="mbsc-comp mbsc-form mbsc-mobi-light-orange mbsc-mobiscroll mbsc-ltr">
+	         <label for="hives2_mobile_q1_0" class="mbsc-checkbox" (click)="toggleSymptom(0)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_0" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[0]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Insect bite
+	         </span>         </label>
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_1" class="mbsc-checkbox" (click)="toggleSymptom(1)"><input name="hives2_mobile_q1" type="checkbox" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" id="hives2_mobile_q1_1" value="" [(ngModel)]="symptoms[1]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Ate shell fish or nuts
+	         </span></label>
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_2" class="mbsc-checkbox" (click)="toggleSymptom(2)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_2" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[2]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Animal dander </span><span class="grayfontSmall">(especially cats)</span>
+	         </label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_3" class="mbsc-checkbox" (click)="toggleSymptom(3)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_3" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[3]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Pollen or food allergy
+	         </span>
+	         </label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_4" class="mbsc-checkbox" (click)="toggleSymptom(4)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_4" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[4]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Emotional stress 
+	         </span></label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_5" class="mbsc-checkbox" (click)="toggleSymptom(5)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_5" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[5]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Medications
+	         </span>
+	         </label>
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_7" class="mbsc-checkbox" (click)="toggleSymptom(6)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_7" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[6]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Excessive sweating 
+	         </span>
+	         </label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_8" class="mbsc-checkbox" (click)="toggleSymptom(7)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_8" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[7]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Very cold or hot weather 
+	         </span></label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_9" class="mbsc-checkbox" (click)="toggleSymptom(8)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_9" class="hives2_mobileQ1 mbsc-control mbsc-control-ev" value="" [(ngModel)]="symptoms[8]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label">Conditions like lupus
+	         </span>
+	         </label> 
+	         <hr class="hrorange">
+	         <label for="hives2_mobile_q1_6" class="mbsc-checkbox" (click)="toggleAllSymptoms(false)"><input type="checkbox" name="hives2_mobile_q1" id="hives2_mobile_q1_6" value="" class="mbsc-control mbsc-control-ev" [(ngModel)]="symptoms[9]"><span class="mbsc-checkbox-box"></span><span class="mbsc-label" >None of these
+	         </span>
+	         </label>
+	         <hr class="hrorange">
+	         <div class="clearboth divider1"></div>
+	         <p class="centerText"><input type="button" data-inline="true" id="get_hives2_mobile_q1" value="Here you go" class="mbsc-control mbsc-btn mbsc-control-ev" (click)="togglePage(21)"></p>
+	      </div>
+	   </div>
+	   <div class="container_12" id="selected_hives2_mobile_q1_container" *ngIf="page==20 && mode==6">
+	      <div class="grid_9">
+	         <div class="bubbleRightOrange">
+	            <div id="selected_hives2_mobile_q1">
+	            	<span class="redfontLarge">Oops!,</span>You told me nothing
+	            </div>
+	            <!--empty division- -->
+	         </div>
+	      </div>
+	      <div class="grid_3">
+	         <img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="80" alt="Pharmacist" align="right">
+	      </div>
+	   </div>
+	   <div id="hives2_mobile_insect" *ngIf="page==21 && mode==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">Insect bite?</span><br>
+	            Would you like to see the entry for insect bites?
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you are familiar with this insect bite and all you are experiencing is hives, let's continue to see what a pharmacist recommend for hives. </p>
+	      <p class="blueBorderWhite">If not, you may want to take a look at the entry for insect bites for a more detailed discussion.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button class="back_hives2_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	         <a href="#" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Insect bites</a>
+	         <a href="#" (click)="gotoSubPage(1)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Pharmacist</a>
+	      </p>
+	   </div>
+	   <div id="hives2_mobile_food" *ngIf="page==21 && mode==4">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">Food allergy?</span><br>
+	            Let's see what a pharmacist recommend to take care of this hives.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p>Hope you know what food you are allergic to. </p>
+	   </div>
+	   <div id="hives2_mobile_medication" *ngIf="page==21 && mode==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">Medication?</span><br>
+	            You may be having a reaction to this medication.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="orangeBorder">Give the doctor a call for documentation if it was a prescribed medication.</p>
+	      <p>Meanwhile, let's see what a pharmacist recommend you do to stop this hives.</p>
+	   </div>
+	   <div id="hives2_mobile_other" *ngIf="page==21 && mode==5">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">OK.</span><br>
+	            Let's see what a pharmacist recommend to take care of this hives.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p>Expand more on hives causes, histamine release and so on</p>
+	   </div>
+	   <div id="hives2_mobile_none" *ngIf="page==21 && mode==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">None of these?</span><br>
+	            We must have left something out.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-patricia-orange.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">Sometimes the cause of the hives may not be known. If you do, it is always good to avoid such triggers in the future.</p>
+	      <p class="redBorderAll centerText">Well, let's see what the pharmacist recommends you take over-the-counter for this hives.</p>
+	   </div>
+	   <!-------------Start Options button------------------ --> 
+	   <div id="options_btn_hives2_mobile" *ngIf="page==21 && mode!=3">
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button class="back_hives2_mobile_q1 ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBack()">Back</button>
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="gotoSubPage(1)" class="hives_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Pharmacist</a>
+	      </p>
+	   </div>
+	   <!--------------End Options Button----------------------- -->
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
 </ion-content>

@@ -1,18 +1,1358 @@
-<!--
-  Generated template for the BurnMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>burn_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Burns
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p *ngIf="page==0">Burn, Scalding?</p>
+    <p *ngIf="page>0 && page<30">How bad is it?</p>
+    <p *ngIf="page>=30 && page<60">Nature of burn</p>
+    <p *ngIf="page>=60 && page<70">Self care?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightPurple_red centerText">
+	         <span>A <span class="purple_redfont">burn</span> can be minor or it may be a life threatening emergency. </span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border right person------------------- -->
+	   <div class="purpleRedBorder">
+	      <p>Let's determine the type of burn you are looking at before we send you to a pharmacist for an over-the-counter recommendation or the nearest emergency room.</p>
+	      <hr class="hrpink">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/burn-hand.svg" width="200" alt="Burn on the hand">
+	      </p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- --> 	
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText"> 	
+	      <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<30">
+	   <div id="burn1_mobile_2_n" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Was this <span class="pinkfont">burn</span> caused by a <span class="bluefont">chemical?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="burn1_mobile_3_y" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>The chemical is still reacting with your skin.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_3_n" *ngIf="page==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Was it caused by <span class="redfont">electricity?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="burn1_mobile_4_y" *ngIf="page==4">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Worse than you think.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- --> 
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	         <button data-inline="true" class="burn1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_4_n" *ngIf="page==5">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Did you <span class="grayfont">inhale</span> <span class="bluefont">smoke</span> with this burn?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="burn1_mobile_5_y" *ngIf="page==6">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need complete medical evaluation.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_5_n" *ngIf="page==7">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the burn forming <span class="purple_redfont">blisters?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="burn1_mobile_6_y" *ngIf="page==8">
+	      <!--start 6 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_6_n" *ngIf="page==9">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the affected area about or larger than the <span class="purple_bluefont">size of your palm?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="burn1_mobile_7_y" *ngIf="page==10">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need complete evaluation</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_7_n" *ngIf="page==11">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does the burn look <span class="purple_bluefont">whitish?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="burn1_mobile_8_y" *ngIf="page==12">
+	      <!--start 8 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="burn1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_8_n" *ngIf="page==13">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does it look <strong>blackened</strong> or <span class="grayfont">charred?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(14)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(15)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="burn1_mobile_9_y" *ngIf="page==14">
+	      <!--start 9 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(15)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_9_n" *ngIf="page==15">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does it look <span class="bluefont">deep </span>into the <span class="purple_redfont">tissues?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="burn1_mobile_10_y" *ngIf="page==16">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Sign of a <span class="redfont">third degree</span> burn.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_10_n" *ngIf="page==17">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does the burn area feel <span class="purple_redfont">numb</span> to your <span class="purplefont">touch?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <div id="burn1_mobile_11_y" *ngIf="page==18">
+	      <!--start 11 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Possible <span class="redfont">third degree</span> burn.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(19)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_11_n" *ngIf="page==19">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Would you say you are <span class="redfont">not sure</span> how serious it is...</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  ...but it looks pretty <span class="redfont">bad?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(20)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(21)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 11 div --> 
+	   <div id="burn1_mobile_12_y" *ngIf="page==20">
+	      <!--start 12 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care  or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Don't tough it out.</li>
+	            <li>It is going to get worse.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_12_n" *ngIf="page==21">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Are there <span class="purple_bluefont">other symptoms</span> with this burn?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  Symptoms such as cuts, bleeding, headache, broken anything?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <!-----------------End Point Right------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn1_mobile_13_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	         <button data-inline="true" class="burn1_mobile_13_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 12 div --> 
+	   <div id="burn1_mobile_13_y" *ngIf="page==22">
+	      <!--start 13 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Things are worse than you think.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn1_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn1_mobile_13_n" *ngIf="page==23">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Those were to rule out going  to the <span class="redfont">emergency room.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">Now, let's see if it is something you can take care of yourself if you are convinced it does not require a visit to the emergency room.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 13 div -->
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=30 && page<60">
+	   <div id="burn2_mobile_1" *ngIf="page==30">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Meanwhile, run cool tap water on the burn area as soon as possible. </span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorderAll centerText">You need to do this for an average of 20 minutes. This will take heat away from the affected area and reduce swelling.</p>
+	      <p class="redBorder">You can do that while using this app to help you decide on the best course of action to take.</p>
+	      <p class="redBorderAll grayfontSmall centerText"><span class="redfont">Do not</span> apply ice or iced water to the burn. This may cause the blood vessels in the area to constrict and lead to the death of tissues surrounding the burn area or frostbite.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="burn2_mobile_2_n" *ngIf="page==31">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the burn area larger than <span class="redfont">3 inches</span> in diameter?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  And you think this is a <span class="redfont">second degree</span> burn?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="burn2_mobile_3_y" *ngIf="page==32">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>The skin surface area is too large for self-care measures.</li>
+	            <li>Second degree burns in an area larger than 3 inches in diameter require urgent medical care.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_3_n" *ngIf="page==33">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the burn area <span class="redfont">bleeding?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="burn2_mobile_4_y" *ngIf="page==34">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>You can't stop the bleeding yourself. Don't even waste your time trying.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_4_n" *ngIf="page==35">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the affected area <span class="purplefont">swelling</span> or <span class="purple_redfont">very swollen?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="burn2_mobile_5_y" *ngIf="page==36">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need to prevent or treat infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_5_n" *ngIf="page==37">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the burn area <span class="redfont">patchy </span><span class="purple_bluefont">white</span>-to-<span class="redfont">red?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  And <span class="redfont">very painful?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="burn2_mobile_6_y" *ngIf="page==38">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li> Looking at <span class="orangefont">second degree</span> burn or partial thickness burn.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_6_n" *ngIf="page==39">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the affected area on the <span class="orangefont">face?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(40)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(41)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="burn2_mobile_7_y" *ngIf="page==40">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>You don't want to risk scarring.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_7_n" *ngIf="page==41">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is it on the <span class="bluefont">groin?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(42)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(43)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="burn2_mobile_8_y" *ngIf="page==42">
+	      <!--start 8 div -->
+	      <h3>Yes?</h3>
+	      <p>Seek urgent care</p>
+	      <button data-inline="true" class="burn2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(43)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_8_n" *ngIf="page==43">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the burn on the <span class="purplefont">feet?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(44)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(45)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="burn2_mobile_9_y" *ngIf="page==44">
+	      <!--start 9 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>There is a high chance it would get infected</li>
+	            <li>It is going to swell up pretty bad.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(45)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_9_n" *ngIf="page==45">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is this burn on a <span class="purple_redfont">major joint?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(46)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(47)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="burn2_mobile_10_y" *ngIf="page==46">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Joint movement would make it difficult to heal.</li>
+	            <li>Need professional dressing.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(47)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_10_n" *ngIf="page==47">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Are you <span class="bluefont">diabetic</span> or <span class="greenfont">immune compromised?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  Or <span class="bluefont">elderly?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(48)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(49)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div -->
+	   <div id="burn2_mobile_11_y" *ngIf="page==48">
+	      <!--start 11 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Don't even think about self care.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest ER</a>
+	         <button data-inline="true" class="burn2_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(49)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_11_n" *ngIf="page==49">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Now, did you have this burn about <span class="bluefont">2 days</span> ago and you are still <span class="grayfont">feeling pain?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- --> 	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_12_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(50)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(51)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 11 div --> 
+	   <div id="burn2_mobile_12_y" *ngIf="page==50">
+	      <!--start 12 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn2_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(51)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_12_n" *ngIf="page==51">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Was this burn a few days ago and the area is still <span class="redfont">red?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  Still <span class="purple_redfont">swollen?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_13_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(52)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_13_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(53)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 12 div --> 
+	   <div id="burn2_mobile_13_y" *ngIf="page==52">
+	      <!--start 13 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Looking at signs of infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn2_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(53)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_13_n" *ngIf="page==53">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Was this burn  a few days ago and the area is <span class="bluefont">draining?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightPurple_red">
+	                  Forming <span class="orangefont">pus?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-karen-red.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_14_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(54)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_14_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(55)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 13 div -->
+	   <div id="burn2_mobile_14_y" *ngIf="page==54">
+	      <!--start 14 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightRed centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Looking at infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn2_mobile_14_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(55)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_14_n" *ngIf="page==55">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Did this burn occur a few days ago and you are feeling <span class="orangefont">feverish?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_15_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(56)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_15_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(57)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 14 div --> 
+	   <div id="burn2_mobile_15_y" *ngIf="page==56">
+	      <!--start 15 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightRed centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>May be looking at a possible infection that your body is fighting.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn2_mobile_15_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(57)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_15_n" *ngIf="page==57">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Finally, was this burn a few days ago and now you are seeing <span class="redfont">red streaks</span> spreading from the burn?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn2_mobile_16_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(58)">Yes</button>
+	         <button data-inline="true" class="burn2_mobile_16_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(59)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 15 div --> 
+	   <div id="burn2_mobile_16_y" *ngIf="page==58">
+	      <!--start 16 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Signs of a possible infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn2_mobile_16_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(59)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn2_mobile_16_n" *ngIf="page==59">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfont firstname"> </span><br>
+	            We tried to rule out <span class="redfont">second degree</span> burns that require urgent care.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">You may be looking at First degree burn  if none of the questions have applied to you so far.</p>
+	      <p class="redBorderAll centerText">But let's be sure it is what you are looking at.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(60)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 16 div --> 
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=60 && page<70">
+	   <div id="burn3_mobile_1" *ngIf="page==60">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>In the case of a <span class="bluefont">first degree</span> burn, only the outer layer of skin called  <span class="grayfont">the epidermis</span> is affected. </span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">This outer layer hasn't been burned through. If this is the case, you can take care of it with selfcare.<br>
+	         Let's continue and see what we've got.
+	      </p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn3_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(61)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="burn3_mobile_2_n" *ngIf="page==61">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>If it just happened, is the area <span class="redfont">red</span> and <span class="purple_redfont">swollen</span> a bit?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn3_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(62)">Yes</button>
+	         <button data-inline="true" class="burn3_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(63)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="burn3_mobile_3_y" *ngIf="page==62">
+	      <h3>Yes?</h3>
+	      <p>&nbsp;</p>
+	      <button data-inline="true" class="burn3_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(63)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn3_mobile_3_n" *ngIf="page==63">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span> Once again any <span class="redfont">blistering?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn3_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(64)">Yes</button>
+	         <button data-inline="true" class="burn3_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(65)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="burn3_mobile_4_y" *ngIf="page==64">
+	      <!--start 4 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn3_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(65)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn3_mobile_4_n" *ngIf="page==65">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>It should be <span class="bluefont">dry</span> and <span class="purple_bluefont">painful.</span> <span class="grayfont">Is it?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->  	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn3_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(66)">Yes</button>
+	         <button data-inline="true" class="burn3_mobile_5_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(67)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="burn3_mobile_5_y" *ngIf="page==66">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Remember, if you are not sure how serious it is, go to the nearest urgent care clinic or emergency room.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn3_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(67)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn3_mobile_5_n" *ngIf="page==67">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Can you <span class="bluefont">dress it up</span> yourself or do you have someone to help you do it?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <button data-inline="true" class="burn3_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(68)">Yes</button>
+	         <button data-inline="true" class="burn3_mobile_6_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(69)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="burn3_mobile_6_y" *ngIf="page==68">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>These are the places that will dress up the wound for you professionally.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="burn3_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(69)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="burn3_mobile_6_n" *ngIf="page==69">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Alright, let's see what to use <span class="orangefont">over the counter</span> for this burn.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-karen-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">Remember, if you are not sure how serious it is, go to the nearest urgent care clinic or emergency room.</p>
+	      <p class="redBorderAll grayfontSmall">The effect of the burn is still going on and it is going to get worse until the skin finish reacting to the burn.</p>
+	      <p class="redBorder">Would you like to see what a pharmacist recommend over-the-counter to take care of this burn or go to the nearest urgent care clinic to you?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="gotoSubPage(1)" class="burn_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Pharmacist</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <p>&nbsp;</p>
+	</div>
 </ion-content>

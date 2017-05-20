@@ -1,18 +1,676 @@
-<!--
-  Generated template for the EczemaMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>eczema_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Eczema
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p *ngIf="page==0">Eczema</p>
+    <p *ngIf="page>0 && page<20">Is it eczema?</p>
+    <p *ngIf="page>=20 && page<40">Need a doctor?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue">
+	         <span><span class="bluefont">Eczema</span> <span class="blue_brightfontSmall">(Atopic dermatitis)</span> causes itchy and dry skin. Let's figure this out.</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border left person------------------- -->
+	   <div class="blueBorder">
+	      <p>We will talk about adult eczema here. If this is for a child, see the children section for more specific discussion.</p>
+	      <hr class="hrcyan">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/eczema-lady.svg" width="150" alt="Lady with eczema on the hand">
+	      </p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText">
+	      <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="eczema1_mobile_1" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's see if you are looking at <span class="bluefont">eczema</span> in the first place.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> <button data-inline="true" class="eczema1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="eczema1_mobile_2_n" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>You are experiencing <span class="purple_bluefont">dry skin</span> all over the body.</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Is this why you think you have <span class="purple_bluefont">eczema?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-tonia-cyan.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider10"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="eczema1_mobile_3_y" *ngIf="page==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            OK. Eczema can cause this. So can other things, let's continue.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="eczema1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_3_n" *ngIf="page==4">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you having <span class="orangefont">itching</span> that later turns to a <span class="purple_redfont">skin rash?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="eczema1_mobile_4_y" *ngIf="page==5">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a symptom of<span class="bluefont"> eczema.<br></span> <span class="bluefontSmall">(The itch that rashes)</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">It sometimes start with itching and later turn into a skin rash. </p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="eczema1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_4_n" *ngIf="page==6">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you have skin <span class="redfont">blisters</span> with <span class="orangefont">oozing</span> and <span class="orangefont">crusting?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="eczema1_mobile_5_y" *ngIf="page==7">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Eczema can cause<span class="redfont"> blisters</span> with oozing and crusting.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 	<button data-inline="true" class="eczema1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_5_n" *ngIf="page==8">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you have rash <span class="purplefont">inside </span>the <span class="grayfont">knees</span> and/or <span class="grayfont">elbows?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="eczema1_mobile_6_y" *ngIf="page==9">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            These areas are popular spots for eczema to develop.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="eczema1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_6_n" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about <span class="bluefont">rash</span> on the <span class="grayfont">hands</span> and <span class="grayfont">feet?</span> </span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="eczema1_mobile_7_y" *ngIf="page==11">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Eczema most of the time include rash on the hands and feet.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="eczema1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_7_n" *ngIf="page==12">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefont">Rash on the neck.</span><br>
+	            <span> Is that why you are thinking <span class="bluefont">eczema?</span></span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="eczema1_mobile_8_y" *ngIf="page==13">
+	      <!--start 8 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Eczema can sometimes include <span class="grayfont">rash on the neck.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	<button data-inline="true" class="eczema1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_8_n" *ngIf="page==14">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you have <span class="purple_bluefont">bumpy skin</span> on the <span class="grayfont">back of the arms?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="eczema1_mobile_9_y" *ngIf="page==15">
+	      <!--start 9 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="eczema1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_9_n" *ngIf="page==16">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about <span class="bluefont">bumpy</span> skin on <span class="grayfont">front of the thigh?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	         <button data-inline="true" class="eczema1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="eczema1_mobile_10_y" *ngIf="page==17">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            This is a sign of eczema.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	<button data-inline="true" class="eczema1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema1_mobile_10_n" *ngIf="page==18">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Those were <span class="redfont">signs</span> of <span class="bluefont">eczema.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you think you may be looking at eczema, let's continue to find out if you need to see a doctor or if you can take care of this with over-the-counter measures.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
-
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	   <div id="eczema2_mobile_2_n" *ngIf="page==20">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is your skin getting <span class="redfont">painful?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="eczema2_mobile_3_y" *ngIf="page==21">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>The skin must be very dry and cracked.</li>
+	            <li>Need prescription medications.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="eczema2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_3_n" *ngIf="page==22">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Would you say it looks <span class="purple_redfont">infected?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="eczema2_mobile_4_y" *ngIf="page==23">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Risking a staph infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="eczema2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_4_n" *ngIf="page==24">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you have any <span class="orangefont">fever</span> with this eczema?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="eczema2_mobile_5_y" *ngIf="page==25">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>May be looking at an infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="eczema2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_5_n" *ngIf="page==26">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this thing giving you <span class="purplefont">sleepless</span> nights?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="eczema2_mobile_6_y" *ngIf="page==27">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Time to see a doctor on this one.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_6_n" *ngIf="page==28">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at a <span class="pinkfont">flare-up?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	   <div id="eczema2_mobile_7_y" *ngIf="page==29">
+	      <!--start follow up 7 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_7_n" *ngIf="page==30">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Have you <span class="redfont">ever</span> seen a doctor for management of eczema?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_8_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 7 div -->
+	   <div id="eczema2_mobile_8_y" *ngIf="page==31">
+	      <!--start follow up 8 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need to be sure you are looking at eczema.</li>
+	            <li>You will learn more on what the triggers are, prevention and management such as bandaging techniques, choosing a moisturizer and so on.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="eczema2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_8_n" *ngIf="page==32">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are areas on your skin itchy and <span class="purple_redfont">swollen?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="eczema2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	         <button data-inline="true" class="eczema2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 8 div -->
+	   <div id="eczema2_mobile_9_y" *ngIf="page==33">
+	      <!--start follow up 9 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need to rule out infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="eczema2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="eczema2_mobile_9_n" *ngIf="page==34">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            You should be convinced by now if you need to see a doctor or not.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-tonia-cyan.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you think you can take care of this with self care, let's see what a pharmacist recommend over-the-counter to help with this.</p>
+	      <p class="blueBorderAll">Or would you like to see the nearest clinic to you?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- --> 
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Dermatologist</a>
+	         <a href="#" class="eczema_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(1)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 9 div -->
+	   <p>&nbsp;</p>
+	</div>
 </ion-content>

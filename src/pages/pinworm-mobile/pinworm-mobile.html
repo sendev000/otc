@@ -1,18 +1,294 @@
-<!--
-  Generated template for the PinwormMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>pinworm_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Pinworm
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p *ngIf="page==0">Pinworms?</p>
+    <p *ngIf="page>0 && page<20">Is it pinworm?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightPurple_red centerText">
+	            <span>Pinworms usually show no symptoms until there is intense itching.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <br>
+	    <!-----------------End Border right person------------------- -->
+	    <div class="orangeBorder centerText">
+	        <p>Let's see what we can come up with.<br> But first, how do you know you are looking at pinworm infestation anyway? </p>
+	        <hr class="hrpink">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/pelvic/pinworm-lady.svg" width="150" alt="Lady with itchy buttocks">
+	        </p>
+	    </div>
+	    <p class="orangeBorder centerText">Let's start with that.</p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
-
-<ion-content padding>
-
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="pinworm1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Are you having serious <span class="orangefont">itching</span> in the <span class="purple_redfont">anal</span> region?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_2_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_2_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_2_y" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="redfontLarge">No?</span><br>
+	                You may not have pinworms then. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">This is the most common symptom of a pinworm infestation.   </p>
+	        <p class="redBorderAll">The females migrate at night to the outside of the anus and lay eggs.</p>
+	        <p class="redBorder">The sticky, gelatinous substance in which the eggs are deposited and the crawling of the female worm around the anal region cause the <span class="purple_redfont">itching</span> especially at night.</p>
+	        <p class="redBorderAll">If there is any kind of itching in the anal area, let's continue</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="pinworm1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_2_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>What about difficulty <span class="purple_bluefont">sleeping</span> due to the itching that occur at night?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_3_y" *ngIf="page==4">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="pinworm1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_3_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Is the area around the anus <span class="redfont">irritated and sore</span> as a result of constant scratching?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_4_y" *ngIf="page==6">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="pinworm1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_4_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>If you are a female, <span class="redfont">irritation</span> of the <span class="purple_redfont">vagina</span> may occur if an adult worm enters the vagina.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Is this <span class="purple_redfont">the case</span> with you?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img class="shadowInset redBorder" src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_5_y" *ngIf="page==8">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="pinworm1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_5_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span>Have you lost <span class="bluefont">appetite </span>to eat?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightPurple_red">
+	                        Or some <span class="bluefont">weight </span>lately?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="redBorder">This is not too common but can occur in cases with severe infection.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_6_y" *ngIf="page==10">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="pinworm1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>		
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_6_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="purple_redfontLarge firstname"> </span><br>
+	                Diagnosis of <span class="orangefont">pinworm</span> infestation can be done in one of two ways listed below.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">1. Finding the thread-like female worms in the anal area especially at night or in the morning <span class="grayfontSmall">(female worms are about 10 mm or ½ inch long while males average 3 mm).</span> <br>&nbsp;&nbsp;&nbsp;See if you can get someone to use a magnifying glass to help check you out first thing in the morning or about 2 hours after you have fallen asleep.</p>
+	        <p class="redBorderAll">Or  2. <strong>Tape test:</strong><br>Here, a piece of cellophane tape is patted against  the anal region first thing in the morning before bathing or using the toilet (bathing and wiping may remove eggs). This will be placed, sticky side down, on a glass slide and look for eggs using a microscope. <br>&nbsp;&nbsp;&nbsp;You may have to do this on 3 consecutive mornings. Usually, you will take this to the doctor for viewing under the microscope.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p class="orangeBorder redfont centerText">So do you think you have pinworm?</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="pinworm1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="pinworm1_mobile_7_n_link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" data-theme="e" (click)="togglePage(13)">Not sure</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_7_y" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="purple_redfontLarge">Yes?</span><br>
+	                Alright, let's see what a pharmacist recommend to take care of the pinworm.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Remember, you may have to treat the whole family.</p>
+	        <p class="redBorderAll">If you are not too sure, let's continue</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(1)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Pharmacist</a>
+	            <button data-inline="true" class="pinworm1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(13)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="pinworm1_mobile_7_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightPurple_red centerText">
+	                <span class="orangefontLarge">Not sure?</span><br>
+	                Give the doctor a call if you suspect you may have pinworm infestation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redBorder redfont centerText">Suspect pinworm if:</p>
+	            <ul>
+	                <li>You have intense itching in the anal region especially at night or early in the morning.</li>
+	                <br>
+	                <li>A family member has pinworm.</li>
+	                <br>
+	                <li>Difficulty sleeping due to the itching that occurs during the night.</li>
+	                <br>
+	                <li>Soreness of the anal region especially in the morning. You may be scratching the area at night and not know it.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorderAll">Would you like to see what a pharmacist recommend you use over-the-counter to help with pinworm infestation or see the nearest urgent care clinic to you?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="gotoSubPage(1)" class="pinworm_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

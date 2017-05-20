@@ -1,18 +1,866 @@
-<!--
-  Generated template for the PoisonIvyMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
-
+  -->
+<ion-header class="ui-header">
   <ion-navbar>
-    <ion-title>poison_ivy_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Poison Ivy
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightGreen" *ngIf="page>=0 && page<50">
+    <p *ngIf="page==0">Poison ivy, oak?</p>
+    <p *ngIf="page>0 && page<20">Is this poison ivy?</p>
+    <p *ngIf="page>=20 && page<50">Need a doctor?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-h">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightGreen centerText">
+	         <span>These plants release an oily resin <span class="greenfontSmall">(urushiol)</span> when bruised.</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <!-----------------End Border right person------------------- -->
+	   <br>
+	   <div class="greenBorder centerText">
+	      <p> Contact with the oil usually trigger an allergic reaction on the skin.</p>
+	      <hr class="hrgreen">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/poisonivy-lady.svg" width="200" alt="Lady with poison ivy rash on hand">
+	      </p>
+	      <p class="greenBorderAll centerText">Let's see what to use over-the-counter for poison ivy.</p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="poisonivy1_mobile_1" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span class="greenfontLarge firstname"> </span><br>
+	            We will focus on answering the questions listed below.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorder">
+	         <ol>
+	            <li>Is this poison ivy?</li>
+	            <br>
+	            <li>Do you need to go to an urgent care clinic for this?</li>
+	            <br>
+	            <li>If not, what can you use over-the-counter to take care of this?</li>
+	         </ol>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> <button data-inline="true" class="poisonivy1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="poisonivy1_mobile_2_n" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Have you or someone in the household been in the <span class="greenfont">woods</span> the past <span class="grayfont">2 weeks or so?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="poisonivy1_mobile_3_y" *ngIf="page==3">
+	      <h3>Yes?</h3>
+	      <p>&nbsp;</p>
+	      <button data-inline="true" class="poisonivy1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_3_n" *ngIf="page==4">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Has your <span class="orangefont">pet</span> been in the <span class="grayfont">woods or brush</span> lately?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="poisonivy1_mobile_4_y" *ngIf="page==5">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span class="greenfontLarge">Yes?</span><br>
+	            You should start suspecting <span class="greenfont">poison ivy,</span> but not so fast.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="greenBorder">Note that poison ivy not only can be acquired through direct contact with the plant, but also indirect contact with let's say your dog that went to fetch something in the woods, tools you used to trim the woods and clothing that have urushiol on them.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="poisonivy1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_4_n" *ngIf="page==6">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Looking at the affected area, is it <span class="redfont">red?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightGreen redfont">
+	                  And itchy?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/male/pharm-danny-green.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="poisonivy1_mobile_5_y" *ngIf="page==7">
+	      <!--start 5 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="poisonivy1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_5_n" *ngIf="page==8">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Are you feeling a <span class="redfont">burning</span> <span class="purple_bluefont">sensation</span> in the affected area?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="poisonivy1_mobile_6_y" *ngIf="page==9">
+	      <!--start 6 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="poisonivy1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_6_n" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Does the area show <span class="redfont">blisters</span> with <span class="purple_redfont">fluid?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="poisonivy1_mobile_7_y" *ngIf="page==11">
+	      <!--start 7 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="poisonivy1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_7_n" *ngIf="page==12">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Does it show small <span class="purple_redfont">bumps</span> or <span class="purplefont">swelling?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="poisonivy1_mobile_8_y" *ngIf="page==13">
+	      <!--start 8 div -->
+	      <div class="centerText">
+	         <div class="maxwidth450">
+	            <div class="ovalRightGreen">
+	               <span class="greenfontLarge">Yes?</span><br>
+	               Start suspecting <span class="greenfont">poison ivy.</span>
+	            </div>
+	            <img src="assets/img/pharm/male/pharm-danny-green.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End middle right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="poisonivy1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_8_n" *ngIf="page==14">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is the area in a <span class="grayfont">pattern</span> like a straight <span class="redfont">red streak</span> on the <span class="grayfont">arm or leg?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	         <button data-inline="true" class="poisonivy1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="poisonivy1_mobile_9_y" *ngIf="page==15">
+	      <!--start 9 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span class="greenfontLarge">Yes?</span><br>
+	            You are more than likely looking at <span class="greenfont">poison ivy.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="greenBorderAll">Straight red streaking on an arm or leg will result from brushing against poison ivy unknowingly.</p>
+	      <p class="greenBorder purplefontSmall">Note that if you came in contact with something that has the oil in it, the rash may be more spread out.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">	
+	         <button data-inline="true" class="poisonivy1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy1_mobile_9_n" *ngIf="page==16">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span class="greenfontLarge firstname"> </span><br>
+	            If you think you are looking at <span class="greenfont">poison ivy,</span> let's see if you need to see a doctor.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">  
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<50">
+	   <div id="poisonivy2_mobile_2_n" *ngIf="page==20">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is this <span class="greenfont">poison ivy</span> <span class="pinkfont">rash</span> around the <span class="grayfont">eyes?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="poisonivy2_mobile_3_y" *ngIf="page==21">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>It could spread to affect the eye which can be dangerous.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_3_n" *ngIf="page==22">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Does it affect the <span class="orangefont">mouth?</span></span><br>
+	            <span class="grayfont">(..like a swollen mouth)</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="poisonivy2_mobile_4_y" *ngIf="page==23">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Nothing over the counter will take care of this.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_4_n" *ngIf="page==24">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is a very <span class="grayfontLarge">large area</span> of the body affected?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="poisonivy2_mobile_5_y" *ngIf="page==25">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Will need  steroidal pills or shot for the inflammation.</li>
+	            <li>Can't apply over the counter steroidal creams or lotions to a large area.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_5_n" *ngIf="page==26">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is the poison ivy rash <span class="redfont">painful?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="poisonivy2_mobile_6_y" *ngIf="page==27">
+	      <!--start 6 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_6_n" *ngIf="page==28">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is it <span class="redfont">warm</span> to <span class="purple_bluefont">touch?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="poisonivy2_mobile_7_y" *ngIf="page==29">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>May be looking at an infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_7_n" *ngIf="page==30">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Is the affected area <span class="purplefont">swollen?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="poisonivy2_mobile_8_y" *ngIf="page==31">
+	      <!--start 8 div -->
+	      <h3>Yes?</h3>
+	      <p>Seek urgent care.</p>
+	      <button data-inline="true" class="poisonivy2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_8_n" *ngIf="page==32">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Have you tried something over-the-counter yet and <span class="redfont">no relief?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightGreen">
+	                  Or the rash is <span class="redfont">getting worse?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/male/pharm-danny-green.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="poisonivy2_mobile_9_y" *ngIf="page==33">
+	      <!--start 9 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Will need a prescription anti inflammatory steroid pills to take care of this.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_9_n" *ngIf="page==34">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Did the rash <span class="pinkfont">disappear</span> and now <span class="grayfont">it is back?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="poisonivy2_mobile_10_y" *ngIf="page==35">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Much worse than you think. You body is losing the battle.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_10_n" *ngIf="page==36">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Do you have <span class="redfont">fever</span> with this <span class="grayfont">rash?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(37)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(38)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <div id="poisonivy2_mobile_11_y" *ngIf="page==37">
+	      <!--start 11 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Possible infection</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(38)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_11_n" *ngIf="page==38">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>Do you have a <span class="purple_bluefont">weakened immune system?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="poisonivy2_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(39)">Yes</button>
+	         <button data-inline="true" class="poisonivy2_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(40)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 11 div --> 
+	   <div id="poisonivy2_mobile_12_y" *ngIf="page==39">
+	      <!--start 12 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call your doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Your system need help taking care of this.</li>
+	            <li>You don't want to risk an infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="poisonivy2_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(40)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="poisonivy2_mobile_12_n" *ngIf="page==40">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span class="greenfontLarge firstname"> </span><br>
+	            You may do self care if your answer is <span class="redfont">'NO' </span>so far. 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redBorder">Go to an urgent care clinic if there are signs of an infection which include:</p>
+	         <ul>
+	            <li>Affected area getting painful</li>
+	            <br>
+	            <li>Area getting swollen and tender</li>
+	            <br>
+	            <li>You develop fever with this rash.</li>
+	         </ul>
+	      </div>
+	      <!------Start Popoup div----- -->   
+	      <div style="display: none;" id="poisonivy2_mobile_12_pop-placeholder">
+	         <!-- placeholder for poisonivy2_mobile_12_pop -->
+	      </div>
+	      <!------End Popoup div----- -->
+	      <p class="redBorder centerText">Let's see what a pharmacist recommend you use to take care of this poison ivy over-the-counter.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-rel="popup" data-inline="true" data-transition="pop" data-theme="e" aria-haspopup="true" aria-owns="poisonivy2_mobile_12_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(50)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 12 div --> 
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>=50 && page<60">
+	   <div id="slider_poisonivy3_mobile_div" *ngIf="page==50">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <span>On a scale of 1 to 10, how <span class="redfont">bad</span> is it?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="greenfontSmall greenBorder centerText">Use the slider below to tell us how bad.</p>
+	      <br>
+	      <div data-role="fieldcontain" class="ui-field-contain">
+	         <label for="slider_poisonivy3_mobile_mobile" id="slider_poisonivy3_mobile_mobile-label">I say:</label>
+	         <div class="ui-slider">
+	         	<ion-item>
+					<ion-range min="1" max="10" step="1" [(ngModel)]="currentScale" color="sliderPink">
+						<ion-label range-left>{{currentScale}}</ion-label>
+					</ion-range>
+				</ion-item>
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <div class="centerText">
+	      	<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline">Here you go<input type="button" id="get_poisonivy3_mobile_value" data-inline="true" value="Here you go" (click)="togglePage(51)"></div>
+	      </div>
+	   </div>
+	   <br>
+	   <div class="container_12" id="selected_poisonivy3_mobile_value_container" *ngIf="page==51">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightGreen centerText">
+	            <div id="selected_poisonivy3_mobile_value">
+	            	You said:<span style="background-color:#FFFF99; border:inset; border-color:#FFFF00; padding:5px;">{{currentScale}}</span>
+	            </div>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/male/pharm-danny-green.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	   </div>
+	   <br>
+	   <div id="poisonivy3_mobile_option1" *ngIf="page==51 && currentScale<=3">
+	      <h3 class="greenBorderWhite purplefont centerText">Not too bad.</h3>
+	      <p class="greenBorder">If you just came in contact with the poison ivy, oak or sumac, wash the affected area with soap and water.  </p>
+	      <p class="greenBorderAll">Remember to wash underneath the fingers too.</p>
+	      <p class="greenBorder"> The oil binds to the skin after about 5 minutes. So wash it off and avoid some reaction.</p>
+	      <p class="greenBorderAll">You must totally remove it within 10 to 15 minutes before it start causing havoc.</p>
+	      <p class="greenBorder centerText">If  15 minutes has passed or you have noticed some  symptoms,  let's see what a pharmacist recommend you use over the counter for this poison ivy rash.</p>
+	   </div>
+	   <div id="poisonivy3_mobile_option2" *ngIf="page==51 && currentScale<=7 && currentScale>3">
+	      <h3 class="orangeBorder orangefont centerText">Getting pretty bad?</h3>
+	      <p class="orangeBorder">Let's see what a pharmacist recommend you use over the counter to take care of this poison ivy rash.</p>
+	      <p class="orangeBorderAll">Or do you think you should see the nearest urgent care clinic to you from the discussions so far?</p>
+	   </div>
+	   <div id="poisonivy3_mobile_option3" *ngIf="page==51 && currentScale>7">
+	      <h3 class="redBorderWhite redfont centerText">Seek urgent care.</h3>
+	      <p class="redBorder">You need some kind of steroid pills or even shots to help with the reaction and inflammation. Go to the nearest urgent care facility or call the doctor for an appointment.</p>
+	      <p class="redBorderAll">For now, let's see what a pharmacist recommend you use over-the-counter for poison ivy rash.</p>
+	   </div>
+	   <!-------------Start Options button------------------ --> 
+	   <div id="options_btn_poisonivy3_mobile" *ngIf="page==51">
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button class="back_poisonivy3_mobile_value ui-alt-icon ui-btn ui-btn-b ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all" data-inline="true" (click)="goBackScale()">Back</button>
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <a href="#" (click)="gotoSubPage(1)" class="poison_ivy_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	      </p>
+	   </div>
+	   <!--------------End Options Button----------------------- -->
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-popup-screen ui-overlay-b in" id="poisonivy2_mobile_12_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="poisonivy2_mobile_12_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	   <div data-role="popup" id="poisonivy2_mobile_12_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	      <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	      <p class="redBorder">Note that the rash usually appear about 1 to 2 days after you come in contact with the oil. But it can take upto to 2 weeks for it to appear after touching the plant.</p>
+	      <p class="redBorderAll">Usually, the first time you get the oil on your skin,  the rash might take upto a week to show up. But with later contacts, it develops much more quickly.</p>
+	   </div>
+	</div>
 </ion-content>

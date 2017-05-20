@@ -1,18 +1,686 @@
-<!--
-  Generated template for the SwollenFootMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+   -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>swollen_foot_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Swollen Leg
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue">
+    <p *ngIf="page==0">swollen Leg?</p>
+    <p *ngIf="page>0 && page<30">Is it serious?</p>
+    <p *ngIf="page>=30 && page<40">What caused it?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightBlue">
+	            <span> A <span class="bluefont">swollen leg</span> may be caused by a leg infection, overweight, medications to name a few.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border left person------------------- -->
+	    <br>
+	    <div class="blueBorderAll">
+	        <p>It could also  be a sign of heart failure, kidney failure, or liver failure.</p>
+	        <hr class="hrblue">
+	        <br>
+	        <p class="centerText">
+	            <br>
+	            <img src="assets/img/people/adult/leg/swollen-leg.svg" width="150" alt="Person with swelling in the leg">
+	        </p>
+	        <p class="blueBorderAll centerText"> Let's see what you are looking at.</p>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<30">
+	    <div id="swollenfoot1_mobile_1" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue">
+	                <span>It is important to rule out an <span class="redfont">emergency </span>situation.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border left person------------------- -->
+	        <p class="blueBorder centerText">We will start by doing that.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="swollenfoot1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="swollenfoot1_mobile_2_n" *ngIf="page==2">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>With this <span class="bluefont">swelling</span> of the leg or foot, are you also experiencing <span class="bluefont">shortness of breath?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Especially when you <span class="bluefont">try</span> to do something?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="swollenfoot1_mobile_3_y" *ngIf="page==3">
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalLeftYellow">
+	                    <span class="redfontLarge">Yes?</span><br>
+	                    This is <span class="redfont">not</span> looking good.
+	                </div>
+	                <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle left person------------------- -->
+	        <p class="blueBorder">Having a swollen leg with shortness of breath might signal something serious.</p>
+	        <p class="blueBorderAll">Let's Continue and try to make the best decision we can.</p>
+	        <p>&nbsp;</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_3_n" *ngIf="page==4">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Any <span class="redfont">chest pain?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="swollenfoot1_mobile_4_y" *ngIf="page==5">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="swollenfoot1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_4_n" *ngIf="page==6">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is your chest <span class="blue_brightfont">feeling tight?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="swollenfoot1_mobile_5_y" *ngIf="page==7">
+	        <!--start 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>May be looking at heart failure.</li>
+	                <li>List symptoms of heart failure</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-icon="alert" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-icon-alert ui-btn-icon-left ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="swollenfoot1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_5_n" *ngIf="page==8">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Does it feel as if there is <span class="orangefont">pressure</span> on the chest</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue centerText">
+	                        With this <span class="purple_redfont">swollen</span> foot?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="swollenfoot1_mobile_6_y" *ngIf="page==9">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Emergency situation!</span><br>
+	                <span class="redfont">Call 911.</span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderWhite centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	        <div class="redBorderAll">
+	            <h3 class="redBorder redfont centerText">Here is why:</h3>
+	            <ul>
+	                <li>May be looking at heart failure.</li>
+	                <li>List symptoms of heart failure</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder grayfontSmall centerText"><span class="redfont">Note:</span><br>You should only continue if you are not experiencing the question asked.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="tel:" data-role="button" data-icon="alert" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-icon-alert ui-btn-icon-left ui-btn-inline ui-shadow ui-corner-all" role="button">Call 911</a>
+	            <button data-inline="true" class="swollenfoot1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_6_n" *ngIf="page==10">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Alright.</span><br>
+	                <span>Is it just <span class="redfont">one</span> leg or foot that is <span class="bluefont">swollen?</span></span>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_7_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="swollenfoot1_mobile_7_y" *ngIf="page==11">
+	        <!--start 7 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="swollenfoot1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_7_n" *ngIf="page==12">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is it getting very <span class="redfont">painful</span> and you know you did not <span class="purple_bluefont">twist or hurt it?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="swollenfoot1_mobile_8_y" *ngIf="page==13">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at<span class="redfont"> Deep vein thrombosis</span> (DVT)</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="redBorder">Call your doctor especially if you have a predisposing factor (eg, recent surgery, trauma, immobilization, hormone replacement, cancer).<br>And if it is just one leg that is affected.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">	<button data-inline="true" class="swollenfoot1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_8_n" *ngIf="page==14">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have a <span class="orangefont">history</span> of liver or kidney disease?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        Or <span class="redfont">heart disease?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <div id="swollenfoot1_mobile_9_y" *ngIf="page==15">
+	        <!--start 9 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightRed centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorderAll">If it started suddenly, you <span class="redfont">must</span> seek urgent medical care.</p>
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Possible blood clot problem which can cause havoc if it gets to the heart.</li>
+	                <li>Possible congestive heart failure situation.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_9_n" *ngIf="page==16">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is the affected leg or foot <span class="redfont">red</span> or <span class="orangefont">warm to touch?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And you know you <span class="redfont">didn't</span> twist it?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(16)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(17)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 9  div --> 
+	    <div id="swollenfoot1_mobile_10_y" *ngIf="page==16">
+	        <!--start 10 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at <span class="orangefont">cellulitis</span> or other infection.</li>
+	                <li>May be looking at a serious <span class="redfont">inflammation</span> going on.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(17)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_10_n" *ngIf="page==17">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Is it <span class="purple_redfont">tender</span> and very <span class="redfont">painful</span>?</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightBlue">
+	                        And you know you <span class="purple_redfont">didn't twist</span> it?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/male/pharm-steve.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(18)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(19)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 10 div --> 
+	    <div id="swollenfoot1_mobile_11_y" *ngIf="page==18">
+	        <!--start 11 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>May be looking at <span class="orangefont">cellulitis</span> or other infection.</li>
+	                <li>This suggests an inflammatory cause.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(19)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_11_n" *ngIf="page==19">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Do you have <span class="redfont">fever</span> along with this swollen leg or foot?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_12_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(20)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_12_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(21)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 11 div --> 
+	    <div id="swollenfoot1_mobile_12_y" *ngIf="page==20">
+	        <!--start 12 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Fever along with a painful, swollen joint could be caused by an <span class="redfont">infected joint.</span></li>
+	                <li>More than one affected joint could mean <span class="orangefont">rheumatic fever.</span></li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_12_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Are you <span class="bluefont">pregnant</span> and have a <span class="redfont">sudden</span> increase in <span class="redfont">swelling?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot1_mobile_13_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="swollenfoot1_mobile_13_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 12 div --> 
+	    <div id="swollenfoot1_mobile_13_y" *ngIf="page==22">
+	        <!--start 13 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfont">Call the doctor right away.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="redBorderAll">
+	            <p class="redfont redBorder centerText">Here is why:</p>
+	            <ul>
+	                <li>Severe swelling during pregnancy may be a sign of <span class="redfont">preeclampsia</span> <span class="grayfontSmall">(also called toxemia).</span> </li>
+	                <li>This is a serious condition that includes high blood pressure and swelling.</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <!---------------------End Seek urgent care------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swollenfoot1_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(23)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot1_mobile_13_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge firstname">A,</span><br>
+	                Those were situations of a swollen leg or foot that require <span class="redfont">emergency </span>care.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">If any applied to you, take it seriously and at least call the doctor or seek urgent care.</p>
+	        <p class="blueBorderAll centerText">If none applied to you, let's continue.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Continue</a></p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 13 div -->   
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
-
+	<div class="ui-content" *ngIf="page>=30 && page<40">
+	    <div id="swollenfoot2_mobile_1" *ngIf="page==30">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>It is a good idea to find out what may be <span class="orangefont">causing</span> the swelling.</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder"> Taking care of the underlying cause will usually solve the problem.</p>
+	        <p class="blueBorderAll">Let's see if we can come up with anything  that may be causing it.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"> <button data-inline="true" class="swollenfoot2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button></p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End Intro -->
+	    <div id="swollenfoot2_mobile_2_n" *ngIf="page==31">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span>Did you just start taking a new <span class="orangefont">medication?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	            <button data-inline="true" class="swollenfoot2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="swollenfoot2_mobile_3_y" *ngIf="page==32">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Call the pharmacist to see if this is a side effect then let the doctor know about the swelling. 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder">Do not stop taking the medication without the advice of your doctor.</p>
+	        <p class="blueBorderAll"> The doctor may give you a diuretic to help with the swelling or change the medication to something else depending on the level of swelling.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swollenfoot2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot2_mobile_3_n" *ngIf="page==33">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont">Are you pregnant?</span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="centerText">
+	            <button data-inline="true" class="swollenfoot2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	            <button data-inline="true" class="swollenfoot2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="swollenfoot2_mobile_4_y" *ngIf="page==34">
+	        <!--start 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefontLarge">Yes?</span><br>
+	                Most women have some swelling during pregnancy.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="blueBorder"> More severe swelling during pregnancy may be a sign of <span class="redfont">preeclampsia</span> <span class="grayfontSmall">(also called toxemia),</span> a serious condition that includes high blood pressure and swelling.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText"><button data-inline="true" class="swollenfoot2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>	</p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="swollenfoot2_mobile_4_n" *ngIf="page==35">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightBlue centerText">
+	                <span class="bluefont firstname">A,</span><br>
+	                Other causes of swelling of the leg or foot are listed below.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/male/pharm-steve.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="blueBorderAll">
+	            <p class="blueBorder centerText">This includes:</p>
+	            <ul>
+	                <li>Standing for a long time</li>
+	                <li>Long air flight</li>
+	                <li>Long car ride</li>
+	            </ul>
+	        </div>
+	        <br>
+	        <div class="blueBorderAll">
+	            <p class="blueBorder">If the swelling is severe or getting worse and you have no idea what is causing it, you should see a doctor.</p>
+	            <p class="blueBorderWhite grayfontSmall">Not all leg or foot swelling is harmful. Consequences depend mainly on the cause.</p>
+	        </div>
+	        <p class="blueBorder">Would you like to see what a pharmacist recommend you do to reduce the swelling or visit the nearest urgent care clinic?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <input type="hidden" class="ClickValuePage1_25" value="">
+	        <input type="hidden" class="ClickValuePage1_50" value="">
+	        <input type="hidden" class="ClickValuePage1_100" value="">
+	        <input type="hidden" class="ClickValuePage2_25" value="">
+	        <input type="hidden" class="ClickValuePage2_50" value="">
+	        <input type="hidden" class="ClickValuePage2_100" value="">
+	        <input type="hidden" class="ClickValuePage3_25" value="">
+	        <input type="hidden" class="ClickValuePage3_50" value="">
+	        <input type="hidden" class="ClickValuePage3_100" value="">
+	        <input type="hidden" class="totalResult" value="">
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="gotoSubPage(1)" class="swollen_foot_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <p>&nbsp;</p>
+	</div>
 </ion-content>

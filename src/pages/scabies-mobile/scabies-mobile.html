@@ -1,18 +1,657 @@
-<!--
-  Generated template for the ScabiesMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>scabies_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Scabies
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgOrange" *ngIf="page==0">
+    <p >Thinking scabies?</p>
   </ion-navbar>
-
+  <ion-navbar class="fullWidth robotoLight bgOrange" *ngIf="page>=20 && page<40">
+    <p *ngIf="page>=20 && page<30">Look for mites</p>
+  </ion-navbar>
 </ion-header>
+<ion-content class="ui-page-theme-e">
+	<div class="ui-content" *ngIf="page==0">
+	    <div class="maxwidth450">
+	        <div class="ovalBorderRightYellow centerText">
+	            <span><span class="orangefont">Scabies</span> is caused by the human itch mite.</span><br>
+	        </div>
+	        <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	    </div>
+	    <div class="clearboth divider1"></div>
+	    <!-----------------End Border right person------------------- -->
+	    <!------Start Popoup div----- -->   
+	    <div style="display: none;" id="scabies_mobile_pop-placeholder">
+	        <!-- placeholder for scabies_mobile_pop -->
+	    </div>
+	    <!------End Popoup div----- -->
+	    <p class="orangeBorderWhite centerText">Let's see if you have scabies.</p>
+	    <p class="orangeBorder grayfontSmall"> <span class="orangefont">A quick note:</span><br> There is no over-the-counter medication to get rid of scabies. These medications are only available with a doctor's prescription.</p>
+	    <p class="centerText">
+	        <br>
+	        <img src="assets/img/people/adult/skin/scabies-hand.svg" width="180" alt="Itchy hand">
+	    </p>
+	    <p class="orangeBorderAll grayfontSmall">This exercise is geared towards helping you make a more reasonable decision as to whether you may have scabies or not so you can quickly get treatment and stop spreading it.
+	    </p>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div>
+	    </div>
+	    <!--------------------------Banner Link----------------------------- -->
+	    <div class="clearboth divider1"></div>
+	    <p class="centerText">
+	        <a href="#" data-role="button" data-rel="popup" data-inline="true" data-theme="e" data-transition="pop" aria-haspopup="true" aria-owns="scabies_mobile_pop" aria-expanded="false" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(true)">FYI</a>
+	        <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	    </p>
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	    <div id="scabies1_mobile_2_n" *ngIf="page==1">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you expriencing <span class="redfont">severe itching</span> especially at <span class="bluefont">night?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first question div --> 
+	    <!--start 3 div -->   
+	    <div id="scabies1_mobile_3_y" *ngIf="page==2">
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="scabies1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(3)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_3_n" *ngIf="page==3">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about <span class="orangefont">itching</span> with <span class="bluefont">rash</span> that look like <span class="orangefont">pimples?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 3 div --> 
+	    <div id="scabies1_mobile_4_y" *ngIf="page==4">
+	        <!--start 4 div -->
+	        <h3>Yes?</h3>
+	        <button data-inline="true" class="scabies1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(5)">Continue</button>	
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_4_n" *ngIf="page==5">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you experiencing itching between the <span class="purplefont">fingers?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Between the <span class="redfont">toes?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 4 div --> 
+	    <div id="scabies1_mobile_5_y" *ngIf="page==6">
+	        <!--start 5 div -->
+	        <div class="centerText">
+	            <div class="maxwidth450">
+	                <div class="ovalLeftOrange">
+	                    <span class="orangefontLarge">Yes?</span><br>
+	                    Chances of <span class="purple_redfont">scabies</span> are increasing. This is a sign.
+	                </div>
+	                <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80">
+	            </div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End middle left person------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(7)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_5_n" *ngIf="page==7">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about itching in the  <span class="purple_bluefont">wrist?</span></span><br>
+	                <span class="grayfontSmall">(mainly inner part)</span>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Itching in the <span class="bluefont">elbows?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 5  div --> 
+	    <div id="scabies1_mobile_6_y" *ngIf="page==8">
+	        <!--start 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Suspect <span class="purple_redfont">scabies</span> if these symptoms apply.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <div class="purpleBorderAll">
+	            <p class="purpleBorder bluefont centerText">Signs include:</p>
+	            <ul>
+	                <li>Severe itching especially at night.</li>
+	                <li>Itching between the fingers and toes.</li>
+	                <li>Itching in the elbows and wrists.</li>
+	            </ul>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(9)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_6_n" *ngIf="page==9">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Are you experiencing itching in the <span class="bluefont">buttocks</span> or <span class="purple_bluefont">penis?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Itching in the <span class="purple_redfont">armpit?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(11)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 6 div --> 
+	    <div id="scabies1_mobile_7_y" *ngIf="page==10">
+	        <!--start 7 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Suspect <span class="purple_redfont">scabies</span> if the signs below apply to you.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder bluefont centerText">Signs include:</p>
+	            <ul>
+	                <li>Severe itching especially at night.</li>
+	                <li>Itching between the fingers and toes.</li>
+	                <li>Itching in the elbows and wrists.</li>
+	                <li class="bluefontSmall">Itching in the armpit, buttocks, penis</li>
+	            </ul>
+	        </div>
+	        <p class="orangeBorder">You will look for burrows caused by the <span class="bluefont">female</span> scabies mite tunneling just beneath the skin surface very soon.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- --> 	
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(11)">Continue</button>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_7_n" *ngIf="page==11">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span> Is <span class="bluefont">everyone</span> in the house <span class="purple_redfont">itching?</span></span><br>
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <!-----------------End Border right person------------------- --> 
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies1_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(12)">Yes</button>
+	            <button data-inline="true" class="scabies1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(13)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 7 div --> 
+	    <div id="scabies1_mobile_8_y" *ngIf="page==12">
+	        <!--start 8 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="redfontLarge">Yes?</span><br>
+	                Possible scabies infestation.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <br>
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder bluefont centerText">Signs include:</p>
+	            <ul>
+	                <li>Severe itching especially at night.</li>
+	                <li>Itching between the fingers and toes.</li>
+	                <li>Itching in the elbows and wrists.</li>
+	                <li>Itching in the armpit, buttocks, penis</li>
+	                <li class="redfontSmall">Other people are itching in the house.</li>
+	            </ul>
+	        </div>
+	        <p class="redBorder">The diagnosis is usually made based on the presence of burrows. </p>
+	        <p class="redBorder">Also based on the appearance and distribution of the rash.</p>
+	        <p class="purpleBorderAll">Let's look for burrows caused by the female scabies mite tunneling just beneath the skin surface.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->	
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>	
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies1_mobile_8_n" *ngIf="page==13">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge">Alright</span><br>
+	                Those were signs of  <span class="orangefont"> scabies infestation.</span> 
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">If these do not apply to you, you may not be looking at scabies.</p>
+	        <p class="redBorderAll">If they do apply to you, don't panic yet.</p>
+	        <p class="redBorder">The diagnosis of scabies is usually made based on the presence of burrows. Also based on the appearance and distribution of the rash.</p>
+	        <p class="redBorderAll">Let's look for burrows caused by the female scabies mite tunneling just beneath the skin surface.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="togglePage(20)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end 8 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>=20 && page<30">
+	    <div id="scabies2_mobile_1" *ngIf="page==20">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Looking for S-shaped, tiny, raised, <span class="orangefont">grayish-white</span> lines on the skin surface.</span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Or <span class="orangefont">skin-colored</span> lines on the skin surface.
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <p class="purpleRedBorder centerText">Let's get started and see if you can come up with anything like that.</p>
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies2_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(21)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--End follow up intro -->
+	    <div id="scabies2_mobile_2_n" *ngIf="page==21">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Look in-between the <span class="bluefont">fingers</span> and <span class="purple_bluefont">skin folds</span> on the <span class="bluefont">wrist.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange bluefont">
+	                        Did you find these lines?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies2_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(22)">Yes</button>
+	            <button data-inline="true" class="scabies2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(23)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end first follow up question div --> 
+	    <!--start follow up 3 div -->   
+	    <div id="scabies2_mobile_3_y" *ngIf="page==22">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Try to ID the mite or mite eggs if any.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">If you find any mite, carefully remove the mite from the end of its burrow using the tip of a needle if you can.</p>
+	        <p class="purpleBorderAll">If not, don't worry, go to the nearest urgent care clinic or call your doctor to book an appointment.</p>
+	        <p class="orangeBorderWhite">Remember that only prescription lotions or creams are effective to treat scabies. </p>
+	        <p class="orangeBorder">You may be tempted to try other things first like using tea tree oil and so on, but if you want to get some sleep at night, better go and see a doctor.</p>
+	        <p class="purpleBorderAll">Would you like to find the nearest urgent care clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button class="scabies2_mobile_3_n_link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" data-theme="o" data-inline="true" (click)="togglePage(23)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies2_mobile_3_n" *ngIf="page==23">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Look <span class="bluefont">in-between</span> the skin folds on the <span class="orangefont">elbows.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange">
+	                        Anything that look like <span class="bluefont">S-shaped lines?</span>
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(24)">Yes</button>
+	            <button data-inline="true" class="scabies2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(25)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 3 div --> 
+	    <div id="scabies2_mobile_4_y" *ngIf="page==24">
+	        <!--start follow up 4 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Try to ID the mite or mite eggs if you can.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">Carefully remove the mite from the end of its burrow using the tip of a needle if you can.</p>
+	        <p class="purpleBorderAll">If not, don't worry, go to the nearest urgent care clinic or call your doctor to book an appointment.</p>
+	        <p class="orangeBorderWhite grayfontSmall">Remember that only prescription lotions or creams are effective to treat scabies. You might be tempted to try other things first like using tea tree oil and so on, but if you want to get some sleep at night, better go and see a doctor.</p>
+	        <p class="purpleBorder">Would you like to find the nearest urgent care clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button class="scabies2_mobile_4_n_link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" data-theme="o" data-inline="true" (click)="togglePage(25)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies2_mobile_4_n" *ngIf="page==25">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>Let's take a look at the <span class="redfont">skin folds</span> on the <span class="bluefont">knees.</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange redfont">
+	                        Do you find any lines?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(26)">Yes</button>
+	            <button data-inline="true" class="scabies2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(27)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 4 div --> 
+	    <div id="scabies2_mobile_5_y" *ngIf="page==26">
+	        <!--start follow up 5 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Try to ID the mite or mite eggs if you can.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="redBorder">Carefully remove the mite from the end of its burrow using the tip of a needle if you can.</p>
+	        <p class="redBorderAll">If not, don't worry, go to the nearest urgent care clinic or call your doctor to book an appointment.</p>
+	        <p class="orangeBorderWhite grayfontSmall">Remember that only prescription lotions or creams are effective to treat scabies. You might be tempted to try other things first like using tea tree oil and so on, but if you want to get some sleep at night, better go and see a doctor.</p>
+	        <p class="redBorder">Would you like to find the nearest urgent care clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button class="scabies2_mobile_5_n_link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" data-theme="o" data-inline="true" (click)="togglePage(27)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies2_mobile_5_n" *ngIf="page==27">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span>What about on the <span class="pinkfont">breast</span> and <span class="orangefont">shoulder blades?</span></span><br>
+	            </div>
+	            <div class="clearboth"></div>
+	            <div class="container_12">
+	                <div class="grid_8">
+	                    <br>
+	                    <div class="bubbleRightOrange orangefont">
+	                        Anything?
+	                    </div>
+	                </div>
+	                <div class="grid_4">
+	                    <img src="assets/img/pharm/female/pharm-amanda-orange.svg" alt="Pharmacist" width="80" align="right">
+	                </div>
+	            </div>
+	        </div>
+	        <br>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Point Right------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <button data-inline="true" class="scabies2_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(28)">Yes</button>
+	            <button data-inline="true" class="scabies2_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(29)">No</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 5 div --> 
+	    <div id="scabies2_mobile_6_y" *ngIf="page==28">
+	        <!--start follow up 6 div -->
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightYellow centerText">
+	                <span class="orangefontLarge">Yes?</span><br>
+	                Try to ID the mite or mite eggs if you can.
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p class="purpleBorder">Carefully remove the mite from the end of its burrow using the tip of a needle if you can.</p>
+	        <p class="purpleBorderAll">If not, don't worry, go to the nearest urgent care clinic or call your doctor to book an appointment.</p>
+	        <p class="orangeBorderWhite grayfontSmall">Remember that only prescription lotions or creams are effective to treat scabies. You might be tempted to try other things first like using tea tree oil and so on, but if you want to get some sleep at night, better go and see a doctor.</p>
+	        <p class="purpleBorder">Would you like to find the nearest urgent care clinic to you or Continue?</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <button class="scabies2_mobile_6_n_link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" data-theme="o" data-inline="true" (click)="togglePage(29)">Continue</button>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <div id="scabies2_mobile_6_n" *ngIf="page==29">
+	        <div class="maxwidth450">
+	            <div class="ovalBorderRightOrange centerText">
+	                <span class="orangefontLarge firstname"> </span><br>
+	                Diagnosis is usually made based on the <span class="orangefont">presence of burrows</span>...
+	            </div>
+	            <div align="right"><img src="assets/img/pharm/female/pharm-amanda-orange.svg" width="100" alt="Pharmacist"></div>
+	        </div>
+	        <div class="clearboth divider1"></div>
+	        <!-----------------End Border right person------------------- -->
+	        <p align="center" class="orangeBorderAll">...and the <span class="purple_bluefont">appearance</span> and <span class="orangefont">distribution</span> of the <span class="purple_bluefont">rash.</span>   </p>
+	        <div class="orangeBorderAll">
+	            <p class="orangeBorder centerText">Seek urgent care if:</p>
+	            <ul>
+	                <li>Most people in your household are itching at the same time</li>
+	                <br>
+	                <li>Itching is severe and inbetween the webbings of the fingers and or toes</li>
+	                <br>
+	                <li>Itching is severe and in the folds of the elbows or armpits</li>
+	                <br>
+	                <li>Itching more especially at night.</li>
+	            </ul>
+	        </div>
+	        <p class="orangeBorderAll">But for now, take some antihistamine like diphenhydramine or cetirizine to help with the itching.</p>
+	        <p class="purpleBorderAll centerText">Would you like to visit the nearest urgent care clinic? </p>
+	        <p class="redBorder">There is nothing over-the-counter that will work if you are thinking scabies so no need to send you to a pharmacist for an over-the-counter recommendation.</p>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div>
+	        </div>
+	        <!--------------------------Banner Link----------------------------- -->
+	        <div class="clearboth divider1"></div>
+	        <p class="centerText">
+	            <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	            <a href="#" (click)="gotoSubPage(1)" data-role="button" data-theme="f" data-inline="true" class="ui-link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" role="button">No, thanks</a>
+	        </p>
+	        <p>&nbsp;</p>
+	    </div>
+	    <!--end follow up 6 div --> 
+	    <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-popup-screen ui-overlay-b in" id="scabies_mobile_pop-screen" *ngIf="FYIDlg.show" (click)="toggleFYIDlg(false)"></div>
+	<div class="ui-popup-container pop in ui-popup-active" id="scabies_mobile_pop-popup" *ngIf="FYIDlg.show" [ngStyle]="{'max-width': FYIDlg.maxWidth+'px','top': FYIDlg.top+'px', 'left': FYIDlg.left+'px', 'width': FYIDlg.width+'px'}">
+	    <div data-role="popup" id="scabies_mobile_pop" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" data-overlay-theme="b" data-position-to="window">
+	        <a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" role="button" (click)="toggleFYIDlg(false)">Close</a>
+	        <p class="orangeBorderAll">Scabies is caused by the human itch mite when the female burrow into the upper layer of the skin to live and lay eggs.</p>
+	        <p class="orangeBorder">It is usually spread by direct, prolonged, skin to skin contact with a person who has scabies.</p>
+	        <p class="purpleRedBorder">When <span class="bluefont">infested</span> with scabies mites the first time, you usually won't know for up to 2 to 6 weeks.</p>
+	        <p class="purpleRedBorder"> But you can spread it during this time even though you do not have symptoms.</p>
+	        <p class="purpleRedBorderWhite">If you've had it before, the symptoms show up more quickly (about 1 to 4 days).</p>
+	    </div>
+	</div>
 </ion-content>

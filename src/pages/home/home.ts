@@ -14,7 +14,7 @@ import { ChildrenClinicPage } from '../children-clinic/children-clinic';
 import { DentalCarePage } from '../dental-care/dental-care';
 import { PharmacyCarePage } from '../pharmacy-care/pharmacy-care';
 
-import { FoodPoisoningMobilePage } from '../food-poisoning-mobile/food-poisoning-mobile';
+import { CornMobilePage } from '../corn-mobile/corn-mobile';
 
 @Component({
   selector: 'page-home',
@@ -95,7 +95,7 @@ export class HomePage {
 		{
 			let page = (<any>this.items)[index];
 			// this.navCtrl.push(page);
-			this.navCtrl.push(FoodPoisoningMobilePage);
+			this.navCtrl.push(CornMobilePage);
 		}
 	}
 }

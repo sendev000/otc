@@ -373,6 +373,25 @@ import { NauseaInfographicsMobilePage } from '../pages/nausea-infographics-mobil
 import { StomachAcheInfographicsMobilePage } from '../pages/stomach-ache-infographics-mobile/stomach-ache-infographics-mobile';
 import { StomachFluInfographicsMobilePage } from '../pages/stomach-flu-infographics-mobile/stomach-flu-infographics-mobile';
 import { FoodPoisoningInfographicsMobilePage } from '../pages/food-poisoning-infographics-mobile/food-poisoning-infographics-mobile';
+import { UtiInfographicsMobilePage } from '../pages/uti-infographics-mobile/uti-infographics-mobile';
+import { JockitchInfographicsMobilePage } from '../pages/jockitch-infographics-mobile/jockitch-infographics-mobile';
+import { HemorrhoidsInfographicsMobilePage } from '../pages/hemorrhoids-infographics-mobile/hemorrhoids-infographics-mobile';
+import { PinwormInfographicsMobilePage }from '../pages/pinworm-infographics-mobile/pinworm-infographics-mobile';
+import { MenstrualInfographicsMobilePage } from '../pages/menstrual-infographics-mobile/menstrual-infographics-mobile';
+import { RashInfographicsMobilePage } from '../pages/rash-infographics-mobile/rash-infographics-mobile';
+import { EczemaInfographicsMobilePage } from '../pages/eczema-infographics-mobile/eczema-infographics-mobile';
+import { BurnInfographicsMobilePage } from '../pages/burn-infographics-mobile/burn-infographics-mobile';
+import { SunburnInfographicsMobilePage } from '../pages/sunburn-infographics-mobile/sunburn-infographics-mobile';
+import { PoisonIvyInfographicsMobilePage } from '../pages/poison-ivy-infographics-mobile/poison-ivy-infographics-mobile';
+import { HivesInfographicsMobilePage } from '../pages/hives-infographics-mobile/hives-infographics-mobile';
+import { RingwormInfographicsMobilePage } from '../pages/ringworm-infographics-mobile/ringworm-infographics-mobile';
+import { WartsInfographicsMobilePage } from '../pages/warts-infographics-mobile/warts-infographics-mobile';
+import { AthletesInfographicsMobilePage } from '../pages/athletes-infographics-mobile/athletes-infographics-mobile';
+import { FootPainInfographicsMobilePage } from '../pages/foot-pain-infographics-mobile/foot-pain-infographics-mobile';
+import { ArthritisInfographicsMobilePage } from '../pages/arthritis-infographics-mobile/arthritis-infographics-mobile';
+import { NailFungusInfographicsMobilePage } from '../pages/nail-fungus-infographics-mobile/nail-fungus-infographics-mobile';
+import { SwollenFootInfographicsMobilePage } from '../pages/swollen-foot-infographics-mobile/swollen-foot-infographics-mobile';
+import { CornInfographicsMobilePage } from '../pages/corn-infographics-mobile/corn-infographics-mobile';
 
 import { ContactSocialMobilePage } from '../pages/contact-social-mobile/contact-social-mobile';
 
@@ -748,6 +767,25 @@ import { AuthService} from '../pages/providers/auth-service';
     StomachAcheInfographicsMobilePage,
     StomachFluInfographicsMobilePage,
     FoodPoisoningInfographicsMobilePage,
+    UtiInfographicsMobilePage,
+    JockitchInfographicsMobilePage,
+    HemorrhoidsInfographicsMobilePage,
+    PinwormInfographicsMobilePage,
+    MenstrualInfographicsMobilePage,
+    RashInfographicsMobilePage,
+    EczemaInfographicsMobilePage,
+    BurnInfographicsMobilePage,
+    SunburnInfographicsMobilePage,
+    PoisonIvyInfographicsMobilePage,
+    HivesInfographicsMobilePage,
+    RingwormInfographicsMobilePage,
+    WartsInfographicsMobilePage,
+    AthletesInfographicsMobilePage,
+    FootPainInfographicsMobilePage,
+    ArthritisInfographicsMobilePage,
+    NailFungusInfographicsMobilePage,
+    SwollenFootInfographicsMobilePage,
+    CornInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],
@@ -1128,6 +1166,25 @@ import { AuthService} from '../pages/providers/auth-service';
     StomachAcheInfographicsMobilePage,
     StomachFluInfographicsMobilePage,
     FoodPoisoningInfographicsMobilePage,
+    UtiInfographicsMobilePage,
+    JockitchInfographicsMobilePage,
+    HemorrhoidsInfographicsMobilePage,
+    PinwormInfographicsMobilePage,
+    MenstrualInfographicsMobilePage,
+    RashInfographicsMobilePage,
+    EczemaInfographicsMobilePage,
+    BurnInfographicsMobilePage,
+    SunburnInfographicsMobilePage,
+    PoisonIvyInfographicsMobilePage,
+    HivesInfographicsMobilePage,
+    RingwormInfographicsMobilePage,
+    WartsInfographicsMobilePage,
+    AthletesInfographicsMobilePage,
+    FootPainInfographicsMobilePage,
+    ArthritisInfographicsMobilePage,
+    NailFungusInfographicsMobilePage,
+    SwollenFootInfographicsMobilePage,
+    CornInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],

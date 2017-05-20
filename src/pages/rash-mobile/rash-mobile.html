@@ -1,18 +1,3408 @@
-<!--
-  Generated template for the RashMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+  -->
+<ion-header class="ui-header">
 
   <ion-navbar>
-    <ion-title>rash_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Skin Rash
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=0 && page<180">
+    <p *ngIf="page==0">Skin rash?</p>
+    <p *ngIf="page>0 && page<20">Is it an emergency?</p>
+    <p *ngIf="page==20">Any fever?</p>
+    <p *ngIf="page>=21 && page<30">Fever</p>
+    <p *ngIf="page>=30 && page<50">Scarlet fever?</p>
+    <p *ngIf="page>=50 && page<60">Shingles?</p>
+    <p *ngIf="page>=60 && page<70">Cellulitis?</p>
+    <p *ngIf="page>=70 && page<90">Rocky Mountain Spotted Fever?</p>
+    <p *ngIf="page>=90 && page<100">hand, foot and mouth disease?</p>
+    <p *ngIf="page>=100 && page<110">Lyme disease?</p>
+    <p *ngIf="page>=110 && page<120">No fever.</p>
+    <p *ngIf="page>=120 && page<140">Itchy rash</p>
+    <p *ngIf="page>=140 && page<150">Ringworm?</p>
+    <p *ngIf="page>=150 && page<160">Hives?</p>
+    <p *ngIf="page>=160 && page<180">Heat rash?</p>
   </ion-navbar>
-
+	<ion-navbar class="fullWidth robotoLight bgLightBlue" *ngIf="page>=190 && page<230">
+		<p *ngIf="page>=190 && page<200">Blisters?</p>
+		<p *ngIf="page>=200 && page<210">Poison ivy?</p>
+		<p *ngIf="page>=210 && page<220">Scabies?</p>
+		<p *ngIf="page>=220 && page<230">Psoriasis?</p>
+	</ion-navbar>
 </ion-header>
 
+<ion-content class="ui-page-theme-a">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue centerText">
+	         <span>A <span class="purple_bluefont">skin rash</span> may require urgent care or may be a minor case, let's take a look.</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border right person------------------- -->
+	   <div class="blueBorder">
+	      <p>Let's narrow down the cause of the rash before you see what is available over-the-counter for skin rash.</p>
+	      <hr class="hrblue">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/skin/skinrash-lady.svg" width="160" alt="Lady with skin rash">
+	      </p>
+	      <p class="blueBorderAll centerText">First, let's rule out situations that may require emergency care.</p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText">
+	      <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="rash1_mobile_1" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>With this rash, are you also experiencing <span class="purple_bluefont">shortness of breath?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash1_mobile_2_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(2)">Yes</button>
+	         <button data-inline="true" class="rash1_mobile_2_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(3)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_2_y" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Anaphylaxis</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	      <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	         <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	      </p>
+	      <p>&nbsp;</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_2_n" *ngIf="page==3">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is your <span class="pinkfont">tongue </span>or <span class="pinkfont">lips</span> <span class="purplefont">swollen</span> with this rash?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Or <span class="purplefont">throat</span> feeling <span class="pinkfont">tight?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash1_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(4)">Yes</button>
+	         <button data-inline="true" class="rash1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(5)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_3_y" *ngIf="page==4">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Emergency!</span><br>
+	            <span class="redfont">Call 911.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText"><img src="assets/img/objects/ambulance.png" width="150" alt="Ambulance"></p>
+	      <div class="blueBorderAll">
+	         <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Possible anaphylactic reaction</li>
+	         </ul>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	      <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	         <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	      </p>
+	      <p>&nbsp;</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_3_n" *ngIf="page==5">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you feel like <span class="purple_bluefont">passing out</span> in addition to the rash you have?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash1_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(6)">Yes</button>
+	         <button data-inline="true" class="rash1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(7)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_4_y" *ngIf="page==6">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="blueBorderAll">
+	         <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Need complete evaluation</li>
+	         </ul>
+	      </div>
+	      <p class="centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	      <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	         <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	      </p>
+	      <p>&nbsp;</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_4_n" *ngIf="page==7">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is your pulse <span class="purple_bluefont">weak,</span> <span class="bluefont">rapid?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(8)">Yes</button>
+	         <button data-inline="true" class="rash1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(9)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_5_y" *ngIf="page==8">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Go to the Emergency Room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <br>
+	      <div class="blueBorderAll">
+	         <h3 class="blueBorder redfont centerText">Here is why:</h3>
+	         <ul>
+	            <li>Anaphylactic reaction</li>
+	         </ul>
+	      </div>
+	      <p class="centerText"><img src="assets/img/objects/emergency_room.png" width="200" alt="Seek urgent care"></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="redBorderWhite redfontSmall centerText"><span class="bg_highlight">Note:</span><br>We do not advice continuing. You should only continue if you are not experiencing the question asked.</p>
+	      <p class="orangeBorderWhite orangefontSmall centerText">If this is the case, tap&nbsp;  <span data-inline="true" class="mbsc-ic mbsc-ic-ion-ios7-refresh-outline mobi-icon-font40 refreshPage" (click)="togglePage(1)"></span> to start over.<br></p>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> 
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>  
+	         <a href="#" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">ER</a>
+	      </p>
+	      <p>&nbsp;</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_5_n" *ngIf="page==9">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Does your skin feel <span class="orangefont">flushed?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(10)">Yes</button>
+	         <button data-inline="true" class="rash1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_6_y" *ngIf="page==100">
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash1_mobile_6_n" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefont firstname"> </span><br>
+	            Those questions were to rule out going to the <span class="redfont">emergency</span> room.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">Let's see what the rash is all about if you are convinced it is not an emergency situation.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->	
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page==20">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue centerText">
+	         <span>Do you have any <span class="redfont">fever</span> with this rash?</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <!-----------------End Border right person------------------- -->
+	   <p class="blueBorder centerText">Choose yes if you had fever that went away before the rash appeared in the past 1 or 2 weeks.</p>
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText">
+	      <a href="#" data-role="button" data-inline="true" data-theme="f" class="ui-link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(21)">Yes, Fever</a>
+	      <a href="#" data-role="button" data-inline="true" data-theme="g" class="ui-link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">No Fever</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=21 && page<30">
+	   <div id="rash_fever_mobile_1" *ngIf="page==21">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span> <span class="bluefont">Rash</span> with a <span class="redfont">fever</span> require you to see a doctor for further evaluation.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">In the meantime, let's see what you may be looking at.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_fever_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="rash_fever_mobile_2_n" *ngIf="page==22">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this rash <span class="redfont">bright red</span>   with <span class="orangefont">sand papery</span> feeling?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  First appearing on the <span class="orangefont">neck</span> and <span class="redfont">chest</span> area?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- --> 
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-inline="true" data-theme="l" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(30)">Yes</a>
+	         <a href="#" (click)="togglePage(50)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=30 && page<50">
+	   <div id="rash_scarlet_mobile_1" *ngIf="page==30">
+	      <!-----Start follow up intro--- -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="redfontLarge firstname"> </span><br>
+	            Let's be sure you are not looking at <span class="orangefont">scarlet fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(31)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End follow up intro -->
+	   <div id="rash_scarlet_mobile_2_n" *ngIf="page==31">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you also have a <span class="redfont">sore throat?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(32)">Yes</button>
+	         <button data-inline="true" class="rash_scarlet_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(33)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_scarlet_mobile_3_y" *ngIf="page==32">
+	      <div class="centerText">
+	         <div class="maxwidth450">
+	            <div class="ovalRightBlue">
+	               <span class="bluefontLarge">Yes?</span><br>
+	               Hmmm. This is a major symptom of <span class="orangefont">scarlet fever.</span>
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End middle right person------------------- -->
+	      <p class="blueBorder">A sore throat with high temperature is typically the first symptom of scarlet fever followed by a bright red rash.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(33)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scarlet_mobile_3_n" *ngIf="page==33">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the tongue coated with <span class="redfont">red spots?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(34)">Yes</button>
+	         <button data-inline="true" class="rash_scarlet_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(35)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_scarlet_mobile_4_y" *ngIf="page==34">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge">Yes?</span><br>
+	            This is a symptom of <span class="orangefont">scarlet fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">In a few days, the whole tongue may look <span class="redfont">red.</span><br> <span class="purple_redfontSmall">(strawberry tongue)</span></p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(35)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scarlet_mobile_4_n" *ngIf="page==35">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Any <span class="orangefont">muscle ache</span> with this bright red, sand papery feeling rash?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue redfont">
+	                  Or headache?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(36)">Yes</button>
+	         <button data-inline="true" class="rash_scarlet_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(37)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_scarlet_mobile_5_y" *ngIf="page==36">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            A symptom of <span class="redfont">scarlet fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="blueBorder centerText">Symptoms include:</p>
+	         <ul>
+	            <li>Sore throat</li>
+	            <li><span class="redfont">Bright red</span> rash</li>
+	            <li>Strawberry tongue</li>
+	            <li>Abdominal pain</li>
+	            <li>Muscle ache or headache</li>
+	         </ul>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(37)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scarlet_mobile_5_n" *ngIf="page==37">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Try <span class="purple_bluefont">pressing</span> on the rash.</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Did it turn <span class="purple_bluefont">white?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(38)">Yes</button>
+	         <button data-inline="true" class="rash_scarlet_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(39)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div -->
+	   <div id="rash_scarlet_mobile_6_y" *ngIf="page==38">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Scarlet fever rash would do this. This is known as <span class="purple_bluefont">blanching.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(39)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scarlet_mobile_6_n" *ngIf="page==39">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did the rash start as <span class="redfont">small red spots</span> on the neck and upper chest.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(40)">Yes</button>
+	         <button data-inline="true" class="rash_scarlet_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(41)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	   <div id="rash_scarlet_mobile_7_y" *ngIf="page==40">
+	      <!--start follow up 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            <span class="orangefont">Scarlet fever</span> usually begin this way.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scarlet_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(41)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scarlet_mobile_7_n" *ngIf="page==41">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            We had to rule out <span class="orangefont">scarlet fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="blueBorder centerText">Symptoms of scarlet fever include:</p>
+	         <ul>
+	            <li>High fever</li>
+	            <li>Sore throat</li>
+	            <li><span class="redfont">Bright red</span> rash</li>
+	            <li>Rash that feel like sandpaper</li>
+	            <li>Rash that turns white when you press on it.</li>
+	            <li>Strawberry tongue</li>
+	            <li>Pastia's lines</li>
+	            <li>Abdominal pain</li>
+	            <li>Vomiting</li>
+	            <li>Muscle ache or headache</li>
+	         </ul>
+	         <p class="blueBorderAll">Bright red coloration of the creases under the arm and in the groin called Pastia's lines may develop while the rash is still red.</p>
+	      </div>
+	      <p class="blueBorderAll">If these symptoms does not apply to you, let's make sure you are not looking at something like shingles or other serious skin rashes.</p>
+	      <p class="blueBorder">If you are thinking scarlet fever, seek urgent care as soon as possible.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(50)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 7 div -->
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=50 && page<70">
+	   <div id="rash_shingles_mobile_2_n" *ngIf="page==50">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Before the rash appeared, did you experience a <span class="redfont">burning</span> pain on <span class="bluefont">one side</span> of the body?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Or <span class="redfont">tingling</span> sensation?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(51)">Yes</button>
+	         <a href="#" (click)="togglePage(60)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_shingles_mobile_3_y" *ngIf="page==51">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Let's make sure you are not looking at <span class="redfont">shingles</span> or any rash that is a medical emergency.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(52)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_shingles_mobile_3_n" *ngIf="page==52">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this rash like <span class="redfont">red </span>patches on the skin?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Small <span class="redfont">blisters</span> on the skin?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(53)">Yes</button>
+	         <button data-inline="true" class="rash_shingles_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(54)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_shingles_mobile_4_y" *ngIf="page==53">
+	      <!--start follow up 4 div -->
+	      <div class="centerText">
+	         <div class="maxwidth450">
+	            <div class="ovalRightBlue">
+	               <span class="bluefontLarge">Yes?</span><br>
+	               Hmmm. We may start suspecting <span class="redfont">shingles.</span> But not so fast
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End middle right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(54)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_shingles_mobile_4_n" *ngIf="page==54">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Does the rash  involve a narrow area from the <span class="purple_redfont">spine</span> around to...</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ...the front of the <span class="orangefont">stomach</span> area or <span class="purple_redfont">chest?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img class="shadowInset blueBorder" src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(55)">Yes</button>
+	         <button data-inline="true" class="rash_shingles_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(56)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_shingles_mobile_5_y" *ngIf="page==55">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge">Yes?</span><br>
+	            Alright, This is a symptom of <span class="redfont">shingles.</span> But don't panic yet.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(56)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_shingles_mobile_5_n" *ngIf="page==56">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you also experiencing <span class="bluefont">headache?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  <span class="redfont">Muscle weakness?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_shingles_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(57)">Yes</button>
+	         <button data-inline="true" class="rash_shingles_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(58)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="rash_shingles_mobile_6_y" *ngIf="page==57">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or  emergency room.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need to rule out <span class="redfont">shingles.</span></li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_shingles_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(58)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_shingles_mobile_6_n" *ngIf="page==58">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            We just went through some symptoms of <span class="redfont">shingles.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="blueBorder bluefont centerText">Symptoms include:</p>
+	         <ul>
+	            <li>General ill-feeling</li>
+	            <li>Headache</li>
+	            <li>Drooping eyelid</li>
+	            <li>Swollen glands</li>
+	            <li>Problems with taste or vision</li>
+	            <li>Trouble moving some facial muscles</li>
+	            <li>muscle weakness</li>
+	         </ul>
+	      </div>
+	      <p class="blueBorder">If you are thinking shingles, see our entry for shingles for a more detailed discussion. </p>
+	      <p class="blueBorder">If not shingles, then let's continue and see what may have caused the rash.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-theme="f" data-inline="true" class="ui-link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Shingles</a>
+	         <a href="#" (click)="togglePage(60)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=60 && page<70">
+	   <div id="rash_cellulitis_mobile_2_n" *ngIf="page==60">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did the rash start <span class="orangefont">suddenly?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Grew <span class="orangefont">quickly</span> in the <span class="grayfont">first 24 hours?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(61)">Yes</button>
+	         <a href="#" (click)="togglePage(70)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_cellulitis_mobile_3_y" *ngIf="page==61">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge">Yes?</span><br>
+	            Let's make sure you are not looking at <span class="orangefont">cellulitis.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(62)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_cellulitis_mobile_3_n" *ngIf="page==62">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the affected area <span class="redfont">red</span> and <span class="purple_redfont">warm</span> to touch?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(63)">Yes</button>
+	         <button data-inline="true" class="rash_cellulitis_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(64)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_cellulitis_mobile_4_y" *ngIf="page==63">
+	      <!--start follow up 4 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(64)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_cellulitis_mobile_4_n" *ngIf="page==64">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the area <span class="purplefont">swollen</span> and <span class="purple_redfont">painful?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(65)">Yes</button>
+	         <button data-inline="true" class="rash_cellulitis_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(66)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_cellulitis_mobile_5_y" *ngIf="page==65">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Suspect <span class="pinkfont">cellulites</span></li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_cellulitis_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(66)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_cellulitis_mobile_5_n" *ngIf="page==66">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Does the area <span class="grayfont">appear</span> <span class="bluefont">tight,</span> <span class="purple_redfont">stretched?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Or feel <span class="purple_redfont">tender?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_cellulitis_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(67)">Yes</button>
+	         <button data-inline="true" class="rash_cellulitis_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(68)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="rash_cellulitis_mobile_6_y" *ngIf="page==67">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Suspecting cellulitis</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_cellulitis_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(58)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_cellulitis_mobile_6_n" *ngIf="page==68">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            We just tried to rule out <span class="pinkfont">cellulities.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="purpleRedBorder">Give a brief overview of cellulitis. See webMD.</p>
+	      <p class="blueBorder centerText"> If you think you are looking at one, seek urgent care.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(70)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=70 && page<90">
+	   <div id="rash_rocky_mobile_2_n" *ngIf="page==70">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did this rash occur about <span class="bluefont">2 to 5 days</span> after you had a <span class="orangefont">fever?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(71)">Yes</button>
+	         <a href="#" (click)="togglePage(90)" data-role="button" data-theme="k" data-inline="true" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="rash_rocky_mobile_3_y" *ngIf="page==71">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge">Yes?</span><br>
+	            Alright, let's try to rule out a serious illness like <span class="orangefont">Rocky Mountain Spotted Fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">This can be deadly if not treated within the first 8 days of symptoms developing.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(72)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_3_n" *ngIf="page==72">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you remember any <span class="orangefont">recent</span> <span class="purple_redfont">tick bites?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(73)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(74)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="rash_rocky_mobile_4_y" *ngIf="page==73">
+	      <!--start 4 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(74)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_4_n" *ngIf="page==74">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about exposure to high <span class="greenfont">uncut grass</span> areas or <span class="purple_redfont">tick </span>infested areas?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(75)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(76)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="rash_rocky_mobile_5_y" *ngIf="page==75">
+	      <!--start 5 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(76)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_5_n" *ngIf="page==76">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Any recent travel to areas of <span class="redfont">high incidence</span> of Rocky Mountain Spotted Fever?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(77)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(78)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="rash_rocky_mobile_6_y" *ngIf="page==77">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is how you can get <span class="orangefont">rocky mountain spotted fever.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(78)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_6_n" *ngIf="page==78">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            We just went through the various ways you can get rocky mountain spotted fever. If none apply to you let's continue.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">To be on the safe side, let's see the symptoms of rocky mountain spotted fever.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(79)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="rash_rocky_mobile_7_y" *ngIf="page==79">
+	      <!--start 7 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(80)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_7_n" *ngIf="page==80">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Before the rash, did you experience <span class="orangefont">very high fever?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(81)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(82)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="rash_rocky_mobile_8_y" *ngIf="page==81">
+	      <!--start 8 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(82)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_8_n" *ngIf="page==82">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about <span class="grayfont">shaking</span><span class="bluefont"> chills?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  <span class="bluefont">Nausea</span> and <span class="purple_redfont">vomiting?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_9_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(83)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(84)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="rash_rocky_mobile_9_y" *ngIf="page==83">
+	      <!--start 9 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need detailed evaluation.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_rocky_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(84)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_9_n" *ngIf="page==84">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Was there severe <span class="bluefont">headaches?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  <span class="redfont">Muscle aching</span> all over?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(85)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(86)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="rash_rocky_mobile_10_y" *ngIf="page==85">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Need further evaluation.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->  
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_rocky_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(86)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_10_n" *ngIf="page==86">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did this rash, after the <span class="redfont">fever,</span> start as small, <span class="pinkfont">pink,</span> non-itchy spots...</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ...On the <span class="redfont">Wrists, Forearms, Ankles?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <p class="blueBorder">May spread to include most of the body later <span class="grayfontSmall">(including the palms and the soles)</span>.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_rocky_mobile_11_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(87)">Yes</button>
+	         <button data-inline="true" class="rash_rocky_mobile_11_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(88)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <div id="rash_rocky_mobile_11_y" *ngIf="page==87">
+	      <!--start 11 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="redfont blueBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Have to rule out rocky mountain spotted fever.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Nearest Clinic</a>
+	         <button data-inline="true" class="rash_rocky_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(88)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_rocky_mobile_11_n" *ngIf="page==88">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Those were signs and symptoms of <span class="redfont">rocky mountain spotted fever.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you suspect any of the signs discussed so far and you have been in contact with ticks, you should treat this as a medical emergency and see a doctor as soon as possible.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(90)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 11 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=90 && page<100">
+	   <div id="rash_hfm_mobile_2_n" *ngIf="page==90">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Did this rash appear along with very small <span class="purple_redfont">blisters</span> on the <span class="bluefont">hands and feet?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(91)">Yes</button>
+	         <a href="#" (click)="togglePage(100)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_hfm_mobile_3_y" *ngIf="page==91">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's make sure you are not looking at <span class="purplefont">hand, foot and mouth disease</span>.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">Though this is more common in children under 10, it can also happen to adults.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(92)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hfm_mobile_3_n" *ngIf="page==92">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>With this small blisters on the hands and feet, do you also have <span class="pinkfont">ulcers</span> in the <span class="bluefont">mouth?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  <span class="pinkfont">Ulcers</span> on the <span class="bluefont">tongue?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->  
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(93)">Yes</button>
+	         <button data-inline="true" class="rash_hfm_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(94)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_hfm_mobile_4_y" *ngIf="page==93">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a sign of hand, foot and mouth disease. Hence the name.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(94)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hfm_mobile_4_n" *ngIf="page==94">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you have <span class="redfont">fever</span> with this small blisters on the hands and feet?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  And <span class="redfont">headaches?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(95)">Yes</button>
+	         <button data-inline="true" class="rash_hfm_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(96)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_hfm_mobile_5_y" *ngIf="page==95">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a sign of hand, foot and mouth disease.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(96)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hfm_mobile_5_n" *ngIf="page==96">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about a <span class="bluefont">sore throat</span> or <span class="pinkfont">ulcer</span> in the <span class="bluefont">throat</span> with this blisters on the hands and feet?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(97)">Yes</button>
+	         <button data-inline="true" class="rash_hfm_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(98)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="rash_hfm_mobile_6_y" *ngIf="page==97">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a sign of hand, foot and mouth disease. 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">The ulcers in the throat would cause a sore throat.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hfm_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(98)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hfm_mobile_6_n" *ngIf="page==98">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Those were major signs of <span class="purple_redfont">hand, foot and mouth disease.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">This is a viral disease that can be spread from person to person. You can catch it if you come into direct contact with  saliva, fluid from blisters, nose and throat fluids from an infected person. </p>
+	      <p class="blueBorderAll">Know that there is no specific treatment for the infection other than relief of symptoms such as fever and sore throat. But don't panic, complete recovery occurs in 5 to 7 days.</p>
+	      <p class="blueBorder">If you think you are looking at hand, foot and mouth disease, give the doctor a call for a complete diagnosis. If not, let's continue and see what else you are looking at.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <div class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(100)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </div>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page>=100 && page<110">
+	   <div id="rash_lyme_mobile_1" *ngIf="page==100">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Let's make sure you are not looking at <span class="redfont">Lyme's disease.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">
+	         You can get lyme disease if bitten by an infected <span class="purple_redfont">tick.</span> 
+	      </p>
+	      <p class="blueBorderAll">Know that many people with Lyme disease never even feel, talk-less of seeing a tick on their body.</p>
+	      <p class="blueBorderAll"> The deer tick that carries the bacteria can be so small that they are almost impossible to see. </p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(101)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="rash_lyme_mobile_2_n" *ngIf="page==101">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at a <span class="redfont">"bull's eye"</span> rash with a <span class="orangefont">clear area</span> in the center? </span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  This rash is <span class="redfont">expanding</span> in size?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(102)">Yes</button>
+	         <button data-inline="true" class="rash_lyme_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(103)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="rash_lyme_mobile_3_y" *ngIf="page==102">
+	      <div class="centerText">
+	         <div class="maxwidth450">
+	            <div class="ovalRightBlue">
+	               <span class="bluefontLarge">Yes?</span><br>
+	               Hmmm. This can be a symptom of <span class="purple_redfont">lyme disease.</span>
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End middle right person------------------- -->
+	      <p class="blueBorder">Usually there may be a "bull's eye" looking rash at the site of the tick bite. This rash will expand as time goes on hence the name erythema migrans.</p>
+	      <div class="blueBorderAll">
+	         <p class="blueBorder"><a href="http://www.cdc.gov/lyme/signs_symptoms/index.html" class="ui-link"><span class="grayfontSmall">CDC website</span></a> describe the rash as:</p>
+	         <ul>
+	            <li>Occurring in approximately 70-80% of infected persons.</li>
+	            <li>Beginning at the site of a tick bite after a delay of 3-30 days (average is about 7 days).</li>
+	            <li>Gradually expanding over a period of several days, and can reach up to 12 inches across.</li>
+	            <li>Parts of the rash may clear as it enlarges, resulting in a “bull's-eye” appearance.</li>
+	            <li>Rash usually feeling warm to the touch but is rarely itchy or painful.</li>
+	            <li>Rash that may appear on any area of the body.</li>
+	            <li>Some people may develop this rash at more than one place on their bodies.</li>
+	         </ul>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(103)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_lyme_mobile_3_n" *ngIf="page==103">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this rash like a flat or slightly raised <span class="redfont">red spot</span> that is <span class="bluefont">expanding</span> in size? </span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  There may be a <span class="bluefont">clear</span> area in the <span class="redfont">center.</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(104)">Yes</button>
+	         <button data-inline="true" class="rash_lyme_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(105)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="rash_lyme_mobile_4_y" *ngIf="page==104">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This can describe the rash of <span class="purple_bluefont">lyme disease.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">This red spot will expand in size as time goes on.</p>
+	      <div class="blueBorderAll">
+	         <p class="blueBorder centerText"><a href="http://www.cdc.gov/lyme/signs_symptoms/index.html" class="ui-link"><span class="grayfontSmall">CDC website</span></a> describe the rash as:</p>
+	         <ul>
+	            <li>Occurring in approximately 70-80% of infected persons.</li>
+	            <li>Beginning at the site of a tick bite after a delay of 3-30 days (average is about 7 days).</li>
+	            <li>Gradually expanding over a period of several days, and can reach up to 12 inches across.</li>
+	            <li>Parts of the rash may clear as it enlarges, resulting in a “bull's-eye” appearance.</li>
+	            <li>Rash usually feeling warm to the touch but is rarely itchy or painful.</li>
+	            <li>Rash that may appear on any area of the body.</li>
+	            <li>Some people may develop this rash at more than one place on their bodies.</li>
+	         </ul>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(105)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_lyme_mobile_4_n" *ngIf="page==105">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            Seek urgent care if those descriptions apply to you.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">You will need further evaluation and possibly if determined to be lyme disease, an antibiotic like doxycycline. The earlier you start this the better. Don't delay.</p>
+	      <p class="blueBorderAll grayfontSmall centerText"><span class="redfont">Note that:</span><br> 
+	         There are other symptoms of lyme's disease especially flu-like symptoms. If you have a history of possible exposure to infected black-legged ticks and have flu-like symptoms without any rash, seek urgent medical attention.
+	      </p>
+	      <p class="blueBorder centerText">If none of these apply to you, then let's continue.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <button data-inline="true" class="rash_lyme_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(106)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="rash_lyme_mobile_5_y" *ngIf="page==106">
+	      <!--start 5 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_lyme_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(107)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_lyme_mobile_5_n" *ngIf="page==107">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="bluefont">Oh well,</span><br>
+	            <span class="redfont firstname"> </span> if you have <span class="orangefont">rash with fever,</span> see a doctor for evaluation.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">It usually mean a viral or bacteria infection is going on. Do not delay.</p>
+	      <p class="blueBorderAll">Because it is our strong opinion that you must seek urgent care, we would not send you to a pharmacist for any over-the-counter recommendation. There is no need treating a symptom when it is going to get worse.</p>
+	      <p class="blueBorder">If you are just going through this, then let's continue to take a look at a <br>rash <span class="redfont">without</span> fever<br> situation.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(110)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=110 && page<120">
+	   <div id="rash_no_fever_mobile_1" *ngIf="page==110">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span> Let's figure out what may be causing this <span class="orangefont">rash</span> with no fever.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_no_fever_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(111)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="rash_no_fever_mobile_2_n" *ngIf="page==111">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the rash more of <span class="orangefont">itching</span> or more of <span class="redfont">blistering?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder grayfontSmall">Know that some can be both itchy and blistering. An example is poison ivy.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(120)">Itchy</a>
+	         <a href="#" (click)="togglePage(190)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">Blisters</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=120 && page<140">
+	   <div id="rash_itchy_mobile_1" *ngIf="page==120">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="orangefontLarge firstname"> </span><br>
+	            Many things can cause an <span class="orangefont">itchy</span> skin rash. 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">Examples include eczema, allergy, poison ivy, ringworm, heat rash to name a few.</p>
+	      <p class="blueBorderAll">Let's continue and see if we can narrow it down a little bit more.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- --> 
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(121)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="rash_itchy_mobile_2_n" *ngIf="page==121">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at <span class="purple_redfont">itchy patches</span> that are <span class="redfont">red </span>to <span class="brownfont">brownish gray</span> colored?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(122)">Yes</button>
+	         <button data-inline="true" class="rash_itchy_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(123)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="rash_itchy_mobile_3_y" *ngIf="page==122">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            You may be looking at <span class="bluefont">eczema</span> <span class="grayfontSmall">(also called atopic dermatitis)</span>.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(123)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_itchy_mobile_3_n" *ngIf="page==123">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are there areas of <span class="bluefont">bumpy skin</span> on the back of the <span class="orangefont">arms</span> and front of the <span class="bluefont">thighs?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(124)">Yes</button>
+	         <button data-inline="true" class="rash_itchy_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(125)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="rash_itchy_mobile_4_y" *ngIf="page==124">
+	      <!--start 4 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(125)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_itchy_mobile_4_n" *ngIf="page==125">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>What about small, raised <span class="redfont">blisters</span>, which may leak fluid and crust over when <span class="orangefont">scratched?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_5_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(126)">Yes</button>
+	         <button data-inline="true" class="rash_itchy_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(127)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="rash_itchy_mobile_5_y" *ngIf="page==126">
+	      <!--start 5 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(127)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_itchy_mobile_5_n" *ngIf="page==127">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are the affected areas <span class="bluefont">thickened, leather-like, cracked or scaly?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(128)">Yes</button>
+	         <button data-inline="true" class="rash_itchy_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(129)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="rash_itchy_mobile_6_y" *ngIf="page==128">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a symptom of eczema called atopic dermatitis.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="blueBorder centerText">Other symptoms include:</p>
+	         <ul>
+	            <li>Patches that are itchy and red to brownish gray colored</li>
+	            <li>Areas of bumpy skin on the back of the arms and front of the thighs</li>
+	            <li>Small, raised blisters</li>
+	         </ul>
+	      </div>
+	      <p class="blueBorder">Would you like to visit our entry for eczema and see what a pharmacist recommend you use or Continue?</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(2)" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Eczema</a>
+	         <button data-inline="true" class="rash_itchy_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(129)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_itchy_mobile_6_n" *ngIf="page==129">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the itching severe especially at <span class="purplefont">night?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_itchy_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(130)">Yes</button>
+	         <button data-inline="true" class="rash_itchy_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(131)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="rash_itchy_mobile_7_y" *ngIf="page==130">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a symptom of eczema called atopic dermatitis.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="blueBorderAll">
+	         <p class="blueBorder centerText">Symptoms include:</p>
+	         <ul>
+	            <li>Patches that are itchy and red to brownish gray colored</li>
+	            <li>Areas of bumpy skin on the back of the arms and front of the thighs</li>
+	            <li>Small, raised blisters</li>
+	            <li>Thickened, scaly areas</li>
+	            <li>Itching especially at night.</li>
+	         </ul>
+	      </div>
+	      <p class="blueBorder">Would you like to visit our entry for eczema and see what a pharmacist recommend you use or Continue?</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(2)" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Eczema</a>   
+	         <button data-inline="true" class="rash_itchy_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(131)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_itchy_mobile_7_n" *ngIf="page==131">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            Those were some signs and symptoms of <span class="bluefont">eczema.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If they apply to you, see our topic on eczema for a more specific discussion. If not, let's continue and check other things out.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(2)" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Eczema</a>   
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(140)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=140 && page<150">
+	   <div id="rash_ringworm_mobile_2_n" *ngIf="page==140">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this a <span class="orangefont">patch</span> or <span class="grayfont">group</span> of patches that is roughly <span class="orangefont">circular</span> ring-shaped?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  And <span class="redfont">red</span>-colored?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ringworm_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(141)">Yes</button>
+	         <a href="#" (click)="togglePage(150)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_ringworm_mobile_3_y" *ngIf="page==141">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's make sure you are not looking at a<span class="purple_redfont"> ringworm</span> infection?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ringworm_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(142)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ringworm_mobile_3_n" *ngIf="page==142">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this a <span class="bluefont">patch</span> or group that has slightly raised <span class="orangefont"> border</span> that <span class="bluefont">expands</span> outward?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ringworm_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(143)">Yes</button>
+	         <button data-inline="true" class="rash_ringworm_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(144)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_ringworm_mobile_4_y" *ngIf="page==143">
+	      <!--start follow up 4 div -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ringworm_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(144)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ringworm_mobile_4_n" *ngIf="page==144">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at a patch with a <span class="orangefont">center</span> that may be clear, scaly..</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ..or marked with a scattering of <span class="redfont">red</span> bumps?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ringworm_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(145)">Yes</button>
+	         <button data-inline="true" class="rash_ringworm_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(146)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_ringworm_mobile_5_y" *ngIf="page==145">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            More than likely looking at <span class="purple_redfont">ringworm.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">Would you like to see our entry for ringworm infection or you don't think it is ringworm? If you don't think it is ringworm, let's continue.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(3)" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Ringworm</a>
+	         <a href="#" (click)="togglePage(150)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ringworm_mobile_5_n" *ngIf="page==146">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            Those were signs of a <span class="purple_redfont">ringworm</span> infection.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you think you may be looking at a ringworm infection, see our entry on ringworm. </p>
+	      <p class="blueBorder">Otherwise, let's continue and see if you can narrow down the rash.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(3)" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Ringworm</a>
+	         <a href="#" (click)="togglePage(150)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	</div>
+
+	<div class="ui-content" *ngIf="page>=150 && page<160">
+	   <div id="rash_hives_mobile_2_n" *ngIf="page==150">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at red or skin-colored raised <span class="bluefont">welts</span> <span class="grayfontSmall">(wheals, or swellings)</span> on the surface of the skin?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  With <span class="bluefont">clearly defined edges?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hives_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(151)">Yes</button>
+	         <a href="#" (click)="togglePage(160)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_hives_mobile_3_y" *ngIf="page==151">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>You may be looking at <span class="orangefont">hives.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hives_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(152)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hives_mobile_3_n" *ngIf="page==152">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span><span class="redfont">Press</span> on the center of a wheal.</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Did it turn  <span class="bluefont">white?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_hives_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(153)">Yes</button>
+	         <button data-inline="true" class="rash_hives_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(154)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_hives_mobile_4_y" *ngIf="page==153">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            May be looking at hives. This is called <span class="bluefont">blanching.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you think you are looking at hives, would you like to see our entry for hives? </p>
+	      <p class="blueBorder">Or continue to see what this rash may be about if you don't think it is hives.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->  
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(4)" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Hives</a>
+	         <a href="#" (click)="togglePage(160)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_hives_mobile_4_n" *ngIf="page==154">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="redfontLarge">No?</span><br>
+	            Hives will turn white. <span class="bluefont">This is called blanching.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you think you are looking at hives, would you like to see our entry for hives? </p>
+	      <p class="blueBorder">Or continue to see what this rash may be about if you don't think it is hives.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->  
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(4)" data-rel="dialog" data-role="button" data-theme="e" data-inline="true" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Hives</a>
+	         <a href="#" (click)="togglePage(160)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=160 && page<180">
+	   <div id="rash_heat_mobile_2_n" *ngIf="page==160">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this like clear or <span class="redfont">red</span> bumps <span class="redfontSmall">(papules)</span> causing a <span class="purple_bluefontSmall">prickly</span> feeling in the affected area?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Like <span class="bluefontSmall">'pins-and-needles'</span> prickling sensation.
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglepage(161)">Yes</button>
+	         <a href="#" (click)="togglePage(180)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_heat_mobile_3_y" *ngIf="page==161">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>You may be looking at a <span class="bluefont">heat rash.</span> Let's take a look.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglepage(162)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_heat_mobile_3_n" *ngIf="page==162">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the affected area very <span class="purple_redfont">itchy?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglepage(163)">Yes</button>
+	         <button data-inline="true" class="rash_heat_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglepage(164)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_heat_mobile_4_y" *ngIf="page==163">
+	      <!--start follow up 4 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglepage(164)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_heat_mobile_4_n" *ngIf="page==164">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this mainly in the <span class="orangefont">skin folds?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Like the face, neck, under the breasts and under the scrotum?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglepage(165)">Yes</button>
+	         <button data-inline="true" class="rash_heat_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglepage(166)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_heat_mobile_5_y" *ngIf="page==165">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            More than likely looking at a <span class="bluefont">heat rash.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglepage(166)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_heat_mobile_5_n" *ngIf="page==166">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this mainly in the areas where <span class="bluefont">clothing</span> causes <span class="pinkfont">skin friction.</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Such as the <span class="grayfont">back, chest, and stomach?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglepage(167)">Yes</button>
+	         <button data-inline="true" class="rash_heat_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglepage(168)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="rash_heat_mobile_6_y" *ngIf="page==167">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            More than likely looking at a <span class="bluefont">heat rash.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p>List the signs of a heat rash.</p>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglepage(168)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_heat_mobile_6_n" *ngIf="page==168">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the affected area mainly an area with little or no <span class="bluefont">sweating?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglepage(169)">Yes</button>
+	         <button data-inline="true" class="rash_heat_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglepage(170)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	   <div id="rash_heat_mobile_7_y" *ngIf="page==169">
+	      <!--start follow up 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Possibly looking at a <span class="bluefont">heat rash.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">Heat rash occurs when the sweat duct gets plugged  due to dead skin cells or bacteria. </p>
+	      <p class="blueBorder">The trapped sweat leads to prickling, itching and to a rash of very small blisters.</p>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_heat_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglepage(170)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_heat_mobile_7_n" *ngIf="page==170">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            We just went through the signs of a <span class="bluefont">heat rash.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If you suspect a heat rash, let's continue and see what the pharmacist has available over-the-counter to help with this. </p>
+	      <p class="blueBorderAll">If not let's check out other rashes and see what you may be experiencing or do you want to just see the nearest urgent care?</p>
+	      <p class="blueBorder">Or do you want to just see the nearest urgent care clinic to you?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(180)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 7 div -->
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=180 && page<190">
+	   <div id="rash_contact_mobile_2_n" *ngIf="page==180">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is the rash at <span class="bluefont">point of contact</span> with example perfumes, jewelry?</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  And <span class="bluefont">scaly?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_contact_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(181)">Yes</button>
+	         <button data-inline="true" class="rash_contact_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(182)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_contact_mobile_3_y" *ngIf="page==181">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Possibly looking at <span class="bluefont">contact dermatitis.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p>Expand a little on contact dermatitis.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_contact_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(182)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_contact_mobile_3_n" *ngIf="page==182">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this rash at the point of <span class="bluefont">bite?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  And <span class="purple_redfont">sprinkled randomly?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_contact_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(183)">Yes</button>
+	         <button data-inline="true" class="rash_contact_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(184)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_contact_mobile_4_y" *ngIf="page==183">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">  
+	            <span class="orangefontLarge">Yes?</span><br>
+	            More than likely looking at <span class="redfont">insect bites.</span> 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">Check out the insect bites section for a more detailed discussion.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(5)" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Insect Bites</a>
+	         <button data-inline="true" class="rash_contact_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(184)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_contact_mobile_4_n" *ngIf="page==184">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            There are other causes of <span class="redfont">red, itchy rashes</span> that are not covered here. 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder centerText">It would be a good idea to take a look at <span class="redfont">blistering</span> rash.</p>
+	      <p class="blueBorder centerText">Or do you think you should seek urgent care from the discussions so far?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(190)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	</div>
+
+	<div class="ui-content" *ngIf="page>=190 && page<200">
+	   <div id="rash_blisters_mobile_1" *ngIf="page==190">
+	      <!-----Start follow up intro--- -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Blistering rash which can also be itchy<span class="grayfontSmall"> include impetigo, poison ivy,  scabies to name a few.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- --> 
+	      <p class="blueBorder centerText">Let's take a quick look at a few.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_blisters_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(191)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End follow up intro -->
+	   <div id="rash_blisters_mobile_2_n" *ngIf="page==191">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at <span class="redfont">red</span> sores that <span class="orangefont">pop,</span> <span class="purple_redfont">ooze</span> for a few days..</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ..and then form yellowish or honey colored <span class="orangefont">crusts?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_blisters_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(192)">Yes</button>
+	         <a href="#" (click)="togglePage(200)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_blisters_mobile_3_y" *ngIf="page==192">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Probably looking at <span class="redfont">impetigo.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_blisters_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(193)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_blisters_mobile_3_n" *ngIf="page==193">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this like <span class="redfont">red</span> <span class="pinkfont">sores</span> which may have started as a spot..</span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ..but <span class="redfont">spreading</span> to other areas with scratching?
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_blisters_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(194)">Yes</button>
+	         <button data-inline="true" class="rash_blisters_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(195)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_blisters_mobile_4_y" *ngIf="page==194">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Suspecting <span class="redfont">impetigo.</span> <span class="grayfontSmall">A highly contagious bacteria infection.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorderAll">Though it is more common in children, adults can develop it after another skin infection or following a cold or viral infection.</p>
+	      <p class="blueBorder">You will have to seek urgent care for this. It is a bacteria infection  that has to be treated with antibiotics.</p>
+	      <p class="blueBorderAll">Would you like to see the nearest urgent care clinic to you or Continue?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <button data-inline="true" class="rash_blisters_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(195)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_blisters_mobile_4_n" *ngIf="page==195">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you experiencing <span class="redfont">red</span> <span class="pinkfont">sores</span> <span class="grayfontSmall">on the face, lips, arms, or legs,</span> that spread to other areas? </span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_blisters_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(196)">Yes</button>
+	         <button data-inline="true" class="rash_blisters_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(197)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_blisters_mobile_5_y" *ngIf="page==196">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Suspecting <span class="redfont">impetigo.</span> <span class="grayfontSmall">A highly contagious bacteria infection.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">Though more common in children, adults can develop it after another skin infection or following a cold or viral infection.</p>
+	      <p class="blueBorderAll">You will have to seek urgent care for this. It is a bacteria infection that require antibiotics.</p>
+	      <p class="blueBorder">Would you like to see the nearest urgent care clinic to you or Continue?</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(200)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_blisters_mobile_5_n" *ngIf="page==197">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            Those were a few  signs of <span class="redfont">impetigo.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">Impetigo is a bacteria infection that is highly contagious. You will need to seek urgent care or see a doctor for this.</p>
+	      <p class="blueBorderAll">It can develop after another skin infection or following a cold or viral infection.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	         <a href="#" (click)="togglePage(200)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=200 && page<210">
+	   <div id="rash_ivy_mobile_2_n" *ngIf="page==200">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Does this rash look like a <span class="redfont">red,</span> <span class="purple_redfont">blistering</span> straight line <span class="redfont">streak..</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  ..probably on the <span class="purple_redfont">hand or leg?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ivy_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(201)">Yes</button>
+	         <a href="#" (click)="togglePage(210)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_ivy_mobile_3_y" *ngIf="page==201">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's make sure you are not looking at <span class="greenfont">poison ivy.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ivy_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(202)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ivy_mobile_3_n" *ngIf="page==202">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Have you or anyone in the house been out in the <span class="greenfont">woods</span> the past 2 weeks or so?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ivy_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(203)">Yes</button>
+	         <button data-inline="true" class="rash_ivy_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(204)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_ivy_mobile_4_y" *ngIf="page==203">
+	      <!--start follow up 4 div -->
+	      <h3>Yes?</h3>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ivy_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(204)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ivy_mobile_4_n" *ngIf="page==204">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this blistering rash <span class="redfont">red</span> and <span class="purple_redfont">itchy?</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  With a <span class="redfont">burning sensation?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_ivy_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(205)">Yes</button>
+	         <button data-inline="true" class="rash_ivy_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(206)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_ivy_mobile_5_y" *ngIf="page==205">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is a sign of <span class="greenfont">poison ivy.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="greenBorder">If you think you are looking at poison ivy, would you like to see our entry for poison ivy for a more detailed discussion or Continue.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(6)" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button">Poison Ivy</a>
+	         <a href="#" (click)="togglePage(210)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_ivy_mobile_5_n" *ngIf="page==206">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            We briefly went through the signs of <span class="greenfont">poison ivy.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p>If you think this is what you are looking at, see our discussion on poison ivy for a more detailed analysis. If not let's continue.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(6)" data-role="button" data-theme="l" data-inline="true" class="ui-link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" role="button">Poison Ivy</a>
+	         <a href="#" (click)="togglePage(210)" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=210 && page<220">
+	   <div id="rash_scabies_mobile_2_n" *ngIf="page==210">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you looking at <span class="purple_redfont">very itchy</span> gray, brown or red <span class="purple_redfont">lines?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scabies_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(211)">Yes</button>
+	         <a href="#" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(220)">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_scabies_mobile_3_y" *ngIf="page==211">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's make sure you are not looking at <span class="orangefont">scabies.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scabies_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(212)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scabies_mobile_3_n" *ngIf="page==212">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are you mainly experiencing itching on the <span class="bluefont">wrist?</span> </span><br>
+	            <span class="italicSmall">(mainly the inner part)</span>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  Itching in the <span class="bluefont">elbows?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scabies_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(213)">Yes</button>
+	         <button data-inline="true" class="rash_scabies_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(214)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_scabies_mobile_4_y" *ngIf="page==213">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            You may start suspecting <span class="orangefont">scabies</span> infestation. 
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scabies_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(214)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scabies_mobile_4_n" *ngIf="page==214">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this itching very intense especially at <span class="bluefont">night</span></span><br>
+	         </div>
+	         <div class="clearboth"></div>
+	         <div class="container_12">
+	            <div class="grid_8">
+	               <br>
+	               <div class="bubbleRightBlue">
+	                  And you are seeing <span class="grayfont">small</span> <span class="redfont">red bumps?</span>
+	               </div>
+	            </div>
+	            <div class="grid_4">
+	               <img src="assets/img/pharm/female/pharm-amy.svg" alt="Pharmacist" width="80" align="right">
+	            </div>
+	         </div>
+	      </div>
+	      <br>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Point Right------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_scabies_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(215)">Yes</button>
+	         <button data-inline="true" class="rash_scabies_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(216)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_scabies_mobile_5_y" *ngIf="page==215">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Suspecting <span class="orangefont">scabies</span> infestation.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">You should suspect scabies if the questions asked so far apply to you and you have been in contact with someone with scabies the last 2 months or so.</p>
+	      <p class="blueBorderAll">If you think you are leaning towards scabies, check out our entry for scabies. Else let's Continue.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(7)" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button">Scabies</a>
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(220)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_scabies_mobile_5_n" *ngIf="page==216">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Alright.</span><br>
+	            Those were main signs and symptoms of a <span class="orangefont">scabies</span> infestation.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="blueBorder">If they did not apply to you, you may not be looking at a scabies infestation. </p>
+	      <p class="blueBorderAll">If you suspect something, see our entry for scabies for a more detailed analysis.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(7)" data-role="button" data-inline="true" data-theme="i" class="ui-link ui-btn ui-btn-i ui-btn-inline ui-shadow ui-corner-all" role="button">Scabies</a>
+	         <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(220)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <p>&nbsp;</p>
+	</div>
+
+	<div class="ui-content" *ngIf="page>=220 && page<230">
+	   <div id="rash_psoriasis_mobile_2_n" *ngIf="page==220">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are these <span class="purple_bluefont">patches</span> of skin that is <span class="purple_bluefontSmall">flaky,</span> <span class="pinkfontSmall">pink</span> - <span class="redfontSmall">red </span>and irritated?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_3_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(221)">Yes</button>
+	         <a href="#" (click)="togglePage(230)" data-role="button" data-inline="true" data-theme="k" class="ui-link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" role="button">No</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first follow up question div --> 
+	   <!--start follow up 3 div -->   
+	   <div id="rash_psoriasis_mobile_3_y" *ngIf="page==221">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Let's rule in or out <span class="purple_bluefont">psoriasis.</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(222)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_psoriasis_mobile_3_n" *ngIf="page==222">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Are the affected areas <span class="bluefont">dry</span> and covered with <span class="purple_bluefont">silvery, flaky</span> skin like <span class="bluefont">scales?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(223)">Yes</button>
+	         <button data-inline="true" class="rash_psoriasis_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(224)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 3 div --> 
+	   <div id="rash_psoriasis_mobile_4_y" *ngIf="page==223">
+	      <!--start follow up 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            Probably looking at <span class="blue_brightfont">psoriasis</span> going on.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(224)">Continue</button>	
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_psoriasis_mobile_4_n" *ngIf="page==224">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Is this area of skin <span class="grayfont">thick</span> and <span class="purplefont">raised</span> from the skin surface?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(225)">Yes</button>
+	         <button data-inline="true" class="rash_psoriasis_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(226)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 4 div --> 
+	   <div id="rash_psoriasis_mobile_5_y" *ngIf="page==225">
+	      <!--start follow up 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            This is one of the sign of<span class="blue_brightfont"> psoriasis.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(226)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_psoriasis_mobile_5_n" *ngIf="page==226">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span>Do you experience <span class="purple_bluefont">dandruff</span> pretty <span class="bluefont">bad?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_6_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(227)">Yes</button>
+	         <button data-inline="true" class="rash_psoriasis_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(228)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 5 div --> 
+	   <div id="rash_psoriasis_mobile_6_y" *ngIf="page==227">
+	      <!--start follow up 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge">Yes?</span><br>
+	            People with <span class="blue_brightfont">psoriasis</span> may experience severe dandruff.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <button data-inline="true" class="rash_psoriasis_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(228)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="rash_psoriasis_mobile_6_n" *ngIf="page==228">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightBlue centerText">
+	            <span class="bluefontLarge firstname"> </span><br>
+	            We just went through the signs of <span class="purplefont">psoriasis</span> briefly.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="yellowBorder">Psoriasis is a common skin condition that causes skin irritation.</p>
+	      <p class="yellowBorder"> With psoriasis, you may experience thick, raised, red to pink skin with flaky, silver-white patches called scales.</p>
+	      <p class="yellowBorderAll">If you think you are looking at psoriasis or have a family history of psoriasis, see a doctor for a more detailed evaluation.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="togglePage(230)" data-role="button" data-theme="o" data-inline="true" class="ui-link ui-btn ui-btn-o ui-btn-inline ui-shadow ui-corner-all" role="button">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end follow up 6 div -->
+	</div>
+
+	<div class="ui-content" *ngIf="page==230">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightBlue centerText">
+	         <span class="bluefontLarge">Alright.</span><br>
+	         Hope you have an idea what is causing this rash by now.
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-amy.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <!-----------------End Border right person------------------- -->
+	   <p class="blueBorder">Skin rash is the skin reacting to something. It is always better to get rid of the underlying cause.</p>
+	   <p class="blueBorder centerText">Assuming you are looking at a minor skin irritation, let's see what is available for skin rash over the counter.</p>
+	   <p class="blueBorderAll centerText">Or do you think you should seek urgent care after all these discussions?</p>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <input type="hidden" class="ClickValuePage1_25" value="">
+	   <input type="hidden" class="ClickValuePage1_50" value="">
+	   <input type="hidden" class="ClickValuePage1_100" value="">
+	   <input type="hidden" class="ClickValuePage2_25" value="">
+	   <input type="hidden" class="ClickValuePage2_50" value="">
+	   <input type="hidden" class="ClickValuePage2_100" value="">
+	   <input type="hidden" class="ClickValuePage3_25" value="">
+	   <input type="hidden" class="ClickValuePage3_50" value="">
+	   <input type="hidden" class="ClickValuePage3_100" value="">
+	   <input type="hidden" class="totalResult" value="">
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText">
+	      <a href="#" (click)="gotoSubPage(0)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Urgent Care</a>
+	      <a href="#" (click)="gotoSubPage(8)" class="rash_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button">Pharmacist</a>
+	   </p>
+	   <p>&nbsp;</p>
+	</div>
 </ion-content>

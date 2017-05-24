@@ -46,7 +46,8 @@ export class LiceAdultRecomMobilePage {
 			false, false, false, false, false, false, false, false, false, false, false, false, false
 		];
 		this.pages = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
-		this.expands = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
+		this.expands = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,
+														true, true, true, true, true, true, true, true, true, true, true];
 		this.firstname = GlobalVars.getFirstname();
 		if (this.firstname != "")
 			this.firstname += ",";
@@ -92,7 +93,7 @@ export class LiceAdultRecomMobilePage {
 	}
 	goBackSymptom(){
 		this.goBack();
-		this.page = 0;
+		this.page = 1;
 		this.mode = 0;
 	}
 	toggleWhy(){
@@ -105,115 +106,124 @@ export class LiceAdultRecomMobilePage {
 		this.expands[id] = !this.expands[id];
 	}
 	togglePage(ind: number) {
-		if (ind == 1)
+		if (ind == 2)
 		{
-			let 
-				sorethroat = this.recs[0],
-				scratchythroat = this.recs[1],
-				stuffynose = this.recs[2],
-				runnynose = this.recs[3],
-				sneezing = this.recs[4],
-				headache = this.recs[5],
-				itchyeyes = this.recs[6],
-				cough = this.recs[7],
-				wateryeyes = this.recs[8],
-				sinuscongestion = false,
-				chestcongestion = this.recs[9],
-				prevention =  this.recs[11],
-				All =  this.recs[10],
-				none = this.recs[12];
-				
-			//category variables
-			let 
-			    antihistamine = runnynose || scratchythroat || sneezing || itchyeyes || wateryeyes,
-				decongestant = stuffynose || sinuscongestion,
-				painrelief = headache || sorethroat,
-				coughrelief = cough || chestcongestion,
-				itchyeyesrelief = itchyeyes || wateryeyes;
+			var
+			    //found = $('#adult_recom_lice_mobile_q1_0'),
+			    severe = this.recs[1],
+			best = this.recs[2],
+			prefer_natural = this.recs[3],
+			tried = this.recs[4],
+			returned = this.recs[5],
+			resistant = this.recs[6],
+			crusty = this.recs[7],
+			family = this.recs[8],
+			money = this.recs[9],
+			prevention = this.recs[11],
+			allabove = this.recs[10],
+			none = this.recs[12];
+
+			//Medication variables in collapsible
+
+			var
+			    pediculicides = family || best,
+			natural = prefer_natural,
+			outsource = severe || money || family,
+			doctor = severe || tried || returned || resistant || crusty;
+
+
+			//conditions for showing none of the above division.
+
 			if (none) {
 				this.mode = 1;
 			}
+
 			//conditions for showing prevention division.
 			else if (prevention) {
-				this.mode = 2;
+			    this.mode = 2;
+
 			}
-			//conditions for All division.
-			else if (All) {
-				this.mode = 3;
+			//conditions for All division + Others else if.
+			else if (allabove) {
+			    this.mode = 3;
 			}
+
+			//condition for showing just one checked field
+
 			//--------------single------------------------
-			else if (antihistamine && !(decongestant || painrelief || coughrelief || itchyeyesrelief)) {
+			else if (pediculicides && !(natural || outsource || doctor)) {
 			    this.mode = 4;
-			} else if (decongestant && !(antihistamine || painrelief || coughrelief || itchyeyesrelief)) {
+
+
+			} else if (natural && !(pediculicides || outsource || doctor)) {
+
 			    this.mode = 5;
-			} else if (painrelief && !(decongestant || antihistamine || coughrelief || itchyeyesrelief)) {
+
+
+			} else if (outsource && !(pediculicides || natural || doctor)) {
+
 			    this.mode = 6;
-			} else if (coughrelief && !(decongestant || painrelief || antihistamine || itchyeyesrelief)) {
+
+
+			} else if (doctor && !(pediculicides || natural || outsource)) {
+
 			    this.mode = 7;
-			} else if (itchyeyesrelief && !(decongestant || painrelief || antihistamine || coughrelief)) {
-			    this.mode = 8;
+
 			}
+
 			//-------------------------------double---------------------------
-			else if (painrelief && decongestant && !(coughrelief || antihistamine || itchyeyesrelief)) {
+			else if (pediculicides && natural && !(outsource || doctor)) {
+
+			    this.mode = 8;
+
+			} else if (pediculicides && outsource && !(natural || doctor)) {
+
 			    this.mode = 9;
-			} else if (painrelief && antihistamine && !(coughrelief || decongestant || itchyeyesrelief)) {
+
+			} else if (pediculicides && doctor && !(natural || outsource)) {
+
 			    this.mode = 10;
-			} else if (painrelief && coughrelief && !(antihistamine || decongestant || itchyeyesrelief)) {
+
+			} else if (natural && outsource && !(pediculicides || doctor)) {
+
 			    this.mode = 11;
-			} else if (painrelief && itchyeyesrelief && !(antihistamine || decongestant || coughrelief)) {
+
+			} else if (natural && doctor && !(pediculicides || outsource)) {
+
 			    this.mode = 12;
-			} else if (antihistamine && decongestant && !(painrelief || coughrelief || itchyeyesrelief)) {
+
+			} else if (outsource && doctor && !(pediculicides || natural)) {
+
 			    this.mode = 13;
-			} else if (antihistamine && coughrelief && !(painrelief || decongestant || itchyeyesrelief)) {
-			    this.mode = 14;
-			} else if (antihistamine && itchyeyesrelief && !(painrelief || coughrelief || decongestant)) {
-			    this.mode = 15;
-			} else if (decongestant && coughrelief && !(painrelief || antihistamine || itchyeyesrelief)) {
-			    this.mode = 16;
-			} else if (decongestant && itchyeyesrelief && !(painrelief || antihistamine || coughrelief)) {
-			    this.mode = 17;
-			} else if (itchyeyesrelief && coughrelief && !(painrelief || antihistamine || decongestant)) {
-			    this.mode = 18;
+
 			}
+
 			//---------------------Triple----------------------
-			else if (painrelief && antihistamine && decongestant && !(coughrelief || itchyeyesrelief)) {
-			    this.mode = 19;
-			} else if (painrelief && antihistamine && coughrelief && !(decongestant || itchyeyesrelief)) {
-				this.mode = 20;
-			} else if (painrelief && antihistamine && itchyeyesrelief && !(decongestant || coughrelief)) {
-				this.mode = 21;
-			} else if (painrelief && decongestant && coughrelief && !(antihistamine || itchyeyesrelief)) {
-				this.mode = 22;
-			} else if (painrelief && decongestant && itchyeyesrelief && !(antihistamine || coughrelief)) {
-				this.mode = 23;
-			} else if (painrelief && itchyeyesrelief && coughrelief && !(decongestant || antihistamine)) {
-				this.mode = 24;
-			} else if (decongestant && itchyeyesrelief && coughrelief && !(antihistamine || painrelief)) {
-				this.mode = 25;
-			} else if (antihistamine && itchyeyesrelief && coughrelief && !(decongestant || painrelief)) {
-				this.mode = 26;
-			} else if (antihistamine && decongestant && coughrelief && !(itchyeyesrelief || painrelief)) {
-			    this.mode = 27;
-			} else if (antihistamine && decongestant && itchyeyesrelief && !(coughrelief || painrelief)) {
-			    this.mode = 28;
+			else if (pediculicides && natural && outsource && !(doctor)) {
+
+			    this.mode = 14;
+
+			} else if (pediculicides && natural && doctor && !(outsource)) {
+
+			    this.mode = 15;
+
+			} else if (pediculicides && outsource && doctor && !(natural)) {
+
+			    this.mode = 16;
+
+			} else if (natural && outsource && doctor && !(pediculicides)) {
+
+			    this.mode = 17;
 			}
-			//---------------------------------Quadriple-------------------------------------
-			else if (painrelief && antihistamine && decongestant && itchyeyesrelief && !(coughrelief)) {
-			    this.mode = 29;
-			} else if (painrelief && antihistamine && decongestant && coughrelief && !(itchyeyesrelief)) {
-			    this.mode = 30;
-			} else if (painrelief && antihistamine && itchyeyesrelief && coughrelief && !(decongestant)) {
-			    this.mode = 31;
-			} else if (painrelief && decongestant && itchyeyesrelief && coughrelief && !(antihistamine)) {
-			    this.mode = 32;
-			} else if (antihistamine && decongestant && itchyeyesrelief && coughrelief && !(painrelief)) {
-			    this.mode = 33;
-			}
+
 			//------------------------------All together------------------------------------
-			else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
-			    this.mode = 34;
+			else if (pediculicides && natural && outsource && doctor) {
+
+			    this.mode = 18;
+
 			} else {
-			    ind = 0; this.mode = 50;
+				this.mode = 100;
+				ind = 1;
 			}
 		}
 		this.page = ind;

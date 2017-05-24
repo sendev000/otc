@@ -43,7 +43,7 @@
 				        <p>&nbsp;</p>
 				        <p>&nbsp;</p>
 				        <!----------------------------Intro Division---------------- -->    
-				        <div id="adult_recom_bites_intro_mobile">
+				        <div id="adult_recom_bites_intro_mobile" *ngIf="page==0">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="bluefont firstname"> </span><br>
@@ -71,101 +71,27 @@
 				            <p>&nbsp;</p>
 				            <div align="left"><img src="assets/img/objects/pointing-arrow.png" style="width:250px;" alt="Arrow pointing to search field"></div>
 				            <div class="clearboth"></div>
-				            <form class="ui-filterable">
-				                <div class="ui-input-search ui-shadow-inset ui-input-has-clear ui-body-inherit ui-corner-all"><input data-type="search" placeholder="Search insects..."><a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
-				            </form>
+				            <form>
+							    <div class="ui-input-search ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear">
+									<input id="filterallergy_medsTable-input" type="text" data-type="search" name="search" data-clear-btn="false" placeholder="Search insects..." [(ngModel)]="searchText" (input)="filterItems()" />
+									<a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" title="Clear text" *ngIf="searchText.length>0" (click)="clearSearch()">Clear text</a>
+							    </div>
+							</form>
 				            <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search insects..." data-inset="true" class="ui-nodisc-icon ui-listview ui-listview-inset ui-corner-all ui-shadow">
-				                <li data-filtertext="bed bugs" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_bedbugs_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/bedbug.svg" alt="bed bug">
-				                        <h2>Bed bugs</h2>
-				                        <p></p>
+				            	<li *ngFor="let data of searchData" [ngClass]="{'ui-screen-hidden': !data['show']}" class="ui-li-has-thumb">
+				            		<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r" (click)="togglePage(data, true)">
+				                        <img src="assets/img/illustration/insects/{{data['imgUrl']}}" alt="bed bug">
+				                        <h2>{{data['h2']}}</h2>
+				                        <p>{{data['p']}}</p>
 				                    </a>
-				                </li>
-				                <li data-filtertext="Bumble Africanized bees honey" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_bees_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/bee.svg" alt="bee">
-				                        <h2>Bees</h2>
-				                        <p>Bumble bee</p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="black fly" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_blackfly_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/blackfly.svg" alt="black fly">
-				                        <h2>Black fly</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="chigger" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_chigger_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/chigger.svg" alt="chigger">
-				                        <h2>Chigger</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="fire ants" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_fireants_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/fireant.svg" alt="fire ant">
-				                        <h2>Fire ants</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="flea" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_flea_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/flea.svg" alt="flea">
-				                        <h2>Flea</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="mosquito" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_mosquito_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/mosquito.svg" alt="mosquito">
-				                        <h2>Mosquito</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="other" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_other_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/mosquito.svg" alt="mosquito">
-				                        <h2>Other</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="puss moth caterpillar" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_moth_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/puss-moth-cat.svg" alt="puss moth caterpillar">
-				                        <h2>Puss moth caterpillar</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="black widow brown recluse spider" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_spider_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/spider.svg" alt="">
-				                        <h2>Spider</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="tick" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_tick_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/tick.svg" alt="tick">
-				                        <h2>Tick</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
-				                <li data-filtertext="hornet yellow jacket paper wasps vespid bald-faced" class="ui-screen-hidden ui-li-has-thumb">
-				                    <a id="adult_recom_bites_wasps_mobile_link" href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-				                        <img src="assets/img/illustration/insects/wasps.svg" alt="wasps">
-				                        <h2>Wasps</h2>
-				                        <p></p>
-				                    </a>
-				                </li>
+				            	</li>
 				            </ul>
 				            <p>&nbsp;</p>
 				            <div class="clearboth divider1"></div>
 				        </div>
 				        <!------End Intro division------ -->  
 				        <!--------------------------Start Div 1--------------------------------------- -->
-				        <div id="adult_recom_bites_bedbugs_mobile" class="displayNone">
+				        <div id="adult_recom_bites_bedbugs_mobile" *ngIf="page>0 && searchData[0]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -182,8 +108,8 @@
 				                <img src="assets/img/illustration/insects/bedbug.svg" style="width:120px;" alt="bed bug">
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#EE82EE;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(0)" [ngClass]="{'ui-icon-arrow-r': expands[0], 'ui-icon-arrow-d': !expands[0]}"><span style="color:#EE82EE;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
 				                    <p><span style="color:#cc3399;">Diphenhydramine</span></p>
 				                    <p>You will take the tablets to help with itching if the affected area is pretty large. If not a large area, the cream, roll-on or spray will do fine.</p>
 				                    <p><span style="color:#FFA07A;">Calamine Lotion</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
@@ -194,8 +120,8 @@
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#FF0000;">Anti-inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(1)" [ngClass]="{'ui-icon-arrow-r': expands[1], 'ui-icon-arrow-d': !expands[1]}"><span style="color:#FF0000;">Anti-inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
 				                    <p><span style="color:#FF0000;">Hydrocortisone 1%</span>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 				                    <p>This will help both with the inflammation and itching of the affected area. Do not apply to a very large continuous &nbsp;area. If the bedbugs bite area is large, you have to seek urgent care.</p>
 				                    <p><span style="color:#FF8C00;">NSAIDs</span></p>
@@ -206,8 +132,8 @@
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#008000;">Worth Doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(2)" [ngClass]="{'ui-icon-arrow-r': expands[2], 'ui-icon-arrow-d': !expands[2]}"><span style="color:#008000;">Worth Doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
 				                    <p>1. Must get pest control company to get rid of the bedbugs. Do not try to do this yourself. You won't be successful. DIY does not work here.</p>
 				                    <p>2. Vacuum mattress and box-spring crevices</p>
 				                    <p>3. Place beddings and clothes in the dryer for 20 minutes on medium to high heat.</p>
@@ -221,13 +147,13 @@
 				                02/06/2016 
 				            </p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
 				        <!--------------------------Start Div 2--------------------------------------- -->
-				        <div id="adult_recom_bites_bees_mobile" class="displayNone">
+				        <div id="adult_recom_bites_bees_mobile" *ngIf="page>0 && searchData[1]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -244,15 +170,15 @@
 				                <img src="assets/img/illustration/insects/bee.svg" style="width:120px;" alt="bee">
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#FF0000;">Remove the Stinger</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(3)" [ngClass]="{'ui-icon-arrow-r': expands[3], 'ui-icon-arrow-d': !expands[3]}"><span style="color:#FF0000;">Remove the Stinger</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
 				                    <p>This is the first step you have to take.<img alt="Removing a bee stinger" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/bee-stinger-removal.svg" style="width: 120px; height: 90px; margin: 8px; float: right;"> It does not matter how you remove it, just do it. The earlier the better. A delay of a few seconds means more venom being injected.</p>
 				                    <p>&nbsp;</p>
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#6699ff;">Pain Relief</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(4)" [ngClass]="{'ui-icon-arrow-r': expands[4], 'ui-icon-arrow-d': !expands[4]}"><span style="color:#6699ff;">Pain Relief</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
 				                    <p><span style="color:#33ccff;">Cold Compress</span></p>
 				                    <p>Do this once the stinger has been removed. This will help reduce the inflammation or swelling.<img alt="Applying cold pack to the hand" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/cold-pack-hand.svg" style="width: 120px; height: 89px; margin: 8px; float: right;"> Keep applying ice until the pain has subsided. While doing this, have someone go to the pharmacy to get you benzocaine.</p>
 				                    <p><span style="color:#FF8C00;">Benzocaine, Lidocaine</span></p>
@@ -261,8 +187,8 @@
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#ff33cc;">Inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span style="color:#ff33cc;">Inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
 				                    <p><span style="color:#FF0000;">Hydrocortisone 1%</span></p>
 				                    <p>This should help with the swelling, redness and itch. Use this after using ice to reduce the pain.</p>
 				                    <p><span style="color:#FF8C00;">NSAIDs</span></p>
@@ -271,8 +197,8 @@
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#800080;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span style="color:#800080;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
 				                    <p><span style="color:#EE82EE;">Diphenhydramine</span></p>
 				                    <p>Take the tablets to help with the itch or prevent excessive itching. You will also take this to prevent any allergic reaction to the bee sting.</p>
 				                    <p>You may combine this hydrocortisone 1% cream or lotion for &nbsp;inflammation that can cause redness, swelling and itching.&nbsp;</p>
@@ -286,13 +212,13 @@
 				                02/06/2016 
 				            </p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
 				        <!--------------------------Start Div 3--------------------------------------- -->
-				        <div id="adult_recom_bites_blackfly_mobile" class="displayNone">
+				        <div id="adult_recom_bites_blackfly_mobile" *ngIf="page>0 && searchData[2]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -309,8 +235,8 @@
 				                <img src="assets/img/illustration/insects/blackfly.svg" style="width:120px;" alt="black fly">
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#FF0000;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span style="color:#FF0000;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
 				                    <p><span style="color:#800080;">Diphenhydramine</span></p>
 				                    <p>This is an antihistamine to relieve itching. Take the pills if affected area is all over the body</p>
 				                    <p><span style="color:#FF0000;">Hydrocortisone 1%</span></p>
@@ -326,13 +252,13 @@
 				                02/06/2016 
 				            </p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
 				        <!--------------------------Start Div 4--------------------------------------- -->
-				        <div id="adult_recom_bites_chigger_mobile" class="displayNone">
+				        <div id="adult_recom_bites_chigger_mobile" *ngIf="page>0 && searchData[3]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -349,8 +275,8 @@
 				                <img src="assets/img/illustration/insects/chigger.svg" style="width:120px;" alt="chigger">
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#ff66cc;">For Itching</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span style="color:#ff66cc;">For Itching</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
 				                    <p><span style="color:#0000FF;">1. Cold / Ice</span></p>
 				                    <p>Apply this to the affected area to start with.</p>
 				                    <p><span style="color:#FF0000;">2. Hydrocortisone 1%</span></p>
@@ -367,12 +293,12 @@
 				                02/06/2016 
 				            </p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_fireants_mobile" class="displayNone">
+				        <div id="adult_recom_bites_fireants_mobile" *ngIf="page>0 && searchData[4]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -392,12 +318,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_flea_mobile" class="displayNone">
+				        <div id="adult_recom_bites_flea_mobile" *ngIf="page>0 && searchData[5]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -417,12 +343,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_mosquito_mobile" class="displayNone">
+				        <div id="adult_recom_bites_mosquito_mobile" *ngIf="page>0 && searchData[6]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -439,8 +365,8 @@
 				                <img src="assets/img/illustration/insects/mosquito.svg" style="width:120px;" alt="Mosquito">
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#EE82EE;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span style="color:#EE82EE;">Anti-Itch</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
 				                    <p><span style="color:#FF0000;">Hydrocortisone 1%</span></p>
 				                    <p>Apply this for both itching and to get rid of the swelling</p>
 				                    <p><span style="color:#EE82EE;">Antihistamine</span></p>
@@ -453,8 +379,8 @@
 				                </div>
 				            </div>
 				            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-arrow-r ui-btn-icon-left ui-btn-inherit"><span style="color:#33cccc;">For inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn" (click)="expandPage(10)" [ngClass]="{'ui-icon-arrow-r': expands[10], 'ui-icon-arrow-d': !expands[10]}"><span style="color:#33cccc;">For inflammation</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
 				                    <p><span style="color:#33ccff;">Cold Compress / Ice</span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
 				                    <p>Use this as soon as possible to control any swelling.</p>
 				                    <p><span style="color:#FF0000;">Hydrocortisone 1%</span></p>
@@ -468,12 +394,12 @@
 				                02/06/2016          
 				            </p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_other_mobile" class="displayNone">
+				        <div id="adult_recom_bites_other_mobile" *ngIf="page>0 && searchData[7]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -493,12 +419,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_moth_mobile" class="displayNone">
+				        <div id="adult_recom_bites_moth_mobile" *ngIf="page>0 && searchData[8]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -518,12 +444,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_spider_mobile" class="displayNone">
+				        <div id="adult_recom_bites_spider_mobile" *ngIf="page>0 && searchData[9]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -543,12 +469,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_tick_mobile" class="displayNone">
+				        <div id="adult_recom_bites_tick_mobile" *ngIf="page>0 && searchData[10]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -568,12 +494,12 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
 				        </div>
-				        <div id="adult_recom_bites_wasps_mobile" class="displayNone">
+				        <div id="adult_recom_bites_wasps_mobile" *ngIf="page>0 && searchData[11]['clicked']">
 				            <div class="maxwidth450">
 				                <div class="ovalBorderRightBlue centerText"> 
 				                    <span class="purplefont greet_adult_recom_mobile"></span><br>
@@ -593,7 +519,7 @@
 				            <p class="redBorder redfont centerText">Need treatment overview entry here</p>
 				            <p>&nbsp;</p>
 				            <p class="centerText">
-				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                <a href="#" data-inline="true" class="linkCyan back_adult_recom_bites_intro_mobile ui-link" (click)="goBack()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				            </p>
 				            <p>&nbsp;</p>
 				            <p>&nbsp;</p>
@@ -621,8 +547,8 @@
 				            $('#firstname_adult_know_this_mobile').text(firstname + ',');
 				        </script>
 				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-plus': expands[11], 'ui-icon-minus': !expands[11]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
 				                <div class="redBorderWhite">
 				                    <ul>
 				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
@@ -670,25 +596,25 @@
 				        <br>
 				        <!-----------------End Point Right------------------- -->
 				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-plus': expands[12], 'ui-icon-minus': !expands[12]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
 				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
 				                <div data-role="collapsible" data-collapsed="true" data-theme="n" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-n">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-n" (click)="expandPage(13)" [ngClass]="{'ui-icon-plus': expands[13], 'ui-icon-minus': !expands[13]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
 				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
 				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
 				                        <div class="clearboth divider1"></div>
 				                        <p class="centerText">
-				                            <a href="../../../../contact/contact_social_mobile.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Contact Pharmacist</a>
+				                            <a href="#"  data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(2)">Contact Pharmacist</a>
 				                        </p>
 				                        <div class="clearboth divider1"></div>
 				                        <br>                       
 				                    </div>
 				                </div>
 				                <div data-role="collapsible" data-collapsed="true" data-theme="n" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-n">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-n" (click)="expandPage(14)" [ngClass]="{'ui-icon-plus': expands[14], 'ui-icon-minus': !expands[14]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
 				                        <p>Expect a reply as soon as possible.<br>
 				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
 				                        </p>
@@ -696,8 +622,8 @@
 				                    </div>
 				                </div>
 				                <div data-role="collapsible" data-collapsed="true" data-theme="n" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-n">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-n" (click)="expandPage(15)" [ngClass]="{'ui-icon-plus': expands[15], 'ui-icon-minus': !expands[15]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[15]}" aria-hidden="true">
 				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
 				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
 				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
@@ -727,10 +653,10 @@
 				        <!-----------------End Border right person------------------- -->
 				        <p>&nbsp;</p>
 				        <p class="centerText"> 
-				            <a class="linkBlueBorder robotoLightSmall ui-link" href="../../../../comments/comment_login_mobile.php">Leave a comment</a> 
-				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#">Why?</a> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
 				        </p>
-				        <div class="comment_why_div displayNone">
+				        <div class="comment_why_div " *ngIf="why">
 				            <br>
 				            <ul>
 				                <li>Let others know if the recommendation worked for you.</li>

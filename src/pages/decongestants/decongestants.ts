@@ -171,7 +171,7 @@ export class DecongestantsPage {
       });
       return found;
     })
-  }er
+  }
   initData() {
     this.AbsoluteURL = GlobalVars.getAbsoluteURL();
     this.RestApiURL = GlobalVars.getApiURL() + "page=decongestants";

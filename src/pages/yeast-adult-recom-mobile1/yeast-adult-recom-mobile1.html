@@ -1,0 +1,213 @@
+<!--  
+  Generated template for the AllergiesMobile page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+   -->
+<ion-header class="ui-header">
+  	<ion-navbar>
+    	<ion-title>
+	    	<h1 class="ui-title">
+	      		Pharmacist
+	      	</h1>
+    	</ion-title>
+    	<ion-buttons end>
+      		<button ion-button icon-only (click)="showMenu()">
+        		<ion-icon name="menu"></ion-icon>
+      		</button>
+    	</ion-buttons>
+	</ion-navbar>
+</ion-header>
+<ion-content class="ui-page-theme-n">
+	<div class="ui-content" #mainBody>
+		<p>&nbsp;</p>
+		<div class="maxwidth450">
+		  <div class="ovalBorderRightBlue centerText">
+		     <span>Use the comparision table below as an aid in choosing a good yeast medication for you.</span><br>
+		  </div>
+		  <div align="right"><img src="http://www.selfcarepharmacist.com/images/articles/pharm-selena-cyan.svg" width="80" alt="Pharmacist"> 
+		  </div>
+		</div>
+		<!-----------------End Border right person------------------- --> 
+		<div class="clearboth divider1"></div>
+		<p class="purpleBorderWhite grayfontSmallSmall centerText">Tap on the <span class="redfont">" x "</span> for more information. Use the <span class="bluefont">Sort</span> button to choose columns.</p>
+		<div class="clearboth divider1"></div>
+		<div style="display: none;" id="table-yeast-dosage-form-popup-placeholder">
+		  <!-- placeholder for table-yeast-dosage-form-popup -->
+		</div>
+			<a href="#" class="ui-table-columntoggle-btn ui-btn ui-btn-n ui-corner-all ui-shadow ui-mini" data-rel="popup" (click)="toggleSortDlg(true)">Sort</a>
+		<table data-role="table" id="table-yeast-dosage-form" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive my-responsive-class ui-table ui-table-columntoggle" data-column-btn-theme="n" data-column-btn-text="Sort" data-column-popup-theme="n centerText">
+		  <thead>
+		     <tr class="ui-bar-n">
+		        <th data-colstart="1">&nbsp;</th>
+		        <th class="ui-table-priority-3" data-priority="3" data-colstart="2" [ngClass]="{'ui-table-cell-visible': recs[0]}">Leaky</th>
+		        <th class="ui-table-priority-3" data-priority="3" data-colstart="3" [ngClass]="{'ui-table-cell-visible': recs[1]}">Messy</th>
+		        <th class="ui-table-priority-3" data-priority="3" data-colstart="4" [ngClass]="{'ui-table-cell-visible': recs[2]}">Burning</th>
+		        <th class="ui-table-priority-3" data-priority="4" data-colstart="5" [ngClass]="{'ui-table-cell-visible': recs[3]}">Easy</th>
+		     </tr>
+		  </thead>
+		  <tbody>
+		     <tr>
+		        <th>Cream</th>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[0]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[1]}">
+		        	<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_cream_messy" aria-expanded="false" (click)="toggleDlg(0, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[2]}">
+		        	<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_cream_burning" aria-expanded="false" (click)="toggleDlg(1, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[3]}">
+		        	<a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-info-purple ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_cream_easy" aria-expanded="false" (click)="toggleDlg(2, true)">Learn more</a>
+		        </td>
+		     </tr>
+		     <tr>
+		        <th>Ointment</th>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[0]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[1]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[2]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_ointment_burning" aria-expanded="false" (click)="toggleDlg(3, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[3]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-info-purple ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_ointment_easy" aria-expanded="false" (click)="toggleDlg(4, true)">Learn more</a></td>
+		     </tr>
+		     <tr>
+		        <th>Ovule</th>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[0]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_ovule_leaky" aria-expanded="false" (click)="toggleDlg(5, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[1]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[2]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_ovule_burning" aria-expanded="false" (click)="toggleDlg(6, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[3]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_other_easy" aria-expanded="false" (click)="toggleDlg(7, true)">Learn more</a></td>
+		     </tr>
+		     <tr>
+		        <th>Supp.</th>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[0]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_supp_leaky" aria-expanded="false" (click)="toggleDlg(8, true)">Learn more</a></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[1]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[2]}"></td>
+		        <td class="ui-table-priority-3" [ngClass]="{'ui-table-cell-visible': recs[3]}"><a href="#" data-rel="popup" data-transition="pop" class="my-tooltip-btn ui-btn  ui-nodisc-icon  ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-notext" title="More info" aria-haspopup="true" aria-owns="pop_other_easy" aria-expanded="false" (click)="toggleDlg(9, true)">Learn more</a></td>
+		     </tr>
+		  </tbody>
+		</table>
+
+		<div class="ui-popup-screen ui-overlay-inherit in" id="table-yeast-dosage-form-popup-screen" *ngIf="SortDlg.show" (click)="toggleSortDlg(false)" [ngStyle]="{'height': MyContent.height+'px','width': MyContent.width+'px'}"></div>
+		<div class="ui-popup-container ui-popup-active" id="table-yeast-dosage-form-popup-popup" *ngIf="SortDlg.show" [ngStyle]="{'max-width': SortDlg.maxWidth+'px','top': SortDlg.top+'px', 'left': SortDlg.left+'px'}">
+		    <div class="ui-table-columntoggle-popup ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" id="table-yeast-dosage-form-popup">
+		        <fieldset class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
+		            <div class="ui-controlgroup-controls ">
+		                <div class="ui-checkbox" (click)="toggleSort(0)"><label class="ui-btn ui-corner-all ui-btn-n centerText ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[0], 'ui-checkbox-off': !recs[0]}">Leaky</label><input type="checkbox" checked=""></div>
+		                <div class="ui-checkbox" (click)="toggleSort(1)"><label class="ui-btn ui-corner-all ui-btn-n centerText ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[1], 'ui-checkbox-off': !recs[1]}">Messy</label><input type="checkbox" checked=""></div>
+		                <div class="ui-checkbox" (click)="toggleSort(2)"><label class="ui-btn ui-corner-all ui-btn-n centerText ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[2], 'ui-checkbox-off': !recs[2]}">Burning</label><input type="checkbox" checked=""></div>
+		                <div class="ui-checkbox" (click)="toggleSort(3)"><label class="ui-btn ui-corner-all ui-btn-n centerText ui-btn-icon-left" [ngClass]="{'ui-checkbox-on': recs[3], 'ui-checkbox-off': !recs[3]}">Easy</label><input type="checkbox" checked=""></div>
+		            </div>
+		        </fieldset>
+		    </div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[0].show" (click)="toggleDlg(0, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[0].show" [ngStyle]="{'top': Dlg[0].top+'px', 'left': Dlg[0].left+'px', 'width': Dlg[0].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_cream_messy" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:220px;">
+			    Can get messy. Get the prefilled for ease of use.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-b" style="left: 116px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[1].show" (click)="toggleDlg(1, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[1].show" [ngStyle]="{'top': Dlg[1].top+'px', 'left': Dlg[1].left+'px', 'width': Dlg[1].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_cream_burning" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+May stick with the 7 day for reduced burning. High concentrations more likely to burn.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 50px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[2].show" (click)="toggleDlg(2, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[2].show" [ngStyle]="{'top': Dlg[2].top+'px', 'left': Dlg[2].left+'px', 'width': Dlg[2].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_cream_easy" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+Get the prefilled for ease of use. 
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 17px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[3].show" (click)="toggleDlg(3, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[3].show" [ngStyle]="{'top': Dlg[3].top+'px', 'left': Dlg[3].left+'px', 'width': Dlg[3].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_ointment_burning" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    These come in high doses of tioconazole 6.5% for a one time use. May cause burning if already irritated. Better in early stages.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 50px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[4].show" (click)="toggleDlg(4, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[4].show" [ngStyle]="{'top': Dlg[4].top+'px', 'left': Dlg[4].left+'px', 'width': Dlg[4].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_ointment_easy" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+Usually comes in prefilled single dose. 
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 28px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[5].show" (click)="toggleDlg(5, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[5].show" [ngStyle]="{'top': Dlg[5].top+'px', 'left': Dlg[5].left+'px', 'width': Dlg[5].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_ovule_leaky" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    Forms a thin liquid after melting which can leak.
+			    Better nighttime, though manufacturers say day or night. Daytime use may cause leakage due to activity. If daytime, use with a pad but do not use a tampon because it will absorb the drug.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-b" style="left: 126px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[6].show" (click)="toggleDlg(6, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[6].show" [ngStyle]="{'top': Dlg[6].top+'px', 'left': Dlg[6].left+'px', 'width': Dlg[6].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_ovule_burning" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    When inserted, it stays in one place while melting to release the medication. This can irritate that particular area and set up a chain of painful sensation especially if it sits at an already irritated area.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 72px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[7].show" (click)="toggleDlg(7, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[7].show" [ngStyle]="{'top': Dlg[7].top+'px', 'left': Dlg[7].left+'px', 'width': Dlg[7].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_other_easy" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    Easy to use. Comes with applicator. 
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 28px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[8].show" (click)="toggleDlg(8, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[8].show" [ngStyle]="{'top': Dlg[8].top+'px', 'left': Dlg[8].left+'px', 'width': Dlg[8].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_supp_leaky" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    Forms a thin liquid after melting which can leak.
+			    Better to use at night. Day time use may cause leakage due to activity.
+			    <div class="ui-popup-arrow-container ui-popup-arrow-b" style="left: 126px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<div class="ui-popup-screen ui-overlay-b in" id="arthritis_mobile_pop-screen" *ngIf="Dlg[9].show" (click)="toggleDlg(9, false)"></div>
+		<div class="ui-popup-container pop in ui-popup-active" id="arthritis_mobile_pop-popup" *ngIf="Dlg[9].show" [ngStyle]="{'top': Dlg[9].top+'px', 'left': Dlg[9].left+'px', 'width': Dlg[9].width+'px'}">
+	        <div align="center" data-role="popup" data-arrow="r,b" id="pop_other_easy" data-overlay-theme="b" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="max-width:240px;">
+			    Easy to use. Comes with applicator. 
+			    <div class="ui-popup-arrow-container ui-popup-arrow-r" style="top: 28px;">
+			        <div class="ui-popup-arrow ui-body-inherit ui-overlay-shadow"></div>
+			    </div>
+			    <div class="ui-popup-arrow-guide"></div>
+			</div>
+		</div>
+
+		<p>&nbsp;</p>
+		</div>
+</ion-content>

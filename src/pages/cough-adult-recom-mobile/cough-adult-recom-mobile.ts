@@ -71,28 +71,27 @@ export class CoughAdultRecomMobilePage {
 	}
 	toggleRecs(ind: number){
 		let temp = this.recs[ind];
-		this.recs[11] = false;
 		this.recs[12] = false;
-		if (ind>=10){
-			this.recs[10] = false;
+		this.recs[13] = false;
+		if (ind>=12){
 			this.recs[ind] = temp;
-			if (ind == 10)
+			if (ind == 12)
 				this.toggleAllRecs(true);
 			else
 				this.toggleAllRecs(false);
 		}
 	}
 	toggleAllRecs(b: boolean){
-		for (let i=0;i<10;i++)
+		for (let i=0;i<12;i++)
 			this.recs[i] = b;
 	}
 	goBack() {
 		this.toggleAllRecs(false);
-		this.recs[10] = this.recs[11] = this.recs[12] = false;
+		this.recs[12] = this.recs[13] = false;
 	}
 	goBackSymptom(){
 		this.goBack();
-		this.page = 0;
+		this.page = 1;
 		this.mode = 0;
 	}
 	toggleWhy(){
@@ -107,352 +106,240 @@ export class CoughAdultRecomMobilePage {
 	togglePage(ind: number) {
 		if (ind == 2)
 		{
-			// var    dry = $('#adult_recom_cough_mobile_q1_0').is(":checked");
-			// productive = $('#adult_recom_cough_mobile_q1_1').is(":checked");
-			// congestion = $('#adult_recom_cough_mobile_q1_2').is(":checked");
-			// runnyNose = $('#adult_recom_cough_mobile_q1_3').is(":checked");
-			// soreThroat = $('#adult_recom_cough_mobile_q1_4').is(":checked");
-			// night = $('#adult_recom_cough_mobile_q1_5').is(":checked");
-			// tickly = $('#adult_recom_cough_mobile_q1_6').is(":checked");
-			// itchy = $('#adult_recom_cough_mobile_q1_14').is(":checked");
-			// heaviness = $('#adult_recom_cough_mobile_q1_7').is(":checked");
-			// headache = $('#adult_recom_cough_mobile_q1_8').is(":checked");
-			// blood = $('#adult_recom_cough_mobile_q1_9').is(":checked");
-			// noSleep = $('#adult_recom_cough_mobile_q1_13').is(":checked");
-			// prevention = $('#adult_recom_cough_mobile_q1_12').is(":checked");
-			// allabove = $('#adult_recom_cough_mobile_q1_10').is(":checked");
-			// none = $('#adult_recom_cough_mobile_q1_11').is(":checked");
-
-			// //Medication variables in collapsible
+			var
+			    dry = this.recs[0],
+			productive = this.recs[1],
+			congestion = this.recs[2],
+			runnyNose = this.recs[3],
+			soreThroat = this.recs[4],
+			night = this.recs[5],
+			tickly = this.recs[6],
+			itchy = this.recs[7],
+			heaviness = this.recs[8],
+			headache = this.recs[9],
+			blood = this.recs[10],
+			noSleep = this.recs[11],
+			prevention = false,
+			allabove = this.recs[12],
+			none = this.recs[13];
 
-			// var
-			//     dextromethorphan = dry || tickly || night;
-			// guaifenesin = productive || heaviness;
-			// coughDrops = dry || tickly || soreThroat;
-			// decongestant = congestion;
-			// antihistamine = runnyNose || itchy;
+			//Medication variables in collapsible
 
+			var
+			    dextromethorphan = dry || tickly || night,
+			guaifenesin = productive || heaviness,
+			coughDrops = dry || tickly || soreThroat,
+			decongestant = congestion,
+			antihistamine = runnyNose || itchy;
 
-			// //conditions for showing none of the above division.
 
-			// if (none) {
+			//conditions for showing none of the above division.
 
-			//     $('#adult_recom_cough_mobile_q1,#selected_adult_recom_cough_mobile_q1_container, #intro_adult_cough_mobile_div, #worth_doing_cough_mobile').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #none_adult_recom_cough_mobile ').show(300).removeClass("displayNone");
+			if (none) {
+				this.mode = 1;
 
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			}
 
-			// }
+			//conditions for showing prevention division.
+			else if (prevention) {
+			    this.mode = 2;
+			    
 
-			// //conditions for showing prevention division.
-			// else if (prevention) {
-			//     $('#adult_recom_cough_mobile_q1, #intro_adult_cough_mobile_div, #selected_adult_recom_cough_mobile_q1_container, #worth_doing_cough_mobile').hide();
-			//     $('#prevention_adult_recom_cough_mobile, #back_intro_adult_cough_mobile_div').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			}
 
-			// }
 
+			//conditions for All division + Others else if.
+			else if (allabove) {
+			    this.mode = 3;
+			    
 
-			// //conditions for All division + Others else if.
-			// else if (allabove) {
-			//     $('#adult_recom_cough_mobile_q1, #intro_adult_cough_mobile_div, #selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#allabove_adult_recom_cough_mobile, #back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			}
 
-			// }
+			//condition for a specific  checked field	
+			else if (headache || blood || noSleep) {
+			    this.mode = 4;
+			    
 
-			// //condition for a specific  checked field	
-			// else if (headache || blood || noSleep) {
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #see_doctor_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			}
 
-			// }
 
 
+			//condition for showing just one checked field
 
-			// //condition for showing just one checked field
+			//--------------single------------------------
+			else if (dextromethorphan && !(guaifenesin || coughDrops || decongestant || antihistamine)) {
+			    this.mode = 5;
+			    
 
-			// //--------------single------------------------
-			// else if (dextromethorphan && !(guaifenesin || coughDrops || decongestant || antihistamine)) {
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			} else if (guaifenesin && !(dextromethorphan || coughDrops || decongestant || antihistamine)) {
+				this.mode = 6;
+			    
+			    
 
-			// } else if (guaifenesin && !(dextromethorphan || coughDrops || decongestant || antihistamine)) {
+			} else if (coughDrops && !(dextromethorphan || guaifenesin || decongestant || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 7;
+			    
 
-			// } else if (coughDrops && !(dextromethorphan || guaifenesin || decongestant || antihistamine)) {
+			} else if (decongestant && !(dextromethorphan || guaifenesin || coughDrops || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #coughDrops_adult_recom_cough_mobile, #coughDrops_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 8;
+			    
 
-			// } else if (decongestant && !(dextromethorphan || guaifenesin || coughDrops || antihistamine)) {
+			} else if (antihistamine && !(dextromethorphan || guaifenesin || decongestant || coughDrops)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #decongestant_adult_recom_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 9;
+			    
 
-			// } else if (antihistamine && !(dextromethorphan || guaifenesin || decongestant || coughDrops)) {
+			}
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #antihistamine_adult_recom_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
 
-			// }
 
+			//-------------------------------double---------------------------
+			else if (dextromethorphan && guaifenesin && !(coughDrops || decongestant || antihistamine)) {
 
+			    this.mode = 10;
+			    
 
-			// //-------------------------------double---------------------------
-			// else if (dextromethorphan && guaifenesin && !(coughDrops || decongestant || antihistamine)) {
+			} else if (dextromethorphan && coughDrops && !(guaifenesin || decongestant || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 11;
+			    
 
-			// } else if (dextromethorphan && coughDrops && !(guaifenesin || decongestant || antihistamine)) {
+			} else if (dextromethorphan && decongestant && !(guaifenesin || coughDrops || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_coughDrops_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 12;
+			    
 
-			// } else if (dextromethorphan && decongestant && !(guaifenesin || coughDrops || antihistamine)) {
+			} else if (dextromethorphan && antihistamine && !(guaifenesin || coughDrops || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_decongestant_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 13;
+			    
 
-			// } else if (dextromethorphan && antihistamine && !(guaifenesin || coughDrops || decongestant)) {
+			} else if (guaifenesin && coughDrops && !(dextromethorphan || decongestant || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 14;
+			    
 
-			// } else if (guaifenesin && coughDrops && !(dextromethorphan || decongestant || antihistamine)) {
+			} else if (guaifenesin && decongestant && !(dextromethorphan || coughDrops || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_coughDrops_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 15;
+			    
 
-			// } else if (guaifenesin && decongestant && !(dextromethorphan || coughDrops || antihistamine)) {
+			} else if (guaifenesin && antihistamine && !(dextromethorphan || coughDrops || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_decongestant_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 16;
+			    
 
-			// } else if (guaifenesin && antihistamine && !(dextromethorphan || coughDrops || decongestant)) {
+			} else if (coughDrops && decongestant && !(dextromethorphan || guaifenesin || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_antihistamine_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 17;
+			    
 
-			// } else if (coughDrops && decongestant && !(dextromethorphan || guaifenesin || antihistamine)) {
+			} else if (coughDrops && antihistamine && !(dextromethorphan || guaifenesin || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #coughDrops_decongestant_adult_recom_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 18;
+			    
 
-			// } else if (coughDrops && antihistamine && !(dextromethorphan || guaifenesin || decongestant)) {
+			} else if (decongestant && antihistamine && !(dextromethorphan || guaifenesin || coughDrops)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #coughDrops_antihistamine_adult_recom_cough_mobile, #coughDrops_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 19;
+			    
 
-			// } else if (decongestant && antihistamine && !(dextromethorphan || guaifenesin || coughDrops)) {
+			}
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #decongestant_antihistamine_adult_recom_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
 
-			// }
 
+			//---------------------Triple----------------------
+			else if (dextromethorphan && guaifenesin && coughDrops && !(decongestant || antihistamine)) {
 
+			    this.mode = 20;
+			    
 
-			// //---------------------Triple----------------------
-			// else if (dextromethorphan && guaifenesin && coughDrops && !(decongestant || antihistamine)) {
+			} else if (dextromethorphan && guaifenesin && decongestant && !(coughDrops || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_coughDrops_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 21;
+			    
 
-			// } else if (dextromethorphan && guaifenesin && decongestant && !(coughDrops || antihistamine)) {
+			} else if (dextromethorphan && guaifenesin && antihistamine && !(coughDrops || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_decongestant_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 22;
+			    
 
-			// } else if (dextromethorphan && guaifenesin && antihistamine && !(coughDrops || decongestant)) {
+			} else if (dextromethorphan && coughDrops && decongestant && !(guaifenesin || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 23;
+			    
 
-			// } else if (dextromethorphan && coughDrops && decongestant && !(guaifenesin || antihistamine)) {
+			} else if (dextromethorphan && coughDrops && antihistamine && !(guaifenesin || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_coughDrops_decongestant_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 24;
+			    
 
-			// } else if (dextromethorphan && coughDrops && antihistamine && !(guaifenesin || decongestant)) {
+			} else if (dextromethorphan && decongestant && antihistamine && !(guaifenesin || coughDrops)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_coughDrops_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 25;
+			    
 
-			// } else if (dextromethorphan && decongestant && antihistamine && !(guaifenesin || coughDrops)) {
+			} else if (guaifenesin && coughDrops && decongestant && !(dextromethorphan || antihistamine)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_decongestant_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 26;
+			    
 
-			// } else if (guaifenesin && coughDrops && decongestant && !(dextromethorphan || antihistamine)) {
+			} else if (guaifenesin && coughDrops && antihistamine && !(dextromethorphan || decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 27;
+			    
 
-			// } else if (guaifenesin && coughDrops && antihistamine && !(dextromethorphan || decongestant)) {
+			} else if (guaifenesin && decongestant && antihistamine && !(dextromethorphan || coughDrops)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 28;
+			    
 
-			// } else if (guaifenesin && decongestant && antihistamine && !(dextromethorphan || coughDrops)) {
+			} else if (coughDrops && decongestant && antihistamine && !(dextromethorphan || guaifenesin)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 29;
+			    
 
-			// } else if (coughDrops && decongestant && antihistamine && !(dextromethorphan || guaifenesin)) {
+			}
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #coughDrops_decongestant_antihistamine_adult_recom_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
 
-			// }
 
+			//---------------------Quadruple----------------------
+			else if (dextromethorphan && guaifenesin && coughDrops && decongestant && !(antihistamine)) {
 
+			    this.mode = 30;
+			    
 
-			// //---------------------Quadruple----------------------
-			// else if (dextromethorphan && guaifenesin && coughDrops && decongestant && !(antihistamine)) {
+			} else if (dextromethorphan && guaifenesin && coughDrops && antihistamine && !(decongestant)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 31;
+			    
 
-			// } else if (dextromethorphan && guaifenesin && coughDrops && antihistamine && !(decongestant)) {
+			} else if (dextromethorphan && guaifenesin && decongestant && antihistamine && !(coughDrops)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 32;
+			    
 
-			// } else if (dextromethorphan && guaifenesin && decongestant && antihistamine && !(coughDrops)) {
+			} else if (dextromethorphan && coughDrops && decongestant && antihistamine && !(guaifenesin)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 33;
+			    
 
-			// } else if (dextromethorphan && coughDrops && decongestant && antihistamine && !(guaifenesin)) {
+			} else if (guaifenesin && coughDrops && decongestant && antihistamine && !(dextromethorphan)) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
+			    this.mode = 34;
+			    
 
-			// } else if (guaifenesin && coughDrops && decongestant && antihistamine && !(dextromethorphan)) {
+			}
+			//------------------------------All together------------------------------------
+			else if (dextromethorphan && guaifenesin && coughDrops && decongestant && antihistamine) {
 
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div,#selected_adult_recom_cough_mobile_q1_container').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
-
-			// }
-
-
-
-			// //------------------------------All together------------------------------------
-			// else if (dextromethorphan && guaifenesin && coughDrops && decongestant && antihistamine) {
-
-			//     $('#adult_recom_cough_mobile_q1,#intro_adult_cough_mobile_div').hide();
-			//     $('#back_intro_adult_cough_mobile_div, #worth_doing_cough_mobile, #dextromethorphan_guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile, #dextromethorphan_adult_category_cough_mobile, #guaifenesin_adult_category_cough_mobile, #coughDrops_adult_category_cough_mobile, #decongestant_adult_category_cough_mobile, #antihistamine_adult_category_cough_mobile, #combination_cough_mobile').show(300).removeClass("displayNone");
-			//     $('html, body').animate({
-			//         scrollTop: 0
-			//     });
-
-			// } else {
-			//     $('#selected_adult_recom_cough_mobile_q1').html('<span class="redfontLarge">Oops!,</span>' + ' ' + 'You told me nothing');
-			//     $('#selected_adult_recom_cough_mobile_q1_container').show(300).removeClass("displayNone");
-			// }
+			    this.mode = 35;
+			   
+			} else {
+				this.mode = 50;
+			}
 		}
 		this.page = ind;
 	}

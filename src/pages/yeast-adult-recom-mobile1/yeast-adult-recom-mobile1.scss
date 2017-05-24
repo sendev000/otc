@@ -1,24 +1,9 @@
-$toolbar-background-color: #00bcd4;
-page-bites-adult-recom-mobile {
+
+$toolbar-background-color: #00BCD4;
+page-yeast-adult-recom-mobile1 {
 	font-size: 16px;
 	#slider_flu_mobile-label, #slider_flu_mobile_4_mobile-label{
 		font-size: 0.9em;
-	}
-	.ui-input-search input[type="text"] {
-	    padding-left: 1.75em;
-	    min-height: 2.2em;
-	    text-align: left;
-	    border: 0;
-	    background: transparent none;
-	    -webkit-appearance: none;
-	    -webkit-border-radius: inherit;
-	    border-radius: inherit;
-	    line-height: 1.4em;
-	    display: block;
-	    width: 100%;
-	}
-	.ui-listview > .ui-li-has-thumb > .ui-btn {
-		height: 5em;
 	}
 	.toolbar-background-md, .toolbar-background{
 		background: $toolbar-background-color;
@@ -139,7 +124,7 @@ page-bites-adult-recom-mobile {
 	  color: #e0e0e0 !important;
 	  text-align: center;
 	  line-height:20px;
-	  background: #00bcd4;
+	  background: #4CAF50;
 	  padding:15px 0px;
 	  text-decoration: none;
 	}
@@ -147,7 +132,7 @@ page-bites-adult-recom-mobile {
 		color:#FFFF00;
 	}
 	.swiper-scrollbar {
-	  background: #00bcd4;
+	  background: #4CAF50;
 	}
 	.swiper-scrollbar-drag {
 		background:#FFFF00;

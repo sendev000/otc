@@ -145,7 +145,7 @@
 				                <p class="centerText"> Choose the nature of this cough from the list below and see what to use over-the-counter. </p>
 				                <br>
 				                <p class="centerText">
-				                    <img src="assets/img/people/adult/cold/cough-lady.svg" width="120" alt="Lady coughing">
+				                    <img src="assets/img/people/adult/cold/cough-lady.svg" style="width: 120px;" alt="Lady coughing">
 				                </p>
 				                <div class="clearboth divider1"></div>
 				                <div data-role="fieldcontain" class="ui-field-contain">
@@ -190,9 +190,11 @@
 				            <!-----------------End checkbox-------------------- -->
 				            <div id="adult_recom_cough_mobile_all_options" *ngIf="mode>0">
 				                <!-----------------You told me nothing-------------------- -->
-				                <div class="container_12 displayNone" id="selected_adult_recom_cough_mobile_q1_container">
+				                <div class="container_12 " id="selected_adult_recom_cough_mobile_q1_container" *ngIf="mode==50">
 				                    <div class="grid_9">
-				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_cough_mobile_q1 centerText"></div>
+				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_cough_mobile_q1 centerText">
+				                        	<span class="redfontLarge">Oops!,</span> You told me nothing
+				                        </div>
 				                    </div>
 				                    <div class="grid_3"> 
 				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-john-port.svg" style="width: 80px;" align="right">
@@ -201,7 +203,7 @@
 				                <p>&nbsp;</p>
 				                <!--------------------------Single-Options-Pharmacist------------------------------------ -->
 				                <!---------------dextromethorphan--------------------------- -->
-				                <div id="dextromethorphan_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_adult_recom_cough_mobile" *ngIf="page==2 && (mode==5)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require <span class="purplefont">dextromethorphan.</span></span><br>
@@ -214,7 +216,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------guaifenesin--------------------------- -->
-				                <div id="guaifenesin_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_adult_recom_cough_mobile" *ngIf="page==2 && (mode==6)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require <span class="purplefont">guaifenesin.</span></span><br>
@@ -227,7 +229,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------coughDrops--------------------------- -->
-				                <div id="coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                <div id="coughDrops_adult_recom_cough_mobile" *ngIf="page==2 && (mode==7)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require <span class="purplefont">cough drops</span></span><br>
@@ -240,7 +242,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------decongestant--------------------------- -->
-				                <div id="decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="decongestant_adult_recom_cough_mobile" *ngIf="page==2 && (mode==8)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require <span class="purplefont">decongestant.</span></span><br>
@@ -253,7 +255,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------antihistamine--------------------------- -->
-				                <div id="antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==1">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require an <span class="purplefont">antihistamine.</span></span><br>
@@ -267,7 +269,7 @@
 				                <!-----------------End Display none div------------------- -->
 				                <!-------------------------Double-Options-Pharmacist------------------------------------ -->
 				                <!---------------dextromethorphan + guaifenesin--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_adult_recom_cough_mobile" *ngIf="page==2 && (mode==10)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and <span class="redfont">guaifenesin</span></span><br>
@@ -280,7 +282,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + coughDrops--------------------------- -->
-				                <div id="dextromethorphan_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_coughDrops_adult_recom_cough_mobile" *ngIf="page==2 && (mode==11)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and <span class="redfont">cough drops</span></span><br>
@@ -293,7 +295,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + decongestant--------------------------- -->
-				                <div id="dextromethorphan_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && (mode==12)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and a <span class="redfont">decongestant</span></span><br>
@@ -306,7 +308,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && (mode==13)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">dextromethorphan</span> and an <span class="redfont">antihistamine.</span></span><br>
@@ -319,7 +321,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin + coughDrops--------------------------- -->
-				                <div id="guaifenesin_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_coughDrops_adult_recom_cough_mobile" *ngIf="page==2 && (mode==14)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and <span class="redfont">cough drops</span></span><br>
@@ -332,7 +334,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin + decongestant--------------------------- -->
-				                <div id="guaifenesin_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && mode==15">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and a <span class="redfont">decongestant</span></span><br>
@@ -345,7 +347,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin + antihistamine--------------------------- -->
-				                <div id="guaifenesin_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==16">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">guaifenesin</span> and an <span class="redfont">antihistamine</span></span><br>
@@ -358,7 +360,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------coughDrops + decongestant--------------------------- -->
-				                <div id="coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="coughDrops_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && mode==17">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">cough drops</span> and a <span class="redfont">decongestant</span></span><br>
@@ -371,7 +373,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------coughDrops + antihistamine--------------------------- -->
-				                <div id="coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="coughDrops_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==18">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purplefont">cough drops</span> and an <span class="redfont">antihistamine</span></span><br>
@@ -384,7 +386,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------decongestant + antihistamine--------------------------- -->
-				                <div id="decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==19">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">decongestant</span> and an <span class="redfont">antihistamine</span></span><br>
@@ -398,7 +400,7 @@
 				                </div>
 				                <!-------------------------Triple-Options-Pharmacist---------------------------- -->
 				                <!---------------dextromethorphan+ guaifenesin + coughDrops--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_coughDrops_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_coughDrops_adult_recom_cough_mobile" *ngIf="page==2 && (mode==14 || mode==20)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and <span class="bluefont">cough drops.</span></span><br>
@@ -411,7 +413,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan+ guaifenesin + decongestant--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && (mode==15 || mode==21)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and a <span class="bluefont">decongestant</span></span><br>
@@ -424,7 +426,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan+ guaifenesin + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && (mode==16 || mode==22)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -437,7 +439,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan+ coughDrops + decongestant--------------------------- -->
-				                <div id="dextromethorphan_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_coughDrops_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && (mode==17 || mode==23)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
@@ -450,7 +452,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + coughDrops + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_coughDrops_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && (mode==18 || mode==24)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -463,7 +465,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + decongestant + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && (mode==19 || mode==25)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -476,7 +478,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin+ coughDrops + decongestant--------------------------- -->
-				                <div id="guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && mode==26">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
@@ -489,7 +491,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin+ coughDrops + antihistamine--------------------------- -->
-				                <div id="guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && (mode==9 || mode==27)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -502,7 +504,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin+ decongestant + antihistamine--------------------------- -->
-				                <div id="guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==28">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -515,7 +517,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------coughDrops + decongestant + antihistamine--------------------------- -->
-				                <div id="coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==29">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -529,7 +531,7 @@
 				                </div>
 				                <!-------------------------Quad-Options-Pharmacist---------------------------- -->               
 				                <!---------------dextromethorphan + guaifenesin + coughDrops + decongestant--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_adult_recom_cough_mobile" *ngIf="page==2 && mode==30">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">cough drops</span> and a <span class="bluefont">decongestant</span></span><br>
@@ -542,7 +544,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + guaifenesin + coughDrops + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_coughDrops_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==31">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">cough drops</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -555,7 +557,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + guaifenesin + decongestant + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==32">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">guaifenesin</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -568,7 +570,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------dextromethorphan + coughDrops + decongestant + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==33">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -581,7 +583,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------guaifenesin + coughDrops + decongestant + antihistamine--------------------------- -->
-				                <div id="guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==34">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -595,7 +597,7 @@
 				                </div>
 				                <!-------------------------5-Options-Pharmacist---------------------------- -->              
 				                <!---------------dextromethorphan + guaifenesin + coughDrops + decongestant + antihistamine--------------------------- -->
-				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" class="displayNone">
+				                <div id="dextromethorphan_guaifenesin_coughDrops_decongestant_antihistamine_adult_recom_cough_mobile" *ngIf="page==2 && mode==35">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">dextromethorphan</span>, <span class="purple_redfont">guaifenesin</span>, <span class="purplefont">cough drops</span>, <span class="purplefont">decongestant</span> and an <span class="bluefont">antihistamine</span></span><br>
@@ -608,7 +610,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------------Prevention only--------------------------- -->
-				                <div id="prevention_adult_recom_cough_mobile" class="displayNone">
+				                <div id="prevention_adult_recom_cough_mobile" *ngIf="page==2 && mode==2">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            Something to <span class="orangefont">prevent?</span>
@@ -630,7 +632,7 @@
 				                    </div>
 				                </div>
 				                <!---------------All-------------- -->
-				                <div id="allabove_adult_recom_cough_mobile" class="displayNone">
+				                <div id="allabove_adult_recom_cough_mobile" *ngIf="page==2 && mode==3">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span class="purplefont">All of these?</span><br>
@@ -648,7 +650,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------None of the above--------------------------- -->
-				                <div id="none_adult_recom_cough_mobile" class="displayNone">
+				                <div id="none_adult_recom_cough_mobile" *ngIf="page==2 && mode==1">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">None of these?</span><br>
 				                            We must have left something out. 
@@ -662,7 +664,7 @@
 				                    <p>We must have left some things out. Please choose what best describes what you are experiencing and let's see how to help.</p>
 				                </div>
 				                <!---------------See doctor--------------------------- -->
-				                <div id="see_doctor_cough_mobile" class="displayNone">
+				                <div id="see_doctor_cough_mobile" *ngIf="page==2 && (mode==1 || mode==4)">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">Seek Urgent Care</span><br>
 				                            Using over-the-counter medication is not recommended. 
@@ -676,7 +678,7 @@
 				                </div>
 				                <!-----------------------Individual Category Entry-------------------------- --> 
 				                <!--------------------------dextromethorphan Article----------------------------- -->               
-				                <div data-role="collapsible" id="dextromethorphan_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="dextromethorphan_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==5 || (mode>=10 && mode<=13) || (mode>=20 && mode<=25) || (mode>=30 && mode<=35 && mode!=34))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(5)" [ngClass]="{'ui-icon-arrow-r': expands[5], 'ui-icon-arrow-d': !expands[5]}"><span class="orangefont">Dextromethorphan</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[5]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">DM is a cough suppressant that decreases<img alt="Lady pouring cough syrup" src="http://www.selfcarepharmacist.com/admin/images/articles/html_editor_uploads/taking-medicine-lady.svg" style="margin: 8px; padding: 0px; border: 0px; vertical-align: baseline; width: 80px; height: 105px; float: right;">&nbsp;activities in the part of the brain that controls the coughing reflex.</p>
@@ -689,7 +691,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------guaifenesin Article----------------------------- -->               
-				                <div data-role="collapsible" id="guaifenesin_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="guaifenesin_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==6 || mode==10 || mode==14 || mode==15 || mode==16 || mode==20 || mode==21 || mode==22 || mode==26 || mode==27 || mode==28 || (mode>=30 && mode<=35 && mode!=33))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(6)" [ngClass]="{'ui-icon-arrow-r': expands[6], 'ui-icon-arrow-d': !expands[6]}"><span class="greenfont">Guaifenesin</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[6]}" aria-hidden="true">
 				                        <p style="font-size: 13px; line-height: 20.8px;">This is an expectorant. It helps loosen thick, dried up mucus in the throat and chest so it is easier for you to cough up.</p>
@@ -704,7 +706,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------coughDrops Article----------------------------- -->               
-				                <div data-role="collapsible" id="coughDrops_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="coughDrops_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==7 || mode==11 || mode==14 || mode==17 || mode==18 || mode==20 || mode==23 || mode==24 || mode==26 || mode==27 || mode==29 || (mode>=30 && mode<=35 && mode!=32))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span class="purplefont">Cough Drops</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
 				                        <!--------------------------Banner Link----------------------------- -->
@@ -714,7 +716,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------decongestant Article----------------------------- -->               
-				                <div data-role="collapsible" id="decongestant_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="decongestant_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==8 || mode==12 || mode==15 || mode==17 || mode==19 || mode==21 || mode==23 || mode==25 || mode==26 || mode==28 || mode==29 || (mode>=30 && mode<=35 && mode!=31))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span class="redfont">Decongestant</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
 				                        <p style="font-size: 13px; line-height: 20.8px;">The recommended decongestant is&nbsp;<span style="color: rgb(255, 0, 0);">Pseudoephedrine.</span>&nbsp;You will need to get this at the pharmacy counter using your driver's license. This should reduce&nbsp;the nasal congestion, sinus pressure, and increase the drainage of sinus&nbsp;secretions.</p>
@@ -726,7 +728,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------antihistamine Article----------------------------- -->               
-				                <div data-role="collapsible" id="antihistamine_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="antihistamine_adult_category_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==9 || mode==13 || mode==16 || mode==18 || mode==19 || mode==22 || mode==24 || mode==25 || mode==27 || mode==28 || mode==29 || (mode>=31 && mode<=35))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span class="purple_redfont">Antihistamine</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">If fluid draining to the back of the throat is causing this cough, you will need to include an antihistamine.</p>
@@ -741,7 +743,7 @@
 				                </div>
 				                <!----------------------------combination products--------------------------- -->
 				                <div class="clearboth divider1"></div>
-				                <div data-role="collapsible" id="combination_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="combination_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==10 || mode==20 || mode==21 || mode==22 || mode==30 || mode==31 || mode==32 || mode==35)">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-arrow-r': expands[10], 'ui-icon-arrow-d': !expands[10]}"><span class="purplefont">Combination Products</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
 				                        <p><strong><span style="color:#008000;">Guaifenesin + Dextromethorphan</span></strong></p>
@@ -760,7 +762,7 @@
 				                </div>
 				                <!----------------------------Worth Doing--------------------------- -->
 				                <div class="clearboth divider1"></div>
-				                <div data-role="collapsible" id="worth_doing_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="worth_doing_cough_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && mode>2">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-arrow-r': expands[11], 'ui-icon-arrow-d': !expands[11]}"><span class="greenfont">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
 				                        <p><span style="color:#3399ff;"><strong>1. Drink Plenty of Water</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8203;</p>
@@ -773,13 +775,13 @@
 				                    </div>
 				                </div>
 				                <!-----------------------------------back_div------------------------- -->                
-				                <div data-inline="true" id="back_intro_adult_cough_mobile_div" class="displayNone">
+				                <div data-inline="true" id="back_intro_adult_cough_mobile_div" *ngIf="page==2 && mode>0">
 				                    <div class="clearboth divider1"></div>
 				                    <div class="centerText">
 				                        <span class="grayfontSmallSmall">Last updated by pharmacist on  02/03/2016</span>
 				                    </div>
 				                    <p class="centerText">
-				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_cough_mobile_q1 ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_cough_mobile_q1 ui-link" (click)="goBackSymptom()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
 				                    </p>
 				                    <div class="clearboth divider1"></div>
 				                    <br>

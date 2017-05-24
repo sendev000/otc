@@ -1,18 +1,617 @@
-<!--
-  Generated template for the IngrownNailMobile page.
+<!--  
+  Generated template for the AllergiesMobile page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
-
+   -->
+<ion-header class="ui-header">
   <ion-navbar>
-    <ion-title>ingrown_nail_mobile</ion-title>
+    <ion-title>
+    	<h1 class="ui-title">
+      	Ingrown Toenail?
+      </h1>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+  <ion-navbar class="fullWidth robotoLight bgPink">
+    <p *ngIf="page==0">Ingrown toenails?</p>
+    <p *ngIf="page>0 && page<20">Ingrown or toenail fungus?</p>
+    <p *ngIf="page>=20 && page<40">Need a doctor?</p>
   </ion-navbar>
-
 </ion-header>
+<ion-content class="ui-page-theme-i">
+	<div class="ui-content" *ngIf="page==0">
+	   <div class="maxwidth450">
+	      <div class="ovalBorderRightPurple_red centerText">
+	         <span>Here the corner or side of your toenails grow down and  into the soft flesh of the toe.</span><br>
+	      </div>
+	      <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	   </div>
+	   <div class="clearboth divider1"></div>
+	   <br>
+	   <!-----------------End Border right person------------------- -->
+	   <div class="purpleRedBorder">
+	      <p>It is always better to take care of it before any complications occur. For instance, the tissue surrounding the toe can become infected.</p>
+	      <hr class="hrpink">
+	      <br>
+	      <p class="centerText">
+	         <br>
+	         <img src="assets/img/people/adult/leg/ingrownnail-lady.svg" width="140" alt="Lady with ingrown toenail">
+	      </p>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div>
+	   </div>
+	   <!--------------------------Banner Link----------------------------- -->
+	   <div class="clearboth divider1"></div>
+	   <p class="centerText"> <a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(1)">Continue</a></p>
+	   <p>&nbsp;</p>
+	</div>
 
+	<div class="ui-content" *ngIf="page>0 && page<20">
+	   <div id="ingrown1_mobile_1" *ngIf="page==1">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfontLarge firstname"> </span><br>
+	            Is this an <span class="purple_redfont">ingrown toenail</span> or something like a  <span class="orangefont">toenail fungus?</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder centerText">Let's find out before we see what a pharmacist recommend over the counter.</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"> <button data-inline="true" class="ingrown1_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--End Intro -->
+	   <div id="ingrown1_mobile_2_n" *ngIf="page==2">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Has the toenail lost its <span class="orangefont">luster</span> or <span class="blue_brightfont">shine?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(3)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(4)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="ingrown1_mobile_3_y" *ngIf="page==3">
+	      <h3>Yes?</h3>
+	      <p>&nbsp;</p>
+	      <button data-inline="true" class="ingrown1_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_3_n" *ngIf="page==4">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Has the <span class="bluefont">shape</span> changed?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_4_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(5)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(6)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="ingrown1_mobile_4_y" *ngIf="page==5">
+	      <!--start 4 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="ingrown1_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_4_n" *ngIf="page==6">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Do you have white or yellow <span class="orangefont">streaks</span> on the side of the nail?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(7)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(8)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="ingrown1_mobile_5_y" *ngIf="page==7">
+	      <!--start 5 div -->
+	      <div class="centerText">
+	         <div class="maxwidth450">
+	            <div class="ovalRightPurple_red">
+	               <span class="redfontLarge">Yes?</span><br>
+	               We think you may be looking at a <span class="orangefont">nail fungus</span> situation.
+	            </div>
+	            <img src="assets/img/pharm/female/pharm-amy-red.svg" alt="Pharmacist" width="80">
+	         </div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End middle right person------------------- -->
+	      <p class="purpleBorderAll">Would you like to take a look at the entry for <span class="orangefont">nail fungus</span> or Continue?</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-inline="true" data-theme="j" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(1)">Nail Fungus</a>
+	         <button data-inline="true" class="ingrown1_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_5_n" *ngIf="page==8">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Are the <span class="purple_bluefont">outside edges</span> of the toenail <span class="bluefont">crumbling?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(9)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_6_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(10)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="ingrown1_mobile_6_y" *ngIf="page==9">
+	      <!--start 6 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="ingrown1_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_6_n" *ngIf="page==10">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Are they <span class="orangefont">loosening</span> or <span class="redfont">lifting up?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(11)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(12)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="ingrown1_mobile_7_y" *ngIf="page==11">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfontLarge">Yes?</span><br>
+	            Suspecting <span class="redfont">nail fungus</span> infection rather than ingrown toenails.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="purpleBorderAll">Would you like to take a look at the entry for <span class="orangefont">nail fungus</span> or Continue?</p>
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" (click)="gotoSubPage(1)" data-role="button" data-inline="true" data-theme="e" class="ui-link ui-btn ui-btn-e ui-btn-inline ui-shadow ui-corner-all" role="button">Nail Fungus</a>	
+	         <button data-inline="true" class="ingrown1_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_7_n" *ngIf="page==12">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does the skin along the edge of the affected nail appear to be <span class="redfont">growing over</span> the nail?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_8_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(13)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(14)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="ingrown1_mobile_8_y" *ngIf="page==13">
+	      <!--start 8 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="ingrown1_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_8_n" *ngIf="page==14">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the area <span class="redfont">sensitive</span> to pressure of any kind?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(15)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(16)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="ingrown1_mobile_9_y" *ngIf="page==15">
+	      <!--start 9 div -->
+	      <h3>Yes?</h3>
+	      <button data-inline="true" class="ingrown1_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_9_n" *ngIf="page==16">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Does the nail appear to be growing <span class="bluefont">underneath</span> the skin?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_10_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(17)">Yes</button>
+	         <button data-inline="true" class="ingrown1_mobile_10_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(18)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="ingrown1_mobile_10_y" *ngIf="page==17">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="redfontLarge">No?</span><br>
+	            You <span class="redfont">may not</span> be looking at <span class="purple_redfont">ingrown toenail</span> then.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown1_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown1_mobile_10_n" *ngIf="page==18">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfontLarge firstname"> </span><br>
+	            Let's see if you need to see a doctor.
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="redBorder">This will assume  you are looking at <span class="purple_redfont">ingrown toenail</span> from here onward.</p>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <p class="centerText"><a href="#" data-role="button" data-inline="true" class="ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="togglePage(20)">Continue</a></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <p>&nbsp;</p>
+	</div>
 
-<ion-content padding>
-
+	<div class="ui-content" *ngIf="page>=20 && page<40">
+	   <div id="ingrown2_mobile_2_n" *ngIf="page==20">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Is the base of the toenail <span class="purplefont">swollen</span> and/or <span class="purple_redfont">tender to touch?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_3_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(21)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_3_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(22)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end first question div --> 
+	   <!--start 3 div -->   
+	   <div id="ingrown2_mobile_3_y" *ngIf="page==21">
+	      <h3>Yes?</h3>
+	      <p>See a doctor</p>
+	      <button data-inline="true" class="ingrown2_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>	
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_3_n" *ngIf="page==22">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Any <span class="purple_bluefont">watery discharge</span> mixed with <span class="redfont">blood?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_4_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(23)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_4_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(24)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 3 div --> 
+	   <div id="ingrown2_mobile_4_y" *ngIf="page==23">
+	      <!--start 4 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightOrange centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>May be looking at an infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_4_n" *ngIf="page==24">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>What about <span class="orangefont">pus</span> <span class="purple_bluefont">drainage?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_5_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(25)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_5_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(26)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 4 div --> 
+	   <div id="ingrown2_mobile_5_y" *ngIf="page==25">
+	      <!--start 5 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Looking at an infection.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_5_n" *ngIf="page==26">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Can you <span class="bluefont">trim</span> the ingrown toenail by yourself?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_6_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(27)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_6_y_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(28)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 5  div --> 
+	   <div id="ingrown2_mobile_6_y" *ngIf="page==27">
+	      <!--start 6 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Part of the nail may need to be removed by the doctor.</li>
+	         </ul>
+	         <p class="redBorder">Numbing medicine is first injected into the toe. Using scissors, the doctor then cut along the edge of the nail where the skin is growing over. </p>
+	         <p class="redBorderAll">This portion of the nail is then removed. This is called a <span class="bluefont">partial nail avulsion.</span></p>
+	         <p class="redBorderAll">It will take 2 to 4 months for the nail to regrow.</p>
+	         <p class="redBorderAll">Sometimes your doctor will use a chemical, electrical current, or another small surgical cut to destroy or remove the area from which a new nail may grow.</p>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>	</p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_6_n" *ngIf="page==28">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Are you <span class="bluefont">diabetic?</span></span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_7_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(29)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_7_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(30)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 6 div --> 
+	   <div id="ingrown2_mobile_7_y" *ngIf="page==29">
+	      <!--start 7 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Don't attempt selfcare on this.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_7_n" *ngIf="page==30">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Do you have poor <span class="purple_redfont">circulation</span> to the foot?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_8_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(31)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_8_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(32)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 7 div --> 
+	   <div id="ingrown2_mobile_8_y" *ngIf="page==31">
+	      <!--start 8 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Don't attempt selfcare on this.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_8_n" *ngIf="page==32">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Any<span class="bluefont"> peripheral nerves</span> problems?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_9_n_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(33)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_9_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(34)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 8 div --> 
+	   <div id="ingrown2_mobile_9_y" *ngIf="page==33">
+	      <!--start 9 div -->
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(34)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_9_n" *ngIf="page==34">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span>Do you have <span class="redfont">fever</span> with this toenail problem?</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <p class="centerText">
+	         <button data-inline="true" class="ingrown2_mobile_10_y_link ui-btn ui-btn-l ui-btn-inline ui-shadow ui-corner-all" data-theme="l" (click)="togglePage(35)">Yes</button>
+	         <button data-inline="true" class="ingrown2_mobile_10_n_link ui-btn ui-btn-k ui-btn-inline ui-shadow ui-corner-all" data-theme="k" (click)="togglePage(36)">No</button>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 9  div --> 
+	   <div id="ingrown2_mobile_10_y" *ngIf="page==35">
+	      <!--start 10 div -->
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightYellow centerText">
+	            <span class="redfontLarge">Seek urgent care or call the doctor.</span><br>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <div class="redBorderAll">
+	         <p class="redfont redBorder centerText">Here is why:</p>
+	         <ul>
+	            <li>Looking at an infection</li>
+	            <li>Need more evaluation.</li>
+	         </ul>
+	      </div>
+	      <br>
+	      <!---------------------End Seek urgent care------------- -->
+	      <p class="centerText"><button data-inline="true" class="ingrown2_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(36)">Continue</button></p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <div id="ingrown2_mobile_10_n" *ngIf="page==36">
+	      <div class="maxwidth450">
+	         <div class="ovalBorderRightPurple_red centerText">
+	            <span class="purple_redfontLarge firstname"> </span><br>
+	            Let's see what is available over the counter for <span class="purple_redfont">ingrown toenails.</span>
+	         </div>
+	         <div align="right"><img src="assets/img/pharm/female/pharm-amy-red.svg" width="100" alt="Pharmacist"></div>
+	      </div>
+	      <div class="clearboth divider1"></div>
+	      <!-----------------End Border right person------------------- -->
+	      <!--------------------------Banner Link----------------------------- -->
+	      <div>
+	      </div>
+	      <!--------------------------Banner Link----------------------------- -->
+	      <input type="hidden" class="ClickValuePage1_25" value="">
+	      <input type="hidden" class="ClickValuePage1_50" value="">
+	      <input type="hidden" class="ClickValuePage1_100" value="">
+	      <input type="hidden" class="ClickValuePage2_25" value="">
+	      <input type="hidden" class="ClickValuePage2_50" value="">
+	      <input type="hidden" class="ClickValuePage2_100" value="">
+	      <input type="hidden" class="ClickValuePage3_25" value="">
+	      <input type="hidden" class="ClickValuePage3_50" value="">
+	      <input type="hidden" class="ClickValuePage3_100" value="">
+	      <input type="hidden" class="totalResult" value="">
+	      <div class="clearboth divider1"></div>
+	      <p class="centerText">
+	         <a href="#" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button" (click)="gotoSubPage(0)">Urgent Care</a>
+	         <a href="#" class="ingrown_nail_mobile_infographics ui-link ui-btn ui-btn-inline ui-shadow ui-corner-all" data-role="button" data-inline="true" role="button" (click)="gotoSubPage(2)">Continue</a>
+	      </p>
+	      <p>&nbsp;</p>
+	   </div>
+	   <!--end 10 div --> 
+	   <p>&nbsp;</p>
+	</div>
 </ion-content>

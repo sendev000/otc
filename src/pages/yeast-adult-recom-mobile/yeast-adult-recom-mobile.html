@@ -42,7 +42,7 @@
 				    <div class="content-slide ui-content">
 				        <p>&nbsp;</p>
 				        <p>&nbsp;</p>
-				        <div id="adult_recom_yeast_mobile">
+				        <div id="adult_recom_yeast_mobile" *ngIf="page==0">
 				            <!-----Start follow up intro--- -->
 				            <p>&nbsp;</p>
 				            <div class="maxwidth450">
@@ -86,13 +86,13 @@
 				            </div>
 				            <div class="clearboth divider1"></div>
 				            <p class="centerText">
-				                <button data-inline="true" class="yeast_mobile_1_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                <button data-inline="true" class="yeast_mobile_1_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(1)">Continue</button>
 				            </p>
 				            <p>&nbsp;</p>
 				        </div>
 				        <!------------------------------------Start  Questions----------------------- -->     
-				        <div id="all_questions_div" class="displayNone">
-				            <div id="yeast_mobile_1">
+				        <div id="all_questions_div" *ngIf="page>0">
+				            <div id="yeast_mobile_1" *ngIf="page==1">
 				                <!-----Start follow up intro--- -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue centerText"> 
@@ -113,12 +113,12 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_2_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(2)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--End follow up intro -->
-				            <div id="yeast_mobile_2_n" class="displayNone">
+				            <div id="yeast_mobile_2_n" *ngIf="page==2">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Once again, is this your <span class="bluefont">first</span> yeast infection?</span><br>
@@ -133,14 +133,14 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_3_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(3)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(4)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end first follow up question div -->
 				            <!--start follow up 3 div -->
-				            <div id="yeast_mobile_3_y" class="displayNone">
+				            <div id="yeast_mobile_3_y" *ngIf="page==3">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefontLarge">Yes?</span><br>
@@ -160,11 +160,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_3_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(4)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_3_n" class="displayNone">
+				            <div id="yeast_mobile_3_n" *ngIf="page==4">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Is experiencing a <span class="redfont">burning</span> sensation a big concern for you?</span><br>
@@ -178,13 +178,13 @@
 				                    <p>OTC yeast medications can cause a burning sensation.</p>
 				                </div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_4_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_4_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(5)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(6)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 3 div -->
-				            <div id="yeast_mobile_4_y" class="displayNone">
+				            <div id="yeast_mobile_4_y" *ngIf="page==5">
 				                <!--start follow up 4 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -204,11 +204,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_4_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(6)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_4_n" class="displayNone">
+				            <div id="yeast_mobile_4_n" *ngIf="page==6">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Is using this every day for 1 week, even if it is better, a concern?</span><br>
@@ -223,13 +223,13 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_5_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_5_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(7)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(8)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 4 div -->
-				            <div id="yeast_mobile_5_y" class="displayNone">
+				            <div id="yeast_mobile_5_y" *ngIf="page==7">
 				                <!--start follow up 5 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -248,11 +248,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_5_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(8)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_5_n" class="displayNone">
+				            <div id="yeast_mobile_5_n" *ngIf="page==8">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Is having no sex for the next one week a concern?</span><br>
@@ -264,13 +264,13 @@
 				                <!-----------------End Border right person------------------- -->
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_6_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_6_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(9)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(10)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 5 div -->
-				            <div id="yeast_mobile_6_y" class="displayNone">
+				            <div id="yeast_mobile_6_y" *ngIf="page==9">
 				                <!--start follow up 6 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -288,11 +288,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_6_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(10)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_6_n" class="displayNone">
+				            <div id="yeast_mobile_6_n" *ngIf="page==10">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Are you already very irritated and sore?</span><br>
@@ -304,13 +304,13 @@
 				                <!-----------------End Border right person------------------- -->
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_7_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_7_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(11)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(12)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 6 div -->
-				            <div id="yeast_mobile_7_y" class="displayNone">
+				            <div id="yeast_mobile_7_y" *ngIf="page==11">
 				                <!--start follow up 7 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -329,11 +329,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_7_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(12)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_7_n" class="displayNone">
+				            <div id="yeast_mobile_7_n" *ngIf="page==12">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Do you have a yeast infection because of antibiotics you took?</span><br>
@@ -345,13 +345,13 @@
 				                <!-----------------End Border right person------------------- -->
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_8_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_8_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(13)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(14)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 7 div -->
-				            <div id="yeast_mobile_8_y" class="displayNone">
+				            <div id="yeast_mobile_8_y" *ngIf="page==13">
 				                <!--start follow up 8 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -369,11 +369,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_8_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(14)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_8_n" class="displayNone">
+				            <div id="yeast_mobile_8_n" *ngIf="page==14">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Have you previously experienced a severe burning sensation with yeast medications?</span><br>
@@ -385,13 +385,13 @@
 				                <!-----------------End Border right person------------------- -->
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_9_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_9_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(15)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(16)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 8 div -->
-				            <div id="yeast_mobile_9_y" class="displayNone">
+				            <div id="yeast_mobile_9_y" *ngIf="page==15">
 				                <!--start follow up 9 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -409,11 +409,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_9_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(16)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_9_n" class="displayNone">
+				            <div id="yeast_mobile_9_n" *ngIf="page==16">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Like to know if you should get the brand name or generic store brand?</span><br>
@@ -425,13 +425,13 @@
 				                <!-----------------End Border right person------------------- -->
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_10_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_10_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(17)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(18)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 9 div -->
-				            <div id="yeast_mobile_10_y" class="displayNone">
+				            <div id="yeast_mobile_10_y" *ngIf="page==17">
 				                <!--start follow up 10 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -451,11 +451,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_10_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(18)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_10_n" class="displayNone">
+				            <div id="yeast_mobile_10_n" *ngIf="page==18">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Among the ingredients, like to know which works the best?</span><br>
@@ -470,13 +470,13 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_11_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_11_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(19)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(20)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 10 div -->
-				            <div id="yeast_mobile_11_y" class="displayNone">
+				            <div id="yeast_mobile_11_y" *ngIf="page==19">
 				                <!--start follow up 11 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -503,11 +503,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_11_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(20)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_11_n" class="displayNone">
+				            <div id="yeast_mobile_11_n" *ngIf="page==20">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span>Want to know if you should get the external cream?</span><br>
@@ -522,14 +522,14 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_12_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g">Yes</button>
-				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f">No</button>
+				                    <button data-inline="true" class="yeast_mobile_12_y_link ui-btn ui-btn-g ui-btn-inline ui-shadow ui-corner-all" data-theme="g" (click)="togglePage(21)">Yes</button>
+				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-f ui-btn-inline ui-shadow ui-corner-all" data-theme="f" (click)="togglePage(22)">No</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 11 div -->
 				            <!---------------------------------Start attachment------------------------- -->
-				            <div id="yeast_mobile_12_y" class="displayNone">
+				            <div id="yeast_mobile_12_y" *ngIf="page==21">
 				                <!--start follow up 12 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -548,11 +548,11 @@
 				                </div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_12_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(22)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_12_n" class="displayNone">
+				            <div id="yeast_mobile_12_n" *ngIf="page==22">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -587,17 +587,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="goBackSymptom()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				                <p>&nbsp;</p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 12 div -->
-				            <div id="yeast_mobile_13_y" class="displayNone">
+				            <div id="yeast_mobile_13_y" *ngIf="page==23">
 				                <!--start follow up 13 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -612,11 +612,11 @@
 				                <div class="orangeBorderAll"></div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_13_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(24)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_13_n" class="displayNone">
+				            <div id="yeast_mobile_13_n" *ngIf="page==24">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -651,17 +651,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="togglePage(1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				                <p>&nbsp;</p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 13 div -->
-				            <div id="yeast_mobile_14_y" class="displayNone">
+				            <div id="yeast_mobile_14_y" *ngIf="page==25">
 				                <!--start follow up 14 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -676,11 +676,11 @@
 				                <div class="orangeBorderAll"></div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_14_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_14_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(26)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_14_n" class="displayNone">
+				            <div id="yeast_mobile_14_n" *ngIf="page==26">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -715,17 +715,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="togglePage(1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				                <p>&nbsp;</p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 14 div -->
-				            <div id="yeast_mobile_15_y" class="displayNone">
+				            <div id="yeast_mobile_15_y" *ngIf="page==27">
 				                <!--start follow up 15 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -740,11 +740,11 @@
 				                <div class="orangeBorderAll"></div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_15_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_15_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(28)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_15_n" class="displayNone">
+				            <div id="yeast_mobile_15_n" *ngIf="page==28">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -779,17 +779,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="togglePage(1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				                <p>&nbsp;</p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 15 div -->
-				            <div id="yeast_mobile_16_y" class="displayNone">
+				            <div id="yeast_mobile_16_y" *ngIf="page==29">
 				                <!--start follow up 16 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -804,11 +804,11 @@
 				                <div class="orangeBorderAll"></div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_16_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_16_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(30)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_16_n" class="displayNone">
+				            <div id="yeast_mobile_16_n" *ngIf="page==30">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -843,17 +843,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="togglePage(1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				                <p>&nbsp;</p>
 				                <p>&nbsp;</p>
 				            </div>
 				            <!--end follow up 16 div --> 
-				            <div id="yeast_mobile_17_y" class="displayNone">
+				            <div id="yeast_mobile_17_y" *ngIf="page==31">
 				                <!--start follow up 17 div -->
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
@@ -868,11 +868,11 @@
 				                <div class="blueBorderAll"></div>
 				                <div class="clearboth divider1"></div>
 				                <p class="centerText">
-				                    <button data-inline="true" class="yeast_mobile_17_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all">Continue</button>
+				                    <button data-inline="true" class="yeast_mobile_17_n_link ui-btn ui-btn-inline ui-shadow ui-corner-all" (click)="togglePage(32)">Continue</button>
 				                </p>
 				                <p>&nbsp;</p>
 				            </div>
-				            <div id="yeast_mobile_17_n" class="displayNone">
+				            <div id="yeast_mobile_17_n" *ngIf="page==32">
 				                <div class="maxwidth450">
 				                    <div class="ovalBorderRightBlue shadowRight centerText"> 
 				                        <span class="bluefont firstname"> </span><br>
@@ -907,16 +907,17 @@
 				                    02/05/2016 at 11:32:pm<br>
 				                </p>
 				                <p class="centerText">
-				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
+				                    <a href="#" data-inline="true" class="linkBlue back_yeast_mobile ui-link" (click)="togglePage(1)"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font40"></span>Back</a>
 				                </p>
 				                <br>    
 				                <p class="centerText"> 
-				                    <a href="#compare_yeast_medications_mobile" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
+				                    <a href="#" (click)="gotoSubPage(1)" class="linkCyan robotoLightSmall ui-link" data-inline="true">Compare Medications</a>
 				                </p>
 				            </div>
 				            <!--end follow up 17 div -->
 				        </div>
 				    </div>
+
 				    <!-----------------------------End Content-slide---------------------------- -->   
 				</div>
 				<!-------------------------------End Swiper-slide------------------------ -->
@@ -932,11 +933,11 @@
 				            </div>
 				        </div>
 				        <div class="clearboth divider1"></div>
-				        <br>
+				        <br>	
 				        <!-----------------End Border right person------------------- -->
 				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(0)" [ngClass]="{'ui-icon-plus': expands[0], 'ui-icon-minus': !expands[0]}">Our disclaimer<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[0]}" aria-hidden="true">
 				                <div class="redBorderWhite">
 				                    <ul>
 				                        <li>Recommendation is the opinion of a registered US Pharmacist currently practicing as a community pharmacist.</li>
@@ -984,25 +985,25 @@
 				        <br>
 				        <!-----------------End Point Right------------------- -->
 				        <div data-role="collapsible" data-collapsed="true" data-corners="false" class="ui-nodisc-icon ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
-				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				            <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				            <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(1)" [ngClass]="{'ui-icon-plus': expands[1], 'ui-icon-minus': !expands[1]}">You have a question<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				            <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[1]}" aria-hidden="true">
 				                <p>Please contact the pharmacist. He or she will gladly answer your questions.</p>
 				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(2)" [ngClass]="{'ui-icon-plus': expands[2], 'ui-icon-minus': !expands[2]}">Contacting the pharmacist<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[2]}" aria-hidden="true">
 				                        <p>You may have to unlock the contact form using social networking tools <span class="bluefontSmall">(facebook,</span> <span class="blue_brightfontSmall">twitter,</span> <span class="redfontSmall">google+,</span> <span class="bluefontSmall">linkedIn)</span> we have made available to you.</p>
 				                        <p>If you can't do this, you will have to wait a few seconds depending on the number of users at the time.</p>
 				                        <div class="clearboth divider1"></div>
 				                        <p class="centerText">
-				                            <a href="../../../../contact/contact_social_mobile.php" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Contact Pharmacist</a>
+				                            <a href="#" (click)="gotoSubPage(2)" data-role="button" data-theme="j" data-inline="true" class="ui-link ui-btn ui-btn-j ui-btn-inline ui-shadow ui-corner-all" role="button">Contact Pharmacist</a>
 				                        </p>
 				                        <div class="clearboth divider1"></div>
 				                        <br>                       
 				                    </div>
 				                </div>
 				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(3)" [ngClass]="{'ui-icon-plus': expands[3], 'ui-icon-minus': !expands[3]}">What to expect<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[3]}" aria-hidden="true">
 				                        <p>Expect a reply as soon as possible.<br>
 				                            If the authoring pharmacist cannot reply within 24 hours, the system will push your email to the rest of the team. Any available pharmacist will answer your question as soon as possible.
 				                        </p>
@@ -1010,8 +1011,8 @@
 				                    </div>
 				                </div>
 				                <div data-role="collapsible" data-collapsed="true" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed">
-				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
-				                    <div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(4)" [ngClass]="{'ui-icon-plus': expands[4], 'ui-icon-minus': !expands[4]}">What can't be done:<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
+				                    <div class="ui-collapsible-content ui-body-inherit " [ngClass]="{'ui-collapsible-content-collapsed': expands[4]}" aria-hidden="true">
 				                        <p>No replies to vulgar, disrespectful emails.<br> The system is  programmed to look for certain words that are disrespectful and will automatically delete such emails. They don't get to the pharmacist. This will blacklist your email address automatically.</p>
 				                        <p>Email addresses or questions are not saved.<br> They are deleted once answered and not stored in a database. Should you need to follow up, copy the previous question(s) along with the new message for quick reference.</p>
 				                        <p>The pharmacist does not reply to emails that are not relevant to the topic he or she  authored. They are forwarded to the author of the topic and are under no obligation to reply.</p>
@@ -1042,10 +1043,10 @@
 				        <p>&nbsp;</p>
 				        <p>&nbsp;</p>
 				        <p class="centerText"> 
-				            <a class="linkBlueBorder robotoLightSmall ui-link" href="../../../../comments/comment_login_mobile.php">Leave a comment</a> 
-				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#">Why?</a> 
+				            <a class="linkBlueBorder robotoLightSmall ui-link" href="#" (click)="gotoSubPage(3)">Leave a comment</a> 
+				            <a class="linkAmberBorder robotoThinSmall comment_why_btn ui-link" href="#" (click)="toggleWhy()">Why?</a> 
 				        </p>
-				        <div class="comment_why_div displayNone">
+				        <div class="comment_why_div" *ngIf="why">
 				            <br>
 				            <ul>
 				                <li>Let others know if the recommendation worked for you.</li>

@@ -71,28 +71,24 @@ export class SwimearAdultRecomMobilePage {
 	}
 	toggleRecs(ind: number){
 		let temp = this.recs[ind];
-		this.recs[11] = false;
-		this.recs[12] = false;
-		if (ind>=10){
-			this.recs[10] = false;
+		this.recs[8] = false;
+		this.recs[9] = false;
+		if (ind>=8){
 			this.recs[ind] = temp;
-			if (ind == 10)
-				this.toggleAllRecs(true);
-			else
-				this.toggleAllRecs(false);
+			this.toggleAllRecs(false);
 		}
 	}
 	toggleAllRecs(b: boolean){
-		for (let i=0;i<10;i++)
+		for (let i=0;i<8;i++)
 			this.recs[i] = b;
 	}
 	goBack() {
 		this.toggleAllRecs(false);
-		this.recs[10] = this.recs[11] = this.recs[12] = false;
+		this.recs[8] = this.recs[9] = false;
 	}
 	goBackSymptom(){
 		this.goBack();
-		this.page = 0;
+		this.page = 1;
 		this.mode = 0;
 	}
 	toggleWhy(){
@@ -105,115 +101,246 @@ export class SwimearAdultRecomMobilePage {
 		this.expands[id] = !this.expands[id];
 	}
 	togglePage(ind: number) {
-		if (ind == 1)
+		if (ind == 2)
 		{
-			let 
-				sorethroat = this.recs[0],
-				scratchythroat = this.recs[1],
-				stuffynose = this.recs[2],
-				runnynose = this.recs[3],
-				sneezing = this.recs[4],
-				headache = this.recs[5],
-				itchyeyes = this.recs[6],
-				cough = this.recs[7],
-				wateryeyes = this.recs[8],
-				sinuscongestion = false,
-				chestcongestion = this.recs[9],
-				prevention =  this.recs[11],
-				All =  this.recs[10],
-				none = this.recs[12];
-				
-			//category variables
-			let 
-			    antihistamine = runnynose || scratchythroat || sneezing || itchyeyes || wateryeyes,
-				decongestant = stuffynose || sinuscongestion,
-				painrelief = headache || sorethroat,
-				coughrelief = cough || chestcongestion,
-				itchyeyesrelief = itchyeyes || wateryeyes;
+			var
+			    ruptured = this.recs[0],
+			pus = this.recs[1],
+			painful = this.recs[2],
+			fluid = this.recs[3],
+			swollen = this.recs[4],
+			fever = this.recs[5],
+			muffled = this.recs[6],
+			itchy = this.recs[7],
+			/*iiii = $('#adult_recom_swimear_mobile_q1_8'),
+			jjjj = $('#adult_recom_swimear_mobile_q1_9'),*/
+			prevention = this.recs[8],
+			allabove = false,
+			none = this.recs[9];
+
+			//Medication variables in collapsible
+
+			var
+			    ear_drops = fluid || muffled || itchy,
+			pain_reliever = painful || swollen || fever,
+			antihistamine = itchy,
+			warm_compress = ruptured || painful || swollen,
+			doctor = ruptured || pus || painful || swollen || fever || muffled;
+
+
+			//conditions for showing none of the above division.
+
 			if (none) {
-				this.mode = 1;
+
+			    this.mode = 1;
+			    
+
+
 			}
+
 			//conditions for showing prevention division.
 			else if (prevention) {
-				this.mode = 2;
+			    this.mode = 2;
+			   
+
 			}
-			//conditions for All division.
-			else if (All) {
-				this.mode = 3;
+
+
+			//conditions for All division + Others else if.
+			else if (allabove) {
+			    this.mode = 3;
+			    
+
 			}
-			//--------------single------------------------
-			else if (antihistamine && !(decongestant || painrelief || coughrelief || itchyeyesrelief)) {
+
+
+			//conditions for doctor only.
+			else if (ruptured) {
 			    this.mode = 4;
-			} else if (decongestant && !(antihistamine || painrelief || coughrelief || itchyeyesrelief)) {
+			   
+
+			}
+
+			//condition for showing just one checked field
+
+			//--------------single------------------------
+			else if (ear_drops && !(pain_reliever || antihistamine || warm_compress || doctor)) {
 			    this.mode = 5;
-			} else if (painrelief && !(decongestant || antihistamine || coughrelief || itchyeyesrelief)) {
+			    
+
+			} else if (pain_reliever && !(ear_drops || antihistamine || warm_compress || doctor)) {
+
 			    this.mode = 6;
-			} else if (coughrelief && !(decongestant || painrelief || antihistamine || itchyeyesrelief)) {
+			    
+
+			} else if (antihistamine && !(ear_drops || pain_reliever || warm_compress || doctor)) {
+
 			    this.mode = 7;
-			} else if (itchyeyesrelief && !(decongestant || painrelief || antihistamine || coughrelief)) {
+			    
+
+			} else if (warm_compress && !(ear_drops || pain_reliever || antihistamine || doctor)) {
+
 			    this.mode = 8;
-			}
-			//-------------------------------double---------------------------
-			else if (painrelief && decongestant && !(coughrelief || antihistamine || itchyeyesrelief)) {
+			    
+
+			} else if (doctor && !(ear_drops || pain_reliever || warm_compress || antihistamine)) {
+
 			    this.mode = 9;
-			} else if (painrelief && antihistamine && !(coughrelief || decongestant || itchyeyesrelief)) {
+			    
+
+			}
+
+
+
+			//-------------------------------double---------------------------
+			else if (ear_drops && pain_reliever && !(antihistamine || warm_compress || doctor)) {
+
 			    this.mode = 10;
-			} else if (painrelief && coughrelief && !(antihistamine || decongestant || itchyeyesrelief)) {
+			    
+
+			} else if (ear_drops && antihistamine && !(pain_reliever || warm_compress || doctor)) {
+
 			    this.mode = 11;
-			} else if (painrelief && itchyeyesrelief && !(antihistamine || decongestant || coughrelief)) {
+			    
+
+			} else if (ear_drops && warm_compress && !(pain_reliever || antihistamine || doctor)) {
+
 			    this.mode = 12;
-			} else if (antihistamine && decongestant && !(painrelief || coughrelief || itchyeyesrelief)) {
+			    
+
+			} else if (ear_drops && doctor && !(pain_reliever || antihistamine || warm_compress)) {
+
 			    this.mode = 13;
-			} else if (antihistamine && coughrelief && !(painrelief || decongestant || itchyeyesrelief)) {
+			    
+
+			} else if (pain_reliever && antihistamine && !(ear_drops || warm_compress || doctor)) {
+
 			    this.mode = 14;
-			} else if (antihistamine && itchyeyesrelief && !(painrelief || coughrelief || decongestant)) {
+			    
+
+			} else if (pain_reliever && warm_compress && !(ear_drops || antihistamine || doctor)) {
+
 			    this.mode = 15;
-			} else if (decongestant && coughrelief && !(painrelief || antihistamine || itchyeyesrelief)) {
+			    
+
+			} else if (pain_reliever && doctor && !(ear_drops || antihistamine || warm_compress)) {
+
 			    this.mode = 16;
-			} else if (decongestant && itchyeyesrelief && !(painrelief || antihistamine || coughrelief)) {
+			    
+
+			} else if (antihistamine && warm_compress && !(ear_drops || pain_reliever || doctor)) {
+
 			    this.mode = 17;
-			} else if (itchyeyesrelief && coughrelief && !(painrelief || antihistamine || decongestant)) {
+			    
+
+			} else if (antihistamine && doctor && !(ear_drops || pain_reliever || warm_compress)) {
+
 			    this.mode = 18;
-			}
-			//---------------------Triple----------------------
-			else if (painrelief && antihistamine && decongestant && !(coughrelief || itchyeyesrelief)) {
+			    
+
+			} else if (warm_compress && doctor && !(ear_drops || pain_reliever || antihistamine)) {
+
 			    this.mode = 19;
-			} else if (painrelief && antihistamine && coughrelief && !(decongestant || itchyeyesrelief)) {
-				this.mode = 20;
-			} else if (painrelief && antihistamine && itchyeyesrelief && !(decongestant || coughrelief)) {
-				this.mode = 21;
-			} else if (painrelief && decongestant && coughrelief && !(antihistamine || itchyeyesrelief)) {
-				this.mode = 22;
-			} else if (painrelief && decongestant && itchyeyesrelief && !(antihistamine || coughrelief)) {
-				this.mode = 23;
-			} else if (painrelief && itchyeyesrelief && coughrelief && !(decongestant || antihistamine)) {
-				this.mode = 24;
-			} else if (decongestant && itchyeyesrelief && coughrelief && !(antihistamine || painrelief)) {
-				this.mode = 25;
-			} else if (antihistamine && itchyeyesrelief && coughrelief && !(decongestant || painrelief)) {
-				this.mode = 26;
-			} else if (antihistamine && decongestant && coughrelief && !(itchyeyesrelief || painrelief)) {
+			    
+
+			}
+
+
+
+			//---------------------Triple----------------------
+			else if (ear_drops && pain_reliever && antihistamine && !(warm_compress || doctor)) {
+
+			    this.mode = 20;
+			    
+
+			} else if (ear_drops && pain_reliever && warm_compress && !(antihistamine || doctor)) {
+
+			    this.mode = 21;
+			    
+
+			} else if (ear_drops && pain_reliever && doctor && !(antihistamine || warm_compress)) {
+
+			    this.mode = 22;
+			    
+
+			} else if (ear_drops && antihistamine && warm_compress && !(pain_reliever || doctor)) {
+
+			    this.mode = 23;
+			    
+
+			} else if (ear_drops && antihistamine && doctor && !(pain_reliever || warm_compress)) {
+
+			    this.mode = 24;
+			    
+
+			} else if (ear_drops && warm_compress && doctor && !(pain_reliever || antihistamine)) {
+
+			    this.mode = 25;
+			    
+
+			} else if (pain_reliever && antihistamine && warm_compress && !(ear_drops || doctor)) {
+
+			    this.mode = 26;
+			    
+
+			} else if (pain_reliever && antihistamine && doctor && !(ear_drops || warm_compress)) {
+
 			    this.mode = 27;
-			} else if (antihistamine && decongestant && itchyeyesrelief && !(coughrelief || painrelief)) {
+			    
+
+			} else if (pain_reliever && warm_compress && doctor && !(ear_drops || antihistamine)) {
+
 			    this.mode = 28;
-			}
-			//---------------------------------Quadriple-------------------------------------
-			else if (painrelief && antihistamine && decongestant && itchyeyesrelief && !(coughrelief)) {
+			    
+
+			} else if (antihistamine && warm_compress && doctor && !(ear_drops || pain_reliever)) {
+
 			    this.mode = 29;
-			} else if (painrelief && antihistamine && decongestant && coughrelief && !(itchyeyesrelief)) {
-			    this.mode = 30;
-			} else if (painrelief && antihistamine && itchyeyesrelief && coughrelief && !(decongestant)) {
-			    this.mode = 31;
-			} else if (painrelief && decongestant && itchyeyesrelief && coughrelief && !(antihistamine)) {
-			    this.mode = 32;
-			} else if (antihistamine && decongestant && itchyeyesrelief && coughrelief && !(painrelief)) {
-			    this.mode = 33;
+			    
+
 			}
-			//------------------------------All together------------------------------------
-			else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
+
+
+
+			//---------------------Quadruple----------------------
+			else if (ear_drops && pain_reliever && antihistamine && warm_compress && !(doctor)) {
+
+			    this.mode = 30;
+			    
+
+			} else if (ear_drops && pain_reliever && antihistamine && doctor && !(warm_compress)) {
+
+			    this.mode = 31;
+			    
+
+			} else if (ear_drops && pain_reliever && warm_compress && doctor && !(antihistamine)) {
+
+			    this.mode = 32;
+			    
+
+			} else if (ear_drops && antihistamine && warm_compress && doctor && !(pain_reliever)) {
+
+			    this.mode = 33;
+			    
+
+			} else if (pain_reliever && antihistamine && warm_compress && doctor && !(ear_drops)) {
+
 			    this.mode = 34;
+			    
+
+			}
+
+
+
+			//------------------------------All together------------------------------------
+			else if (ear_drops && pain_reliever && antihistamine && warm_compress && doctor) {
+
+			    this.mode = 35;
+
 			} else {
-			    ind = 0; this.mode = 50;
+			    
+			    this.mode = 100;
+			    ind = 1;
 			}
 		}
 		this.page = ind;

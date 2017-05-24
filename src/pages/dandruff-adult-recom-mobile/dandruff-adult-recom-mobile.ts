@@ -92,7 +92,7 @@ export class DandruffAdultRecomMobilePage {
 	}
 	goBackSymptom(){
 		this.goBack();
-		this.page = 0;
+		this.page = 1;
 		this.mode = 0;
 	}
 	toggleWhy(){
@@ -105,115 +105,182 @@ export class DandruffAdultRecomMobilePage {
 		this.expands[id] = !this.expands[id];
 	}
 	togglePage(ind: number) {
-		if (ind == 1)
+		if (ind == 2)
 		{
-			let 
-				sorethroat = this.recs[0],
-				scratchythroat = this.recs[1],
-				stuffynose = this.recs[2],
-				runnynose = this.recs[3],
-				sneezing = this.recs[4],
-				headache = this.recs[5],
-				itchyeyes = this.recs[6],
-				cough = this.recs[7],
-				wateryeyes = this.recs[8],
-				sinuscongestion = false,
-				chestcongestion = this.recs[9],
-				prevention =  this.recs[11],
-				All =  this.recs[10],
-				none = this.recs[12];
-				
-			//category variables
-			let 
-			    antihistamine = runnynose || scratchythroat || sneezing || itchyeyes || wateryeyes,
-				decongestant = stuffynose || sinuscongestion,
-				painrelief = headache || sorethroat,
-				coughrelief = cough || chestcongestion,
-				itchyeyesrelief = itchyeyes || wateryeyes;
+			var
+			    mild = this.recs[0],
+			moderate = this.recs[1],
+			severe = this.recs[2],
+			painful = this.recs[3],
+			crusty = this.recs[4],
+			drainy = this.recs[5],
+			blonde = this.recs[6],
+			colored = this.recs[7],
+			oily = this.recs[8],
+			dry = this.recs[9],
+			prevention = this.recs[11],
+			allabove = this.recs[10],
+			none = this.recs[12];
+
+			//Medication variables in collapsible
+
+			var
+			    mild = mild,
+			moderate = moderate,
+			severe = severe,
+			warning = oily || dry || blonde || colored,
+			doctor = severe || painful || crusty || drainy;
+
+
+			//conditions for showing none of the above division.
+
 			if (none) {
-				this.mode = 1;
+				this.mode = 50;
 			}
 			//conditions for showing prevention division.
 			else if (prevention) {
+			    this.mode = 1;
+
+			}
+			//conditions for All division + Others else if.
+			else if (allabove) {
 				this.mode = 2;
+			    
+
 			}
-			//conditions for All division.
-			else if (All) {
-				this.mode = 3;
-			}
+			//condition for showing just one checked field
+
 			//--------------single------------------------
-			else if (antihistamine && !(decongestant || painrelief || coughrelief || itchyeyesrelief)) {
-			    this.mode = 4;
-			} else if (decongestant && !(antihistamine || painrelief || coughrelief || itchyeyesrelief)) {
-			    this.mode = 5;
-			} else if (painrelief && !(decongestant || antihistamine || coughrelief || itchyeyesrelief)) {
-			    this.mode = 6;
-			} else if (coughrelief && !(decongestant || painrelief || antihistamine || itchyeyesrelief)) {
-			    this.mode = 7;
-			} else if (itchyeyesrelief && !(decongestant || painrelief || antihistamine || coughrelief)) {
-			    this.mode = 8;
+			else if (mild && !(moderate || severe || warning || doctor)) {
+				this.mode = 3;
+			    
+
+			} else if (moderate && !(mild || severe || warning || doctor)) {
+				this.mode = 4;
+			    
+
+			} else if (severe && !(mild || moderate || warning || doctor)) {
+				this.mode = 5;
+			    
+
+			} else if (warning && !(mild || moderate || severe || doctor)) {
+				this.mode = 6;
+			    
+
+			} else if (doctor && !(mild || moderate || warning || severe)) {
+				this.mode = 7;
+			    
+
 			}
 			//-------------------------------double---------------------------
-			else if (painrelief && decongestant && !(coughrelief || antihistamine || itchyeyesrelief)) {
-			    this.mode = 9;
-			} else if (painrelief && antihistamine && !(coughrelief || decongestant || itchyeyesrelief)) {
-			    this.mode = 10;
-			} else if (painrelief && coughrelief && !(antihistamine || decongestant || itchyeyesrelief)) {
-			    this.mode = 11;
-			} else if (painrelief && itchyeyesrelief && !(antihistamine || decongestant || coughrelief)) {
-			    this.mode = 12;
-			} else if (antihistamine && decongestant && !(painrelief || coughrelief || itchyeyesrelief)) {
-			    this.mode = 13;
-			} else if (antihistamine && coughrelief && !(painrelief || decongestant || itchyeyesrelief)) {
-			    this.mode = 14;
-			} else if (antihistamine && itchyeyesrelief && !(painrelief || coughrelief || decongestant)) {
-			    this.mode = 15;
-			} else if (decongestant && coughrelief && !(painrelief || antihistamine || itchyeyesrelief)) {
-			    this.mode = 16;
-			} else if (decongestant && itchyeyesrelief && !(painrelief || antihistamine || coughrelief)) {
-			    this.mode = 17;
-			} else if (itchyeyesrelief && coughrelief && !(painrelief || antihistamine || decongestant)) {
-			    this.mode = 18;
+			else if (mild && moderate && !(severe || warning || doctor)) {
+				this.mode = 8;
+			    // $('#, #, #mild_moderate_adult_recom_dandruff_mobile, #, #').show(300).removeClass("displayNone");
+
+			} else if (mild && severe && !(moderate || warning || doctor)) {
+				this.mode = 9;
+			    // $('#, #, #mild_severe_adult_recom_dandruff_mobile, #, #').show(300).removeClass("displayNone");
+
+			} else if (mild && warning && !(moderate || severe || doctor)) {
+				this.mode = 10;
+			    
+
+			} else if (mild && doctor && !(moderate || severe || warning)) {
+				this.mode = 11;
+			    
+
+			} else if (moderate && severe && !(mild || warning || doctor)) {
+				this.mode = 12;
+			    //$('#, #, #moderate_severe_adult_recom_dandruff_mobile, 
+
+			} else if (moderate && warning && !(mild || severe || doctor)) {
+				this.mode = 13;
+			    
+
+			} else if (moderate && doctor && !(mild || severe || warning)) {
+				this.mode = 14;
+			    
+
+			} else if (severe && warning && !(mild || moderate || doctor)) {
+				this.mode = 15;
+			    
+
+			} else if (severe && doctor && !(mild || moderate || warning)) {
+				this.mode = 16;
+			    
+
+			} else if (warning && doctor && !(mild || moderate || severe)) {
+				this.mode = 17;
+			    
+
 			}
 			//---------------------Triple----------------------
-			else if (painrelief && antihistamine && decongestant && !(coughrelief || itchyeyesrelief)) {
-			    this.mode = 19;
-			} else if (painrelief && antihistamine && coughrelief && !(decongestant || itchyeyesrelief)) {
+			else if (mild && moderate && severe && !(warning || doctor)) {
+				this.mode = 18;
+			    
+
+			} else if (mild && moderate && warning && !(severe || doctor)) {
+				this.mode = 19;
+			    
+
+			} else if (mild && moderate && doctor && !(severe || warning)) {
 				this.mode = 20;
-			} else if (painrelief && antihistamine && itchyeyesrelief && !(decongestant || coughrelief)) {
+			    
+
+			} else if (mild && severe && warning && !(moderate || doctor)) {
 				this.mode = 21;
-			} else if (painrelief && decongestant && coughrelief && !(antihistamine || itchyeyesrelief)) {
+			    
+
+			} else if (mild && severe && doctor && !(moderate || warning)) {
 				this.mode = 22;
-			} else if (painrelief && decongestant && itchyeyesrelief && !(antihistamine || coughrelief)) {
+			    
+
+			} else if (mild && warning && doctor && !(moderate || severe)) {
 				this.mode = 23;
-			} else if (painrelief && itchyeyesrelief && coughrelief && !(decongestant || antihistamine)) {
+			    
+
+			} else if (moderate && severe && warning && !(mild || doctor)) {
 				this.mode = 24;
-			} else if (decongestant && itchyeyesrelief && coughrelief && !(antihistamine || painrelief)) {
+			    
+
+			} else if (moderate && severe && doctor && !(mild || warning)) {
 				this.mode = 25;
-			} else if (antihistamine && itchyeyesrelief && coughrelief && !(decongestant || painrelief)) {
+			    
+
+			} else if (moderate && warning && doctor && !(mild || severe)) {
 				this.mode = 26;
-			} else if (antihistamine && decongestant && coughrelief && !(itchyeyesrelief || painrelief)) {
-			    this.mode = 27;
-			} else if (antihistamine && decongestant && itchyeyesrelief && !(coughrelief || painrelief)) {
-			    this.mode = 28;
+			    
+
+			} else if (severe && warning && doctor && !(mild || moderate)) {
+				this.mode = 27;
+			    
+
 			}
-			//---------------------------------Quadriple-------------------------------------
-			else if (painrelief && antihistamine && decongestant && itchyeyesrelief && !(coughrelief)) {
-			    this.mode = 29;
-			} else if (painrelief && antihistamine && decongestant && coughrelief && !(itchyeyesrelief)) {
-			    this.mode = 30;
-			} else if (painrelief && antihistamine && itchyeyesrelief && coughrelief && !(decongestant)) {
-			    this.mode = 31;
-			} else if (painrelief && decongestant && itchyeyesrelief && coughrelief && !(antihistamine)) {
-			    this.mode = 32;
-			} else if (antihistamine && decongestant && itchyeyesrelief && coughrelief && !(painrelief)) {
-			    this.mode = 33;
+			//---------------------Quadruple----------------------
+			else if (mild && moderate && severe && warning && !(doctor)) {
+				this.mode = 28;
+			    
+
+			} else if (mild && moderate && severe && doctor && !(warning)) {
+				this.mode = 29;
+
+			} else if (mild && moderate && warning && doctor && !(severe)) {
+				this.mode = 30;
+
+			} else if (mild && severe && warning && doctor && !(moderate)) {
+				this.mode = 31;
+
+			} else if (moderate && severe && warning && doctor && !(mild)) {
+				this.mode = 32;
+
 			}
 			//------------------------------All together------------------------------------
-			else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
-			    this.mode = 34;
+			else if (mild && moderate && severe && warning && doctor) {
+				this.mode = 33;
+
 			} else {
-			    ind = 0; this.mode = 50;
+				this.mode = 100;
+				ind = 1;
 			}
 		}
 		this.page = ind;

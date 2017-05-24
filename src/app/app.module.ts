@@ -331,6 +331,7 @@ import { NailfungusAdultRecomMobilePage } from '../pages/nailfungus-adult-recom-
 import { SwollenfootAdultRecomMobilePage } from '../pages/swollenfoot-adult-recom-mobile/swollenfoot-adult-recom-mobile';
 import { CornAdultRecomMobilePage } from '../pages/corn-adult-recom-mobile/corn-adult-recom-mobile';
 import { IngrownAdultRecomMobilePage } from '../pages/ingrown-adult-recom-mobile/ingrown-adult-recom-mobile';
+import { YeastAdultRecomMobile1Page } from '../pages/yeast-adult-recom-mobile1/yeast-adult-recom-mobile1';
 
 import { FluMobileInfographicsPage } from '../pages/flu-mobile-infographics/flu-mobile-infographics';
 import { HeadacheInfographicsMobilePage } from '../pages/headache-infographics-mobile/headache-infographics-mobile';
@@ -392,6 +393,7 @@ import { ArthritisInfographicsMobilePage } from '../pages/arthritis-infographics
 import { NailFungusInfographicsMobilePage } from '../pages/nail-fungus-infographics-mobile/nail-fungus-infographics-mobile';
 import { SwollenFootInfographicsMobilePage } from '../pages/swollen-foot-infographics-mobile/swollen-foot-infographics-mobile';
 import { CornInfographicsMobilePage } from '../pages/corn-infographics-mobile/corn-infographics-mobile';
+import { IngrownNailInfographicsMobilePage } from '../pages/ingrown-nail-infographics-mobile/ingrown-nail-infographics-mobile';
 
 import { ContactSocialMobilePage } from '../pages/contact-social-mobile/contact-social-mobile';
 
@@ -726,6 +728,7 @@ import { AuthService} from '../pages/providers/auth-service';
     SwollenfootAdultRecomMobilePage, 
     CornAdultRecomMobilePage, 
     IngrownAdultRecomMobilePage, 
+    YeastAdultRecomMobile1Page,
 
     FluMobileInfographicsPage,
     SleepInfographicsMobilePage,
@@ -786,6 +789,7 @@ import { AuthService} from '../pages/providers/auth-service';
     NailFungusInfographicsMobilePage,
     SwollenFootInfographicsMobilePage,
     CornInfographicsMobilePage,
+    IngrownNailInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],
@@ -1125,6 +1129,7 @@ import { AuthService} from '../pages/providers/auth-service';
     SwollenfootAdultRecomMobilePage, 
     CornAdultRecomMobilePage, 
     IngrownAdultRecomMobilePage, 
+    YeastAdultRecomMobile1Page,
 
     FluMobileInfographicsPage,
     SleepInfographicsMobilePage,
@@ -1185,6 +1190,7 @@ import { AuthService} from '../pages/providers/auth-service';
     NailFungusInfographicsMobilePage,
     SwollenFootInfographicsMobilePage,
     CornInfographicsMobilePage,
+    IngrownNailInfographicsMobilePage,
 
     ContactSocialMobilePage,
   ],

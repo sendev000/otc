@@ -108,116 +108,445 @@ export class ConstipationAdultRecomMobilePage {
 		this.expands[id] = !this.expands[id];
 	}
 	togglePage(ind: number) {
-		if (ind == 1)
+		if (ind == 2)
 		{
-			// let 
-			// 	sorethroat = this.recs[0],
-			// 	scratchythroat = this.recs[1],
-			// 	stuffynose = this.recs[2],
-			// 	runnynose = this.recs[3],
-			// 	sneezing = this.recs[4],
-			// 	headache = this.recs[5],
-			// 	itchyeyes = this.recs[6],
-			// 	cough = this.recs[7],
-			// 	wateryeyes = this.recs[8],
-			// 	sinuscongestion = false,
-			// 	chestcongestion = this.recs[9],
-			// 	prevention =  this.recs[11],
-			// 	All =  this.recs[10],
-			// 	none = this.recs[12];
-				
-			// //category variables
-			// let 
-			//     antihistamine = runnynose || scratchythroat || sneezing || itchyeyes || wateryeyes,
-			// 	decongestant = stuffynose || sinuscongestion,
-			// 	painrelief = headache || sorethroat,
-			// 	coughrelief = cough || chestcongestion,
-			// 	itchyeyesrelief = itchyeyes || wateryeyes;
-			// if (none) {
-			// 	this.mode = 1;
-			// }
-			// //conditions for showing prevention division.
-			// else if (prevention) {
-			// 	this.mode = 2;
-			// }
-			// //conditions for All division.
-			// else if (All) {
-			// 	this.mode = 3;
-			// }
-			// //--------------single------------------------
-			// else if (antihistamine && !(decongestant || painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 4;
-			// } else if (decongestant && !(antihistamine || painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 5;
-			// } else if (painrelief && !(decongestant || antihistamine || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 6;
-			// } else if (coughrelief && !(decongestant || painrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 7;
-			// } else if (itchyeyesrelief && !(decongestant || painrelief || antihistamine || coughrelief)) {
-			//     this.mode = 8;
-			// }
-			// //-------------------------------double---------------------------
-			// else if (painrelief && decongestant && !(coughrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 9;
-			// } else if (painrelief && antihistamine && !(coughrelief || decongestant || itchyeyesrelief)) {
-			//     this.mode = 10;
-			// } else if (painrelief && coughrelief && !(antihistamine || decongestant || itchyeyesrelief)) {
-			//     this.mode = 11;
-			// } else if (painrelief && itchyeyesrelief && !(antihistamine || decongestant || coughrelief)) {
-			//     this.mode = 12;
-			// } else if (antihistamine && decongestant && !(painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 13;
-			// } else if (antihistamine && coughrelief && !(painrelief || decongestant || itchyeyesrelief)) {
-			//     this.mode = 14;
-			// } else if (antihistamine && itchyeyesrelief && !(painrelief || coughrelief || decongestant)) {
-			//     this.mode = 15;
-			// } else if (decongestant && coughrelief && !(painrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 16;
-			// } else if (decongestant && itchyeyesrelief && !(painrelief || antihistamine || coughrelief)) {
-			//     this.mode = 17;
-			// } else if (itchyeyesrelief && coughrelief && !(painrelief || antihistamine || decongestant)) {
-			//     this.mode = 18;
-			// }
-			// //---------------------Triple----------------------
-			// else if (painrelief && antihistamine && decongestant && !(coughrelief || itchyeyesrelief)) {
-			//     this.mode = 19;
-			// } else if (painrelief && antihistamine && coughrelief && !(decongestant || itchyeyesrelief)) {
-			// 	this.mode = 20;
-			// } else if (painrelief && antihistamine && itchyeyesrelief && !(decongestant || coughrelief)) {
-			// 	this.mode = 21;
-			// } else if (painrelief && decongestant && coughrelief && !(antihistamine || itchyeyesrelief)) {
-			// 	this.mode = 22;
-			// } else if (painrelief && decongestant && itchyeyesrelief && !(antihistamine || coughrelief)) {
-			// 	this.mode = 23;
-			// } else if (painrelief && itchyeyesrelief && coughrelief && !(decongestant || antihistamine)) {
-			// 	this.mode = 24;
-			// } else if (decongestant && itchyeyesrelief && coughrelief && !(antihistamine || painrelief)) {
-			// 	this.mode = 25;
-			// } else if (antihistamine && itchyeyesrelief && coughrelief && !(decongestant || painrelief)) {
-			// 	this.mode = 26;
-			// } else if (antihistamine && decongestant && coughrelief && !(itchyeyesrelief || painrelief)) {
-			//     this.mode = 27;
-			// } else if (antihistamine && decongestant && itchyeyesrelief && !(coughrelief || painrelief)) {
-			//     this.mode = 28;
-			// }
-			// //---------------------------------Quadriple-------------------------------------
-			// else if (painrelief && antihistamine && decongestant && itchyeyesrelief && !(coughrelief)) {
-			//     this.mode = 29;
-			// } else if (painrelief && antihistamine && decongestant && coughrelief && !(itchyeyesrelief)) {
-			//     this.mode = 30;
-			// } else if (painrelief && antihistamine && itchyeyesrelief && coughrelief && !(decongestant)) {
-			//     this.mode = 31;
-			// } else if (painrelief && decongestant && itchyeyesrelief && coughrelief && !(antihistamine)) {
-			//     this.mode = 32;
-			// } else if (antihistamine && decongestant && itchyeyesrelief && coughrelief && !(painrelief)) {
-			//     this.mode = 33;
-			// }
-			// //------------------------------All together------------------------------------
-			// else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
-			//     this.mode = 34;
-			// } else {
-			//     ind = 0; this.mode = 50;
-			// }
+			var
+			    hard = this.recs[0],
+			overnight = this.recs[1],
+			fast = this.recs[2],
+			daily = this.recs[3],
+			history = this.recs[4],
+			nausea = this.recs[5],
+			stomachache = this.recs[6],
+			blood = this.recs[7],
+			diarrhea = this.recs[8],
+			pencil_like = this.recs[9],
+			prevention = this.recs[11],
+			enema = this.recs[10],
+			none = this.recs[12];
+
+			//Medication variables in collapsible
+
+			var
+			    stool_softener = hard || history,
+			stimulant = overnight || fast,
+			lubricant = fast || stomachache,
+			fibers = daily || history,
+			saline = overnight || fast || enema,
+			hyper_osmotic = daily || history || stomachache;
+
+
+			//conditions for showing none of the above division.
+
+			if (none) {
+				this.mode =1;
+			}
+			else if (prevention) {
+			    this.mode =2;
+			}
+			//conditions for All division + Others else if.
+			else if (nausea || blood || diarrhea || pencil_like) {
+			    this.mode =3;
+			}
+
+			//condition for showing just one checked field
+
+			//--------------single------------------------
+			else if (stool_softener && !(stimulant || lubricant || fibers || saline || hyper_osmotic)) {
+			    this.mode = 4;
+
+			} else if (stimulant && !(stool_softener || lubricant || fibers || saline || hyper_osmotic)) {
+				this.mode = 5;
+			    
+			    
+			    
+
+			} else if (lubricant && !(stool_softener || stimulant || fibers || saline || hyper_osmotic)) {
+				this.mode=6;
+
+			    
+
+			} else if (fibers && !(stool_softener || stimulant || lubricant || saline || hyper_osmotic)) {
+
+			    this.mode=7;
+			    
+
+			} else if (saline && !(stool_softener || stimulant || fibers || lubricant || hyper_osmotic)) {
+
+			    this.mode=8;
+			    
+
+			} else if (hyper_osmotic && !(stool_softener || stimulant || fibers || lubricant || saline)) {
+
+			    this.mode=9;
+			    
+
+			}
+
+
+
+			//-------------------------------double---------------------------
+			else if (stool_softener && stimulant && !(lubricant || fibers || saline || hyper_osmotic)) {
+
+			    this.mode=10;
+			    
+
+			} else if (stool_softener && lubricant && !(stimulant || fibers || saline || hyper_osmotic)) {
+
+			    this.mode=11;
+			    
+
+			} else if (stool_softener && fibers && !(stimulant || lubricant || saline || hyper_osmotic)) {
+
+			    this.mode=12;
+			    
+
+			} else if (stool_softener && saline && !(stimulant || lubricant || fibers || hyper_osmotic)) {
+
+			    this.mode=13;
+			    
+			    
+
+			} else if (stool_softener && hyper_osmotic && !(stimulant || lubricant || fibers || saline)) {
+
+			    this.mode=14;
+			    
+			    
+
+			} else if (stimulant && lubricant && !(stool_softener || fibers || saline || hyper_osmotic)) {
+
+			    this.mode=15;
+			    
+			    
+
+			} else if (stimulant && fibers && !(stool_softener || lubricant || saline || hyper_osmotic)) {
+
+			    this.mode=16;
+			    
+			    
+
+			} else if (stimulant && saline && !(stool_softener || lubricant || fibers || hyper_osmotic)) {
+
+			    this.mode=17;
+			    
+			    
+
+			} else if (stimulant && hyper_osmotic && !(stool_softener || lubricant || fibers || saline)) {
+
+			    this.mode=18;
+			    
+			    
+
+			} else if (lubricant && fibers && !(stool_softener || stimulant || saline || hyper_osmotic)) {
+
+			    this.mode=19;
+			    
+			    
+
+			} else if (lubricant && saline && !(stool_softener || stimulant || fibers || hyper_osmotic)) {
+
+			    this.mode=20;
+			    
+			    
+
+			} else if (lubricant && hyper_osmotic && !(stool_softener || stimulant || fibers || saline)) {
+
+			    this.mode=21;
+			    
+			    
+
+			} else if (fibers && saline && !(stool_softener || stimulant || lubricant || hyper_osmotic)) {
+
+			    this.mode=22;
+			    
+			    
+
+			} else if (fibers && hyper_osmotic && !(stool_softener || stimulant || lubricant || saline)) {
+
+			    this.mode=23;
+			    
+			    
+
+			} else if (saline && hyper_osmotic && !(stool_softener || stimulant || lubricant || fibers)) {
+
+			    this.mode=24;
+			    
+			    
+
+			}
+
+
+
+			//---------------------Triple----------------------
+			else if (stool_softener && stimulant && lubricant && !(fibers || saline || hyper_osmotic)) {
+
+			    this.mode=25;
+			    
+			    
+
+			} else if (stool_softener && stimulant && fibers && !(lubricant || saline || hyper_osmotic)) {
+
+			    this.mode=26;
+			    
+			    
+
+			} else if (stool_softener && stimulant && saline && !(lubricant || fibers || hyper_osmotic)) {
+
+			    this.mode=27;
+			    
+			    
+
+			} else if (stool_softener && stimulant && hyper_osmotic && !(lubricant || fibers || saline)) {
+
+			    this.mode=28;
+			    
+			    
+
+			} else if (stool_softener && lubricant && fibers && !(stimulant || saline || hyper_osmotic)) {
+
+			    this.mode=29;
+			    
+			    
+
+			} else if (stool_softener && lubricant && saline && !(stimulant || fibers || hyper_osmotic)) {
+
+			    this.mode=30;
+			    
+			    
+
+			} else if (stool_softener && lubricant && hyper_osmotic && !(stimulant || fibers || saline)) {
+
+			    this.mode=31;
+			    
+			    
+
+			} else if (stool_softener && fibers && saline && !(stimulant || lubricant || hyper_osmotic)) {
+
+			    this.mode=32;
+			    
+			    
+
+			} else if (stool_softener && fibers && hyper_osmotic && !(stimulant || lubricant || saline)) {
+
+			    this.mode=33;
+			    
+			    
+
+			} else if (stool_softener && saline && hyper_osmotic && !(stimulant || lubricant || fibers)) {
+
+			    this.mode=34;
+			    
+			    
+
+			} else if (stimulant && lubricant && fibers && !(stool_softener || saline || hyper_osmotic)) {
+
+			    this.mode=35;
+			    
+			    
+
+			} else if (stimulant && lubricant && saline && !(stool_softener || fibers || hyper_osmotic)) {
+
+			    this.mode=36;
+			    
+			    
+
+			} else if (stimulant && lubricant && hyper_osmotic && !(stool_softener || fibers || saline)) {
+
+			    this.mode=37;
+			    
+			    
+
+			} else if (stimulant && fibers && saline && !(stool_softener || lubricant || hyper_osmotic)) {
+
+			    this.mode=38;
+			    
+			    
+
+			} else if (stimulant && fibers && hyper_osmotic && !(stool_softener || lubricant || saline)) {
+
+			    this.mode=39;
+			    
+			    
+
+			} else if (stimulant && saline && hyper_osmotic && !(stool_softener || lubricant || fibers)) {
+
+			    this.mode=40;
+			    
+			    
+
+			} else if (lubricant && fibers && saline && !(stool_softener || stimulant || hyper_osmotic)) {
+
+			    this.mode=41;
+			    
+			    
+
+			} else if (lubricant && fibers && hyper_osmotic && !(stool_softener || stimulant || saline)) {
+
+			    this.mode=42;
+			    
+			    
+
+			} else if (lubricant && saline && hyper_osmotic && !(stool_softener || stimulant || fibers)) {
+
+			    this.mode=43;
+			    
+			    
+
+			} else if (fibers && saline && hyper_osmotic && !(stool_softener || stimulant || lubricant)) {
+
+			    this.mode=44;
+			    
+			    
+
+			}
+
+
+
+			//---------------------Quadruple----------------------
+			else if (stool_softener && stimulant && lubricant && fibers && !(saline || hyper_osmotic)) {
+
+			    this.mode=45;
+			    
+			    
+
+			} else if (stool_softener && stimulant && lubricant && saline && !(fibers || hyper_osmotic)) {
+
+			    this.mode=46;
+			    
+			    
+
+			} else if (stool_softener && stimulant && lubricant && hyper_osmotic && !(fibers || saline)) {
+
+			    this.mode=47;
+			    
+			    
+
+			} else if (stool_softener && stimulant && fibers && saline && !(lubricant || hyper_osmotic)) {
+
+			    this.mode=48;
+			    
+			    
+
+			} else if (stool_softener && stimulant && fibers && hyper_osmotic && !(lubricant || saline)) {
+
+			    this.mode=49;
+			    
+			    
+
+			} else if (stool_softener && stimulant && saline && hyper_osmotic && !(lubricant || fibers)) {
+
+			    this.mode=50;
+			    
+			    
+
+			} else if (stool_softener && lubricant && fibers && saline && !(stimulant || hyper_osmotic)) {
+
+			    this.mode=51;
+			    
+			    
+
+			} else if (stool_softener && lubricant && fibers && hyper_osmotic && !(stimulant || saline)) {
+
+			    this.mode=52;
+			    
+			    
+
+			} else if (stool_softener && lubricant && saline && hyper_osmotic && !(stimulant || fibers)) {
+
+			    this.mode=53;
+			    
+			    
+
+			} else if (stool_softener && fibers && saline && hyper_osmotic && !(stimulant || lubricant)) {
+
+			    this.mode=54;
+			    
+			    
+
+			} else if (stimulant && lubricant && fibers && saline && !(stool_softener || hyper_osmotic)) {
+
+			    this.mode=55;
+			    
+			    
+
+			} else if (stimulant && lubricant && fibers && hyper_osmotic && !(stool_softener || saline)) {
+
+			    this.mode=56;
+			    
+			    
+
+			} else if (stimulant && lubricant && saline && hyper_osmotic && !(stool_softener || fibers)) {
+
+			    this.mode=57;
+			    
+			    
+
+			} else if (stimulant && fibers && saline && hyper_osmotic && !(stool_softener || lubricant)) {
+
+			    this.mode=58;
+			    
+			    
+
+			} else if (lubricant && fibers && saline && hyper_osmotic && !(stool_softener || stimulant)) {
+
+			    this.mode=59;
+			    
+			    
+
+			}
+
+
+			//------------------------------5 options------------------------------------
+			else if (stool_softener && stimulant && lubricant && fibers && saline && !(hyper_osmotic)) {
+
+			    this.mode=60;
+			    
+			    
+
+			} else if (stool_softener && stimulant && lubricant && fibers && hyper_osmotic && !(saline)) {
+
+			    this.mode=61;
+			    
+			    
+
+			} else if (stool_softener && stimulant && lubricant && saline && hyper_osmotic && !(fibers)) {
+
+			    this.mode=62;
+			    
+			    
+
+			} else if (stool_softener && stimulant && fibers && saline && hyper_osmotic && !(lubricant)) {
+
+			    this.mode=63;
+			    
+			    
+
+			} else if (stool_softener && lubricant && fibers && saline && hyper_osmotic && !(stimulant)) {
+
+			    this.mode=64;
+			    
+			    
+
+			} else if (stimulant && lubricant && fibers && saline && hyper_osmotic && !(stool_softener)) {
+
+			    this.mode=65;
+			    
+			    
+
+			}
+
+
+
+			//---------------All together-----------------------------	
+			else if (stool_softener && stimulant && lubricant && fibers && saline && hyper_osmotic) {
+
+			    this.mode=66;
+			    
+			    
+
+			} else {
+				ind = 1; this.mode = 100;
+			}
 		}
 		this.page = ind;
 	}

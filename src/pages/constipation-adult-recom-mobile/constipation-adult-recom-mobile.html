@@ -220,9 +220,11 @@
 				            <!-----------------End checkbox-------------------- -->
 				            <div id="adult_recom_constipation_mobile_all_options" *ngIf="mode>0">
 				                <!-----------------You told me nothing-------------------- -->
-				                <div class="container_12" id="selected_adult_recom_constipation_mobile_q1_container" *ngIf="page==1 && mode==50">
+				                <div class="container_12" id="selected_adult_recom_constipation_mobile_q1_container" *ngIf="page==1 && mode==100">
 				                    <div class="grid_9">
-				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_constipation_mobile_q1 centerText"></div>
+				                        <div class="bubbleRightPurple_red" id="selected_adult_recom_constipation_mobile_q1 centerText">
+				                        	<span class="redfontLarge">Oops!,</span> You told me nothing
+				                        </div>
 				                    </div>
 				                    <div class="grid_3"> 
 				                        <img src="http://www.selfcarepharmacist.com/images/articles/pharm-alicia-cyan.svg" style="width: 80px;" align="right">
@@ -231,7 +233,7 @@
 				                <p>&nbsp;</p>
 				                <!--------------------------Single-Options-Pharmacist------------------------------------ -->
 				                <!---------------stool_softener--------------------------- -->
-				                <div id="stool_softener_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_adult_recom_constipation_mobile" *ngIf="page==2 && mode==4">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require a <span class="purplefont">stool softener.</span></span><br>
@@ -244,7 +246,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------stimulant--------------------------- -->
-				                <div id="stimulant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==5">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require a <span class="purplefont">stimulant</span> type laxative type laxative.</span><br>
@@ -257,7 +259,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------lubricant--------------------------- -->
-				                <div id="lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==6">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require a <span class="purplefont">lubricant</span> type laxative.</span><br>
@@ -270,7 +272,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------fibers--------------------------- -->
-				                <div id="fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==7">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require you to take <span class="purplefont">fibers.</span></span><br>
@@ -283,7 +285,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------saline--------------------------- -->
-				                <div id="saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==8">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require a <span class="purplefont">saline</span> type laxative.</span><br>
@@ -296,7 +298,7 @@
 				                </div>
 				                <!-----------------End Display none div------------------- -->
 				                <!---------------hyper_osmotic--------------------------- -->
-				                <div id="hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==9">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Selection require a <span class="purplefont">hyper-osmotic</span> class of laxatives.</span><br>
@@ -310,7 +312,7 @@
 				                <!-----------------End Display none div------------------- -->
 				                <!-------------------------Double-Options-Pharmacist------------------------------------ -->
 				                <!---------------stool_softener + stimulant--------------------------- -->
-				                <div id="stool_softener_stimulant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==10">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">stimulant</span> type of laxative.</span><br>
@@ -323,7 +325,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant--------------------------- -->
-				                <div id="stool_softener_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==11">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">lubricant</span> type laxative.</span><br>
@@ -336,7 +338,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + fibers--------------------------- -->
-				                <div id="stool_softener_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==12">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and <span class="redfont">fibers</span></span><br>
@@ -349,7 +351,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + saline--------------------------- -->
-				                <div id="stool_softener_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==13">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and a <span class="redfont">saline</span> type laxative</span><br>
@@ -362,7 +364,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==14">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stool softener</span> and <span class="redfont">hyper-osmotic</span> class laxative</span><br>
@@ -375,7 +377,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + lubricant--------------------------- -->
-				                <div id="stimulant_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==15">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative or a <span class="redfont">lubricant</span> type laxative.</span><br>
@@ -388,7 +390,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + fibers--------------------------- -->
-				                <div id="stimulant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==16">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative and <span class="redfont">fibers</span></span><br>
@@ -401,7 +403,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + saline--------------------------- -->
-				                <div id="stimulant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==17">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative or a <span class="redfont">saline</span> type laxative</span><br>
@@ -414,7 +416,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==18">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">stimulant</span> type laxative and <span class="redfont">hyper-osmotic</span> class laxative</span><br>
@@ -427,7 +429,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + fibers--------------------------- -->
-				                <div id="lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==19">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative and <span class="redfont">fibers</span></span><br>
@@ -440,7 +442,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + saline--------------------------- -->
-				                <div id="lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==20">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative or a <span class="redfont">saline</span> type laxative</span><br>
@@ -453,7 +455,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + hyper_osmotic--------------------------- -->
-				                <div id="lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==21">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">lubricant</span> laxative or a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
@@ -466,7 +468,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------fibers + saline--------------------------- -->
-				                <div id="fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==22">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require  <span class="purplefont">fibers</span> and a <span class="redfont">saline</span> type laxative</span><br>
@@ -479,7 +481,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------fibers + hyper_osmotic--------------------------- -->
-				                <div id="fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==23">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require  <span class="purplefont">fibers</span> and a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
@@ -492,7 +494,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------saline + hyper_osmotic--------------------------- -->
-				                <div id="saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==24">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purplefont">saline</span> type laxative or a <span class="redfont">hyper-osmotic</span> class laxative</span><br>
@@ -506,7 +508,7 @@
 				                </div>
 				                <!-------------------------Triple-Options-Pharmacist---------------------------- -->
 				                <!---------------stool_softener+ stimulant + lubricant--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_adult_recom_constipation_mobile" *ngIf="page==2 && mode==25">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative type laxative or a <span class="bluefont">lubricant</span></span><br>
@@ -519,7 +521,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener+ stimulant + fibers--------------------------- -->
-				                <div id="stool_softener_stimulant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==26">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">stimulant</span> type laxative and  <span class="bluefont">fibers</span></span><br>
@@ -532,7 +534,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener+ stimulant + saline--------------------------- -->
-				                <div id="stool_softener_stimulant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==27">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -545,7 +547,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener+ stimulant + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==28">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -558,7 +560,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener+ lubricant + fibers--------------------------- -->
-				                <div id="stool_softener_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==29">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
@@ -571,7 +573,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + saline--------------------------- -->
-				                <div id="stool_softener_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==30">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -584,7 +586,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==31">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -597,7 +599,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + fibers + saline--------------------------- -->
-				                <div id="stool_softener_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==32">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span> and a <span class="bluefont">saline</span> type laxative</span><br>
@@ -610,7 +612,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + fibers + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==33">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span> and a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -623,7 +625,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==34">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -636,7 +638,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ lubricant + fibers--------------------------- -->
-				                <div id="stimulant_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==35">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative or a <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
@@ -649,7 +651,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ lubricant + saline--------------------------- -->
-				                <div id="stimulant_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==36">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -662,7 +664,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ lubricant + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==37">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -675,7 +677,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ fibers + saline--------------------------- -->
-				                <div id="stimulant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==38">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative with <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative with fibers</span><br>
@@ -688,7 +690,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ fibers + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==39">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
@@ -701,7 +703,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant+ saline + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==40">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -714,7 +716,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + fibers + saline--------------------------- -->
-				                <div id="lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==41">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative with fibers</span><br>
@@ -727,7 +729,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + fibers + hyper_osmotic--------------------------- -->
-				                <div id="lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==42">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
@@ -740,7 +742,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + saline + hyper_osmotic--------------------------- -->
-				                <div id="lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==43">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -753,7 +755,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==44">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require <span class="purple_redfont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -767,7 +769,7 @@
 				                </div>
 				                <!-------------------------Quad-Options-Pharmacist---------------------------- -->               
 				                <!---------------stool_softener + stimulant + lubricant + fibers--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_fibers_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_fibers_adult_recom_constipation_mobile" *ngIf="page==2 && mode==45">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative and  <span class="bluefont">fibers</span></span><br>
@@ -780,7 +782,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + lubricant + saline--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==46">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -793,7 +795,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + lubricant + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==47">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">lubricant</span> laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -806,7 +808,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + fibers + saline--------------------------- -->
-				                <div id="stool_softener_stimulant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==48">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -819,7 +821,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + fibers + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==49">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -832,7 +834,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==50">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">stimulant</span> type laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -845,7 +847,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + fibers + saline--------------------------- -->
-				                <div id="stool_softener_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==51">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -858,7 +860,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + fibers + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==52">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -871,7 +873,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==53">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -884,7 +886,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==54">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, <span class="purplefont">fibers</span>, and one of  a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -897,7 +899,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + lubricant + fibers + saline--------------------------- -->
-				                <div id="stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==55">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -910,7 +912,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + lubricant + fibers + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==56">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -923,7 +925,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + lubricant + saline + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==57">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -936,7 +938,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==58">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -949,7 +951,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------lubricant + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==59">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">lubricant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with fibers</span><br>
@@ -963,7 +965,7 @@
 				                </div>
 				                <!-------------------------5-Options-Pharmacist---------------------------- -->              
 				                <!---------------stool_softener + stimulant + lubricant + fibers + saline--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_fibers_saline_adult_recom_constipation_mobile" *ngIf="page==2 && mode==60">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">saline</span> type laxative</span><br>
@@ -976,7 +978,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + lubricant + fibers + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_fibers_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==61">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, <span class="purplefont">fibers</span> or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -989,7 +991,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + lubricant + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==62">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -1002,7 +1004,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + stimulant + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==63">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -1015,7 +1017,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stool_softener + lubricant + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="stool_softener_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==64">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  <span class="purple_redfont">lubricant</span>, <span class="purplefont">fibers</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative</span><br>
@@ -1028,7 +1030,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------stimulant + lubricant + fibers + saline + hyper_osmotic--------------------------- -->
-				                <div id="stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==65">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require one of a <span class="purple_redfont">stimulant</span> laxative, <span class="purple_redfont">lubricant</span>, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with <span class="purplefont">fibers</span></span><br>
@@ -1042,7 +1044,7 @@
 				                </div>
 				                <!-------------------------6-Options-Pharmacist---------------------------- -->              
 				                <!---------------stool_softener + stimulant + lubricant + fibers + saline + hyper_osmotic---------------- -->
-				                <div id="stool_softener_stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="stool_softener_stimulant_lubricant_fibers_saline_hyper_osmotic_adult_recom_constipation_mobile" *ngIf="page==2 && mode==66">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span>Symptoms require a <span class="purple_redfont">stool softener</span>, and one of  a <span class="purple_redfont">stimulant</span> laxative, <span class="purplefont">lubricant</span> laxative, a <span class="purplefont">saline</span> type laxative or a <span class="bluefont">hyper-osmotic</span> type laxative with <span class="purplefont">fibers</span></span><br>
@@ -1055,7 +1057,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------------Prevention only--------------------------- -->
-				                <div id="prevention_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="prevention_adult_recom_constipation_mobile" *ngIf="page==1 && mode==2">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            Something to <span class="orangefont">prevent?</span>
@@ -1082,7 +1084,7 @@
 				                    </div>
 				                </div>
 				                <!---------------All-------------- -->
-				                <div id="allabove_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="allabove_adult_recom_constipation_mobile" >
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> 
 				                            <span class="purplefont">All of these?</span><br>
@@ -1100,7 +1102,7 @@
 				                    <p>&nbsp;</p>
 				                </div>
 				                <!---------------None of the above--------------------------- -->
-				                <div id="none_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="none_adult_recom_constipation_mobile" *ngIf="page==2 && mode==1">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightBlue centerText"> <span class="redfont">None of these?</span><br>
 				                            We must have left something out. 
@@ -1112,7 +1114,7 @@
 				                    <p>We must have left some things out. Please choose what closely reflects what you are experiencing and see what is recommended.</p>
 				                </div>
 				                <!---------------------See Doctor--------------------------- -->
-				                <div id="doctor_adult_recom_constipation_mobile" class="displayNone">
+				                <div id="doctor_adult_recom_constipation_mobile" *ngIf="page==2 && mode==3">
 				                    <div class="maxwidth450">
 				                        <div class="ovalBorderRightRed centerText"> 
 				                            <span class="orangefont">See a doctor or urgent care </span>
@@ -1130,7 +1132,7 @@
 				                </div>
 				                <!-----------------------Individual Category Entry-------------------------- --> 
 				                <!--------------------------stool_softener Article----------------------------- -->               
-				                <div data-role="collapsible" id="stool_softener_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="stool_softener_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==4 || mode==10 || mode==11 || mode==12 || mode==13 || mode==14 || (mode>=25 && mode<=34) || (mode>=45 && mode<=54) || (mode>=60 && mode<=64) || mode==66)">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(7)" [ngClass]="{'ui-icon-arrow-r': expands[7], 'ui-icon-arrow-d': !expands[7]}"><span class="purplefont">Stool Softener</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[7]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">This allows more water and fat to get into the stool making it softer and easier to move along.</p>
@@ -1143,7 +1145,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------stimulant Article----------------------------- -->               
-				                <div data-role="collapsible" id="stimulant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="stimulant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==5 || mode==10 || mode==15 || mode==16 || mode==17 || mode==18 || mode==25 || mode==26 || mode==27 || mode==28 || (mode>=35 && mode<=40) || (mode>=45 && mode<=50) || mode==55 || mode==56 || mode==57 || mode==58 || mode==60 || mode==61 || mode==62 || mode==63 || mode==65 || mode==66)">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(8)" [ngClass]="{'ui-icon-arrow-r': expands[8], 'ui-icon-arrow-d': !expands[8]}"><span class="purple_redfont">Stimulant Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[8]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">They cause&nbsp;a bowel movement by stimulating the intestines through<span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18.9px;">&nbsp;actions on the walls and nerves of the intestine, altering the electrolytes and water movement.</span></p>
@@ -1157,7 +1159,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------lubricant Article----------------------------- -->               
-				                <div data-role="collapsible" id="lubricant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="lubricant_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==6 || mode==11 || mode==15 || mode==19 || mode==20 || mode==21 || mode==25 || mode==29 || mode==30 || mode==31 || mode==35 || mode==36 || mode==37 || mode==41 || mode==42 || mode==43 || mode==45 || mode==46 || mode==47 || mode==51 || mode==52 || mode==53 || mode==55 || mode==56 || mode==57 || mode==59 || (mode>=60 && mode<=65 && mode!=63))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(9)" [ngClass]="{'ui-icon-arrow-r': expands[9], 'ui-icon-arrow-d': !expands[9]}"><span class="purple_redfont">Lubricant Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[9]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">The idea is to make the stool slippery so it can pass out easily.</p>
@@ -1171,7 +1173,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------fibers Article----------------------------- -->               
-				                <div data-role="collapsible" id="fibers_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="fibers_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==7 || mode==12 || mode==16 || mode==19 || mode==22 || mode==23 || mode==26 || mode==29 || mode==32 || mode==33 || mode==35 || mode==38 || mode==39 || mode==41 || mode==42  || mode==44 || mode==45 || mode==48 || mode==49 || mode==51 || mode==52 || mode==54 || mode==55 || mode==56 || mode==58 || mode==59 || (mode>=60 && mode<=65 && mode!=62))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(10)" [ngClass]="{'ui-icon-arrow-r': expands[10], 'ui-icon-arrow-d': !expands[10]}"><span class="purple_redfont">Fibers</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[10]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">Fibers cause the stool to retain more water, bulk it up and form something like a gel making it easier to move along.</p>
@@ -1186,7 +1188,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------saline Article----------------------------- -->               
-				                <div data-role="collapsible" id="saline_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="saline_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==8 || mode==13 || mode==17 || mode==20 || mode==22 || mode==24 || mode==27 || mode==30 || mode==32 || mode==34 || mode==36 || mode==38 || mode==40 || mode==41 || mode==43 || mode==44 || mode==46 || mode==48 || mode==50 || mode==51 || mode==53 || mode==54 || mode==55 || mode==57 || mode==58 || mode==59 || (mode>=60 && mode<=66 && mode!=61))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(11)" [ngClass]="{'ui-icon-arrow-r': expands[11], 'ui-icon-arrow-d': !expands[11]}"><span class="purple_redfont">Saline Laxative</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[11]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">These draws water into the intestine and retain it to make the stool softer and more comfortable to pass.</p>
@@ -1200,7 +1202,7 @@
 				                    </div>
 				                </div>
 				                <!--------------------------hyper_osmotic Article----------------------------- -->               
-				                <div data-role="collapsible" id="hyper_osmotic_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="hyper_osmotic_adult_category_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && (mode==9 || mode==14 || mode==18 || mode==21 || mode==23 || mode==24 || mode==28 || mode==31 || mode==33 || mode==34 || mode==37 || mode==39 || mode==40 || mode==42 || mode==43 || mode==44 || mode==47 || mode==49 || mode==50 || mode==52 || mode==53 || mode==54 || mode==56 || mode==57 || mode==58 || mode==59 || (mode>=61 && mode<=66))">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(12)" [ngClass]="{'ui-icon-arrow-r': expands[12], 'ui-icon-arrow-d': !expands[12]}"><span class="purple_redfont">Hyper-Osmotic Laxatives</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[12]}" aria-hidden="true">
 				                        <p style="margin-top: 8px; margin-bottom: 15px; padding: 0px 5px; border: 0px; font-size: 14px; vertical-align: baseline; line-height: 1.35; font-family: Arial, Helvetica, sans-serif;">These cause the intestine to hold more water within thereby softening the stool for easy passage.</p>
@@ -1213,7 +1215,7 @@
 				                    </div>
 				                </div>
 				                <!----------------------------combination products--------------------------- -->
-				                <div data-role="collapsible" id="combination_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="combination_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(13)" [ngClass]="{'ui-icon-arrow-r': expands[13], 'ui-icon-arrow-d': !expands[13]}"><span class="purplefont">Combination Products</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[13]}" aria-hidden="true">
 				                        <p>1.<strong> <span style="color:#3399ff;">Stool Softener</span> + <span style="color:#FF8C00;">Stimulant</span></strong></p>
@@ -1228,7 +1230,7 @@
 				                </div>
 				                <!----------------------------Worth Doing--------------------------- -->
 				                <div class="clearboth divider1"></div>
-				                <div data-role="collapsible" id="worth_doing_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon displayNone ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed">
+				                <div data-role="collapsible" id="worth_doing_constipation_mobile" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-corners="false" class="ui-nodisc-icon  ui-collapsible ui-collapsible-inset ui-collapsible-themed-content ui-collapsible-collapsed" *ngIf="page==2 && mode>2">
 				                    <h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-left ui-btn-inherit" (click)="expandPage(14)" [ngClass]="{'ui-icon-arrow-r': expands[14], 'ui-icon-arrow-d': !expands[14]}"><span class="greenfont">Worth doing</span><span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3>
 				                    <div class="ui-collapsible-content ui-body-inherit" [ngClass]="{'ui-collapsible-content-collapsed': expands[14]}" aria-hidden="true">
 				                        <p style="font-size: 13px; line-height: 20.8px;">1. Include enough fiber in the diet</p>
@@ -1243,13 +1245,13 @@
 				                    </div>
 				                </div>
 				                <!-----------------------------------back_div------------------------- -->                
-				                <div data-inline="true" id="back_intro_adult_constipation_mobile_div" class="displayNone">
+				                <div data-inline="true" id="back_intro_adult_constipation_mobile_div" *ngIf="page==2">
 				                    <div class="clearboth divider1"></div>
 				                    <div class="centerText">
 				                        <span class="grayfontSmallSmall">Last updated by pharmacist on  02/04/2016</span>
 				                    </div>
 				                    <p class="centerText">
-				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_constipation_mobile_q1 ui-link"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
+				                        <a href="#" data-inline="true" class="linkBlue back_adult_recom_constipation_mobile_q1 ui-link" (click)="goBackSymptom()"><span class="mbsc-ic mbsc-ic-ion-android-system-back mobi-icon-font36"></span>Back</a>
 				                    </p>
 				                    <br>
 				                    <hr class="hrblue">

@@ -9,9 +9,8 @@ import { NavController, NavParams, MenuController, Content, Platform } from 'ion
 */
 import { GlobalVars } from '../providers/globalvars';
 import { UrgentCarePage } from '../urgent-care/urgent-care';
-import { AllergyMedsPage } from '../allergy-meds/allergy-meds';
 import { ContactSocialMobilePage } from '../contact-social-mobile/contact-social-mobile';
-import { CommentLoginPage } from '../comment-login/comment-login';
+import { YeastAdultRecomMobile1Page } from '../yeast-adult-recom-mobile1/yeast-adult-recom-mobile1';
 
 @Component({
   selector: 'page-yeast-adult-recom-mobile',
@@ -52,9 +51,9 @@ export class YeastAdultRecomMobilePage {
 			this.firstname += ",";
 		this.subPages = [
 				UrgentCarePage, 			// 0
-				AllergyMedsPage,			// 1
+				YeastAdultRecomMobile1Page,	// 1
 				ContactSocialMobilePage,	// 2
-				CommentLoginPage,			// 3
+
 			];
 		this.tabId = 1;
 		this.tabCss = "translate3d(0px, 0px, 0px)";

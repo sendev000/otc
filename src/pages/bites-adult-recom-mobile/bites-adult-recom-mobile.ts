@@ -36,6 +36,105 @@ export class BitesAdultRecomMobilePage {
 	expands: any;
 	mode: number;
 	why: boolean;
+	searchText: string;
+	searchData = [
+		{
+			h2: 'Bed bugs',
+			p: '',
+			imgUrl: 'bedbug.svg',
+			filterText: 'bed bugs',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Bees',
+			p: 'Bumble bee',
+			imgUrl: 'bee.svg',
+			filterText: 'Bumble Africanized bees honey',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Black fly',
+			p: '',
+			imgUrl: 'blackfly.svg',
+			filterText: 'black fly',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Chigger',
+			p: '',
+			imgUrl: 'chigger.svg',
+			filterText: 'chigger',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Fire ants',
+			p: '',
+			imgUrl: 'fireant.svg',
+			filterText: 'fire ants',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Flea',
+			p: '',
+			imgUrl: 'flea.svg',
+			filterText: 'flea',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Mosquito',
+			p: '',
+			imgUrl: 'mosquito.svg',
+			filterText: 'mosquito',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Other',
+			p: '',
+			imgUrl: 'mosquito.svg',
+			filterText: 'other',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Puss moth caterpillar',
+			p: '',
+			imgUrl: 'puss-moth-cat.svg',
+			filterText: 'puss moth caterpillar',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Spider',
+			p: '',
+			imgUrl: 'spider.svg',
+			filterText: 'black widow brown recluse spider',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Tick',
+			p: '',
+			imgUrl: 'tick.svg',
+			filterText: 'tick',
+			show: false,
+			clicked: false,
+		},
+		{
+			h2: 'Wasps',
+			p: '',
+			imgUrl: 'wasps.svg',
+			filterText: 'hornet yellow jacket paper wasps vespid bald-faced',
+			show: false,
+			clicked: false,
+		},
+	]
 	constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, public platform: Platform) {
 		this.menu = menu;
 		this.AbsoluteURL = GlobalVars.getAbsoluteURL();
@@ -56,12 +155,40 @@ export class BitesAdultRecomMobilePage {
 				ContactSocialMobilePage,	// 2
 				CommentLoginPage,			// 3
 			];
+		this.searchText = "";
 		this.tabId = 1;
 		this.tabCss = "translate3d(0px, 0px, 0px)";
 		this.tabConCss = "translate3d(0px, 0px, 0px)";
 	}
 	showMenu() {
 		this.menu.open();
+	}
+	togglePage(data, b: boolean){
+		data['clicked'] = b;
+		this.page = 1;
+	}
+	filterItems() {
+		var $this = this;
+	    var q = this.searchText;
+	    if (q.length == 0) {
+	    	Object.keys(this.searchData).forEach(function(key) {
+	    		$this.searchData[key]['show'] = false;
+	    		$this.searchData[key]['clicked'] = false;
+	    	});
+			return;
+	    }
+	    Object.keys(this.searchData).forEach(function(key) {
+			$this.searchData[key]['show'] = false;
+			$this.searchData[key]['clicked'] = false;
+			if ($this.searchData[key]['filterText'].toLowerCase().indexOf(q.toLowerCase()) > -1)
+			{
+				$this.searchData[key]['show'] = true;
+			}
+		});
+	  }
+	clearSearch() {
+		this.searchText = "";
+		this.filterItems();
 	}
 	showTab(id: number){
 		this.tabId = id;
@@ -87,8 +214,8 @@ export class BitesAdultRecomMobilePage {
 			this.recs[i] = b;
 	}
 	goBack() {
-		this.toggleAllRecs(false);
-		this.recs[10] = this.recs[11] = this.recs[12] = false;
+		this.clearSearch();
+		this.page = 0;
 	}
 	goBackSymptom(){
 		this.goBack();
@@ -104,120 +231,7 @@ export class BitesAdultRecomMobilePage {
 	expandPage(id: number){
 		this.expands[id] = !this.expands[id];
 	}
-	togglePage(ind: number) {
-		if (ind == 1)
-		{
-			// let 
-			// 	sorethroat = this.recs[0],
-			// 	scratchythroat = this.recs[1],
-			// 	stuffynose = this.recs[2],
-			// 	runnynose = this.recs[3],
-			// 	sneezing = this.recs[4],
-			// 	headache = this.recs[5],
-			// 	itchyeyes = this.recs[6],
-			// 	cough = this.recs[7],
-			// 	wateryeyes = this.recs[8],
-			// 	sinuscongestion = false,
-			// 	chestcongestion = this.recs[9],
-			// 	prevention =  this.recs[11],
-			// 	All =  this.recs[10],
-			// 	none = this.recs[12];
-				
-			// //category variables
-			// let 
-			//     antihistamine = runnynose || scratchythroat || sneezing || itchyeyes || wateryeyes,
-			// 	decongestant = stuffynose || sinuscongestion,
-			// 	painrelief = headache || sorethroat,
-			// 	coughrelief = cough || chestcongestion,
-			// 	itchyeyesrelief = itchyeyes || wateryeyes;
-			// if (none) {
-			// 	this.mode = 1;
-			// }
-			// //conditions for showing prevention division.
-			// else if (prevention) {
-			// 	this.mode = 2;
-			// }
-			// //conditions for All division.
-			// else if (All) {
-			// 	this.mode = 3;
-			// }
-			// //--------------single------------------------
-			// else if (antihistamine && !(decongestant || painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 4;
-			// } else if (decongestant && !(antihistamine || painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 5;
-			// } else if (painrelief && !(decongestant || antihistamine || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 6;
-			// } else if (coughrelief && !(decongestant || painrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 7;
-			// } else if (itchyeyesrelief && !(decongestant || painrelief || antihistamine || coughrelief)) {
-			//     this.mode = 8;
-			// }
-			// //-------------------------------double---------------------------
-			// else if (painrelief && decongestant && !(coughrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 9;
-			// } else if (painrelief && antihistamine && !(coughrelief || decongestant || itchyeyesrelief)) {
-			//     this.mode = 10;
-			// } else if (painrelief && coughrelief && !(antihistamine || decongestant || itchyeyesrelief)) {
-			//     this.mode = 11;
-			// } else if (painrelief && itchyeyesrelief && !(antihistamine || decongestant || coughrelief)) {
-			//     this.mode = 12;
-			// } else if (antihistamine && decongestant && !(painrelief || coughrelief || itchyeyesrelief)) {
-			//     this.mode = 13;
-			// } else if (antihistamine && coughrelief && !(painrelief || decongestant || itchyeyesrelief)) {
-			//     this.mode = 14;
-			// } else if (antihistamine && itchyeyesrelief && !(painrelief || coughrelief || decongestant)) {
-			//     this.mode = 15;
-			// } else if (decongestant && coughrelief && !(painrelief || antihistamine || itchyeyesrelief)) {
-			//     this.mode = 16;
-			// } else if (decongestant && itchyeyesrelief && !(painrelief || antihistamine || coughrelief)) {
-			//     this.mode = 17;
-			// } else if (itchyeyesrelief && coughrelief && !(painrelief || antihistamine || decongestant)) {
-			//     this.mode = 18;
-			// }
-			// //---------------------Triple----------------------
-			// else if (painrelief && antihistamine && decongestant && !(coughrelief || itchyeyesrelief)) {
-			//     this.mode = 19;
-			// } else if (painrelief && antihistamine && coughrelief && !(decongestant || itchyeyesrelief)) {
-			// 	this.mode = 20;
-			// } else if (painrelief && antihistamine && itchyeyesrelief && !(decongestant || coughrelief)) {
-			// 	this.mode = 21;
-			// } else if (painrelief && decongestant && coughrelief && !(antihistamine || itchyeyesrelief)) {
-			// 	this.mode = 22;
-			// } else if (painrelief && decongestant && itchyeyesrelief && !(antihistamine || coughrelief)) {
-			// 	this.mode = 23;
-			// } else if (painrelief && itchyeyesrelief && coughrelief && !(decongestant || antihistamine)) {
-			// 	this.mode = 24;
-			// } else if (decongestant && itchyeyesrelief && coughrelief && !(antihistamine || painrelief)) {
-			// 	this.mode = 25;
-			// } else if (antihistamine && itchyeyesrelief && coughrelief && !(decongestant || painrelief)) {
-			// 	this.mode = 26;
-			// } else if (antihistamine && decongestant && coughrelief && !(itchyeyesrelief || painrelief)) {
-			//     this.mode = 27;
-			// } else if (antihistamine && decongestant && itchyeyesrelief && !(coughrelief || painrelief)) {
-			//     this.mode = 28;
-			// }
-			// //---------------------------------Quadriple-------------------------------------
-			// else if (painrelief && antihistamine && decongestant && itchyeyesrelief && !(coughrelief)) {
-			//     this.mode = 29;
-			// } else if (painrelief && antihistamine && decongestant && coughrelief && !(itchyeyesrelief)) {
-			//     this.mode = 30;
-			// } else if (painrelief && antihistamine && itchyeyesrelief && coughrelief && !(decongestant)) {
-			//     this.mode = 31;
-			// } else if (painrelief && decongestant && itchyeyesrelief && coughrelief && !(antihistamine)) {
-			//     this.mode = 32;
-			// } else if (antihistamine && decongestant && itchyeyesrelief && coughrelief && !(painrelief)) {
-			//     this.mode = 33;
-			// }
-			// //------------------------------All together------------------------------------
-			// else if (painrelief && antihistamine && decongestant && coughrelief && itchyeyesrelief) {
-			//     this.mode = 34;
-			// } else {
-			//     ind = 0; this.mode = 50;
-			// }
-		}
-		this.page = ind;
-	}
+	
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad AdultTakeMobileListPage');
 	}
